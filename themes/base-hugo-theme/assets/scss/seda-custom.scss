@@ -1,0 +1,468 @@
+// Load Brandon Grotesque ttf fonts
+@font-face {
+  font-family: 'BrandonGrotesque-Reg';
+  src: url('/fonts/brandon_grotesque/Brandon-Grotesque-Regular.ttf');
+}
+@font-face {
+  font-family: 'BrandonGrotesque-Med';
+  src: url('/fonts/brandon_grotesque/Brandon-Grotesque-Medium.ttf');
+}
+@font-face {
+  font-family: 'BrandonGrotesque-Bold';
+  src: url('/fonts/brandon_grotesque/Brandon-Grotesque-Bold.ttf');
+}
+
+html {
+  font-size: 62.5%; // sets sitewide font sizes based on user's font size in browser
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Basic fonts and text styles
+h1 {
+  font-family: $brandongrotesque-bold;
+}
+h2,
+div.h2,
+h3,
+h4,
+h5,
+nav a {
+  font-family: $brandongrotesque-med;
+}
+
+h2,
+div.h2 {
+
+}
+
+h3 {
+  font-family: $brandongrotesque-reg;
+  font-size: 2.4rem;
+}
+
+a {
+  text-decoration: underline;
+  color: $dnd-darkgreen;
+
+  &:hover {
+    color: darken($dnd-darkgreen, 15%);
+  }
+}
+
+// Page container
+.container.parent {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.container.parent > #main > .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+// Header
+nav.navbar-light {
+  padding: 0 3.2rem;
+
+  .navbar-brand {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    background-image: url("/images/header-logo.svg");
+    height: 68px;
+    width: 206px;
+    background-position: 0 15px;
+    background-repeat: no-repeat;
+  }
+
+  .navbar-nav {
+    height: 6.8rem;
+
+    .nav-link {
+      color: $darkblue;
+      font-size: 1.8rem;
+      font-family: $brandongrotesque-med;
+      line-height: 0;
+      padding-right: 2rem;
+      padding-left: 2rem;
+      padding-top: 3.4rem;
+      text-decoration: none;
+
+      &.active,
+      &:hover {
+        border-top: .8rem solid $aqua;
+        padding-top: 2.6rem;
+      }
+
+      &:last-child {
+        margin-bottom: 2.4rem;
+      }
+    }
+  }
+
+  .collapse,
+  .collapsing {
+    @include media-breakpoint-down(sm) {
+      .navbar-nav {
+        height: auto;
+        .nav-link,
+        .nav-link:hover {
+          text-align: right;
+          border-top: none;
+          padding-top: 3.4rem;
+          padding-right: 0;
+        }
+      }
+
+      &.show {
+        // height: 140px !important;
+      }
+    }
+  }
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("/images/mobile-menu-dark.svg");
+}
+
+button.navbar-toggler {
+    border: 0;
+}
+
+// Breadcrumbs
+.breadcrumb-parent {
+  margin-top: 3.6rem;
+
+  .breadcrumb {
+    font-family: $brandongrotesque-med;
+    font-size: 1.8rem;
+    color: $dnd-darkgreen;
+    text-decoration: none;
+    padding-left: 3.6rem;
+    padding-top: 0;
+
+    a,
+    .sep {
+      color: $dnd-lightgray;
+      text-decoration: none;
+    }
+
+    .sep {
+      margin-left: 1.2rem;
+      margin-right: 1.2rem;
+    }
+  }
+}
+
+// Breaker image for single content pages
+.row.breaker {
+  height: 270px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 5.6rem 0;
+}
+
+// Float image
+img {
+  &.float-right {
+    margin-left: 3.2rem;
+  }
+  &.float-left {
+    margin-right: 3.2rem;
+  }
+}
+
+// Footer
+#footer {
+  background-color: #0A3D5F;
+  font-family: $brandongrotesque-reg;
+  .container {
+    max-width: 960px;
+  }
+  h3 {
+    text-align: left;
+    color: #fff;
+    a {
+      font-family: $brandongrotesque-med;
+      color: #C9E9EA;
+      text-decoration: underline;
+    }
+  }
+  .row.menu-row {
+    margin: 0;
+  }
+  .col.menu-col {
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+      display: flex;
+      justify-content: space-between;
+
+    li {
+      font-size: 1.6rem;
+      a {
+        text-decoration: none;
+        color: #fff;
+
+        &:hover {
+          text-decoration: underline;
+          color: #C9E9EA;
+        }
+      }
+    }
+  }
+  img.princeton-logo {
+    width: 192px;
+    margin-bottom: 2.4rem;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+  }
+  .social-and-copy {
+    margin-top: 3.2rem;
+    text-align: left;
+    font-size: 1.2rem;
+    padding-bottom: 6.4rem;
+
+    a {
+      font-family: $brandongrotesque-med;
+      color: #C9E9EA;
+      text-decoration: underline;
+
+      &.social-icon {
+        min-height: 3.2rem;
+        min-width: 3.2rem;
+        display: inline-block;
+        background-color: white;
+        color: black;
+        border-radius: 1.6rem;
+        margin-right: 1.6rem;
+
+        i {
+          font-size: 1.8rem;
+          width: 100%;
+          text-align: center;
+          padding-top: .6rem;
+        }
+      }
+    }
+
+    .copy,
+    .siteby {
+      font-size: 1.2rem;
+      color: $white;
+      align-self: flex-start;
+    }
+    .siteby {
+      text-align: right;
+    }
+  }
+  .contact-and-menu {
+    padding-top: 6.4rem;
+    .col-sm-4 {
+      // padding-top: 6.4rem;
+    }
+  }
+
+}
+
+//
+// General custom elements
+//
+
+// Custom button style
+.btn-custom {
+    display: inline-block;
+    // font-weight: 400;
+    font-family: $brandongrotesque-reg;
+    font-size: 16px;
+    background-color: #B0224F;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    width: 176px;
+    height: 40px;
+    border: none;
+    padding-top: 1rem;
+    border-radius: 0;
+    text-decoration: none;
+    // box-shadow: 6px 6px 0 $darkblue;
+    // padding: 0.375rem 0.75rem;
+    // font-size: 1rem;
+    // line-height: 1.6;
+    // border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    //
+    &:active,
+    &:hover,
+    &:focus {
+      box-shadow: 5.5px 5.5px 0 #5a052a;
+      // transform: translate(1px, 1px);
+      color: #fff;
+    }
+    svg.fa-external-link-square-alt {
+      width: 13px;
+      position: relative;
+      top: 2px;
+      margin-left: 10px;
+    }
+}
+
+// Sticky top fix for safari
+.sticky-top {
+  @supports (position: sticky) or (position: -webkit-sticky) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: $zindex-sticky;
+  }
+}
+
+// Custom gutter widths
+@include media-breakpoint-up(sm) {
+  .row {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .row {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .row {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .row {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.row .col {
+  // box-sizing: content-box;
+}
+//
+.flex-parent {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.flex-child {
+  flex: 0 1 auto;
+}
+
+.one-third {
+  max-width: 33%;
+}
+
+.two-thirds {
+  max-width: 66%;
+}
+
+.alt-bg {
+    background: #f6f9f9;
+    // background: #f7fbfb;
+}
+
+////// Home
+
+// Hero
+body.home {
+  .hero {
+    max-height: 640px;
+    height: 100vh;
+
+    img {
+      width: 308px;
+      height: 54px;
+    }
+
+    div.h2 {
+      font-family: $brandongrotesque-med;
+      color: $white;
+      // width: 43.1rem;
+      font-size: 2.4rem;
+      line-height: 3.0rem;
+      margin-top: 3.2rem;
+    }
+  }
+
+  #main {
+    background-color: $white;
+    // overflow-x: hidden;
+  }
+
+  .col-intro {
+    position: relative;
+    height: auto;
+    top: 24rem;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .col-intro {
+      left: 6rem;
+      div.h2 {
+        width: 43.1rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .col-intro {
+      left: 12rem;
+    }
+  }
+
+  &.scroll-top {
+    @include media-breakpoint-up(md) {
+      nav.navbar {
+        .navbar-brand {
+          background-image: none;
+        }
+      }
+
+      .nav-link {
+        color: #fff;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

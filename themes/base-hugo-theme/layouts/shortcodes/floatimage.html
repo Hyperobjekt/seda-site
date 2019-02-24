@@ -1,0 +1,9 @@
+{{ $float := .Get "float" }}
+{{ $path := .Get "image" }}
+{{ $filename := strings.TrimPrefix "/uploads/" $path }}
+  {{ with $.Site.GetPage "page" "uploads/_index.md" }}
+  {{ with .Resources.GetMatch $filename }}
+  {{$floatimg := .Fill "296x214 Center"}}
+    <img class="float-img float-{{ $float }}" src="{{ $floatimg.RelPermalink }}" width="296" height="214">
+{{ end }}
+{{ end }}

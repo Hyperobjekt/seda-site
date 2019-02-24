@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-md bg-white sticky-top navbar-light">
+    <a class="navbar-brand" tabindex="0" aria-level="1" aria-label="{{ .Page.Title }} at {{ .Site.Title }}" href="{{ "/" | absURL }}">
+        <!-- <img src="{{ "images/header-logo.svg" | absURL }}" width="206" height="36" class="d-inline-block align-top" alt="Dignity and Debt logo"> -->
+    </a>
+    <button class="navbar-toggle navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navBarCollapse" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navBarCollapse">
+        <div class="navbar-nav ml-auto">
+            {{ $showActiveNav := .Site.Params.showActiveNav }}
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+              {{ $active := "" }}
+              {{ if eq $showActiveNav true }}
+                {{ $isMenu := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+                {{ if or $isMenu (eq $currentPage.Title .Name) }}
+                  {{ $active = "nav-link-active active" }}
+                {{ end }}
+              {{ end }}
+              <!-- {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }} -->
+              {{ $text := print .Name | safeHTML }}
+                  <a class="nav-item nav-link {{ $active }}" tabindex="0" href="{{ .URL }}">{{ $text }}</a>
+            {{ end }}
+        </div>
+    </div>
+</nav>
+<!-- </div> -->

@@ -1,0 +1,10 @@
+{{ $path := .Get "image" }}
+{{ $filename := strings.TrimPrefix "/uploads/" $path }}
+  {{ with $.Site.GetPage "page" "uploads/_index.md" }}
+  {{ with .Resources.GetMatch $filename }}
+  {{$breaker := .Fill "1024x270 TopLeft"}}
+    </div>
+    <div id="" class="row breaker" style="background-image: url('{{ $breaker.RelPermalink }}');"></div>
+    <div class="col-md-8 offset-md-2">
+{{ end }}
+{{ end }}

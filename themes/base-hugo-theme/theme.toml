@@ -1,0 +1,12 @@
+name = "Base Hugo Theme for Hyperobjekt"
+license = "MIT"
+licenselink = ""
+description = "A base theme for Hugo, based on Bootstrap Vanilla Theme by Zachary Betz"
+homepage = ""
+tags = ["home", "blog", "tags", "bootstrap", "minimal", "clean", "simple", "feather"]
+features = ["home", "blog", "tags", "bootstrap", "minimal", "clean", "simple", "feather"]
+min_version = "0.48"
+
+[author]
+  name = "Amy Groshek"
+  homepage = "https://hire.amygroshek.com/"

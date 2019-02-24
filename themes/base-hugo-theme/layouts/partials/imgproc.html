@@ -1,0 +1,11 @@
+{{/* {{ partial imgproc . filename.jpg .Fill "296x243 Center" }} */}}
+{{ $image := .Get 0 }}
+{{ $action := .Get 1 }}
+{{ $options := .Get 2 }}
+{{ $img := strings.TrimPrefix "/uploads/" $image }}
+{{ with $.Site.GetPage "page" "uploads/_index.md" }}
+    {{ with .Resources.GetMatch $img }}
+        {{$processed := $action $options}}
+        $processed.RelPermalink }}
+    {{ end }}
+{{ end }}

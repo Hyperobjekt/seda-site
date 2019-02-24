@@ -1,0 +1,18 @@
+<div class="col col-3 col-sm-12 col-md-3 col-lg-3 flex-child">
+  <div class="pic">
+    {{ $img := strings.TrimPrefix "/uploads/" .image }}
+    {{ $name := .name }}
+    {{ with $.Site.GetPage "page" "uploads/_index.md" }}
+      {{ with .Resources.GetMatch $img }}
+        {{$imgDir := .Fill "232x232 Center"}}
+        <img class="flex-child" src="{{ $imgDir.RelPermalink }}" width="232" height="232" alt="Director {{ $name }}" tabindex="0">
+      {{ end }}
+    {{ end }}
+  </div>
+  <div class="name">{{ .name }}</div>
+  <div class="title"> {{ .title }}</div>
+  <div class="bio" tabindex="-1">{{ .blurb }}</div>
+  <div class="morelink-parent">
+    <button class="btn btn-custom btn-bio" tabindex="0" aria-label="Read bio" data-toggle="modal" data-target="#peopleBioModal">MORE INFO</button>
+  </div>
+</div>

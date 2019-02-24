@@ -1,0 +1,95 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  mmd: 1024px,
+  lg: 1280px,
+  xl: 1400px,
+);
+
+$container-max-widths: (
+  // sm: 1280px,
+  // lg: 1440px,
+);
+
+$grid-columns:               12 !default;
+$grid-gutter-width-base:     32px !default;
+$grid-gutter-widths: (
+  xs: $grid-gutter-width-base,
+  sm: $grid-gutter-width-base,
+  md: $grid-gutter-width-base,
+  lg: $grid-gutter-width-base,
+  xl: $grid-gutter-width-base
+) !default;
+
+$jumbotron-padding: 0;
+
+$white: #ffffff;
+$black: #000000;
+$aqua: #C9E9EA;
+$aqualink: #1C6F81;
+$graybg: #DBE0E4;
+$darkblue: #0A3D5F;
+$primary: #1c3ed3;
+$secondary: #43454d;
+
+$dnd-navy: #003E62;
+$dnd-darkgreen: #1C6F81;
+$dnd-aqua: #C9E9EA;
+$dnd-lightgray: #B5BEC4;
+
+// Links
+$link-color: $white; // $primary;
+$link-decoration: none;
+$link-hover-color: $aqua; // lighten($primary, 20%);
+$link-hover-decoration: underline;
+
+// Custom fonts variables
+$brandongrotesque-bold: 'BrandonGrotesque-Bold', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$brandongrotesque-med: 'BrandonGrotesque-Med', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$brandongrotesque-reg: 'BrandonGrotesque-Reg', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+
+// Fonts
+// TODO: Adjust once you have Adobe Caslon Pro
+$font-family-base: 'adobe-caslon-pro', 'Crimson Text', serif; /* 'Open Sans', 'Helvetica Neue', Arial, sans-serif,
+  -apple-system; */
+$font-family-heading: 'BrandonGrotesque-Med', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$font-family-sans-serif:     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.6;
+
+$headings-font-weight: 400;
+
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: 10px,
+    2: 20px,
+    3: 30px,
+    4: 40px,
+    5: 50px,
+    6: 60px,
+    7: 70px,
+    8: 80px,
+    9: 90px,
+    10: 100px,
+    11: 110px,
+    12: 120px,
+    13: 130px,
+    14: 140px,
+    15: 150px,
+    16: 160px,
+    17: 170px,
+    18: 180px,
+    19: 190px,
+    20: 200px,
+  ),
+  $spacers
+);

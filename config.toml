@@ -1,0 +1,38 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Stanford Education Data Archive"
+theme = "base-hugo-theme"
+googleAnalytics = ""
+paginate = 5
+
+[imaging]
+resampleFilter = "box"
+quality = 70
+anchor = "smart"
+
+[params]
+  # google_analytics_id=""
+  hideFooter=false
+  includeBootstrapJs=true
+  containerMaxWidth=1200
+  showActiveNav=true
+  paginage=5
+
+[[menu.main]]
+	name = "Test 1"
+	url = "/test1/"
+    weight = 1
+
+[[menu.main]]
+    name = "Test 2"
+    url = "/test2/"
+    weight = 2
+
+[[menu.main]]
+    name = "Test 3"
+    url = "/test3/"
+    weight = 3
+
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
+  pages = "/:filename/"

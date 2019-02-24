@@ -2,48 +2,6 @@
 <footer id="footer" class="mt-auto text-center text-muted">
   <div class="container">
     {{ .Site.Params.footerText | markdownify }}
-    <div class="row contact-and-menu">
-      <div class="col-sm-12 col-md-6 col-lg-6">
-        <h3 tabindex="0">Have questions?</h3>
-        <h3 tabindex="0"><a href="#">Get in touch</a></h3>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-6">
-        <div class="row menu-row">
-          <div class="col menu-col">
-            <ul class="menu">
-              <li><a tabindex="0" href="{{.Site.BaseURL}}">Home</a></li>
-              <li><a tabindex="0" href="{{ "/about" | absURL }}">About</a></li>
-              <li><a tabindex="0" href="{{ "/projects" | absURL }}">Projects</a></li>
-              <li><a tabindex="0" href="{{ "/meetings" | absURL }}">Meetings</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row social-and-copy">
-      <div class="col-sm-12 col-md-6">
-        <a href="https://www.princeton.edu/" target="_blank"><img class="princeton-logo" src="/images/Princeton_shield_white.svg" /></a>
-        <!-- Social icons -->
-        {{ if .Site.Data.social.facebook_link }}
-          <a class="social-icon" href="{{ .Site.Data.social.facebook_link }}" target="_blank" aria-haspopup="true"><i class="fab fa-facebook-f"></i></a>
-        {{ end }}
-        {{ if .Site.Data.social.twitter_via }}
-          <a class="social-icon" href="https://www.twitter.com/{{ strings.TrimPrefix "@" .Site.Data.social.twitter_via }}"><i class="fab fa-twitter" target="_blank" aria-haspopup="true"></i></a>
-        {{ end }}
-        {{ if .Site.Data.social.linkedin_link }}
-          <a class="social-icon" href="{{ .Site.Data.social.linkedin_link }}"><i class="fab fa-linkedin-in" target="_blank" aria-haspopup="true"></i></a>
-        {{ end }}
-        {{ if .Site.Data.social.instagram_link }}
-          <a class="social-icon" href="{{ .Site.Data.social.instagram_link }}"><i class="fab fa-instagram" target="_blank" aria-haspopup="true"></i></a>
-        {{ end }}
-      </div>
-      <div class="col-sm-12 col-md-4 copy">
-        &copy; 2018 Dignity + Debt. All rights reserved.
-      </div>
-      <div class="col-sm-12 col-md-2 siteby">
-        Site by <a href="https://www.hyperobjekt.com/" aria-haspopup="true" target="_blank">Hyperobject</a>
-      </div>
-    </div>
   </div>
 </footer>
 {{ end }}

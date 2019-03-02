@@ -18,9 +18,10 @@ anchor = "smart"
   showActiveNav=true
   paginage=5
 
+# main menu
 [[menu.main]]
-	name = "Test 1"
-	url = "/test1/"
+	name = "About"
+	url = "/about/"
     weight = 1
 
 [[menu.main]]
@@ -36,3 +37,7 @@ anchor = "smart"
 [permalinks]
   post = "/:year/:month/:day/:slug/"
   pages = "/:filename/"
+
+# Assets needed
+# -------------
+# * Dark color menu button icon

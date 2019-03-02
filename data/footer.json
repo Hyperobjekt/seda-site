@@ -1,0 +1,32 @@
+{
+   "links": [
+     {
+       "title": "Map",
+       "url": "/map/"
+     },
+     {
+       "title": "Explorations",
+       "url": "/explorations/"
+     },
+     {
+       "title": "About",
+       "url": "/about/"
+     },
+     {
+       "title": "FAQ",
+       "url": "/faq/"
+     },
+     {
+       "title": "Methods",
+       "url": "/methods/"
+     },
+     {
+       "title": "Research",
+       "url": "/research/"
+     },
+     {
+       "title": "In the news",
+       "url": "/news/"
+     }
+   ]
+}

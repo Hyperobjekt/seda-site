@@ -1,10 +1,13 @@
 {{ define "main" }}
 
-<div id="home-hero" class="hero row" style="">
-  <div class="col-md-4 col-intro">
-
-
-  </div>
+<div id="home-hero" class="hero" style="">
+    <div class="hero-child row">
+      <div class="column col-sm-10 col-xl-8 offset-sm-1 offset-xl-2">
+        <h2 tabindex="0">We’re measuring educational opportunity in every community in America.</h2>
+        <p>We have built the first national database of standardized test scores in the US. Using over 330 million test scores (finish this sentence)</p>
+        <a class="btn btn-custom" href="{{ "/about" | absURL }}" tabindex="0" aria-label="Go to About">Get Started</a>
+      </div>
+     </div>
 </div>
 
 {{ end }}

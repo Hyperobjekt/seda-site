@@ -60,5 +60,15 @@
             $('#peopleBioModal').modal('show');
           });
         }
+
+        $('#toggleDrawer').on('click', function() {
+            // console.log('#toggleDrawer selected');
+            $('#drawer').addClass('show');
+        });
+
+        $('#closeDrawer').on('click', function() {
+            console.log('#closeDrawer selected');
+            $('#drawer').removeClass('show');
+        });
     });
 })(jQuery);

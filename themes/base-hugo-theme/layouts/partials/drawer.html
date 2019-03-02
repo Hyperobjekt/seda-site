@@ -1,0 +1,19 @@
+<div id="drawer" class="drawer">
+  <button id="closeDrawer" class="closebtn">&times;</button>
+  {{ $showActiveNav := .Site.Params.showActiveNav }}
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.main }}
+    {{ $active := "" }}
+    {{ if eq $showActiveNav true }}
+      {{ $isMenu := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+      {{ if or $isMenu (eq $currentPage.Title .Name) }}
+        {{ $active = "nav-link-active active" }}
+      {{ end }}
+    {{ end }}
+    <!-- {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }} -->
+    {{ $text := print .Name | safeHTML }}
+        <a class="nav-item nav-link {{ $active }}" tabindex="0" href="{{ .URL }}">
+            {{ $text }}
+        </a>
+  {{ end }}
+</div>

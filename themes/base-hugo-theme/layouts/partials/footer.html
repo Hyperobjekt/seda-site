@@ -2,6 +2,18 @@
 <footer id="footer" class="mt-auto text-center text-muted">
   <div class="container">
     {{ .Site.Params.footerText | markdownify }}
+    <div class="row nav">
+        <div class="col nav">
+            {{ range .Site.Data.footer.links }}
+              <a href="{{ .url | relURL }}">{{ .title }}</a>
+            {{ end }}
+        </div>
+        <div class="col social"></div>
+    </div>
+    <div class="row copy">
+        <div class="col siteby"></div>
+        <div class="col institution"></div>
+    </div>
   </div>
 </footer>
 {{ end }}

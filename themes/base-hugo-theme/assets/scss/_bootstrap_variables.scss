@@ -1,59 +1,100 @@
 $grid-breakpoints: (
-  xs: 320px,
-  sm: 768px,
-  md: 992px,
-  lg: 1400px,
+  xs: 0,
+  sm: 320px,
+  mm: 576px, // Added because map in header needs extra refinement.
+  md: 768px,
+  lg: 992px,
+  xl: 1400px,
 );
 
-$container-max-widths: (
-  // sm: 1280px,
-  // lg: 1440px,
-);
+// $container-max-widths: (
+//   // No max widths set.
+// );
 
 $grid-columns:               12 !default;
 $grid-gutter-width-base:     24px !default; // xs and sm devices 24px wide.
-$grid-gutter-widths: (
-  xs: $grid-gutter-width-base,
-  sm: $grid-gutter-width-base,
-  md: $grid-gutter-width-base,
-  lg: $grid-gutter-width-base,
-  xl: $grid-gutter-width-base
-) !default;
+// $grid-gutter-widths: (
+//   xs: $grid-gutter-width-base,
+//   sm: $grid-gutter-width-base,
+//   md: $grid-gutter-width-base,
+//   lg: $grid-gutter-width-base,
+//   xl: $grid-gutter-width-base
+// ) !default;
 
 $jumbotron-padding: 0;
 
+$seda-dark: rgba(3, 18, 50, 100%); // Dark font color & etc.
+$seda-gray: rgba(93, 93, 93, 100%); // Light, smaller font color & etc.
+$seda-navy: rgba(4, 20, 60, 100%); // Footer background
+$seda-red: rgba(255, 0, 62, 100%); // Button background & etc.
+$seda-lightblue: rgba(221, 234, 243, 100%); // Subscribe row & etc.
+$seda-paleblue: rgba(245, 248, 250, 100%); // Quotations row & etc.
+$seda-lightgray: rgba(151, 151, 151, 100%); // Alternating light gray row & etc.
+
 $white: #ffffff;
 $black: #000000;
-$aqua: #C9E9EA;
-$aqualink: #1C6F81;
-$graybg: #DBE0E4;
-$darkblue: #0A3D5F;
+// $aqua: #C9E9EA;
+// $aqualink: #1C6F81;
+$graybg: $seda-lightgray; // #DBE0E4;
+$darkblue: $seda-navy;
 $primary: #1c3ed3;
 $secondary: #43454d;
 
-$dnd-navy: #003E62;
-$dnd-darkgreen: #1C6F81;
-$dnd-aqua: #C9E9EA;
-$dnd-lightgray: #B5BEC4;
-
 // Links
-$link-color: $white; // $primary;
+$link-color: $seda-navy; // $primary;
 $link-decoration: none;
-$link-hover-color: $aqua; // lighten($primary, 20%);
+$link-hover-color: $seda-lightblue; // $aqua; // lighten($primary, 20%);
 $link-hover-decoration: underline;
 
+// Load custom fonts
+// TODO: Adjust once you have copyrighted fonts
+@font-face {
+  font-family: 'MaisonNeue-Bold';
+  src: url('/fonts/MaisonNeue-Bold.ttf');
+}
+@font-face {
+  font-family: 'MaisonNeue-Book';
+  src: url('/fonts/MaisonNeue-Book.ttf');
+}
+@font-face {
+  font-family: 'MaisonNeue-Medium';
+  src: url('/fonts/MaisonNeue-Medium.ttf');
+}
+@font-face {
+  font-family: 'SharpGrotesk-Book20';
+  src: url('/fonts/SharpGrotesk-Book20.otf');
+}
+@font-face {
+  font-family: 'SharpGrotesk-Medium15';
+  src: url('/fonts/SharpGrotesk-Medium15.otf');
+}
+@font-face {
+  font-family: 'SharpGrotesk-Medium20';
+  src: url('/fonts/SharpGrotesk-Medium20.otf');
+}
+@font-face {
+  font-family: 'SharpGrotesk-MediumItalic20';
+  src: url('/fonts/SharpGrotesk-MediumItalic20.otf');
+}
+
 // Custom fonts variables
-$brandongrotesque-bold: 'BrandonGrotesque-Bold', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
-$brandongrotesque-med: 'BrandonGrotesque-Med', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
-$brandongrotesque-reg: 'BrandonGrotesque-Reg', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+// Maison Neue fonts
+$maisonneue-bold: 'MaisonNeue-Bold', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$maisonneue-book: 'MaisonNeue-Book', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$maisonneue-med: 'MaisonNeue-Medium', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+// SharKGrotesk fonts
+$sharpgrotesk-book-20: 'SharpGrotesk-Book20', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$sharpgrotesk-med-15: 'SharpGrotesk-Medium15', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$sharpgrotesk-med-20: 'SharpGrotesk-Medium20', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$sharpgrotesk-med-ital-20: 'SharpGrotesk-MediumItalic20', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
 
 // Fonts
-// TODO: Adjust once you have Adobe Caslon Pro
-$font-family-base: 'adobe-caslon-pro', 'Crimson Text', serif; /* 'Open Sans', 'Helvetica Neue', Arial, sans-serif,
-  -apple-system; */
-$font-family-heading: 'BrandonGrotesque-Med', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
-$font-family-sans-serif:     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-family-base: 'MaisonNeue-Book', 'Open Sans', 'Helvetica Neue', Arial, sans-serif,
+  -apple-system;
+$font-family-heading: 'SharpGrotesk-Medium20', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$font-family-sans-serif: 'MaisonNeue-Book', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+$font-size-base: 1.4rem; // 1rem; // Assumes the browser default, typically `16px`
 $font-weight-thin: 200;
 $font-weight-light: 300;
 $font-weight-normal: 400;

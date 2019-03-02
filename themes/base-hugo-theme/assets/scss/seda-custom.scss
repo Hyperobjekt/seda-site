@@ -1,17 +1,3 @@
-// Load Brandon Grotesque ttf fonts
-@font-face {
-  font-family: 'BrandonGrotesque-Reg';
-  src: url('/fonts/brandon_grotesque/Brandon-Grotesque-Regular.ttf');
-}
-@font-face {
-  font-family: 'BrandonGrotesque-Med';
-  src: url('/fonts/brandon_grotesque/Brandon-Grotesque-Medium.ttf');
-}
-@font-face {
-  font-family: 'BrandonGrotesque-Bold';
-  src: url('/fonts/brandon_grotesque/Brandon-Grotesque-Bold.ttf');
-}
-
 html {
   font-size: 62.5%; // sets sitewide font sizes based on user's font size in browser
 }
@@ -21,8 +7,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  overflow: hidden;
+}
+
 // Custom gutter widths
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   .row {
     margin-left: 16px;
     margin-right: 16px;
@@ -33,7 +23,7 @@ html {
   }
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xl) {
   .row {
     margin-left: 20px;
     margin-right: 20px;
@@ -46,15 +36,16 @@ html {
 
 // Basic fonts and text styles
 h1 {
-  font-family: $brandongrotesque-bold;
+  font-family: $sharpgrotesk-med-20;
 }
+
 h2,
 div.h2,
 h3,
 h4,
 h5,
 nav a {
-  font-family: $brandongrotesque-med;
+  font-family: $sharpgrotesk-med-20;
 }
 
 h2,
@@ -63,23 +54,84 @@ div.h2 {
 }
 
 h3 {
-  font-family: $brandongrotesque-reg;
+  font-family: $sharpgrotesk-med-20;
   font-size: 2.4rem;
-}
-
-a {
-  text-decoration: underline;
-  color: $dnd-darkgreen;
-
-  &:hover {
-    color: darken($dnd-darkgreen, 15%);
-  }
 }
 
 // Page container
 .container.parent {
   padding-right: 0;
   padding-left: 0;
+}
+
+//
+// General custom elements
+//
+// Sticky top fix for safari
+.sticky-top {
+  @supports (position: sticky) or (position: -webkit-sticky) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: $zindex-sticky;
+  }
+}
+
+.flex-parent {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.flex-child {
+  flex: 0 1 auto;
+}
+
+.one-third {
+  max-width: 33%;
+}
+
+.two-thirds {
+  max-width: 66%;
+}
+
+.alt-bg {
+  background: #f6f9f9;
+}
+
+// Custom button style
+.btn-custom {
+    display: inline-block;
+    font-family: $sharpgrotesk-med-15;
+    font-size: 1.4rem;
+    letter-spacing: .064rem;
+    line-height: 4.4rem;
+    background-color: $seda-red;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    width: 176px;
+    height: 48px;
+    border: none;
+    border-radius: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: darken($seda-red, 15%);
+      color: $white;
+    }
+    svg.fa-external-link-square-alt {
+      width: 13px;
+      position: relative;
+      top: 2px;
+      margin-left: 10px;
+    }
 }
 
 .container.parent > #main > .row {
@@ -89,66 +141,116 @@ a {
 
 // Header
 nav.navbar-light {
+  height: 6.4rem;
+
   padding: 0 3.2rem;
+  @include media-breakpoint-up(xl) {
+    padding: 0 15.2rem;
+  }
 
   .navbar-brand {
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
     background-image: url("/images/logo.svg");
-    height: 68px;
-    width: 206px;
-    background-position: 0 15px;
+    height: 33px;
+    width: 189px;
+    background-position: 0 0;
     background-repeat: no-repeat;
   }
 
-  .navbar-nav {
-    height: 6.8rem;
+  .drawer-toggle {
+    margin-left: auto;
+    background-color: transparent;
+    border: 0;
+    background-image: url('/images/menu.png');
+    background-repeat: no-repeat;
+    height: 33px;
+    width: 33px;
+  }
 
-    .nav-link {
-      color: $darkblue;
-      font-size: 1.8rem;
-      font-family: $brandongrotesque-med;
-      line-height: 0;
-      padding-right: 2rem;
-      padding-left: 2rem;
-      padding-top: 3.4rem;
-      text-decoration: none;
-
-      &.active,
-      &:hover {
-        border-top: .8rem solid $aqua;
-        padding-top: 2.6rem;
+  &.scroll-top {
+    @include media-breakpoint-up(md) {
+      nav.navbar {
+        // .navbar-brand {
+        //   background-image: none;
+        // }
+        background-color: transparent !important;
       }
 
-      &:last-child {
-        margin-bottom: 2.4rem;
-      }
+      // .nav-link {
+      //   color: #fff;
+      //
+      //   &:hover {
+      //     color: #fff;
+      //   }
+      // }
     }
   }
 
-  .collapse,
-  .collapsing {
-    @include media-breakpoint-down(sm) {
-      .navbar-nav {
-        height: auto;
-        .nav-link,
-        .nav-link:hover {
-          text-align: right;
-          border-top: none;
-          padding-top: 3.4rem;
-          padding-right: 0;
-        }
-      }
-
-      &.show {
-        // height: 140px !important;
-      }
-    }
-  }
+  // .collapse,
+  // .collapsing {
+  //   @include media-breakpoint-down(sm) {
+  //     .navbar-nav {
+  //       height: auto;
+  //       .nav-link,
+  //       .nav-link:hover {
+  //         text-align: right;
+  //         border-top: none;
+  //         padding-top: 3.4rem;
+  //         padding-right: 0;
+  //       }
+  //     }
+  //
+  //     &.show {
+  //       // height: 140px !important;
+  //     }
+  //   }
+  // }
 }
 
-.navbar-light .navbar-toggler-icon {
-    background-image: url("/images/mobile-menu-dark.svg");
+// .navbar-light .navbar-toggler-icon {
+//     background-image: url("/images/mobile-menu-dark.svg");
+// }
+
+// Drawer for nav
+/* The side navigation menu */
+.drawer {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 3000;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  margin-right: -300px;
+
+  &.show {
+    margin-right: 0;
+  }
+
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    &:hover {
+      color: #f1f1f1;
+    }
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
 }
 
 button.navbar-toggler {
@@ -160,16 +262,16 @@ button.navbar-toggler {
   margin-top: 3.6rem;
 
   .breadcrumb {
-    font-family: $brandongrotesque-med;
+    // font-family: $brandongrotesque-med;
     font-size: 1.8rem;
-    color: $dnd-darkgreen;
+    // color: $dnd-darkgreen;
     text-decoration: none;
     padding-left: 3.6rem;
     padding-top: 0;
 
     a,
     .sep {
-      color: $dnd-lightgray;
+      // color: $dnd-lightgray;
       text-decoration: none;
     }
 
@@ -199,10 +301,157 @@ img {
   }
 }
 
+// Hero
+body.home {
+  .hero {
+    height: 100vh;
+    margin-top: -6.4rem;
+    background: linear-gradient(to bottom, rgba(6, 29, 86, 100%) 5%, rgba(4, 20, 60, 100%) 75%); // Image with gradient
+    background-repeat: no-repeat;
+    margin-left: 0;
+    margin-right: 0;
+    color: $white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .hero-child {
+      height: 100vh;
+      background: url('/images/usa_counties_large_white_outline.png');
+      background-repeat: no-repeat;
+      background-position: center 9.7rem;
+      background-size: 290px 195px;
+
+      @include media-breakpoint-up(sm) {
+        // background-size: 531px 357px;
+        background-size: 320px 215px;
+        background-position: center 7rem;
+      }
+
+      @include media-breakpoint-up(mm) {
+        // background-size: 531px 357px;
+        background-size: 512px 344px;
+        background-position: center 7rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        // background-size: 531px 357px;
+        background-size: 704px 473px;
+        background-position: center 9.2rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        // background-size: 686px 461px;
+        background-size: 928px 624px;
+        // background-position: center 7.7rem;
+        background-position: center 11.2rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        background-size: 996px 670px;
+        background-position: center 11.2rem;
+      }
+
+      .column {
+        h2 {
+          font-family: $sharpgrotesk-med-20;
+          color: $white;
+          font-size: 1.7rem;
+          line-height: 2.4rem;
+          letter-spacing: .009rem;
+          margin-top: 65%;
+
+          @include media-breakpoint-up(sm) {
+            font-size: 2.88rem;
+            line-height: 4.32rem;
+            letter-spacing: .014rem;
+            margin-top: 65%;
+          }
+
+          @include media-breakpoint-up(mm) {
+            font-size: 3.6rem;
+            line-height: 5.4rem;
+            letter-spacing: .018rem;
+            margin-top: 55%;
+          }
+
+          @include media-breakpoint-up(md) {
+            font-size: 3.6rem;
+            line-height: 5.4rem;
+            letter-spacing: .018rem;
+            margin-top: 45%;
+          }
+
+          @include media-breakpoint-up(lg) {
+            font-size: 3.6rem;
+            line-height: 5.4rem;
+            letter-spacing: .018rem;
+            margin-top: 35%;
+          }
+
+          @include media-breakpoint-up(xl) {
+            font-size: 4.3rem;
+            line-height: 6.45rem;
+            letter-spacing: .022rem;
+            margin-top: 35%;
+          }
+
+
+        }
+
+        p {
+          font-family: $maisonneue-book;
+          color: $white;
+          font-size: 1.3rem;
+          line-height: 2.0rem;
+          margin-top: 3.2rem;
+
+          @include media-breakpoint-up(sm) {
+            font-size: 1.4rem;
+            line-height: 2.1rem;
+          }
+
+          @include media-breakpoint-up(md) {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            margin-top: 3.2rem;
+          }
+
+          @include media-breakpoint-up(lg) {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            margin-top: 3.2rem;
+          }
+
+          @include media-breakpoint-up(xl) {
+            font-size: 2.0rem;
+            line-height: 3.0rem;
+            margin-top: 3.2rem;
+          }
+        }
+
+        a.btn {
+          margin-top: 4rem;
+        }
+      }
+    }
+  }
+
+  #main {
+    background-color: $white;
+    // overflow-x: hidden;
+  }
+}
+
+
 // Footer
 #footer {
   background-color: #0A3D5F;
-  font-family: $brandongrotesque-reg;
+  // font-family: $brandongrotesque-reg;
   .container {
     max-width: 960px;
   }
@@ -210,7 +459,7 @@ img {
     text-align: left;
     color: #fff;
     a {
-      font-family: $brandongrotesque-med;
+      // font-family: $brandongrotesque-med;
       color: #C9E9EA;
       text-decoration: underline;
     }
@@ -255,7 +504,7 @@ img {
     padding-bottom: 6.4rem;
 
     a {
-      font-family: $brandongrotesque-med;
+      // font-family: $brandongrotesque-med;
       color: #C9E9EA;
       text-decoration: underline;
 
@@ -294,198 +543,4 @@ img {
     }
   }
 
-}
-
-//
-// General custom elements
-//
-
-// Custom button style
-.btn-custom {
-    display: inline-block;
-    // font-weight: 400;
-    font-family: $brandongrotesque-reg;
-    font-size: 16px;
-    background-color: #B0224F;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    user-select: none;
-    width: 176px;
-    height: 40px;
-    border: none;
-    padding-top: 1rem;
-    border-radius: 0;
-    text-decoration: none;
-    // box-shadow: 6px 6px 0 $darkblue;
-    // padding: 0.375rem 0.75rem;
-    // font-size: 1rem;
-    // line-height: 1.6;
-    // border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    //
-    &:active,
-    &:hover,
-    &:focus {
-      box-shadow: 5.5px 5.5px 0 #5a052a;
-      // transform: translate(1px, 1px);
-      color: #fff;
-    }
-    svg.fa-external-link-square-alt {
-      width: 13px;
-      position: relative;
-      top: 2px;
-      margin-left: 10px;
-    }
-}
-
-// Sticky top fix for safari
-.sticky-top {
-  @supports (position: sticky) or (position: -webkit-sticky) {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: $zindex-sticky;
-  }
-}
-
-// Custom gutter widths
-@include media-breakpoint-up(sm) {
-  .row {
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .row {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  .row {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  .row {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-.row .col {
-  // box-sizing: content-box;
-}
-//
-.flex-parent {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
-
-.flex-child {
-  flex: 0 1 auto;
-}
-
-.one-third {
-  max-width: 33%;
-}
-
-.two-thirds {
-  max-width: 66%;
-}
-
-.alt-bg {
-    background: #f6f9f9;
-    // background: #f7fbfb;
-}
-
-////// Home
-
-// Hero
-body.home {
-  .hero {
-    max-height: 640px;
-    height: 100vh;
-
-    img {
-      width: 308px;
-      height: 54px;
-    }
-
-    div.h2 {
-      font-family: $brandongrotesque-med;
-      color: $white;
-      // width: 43.1rem;
-      font-size: 2.4rem;
-      line-height: 3.0rem;
-      margin-top: 3.2rem;
-    }
-  }
-
-  #main {
-    background-color: $white;
-    // overflow-x: hidden;
-  }
-
-  .col-intro {
-    position: relative;
-    height: auto;
-    top: 24rem;
-  }
-
-  @include media-breakpoint-up(sm) {
-    .col-intro {
-      left: 6rem;
-      div.h2 {
-        width: 43.1rem;
-      }
-    }
-  }
-
-  @include media-breakpoint-up(md) {
-    .col-intro {
-      left: 12rem;
-    }
-  }
-
-  &.scroll-top {
-    @include media-breakpoint-up(md) {
-      nav.navbar {
-        .navbar-brand {
-          background-image: none;
-        }
-      }
-
-      .nav-link {
-        color: #fff;
-
-        &:hover {
-          color: #fff;
-        }
-      }
-    }
-  }
 }

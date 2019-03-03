@@ -15507,7 +15507,7 @@ html {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media (min-width: 992px) {
@@ -15903,8 +15903,13 @@ body.home #main {
   background-color: #ffffff;
 }
 
+.row-subscribe {
+  text-align: center;
+}
+
 #footer {
-  background-color: #0A3D5F;
+  background-color: #04143c;
+  color: #ffffff;
 }
 
 #footer .container {
@@ -15913,20 +15918,13 @@ body.home #main {
 
 #footer h3 {
   text-align: left;
-  color: #fff;
+  color: #ffffff;
 }
 
-#footer h3 a {
-  color: #C9E9EA;
-  text-decoration: underline;
-}
-
-#footer .row.menu-row {
-  margin: 0;
-}
-
-#footer .col.menu-col {
-  padding: 0;
+#footer a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 #footer ul {
@@ -15943,23 +15941,69 @@ body.home #main {
 
 #footer ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
 }
 
 #footer ul li a:hover {
   text-decoration: underline;
-  color: #C9E9EA;
+  color: #ffffff;
 }
 
-#footer img.princeton-logo {
+#footer img.logo {
   width: 192px;
   margin-bottom: 2.4rem;
 }
 
 @media (min-width: 768px) {
-  #footer img.princeton-logo {
+  #footer img.logo {
     margin-bottom: 0;
   }
+}
+
+#footer .row.nav {
+  margin-right: 0;
+  margin-left: 0;
+  padding-top: 6.4rem !important;
+}
+
+#footer .row.nav .nav {
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.7rem;
+  line-height: 2.4rem;
+  letter-spacing: .066rem;
+}
+
+#footer .row.nav .nav a {
+  margin-right: 3.2rem;
+}
+
+#footer .row.nav .social {
+  text-align: right;
+}
+
+#footer .row.nav .social a {
+  margin-left: .8rem;
+}
+
+#footer .break hr {
+  background-color: #ffffff;
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+#footer .copy {
+  padding-bottom: 6.4rem !important;
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  line-height: 2.3rem;
+  letter-spacing: .009rem;
+}
+
+#footer .copy .institution {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
 }
 
 #footer .social-and-copy {

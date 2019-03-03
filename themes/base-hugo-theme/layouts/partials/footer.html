@@ -1,18 +1,43 @@
 {{ if ne .Site.Params.hideFooter true }}
-<footer id="footer" class="mt-auto text-center text-muted">
-  <div class="container">
+<footer id="footer" class="">
+  <div class="container-fluid p-0 m-0">
     {{ .Site.Params.footerText | markdownify }}
-    <div class="row nav">
-        <div class="col nav">
+    <div class="row nav p-0 m-0">
+        <div class="nav col-xl-8 offset-xl-1 col-md-10 col-sm-">
             {{ range .Site.Data.footer.links }}
               <a href="{{ .url | relURL }}">{{ .title }}</a>
             {{ end }}
         </div>
-        <div class="col social"></div>
+        <div class="social col-xl-2 col-md-2">
+            {{ if .Site.Data.social.facebook_link }}
+          <a class="social-icon" href="{{ .Site.Data.social.facebook_link }}" target="_blank" aria-haspopup="true"><i class="fab fa-facebook-f"></i></a>
+        {{ end }}
+        {{ if .Site.Data.social.twitter_via }}
+          <a class="social-icon" href="https://www.twitter.com/{{ strings.TrimPrefix "@" .Site.Data.social.twitter_via }}"><i class="fab fa-twitter" target="_blank" aria-haspopup="true"></i></a>
+        {{ end }}
+        {{ if .Site.Data.social.linkedin_link }}
+          <a class="social-icon" href="{{ .Site.Data.social.linkedin_link }}"><i class="fab fa-linkedin-in" target="_blank" aria-haspopup="true"></i></a>
+        {{ end }}
+        {{ if .Site.Data.social.instagram_link }}
+          <a class="social-icon" href="{{ .Site.Data.social.instagram_link }}"><i class="fab fa-instagram" target="_blank" aria-haspopup="true"></i></a>
+        {{ end }}
+        {{ if .Site.Data.social.youtube_link }}
+          <a class="social-icon" href="{{ .Site.Data.social.youtube_link }}"><i class="fab fa-youtube" target="_blank" aria-haspopup="true"></i></a>
+        {{ end }}
+        </div>
     </div>
-    <div class="row copy">
-        <div class="col siteby"></div>
-        <div class="col institution"></div>
+    <div class="row break p-0 m-0">
+        <div class="col-xl-10 offset-xl-1">
+            <hr>
+        </div>
+    </div>
+    <div class="row copy p-0 m-0">
+        <div class="siteby col-xs-12 order-xs-2 order-mm-1 col-mm-5 offset-mm-1 col-xl-5 offset-xl-1">
+            Site by <a href="https://www.hyperobjekt.com/" target="_blank" aria-haspopup="true">Hyperobjekt</a>
+        </div>
+        <div class="institution col-xs-12 order-xs-1 order-mm-1 col-mm-5 col-xl-5">
+            lorem ipsum&nbsp;&nbsp;&nbsp;<img src="{{ "/images/stanford_wordmark.png" | relURL }}">
+        </div>
     </div>
   </div>
 </footer>

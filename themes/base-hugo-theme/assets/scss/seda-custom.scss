@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 // Custom gutter widths
@@ -447,28 +447,29 @@ body.home {
   }
 }
 
+// Subscribe row
+.row-subscribe {
+  text-align: center;
+}
+
 
 // Footer
 #footer {
-  background-color: #0A3D5F;
+  background-color: $seda-navy; // #0A3D5F;
+  color: $white;
   // font-family: $brandongrotesque-reg;
   .container {
     max-width: 960px;
   }
   h3 {
     text-align: left;
-    color: #fff;
-    a {
-      // font-family: $brandongrotesque-med;
-      color: #C9E9EA;
-      text-decoration: underline;
-    }
+    color: $white; // #fff;
   }
-  .row.menu-row {
-    margin: 0;
-  }
-  .col.menu-col {
-    padding: 0;
+  a {
+    // font-family: $brandongrotesque-med;
+    color: $white; // #C9E9EA;
+    text-decoration: none;
+    text-transform: uppercase;
   }
   ul {
     list-style: none;
@@ -481,22 +482,70 @@ body.home {
       font-size: 1.6rem;
       a {
         text-decoration: none;
-        color: #fff;
+        color: $white; // #fff;
 
         &:hover {
           text-decoration: underline;
-          color: #C9E9EA;
+          color:  $white; // #C9E9EA;
         }
       }
     }
   }
-  img.princeton-logo {
+  img.logo {
     width: 192px;
     margin-bottom: 2.4rem;
     @include media-breakpoint-up(md) {
       margin-bottom: 0;
     }
   }
+  .row.nav {
+    // margin-top: 6.4rem !important;
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 6.4rem !important;
+
+    .nav {
+      font-family: $sharpgrotesk-med-15;
+      font-size: 1.7rem;
+      line-height: 2.4rem;
+      letter-spacing: .066rem;
+      a {
+        margin-right: 3.2rem;
+      }
+      // border-bottom: 1px solid $white;
+    }
+    .social {
+      // border-bottom: 1px solid $white;
+      text-align: right;
+      a {
+        margin-left: .8rem;
+      }
+    }
+  }
+
+  .break {
+    hr {
+      background-color: $white;
+      margin-top: 2.4rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .copy {
+    padding-bottom: 6.4rem !important;
+    font-family: $maisonneue-book;
+    font-size: 1.2rem;
+    line-height: 2.3rem;
+    letter-spacing: .009rem;
+
+    .institution {
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      align-items: baseline;
+    }
+  }
+
   .social-and-copy {
     margin-top: 3.2rem;
     text-align: left;

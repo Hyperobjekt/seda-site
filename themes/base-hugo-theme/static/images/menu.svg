@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="33px" viewBox="0 0 31 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>menu</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-Mockup-1440-V1-1" transform="translate(-1260.000000, -16.000000)" fill="#FFFFFF">
+            <g id="menu" transform="translate(1260.000000, 16.000000)">
+                <g id="hamburger-icon" transform="translate(1.000000, 0.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="30" height="4"></rect>
+                    <rect id="Rectangle-Copy" x="0" y="7" width="30" height="4"></rect>
+                    <rect id="Rectangle-Copy-2" x="0" y="14" width="30" height="4"></rect>
+                </g>
+                <text font-family="SharpGrotesk-Medium15, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="14.5440002" letter-spacing="1">
+                    <tspan x="0" y="34">MEN</tspan>
+                    <tspan x="24.35" y="34">U</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

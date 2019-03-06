@@ -1,0 +1,16 @@
+<div class="card">
+    {{ $img := strings.TrimPrefix "/uploads/" .Params.image }}
+    {{ with $.Site.GetPage "page" "uploads/_index.md" }}
+        {{ with .Resources.GetMatch $img }}
+              {{$imgcrop := .Fill "118x112 Center"}}
+              <img class="img-thumbnail" src="{{ $imgcrop.RelPermalink }}" width="" height="" alt="Gathering of people talking" tabindex="0">
+        {{ end }}
+    {{ end }}
+    <div class="card-body">
+        <h4 class="card-title" tabindex="0">{{ .Title }}</h4>
+        <hr>
+        <author class="card-subtitle" tabindex="0">by {{ .Params.author }}</author>
+        <div class="contents card-text" tabindex="0">{{ .Content | truncate 300 }}</div>
+        <a class="btn btn-custom" href="{{ .Permalink }}" tabindex="0">READ MORE</a>
+    </div>
+</div>

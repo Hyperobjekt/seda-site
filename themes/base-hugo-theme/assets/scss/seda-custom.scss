@@ -208,14 +208,13 @@ input.form-control {
 // Header
 nav.navbar-light {
   height: 6.4rem;
-  background-color: $seda-dark;
+  background-color: transparent; // $seda-dark;
   padding-right: 0;
   padding-left: 0;
 
-  // padding: 0 3.2rem;
-  // @include media-breakpoint-up(xl) {
-  //   padding: 0; // 0 15.2rem;
-  // }
+  &.sticky-top {
+    background-color: $seda-dark;
+  }
 
   .navbar-brand {
     padding-top: 1.6rem;
@@ -561,7 +560,7 @@ body.home {
 .row {
   &.fact {
     text-align: left;
-    background-color: $seda-paleblue;
+    background-color: $seda-lightgray; // $seda-paleblue;
     &:nth-child(odd) {
       background-color: transparent;
     }
@@ -669,23 +668,256 @@ body.home {
 .row {
   &.map-invite {
     background-color: $seda-navy;
+    background-image: url('/images/scatterplot.svg');
+    background-size: 125%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 335px;
+
     .scatterplot {
-      background-image: url('/images/scatterplot.svg');
-      background-size: 85%;
+      // background-image: url('/images/scatterplot.svg');
+      // background-size: 85%;
+      text-align: center;
       color: $white;
-      a {
-        color: $white;
+      padding-top: 6.4rem;
+      padding-bottom: 6.4rem;
+
+      p {
+        font-family: $sharpgrotesk-med-20;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        letter-spacing: .02rem;
       }
+      button {
+        margin-top: 1.6rem;
+        margin-bottom: 1.6rem;
+      }
+      a {
+        display: block;
+        color: $white;
+        font-family: $sharpgrotesk-med-15;
+        font-size: 1.2rem;
+        letter-spacing: .055rem;
+        text-transform: uppercase;
+
+        &:after {
+          content: "";
+          background-image: url('/images/down-arrow.svg');
+          display: inline-block;
+          width: 20px;
+          height: 30px;
+          background-repeat: no-repeat;
+          background-position: bottom;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          // color: $seda-dark;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      // height: 336px;
+      p {
+        font-size: 1.85rem;
+        line-height: 2.7rem;
+        letter-spacing: auto;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 416px;
+      p {
+        font-size: 2.3rem;
+        line-height: 3.4rem;
+        letter-spacing: .003rem;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      height: 496px;
     }
   }
 }
 
 .row {
-  &.explorations {
+  &.latest-explorations {
+    background-color: $seda-paleblue;
 
+    .heading {
+      padding-top: 9.6rem;
+      padding-bottom: 3.2rem;
+      text-align: center;
+    }
+    .card-container {
+      // padding-top: 15px;
+      // padding-bottom: 8rem;
+      .card {
+        padding: 2.4rem;
+        margin-bottom: 1.6rem;
+        margin-top: 1.6rem;
+
+        @include media-breakpoint-up(md) {
+
+        }
+
+        @include media-breakpoint-up(lg) {
+          padding: 4.8rem;
+        }
+
+        .img-thumbnail {
+          width: 84px;
+          height: 80px;
+          padding: 0;
+          background-color: #ffffff;
+          border: none;
+          border-radius: 0.25rem;
+          // max-width: 100%;
+          // height: auto;
+        }
+
+        .card-body {
+          padding: 0;
+
+          .card-title {
+            font-family: $sharpgrotesk-med-20;
+            font-size: 1.7rem;
+            line-height: 2.8rem;
+            letter-spacing: .009rem;
+            margin-top: 1.8rem;
+            // margin-bottom: 2rem;
+
+            @include media-breakpoint-up(md) {
+              font-size: 1.85rem;
+              line-height: 2.7rem;
+              letter-spacing: .009rem;
+            }
+
+            @include media-breakpoint-up(lg) {
+              margin-top: 3.2rem;
+              font-size: 2.3rem;
+              line-height: 3.4rem;
+              letter-spacing: .012rem;
+            }
+          }
+
+          hr {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+          .card-subtitle {
+            display: block;
+            font-family: $maisonneue-book;
+            font-size: 1.4rem;
+            line-height: 2.1rem;
+            letter-spacing: 0;
+            margin-top: 1.6rem;
+            color: $seda-dark;
+
+            @include media-breakpoint-up(md) {
+              font-size: 1.6rem;
+              line-height: 2.5rem;
+              letter-spacing: 0;
+            }
+
+            @include media-breakpoint-up(lg) {
+              // margin-top: 3.2rem;
+              // font-size: 2.3rem;
+              // line-height: 3.4rem;
+              // letter-spacing: .012rem;
+            }
+          }
+
+          .card-text {
+            font-family: $maisonneue-book;
+            font-size: 1.3rem;
+            line-height: 2rem;
+            letter-spacing: 0;
+            margin-top: 1.8rem;
+            margin-bottom: 2rem;
+            color: $seda-gray;
+
+            @include media-breakpoint-up(md) {
+              margin-top: 2rem;
+              margin-bottom: 2rem;
+              font-size: 1.6rem;
+              line-height: 2.5rem;
+              letter-spacing: 0;
+            }
+
+            @include media-breakpoint-up(lg) {
+              // margin-top: 3.2rem;
+              // font-size: 2.3rem;
+              // line-height: 3.4rem;
+              // letter-spacing: .012rem;
+            }
+          }
+        }
+      }
+    }
+    .all-explorations {
+      padding-top: 3.2rem;
+      padding-bottom: 9.6rem;
+      text-align: center;
+      font-family: $sharpgrotesk-med-15;
+      font-size: 1.2rem;
+      letter-spacing: .055rem;
+      text-transform: uppercase;
+
+      a {
+        &:hover {
+          text-decoration: underline;
+          color: $seda-dark;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        letter-spacing: .064rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: 1.7rem;
+        line-height: 2.0rem;
+        letter-spacing: .078rem;
+      }
+
+      &:after {
+        content: "";
+        background-image: url('/images/right-arrow.svg');
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+      }
+
+      // span.right-arrow {
+      //   background-image: url('/images/right-arrow.svg');
+      // }
+    }
   }
 }
 
+
+
+
+// About page
+body.about {
+
+}
+
+
+// 404 page
+.row {
+  &.404 {
+    min-height: 100vh;
+    padding-top: 25vh;
+  }
+}
 
 // Footer
 #footer {

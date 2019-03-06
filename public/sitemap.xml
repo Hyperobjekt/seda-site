@@ -3,12 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/about/</loc>
+    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2019-02-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>/news/</loc>
+    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/the-opportunity-gap-2019-02-12/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/the-opportunity-gap-2019-01-12/</loc>
+    <lastmod>2019-01-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,6 +34,12 @@
   
   <url>
     <loc>/uploads/</loc>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

@@ -8,5 +8,5 @@ features = ["home", "blog", "tags", "bootstrap", "minimal", "clean", "simple", "
 min_version = "0.48"
 
 [author]
-  name = "Amy Groshek"
+  name = "Amy Groshek <amy@amygroshek.com>"
   homepage = "https://hire.amygroshek.com/"

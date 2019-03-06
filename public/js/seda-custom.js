@@ -3,36 +3,44 @@
     var $ = jQuery;
 
     function checkScroll(y) {
-      if ($('body.home').length >= 1) {
-        // If the scroll is at the top, add class.
+        // console.log(checkScroll);
+        // If the scroll is at the top, not sticky.
         // Transition comes farther down the page for
         // the the front page.
-        if (y <= 600) {
-            $('body').addClass('scroll-top');
-        } else if (y >= 601) {
-            $('body').removeClass('scroll-top');
+        var heroHeight = $('#hero') ? $('#hero').height() : 0;
+        // console.log(heroHeight);
+        if (y <= (heroHeight - 64)) {
+            // $('body').addClass('scroll-top');
+            $('nav').removeClass('sticky-top');
+        } else if (y > (heroHeight - 64)) {
+            // $('body').removeClass('scroll-top');
+            $('nav').addClass('sticky-top');
         }
-      } else {
-        if (y <= 0) {
-            $('body').addClass('scroll-top');
-        } else {
-            $('body').removeClass('scroll-top');
-        }
-      }
     }
     $( document ).ready(function() {
-        // console.log( "ready!" );
-        // If on the home page, add scrollY tracking class to body tag.
-        // if ($('body.home').length >= 1) {
-          // When the window is scrolled, check scroll position.
-          $( window ).scroll(function() {
-              var t = $(window).scrollTop();
-              checkScroll(t);
-          });
-        // }
+        // Manage navbar appearance by scroll position
+        $( window ).scroll(function() {
+          var t = $(window).scrollTop();
+          checkScroll(t);
+        });
         // Check on page load as well.
         var t = $(window).scrollTop();
         checkScroll(t);
+
+        // Smooth scroll down on button click
+        $('button.scroll-to-next').on('click', function(e) {
+            console.log('click');
+            e.preventDefault();
+            var target_id = $(e.target).attr('data-scroll-target');
+            // console.log(target_id);
+            $target = $('#' + target_id);
+            // console.log($target);
+            $('html, body').animate({
+                scrollTop: ($target.offset().top) - 63
+            }, 1000);
+            var t = $(window).scrollTop();
+            checkScroll(t);
+        });
 
         // Handle bio modals
         if ($('button').length >= 1) {
@@ -60,5 +68,15 @@
             $('#peopleBioModal').modal('show');
           });
         }
+
+        $('#toggleDrawer').on('click', function() {
+            // console.log('#toggleDrawer selected');
+            $('#drawer').addClass('show');
+        });
+
+        $('#closeDrawer').on('click', function() {
+            console.log('#closeDrawer selected');
+            $('#drawer').removeClass('show');
+        });
     });
 })(jQuery);

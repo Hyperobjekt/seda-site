@@ -1,6 +1,15 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
+<div id="hero" class="hero row" style="">
+    <div class="hero-child row">
+      <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+        <h2 tabindex="0">{{ .Title }}</h2>
+        <p>The Stanford Education Data Archive (SEDA) aims to harness data to improve educational opportunity.</p>
+      </div>
+     </div>
+</div>
+
+<h1></h1>
 <div id="" class="row dyn-article m-0">
     <div class="col-xs-10 offset-xs-1 col-md-4 offset-md-1">
         {{ .Content }}

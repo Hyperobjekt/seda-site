@@ -4,7 +4,8 @@
 </script> -->
 
 {{ if eq .Site.Params.includeBootstrapJs true }}
-    <script src="{{ "js/jquery-3.3.1.slim.min.js" | absURL }}"></script>
+    <!-- <script src="{{ "js/jquery-3.3.1.slim.min.js" | absURL }}"></script> -->
+    <script src="{{ "js/jquery.min.js" | absURL }}"></script>
     <script src="{{ "js/bootstrap.bundle.min.js" | absURL }}"></script>
     <script src="{{ "js/seda-custom.js" | absURL }}"></script>
     {{ template "_internal/google_analytics_async.html" . }}

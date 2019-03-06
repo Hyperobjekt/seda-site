@@ -1,16 +1,16 @@
 {{ define "main" }}
 
-<div id="home-hero" class="hero" style="">
+<div id="hero" class="hero" style="">
     <div class="hero-child row">
       <div class="column col-sm-10 col-xl-8 offset-sm-1 offset-xl-2">
         <h2 tabindex="0">We’re measuring educational opportunity in every community in America.</h2>
         <p>We have built the first national database of standardized test scores in the US. Using over 330 million test scores (finish this sentence)</p>
-        <a class="btn btn-custom" href="{{ "/about" | absURL }}" tabindex="0" aria-label="Go to About">Get Started</a>
+        <button data-scroll-target="scrollTarget1" class="btn btn-custom scroll-to-next" tabindex="0" aria-label="Go to next section">Get Started</button>
       </div>
      </div>
 </div>
 
-<div class="row fact some-things-to-know m-0">
+<div id="scrollTarget1" class="row fact some-things-to-know m-0 scroll-to-target">
     <div class="col-xs-10 offset-xs-1 col-md-4 offset-md-4">
         <h3 tabindex="0">Some things to know<br>about test scores:</h3>
     </div>
@@ -40,12 +40,12 @@
 <div class="row map-invite m-0">
     <div class="scatterplot col-xs-10 offset-xs-1 col-mm-8 offset-mm-2">
         <p>Use the interactive map to see how your community scores on all these measures, and explore patterns of educational opportunity across the US.</p>
-        <a class="btn btn-custom" href="{{ "/about" | absURL }}" tabindex="0" aria-label="Go to About">Get Started</a>
+        <button data-scroll-target="scrollTarget2" class="btn btn-custom scroll-to-next" tabindex="0" aria-label="Go to next section">Get Started</button>
         <a href="">See what we are learning </a>
     </div>
 </div>
 
-<div class="row latest-explorations m-0">
+<div id="scrollTarget2" class="row latest-explorations m-0">
     {{/* range first 2 ( where .Site.Pages "Section" "posts" ) */}}
     {{ range $index, $element := first 2 (where .Site.Pages "Section" "posts") }}
         {{ if (eq $index 0) }}

@@ -15520,7 +15520,7 @@ body {
   padding-right: 12px;
 }
 
-nav.navbar {
+nav.navbar > div {
   padding: 0 24px;
 }
 
@@ -15533,7 +15533,7 @@ nav.navbar {
     padding-left: 16px;
     padding-right: 16px;
   }
-  nav.navbar {
+  nav.navbar > div {
     padding: 0 32px;
   }
 }
@@ -15547,8 +15547,8 @@ nav.navbar {
     padding-left: 20px;
     padding-right: 20px;
   }
-  nav.navbar {
-    padding: 0 40px;
+  nav.navbar > div {
+    padding: 0 20px;
   }
 }
 
@@ -15679,6 +15679,9 @@ input.form-control {
 
 nav.navbar-light {
   height: 6.4rem;
+  background-color: #031232;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 nav.navbar-light .navbar-brand {
@@ -15696,6 +15699,8 @@ nav.navbar-light .drawer-toggle {
   background-color: transparent;
   border: 0;
   color: #ffffff;
+  text-align: right;
+  padding-right: 0;
 }
 
 nav.navbar-light .drawer-toggle .navbar-toggler-icon {

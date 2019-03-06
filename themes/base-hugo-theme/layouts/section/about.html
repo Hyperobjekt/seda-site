@@ -1,12 +1,35 @@
 {{ define "main" }}
 
-<div id="hero" class="hero" style="">
+<div id="hero" class="hero row" style="">
     <div class="hero-child row">
-      <div class="column col-sm-10 col-xl-8 offset-sm-1 offset-xl-2">
+      <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
         <h2 tabindex="0">About this project</h2>
         <p>The Stanford Education Data Archive (SEDA) aims to harness data to improve educational opportunity.</p>
       </div>
      </div>
 </div>
+
+<div class="row background m-0">
+    <div class="col-xs-12 col-mm-10 offset-mm-1 col-md-6 col-lg-6 offset-lg-1">
+        <h3 tabindex="0">Background</h3>
+        <p>...not the innate ability or intelligence of the children who live there. They reflect socioeconomic conditions and the quality of education kids have access to, in and out of school. These can differ greatly from place to place.</p>
+    </div>
+</div>
+
+<div class="row fact fact-2 m-0">
+    <div class="col-xs-12 col-mm-10 offset-mm-1 col-md-6 offset-md-6 col-lg-6 offset-lg-5">
+        <h4 tabindex="0">Growth rates in test scores show the degree to which kids are advancing or lagging...</h4>
+        <p>...in knowledge as they move from grade to grade. They’re the best measure we have of how well schools are educating children.</p>
+    </div>
+</div>
+
+<div class="row fact fact-3 m-0">
+    <div class="col-xs-12 col-mm-10 offset-mm-1 col-md-6 col-lg-6 offset-lg-1">
+        <h4 tabindex="0">Rates of improvement show how fast test scores are improving. </h4>
+        <p>We use this measure to show where schools and communities are getting better at providing educational opportunities over time.</p>
+    </div>
+</div>
+
+{{ partial "subscribe.html" .}}
 
 {{ end }}

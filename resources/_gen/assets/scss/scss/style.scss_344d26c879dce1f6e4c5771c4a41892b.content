@@ -16815,4 +16815,8 @@ body.type-posts p {
   }
 }
 
+body.type-posts p:first-child {
+  margin-top: 0;
+}
+
 /*# sourceMappingURL=style.css.map */

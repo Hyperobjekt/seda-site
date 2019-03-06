@@ -129,6 +129,9 @@ body.type-posts {
           line-height: 3.0rem;
           margin-top: 3.2rem;
         }
+        &:first-child {
+            margin-top: 0;
+        }
       }
   }
 

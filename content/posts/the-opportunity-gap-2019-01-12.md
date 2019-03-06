@@ -4,7 +4,6 @@ author: "Sean F. Reardon"
 date: "2019-01-12"
 image: "/uploads/test.jpg"
 ---
-
 This figure shows the average performance of black and white students in each US school district in math and English language arts in grade 3. 
 
 Each circle is a school district (one of ~2400 district in which there are enough white and black students to reliably estimate both white and black achievement in grade 3. The size of the bubble is proportionate to the number of black children enrolled in the school district.

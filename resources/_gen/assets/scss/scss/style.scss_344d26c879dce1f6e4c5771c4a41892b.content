@@ -16150,6 +16150,30 @@ body.home #main {
   letter-spacing: .02rem;
 }
 
+@media (min-width: 768px) {
+  .row.map-invite .scatterplot p {
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+    letter-spacing: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .row.map-invite .scatterplot p {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .003rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .row.map-invite .scatterplot p {
+    font-size: 2.8rem;
+    line-height: 4.2rem;
+    letter-spacing: .003rem;
+  }
+}
+
 .row.map-invite .scatterplot button {
   margin-top: 1.6rem;
   margin-bottom: 1.6rem;
@@ -16179,21 +16203,29 @@ body.home #main {
 }
 
 @media (min-width: 768px) {
-  .row.map-invite p {
-    font-size: 1.85rem;
-    line-height: 2.7rem;
-    letter-spacing: auto;
+  .row.map-invite .scatterplot {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .row.map-invite .scatterplot {
+    padding-top: 8.0rem;
+    padding-bottom: 8.0rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .row.map-invite .scatterplot {
+    padding-top: 10.2rem;
+    padding-bottom: 10.2rem;
   }
 }
 
 @media (min-width: 992px) {
   .row.map-invite {
     height: 416px;
-  }
-  .row.map-invite p {
-    font-size: 2.3rem;
-    line-height: 3.4rem;
-    letter-spacing: .003rem;
   }
 }
 

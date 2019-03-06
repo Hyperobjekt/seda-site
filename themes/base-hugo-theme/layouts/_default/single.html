@@ -1,8 +1,11 @@
 {{ define "main" }}
 
 <h1>{{ .Title }}</h1>
-{{ .Content }}
+<div id="" class="row dyn-article m-0">
+    <div class="col-xs-10 offset-xs-1 col-md-4 offset-md-1">
+        {{ .Content }}
+    </div>
+</div>
 
-<p style="color:red;">test single</p>
 
 {{ end }}

@@ -1017,9 +1017,284 @@ body.about {
 
   .row {
     &.background {
-
+      padding-top: 4.8rem;
+      padding-bottom: 4.8rem;
+      @include media-breakpoint-up(md) {
+        padding-top: 6.4rem;
+        padding-bottom: 6.4rem;
+      }
+      // @include media-breakpoint-up(lg) {
+      //   padding-top: 6.4rem;
+      //   padding-bottom: 6.4rem;
+      // }
+      h3 {
+        color: $seda-dark;
+        font-family: $sharpgrotesk-med-15;
+        font-size: 1.2rem;
+        letter-spacing: .055rem;
+        text-transform: uppercase;
+        margin-bottom: 1.6rem;
+        @include media-breakpoint-up(md) {
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+          letter-spacing: .064rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 1.8rem;
+          line-height: 3.818rem;
+          letter-spacing: .07rem;
+        }
+      }
+      h4 {
+        color: $seda-dark;
+        font-family: $sharpgrotesk-med-20;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        letter-spacing: auto;
+        margin-bottom: 1.6rem;
+        @include media-breakpoint-up(md) {
+          font-size: 1.85rem;
+          line-height: 2.7rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 2.3rem;
+          line-height: 3.4rem;
+          letter-spacing: .03rem;
+        }
+      }
+      p {
+        color: $seda-gray;
+        font-family: $maisonneue-book;
+        font-size: 1.3rem;
+        line-height: 2.0rem;
+        letter-spacing: 0;
+        @include media-breakpoint-up(md) {
+          font-size: 1.4rem;
+          line-height: 2.1rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+      }
     }
   }
+
+  .row {
+    &.we-hope {
+      background-color: rgba(5, 39, 98, 100%);// $seda-dark;
+      color: $white;
+      text-align: center;
+      padding-top: 4.8rem;
+      padding-bottom: 4.8rem;
+      @include media-breakpoint-up(md) {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+      }
+      @include media-breakpoint-up(lg) {
+        padding-top: 9.6rem;
+        padding-bottom: 9.6rem;
+      }
+      p {
+        font-family: $sharpgrotesk-med-20;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        letter-spacing: .002rem;
+        @include media-breakpoint-up(md) {
+          font-size: 1.85rem;
+          line-height: 2.7rem;
+          letter-spacing: auto;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 2.3rem;
+          line-height: 3.4rem;
+          letter-spacing: .003rem;
+        }
+      }
+    }
+  }
+
+  .row {
+    &.mission {
+      align-items: center;
+      padding-top: 4.8rem;
+      padding-bottom: 4.8rem;
+      padding-left: 12px;
+      padding-right: 12px;
+      @include media-breakpoint-up(md) {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      @include media-breakpoint-up(xl) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      background-color: $seda-paleblue;
+      .column-image {
+        text-align: center;
+        vertical-align: middle;
+        margin-bottom: 4.8rem;
+        @include media-breakpoint-up(mm) {
+          margin-right: 32px;
+        }
+      }
+      .column-text {
+        h3 {
+          color: $seda-dark;
+          font-family: $sharpgrotesk-med-15;
+          font-size: 1.2rem;
+          letter-spacing: .055rem;
+          text-transform: uppercase;
+          margin-bottom: 1.6rem;
+          @include media-breakpoint-up(md) {
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+            letter-spacing: .064rem;
+          }
+          @include media-breakpoint-up(lg) {
+            font-size: 1.8rem;
+            line-height: 3.818rem;
+            letter-spacing: .07rem;
+          }
+        }
+        h4 {
+          color: $seda-dark;
+          font-family: $sharpgrotesk-med-20;
+          font-size: 1.4rem;
+          line-height: 2.1rem;
+          letter-spacing: auto;
+          margin-bottom: 1.6rem;
+          @include media-breakpoint-up(md) {
+            font-size: 1.85rem;
+            line-height: 2.7rem;
+          }
+          @include media-breakpoint-up(lg) {
+            font-size: 2.3rem;
+            line-height: 3.4rem;
+            letter-spacing: .03rem;
+          }
+        }
+        p {
+          color: $seda-gray;
+          font-family: $maisonneue-book;
+          font-size: 1.3rem;
+          line-height: 2.0rem;
+          letter-spacing: 0;
+          @include media-breakpoint-up(md) {
+            font-size: 1.4rem;
+            line-height: 2.1rem;
+          }
+          @include media-breakpoint-up(lg) {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .row {
+    &.who-we-are,
+    &.who-we-are-former {
+      text-align: center;
+      margin-top: 4.8rem;
+      margin-bottom: 4.8rem;
+      h3 {
+        color: $seda-dark;
+        font-family: $sharpgrotesk-med-15;
+        font-size: 1.2rem;
+        letter-spacing: .055rem;
+        text-transform: uppercase;
+        margin-bottom: 1.6rem;
+        @include media-breakpoint-up(md) {
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+          letter-spacing: .064rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 1.8rem;
+          line-height: 3.818rem;
+          letter-spacing: .07rem;
+        }
+      }
+      h4 {
+
+      }
+    }
+  }
+
+  .row {
+    &.people-current,
+    &.people-former {
+      text-align: center;
+      img {
+        border-radius: 62px;
+      }
+      .pic {
+        width: 124px;
+        height: 124px;
+        background-position: center;
+        background-size: 124px 124px;
+        border-radius: 62px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        @include media-breakpoint-up(mm) {
+          width: 150px;
+          height: 150px;
+          background-size: 150px 150px;
+          border-radius: 75px;
+        }
+        button {
+          background-color: $seda-dark;
+          color: $white;
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          font-size: 38px;
+          line-height: 38px;
+          font-weight: 100;
+          padding: 5px 0;
+          position: absolute;
+          right: -5%;
+          bottom: 3%;
+        }
+      }
+      .name {
+        color: $seda-dark;
+        font-family: $sharpgrotesk-med-20;
+        font-size: 1.44rem;
+        line-height: 2.592rem;
+        letter-spacing: 0;
+        margin-top: 1.6rem;
+        margin-bottom: .4rem;
+        @include media-breakpoint-up(md) {
+          margin-top: 1.6rem;
+          margin-bottom: .4rem;
+          font-size: 1.8rem;
+          line-height: 3.24rem;
+          letter-spacing: 0;
+        }
+      }
+      .title {
+        color: $seda-gray;
+        font-family: $maisonneue-book;
+        font-size: 1.2rem;
+        line-height: 2.8rem;
+        letter-spacing: 0;
+        @include media-breakpoint-up(md) {
+          font-size: 1.4rem;
+          line-height: 2.1rem;
+          letter-spacing: 0;
+        }
+      }
+      .bio {
+        display: none;
+      }
+    }
+  }
+
 }
 
 

@@ -16488,6 +16488,355 @@ body.about .hero .hero-child .column p {
   }
 }
 
+body.about .row.background {
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.background {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
+}
+
+body.about .row.background h3 {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  letter-spacing: .055rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.background h3 {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: .064rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.background h3 {
+    font-size: 1.8rem;
+    line-height: 3.818rem;
+    letter-spacing: .07rem;
+  }
+}
+
+body.about .row.background h4 {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: auto;
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.background h4 {
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.background h4 {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .03rem;
+  }
+}
+
+body.about .row.background p {
+  color: #5d5d5d;
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.3rem;
+  line-height: 2.0rem;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  body.about .row.background p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.background p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+body.about .row.we-hope {
+  background-color: #052762;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.we-hope {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.we-hope {
+    padding-top: 9.6rem;
+    padding-bottom: 9.6rem;
+  }
+}
+
+body.about .row.we-hope p {
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: .002rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.we-hope p {
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+    letter-spacing: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.we-hope p {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .003rem;
+  }
+}
+
+body.about .row.mission {
+  align-items: center;
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: #f5f8fa;
+}
+
+@media (min-width: 768px) {
+  body.about .row.mission {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  body.about .row.mission {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body.about .row.mission .column-image {
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 4.8rem;
+}
+
+@media (min-width: 576px) {
+  body.about .row.mission .column-image {
+    margin-right: 32px;
+  }
+}
+
+body.about .row.mission .column-text h3 {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  letter-spacing: .055rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.mission .column-text h3 {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: .064rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.mission .column-text h3 {
+    font-size: 1.8rem;
+    line-height: 3.818rem;
+    letter-spacing: .07rem;
+  }
+}
+
+body.about .row.mission .column-text h4 {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: auto;
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.mission .column-text h4 {
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.mission .column-text h4 {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .03rem;
+  }
+}
+
+body.about .row.mission .column-text p {
+  color: #5d5d5d;
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.3rem;
+  line-height: 2.0rem;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  body.about .row.mission .column-text p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.mission .column-text p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+body.about .row.who-we-are, body.about .row.who-we-are-former {
+  text-align: center;
+  margin-top: 4.8rem;
+  margin-bottom: 4.8rem;
+}
+
+body.about .row.who-we-are h3, body.about .row.who-we-are-former h3 {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  letter-spacing: .055rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.who-we-are h3, body.about .row.who-we-are-former h3 {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: .064rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.who-we-are h3, body.about .row.who-we-are-former h3 {
+    font-size: 1.8rem;
+    line-height: 3.818rem;
+    letter-spacing: .07rem;
+  }
+}
+
+body.about .row.people-current, body.about .row.people-former {
+  text-align: center;
+}
+
+body.about .row.people-current img, body.about .row.people-former img {
+  border-radius: 62px;
+}
+
+body.about .row.people-current .pic, body.about .row.people-former .pic {
+  width: 124px;
+  height: 124px;
+  background-position: center;
+  background-size: 124px 124px;
+  border-radius: 62px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  body.about .row.people-current .pic, body.about .row.people-former .pic {
+    width: 150px;
+    height: 150px;
+    background-size: 150px 150px;
+    border-radius: 75px;
+  }
+}
+
+body.about .row.people-current .pic button, body.about .row.people-former .pic button {
+  background-color: #031232;
+  color: #ffffff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 38px;
+  line-height: 38px;
+  font-weight: 100;
+  padding: 5px 0;
+  position: absolute;
+  right: -5%;
+  bottom: 3%;
+}
+
+body.about .row.people-current .name, body.about .row.people-former .name {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.44rem;
+  line-height: 2.592rem;
+  letter-spacing: 0;
+  margin-top: 1.6rem;
+  margin-bottom: .4rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.people-current .name, body.about .row.people-former .name {
+    margin-top: 1.6rem;
+    margin-bottom: .4rem;
+    font-size: 1.8rem;
+    line-height: 3.24rem;
+    letter-spacing: 0;
+  }
+}
+
+body.about .row.people-current .title, body.about .row.people-former .title {
+  color: #5d5d5d;
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  line-height: 2.8rem;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  body.about .row.people-current .title, body.about .row.people-former .title {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    letter-spacing: 0;
+  }
+}
+
+body.about .row.people-current .bio, body.about .row.people-former .bio {
+  display: none;
+}
+
 .row.404 {
   min-height: 100vh;
   padding-top: 25vh;

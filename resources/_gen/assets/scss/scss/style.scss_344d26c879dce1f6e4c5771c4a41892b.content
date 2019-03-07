@@ -16846,6 +16846,55 @@ body.about .row.people-current .bio, body.about .row.people-former .bio {
   display: none;
 }
 
+body.about .modal button.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #5d5d5d;
+}
+
+body.about .modal button.close span {
+  color: #04143c;
+}
+
+body.about .modal .modal-image {
+  width: 202px;
+  height: 202px;
+  background-position: center center;
+  background-size: 202px 202px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4.8rem;
+  margin-bottom: 4.8rem;
+}
+
+body.about .modal .modal-bio .modal-meta #modalName {
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.85rem;
+  line-height: 2.7rem;
+  letter-spacing: 0;
+  color: #031232;
+}
+
+body.about .modal .modal-bio .modal-meta #modalTitle {
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  color: #5d5d5d;
+}
+
+body.about .modal .modal-bio .modal-meta #modalBio {
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.3rem;
+  line-height: 2.0rem;
+  letter-spacing: 0;
+  color: #979797;
+}
+
 .row.404 {
   min-height: 100vh;
   padding-top: 25vh;

@@ -1304,7 +1304,55 @@ body.about {
   }
 
   .modal {
+    button.close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      // color: $seda-navy;
+      border: 1px solid $seda-gray;
+      span {
+        color: $seda-navy;
+      }
+    }
+    .modal-image {
+      width: 202px;
+      height: 202px;
+      background-position: center center;
+      background-size: 202px 202px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 4.8rem;
+      margin-bottom: 4.8rem;
+    }
 
+    .modal-bio {
+      .modal-meta {
+        #modalName {
+          font-family: $sharpgrotesk-med-20;
+          font-size: 1.85rem;
+          line-height: 2.7rem;
+          letter-spacing: 0;
+          color: $seda-dark;
+        }
+        #modalTitle {
+          font-family: $maisonneue-book;
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          letter-spacing: 0;
+          color: $seda-gray;
+        }
+        #modalBio {
+          font-family: $maisonneue-book;
+          font-size: 1.3rem;
+          line-height: 2.0rem;
+          letter-spacing: 0;
+          color: rgba(151, 151, 151, 100%);
+        }
+      }
+    }
   }
 
 }

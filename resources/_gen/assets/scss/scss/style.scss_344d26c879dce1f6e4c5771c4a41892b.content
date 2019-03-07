@@ -16782,7 +16782,7 @@ body.about .row.people-current .pic, body.about .row.people-former .pic {
 }
 
 body.about .row.people-current .pic button, body.about .row.people-former .pic button {
-  background-color: #031232;
+  background-color: #1c3d91;
   color: #ffffff;
   border: none;
   width: 40px;
@@ -16795,6 +16795,15 @@ body.about .row.people-current .pic button, body.about .row.people-former .pic b
   position: absolute;
   right: -5%;
   bottom: 3%;
+}
+
+body.about .row.people-current .pic button span, body.about .row.people-former .pic button span {
+  text-align: center;
+}
+
+body.about .row.people-current .pic button span.plus-horiz, body.about .row.people-former .pic button span.plus-horiz {
+  transform: rotate(90deg);
+  transform-origin: left top 0;
 }
 
 body.about .row.people-current .name, body.about .row.people-former .name {

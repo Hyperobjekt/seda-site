@@ -28,7 +28,6 @@
         checkScroll(t);
 
         // Smooth scroll down on button click
-        console.log($('.scroll-to-section'));
         $('.scroll-to-section').on('click', function(e) {
             console.log('click');
             e.preventDefault();
@@ -44,29 +43,34 @@
         });
 
         // Handle bio modals
-        if ($('button').length >= 1) {
+        if ($('button.launch-people-bio').length >= 1) {
           // console.log('exists');
-          $('.btn-bio').click(function(e) {
-            var $button = $(e.target);
+          $('button.launch-people-bio').click(function(e) {
             e.preventDefault();
-            console.log('clicked');
+            var $button = $(e.target);
+            // Store active bio so navigation between then works.
+            var activeBio = $button.closest('.column-people');
             // Get name, title, bio, and image
             var parent = $button.parent();
-            console.log(parent);
+            // console.log(parent);
             var name = $button.parent().siblings('.name').text();
-            console.log('name = ' + name);
+            // console.log('name = ' + name);
             var title = $button.parent().siblings('.title').text();
-            console.log('title = ' + title);
+            // console.log('title = ' + title);
             var bio = $button.parent().siblings('.bio').html();
-            console.log('bio = ' + bio);
-            var image = $button.parent().siblings('.pic').html();
-            console.log('image = ' + image);
+            /// console.log('bio = ' + bio);
+            var image = $button.closest('.column-people').children('.pic').attr('style'); // ('data-image'); // .style.background-image;// .find('.pic').html();
+            console.log(image);
+            // image = image.attr('data-image');
+
             // Set contents
-            $('#modalImg').html(image);
+            $('#modalImg').attr('style', image);
             $('#modalName').text(name);
             $('#modalTitle').html(title);
             $('#modalBio').html(bio);
             $('#peopleBioModal').modal('show');
+            // Add event listeners to the next and previous buttons
+            // When clicked, update the active element
           });
         }
 

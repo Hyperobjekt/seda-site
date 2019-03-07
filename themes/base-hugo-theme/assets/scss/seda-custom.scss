@@ -1246,7 +1246,7 @@ body.about {
           border-radius: 75px;
         }
         button {
-          background-color: $seda-dark;
+          background-color: $seda-buttonblue; // $seda-dark;
           color: $white;
           border: none;
           width: 40px;
@@ -1259,6 +1259,14 @@ body.about {
           position: absolute;
           right: -5%;
           bottom: 3%;
+          span {
+            text-align: center;
+            &.plus-horiz {
+              transform: rotate(90deg);
+	            transform-origin: left top 0;
+            }
+          }
+
         }
       }
       .name {
@@ -1293,6 +1301,10 @@ body.about {
         display: none;
       }
     }
+  }
+
+  .modal {
+
   }
 
 }

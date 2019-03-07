@@ -1,21 +1,27 @@
 <div class="modal fade" id="peopleBioModal" tabindex="-1" role="dialog" aria-labelledby="modalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12 details">
-            <div id="modalImg" tabindex="0"></div>
-            <div id="modalName" tabindex="0"></div>
-            <div id="modalTitle" tabindex="0"></div>
-          </div>
-          <div class="col-lg-8 col-md-8 col-sm-12 text">
-            <div id="modalBio" tabindex="0"></div>
-          </div>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-pic col-lg-4 col-md-4 col-sm-12">
+                        <div id="modalImg" tabindex="0"></div>
+                    </div>
+                    <div class="modal-bio col-lg-8 col-md-8 col-sm-12">
+                        <div class="modal-meta">
+                            <div id="modalName" tabindex="0"></div>
+                            <div id="modalTitle" tabindex="0"></div>
+                        </div>
+                        <div id="modalBio" tabindex="0"></div>
+                        <div class="modal-nav">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0">Previous bio</button>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0">Next bio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

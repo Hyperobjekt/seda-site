@@ -50,13 +50,13 @@
     {{ range .Site.Data.people }}
       {{ if eq .current true }}
       <!-- <div class="col-xs-12 col-mm-4 col"> -->
-        <div class="p-2 col-xs-12 col-md-4 col-lg-3">
+        <div id="{{ urlize .name }}-{{ urlize .title}}" class="column-people p-2 col-xs-12 col-md-4 col-lg-3">
             {{ $img := strings.TrimPrefix "/uploads/" .image }}
             {{ $name := .name }}
             {{ with $.Site.GetPage "page" "uploads/_index.md" }}
               {{ with .Resources.GetMatch $img }}
-                {{$imgFill := .Fill "149x149 Center"}}
-                <div class="pic" style="background-image:url('{{ $imgFill.RelPermalink }}');" alt="Photo of {{ $name }}" tabindex="0">
+                {{$imgFill := .Fill "272x272 Center"}}
+                <div data-image="{{ $imgFill.RelPermalink }}" class="pic" style="background-image:url('{{ $imgFill.RelPermalink }}');" alt="Photo of {{ $name }}" tabindex="0">
                     <button class="launch-people-bio">+</button>
                 </div>
               {{ end }}
@@ -81,14 +81,14 @@
     <div class="col-xs-12 col-lg-10 offset-lg-1 flex-row justify-content-around d-flex flex-wrap">
         {{ range .Site.Data.people }}
           {{ if eq .current false }}
-            <div class="p-2 col-xs-12 col-md-4 col-lg-3">
+            <div id="{{ urlize .name }}-{{ urlize .title}}" class="column-people p-2 col-xs-12 col-md-4 col-lg-3">
 
                 {{ $img := strings.TrimPrefix "/uploads/" .image }}
                 {{ $name := .name }}
                 {{ with $.Site.GetPage "page" "uploads/_index.md" }}
                   {{ with .Resources.GetMatch $img }}
-                    {{$imgFill := .Fill "149x149 Center"}}
-                    <div class="pic" style="background-image:url('{{ $imgFill.RelPermalink }}');" alt="Photo of {{ $name }}" tabindex="0">
+                    {{$imgFill := .Fill "272x272 Center"}}
+                    <div data-image="{{ $imgFill.RelPermalink }}" class="pic" style="background-image:url('{{ $imgFill.RelPermalink }}');" alt="Photo of {{ $name }}" tabindex="0">
                         <button class="launch-people-bio">+</button>
                     </div>
                   {{ end }}

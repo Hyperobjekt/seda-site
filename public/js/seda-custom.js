@@ -28,7 +28,8 @@
         checkScroll(t);
 
         // Smooth scroll down on button click
-        $('button.scroll-to-next').on('click', function(e) {
+        console.log($('.scroll-to-section'));
+        $('.scroll-to-section').on('click', function(e) {
             console.log('click');
             e.preventDefault();
             var target_id = $(e.target).attr('data-scroll-target');
@@ -37,7 +38,7 @@
             // console.log($target);
             $('html, body').animate({
                 scrollTop: ($target.offset().top) - 63
-            }, 1000);
+            }, 500);
             var t = $(window).scrollTop();
             checkScroll(t);
         });

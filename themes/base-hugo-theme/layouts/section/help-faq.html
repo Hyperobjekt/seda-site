@@ -1,0 +1,65 @@
+{{ define "main" }}
+
+<div id="hero" class="hero row" style="">
+    <div class="hero-child row">
+      <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+        <h2 tabindex="0">Help & FAQ</h2>
+        <p tabindex="0">Learn about the data, and how to use and understand our interactive visualizations.</p>
+      </div>
+     </div>
+</div>
+
+<div class="row glossary">
+    <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
+        <h3 tabindex="0">Glossary</h3><a name="glossary"></a>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
+        
+        <div class="accordion">
+            {{ range .Site.Data.faq }}
+                {{ if eq .section "glossary" }} 
+                <!-- faq item -->
+                {{ partial "faqs" . }}
+                {{ end }}
+            {{ end }}
+        </div> <!-- close accordion -->
+    </div>
+</div>
+<div class="row data">
+    <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
+        <h3 tabindex="0">Interpreting the Data</h3><a name="data"></a>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
+        
+        <div class="accordion">
+            {{ range .Site.Data.faq }}
+                {{ if eq .section "data" }} 
+                <!-- faq item -->
+                {{ partial "faqs" . }}
+                {{ end }}
+            {{ end }}
+        </div> <!-- close accordion -->
+    </div>
+</div>
+<div class="row map">
+    <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
+        <h3 tabindex="0">Using the Map</h3> <a name="map"></a>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 mx-auto">
+       
+        <div class="accordion">
+            {{ range .Site.Data.faq }}
+                {{ if eq .section "map" }} 
+                <!-- faq item -->
+                {{ partial "faqs" . }}
+                {{ end }}
+            {{ end }}
+        </div> <!-- close accordion -->
+    </div>
+</div>
+
+
+
+{{ partial "subscribe.html" .}}
+
+{{ end }}

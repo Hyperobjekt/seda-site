@@ -353,8 +353,47 @@ img {
 // Subnav
 
 .subnav {
+  height: 4.8rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  opacity: 1;
+  z-index: 2;
+  @include media-breakpoint-up(md) {
+    height: 6.4rem;
+    position: sticky;
+    top: 64px;
+  }
   ul {
     list-style: none;
+    margin-bottom: 0;
+    justify-content: space-between;
+    border-bottom: 2px solid #E9EAED;
+    height: 100%;
+      li {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      letter-spacing: 0.055rem;
+      text-transform: uppercase;
+      font-family: $sharpgrotesk-med-15;
+      display: flex;
+      align-items: center;
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        letter-spacing: 0.064rem;
+        margin-top: 4px;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 1.8rem;
+        line-height: 3.818rem;
+        letter-spacing: 0.07rem;
+      }
+      a {
+        cursor: pointer;
+      }
+    }
   }
 }
 

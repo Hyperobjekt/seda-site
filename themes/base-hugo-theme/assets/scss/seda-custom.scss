@@ -388,6 +388,8 @@ img {
 
 .subnav {
   height: 4.8rem;
+  position: sticky;
+  top: 64px;
   display: flex;
   align-items: center;
   background-color: #fff;
@@ -397,6 +399,42 @@ img {
     height: 6.4rem;
     position: sticky;
     top: 64px;
+  }
+  &.d-md-none {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #E9EAED;
+    margin-left: -16px;
+    margin-right: -16px;
+    .dropdown {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+   
+    .dropdown-toggle {
+      width: 100%;
+      font-size: 1.2rem;
+        line-height: 1.4rem;
+        letter-spacing: 0.055rem;
+        text-transform: uppercase;
+        font-family: $sharpgrotesk-med-15;
+        border: none;
+        height: 4.7rem;
+        background-color: #fff;
+    }
+    ul {
+      border: none;
+      width: 100%;
+      text-align: center;
+      padding: 1.6rem 0;
+      z-index: 2;
+      height: auto;
+      li {
+        display: block;
+        margin-bottom: 1.6rem;
+      }
+    }
   }
   ul {
     list-style: none;

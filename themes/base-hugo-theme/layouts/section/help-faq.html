@@ -9,9 +9,37 @@
      </div>
 </div>
 
-<div class="row glossary">
+<div class="row subnav d-md-none">
+    <div class="center-content-post">  
+        <div class="dropdown">
+            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Go to Section
+            </button>
+    <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+      <ul class="anchor-links dropdown-menu">
+        <li><a class="dropdown-item smoothScroll" href="#glossary">Glossary</a></li>
+        <li><a class="dropdown-item smoothScroll" href="#data">Interpreting the Data</a></li>
+        <li><a class="dropdown-item smoothScroll" href="#map">Using the Map</a></li>
+    </ul>
+    <!--</div>-->
+  </div>
+  </div>
+</div>
+
+<div class="row subnav">
+    <div class="col-md-6 mx-auto d-md-flex">
+      <ul class="anchor-links d-md-flex">
+        <li class="only-larger-screens">Go to Section</li>
+        <li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
+        <li><a data-scroll-target="data" class="dropdown-item  scroll-to-section">Interpreting the Data</a></li>
+        <li><a data-scroll-target="map" class="dropdown-item  scroll-to-section">Using the Map</a></li>
+      </ul>
+    </div>
+  </div>
+
+<div class="row glossary" id="glossary">
     <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
-        <h3 tabindex="0">Glossary</h3><a name="glossary"></a>
+        <h3 tabindex="0">Glossary</h3>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
         
@@ -25,9 +53,9 @@
         </div> <!-- close accordion -->
     </div>
 </div>
-<div class="row data">
+<div class="row data" id="data">
     <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
-        <h3 tabindex="0">Interpreting the Data</h3><a name="data"></a>
+        <h3 tabindex="0">Interpreting the Data</h3>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
         
@@ -41,9 +69,9 @@
         </div> <!-- close accordion -->
     </div>
 </div>
-<div class="row map">
+<div class="row map" id="map">
     <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 offset-xl-2 mx-auto">
-        <h3 tabindex="0">Using the Map</h3> <a name="map"></a>
+        <h3 tabindex="0">Using the Map</h3> 
     </div>
     <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-xl-7 mx-auto">
        

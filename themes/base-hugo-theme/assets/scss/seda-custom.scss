@@ -1428,6 +1428,16 @@ body.about {
         margin-top: 4.8rem;
         text-transform: uppercase;
         text-align: center;
+        @include media-breakpoint-up(md) {
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+          letter-spacing: .064rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 1.8rem;
+          line-height: 3.8rem;
+          letter-spacing: .07rem;
+        }
       }
       p {
         color: $seda-dark;
@@ -1437,6 +1447,15 @@ body.about {
         margin-top: 3.2rem;
         margin-bottom: 4.8rem;
         text-align: center;
+        @include media-breakpoint-up(md) {
+          font-size: 1.85rem;
+          line-height: 2.7rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 2.3rem;
+          line-height: 3.4rem;
+          letter-spacing: .03rem;
+        }
       }
     }
   }
@@ -1444,6 +1463,13 @@ body.about {
     &.funder-logos {
       margin-top: 4.8rem;
       margin-bottom: 4.8rem;
+    }
+  }
+
+  .row {
+    &.history {
+      padding-top: 3.2rem;
+      padding-bottom: 4.8rem;
     }
   }
 

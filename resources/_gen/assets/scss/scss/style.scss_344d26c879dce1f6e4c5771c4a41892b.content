@@ -17039,6 +17039,22 @@ body.about .row.funders h3 {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  body.about .row.funders h3 {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: .064rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.funders h3 {
+    font-size: 1.8rem;
+    line-height: 3.8rem;
+    letter-spacing: .07rem;
+  }
+}
+
 body.about .row.funders p {
   color: #031232;
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -17049,9 +17065,29 @@ body.about .row.funders p {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  body.about .row.funders p {
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.funders p {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .03rem;
+  }
+}
+
 body.about .row.funder-logos {
   margin-top: 4.8rem;
   margin-bottom: 4.8rem;
+}
+
+body.about .row.history {
+  padding-top: 3.2rem;
+  padding-bottom: 4.8rem;
 }
 
 body.about .modal {

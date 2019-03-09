@@ -131,37 +131,37 @@ h3 {
 
 // Custom button style
 .btn-custom {
-    display: inline-block;
-    font-family: $sharpgrotesk-med-15;
-    font-size: 1.4rem;
-    letter-spacing: .064rem;
-    line-height: 4.4rem;
-    background-color: $seda-red;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    user-select: none;
-    width: 176px;
-    height: 48px;
-    border: none;
-    border-radius: 0;
-    text-decoration: none;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 200ms ease-in-out;
+  display: inline-block;
+  font-family: $sharpgrotesk-med-15;
+  font-size: 1.4rem;
+  letter-spacing: .064rem;
+  line-height: 4.4rem;
+  background-color: $seda-red;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  width: 176px;
+  height: 48px;
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
 
-    &:active,
-    &:hover,
-    &:focus {
-      background-color: darken($seda-red, 15%);
-      color: $white;
-    }
-    svg.fa-external-link-square-alt {
-      width: 13px;
-      position: relative;
-      top: 2px;
-      margin-left: 10px;
-    }
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: darken($seda-red, 15%);
+    color: $white;
+  }
+  svg.fa-external-link-square-alt {
+    width: 13px;
+    position: relative;
+    top: 2px;
+    margin-left: 10px;
+  }
 }
 
 // Custom button style
@@ -265,45 +265,79 @@ nav.navbar-light {
 /* The side navigation menu */
 .drawer {
   height: 100%;
-  width: 300px;
+  width: 320px;
   position: fixed;
   z-index: 3000;
   top: 0;
   right: 0;
-  background-color: #111;
+  background-color: $white;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
-  margin-right: -300px;
+  margin-right: -320px;
+  text-align: center;
+
+  @include media-breakpoint-up(mm) {
+    text-align: left;
+    padding-left: 4.8rem;
+
+    .social {
+
+    }
+  }
 
   &.show {
     margin-right: 0;
   }
 
-  a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+  .closebtn {
+    background-image: url(/images/close.svg);
+    background-repeat: no-repeat;
+    height: 41px;
+    width: 30px;
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    margin-left: 50px;
+    border: 0;
+    background-color: transparent;
+  }
 
-    &:hover {
-      color: #f1f1f1;
+  .navlinks {
+    margin-top: 6.4rem;
+    margin-bottom: 4.8rem;
+
+    a {
+      // padding: 8px 8px 8px 32px;
+      padding: 0;
+      text-decoration: none;
+      font-size: 25px;
+      display: block;
+      transition: 0.3s;
+      font-family: $sharpgrotesk-med-15;
+      font-size: 2.4rem;
+      line-height: 2.0rem;
+      letter-spacing: .011rem;
+      color: $seda-dark;
+      text-transform: uppercase;
+      margin-bottom: 3.2rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
-  .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+  .social {
+    .social-icon {
+      font-size: 2.4rem;
+      padding-right: 1.2rem;
+    }
   }
 }
 
 button.navbar-toggler {
-    border: 0;
+  border: 0;
 }
 
 // Breadcrumbs
@@ -370,7 +404,7 @@ img {
     justify-content: space-between;
     border-bottom: 2px solid #E9EAED;
     height: 100%;
-      li {
+    li {
       font-size: 1.2rem;
       line-height: 1.4rem;
       letter-spacing: 0.055rem;
@@ -977,90 +1011,90 @@ body.home {
 // About page
 body.about {
   .hero {
-      background: linear-gradient(to bottom, rgba(4, 41, 101, 100%) 5%, rgba(4, 29, 85, 100%) 75%);
-      // background-image: url('/images/about-plot-2x.png'); /* fallback */
-      // background-image: linear-gradient(to bottom, rgba(4, 41, 101, 100%) 5%, rgba(4, 29, 85, 100%) 75%), url('/images/about-plot-2x.png');
-      background-blend-mode: soft-light;
-      background-repeat: no-repeat;
-      background-position: 0 bottom;
-      background-size: 120%;
-      height: 336px;
-      margin-top: -6.4rem;
+    background: linear-gradient(to bottom, rgba(4, 41, 101, 100%) 5%, rgba(4, 29, 85, 100%) 75%);
+    // background-image: url('/images/about-plot-2x.png'); /* fallback */
+    // background-image: linear-gradient(to bottom, rgba(4, 41, 101, 100%) 5%, rgba(4, 29, 85, 100%) 75%), url('/images/about-plot-2x.png');
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-position: 0 bottom;
+    background-size: 120%;
+    height: 336px;
+    margin-top: -6.4rem;
+    margin-right: 0;
+    margin-left: 0;
+    @include media-breakpoint-up(md) {
+      height: 448px;
+      // background-size: 120% 80%;
+      // background-position: -400px 10%;
+    }
+    @include media-breakpoint-up(xl) {
+      // background-size: 2200px 478px;
+      // background-position: -400px 10%;
+    }
+    .hero-child {
+      width: 100%;
+      height: 100%;
       margin-right: 0;
       margin-left: 0;
-      @include media-breakpoint-up(md) {
-        height: 448px;
-        // background-size: 120% 80%;
-        // background-position: -400px 10%;
+      background: url('/images/about-plot-2x.png');
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: 1030px 378px;
+      @include media-breakpoint-up(mm) {
+        background-size: 1600px 378px;
+        background-position: -100px bottom;
       }
       @include media-breakpoint-up(xl) {
-        // background-size: 2200px 478px;
-        // background-position: -400px 10%;
+        background-size: 2000px 378px;
+        background-position: -200px bottom;
       }
-      .hero-child {
-        width: 100%;
-        height: 100%;
-        margin-right: 0;
-        margin-left: 0;
-        background: url('/images/about-plot-2x.png');
-        background-repeat: no-repeat;
-        background-position: left bottom;
-        background-size: 1030px 378px;
-        @include media-breakpoint-up(mm) {
-          background-size: 1600px 378px;
-          background-position: -100px bottom;
+      .column {
+        margin-top: 13.2rem;
+        margin-bottom: 9.6rem;
+        text-align: center;
+        color: $white;
+        @include media-breakpoint-up(md) {
+          margin-top: 15.2rem;
         }
-        @include media-breakpoint-up(xl) {
-          background-size: 2000px 378px;
-          background-position: -200px bottom;
+        @include media-breakpoint-up(lg) {
+          margin-top: 16rem;
         }
-        .column {
-          margin-top: 13.2rem;
-          margin-bottom: 9.6rem;
-          text-align: center;
-          color: $white;
+        h2 {
+          font-family: $sharpgrotesk-med-20;
+          font-size: 2.6rem;
+          line-height: 2.55rem;
+          letter-spacing: .013rem;
+          margin-bottom: 1.6rem;
           @include media-breakpoint-up(md) {
-            margin-top: 15.2rem;
+            font-size: 2.8rem;
+            line-height: 4.3rem;
+            letter-spacing: .014rem;
           }
           @include media-breakpoint-up(lg) {
-            margin-top: 16rem;
+            font-size: 3.6rem;
+            line-height: 5.4rem;
+            letter-spacing: .018rem;
           }
-          h2 {
-            font-family: $sharpgrotesk-med-20;
-            font-size: 2.6rem;
-            line-height: 2.55rem;
-            letter-spacing: .013rem;
-            margin-bottom: 1.6rem;
-            @include media-breakpoint-up(md) {
-              font-size: 2.8rem;
-              line-height: 4.3rem;
-              letter-spacing: .014rem;
-            }
-            @include media-breakpoint-up(lg) {
-              font-size: 3.6rem;
-              line-height: 5.4rem;
-              letter-spacing: .018rem;
-            }
+        }
+        p {
+          font-family: $maisonneue-book;
+          font-size: 1.3rem;
+          line-height: 2rem;
+          letter-spacing: 0;
+          @include media-breakpoint-up(md) {
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            letter-spacing: auto;
           }
-          p {
-            font-family: $maisonneue-book;
-            font-size: 1.3rem;
-            line-height: 2rem;
-            letter-spacing: 0;
-            @include media-breakpoint-up(md) {
-              font-size: 1.8rem;
-              line-height: 2.5rem;
-              letter-spacing: auto;
-            }
-            @include media-breakpoint-up(lg) {
-              font-size: 2.3rem;
-              line-height: 3.45rem;
-              letter-spacing: auto;
-            }
+          @include media-breakpoint-up(lg) {
+            font-size: 2.3rem;
+            line-height: 3.45rem;
+            letter-spacing: auto;
           }
         }
       }
     }
+  }
 
   .row {
     &.background {
@@ -1293,7 +1327,7 @@ body.about {
           border-radius: 75px;
         }
         button {
-          background-color: $seda-buttonblue; // $seda-dark;
+          background-color: $seda-buttonblue;
           color: $white;
           border: none;
           width: 40px;
@@ -1310,7 +1344,7 @@ body.about {
             text-align: center;
             &.plus-horiz {
               transform: rotate(90deg);
-	            transform-origin: left top 0;
+              transform-origin: left top 0;
             }
           }
 
@@ -1351,17 +1385,66 @@ body.about {
   }
 
   .modal {
+    padding-right: 0 !important;
+
+    @include media-breakpoint-up(md) {
+      .modal-dialog {
+        max-width: 690px;
+      }
+      .modal-content {
+        width: 690px;
+        margin: 0 auto;
+      }
+      .modal-body {
+        padding: 3.2rem;
+      }
+      .modal-pic {
+        padding-left: 0;
+        .modal-image {
+          margin-top: 0;
+        }
+      }
+      // row {
+      //   margin-right: 0 !important;
+      //   margin-left: 0 !important;
+      // }
+      button.close {
+        margin-bottom: 1rem;
+      }
+      .modal-image {
+        margin-top: 0;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .modal-dialog {
+        max-width: 930px;
+      }
+      .modal-content {
+        width: 930px;
+        margin: 0 auto;
+      }
+      .modal-bio {
+        padding-left: 3.2rem;
+      }
+    }
+
     button.close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      // position: absolute;
+      opacity: 1;
+      align-items: center;
+      color: $seda-dark;
+      font-size: 3.2rem;
+      font-weight: 100;
+      border: 1px solid rgba(237, 238, 240, 100);
       width: 40px;
       height: 40px;
       border-radius: 20px;
-      // color: $seda-navy;
-      border: 1px solid $seda-gray;
       span {
-        color: $seda-navy;
+        color: $seda-dark;
+        font-size: 3.2rem;
+        font-weight: 100;
+        pointer-events: none;
       }
     }
     .modal-image {
@@ -1371,11 +1454,21 @@ body.about {
       background-size: 202px 202px;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 4.8rem;
+      margin-top: 2.4rem;
       margin-bottom: 4.8rem;
+
+      @include media-breakpoint-up(lg) {
+        width: 272px;
+        height: 272px;
+        background-position: center center;
+        background-size: 272px 272px;
+      }
     }
 
     .modal-bio {
+      hr {
+        margin: 1.8rem 0;
+      }
       .modal-meta {
         #modalName {
           font-family: $sharpgrotesk-med-20;
@@ -1383,6 +1476,7 @@ body.about {
           line-height: 2.7rem;
           letter-spacing: 0;
           color: $seda-dark;
+          margin-bottom: 1.2rem;
         }
         #modalTitle {
           font-family: $maisonneue-book;
@@ -1391,18 +1485,88 @@ body.about {
           letter-spacing: 0;
           color: $seda-gray;
         }
+      }
+      #modalBio {
+        font-family: $maisonneue-book;
+        font-size: 1.3rem;
+        line-height: 2.0rem;
+        letter-spacing: 0;
+        color: rgba(151, 151, 151, 100%);
+        margin-bottom: 3.2rem;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .modal-bio {
+        hr {
+          margin: 1.8rem 0;
+        }
+        .modal-meta {
+          #modalName {
+            font-size: 1.85rem;
+            line-height: 2.7rem;
+          }
+          #modalTitle {
+            font-size: 1.2rem;
+            line-height: 2.1rem;
+          }
+        }
         #modalBio {
-          font-family: $maisonneue-book;
-          font-size: 1.3rem;
-          line-height: 2.0rem;
-          letter-spacing: 0;
-          color: rgba(151, 151, 151, 100%);
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+
+    .modal-nav {
+      margin-bottom: 3.2rem;
+
+      button,
+      span {
+        font-family: $sharpgrotesk-med-15;
+        font-size: 1.4rem;
+        letter-spacing: .055rem;
+        text-transform: uppercase;
+        border: 0;
+        background-color: transparent;
+      }
+      button {
+        &.next::after {
+          content: "";
+          background-image: url(/images/right-arrow.svg);
+          display: inline-block;
+          width: 14px;
+          height: 10px;
+          background-size: 14px 10px;
+          background-repeat: no-repeat;
+          background-position: bottom;
+          margin-left: .8rem;
+        }
+        &.prev:before {
+          content: "";
+          background-image: url(/images/right-arrow.svg);
+          display: inline-block;
+          width: 14px;
+          height: 10px;
+          background-size: 14px 10px;
+          background-repeat: no-repeat;
+          background-position: bottom;
+          -webkit-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+          margin-right: .8rem;
+        }
+        &:hover {
+          text-decoration: underline;
+          color: $seda-dark;
         }
       }
     }
   }
-
 }
+
 
 
 
@@ -1428,8 +1592,8 @@ body.about {
     list-style: none;
     text-align: left;
     padding-left: 0;
-      display: flex;
-      justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 
     li {
       font-size: 1.6rem;
@@ -1498,7 +1662,7 @@ body.about {
       justify-content: flex-end;
     }
   }
-//  }
+  //  }
 
   .break {
     order: 3;

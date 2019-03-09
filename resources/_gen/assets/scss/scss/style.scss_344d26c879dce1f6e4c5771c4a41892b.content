@@ -15723,41 +15723,70 @@ nav.navbar-light .drawer-toggle .navbar-toggler-icon {
 /* The side navigation menu */
 .drawer {
   height: 100%;
-  width: 300px;
+  width: 320px;
   position: fixed;
   z-index: 3000;
   top: 0;
   right: 0;
-  background-color: #111;
+  background-color: #ffffff;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
-  margin-right: -300px;
+  margin-right: -320px;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .drawer {
+    text-align: left;
+    padding-left: 4.8rem;
+  }
 }
 
 .drawer.show {
   margin-right: 0;
 }
 
-.drawer a {
-  padding: 8px 8px 8px 32px;
+.drawer .closebtn {
+  background-image: url(/images/close.svg);
+  background-repeat: no-repeat;
+  height: 41px;
+  width: 30px;
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  margin-left: 50px;
+  border: 0;
+  background-color: transparent;
+}
+
+.drawer .navlinks {
+  margin-top: 6.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.drawer .navlinks a {
+  padding: 0;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
   display: block;
   transition: 0.3s;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 2.4rem;
+  line-height: 2.0rem;
+  letter-spacing: .011rem;
+  color: #031232;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
 }
 
-.drawer a:hover {
-  color: #f1f1f1;
+.drawer .navlinks a:hover {
+  text-decoration: underline;
 }
 
-.drawer .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.drawer .social .social-icon {
+  font-size: 2.4rem;
+  padding-right: 1.2rem;
 }
 
 button.navbar-toggler {
@@ -16902,18 +16931,65 @@ body.about .row.people-current .bio, body.about .row.people-former .bio {
   display: none;
 }
 
+body.about .modal {
+  padding-right: 0 !important;
+}
+
+@media (min-width: 768px) {
+  body.about .modal .modal-dialog {
+    max-width: 690px;
+  }
+  body.about .modal .modal-content {
+    width: 690px;
+    margin: 0 auto;
+  }
+  body.about .modal .modal-body {
+    padding: 3.2rem;
+  }
+  body.about .modal .modal-pic {
+    padding-left: 0;
+  }
+  body.about .modal .modal-pic .modal-image {
+    margin-top: 0;
+  }
+  body.about .modal button.close {
+    margin-bottom: 1rem;
+  }
+  body.about .modal .modal-image {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .modal .modal-dialog {
+    max-width: 930px;
+  }
+  body.about .modal .modal-content {
+    width: 930px;
+    margin: 0 auto;
+  }
+  body.about .modal .modal-bio {
+    padding-left: 3.2rem;
+  }
+}
+
 body.about .modal button.close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  opacity: 1;
+  align-items: center;
+  color: #031232;
+  font-size: 3.2rem;
+  font-weight: 100;
+  border: 1px solid #edeef0;
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  border: 1px solid #5d5d5d;
 }
 
 body.about .modal button.close span {
-  color: #04143c;
+  color: #031232;
+  font-size: 3.2rem;
+  font-weight: 100;
+  pointer-events: none;
 }
 
 body.about .modal .modal-image {
@@ -16923,8 +16999,21 @@ body.about .modal .modal-image {
   background-size: 202px 202px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4.8rem;
+  margin-top: 2.4rem;
   margin-bottom: 4.8rem;
+}
+
+@media (min-width: 992px) {
+  body.about .modal .modal-image {
+    width: 272px;
+    height: 272px;
+    background-position: center center;
+    background-size: 272px 272px;
+  }
+}
+
+body.about .modal .modal-bio hr {
+  margin: 1.8rem 0;
 }
 
 body.about .modal .modal-bio .modal-meta #modalName {
@@ -16933,6 +17022,7 @@ body.about .modal .modal-bio .modal-meta #modalName {
   line-height: 2.7rem;
   letter-spacing: 0;
   color: #031232;
+  margin-bottom: 1.2rem;
 }
 
 body.about .modal .modal-bio .modal-meta #modalTitle {
@@ -16943,12 +17033,79 @@ body.about .modal .modal-bio .modal-meta #modalTitle {
   color: #5d5d5d;
 }
 
-body.about .modal .modal-bio .modal-meta #modalBio {
+body.about .modal .modal-bio #modalBio {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
   letter-spacing: 0;
   color: #979797;
+  margin-bottom: 3.2rem;
+}
+
+@media (min-width: 992px) {
+  body.about .modal .modal-bio hr {
+    margin: 1.8rem 0;
+  }
+  body.about .modal .modal-bio .modal-meta #modalName {
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+  }
+  body.about .modal .modal-bio .modal-meta #modalTitle {
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+  }
+  body.about .modal .modal-bio #modalBio {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+body.about .modal .modal-nav {
+  margin-bottom: 3.2rem;
+}
+
+body.about .modal .modal-nav button,
+body.about .modal .modal-nav span {
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  letter-spacing: .055rem;
+  text-transform: uppercase;
+  border: 0;
+  background-color: transparent;
+}
+
+body.about .modal .modal-nav button.next::after {
+  content: "";
+  background-image: url(/images/right-arrow.svg);
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  background-size: 14px 10px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin-left: .8rem;
+}
+
+body.about .modal .modal-nav button.prev:before {
+  content: "";
+  background-image: url(/images/right-arrow.svg);
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  background-size: 14px 10px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-right: .8rem;
+}
+
+body.about .modal .modal-nav button:hover {
+  text-decoration: underline;
+  color: #031232;
 }
 
 .row.404 {

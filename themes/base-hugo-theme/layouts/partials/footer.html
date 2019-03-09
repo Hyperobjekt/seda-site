@@ -5,34 +5,15 @@
     <!-- <div class="row p-xl-0 m-xl-0"> -->
       <div class="row p-xl-0 m-xl-0">
         <div class="navlinks col-xl-8 offset-xl-1 col-md-10 col-sm-12 p-xl-0">
-            {{ range .Site.Data.footer.links }}
-              <a href="{{ .url | relURL }}" tabindex="0">{{ .title }}</a>
+            {{ range .Site.Menus.main }}
+                {{ $text := print .Name | safeHTML }}
+                <a class="" tabindex="0" href="{{ .URL | relURL }}">
+                    {{ $text }}
+                </a>
             {{ end }}
         </div>
         <div class="social col-md-2 col-xs-12 p-xl-0">
-            {{ if .Site.Data.social.facebook_link }}
-              <a class="social-icon" href="{{ .Site.Data.social.facebook_link }}" target="_blank" aria-haspopup="true" tabindex="0" aria-label="Go to Facebook">
-                  <i class="fab fa-facebook-f"></i>
-              </a>
-            {{ end }}
-            {{ if .Site.Data.social.twitter_via }}
-              <a class="social-icon" href="https://www.twitter.com/{{ strings.TrimPrefix "@" .Site.Data.social.twitter_via }}" tabindex="0" aria-label="Go to Twitter">
-                  <i class="fab fa-twitter" target="_blank" aria-haspopup="true"></i>
-              </a>
-            {{ end }}
-            {{ if .Site.Data.social.linkedin_link }}
-              <a class="social-icon" href="{{ .Site.Data.social.linkedin_link }}" aria-label="Go to LinkedIn">
-                  <i class="fab fa-linkedin-in" target="_blank" aria-haspopup="true" tabindex="0"></i>
-              </a>
-            {{ end }}
-            {{ if .Site.Data.social.instagram_link }}
-              <a class="social-icon" href="{{ .Site.Data.social.instagram_link }}" aria-label="Go to Instagram"><i class="fab fa-instagram" target="_blank" aria-haspopup="true" tabindex="0"></i></a>
-            {{ end }}
-            {{ if .Site.Data.social.youtube_link }}
-              <a class="social-icon" href="{{ .Site.Data.social.youtube_link }}" aria-label="Go to YouTube" tabindex="0">
-                  <i class="fab fa-youtube" target="_blank" aria-haspopup="true"></i>
-              </a>
-            {{ end }}
+            {{ partial "social.html" . }}
         </div>
     <!-- </div>
     <div class="row break p-0 m-0"> -->

@@ -20,18 +20,38 @@ anchor = "smart"
 
 # main menu
 [[menu.main]]
-	name = "About"
-	url = "/about/"
+	name = "Map"
+	url = "/map/"
     weight = 1
 
 [[menu.main]]
-    name = "Test 2"
-    url = "/test2/"
+  name = "Explorations"
+  url = "/explorations/"
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
     weight = 2
 
 [[menu.main]]
-    name = "Test 3"
-    url = "/test3/"
+    name = "FAQ"
+    url = "/help-faq/"
+    weight = 3
+
+[[menu.main]]
+    name = "Methods"
+    url = "/methods/"
+    weight = 3
+
+[[menu.main]]
+    name = "Research"
+    url = "/research/"
+    weight = 3
+
+[[menu.main]]
+    name = "In the news"
+    url = "/news/"
     weight = 3
 
 [permalinks]

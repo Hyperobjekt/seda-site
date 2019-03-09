@@ -15723,41 +15723,72 @@ nav.navbar-light .drawer-toggle .navbar-toggler-icon {
 /* The side navigation menu */
 .drawer {
   height: 100%;
-  width: 300px;
+  width: 320px;
   position: fixed;
   z-index: 3000;
   top: 0;
   right: 0;
-  background-color: #111;
+  background-color: #ffffff;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
-  margin-right: -300px;
+  margin-right: -320px;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .drawer {
+    text-align: left;
+    padding-left: 4.8rem;
+  }
 }
 
 .drawer.show {
   margin-right: 0;
 }
 
-.drawer a {
-  padding: 8px 8px 8px 32px;
+.drawer .closebtn {
+  background-image: url(/images/close.svg);
+  background-repeat: no-repeat;
+  height: 41px;
+  width: 30px;
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  margin-left: 50px;
+  border: 0;
+  background-color: transparent;
+}
+
+.drawer .navlinks {
+  margin-top: 6.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.drawer .navlinks a {
+  padding: 0;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
   transition: 0.3s;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 2.4rem;
+  line-height: 2.0rem;
+  letter-spacing: .011rem;
+  color: #031232;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
 }
 
-.drawer a:hover {
+.drawer .navlinks a:hover {
   color: #f1f1f1;
+  text-decoration: underline;
 }
 
-.drawer .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.drawer .social .social-icon {
+  font-size: 2.4rem;
+  padding-right: 1.2rem;
 }
 
 button.navbar-toggler {

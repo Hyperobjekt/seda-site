@@ -2,10 +2,12 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <div class="row">
+                <div class="row flex-row-reverse m-0">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" tabindex="0">
                         <span aria-hidden="true">&times;</span>
                     </button>
+                </div>
+                <div class="row m-0">
                     <div class="modal-pic col-lg-4 col-md-4 col-sm-12">
                         <div id="modalImg" class="modal-image" tabindex="0"></div>
                     </div>
@@ -16,10 +18,13 @@
                         </div>
                         <hr>
                         <div id="modalBio" tabindex="0"></div>
-                        <div class="modal-nav">
-                            <button type="button" class="btn-wire" data-dismiss="modal" aria-label="Close" tabindex="0">Previous bio</button>
-                            <button type="button" class="btn-wire" data-dismiss="modal" aria-label="Close" tabindex="0">Next bio</button>
-                        </div>
+                    </div>
+                </div>
+                <div class="row flex-row-reverse">
+                    <div class="modal-nav">
+                        <button id="prevBio" type="button" class="btn-wire prev" aria-label="Previos bio" tabindex="0">Previous bio</button>
+                        <span class="divider">|</span>
+                        <button id="nextBio" type="button" class="btn-wire next" aria-label="Next bio" tabindex="0">Next bio</button>
                     </div>
                 </div>
             </div>

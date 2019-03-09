@@ -16946,6 +16946,72 @@ body.about .row.people-current .bio, body.about .row.people-former .bio {
   display: none;
 }
 
+body.about .row.people-former {
+  margin-bottom: 6.4rem;
+}
+
+body.about .row.quote {
+  background-color: #f5f8fa;
+}
+
+body.about .row.quote blockquote {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: .002rem;
+  margin-top: 4.8rem;
+  margin-bottom: 4.8rem;
+}
+
+@media (min-width: 768px) {
+  body.about .row.quote blockquote {
+    margin-top: 6.4rem;
+    margin-bottom: 6.4rem;
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.quote blockquote {
+    margin-top: 7.2rem;
+    margin-bottom: 7.2rem;
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .003rem;
+  }
+}
+
+body.about .row.funders {
+  margin-top: 3.2rem;
+}
+
+body.about .row.funders h3 {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  letter-spacing: .055rem;
+  margin-top: 4.8rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+body.about .row.funders p {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  margin-top: 3.2rem;
+  margin-bottom: 4.8rem;
+  text-align: center;
+}
+
+body.about .row.funder-logos {
+  margin-top: 4.8rem;
+  margin-bottom: 4.8rem;
+}
+
 body.about .modal {
   padding-right: 0 !important;
 }

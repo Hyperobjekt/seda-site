@@ -1,0 +1,31 @@
+<img src="{{ .image | relURL }}" alt="" width="" height="">
+<h5>{{ .title }}</h5>
+<div class="authors">
+    {{ $len := (len .authors) }}
+    {{range $index, $value := .authors}}
+        {{ if eq (add $index 1) $len }}
+            <span class="author">{{ $value }}</span>
+        {{ else }}
+            <span class="author last">{{ $value }}, </span>
+        {{ end }}
+    {{ end }}
+</div>
+<div class="controls">
+    <button id="" class="download-paper">Download Latest Version</button>
+    <button id="" class="show-versions">Show Previous Versions</button>
+</div>
+<div class="abstract" id="">
+    {{ .abstract | markdownify }}
+</div>
+<div class="meta">
+    <h4>Previous Versions</h4>
+    <hr>
+    {{range $index, $version := .versions}}
+        {{/*range sort . .order "desc"*/}}
+            <a href="{{ $version.link | relURL }}" class="version-link">
+                <span class="date">{{ $version.date }}</span>
+                <span class="label">Download now</span>
+            </a>
+        {{/* end */}}
+    {{ end }}
+</div>

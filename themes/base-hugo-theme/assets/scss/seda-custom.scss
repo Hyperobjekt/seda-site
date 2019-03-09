@@ -1416,7 +1416,7 @@ body.about {
       }
     }
 
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(lg) {
       .modal-dialog {
         max-width: 930px;
       }
@@ -1456,6 +1456,13 @@ body.about {
       margin-right: auto;
       margin-top: 2.4rem;
       margin-bottom: 4.8rem;
+
+      @include media-breakpoint-up(lg) {
+        width: 272px;
+        height: 272px;
+        background-position: center center;
+        background-size: 272px 272px;
+      }
     }
 
     .modal-bio {
@@ -1489,6 +1496,28 @@ body.about {
       }
     }
 
+    @include media-breakpoint-up(lg) {
+      .modal-bio {
+        hr {
+          margin: 1.8rem 0;
+        }
+        .modal-meta {
+          #modalName {
+            font-size: 1.85rem;
+            line-height: 2.7rem;
+          }
+          #modalTitle {
+            font-size: 1.2rem;
+            line-height: 2.1rem;
+          }
+        }
+        #modalBio {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+
     .modal-nav {
       margin-bottom: 3.2rem;
 
@@ -1499,6 +1528,7 @@ body.about {
         letter-spacing: .055rem;
         text-transform: uppercase;
         border: 0;
+        background-color: transparent;
       }
       button {
         &.next::after {

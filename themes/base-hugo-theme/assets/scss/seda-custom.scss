@@ -426,6 +426,17 @@ img {
       }
       a {
         cursor: pointer;
+        &.highlight {
+          @include media-breakpoint-up(md) {
+            border-bottom: 4px solid #04143C;
+            margin-top: 22px;
+            padding-bottom: 19px;
+        }
+          @include media-breakpoint-up(lg) {
+            margin-top: 10px;
+            padding-bottom: 7px;
+          }
+         }
       }
     }
   }

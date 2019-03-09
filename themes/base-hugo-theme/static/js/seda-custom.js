@@ -121,5 +121,15 @@
             console.log('#closeDrawer selected');
             $('#drawer').removeClass('show');
         });
+
+        // Add Subnav active selection highlighting
+          
+        $(".subnav a").click(function () {
+            $(".subnav a").removeClass("highlight");
+            $(this).addClass("highlight");
+        });
+          
+          
+        
     });
 })(jQuery);

@@ -1382,6 +1382,69 @@ body.about {
         display: none;
       }
     }
+
+    &.people-former {
+      margin-bottom: 6.4rem;
+    }
+  }
+
+  .row {
+    &.quote {
+      background-color: $seda-paleblue;
+      blockquote {
+        color: $seda-dark;
+        font-family: $sharpgrotesk-med-20;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        letter-spacing: .002rem;
+        margin-top: 4.8rem;
+        margin-bottom: 4.8rem;
+        @include media-breakpoint-up(md) {
+          margin-top: 6.4rem;
+          margin-bottom: 6.4rem;
+          font-size: 1.85rem;
+          line-height: 2.7rem;
+        }
+        @include media-breakpoint-up(lg) {
+          margin-top: 7.2rem;
+          margin-bottom: 7.2rem;
+          font-size: 2.3rem;
+          line-height: 3.4rem;
+          letter-spacing: .003rem;
+        }
+      }
+    }
+  }
+
+  .row {
+    &.funders {
+      margin-top: 3.2rem;
+      h3 {
+        color: $seda-dark;
+        font-family: $sharpgrotesk-med-15;
+        font-size: 1.2rem;
+        // line-height: 2.1rem;
+        letter-spacing: .055rem;
+        margin-top: 4.8rem;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      p {
+        color: $seda-dark;
+        font-family: $sharpgrotesk-med-20;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        margin-top: 3.2rem;
+        margin-bottom: 4.8rem;
+        text-align: center;
+      }
+    }
+  }
+  .row {
+    &.funder-logos {
+      margin-top: 4.8rem;
+      margin-bottom: 4.8rem;
+    }
   }
 
   .modal {

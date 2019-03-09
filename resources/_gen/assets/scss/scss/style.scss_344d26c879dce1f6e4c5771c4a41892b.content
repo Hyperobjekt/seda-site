@@ -15886,6 +15886,21 @@ img.float-left {
   cursor: pointer;
 }
 
+@media (min-width: 768px) {
+  .subnav ul li a.highlight {
+    border-bottom: 4px solid #04143C;
+    margin-top: 22px;
+    padding-bottom: 19px;
+  }
+}
+
+@media (min-width: 992px) {
+  .subnav ul li a.highlight {
+    margin-top: 10px;
+    padding-bottom: 7px;
+  }
+}
+
 body.home .hero {
   height: 100vh;
   margin-top: -6.4rem;

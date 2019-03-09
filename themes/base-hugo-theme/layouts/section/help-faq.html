@@ -13,23 +13,23 @@
      
         <div class="dropdown">
             <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Select Category:
+                Jump to Section:
             </button>
     <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
       <ul class="anchor-links dropdown-menu">
-        <li><a class="dropdown-item smoothScroll" href="#glossary">Glossary</a></li>
-        <li><a class="dropdown-item smoothScroll" href="#data">Interpreting the Data</a></li>
-        <li><a class="dropdown-item smoothScroll" href="#map">Using the Map</a></li>
+        <li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
+        <li><a data-scroll-target="data" class="scroll-to-section">Interpreting the Data</a></li>
+        <li><a data-scroll-target="map" class="scroll-to-section">Using the Map</a></li>
     </ul>
     <!--</div>-->
   </div>
  
 </div>
 
-<div class="row subnav">
+<div class="row subnav d-sm-none d-md-block">
    
       <ul class="anchor-links col-md-8 mx-auto d-md-flex">
-        <li class="only-larger-screens">Jump to Section:</li>
+        <li >Jump to Section:</li>
         <li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
         <li><a data-scroll-target="data" class="scroll-to-section">Interpreting the Data</a></li>
         <li><a data-scroll-target="map" class="scroll-to-section">Using the Map</a></li>

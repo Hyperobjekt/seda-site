@@ -17,6 +17,38 @@
             $('nav').addClass('sticky-top');
         }
     }
+
+    // Placeholder for active modal contents.
+    // var activeBio = null;
+
+    var updateModal = {
+        activeBio: null,
+        update: function() {
+            console.log('updateModal.update()');
+            var $button = $(this.activeBio).find('button');
+
+            // Get name, title, bio, and image
+            var parent = $button.parent();
+            // console.log(parent);
+            var name = $button.parent().siblings('.name').text();
+            // console.log('name = ' + name);
+            var title = $button.parent().siblings('.title').text();
+            // console.log('title = ' + title);
+            var bio = $button.parent().siblings('.bio').html();
+            /// console.log('bio = ' + bio);
+            var image = $button.closest('.column-people').children('.pic').attr('style');
+
+            // Set contents
+            $('#modalImg').attr('style', image);
+            $('#modalName').text(name);
+            $('#modalTitle').html(title);
+            $('#modalBio').html(bio);
+            $('#peopleBioModal').modal('show');
+
+            // Check first and last status
+        }
+    };
+
     $( document ).ready(function() {
         // Manage navbar appearance by scroll position
         $( window ).scroll(function() {
@@ -49,28 +81,21 @@
             e.preventDefault();
             var $button = $(e.target);
             // Store active bio so navigation between then works.
-            var activeBio = $button.closest('.column-people');
-            // Get name, title, bio, and image
-            var parent = $button.parent();
-            // console.log(parent);
-            var name = $button.parent().siblings('.name').text();
-            // console.log('name = ' + name);
-            var title = $button.parent().siblings('.title').text();
-            // console.log('title = ' + title);
-            var bio = $button.parent().siblings('.bio').html();
-            /// console.log('bio = ' + bio);
-            var image = $button.closest('.column-people').children('.pic').attr('style'); // ('data-image'); // .style.background-image;// .find('.pic').html();
-            console.log(image);
-            // image = image.attr('data-image');
+            updateModal.activeBio = $button.closest('.column-people');
+            updateModal.update();
 
-            // Set contents
-            $('#modalImg').attr('style', image);
-            $('#modalName').text(name);
-            $('#modalTitle').html(title);
-            $('#modalBio').html(bio);
-            $('#peopleBioModal').modal('show');
-            // Add event listeners to the next and previous buttons
-            // When clicked, update the active element
+            $('#prevBio').on('click', function() {
+                if ($(updateModal.activeBio).prev().length >= 1) {
+                    updateModal.activeBio = $(updateModal.activeBio).prev();
+                    updateModal.update();
+                }
+            });
+            $('#nextBio').on('click', function() {
+                if ($(updateModal.activeBio).next().length >= 1) {
+                    updateModal.activeBio = $(updateModal.activeBio).next();
+                    updateModal.update();
+                }
+            });
           });
         }
 

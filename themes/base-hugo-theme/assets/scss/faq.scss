@@ -140,9 +140,9 @@ body.type-help-faq {
             }
       }  
       .row.glossary {
-        margin-top: 5.6rem;
+        padding-top: 5.6rem;
         @include media-breakpoint-up(md) {
-          margin-top: 8rem;
+          padding-top: 8rem;
         }
       }
       .row.data {

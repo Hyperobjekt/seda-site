@@ -17471,12 +17471,12 @@ body.type-help-faq p {
 }
 
 body.type-help-faq .row.glossary {
-  margin-top: 5.6rem;
+  padding-top: 5.6rem;
 }
 
 @media (min-width: 768px) {
   body.type-help-faq .row.glossary {
-    margin-top: 8rem;
+    padding-top: 8rem;
   }
 }
 

@@ -15769,7 +15769,6 @@ nav.navbar-light .drawer-toggle .navbar-toggler-icon {
   padding: 0;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
   display: block;
   transition: 0.3s;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -15782,7 +15781,6 @@ nav.navbar-light .drawer-toggle .navbar-toggler-icon {
 }
 
 .drawer .navlinks a:hover {
-  color: #f1f1f1;
   text-decoration: underline;
 }
 

@@ -312,7 +312,6 @@ nav.navbar-light {
       padding: 0;
       text-decoration: none;
       font-size: 25px;
-      color: #818181;
       display: block;
       transition: 0.3s;
       font-family: $sharpgrotesk-med-15;
@@ -324,7 +323,6 @@ nav.navbar-light {
       margin-bottom: 3.2rem;
 
       &:hover {
-        color: #f1f1f1;
         text-decoration: underline;
       }
     }

@@ -17108,6 +17108,24 @@ body.about .modal .modal-nav button:hover {
   color: #031232;
 }
 
+body.about .modal .modal-nav button:disabled {
+  opacity: .5;
+}
+
+body.about .modal .modal-nav button:disabled:before {
+  opacity: .5;
+}
+
+body.about .modal .modal-nav button:disabled:after {
+  opacity: .5;
+}
+
+body.about .modal .modal-nav button:disabled:hover {
+  opacity: .5;
+  color: #979797;
+  text-decoration: none;
+}
+
 .row.404 {
   min-height: 100vh;
   padding-top: 25vh;

@@ -166,6 +166,12 @@ body.type-help-faq {
             }
             i.fa-chevron-up {
                 transform: rotate(180deg);
+                &:before {
+                font-size: 1.8rem;
+                    @include media-breakpoint-up(md) {
+                        font-size: 2.1rem;
+                    }
+                }   
             }
             &:hover {
                 text-decoration: none;

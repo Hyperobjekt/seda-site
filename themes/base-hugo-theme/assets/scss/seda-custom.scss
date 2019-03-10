@@ -430,6 +430,9 @@ img {
       padding: 1.6rem 0;
       z-index: 2;
       height: auto;
+      &.show {
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .20);
+      }
       li {
         display: block;
         margin-bottom: 1.6rem;
@@ -478,6 +481,14 @@ img {
       }
     }
   }
+}
+
+// Shadow effect
+.drop-shadow {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .20);
+}
+.drop-shadow-left {
+  box-shadow: -2px 0px 5px rgba(0,0,0,.20);
 }
 
 // Hero

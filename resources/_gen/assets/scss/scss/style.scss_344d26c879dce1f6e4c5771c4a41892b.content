@@ -15884,6 +15884,10 @@ img.float-left {
   height: auto;
 }
 
+.subnav.d-md-none ul.show {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
 .subnav.d-md-none ul li {
   display: block;
   margin-bottom: 1.6rem;
@@ -15941,6 +15945,14 @@ img.float-left {
     margin-top: 10px;
     padding-bottom: 7px;
   }
+}
+
+.drop-shadow {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.drop-shadow-left {
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 body.home .hero {
@@ -18083,6 +18095,16 @@ body.type-help-faq .accordion-section a.question h5 {
 
 body.type-help-faq .accordion-section a.question i.fa-chevron-up {
   transform: rotate(180deg);
+}
+
+body.type-help-faq .accordion-section a.question i.fa-chevron-up:before {
+  font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  body.type-help-faq .accordion-section a.question i.fa-chevron-up:before {
+    font-size: 2.1rem;
+  }
 }
 
 body.type-help-faq .accordion-section a.question:hover {

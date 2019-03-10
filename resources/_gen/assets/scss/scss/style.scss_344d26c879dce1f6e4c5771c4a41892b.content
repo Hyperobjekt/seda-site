@@ -16176,7 +16176,7 @@ body.home #main {
 
 .row.fact {
   text-align: left;
-  background-color: #fff8f8;
+  background-color: #f8f8f8;
 }
 
 .row.fact:nth-child(odd) {

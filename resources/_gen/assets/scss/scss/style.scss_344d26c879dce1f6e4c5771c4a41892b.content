@@ -17892,23 +17892,23 @@ body.type-help-faq .hero .hero-child {
   height: 100%;
   margin-right: 0;
   margin-left: 0;
-  background: url("/images/about-plot-2x.png");
+  background: url("/images/fourpapers2@2x.png");
   background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 1030px 378px;
+  background-size: 84%;
+  background-position: center 70%;
 }
 
 @media (min-width: 576px) {
   body.type-help-faq .hero .hero-child {
-    background-size: 1600px 378px;
-    background-position: -100px bottom;
+    background-size: 68%;
+    background-position: center;
   }
 }
 
 @media (min-width: 1400px) {
   body.type-help-faq .hero .hero-child {
-    background-size: 2000px 378px;
-    background-position: -200px bottom;
+    background-size: 68%;
+    background-position: center;
   }
 }
 

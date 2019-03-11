@@ -7,6 +7,7 @@ is_index: true
 - Most recent update: 3-9-19
 - Hero image approval needed (image may work on another page if not this one)
 - "Mission" icon needs approval or alternate direction
+- Add actual team members and bios
 - Make team member images clickable
 - Enlarge funder logos
 - Layout: 99% complete

@@ -405,6 +405,10 @@ img {
 .subnav {
   height: 4.8rem;
   position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
   top: 64px;
   display: flex;
   align-items: center;
@@ -933,10 +937,17 @@ body.home {
       padding-top: 9.6rem;
       padding-bottom: 3.2rem;
       text-align: center;
+      order: 1;
     }
     .card-container {
       // padding-top: 15px;
       // padding-bottom: 8rem;
+      &:nth-of-type(3) {
+        order: 2;
+      }
+      &:nth-of-type(2){
+        order: 3;
+      }
       .card {
         padding: 2.4rem;
         margin-bottom: 1.6rem;
@@ -1049,6 +1060,7 @@ body.home {
       font-size: 1.2rem;
       letter-spacing: .055rem;
       text-transform: uppercase;
+      order: 4;
 
       a {
         &:hover {

@@ -14,9 +14,15 @@ top: 90vh; right: 0;">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        {{ if eq .Params.statustype "post" }}
+        <div class="modal-body">
+            {{ .Params.status }}
+            </div>
+        {{ else }}    
         <div class="modal-body">
             {{ .Content }}
         </div>
+        {{ end }}
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>

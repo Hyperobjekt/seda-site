@@ -7,4 +7,4 @@ date: "2019-02-24"
 - Styling: needs work
 - Header / footer: in development
 - Page content: updated 3-10-19
-- Illustrations & hero images are placeholders
+- Illustrations & hero images are placeholders; no animations on illustrations yet

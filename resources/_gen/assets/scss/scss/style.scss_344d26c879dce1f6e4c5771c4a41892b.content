@@ -15849,6 +15849,10 @@ img.float-left {
 .subnav {
   height: 4.8rem;
   position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
   top: 64px;
   display: flex;
   align-items: center;
@@ -16420,6 +16424,15 @@ body.home #main {
   padding-top: 9.6rem;
   padding-bottom: 3.2rem;
   text-align: center;
+  order: 1;
+}
+
+.row.latest-explorations .card-container:nth-of-type(3) {
+  order: 2;
+}
+
+.row.latest-explorations .card-container:nth-of-type(2) {
+  order: 3;
 }
 
 .row.latest-explorations .card-container .card {
@@ -16523,6 +16536,7 @@ body.home #main {
   font-size: 1.2rem;
   letter-spacing: .055rem;
   text-transform: uppercase;
+  order: 4;
 }
 
 .row.latest-explorations .all-explorations a:hover {

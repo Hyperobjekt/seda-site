@@ -129,6 +129,22 @@ h3 {
   background: #f6f9f9;
 }
 
+// Color classes
+
+.colorblue {
+  color: $seda-buttonblue;
+}
+.colorred {
+  color: $seda-red;
+}
+.colornavy {
+  color: $seda-navy;
+}
+.colormidblue {
+  color: #103698;
+  //font-style: italic;
+}
+
 // Custom button style
 .btn-custom {
   display: inline-block;
@@ -577,14 +593,14 @@ body.home {
             font-size: 3.6rem;
             line-height: 5.4rem;
             letter-spacing: .018rem;
-            margin-top: 35%;
+            margin-top: 40vh;
           }
 
           @include media-breakpoint-up(xl) {
             font-size: 4.3rem;
             line-height: 6.45rem;
             letter-spacing: .022rem;
-            margin-top: 35%;
+            margin-top: 28vh;
           }
 
 
@@ -614,7 +630,8 @@ body.home {
           @include media-breakpoint-up(lg) {
             font-size: 1.6rem;
             line-height: 2.4rem;
-            margin-top: 3.2rem;
+            margin-top: 1.6rem;
+            margin-bottom: 3.2rem;
           }
 
           @include media-breakpoint-up(xl) {
@@ -746,7 +763,7 @@ body.home {
     &.fact-1,
     &.fact-2,
     &.fact-3 {
-      padding: 3.2rem 0 25.6rem;
+      padding: 3.2rem 0 4rem;
       h4 {
         font-size: 1.7rem;
         line-height: 2.9rem;
@@ -798,6 +815,10 @@ body.home {
 
     }
     &.fact-2 {
+ 
+      @include media-breakpoint-down(mm) {
+        flex-direction: column-reverse;
+      }
 
     }
     &.fact-3 {

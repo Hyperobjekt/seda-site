@@ -1,4 +1,16 @@
-<img src="{{ .image | relURL }}" alt="" width="" height="">
+
+<!-- <img src="{{ .image | relURL }}" alt="" width="" height=""> -->
+
+<!-- Build map of params to call image partial -->
+{{ $imgParams := newScratch }}
+{{ $imgParams.Set "image" "test.jpg" }}
+{{ $imgParams.Set "action" "Fill" }}
+{{ $imgParams.Set "options" "141x136 Center" }}
+{{ $imgParams.Set "alt" "Article image" }}
+<!-- Call image partial -->
+{{ partial "imgproc.html" (dict "context" . "imgParams" $imgParams ) }}
+
+
 <h5>{{ .title }}</h5>
 <div class="authors">
     {{ $len := (len .authors) }}
@@ -10,9 +22,12 @@
         {{ end }}
     {{ end }}
 </div>
+{{ $sortedVersions := sort .versions "date" "desc" }}
 <div class="controls">
-    <button id="" class="download-paper">Download Latest Version</button>
-    <button id="" class="show-versions">Show Previous Versions</button>
+    {{ range first 1 $sortedVersions }}
+        <a id="{{ .link | relURL }}" class="btn btn-custom download-paper">Download Latest Version</a>
+    {{ end }}
+    <button id="" class="btn btn-custom show-versions">Show Previous Versions</button>
 </div>
 <div class="abstract" id="">
     {{ .abstract | markdownify }}
@@ -20,12 +35,10 @@
 <div class="meta">
     <h4>Previous Versions</h4>
     <hr>
-    {{range $index, $version := .versions}}
-        {{/*range sort . .order "desc"*/}}
-            <a href="{{ $version.link | relURL }}" class="version-link">
-                <span class="date">{{ $version.date }}</span>
-                <span class="label">Download now</span>
-            </a>
-        {{/* end */}}
+    {{range $sortedVersions }}
+        <a href="{{ .link | relURL }}" class="version-link" aria-label="Download version from {{ .date }}">
+            <span class="date">{{ .date }}</span>
+            <span class="label">Download now</span>
+        </a>
     {{ end }}
 </div>

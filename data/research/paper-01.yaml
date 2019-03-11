@@ -3,16 +3,16 @@ authors: ["Sean F. Reardon", "Demetra Kalogrides", "Ken Shores"]
 title: "The Geography of Racial/Ethnic Test Score Gaps"
 image: "/uploads/test.jpg" # will be cropped to center square & rounded
 versions:
-  - date: 2018-03
+  - date: "2018-02-04"
     order: 0
     link: "/uploads/test.pdf"
-  - date: 2017-12
+  - date: "2016-04-03"
     order: 1
     link: "/uploads/test.pdf"
-  - date: 2017-01
+  - date: "2018-02-01"
     order: 2
     link: "/uploads/test.pdf"
-  - date: 2016-02
+  - date: "2001-01-02"
     order: 3
     link: "/uploads/test.pdf"
 abstract: |

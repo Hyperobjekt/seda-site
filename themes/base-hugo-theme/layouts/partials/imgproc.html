@@ -1,11 +1,30 @@
-{{/* {{ partial imgproc . filename.jpg .Fill "296x243 Center" }} */}}
-{{ $image := .Get 0 }}
-{{ $action := .Get 1 }}
-{{ $options := .Get 2 }}
-{{ $img := strings.TrimPrefix "/uploads/" $image }}
-{{ with $.Site.GetPage "page" "uploads/_index.md" }}
-    {{ with .Resources.GetMatch $img }}
-        {{$processed := $action $options}}
-        $processed.RelPermalink }}
+{{/* {{ partial "imgproc.html" . }} */}}
+{{ $action := .imgParams.Get "action" }}
+{{ $alt := .imgParams.Get "alt" }}
+{{ $options := (.imgParams.Get "options") }}
+{{ $img := strings.TrimPrefix "/uploads/" (.imgParams.Get "image") }}
+
+{{ if eq $action "Fit"}}
+    {{ with site.GetPage "uploads/_index.md" }}
+        {{ with .Resources.GetMatch $img }}
+            {{ $processed := .Fit $options }}
+            <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height }}" alt="{{ $alt }}">
+        {{ end }}
     {{ end }}
+{{ else if eq $action "Resize"}}
+    {{ with site.GetPage "uploads/_index.md" }}
+        {{ with .Resources.GetMatch $img }}
+            {{ $processed := .Resize $options }}
+            <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height }}" alt="{{ $alt }}">
+        {{ end }}
+    {{ end }}
+{{ else if eq $action "Fill"}}
+    {{ with site.GetPage "uploads/_index.md" }}
+        {{ with .Resources.GetMatch $img }}
+            {{ $processed := .Fill $options }}
+            <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height }}" alt="{{ $alt }}">
+        {{ end }}
+    {{ end }}
+{{ else }}
+    {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
 {{ end }}

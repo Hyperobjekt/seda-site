@@ -79,7 +79,14 @@
     </div>
 </div>
 
+<!-- Build map of params to call image partial -->
+{{ $imgParams := newScratch }}
+{{ $imgParams.Set "image" "test.jpg" }}
+{{ $imgParams.Set "action" "Fill" }}
+{{ $imgParams.Set "options" "250x250 Center" }}
+<!-- Call image partial -->
+{{ partial "imgproc.html" (dict "context" . "imgParams" $imgParams ) }}
 
-{{ partial "subscribe.html" .}}
+{{ partial "subscribe.html" . }}
 
 {{ end }}

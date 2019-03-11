@@ -3,13 +3,13 @@ authors: ["Laura Bellows"]
 title: "Immigration Enforcement and Student Achievement: the Negative Spillover of Secure Communities"
 image: "/uploads/test.jpg" # will be cropped to center square & rounded
 versions:
-  - date: 2018-12
+  - date: "2018-02-01"
     order: 0
     link: "/uploads/test.pdf"
-  - date: 2017-12
+  - date: "2018-02-01"
     order: 1
     link: "/uploads/test.pdf"
-  - date: 2017-01
+  - date: "2018-02-01"
     order: 2
     link: "/uploads/test.pdf"
 abstract: |

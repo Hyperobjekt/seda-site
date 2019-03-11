@@ -19,40 +19,46 @@ anchor = "smart"
   paginage=5
 
 # main menu
+
+[[menu.main]]
+	name = "Home"
+	url = "/"
+    weight = 1
+
 [[menu.main]]
 	name = "Map"
-	url = "/map/"
+	url = "http://seda-map-prototype.surge.sh/"
     weight = 1
 
 [[menu.main]]
   name = "Explorations"
   url = "/explorations/"
-    weight = 1
+    weight = 2
 
 [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "FAQ"
     url = "/help-faq/"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Methods"
     url = "/methods/"
-    weight = 3
+    weight = 5
 
 [[menu.main]]
     name = "Research"
     url = "/research/"
-    weight = 3
+    weight = 6
 
 [[menu.main]]
     name = "In the news"
     url = "/news/"
-    weight = 3
+    weight = 7
 
 [permalinks]
   post = "/:year/:month/:day/:slug/"

@@ -9,18 +9,21 @@ top: 90vh; right: 0;">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Page Development Status</h5>
-          <p>Most developed pages: Home, About, FAQ. Others in progress or yet to be deployed.</p>
+          <h5 class="modal-title" id="exampleModalLabel">Site & Page Development Status</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         {{ if eq .Params.statustype "post" }}
         <div class="modal-body">
-            {{ .Params.status }}
+            <p><b>Most developed pages:</b> Home, About, FAQ. Others in progress or yet to be deployed.</p>
+            <p><b>Page status:</b>
+            {{ .Params.status }}</p>
             </div>
         {{ else }}    
         <div class="modal-body">
+            <p><b>Most developed pages:</b> Home, About, FAQ. Others in progress or yet to be deployed.</p>
+            <p><b>Page status:</b></p>
             {{ .Content }}
         </div>
         {{ end }}

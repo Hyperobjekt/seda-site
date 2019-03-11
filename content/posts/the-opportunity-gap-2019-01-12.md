@@ -4,7 +4,7 @@ author: "Sean F. Reardon"
 date: "2019-01-12"
 image: "/uploads/test.jpg"
 statustype: post
-status: (3-10-19) Hero image and content / scatterplot areas are for placement only.
+status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
 ---
 This figure shows the average performance of black and white students in each US school district in math and English language arts in grade 3. 
 

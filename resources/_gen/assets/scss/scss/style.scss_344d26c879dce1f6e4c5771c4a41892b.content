@@ -15606,6 +15606,22 @@ h3 {
   background: #f6f9f9;
 }
 
+.colorblue {
+  color: #1c3d91;
+}
+
+.colorred {
+  color: #ff003e;
+}
+
+.colornavy {
+  color: #04143c;
+}
+
+.colormidblue {
+  color: #103698;
+}
+
 .btn-custom {
   display: inline-block;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -15833,6 +15849,10 @@ img.float-left {
 .subnav {
   height: 4.8rem;
   position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
   top: 64px;
   display: flex;
   align-items: center;
@@ -15882,6 +15902,10 @@ img.float-left {
   padding: 1.6rem 0;
   z-index: 2;
   height: auto;
+}
+
+.subnav.d-md-none ul.show {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .subnav.d-md-none ul li {
@@ -15941,6 +15965,14 @@ img.float-left {
     margin-top: 10px;
     padding-bottom: 7px;
   }
+}
+
+.drop-shadow {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.drop-shadow-left {
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 body.home .hero {
@@ -16041,7 +16073,7 @@ body.home .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
     letter-spacing: .018rem;
-    margin-top: 35%;
+    margin-top: 40vh;
   }
 }
 
@@ -16050,7 +16082,7 @@ body.home .hero .hero-child .column h2 {
     font-size: 4.3rem;
     line-height: 6.45rem;
     letter-spacing: .022rem;
-    margin-top: 35%;
+    margin-top: 28vh;
   }
 }
 
@@ -16084,7 +16116,8 @@ body.home .hero .hero-child .column p {
   body.home .hero .hero-child .column p {
     font-size: 1.6rem;
     line-height: 2.4rem;
-    margin-top: 3.2rem;
+    margin-top: 1.6rem;
+    margin-bottom: 3.2rem;
   }
 }
 
@@ -16164,7 +16197,7 @@ body.home #main {
 
 .row.fact {
   text-align: left;
-  background-color: #fff8f8;
+  background-color: #f8f8f8;
 }
 
 .row.fact:nth-child(odd) {
@@ -16217,7 +16250,7 @@ body.home #main {
 }
 
 .row.fact.fact-1, .row.fact.fact-2, .row.fact.fact-3 {
-  padding: 3.2rem 0 25.6rem;
+  padding: 3.2rem 0 4rem;
 }
 
 .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
@@ -16266,6 +16299,12 @@ body.home #main {
   .row.fact.fact-1 p, .row.fact.fact-2 p, .row.fact.fact-3 p {
     font-size: 1.9rem;
     line-height: 2.8rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .row.fact.fact-2 {
+    flex-direction: column-reverse;
   }
 }
 
@@ -16385,6 +16424,15 @@ body.home #main {
   padding-top: 9.6rem;
   padding-bottom: 3.2rem;
   text-align: center;
+  order: 1;
+}
+
+.row.latest-explorations .card-container:nth-of-type(3) {
+  order: 2;
+}
+
+.row.latest-explorations .card-container:nth-of-type(2) {
+  order: 3;
 }
 
 .row.latest-explorations .card-container .card {
@@ -16488,6 +16536,7 @@ body.home #main {
   font-size: 1.2rem;
   letter-spacing: .055rem;
   text-transform: uppercase;
+  order: 4;
 }
 
 .row.latest-explorations .all-explorations a:hover {
@@ -17880,23 +17929,23 @@ body.type-help-faq .hero .hero-child {
   height: 100%;
   margin-right: 0;
   margin-left: 0;
-  background: url("/images/about-plot-2x.png");
+  background: url("/images/fourpapers2@2x.png");
   background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 1030px 378px;
+  background-size: 84%;
+  background-position: center 70%;
 }
 
 @media (min-width: 576px) {
   body.type-help-faq .hero .hero-child {
-    background-size: 1600px 378px;
-    background-position: -100px bottom;
+    background-size: 68%;
+    background-position: center;
   }
 }
 
 @media (min-width: 1400px) {
   body.type-help-faq .hero .hero-child {
-    background-size: 2000px 378px;
-    background-position: -200px bottom;
+    background-size: 68%;
+    background-position: center;
   }
 }
 
@@ -18083,6 +18132,16 @@ body.type-help-faq .accordion-section a.question h5 {
 
 body.type-help-faq .accordion-section a.question i.fa-chevron-up {
   transform: rotate(180deg);
+}
+
+body.type-help-faq .accordion-section a.question i.fa-chevron-up:before {
+  font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  body.type-help-faq .accordion-section a.question i.fa-chevron-up:before {
+    font-size: 2.1rem;
+  }
 }
 
 body.type-help-faq .accordion-section a.question:hover {

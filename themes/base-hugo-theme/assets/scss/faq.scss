@@ -27,17 +27,17 @@ body.type-help-faq {
           height: 100%;
           margin-right: 0;
           margin-left: 0;
-          background: url('/images/about-plot-2x.png');
+          background: url('/images/fourpapers2@2x.png');
           background-repeat: no-repeat;
-          background-position: left bottom;
-          background-size: 1030px 378px;
+          background-size: 84%;
+          background-position: center 70%;
           @include media-breakpoint-up(mm) {
-            background-size: 1600px 378px;
-            background-position: -100px bottom;
+            background-size: 68%;
+            background-position: center;
           }
           @include media-breakpoint-up(xl) {
-            background-size: 2000px 378px;
-            background-position: -200px bottom;
+            background-size: 68%;
+            background-position: center;
           }
           .column {
             margin-top: 13.2rem;
@@ -166,6 +166,12 @@ body.type-help-faq {
             }
             i.fa-chevron-up {
                 transform: rotate(180deg);
+                &:before {
+                font-size: 1.8rem;
+                    @include media-breakpoint-up(md) {
+                        font-size: 2.1rem;
+                    }
+                }   
             }
             &:hover {
                 text-decoration: none;

@@ -15696,6 +15696,7 @@ input.form-control {
 nav.navbar-light {
   height: 6.4rem;
   background-color: transparent;
+  transition: background-color .2s ease;
   padding-right: 0;
   padding-left: 0;
 }
@@ -15716,7 +15717,7 @@ nav.navbar-light.sticky-top {
   background-color: #fff;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
   transition: background-color .2s ease;
-  animation: slide-down .3s;
+  animation: slide-down .2s;
 }
 
 @keyframes slide-down {

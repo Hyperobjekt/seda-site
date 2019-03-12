@@ -225,6 +225,7 @@ input.form-control {
 nav.navbar-light {
   height: 6.4rem;
   background-color: transparent; // $seda-dark;
+  transition: background-color .2s ease;
   padding-right: 0;
   padding-left: 0;
   // opacity: 0;
@@ -240,13 +241,13 @@ nav.navbar-light {
     background-repeat: no-repeat;
     margin-top: 2px;
   }
-
+ 
   &.sticky-top {
     background-color: $seda-dark;
     background-color: #fff;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .20);
     transition: background-color .2s ease;
-    animation: slide-down .3s;
+    animation: slide-down .2s;
     @keyframes slide-down {
       0% {
       transform: translateY(-64px);
@@ -256,8 +257,7 @@ nav.navbar-light {
       }
 
     }
-    
-    
+
     .navbar-brand {
       animation: opacity-fill .3s;
       background-image: url("/images/logo2.svg");

@@ -1894,6 +1894,9 @@ body.research {
       &.active {
         text-decoration: underline;
       }
+      &:hover {
+        color: $seda-dark;
+      }
     }
   }
   .tab-content {
@@ -1940,11 +1943,14 @@ body.research {
     .info {
       flex: 1 1 auto;
       @include media-breakpoint-up(md) {
-        flex: 1 0 80%;
+        flex: 1 0 70%;
         margin-left: 3.2rem;
         h5 {
           margin-top: 0;
         }
+      }
+      @include media-breakpoint-up(lg) {
+        flex: 1 0 80%;
       }
     }
 
@@ -1954,6 +1960,16 @@ body.research {
       line-height: 2.1rem;
       letter-spacing: .007rem;
       margin-top: 3.2rem;
+      @include media-breakpoint-up(md) {
+        font-size: 1.85rem;
+        line-height: 2.7rem;
+        letter-spacing: .024rem;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 2.3rem;
+        line-height: 3.4rem;
+        letter-spacing: .03rem;
+      }
     }
 
     hr {
@@ -1967,6 +1983,10 @@ body.research {
       letter-spacing: 0;
       color: $seda-dark;
       margin-bottom: 2.4rem;
+      @include media-breakpoint-up(xl) {
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+      }
     }
 
     .controls {
@@ -1982,6 +2002,11 @@ body.research {
         text-transform: uppercase;
         padding: 1.6rem;
         display: block;
+        @include media-breakpoint-up(xl) {
+          font-size: 1.8rem;
+          line-height: 3.618rem;
+          letter-spacing: .07rem;
+        }
         &:after {
           content: "";
           background-image: url(/images/caret-down.svg);
@@ -2048,6 +2073,9 @@ body.research {
         .version-link {
           width: 100%;
           display: block;
+          &:hover {
+            color: $seda-dark;
+          }
 
           @include media-breakpoint-up(md) {
             margin-top: .8rem;
@@ -2110,6 +2138,9 @@ body.research {
         &:after {
           transform: rotate(180deg);
           margin-bottom: -2px;
+          @include media-breakpoint-up(xl) {
+            margin-bottom: 0;
+          }
         }
       }
       .abstract-and-meta {

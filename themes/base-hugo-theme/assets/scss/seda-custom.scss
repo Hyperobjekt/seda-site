@@ -225,22 +225,75 @@ input.form-control {
 nav.navbar-light {
   height: 6.4rem;
   background-color: transparent; // $seda-dark;
+  transition: background-color .2s ease;
   padding-right: 0;
   padding-left: 0;
-
-  &.sticky-top {
-    background-color: $seda-dark;
-  }
+  // opacity: 0;
 
   .navbar-brand {
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
     background-image: url("/images/logo.svg");
-    height: 33px;
+    //height: 33px;
     width: 189px;
+    background-size: 100%;
     background-position: 0 0;
     background-repeat: no-repeat;
+    margin-top: 2px;
   }
+ 
+  &.sticky-top {
+    background-color: $seda-dark;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .20);
+    transition: background-color .2s ease;
+    animation: slide-down .2s;
+    @keyframes slide-down {
+      0% {
+      transform: translateY(-64px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+
+    }
+
+    .navbar-brand {
+      animation: opacity-fill .3s;
+      background-image: url("/images/logo2.svg");
+      @keyframes opacity-fill {
+        /* You could think of as "step 1" */
+        0% {
+          opacity: 0;
+        }
+        /* You could think of as "step 2" */
+        100% {
+          opacity: 1;
+        }
+      }
+    //height: 33px;
+    width: 189px;
+    background-size: 100%;
+    }
+    .drawer-toggle {
+      .navbar-toggler-icon {
+        background-image: url('/images/menu2.svg');
+        animation: opacity-fill .3s;
+        @keyframes opacity-fill {
+          /* You could think of as "step 1" */
+          0% {
+            opacity: 0;
+          }
+          /* You could think of as "step 2" */
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+ 
 
   .drawer-toggle {
     margin-left: auto;

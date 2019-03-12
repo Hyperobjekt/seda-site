@@ -25,7 +25,6 @@
         activeBio: null,
         update: function() {
             console.log('updateModal.update()');
-            console.log(updateModal.activeBio);
             var $button = $(this.activeBio).find('button');
 
             // Get name, title, bio, and image
@@ -46,19 +45,7 @@
             $('#modalBio').html(bio);
             $('#peopleBioModal').modal('show');
 
-            // Check first and last position, disable buttons
-            if ($(updateModal.activeBio).prev().length <= 0) {
-                console.log('first item');
-                $('#prevBio').prop( "disabled", true);
-                $('#nextBio').prop( "disabled", false);
-            } else if ($(updateModal.activeBio).next().length <= 0) {
-                console.log('last item');
-                $('#prevBio').prop( "disabled", false);
-                $('#nextBio').prop( "disabled", true);
-            } else {
-                $('#prevBio').prop( "disabled", false);
-                $('#nextBio').prop( "disabled", false);
-            }
+            // Check first and last status
         }
     };
 
@@ -121,15 +108,5 @@
             console.log('#closeDrawer selected');
             $('#drawer').removeClass('show');
         });
-
-        // Add Subnav active selection highlighting
-          
-        $(".subnav a").click(function () {
-            $(".subnav a").removeClass("highlight");
-            $(this).addClass("highlight");
-        });
-          
-          
-        
     });
 })(jQuery);

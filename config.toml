@@ -27,7 +27,7 @@ anchor = "smart"
 
 [[menu.main]]
 	name = "Map"
-	url = "http://seda-map-prototype.surge.sh/"
+	url = "http://seda-split.surge.sh/counties/avg/all/2.85/37.79/-95.6"
     weight = 1
 
 [[menu.main]]

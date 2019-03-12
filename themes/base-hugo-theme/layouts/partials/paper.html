@@ -1,44 +1,48 @@
-<div class="research-paper">
+<div class="research-paper flex-parent">
     <!-- Build map of params to call image partial -->
     {{ $imgParams := newScratch }}
     {{ $imgParams.Set "image" "test.jpg" }}
     {{ $imgParams.Set "action" "Fill" }}
     {{ $imgParams.Set "options" "141x136 Center" }}
     {{ $imgParams.Set "alt" "Article image" }}
-    <!-- Call image partial -->
-    {{ partial "imgproc.html" (dict "context" . "imgParams" $imgParams ) }}
-    <h5 tabindex="0">{{ .title }}</h5>
-    <hr>
-    <div class="authors">
-        {{ $len := (len .authors) }}
-        {{range $index, $value := .authors}}
-            {{ if eq (add $index 1) $len }}
-                <span class="author" tabindex="0">{{ $value }}</span>
-            {{ else }}
-                <span class="author last" tabindex="0">{{ $value }}, </span>
+    <div class="img flex-child">
+        <!-- Call image partial -->
+        {{ partial "imgproc.html" (dict "context" . "imgParams" $imgParams ) }}
+    </div>
+    <div class="info flex-child">
+        <h5 tabindex="0">{{ .title }}</h5>
+        <hr>
+        <div class="authors">
+            {{ $len := (len .authors) }}
+            {{range $index, $value := .authors}}
+                {{ if eq (add $index 1) $len }}
+                    <span class="author" tabindex="0">{{ $value }}</span>
+                {{ else }}
+                    <span class="author last" tabindex="0">{{ $value }}, </span>
+                {{ end }}
             {{ end }}
-        {{ end }}
-    </div>
-    {{ $sortedVersions := sort .versions "date" "desc" }}
-    <div class="controls flex-parent">
-        {{ range first 1 $sortedVersions }}
-            <a id="{{ .link | relURL }}" class="btn btn-custom download-paper" target="_blank" tabindex="0">Download Latest Version</a>
-        {{ end }}
-        <a id="" class="show-versions">Show Previous Versions</a>
-    </div>
-    <div class="abstract-and-meta">
-        <div class="abstract" id="" tabindex="0">
-            {{ .abstract | markdownify }}
         </div>
-        <div class="meta">
-            <h4 tabindex="0">Previous Versions</h4>
-            <hr>
-            {{range $sortedVersions }}
-                <a href="{{ .link | relURL }}" target="_blank" class="version-link" aria-label="Download version from {{ .date }}" tabindex="0">
-                    <span class="date">{{ .date }}</span>
-                    <span class="label">Download now</span>
-                </a>
+        {{ $sortedVersions := sort .versions "date" "desc" }}
+        <div class="controls flex-parent">
+            {{ range first 1 $sortedVersions }}
+                <a id="{{ .link | relURL }}" class="btn btn-custom download-paper" target="_blank" tabindex="0">Download Latest Version</a>
             {{ end }}
+            <a id="" class="show-versions">Show Previous Versions</a>
+        </div>
+        <div class="abstract-and-meta">
+            <div class="abstract" id="" tabindex="0">
+                {{ .abstract | markdownify }}
+            </div>
+            <div class="meta">
+                <h4 tabindex="0">Previous Versions</h4>
+                <hr>
+                {{range $sortedVersions }}
+                    <a href="{{ .link | relURL }}" target="_blank" class="version-link" aria-label="Download version from {{ .date }}" tabindex="0">
+                        <span class="date">{{ .date }}</span>
+                        <span class="label">Download now</span>
+                    </a>
+                {{ end }}
+            </div>
         </div>
     </div>
 </div>

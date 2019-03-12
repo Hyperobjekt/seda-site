@@ -116,6 +116,19 @@
           });
         }
 
+        // Dropdown for article sorting on mobile
+        $('body.research .small-tab-nav ul li a').on('click', function(e) {
+            // console.log('Small tab nav selection');
+            $(this).tab('show');
+            // Store target.
+            $target = $(e.target);
+            // Clear all active and highlight classes.
+            $('body.research .small-tab-nav ul li a').removeClass('active highlight');
+            // Add proper classes to selected target.
+            $target.addClass('active highlight');
+        });
+
+        // Display article abstract and versions for entry on research page.
         $('a.show-versions').on('click', function(e) {
             // console.log('a.show-versions');
             toggleAbstract(e);

@@ -15716,6 +15716,16 @@ nav.navbar-light.sticky-top {
   background-color: #fff;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
   transition: background-color .2s ease;
+  animation: slide-down .3s;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-64px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 nav.navbar-light.sticky-top .navbar-brand {

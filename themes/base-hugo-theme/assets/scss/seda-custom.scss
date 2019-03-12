@@ -241,7 +241,7 @@ nav.navbar-light {
     background-repeat: no-repeat;
     margin-top: 2px;
   }
- 
+
   &.sticky-top {
     background-color: $seda-dark;
     background-color: #fff;
@@ -293,7 +293,7 @@ nav.navbar-light {
     }
   }
 
- 
+
 
   .drawer-toggle {
     margin-left: auto;
@@ -2305,10 +2305,119 @@ body.research {
 
 }
 
-
-
-
 // 404 page
+body.kind-404 {
+  .hero {
+    background: linear-gradient(to bottom, rgba(4, 41, 101, 100%) 5%, rgba(4, 29, 85, 100%) 75%);
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-position: 0 bottom;
+    background-size: 120%;
+    height: 336px;
+    margin-top: -6.4rem;
+    margin-right: 0;
+    margin-left: 0;
+    @include media-breakpoint-up(md) {
+      height: 448px;
+      // background-size: 120% 80%;
+      // background-position: -400px 10%;
+    }
+    @include media-breakpoint-up(xl) {
+      // background-size: 2200px 478px;
+      // background-position: -400px 10%;
+    }
+
+    .hero-child {
+      width: 100%;
+      height: 100%;
+      margin-right: 0;
+      margin-left: 0;
+      background: url('/images/about-plot-2x.png');
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: 1030px 378px;
+      @include media-breakpoint-up(mm) {
+        background-size: 1600px 378px;
+        background-position: -100px bottom;
+      }
+      @include media-breakpoint-up(xl) {
+        background-size: 2000px 378px;
+        background-position: -200px bottom;
+      }
+      .column {
+        margin-top: 13.2rem;
+        margin-bottom: 9.6rem;
+        text-align: center;
+        color: $white;
+        @include media-breakpoint-up(md) {
+          margin-top: 15.2rem;
+        }
+        @include media-breakpoint-up(lg) {
+          margin-top: 20rem;
+        }
+        h2 {
+          font-family: $sharpgrotesk-med-20;
+          font-size: 2.6rem;
+          line-height: 2.55rem;
+          letter-spacing: .013rem;
+          margin-bottom: 1.6rem;
+          @include media-breakpoint-up(md) {
+            font-size: 2.8rem;
+            line-height: 4.3rem;
+            letter-spacing: .014rem;
+          }
+          @include media-breakpoint-up(lg) {
+            font-size: 3.6rem;
+            line-height: 5.4rem;
+            letter-spacing: .018rem;
+          }
+        }
+        p {
+          font-family: $maisonneue-book;
+          font-size: 1.3rem;
+          line-height: 2rem;
+          letter-spacing: 0;
+          @include media-breakpoint-up(md) {
+            margin-top: 3.2rem;
+            margin-bottom: 3.2rem;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            letter-spacing: auto;
+          }
+          @include media-breakpoint-up(lg) {
+            font-size: 2.3rem;
+            line-height: 3.45rem;
+            letter-spacing: auto;
+          }
+        }
+      }
+    }
+  }
+
+
+  .message {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
+  p {
+    font-family: $maisonneue-book;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    letter-spacing: 0;
+    @include media-breakpoint-up(md) {
+      margin-top: 3.2rem;
+      margin-bottom: 3.2rem;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      letter-spacing: auto;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 2.3rem;
+      line-height: 3.45rem;
+      letter-spacing: auto;
+    }
+  }
+}
 .row {
   &.404 {
     min-height: 100vh;

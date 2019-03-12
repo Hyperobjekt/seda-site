@@ -1,9 +1,17 @@
 {{ define "main" }}
 
-    <div class="row 404 m-0">
-        <div class="col-6 offset-3 404-column">
-            <h3 tabindex="0">Oops!</h3>
-            <p>Sorry, something went wrong there. Be sure to let us know so we can keep you on the right track.</p>
+    <div id="hero" class="hero row" style="">
+        <div class="hero-child row">
+            <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <h2 tabindex="0">Dang, things were going so good!</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row message m-0">
+        <div class="col-xs-12 col-md-8 offset-md-2 col-xl-8 offset-xl-2 404-column">
+            <h3 tabindex="0">404: Page not found.</h3>
+            <p>Something went wrong just now, and we don't want that to happen again. Be sure to let us know so we can keep you on the right track.</p>
             <a class="btn btn-custom" href="{{ "/contact/" | relURL }}">CONTACT US</a>
         </div>
     </div>

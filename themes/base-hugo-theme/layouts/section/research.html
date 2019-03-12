@@ -18,9 +18,9 @@
         </button>
         <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
         <ul class="anchor-links dropdown-menu">
-            <li><a class="scroll-to-section active" data-toggle="tab" href="#using">Papers using SEDA Data</a></li>
-            <li><a class="scroll-to-section" data-toggle="tab" href="#technical">Techincal and Methodological</a></li>
-            <li><a class="scroll-to-section" data-toggle="tab" href="#related">Related Papers</a></li>
+            <li><a class="active" data-toggle="tab" href="#using">Papers using SEDA Data</a></li>
+            <li><a class="" data-toggle="tab" href="#technical">Techincal and Methodological</a></li>
+            <li><a class="" data-toggle="tab" href="#related">Related Papers</a></li>
         </ul>
         <!--</div>-->
     </div>
@@ -28,7 +28,7 @@
 </div>
 
 <div class="row subnav large-tab-nav">
-    <ul class="nav nav-tabs col-md-8 mx-auto d-md-flex" id="researchTabs" role="tablist">
+    <ul class="nav nav-tabs col-lg-10 col-xl-8 mx-auto d-md-flex" id="researchTabs" role="tablist">
         <li class="nav-item only-larger-screens">Select Category:</li>
         <li class="nav-item">
             <a class="nav-link active switch-tab" id="using-tab" data-toggle="tab" href="#using" role="tab" aria-controls="using" aria-selected="true">Papers using SEDA Data</a>
@@ -42,11 +42,11 @@
     </ul>
 </div>
 <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="using" role="tabpanel" aria-labelledby="home-tab">
-        <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto"> -->
-            <!-- <h3 tabindex="0">Papers using SEDA Data</h3> -->
-        <!-- </div> -->
-        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+    <div class="tab-pane fade show active" id="using" role="tabpanel" aria-labelledby="using-tab">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+            <h3 tabindex="0">Papers using SEDA Data</h3>
+        </div> -->
+        <div class="col-xs-12 col-sm-12 col-md-10 col-xl-8 mx-auto">
             {{ range .Site.Data.research }}
             {{ if in .categories "uses-seda" }}
             {{ partial "paper" . }}
@@ -54,11 +54,11 @@
             {{ end }}
         </div>
     </div>
-    <div class="tab-pane fade" id="technical" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade" id="technical" role="tabpanel" aria-labelledby="technical-tab">
         <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-            <h3 tabindex="0">Techincal and Methodological</h3>
+             <h3 tabindex="0">Techincal and Methodological</h3>
         </div> -->
-        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-xl-8 mx-auto">
             {{ range .Site.Data.research }}
             {{ if in .categories "technical" }}
             {{ partial "paper" . }}
@@ -66,11 +66,11 @@
             {{ end }}
         </div>
     </div>
-    <div class="tab-pane fade" id="related" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="tab-pane fade" id="related" role="tabpanel" aria-labelledby="related-tab">
         <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
             <h3 tabindex="0">Related Papers</h3>
         </div> -->
-        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 mx-auto">
             {{ range .Site.Data.research }}
             {{ if in .categories "related" }}
             {{ partial "paper" . }}

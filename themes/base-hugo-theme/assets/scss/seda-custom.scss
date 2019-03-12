@@ -251,11 +251,11 @@ nav.navbar-light {
       animation: opacity-fill .3s;
       background-image: url("/images/logo2.svg");
       @keyframes opacity-fill {
-        /* You could think of as "step 1" */
+      
         0% {
           opacity: 0;
         }
-        /* You could think of as "step 2" */
+      
         100% {
           opacity: 1;
         }

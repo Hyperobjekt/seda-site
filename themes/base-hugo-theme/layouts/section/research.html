@@ -2,90 +2,83 @@
 
 <div id="hero" class="hero row" style="">
     <div class="hero-child row">
-      <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-        <h2 tabindex="0">{{ .Title }}</h2>
-        <p tabindex="0">{{ .Params.byline }}</p>
-      </div>
-     </div>
+        <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+            <h2 tabindex="0">{{ .Title }}</h2>
+            <p tabindex="0">{{ .Params.byline }}</p>
+        </div>
+    </div>
 </div>
 
-<!-- <div class="row subnav d-md-none"> -->
 
-    <!-- <div class="dropdown">
+<div class="row subnav d-md-none small-tab-nav">
+
+    <div class="dropdown">
         <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Select Category:
         </button>
         <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
-        <!-- <ul class="anchor-links dropdown-menu">
-            <li><a class="dropdown-item smoothScroll" href="#glossary">Papers using SEDA Data</a></li>
-            <li><a class="dropdown-item smoothScroll" href="#data">Techincal and methodological</a></li>
-            <li><a class="dropdown-item smoothScroll" href="#map">Related Papers</a></li>
-        </ul> -->
+        <ul class="anchor-links dropdown-menu">
+            <li><a class="scroll-to-section active" data-toggle="tab" href="#using">Papers using SEDA Data</a></li>
+            <li><a class="scroll-to-section" data-toggle="tab" href="#technical">Techincal and Methodological</a></li>
+            <li><a class="scroll-to-section" data-toggle="tab" href="#related">Related Papers</a></li>
+        </ul>
         <!--</div>-->
-    <!-- </div> -->
+    </div>
 
-<!-- </div> -->
+</div>
 
-<div class="row subnav">
+<div class="row subnav large-tab-nav">
     <ul class="nav nav-tabs col-md-8 mx-auto d-md-flex" id="researchTabs" role="tablist">
         <li class="nav-item only-larger-screens">Select Category:</li>
         <li class="nav-item">
-            <a class="nav-link active switch-tab" id="home-tab" data-toggle="tab" href="#using" role="tab" aria-controls="home" aria-selected="true">Papers using SEDA Data</a>
+            <a class="nav-link active switch-tab" id="using-tab" data-toggle="tab" href="#using" role="tab" aria-controls="using" aria-selected="true">Papers using SEDA Data</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link switch-tab" id="profile-tab" data-toggle="tab" href="#technical" role="tab" aria-controls="profile" aria-selected="false">Techincal and Methodological</a>
+            <a class="nav-link switch-tab" id="technical-tab" data-toggle="tab" href="#technical" role="tab" aria-controls="technical" aria-selected="false">Techincal and Methodological</a>
         </li>
         <li class="nav-item switch-tab">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#related" role="tab" aria-controls="contact" aria-selected="false">Related Papers</a>
+            <a class="nav-link" id="related-tab" data-toggle="tab" href="#related" role="tab" aria-controls="related" aria-selected="false">Related Papers</a>
         </li>
     </ul>
 </div>
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="using" role="tabpanel" aria-labelledby="home-tab">
-        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-            <h3 tabindex="0">Papers using SEDA Data</h3>
-        </div>
+        <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto"> -->
+            <!-- <h3 tabindex="0">Papers using SEDA Data</h3> -->
+        <!-- </div> -->
         <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
             {{ range .Site.Data.research }}
-                {{ if in .categories "uses-seda" }}
-                {{ partial "paper" . }}
-                {{ end }}
+            {{ if in .categories "uses-seda" }}
+            {{ partial "paper" . }}
+            {{ end }}
             {{ end }}
         </div>
     </div>
     <div class="tab-pane fade" id="technical" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
             <h3 tabindex="0">Techincal and Methodological</h3>
-        </div>
+        </div> -->
         <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
             {{ range .Site.Data.research }}
-                {{ if in .categories "technical" }}
-                {{ partial "paper" . }}
-                {{ end }}
+            {{ if in .categories "technical" }}
+            {{ partial "paper" . }}
+            {{ end }}
             {{ end }}
         </div>
     </div>
     <div class="tab-pane fade" id="related" role="tabpanel" aria-labelledby="contact-tab">
-        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
             <h3 tabindex="0">Related Papers</h3>
-        </div>
+        </div> -->
         <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
             {{ range .Site.Data.research }}
-                {{ if in .categories "related" }}
-                {{ partial "paper" . }}
-                {{ end }}
+            {{ if in .categories "related" }}
+            {{ partial "paper" . }}
+            {{ end }}
             {{ end }}
         </div>
     </div>
 </div>
-
-<!-- Build map of params to call image partial -->
-{{ $imgParams := newScratch }}
-{{ $imgParams.Set "image" "test.jpg" }}
-{{ $imgParams.Set "action" "Fill" }}
-{{ $imgParams.Set "options" "250x250 Center" }}
-<!-- Call image partial -->
-{{ partial "imgproc.html" (dict "context" . "imgParams" $imgParams ) }}
 
 {{ partial "subscribe.html" . }}
 

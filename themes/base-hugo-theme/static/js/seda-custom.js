@@ -18,8 +18,12 @@
         }
     }
 
-    // Placeholder for active modal contents.
-    // var activeBio = null;
+    function toggleAbstract(e) {
+        // console.log('toggleAbstract()');
+        e.preventDefault();
+        $target = $(e.target);
+        $target.parents('.research-paper').toggleClass('abstract-visible');
+    }
 
     var updateModal = {
         activeBio: null,
@@ -112,6 +116,11 @@
           });
         }
 
+        $('a.show-versions').on('click', function(e) {
+            // console.log('a.show-versions');
+            toggleAbstract(e);
+        });
+
         $('#toggleDrawer').on('click', function() {
             // console.log('#toggleDrawer selected');
             $('#drawer').addClass('show');
@@ -123,13 +132,13 @@
         });
 
         // Add Subnav active selection highlighting
-          
+
         $(".subnav a").click(function () {
             $(".subnav a").removeClass("highlight");
             $(this).addClass("highlight");
         });
-          
-          
-        
+
+
+
     });
 })(jQuery);

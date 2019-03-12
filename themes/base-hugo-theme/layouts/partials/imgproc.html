@@ -8,21 +8,21 @@
     {{ with site.GetPage "uploads/_index.md" }}
         {{ with .Resources.GetMatch $img }}
             {{ $processed := .Fit $options }}
-            <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height }}" alt="{{ $alt }}">
+            <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height }}" alt="{{ $alt }}" tabindex="0">
         {{ end }}
     {{ end }}
 {{ else if eq $action "Resize"}}
     {{ with site.GetPage "uploads/_index.md" }}
         {{ with .Resources.GetMatch $img }}
             {{ $processed := .Resize $options }}
-            <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height }}" alt="{{ $alt }}">
+            <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height }}" alt="{{ $alt }}" tabindex="0">
         {{ end }}
     {{ end }}
 {{ else if eq $action "Fill"}}
     {{ with site.GetPage "uploads/_index.md" }}
         {{ with .Resources.GetMatch $img }}
             {{ $processed := .Fill $options }}
-            <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height }}" alt="{{ $alt }}">
+            <img src="{{ $processed.RelPermalink }}" width="{{ $processed.Width }}" height="{{ $processed.Height }}" alt="{{ $alt }}" tabindex="0">
         {{ end }}
     {{ end }}
 {{ else }}

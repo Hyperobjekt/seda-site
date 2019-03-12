@@ -17443,6 +17443,182 @@ body.research .hero .hero-child .column p {
   }
 }
 
+body.research .subnav ul.nav-tabs {
+  border-bottom: 0;
+}
+
+body.research .large-tab-nav {
+  display: none;
+}
+
+body.research .large-tab-nav a:hover,
+body.research .small-tab-nav a:hover {
+  color: #031232;
+  border: none;
+}
+
+body.research .large-tab-nav a:active,
+body.research .small-tab-nav a:active {
+  color: #031232;
+  border: none;
+}
+
+body.research .large-tab-nav a.active,
+body.research .small-tab-nav a.active {
+  color: #031232;
+  border: none;
+}
+
+body.research .small-tab-nav a.active {
+  text-decoration: underline;
+}
+
+body.research .tab-content {
+  margin-top: 3.2rem;
+}
+
+@media (min-width: 768px) {
+  body.research .small-tab-nav {
+    display: none;
+  }
+  body.research .large-tab-nav {
+    display: block;
+  }
+  body.research .tab-content {
+    margin-top: 11.2rem;
+  }
+}
+
+body.research .research-paper {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 2.4rem;
+  margin-bottom: 3.2rem;
+}
+
+@media (min-width: 768px) {
+  body.research .research-paper {
+    padding: 3.2rem;
+  }
+}
+
+body.research .research-paper img {
+  width: 84px;
+  height: 80px;
+}
+
+@media (min-width: 768px) {
+  body.research .research-paper img {
+    width: 141px;
+    height: 136px;
+  }
+}
+
+body.research .research-paper h5 {
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: .007rem;
+  margin-top: 3.2rem;
+}
+
+body.research .research-paper .authors {
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: 0;
+  color: #031232;
+  margin-bottom: 2.4rem;
+}
+
+body.research .research-paper .controls {
+  text-align: center;
+}
+
+body.research .research-paper .controls .download-paper {
+  color: #ffffff;
+}
+
+body.research .research-paper .controls .show-versions {
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: .055rem;
+  text-transform: uppercase;
+  padding: 1.6rem;
+  display: block;
+}
+
+body.research .research-paper .controls .show-versions:after {
+  content: "";
+  background-image: url(/images/caret-down.svg);
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-size: 1.2rem 1.2rem;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin-left: .6rem;
+}
+
+@media (min-width: 768px) {
+  body.research .research-paper .controls {
+    text-align: left;
+    justify-content: space-around;
+  }
+}
+
+body.research .research-paper .abstract-and-meta {
+  padding-top: 0;
+  transition: opacity 2s ease-out, height 1s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+body.research .research-paper .abstract-and-meta .meta h4 {
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.7rem;
+  line-height: 2.8rem;
+  letter-spacing: .009rem;
+  margin-top: 3.2rem;
+}
+
+body.research .research-paper .abstract-and-meta .meta .version-link {
+  width: 100%;
+  display: block;
+}
+
+body.research .research-paper .abstract-and-meta .meta .version-link .label {
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: .055rem;
+  text-transform: uppercase;
+}
+
+body.research .research-paper .abstract-and-meta .meta .version-link .label:after {
+  content: "";
+  background-image: url(/images/download-arrow.svg);
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-size: 1.2rem 1.2rem;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin-left: .6rem;
+}
+
+body.research .research-paper.abstract-visible .show-versions:after {
+  transform: rotate(180deg);
+}
+
+body.research .research-paper.abstract-visible .abstract-and-meta {
+  transition: opacity 1s ease-in, height 1s ease-in;
+  padding-top: 1.6rem;
+  opacity: 1;
+  height: auto;
+}
+
 body.research h3 {
   margin-bottom: 2.4rem;
   color: #031232;
@@ -17522,24 +17698,24 @@ body.research p {
   }
 }
 
-body.research .row.glossary {
+body.research .row.using {
   padding-top: 5.6rem;
 }
 
 @media (min-width: 768px) {
-  body.research .row.glossary {
+  body.research .row.using {
     padding-top: 8rem;
   }
 }
 
-body.research .row.data {
+body.research .row.technical {
   background-color: #F5F8FA;
   padding: 8rem 16px 4rem;
   margin-left: 0;
   margin-right: 0;
 }
 
-body.research .row.map {
+body.research .row.related {
   padding: 8rem 0 4rem;
 }
 

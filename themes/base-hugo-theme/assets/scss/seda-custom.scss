@@ -246,6 +246,7 @@ nav.navbar-light {
     background-color: #fff;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .20);
     transition: background-color .2s ease;
+    transform: translateY(40px);
     
     .navbar-brand {
       animation: opacity-fill .3s;

@@ -16040,10 +16040,14 @@ body.home .hero {
 
 body.home .hero .hero-child {
   height: 100vh;
-  background: url("/images/usa_counties_large_white_outline.png");
+  background: url("/images/map-counties-3-996.png");
   background-repeat: no-repeat;
   background-position: center 9.7rem;
   background-size: 290px 195px;
+}
+
+body.home .hero .hero-child #hero-overlay {
+  background-color: #00113a75;
 }
 
 @media (min-width: 320px) {
@@ -16070,6 +16074,7 @@ body.home .hero .hero-child {
 @media (min-width: 992px) {
   body.home .hero .hero-child {
     background-size: 928px 624px;
+    background-size: 996px auto;
     background-position: center 11.2rem;
   }
 }

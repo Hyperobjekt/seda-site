@@ -15699,6 +15699,7 @@ nav.navbar-light {
   transition: background-color .2s ease;
   padding-right: 0;
   padding-left: 0;
+  z-index: 2;
 }
 
 nav.navbar-light .navbar-brand {
@@ -16038,41 +16039,54 @@ body.home .hero {
   justify-content: center;
 }
 
-body.home .hero .hero-child {
-  height: 100vh;
+body.home .hero .hero-child:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  animation: fade-in 2s;
+  animation-delay: .5s;
   background: url("/images/map-counties-3-996.png");
   background-repeat: no-repeat;
   background-position: center 9.7rem;
   background-size: 290px 195px;
 }
 
-body.home .hero .hero-child #hero-overlay {
-  background-color: #00113a75;
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 320px) {
-  body.home .hero .hero-child {
+  body.home .hero .hero-child:before {
     background-size: 320px 215px;
     background-position: center 7rem;
   }
 }
 
 @media (min-width: 576px) {
-  body.home .hero .hero-child {
+  body.home .hero .hero-child:before {
     background-size: 512px 344px;
     background-position: center 7rem;
   }
 }
 
 @media (min-width: 768px) {
-  body.home .hero .hero-child {
+  body.home .hero .hero-child:before {
     background-size: 704px 473px;
     background-position: center 9.2rem;
   }
 }
 
 @media (min-width: 992px) {
-  body.home .hero .hero-child {
+  body.home .hero .hero-child:before {
     background-size: 928px 624px;
     background-size: 996px auto;
     background-position: center 11.2rem;
@@ -16080,19 +16094,42 @@ body.home .hero .hero-child #hero-overlay {
 }
 
 @media (min-width: 1400px) {
-  body.home .hero .hero-child {
+  body.home .hero .hero-child:before {
     background-size: 996px 670px;
     background-position: center 11.2rem;
   }
 }
 
+body.home .hero .hero-child {
+  height: 100vh;
+}
+
+body.home .hero .hero-child #hero-overlay {
+  background-color: #00113a75;
+  z-index: 1;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
 body.home .hero .hero-child .column h2 {
+  opacity: 0;
+  animation: fade-in2 1s forwards;
+  animation-delay: 2s;
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   color: #ffffff;
   font-size: 1.7rem;
   line-height: 2.4rem;
   letter-spacing: .009rem;
   margin-top: 65%;
+}
+
+@keyframes fade-in2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 320px) {
@@ -16146,6 +16183,18 @@ body.home .hero .hero-child .column p {
   font-size: 1.3rem;
   line-height: 2.0rem;
   margin-top: 3.2rem;
+  animation: fade-in3 1s forwards;
+  animation-delay: 3s;
+  opacity: 0;
+}
+
+@keyframes fade-in3 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 320px) {
@@ -16185,6 +16234,24 @@ body.home .hero .hero-child .column p {
 
 body.home .hero .hero-child .column a.btn {
   margin-top: 4rem;
+}
+
+body.home .hero .hero-child .column button {
+  animation: fade-in4 0.5s forwards;
+  animation-delay: 4.5s;
+  opacity: 0;
+  position: relative;
+}
+
+@keyframes fade-in4 {
+  0% {
+    opacity: 0;
+    bottom: -16px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
 }
 
 body.home #main {

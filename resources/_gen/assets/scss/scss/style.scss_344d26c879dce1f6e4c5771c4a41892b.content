@@ -16066,28 +16066,28 @@ body.home .hero .hero-child:before {
 
 @media (min-width: 320px) {
   body.home .hero .hero-child:before {
-    background-size: 320px 215px;
+    background-size: 320px;
     background-position: center 7rem;
   }
 }
 
 @media (min-width: 576px) {
   body.home .hero .hero-child:before {
-    background-size: 512px 344px;
+    background-size: 512px;
     background-position: center 7rem;
   }
 }
 
 @media (min-width: 768px) {
   body.home .hero .hero-child:before {
-    background-size: 704px 473px;
+    background-size: 704px;
     background-position: center 9.2rem;
   }
 }
 
 @media (min-width: 992px) {
   body.home .hero .hero-child:before {
-    background-size: 928px 624px;
+    background-size: 928px;
     background-size: 996px auto;
     background-position: center 11.2rem;
   }
@@ -16095,7 +16095,7 @@ body.home .hero .hero-child:before {
 
 @media (min-width: 1400px) {
   body.home .hero .hero-child:before {
-    background-size: 996px 670px;
+    background-size: 996px;
     background-position: center 11.2rem;
   }
 }
@@ -16249,8 +16249,8 @@ body.home .hero .hero-child .column button {
     bottom: -16px;
   }
   100% {
-    opacity: 1;
     bottom: 0px;
+    opacity: 1;
   }
 }
 

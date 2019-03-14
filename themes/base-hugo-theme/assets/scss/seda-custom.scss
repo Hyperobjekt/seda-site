@@ -639,6 +639,7 @@ body.home {
   }
     .hero-child {
       height: 100vh;
+      // Start animation from 0 opacity
       opacity: 0;
       animation: fade-in5 2s forwards;
       animation-delay: .9s;

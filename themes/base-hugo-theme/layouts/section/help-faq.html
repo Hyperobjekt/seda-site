@@ -44,7 +44,7 @@
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
         
         <div class="accordion">
-            {{ range .Site.Data.faq }}
+            {{ range .Site.Data.faq.glossary }}
                 {{ if eq .section "glossary" }} 
                 <!-- faq item -->
                 {{ partial "faqs" . }}
@@ -60,7 +60,7 @@
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
         
         <div class="accordion">
-            {{ range .Site.Data.faq }}
+            {{ range .Site.Data.faq.data }}
                 {{ if eq .section "data" }} 
                 <!-- faq item -->
                 {{ partial "faqs" . }}
@@ -76,7 +76,7 @@
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
        
         <div class="accordion">
-            {{ range .Site.Data.faq }}
+            {{ range .Site.Data.faq.map }}
                 {{ if eq .section "map" }} 
                 <!-- faq item -->
                 {{ partial "faqs" . }}

@@ -2,7 +2,7 @@
 title: "Home"
 date: "2019-02-24"
 ---
-- Most recent update, 3-13-19: Testing very rough animation for hero. Will be more developed by launch.
+- Most recent update, 3-14-19: Added FAQ questions for glossary & data.
 - Layout: 90% complete
 - Styling: needs work
 - Footer: in development

@@ -16047,8 +16047,9 @@ body.home .hero .hero-child:before {
   top: 0;
   width: 100%;
   height: 100%;
-  animation: fade-in 2s;
-  animation-delay: .5s;
+  opacity: 0;
+  animation: fade-in 2s forwards;
+  animation-delay: .9s;
   background: url("/images/map-counties-3-996.png");
   background-repeat: no-repeat;
   background-position: center 9.7rem;
@@ -16102,6 +16103,18 @@ body.home .hero .hero-child:before {
 
 body.home .hero .hero-child {
   height: 100vh;
+  opacity: 0;
+  animation: fade-in5 2s forwards;
+  animation-delay: .9s;
+}
+
+@keyframes fade-in5 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 body.home .hero .hero-child #hero-overlay {

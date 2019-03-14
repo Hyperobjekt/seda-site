@@ -134,6 +134,13 @@
             toggleAbstract(e);
         });
 
+        $('body.research a[data-toggle="tab"]').on('click touchstart', function (e) {
+            // console.log('hide tab event');
+            if ($('.research-paper.abstract-visible').length >= 1) {
+                $('.research-paper.abstract-visible').removeClass('abstract-visible');
+            }
+        });
+
         $('#toggleDrawer').on('click', function() {
             // console.log('#toggleDrawer selected');
             $('#drawer').addClass('show');

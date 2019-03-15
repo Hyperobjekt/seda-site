@@ -1,0 +1,17 @@
+<!-- scatterplot js files -->
+{{ if .Site.IsServer }}
+    <!-- Site is being served locally, load dev files -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+{{ else }}
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js'></script>
+{{ end }}
+<script src='https://unpkg.com/react-seda-scatterplot@1.0.3/umd/react-seda-scatterplot.min.js'></script>
+<script src='https://unpkg.com/deepmerge@2.2.1/dist/umd.js'></script>
+<script  src="{{ "js/scatterplot/Scatterplot.js" | absURL }}"></script>
+{{ $a := "js/scatterplot/" }}
+{{ $b := .Params.scatterplotID }}
+{{ $c := ".js" }}
+{{ $scriptPath := (print $a $b $c)}}
+<script  src="{{ $scriptPath  | absURL }}"></script>

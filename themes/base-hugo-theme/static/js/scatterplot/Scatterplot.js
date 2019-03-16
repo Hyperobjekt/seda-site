@@ -2,11 +2,11 @@
  * Helper class for easier scatterplot updates
  */
 function Scatterplot(container, props) {
-  
+
   var _self = this;
   var _ready = false;
   var _handlers = {};
-  
+
   this.states = {
     // default state shared by all scatterplots
     // https://ecomfe.github.io/echarts-doc/public/en/option.html
@@ -17,7 +17,7 @@ function Scatterplot(container, props) {
         left: 24,
         right: 48,
       },
-      yAxis: { 
+      yAxis: {
         position: 'right',
         nameLocation: 'middle',
         nameGap: 32,
@@ -62,16 +62,16 @@ function Scatterplot(container, props) {
       },
     }
   }
-  
+
   // add a ref prop to get a reference to the react component instance
-  this.props = Object.assign( 
-    (props || {}), 
-    { 
+  this.props = Object.assign(
+    (props || {}),
+    {
       prefix: 'districts',
       options: this.states.base,
       endpoint: 'https://d2fypeb6f974r1.cloudfront.net/dev/scatterplot/',
-      ref: function(ref) { 
-        _self.component = ref; 
+      ref: function(ref) {
+        _self.component = ref;
       },
       onReady: function(echartInstance) {
         _ready = true;
@@ -79,17 +79,17 @@ function Scatterplot(container, props) {
       }
     }
   );
-  
+
   /**
    * Triggers an event with `eventName` and runs all handlers
    */
   this.trigger = function(eventName, data) {
-    _handlers[eventName] && 
+    _handlers[eventName] &&
     _handlers[eventName].forEach(function(h) {
       h.apply(null, data)
     })
   }
-  
+
   /**
    * Registers an event handler with the associated eventName
    * If it's a ready handler and everything is ready, run immediately.
@@ -103,7 +103,7 @@ function Scatterplot(container, props) {
       handler(_self.component, _self.component.echart)
     }
   }
-  
+
   /**
    * Set a state generator for the scatterplot
    */
@@ -115,6 +115,7 @@ function Scatterplot(container, props) {
    * Load a state for the scatterplot
    */
   this.loadState = function(stateName, options) {
+    console.log('loadstate ' + stateName);
     this.component.echart.setOption(this.getState(stateName), options)
   }
 
@@ -152,7 +153,7 @@ function Scatterplot(container, props) {
     );
     this.component.componentDidUpdate(oldProps);
   }
-  
+
   // render the component
   ReactDOM.render(
     React.createElement(sedaScatterplot, this.props, null),
@@ -187,7 +188,7 @@ Scatterplot.prototype.getSeriesDataForIds = function(values, ids) {
 
 /** Returns an array of values that fall within the range on the provided axis */
 Scatterplot.prototype.getSeriesDataInRange = function(values, axis, range) {
-  var index = axis === 'x' ? 0 : 
+  var index = axis === 'x' ? 0 :
     axis === 'y' ? 1 : 2;
   return values.filter(function(v) {
     return v[index] > range.min && v[index] < range.max;

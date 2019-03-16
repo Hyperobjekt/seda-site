@@ -638,7 +638,7 @@ body.home {
       }
   }
     .hero-child {
-      height: 100vh; 
+      height: 100vh;
       opacity: 0;
       animation: fade-in5 2s forwards;
       animation-delay: .9s;
@@ -650,8 +650,8 @@ body.home {
           opacity: 1;
         }
       }
-      // background: url('/images/usa_counties_large_white_outline.png');  
-    
+      // background: url('/images/usa_counties_large_white_outline.png');
+
       #hero-overlay {
         background-color: #00113a75;
         z-index: 1;
@@ -665,7 +665,7 @@ body.home {
         opacity: 0;
         animation: fade-in2 1s forwards;
         animation-delay: 2s;
-        
+
           @keyframes fade-in2 {
             0% {
               opacity: 0;
@@ -680,7 +680,7 @@ body.home {
           line-height: 2.4rem;
           letter-spacing: .009rem;
           margin-top: 65%;
-  
+
           @include media-breakpoint-up(sm) {
             font-size: 2.88rem;
             line-height: 4.32rem;
@@ -774,13 +774,13 @@ body.home {
           animation-delay: 4.5s;
           opacity: 0;
           position: relative;
-        
+
           @keyframes fade-in4 {
             0% {
               opacity: 0;
               bottom: -16px
             }
-           
+
             100% {
               bottom: 0px;
               opacity: 1;
@@ -2647,5 +2647,5 @@ body.kind-404 {
   }
 }
 
-@import 'article1';
+// @import 'article1';
 @import 'faq';

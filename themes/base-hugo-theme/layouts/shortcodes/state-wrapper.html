@@ -1,0 +1,5 @@
+{{ $state := .Get "state" }}
+{{ $notmerge := .Get "notmerge" }}
+<div class="state-desc-wrapper" data-plot-state="{{ $state }}" data-plot-notmerge="{{ $notmerge }}">
+    {{ .Inner | markdownify }}
+</div>

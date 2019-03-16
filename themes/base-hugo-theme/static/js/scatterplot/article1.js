@@ -251,14 +251,102 @@ scatterplot.addState('state8', state10);
 scatterplot.loadState('state1', { notMerge: true });
 
 // when the component is ready, trigger the state change as desired
-scatterplot.on('ready', function(scatterplot) {
-  setTimeout(() => {
-    scatterplot.loadState('state2');
-  }, 4000)
-  setTimeout(() => {
-    scatterplot.loadState('state3')
-  }, 8000)
-  setTimeout(() => {
-    scatterplot.loadState('state4', { notMerge: true })
-  }, 12000)
-})
+// scatterplot.on('ready', function(scatterplot) {
+//   setTimeout(() => {
+//     scatterplot.loadState('state2');
+//   }, 4000)
+//   setTimeout(() => {
+//     scatterplot.loadState('state3')
+//   }, 8000)
+//   setTimeout(() => {
+//     scatterplot.loadState('state2', { notMerge: true })
+//   }, 12000)
+//   setTimeout(() => {
+//     scatterplot.loadState('state3', { notMerge: true })
+//   }, 16000)
+//   setTimeout(() => {
+//     scatterplot.loadState('state1', { notMerge: true })
+// }, 20000)
+// })
+
+
+
+(function($) {
+
+    const plot = {
+        scatterplot: null,
+        wrappers: [],
+        top: null,
+        height: null,
+        bottom: null,
+        isTransitional: false,
+        activeState: 'state1',
+        update: function() {
+            //  console.log('update');
+            var activeWrappers = $.grep(plot.wrappers, function(el) {
+                // Get top and bottom y coords of wrapper
+                var wrapperTop = $(el).offset().top - $(window).scrollTop();
+                var wrapperHeight = $(el).height();
+                var wrapperBottom = Number(wrapperTop) + Number(wrapperHeight);
+                // If plot top or bottom are within
+                // add to activeWrappers.
+                if ((plot.top >= wrapperTop && plot.top <= wrapperBottom)) {
+                    // console.log('It\'s within a wrapper.');
+                    return $(el);
+                }
+            });
+            console.log(activeWrappers);
+            if (activeWrappers.length == 1) {
+                console.log('One item in activeWrappers.');
+                (plot.scatterplot).removeClass('transitional');
+                plot.isTransitional = false;
+                // Set state to the first one.
+                // console.log(activeWrappers[0]);
+                var state = $(activeWrappers[0]).attr('data-plot-state');
+                var notmerge = $(activeWrappers[0]).attr('data-plot-notmerge') ?
+                    $(activeWrappers[0]).attr('data-plot-notmerge') : false;
+                console.log(
+                    'State = ' + state +
+                    '. Active state = ' + plot.activeState +
+                    '. NotMerge = ' + String(notmerge) + '.' );
+                if (state !== plot.activeState) {
+                    console.log('loading new state ' + state);
+                    scatterplot.loadState(state);
+                    plot.activeState = state;
+                }
+            } else if (activeWrappers.length === 0 || activeWrappers.length >= 1) {
+                (plot.scatterplot).addClass('transitional');
+                plot.isTransitional = true;
+                console.log('In transition. State = ' + state);
+            }
+        }
+    };
+
+    // Get top and bottom y coords of the scatterplot
+    plot.scatterplot = $('#scatterplot');
+    plot.wrappers = $('.state-desc-wrapper');
+    plot.top = (plot.scatterplot).offset().top;
+    plot.height = (plot.scatterplot).find('> div').height();
+    plot.bottom = Number(plot.top) + Number(plot.height);
+
+    // Reset them if the screen is resized
+    $( window ).resize(function() {
+        plot.top = (plot.scatterplot).offset().top;
+        plot.height = (plot.scatterplot).find('> div').height();
+        plot.bottom = Number(plot.top) + Number(plot.height);
+    });
+
+    // Only trigger scroll ever 50ms so less resources
+    scatterplot.on('ready', function(scatterplot) {
+        var userScrolled = false;
+        $(window).scroll(function() {
+          userScrolled = true;
+        });
+        setInterval(function() {
+          if (userScrolled) {
+            plot.update();
+            userScrolled = false;
+          }
+        }, 50);
+    });
+})(jQuery);

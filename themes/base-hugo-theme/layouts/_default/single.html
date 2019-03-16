@@ -12,7 +12,7 @@
 
 <div id="" class="row dyn-article">
     <div class="col-xs-10 offset-xs-1 col-md-4 offset-md-1">
-        {{ .Content }}
+        {{ .Content | markdownify }}
     </div>
     <div class="col-xs-10 col-md-6 ">
         <div class="rectangle" style="position: sticky; position: -webkit-sticky; top: 202px; background: #f1f1f1; display: flex; justify-content: center; align-items:center; padding: 3.2rem; height: 240px;">

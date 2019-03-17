@@ -10,24 +10,23 @@
 </div>
 
 
-
-<div class="row glossary" id="glossary">
-    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <h3 tabindex="0"></h3>
-    </div>
+{{ range .Site.Data.news }}
+<div class="row news-item" id="">
+   
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
         
-        <div class="news-item">
-            {{ range .Site.Data.news }}
+   
+           
                <p>{{ .date }}</p>
                <h4><a href="{{ .link }}" target="_blank">{{ .headline }}</a></h4>
-               <span><a href="{{ .link }}" target="_blank">Read more at {{ .outlet }}</a></span>
+               <p class="excerpt">{{ .excerpt | safeHTML }}</p>
+               <span><a class="readmore" href="{{ .link }}" target="_blank">Read more at {{ .outlet }}</a></span>
                
-            {{ end }}
-        </div> 
+         
+   
     </div>
 </div>
-
+{{ end }}
 
 
 

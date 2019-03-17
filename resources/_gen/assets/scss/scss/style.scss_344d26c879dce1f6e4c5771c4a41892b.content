@@ -18786,4 +18786,34 @@ body.type-help-faq .center-block {
   float: none !important;
 }
 
+.row.news-item {
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+  border-bottom: 2px solid #EEEFF1;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+@media (min-width: 768px) {
+  .row.news-item {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
+}
+
+.row.news-item .readmore {
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  letter-spacing: .064rem;
+  line-height: 4.4rem;
+  text-transform: uppercase;
+}
+
+.row.news-item .readmore:after {
+  content: url("/images/icons/rightarrow.svg");
+  margin-left: .8rem;
+}
+
 /*# sourceMappingURL=style.css.map */

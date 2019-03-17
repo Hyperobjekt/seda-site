@@ -2,7 +2,7 @@
 title: "Home"
 date: "2019-02-24"
 ---
-- Most recent update, 3-14-19: Added FAQ questions for glossary & data.
+- Most recent update, 3-17-19: Added In the News
 - Layout: 90% complete
 - Styling: needs work
 - Footer: in development

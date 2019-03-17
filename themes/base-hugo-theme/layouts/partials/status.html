@@ -16,13 +16,13 @@ top: 90vh; right: 0; z-index: 2;">
         </div>
         {{ if eq .Params.statustype "post" }}
         <div class="modal-body">
-            <p><b>Most developed pages:</b> Home, About, FAQ. Others in progress / yet to be deployed.</p>
+            <p><b>Most developed pages:</b> Home, About, FAQ, News. Others in progress / yet to be deployed.</p>
             <p><b>Page status:</b>
             {{ .Params.status }}</p>
             </div>
         {{ else }}    
         <div class="modal-body">
-            <p><b>Most developed pages:</b> Home, About, FAQ. Others in progress / yet to be deployed.</p>
+            <p><b>Most developed pages:</b> Home, About, FAQ, News. Others in progress / yet to be deployed.</p>
             <p><b>Page status:</b></p>
             {{ .Content }}
         </div>

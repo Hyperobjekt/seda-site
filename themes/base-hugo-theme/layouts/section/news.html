@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+<div id="hero" class="hero row" style="">
+    <div class="hero-child row">
+      <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+        <h2 tabindex="0">In the News</h2>
+        <p tabindex="0">Media mentions of SEDA's work</p>
+      </div>
+     </div>
+</div>
+
+
+
+<div class="row glossary" id="glossary">
+    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        <h3 tabindex="0"></h3>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        
+        <div class="news-item">
+            {{ range .Site.Data.news }}
+               <p>{{ .date }}</p>
+               <h4><a href="{{ .link }}" target="_blank">{{ .headline }}</a></h4>
+               <span><a href="{{ .link }}" target="_blank">Read more at {{ .outlet }}</a></span>
+               
+            {{ end }}
+        </div> 
+    </div>
+</div>
+
+
+
+
+{{ partial "subscribe.html" .}}
+
+{{ end }}

@@ -22,7 +22,7 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 {{% /state-wrapper %}}
 
 
-{{% state-wrapper state="state2" %}}
+{{% state-wrapper state="state2" notmerge="false" %}}
 
   If we look at the largest 100 U.S. districts highlighted in the above figure, we notice that, for example, the average black student in Gwinnet County, GA scores [approximately at] grade level while the average white students scores [almost 2 years] above grade level. In contrast, in Detroit both black and white students score [approximately 2 grade levels] below the average district. In DC… etc.
 
@@ -77,6 +77,8 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 {{% /state-wrapper %}}
 
+{{% state-wrapper state="state1" notmerge="true" %}}
+
 ## Conclusions
 
 In aggregate, these figures show significant variation in educational outcomes across the U.S. Socioeconomic inequalities and differences in exposure to poverty are strongly related to gaps in achievement between black and white students.
@@ -85,3 +87,5 @@ Local factors appear to be important contributors to achievement gaps.
 Importantly, these results show that all moderately segregated districts (as measured by differences in exposure to school poverty) have achievement gaps. This suggests that simply providing good schools in every neighborhood is not sufficient to alleviate racial achievement gaps.
 Please explore the figures above by entering your district to see where it falls. You can also look at patterns amongst metropolitan areas, between Hispanic and white students, and between poor and non-poor students.
 To learn more, please <a href="https://cepa.stanford.edu/sites/default/files/wp16-10-v201803.pdf" target="_blank" />read the full paper</a>.
+
+{{% /state-wrapper %}}

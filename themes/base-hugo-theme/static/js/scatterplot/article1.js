@@ -251,23 +251,23 @@ scatterplot.addState('state8', state10);
 scatterplot.loadState('state1', { notMerge: true });
 
 // when the component is ready, trigger the state change as desired
-// scatterplot.on('ready', function(scatterplot) {
-//   setTimeout(() => {
-//     scatterplot.loadState('state2');
-//   }, 4000)
-//   setTimeout(() => {
-//     scatterplot.loadState('state3')
-//   }, 8000)
-//   setTimeout(() => {
-//     scatterplot.loadState('state2', { notMerge: true })
-//   }, 12000)
-//   setTimeout(() => {
-//     scatterplot.loadState('state3', { notMerge: true })
-//   }, 16000)
-//   setTimeout(() => {
-//     scatterplot.loadState('state1', { notMerge: true })
-// }, 20000)
-// })
+scatterplot.on('ready', function(scatterplot) {
+  // setTimeout(() => {
+  //   scatterplot.loadState('state2');
+  // }, 4000)
+  // setTimeout(() => {
+  //   scatterplot.loadState('state1', { notMerge: true })
+  // }, 6000)
+  // setTimeout(() => {
+  //   scatterplot.loadState('state2')
+  // }, 8000)
+  // setTimeout(() => {
+  //   scatterplot.loadState('state3', { notMerge: true })
+  // }, 10000)
+  // setTimeout(() => {
+  //   scatterplot.loadState('state1', { notMerge: true })
+  // }, 12000)
+})
 
 
 
@@ -285,11 +285,18 @@ scatterplot.loadState('state1', { notMerge: true });
             //  console.log('update');
             var activeWrappers = $.grep(plot.wrappers, function(el) {
                 // Get top and bottom y coords of wrapper
-                var wrapperTop = $(el).offset().top - $(window).scrollTop();
+
+                plot.top = (plot.scatterplot).offset().top;
+                var wrapperTop = $(el).offset().top; // $(el).offset().top - $(window).scrollTop();
                 var wrapperHeight = $(el).height();
                 var wrapperBottom = Number(wrapperTop) + Number(wrapperHeight);
                 // If plot top or bottom are within
                 // add to activeWrappers.
+                // console.log('plot.top = ' + plot.top);
+                // console.log('offset().top = ' + $(el).offset().top);
+                // console.log('scrolltop = ' + $(window).scrollTop());
+                // console.log('wrapperTop = ' + wrapperTop);
+                // console.log('wrapperBottom = ' + wrapperBottom);
                 if ((plot.top >= wrapperTop && plot.top <= wrapperBottom)) {
                     // console.log('It\'s within a wrapper.');
                     return $(el);
@@ -311,7 +318,11 @@ scatterplot.loadState('state1', { notMerge: true });
                     '. NotMerge = ' + String(notmerge) + '.' );
                 if (state !== plot.activeState) {
                     console.log('loading new state ' + state);
-                    scatterplot.loadState(state);
+                    if (notmerge) {
+                        scatterplot.loadState(state, {notMerge: true});
+                    } else {
+                        scatterplot.loadState(state);
+                    }
                     plot.activeState = state;
                 }
             } else if (activeWrappers.length === 0 || activeWrappers.length >= 1) {

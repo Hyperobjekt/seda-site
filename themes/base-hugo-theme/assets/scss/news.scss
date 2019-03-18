@@ -1,4 +1,4 @@
-body.type-help-faq {
+body.type-news {
     .hero {
         background: linear-gradient(to bottom, rgba(4, 41, 101, 100%) 5%, rgba(4, 29, 85, 100%) 75%);
         // background-image: url('/images/about-plot-2x.png'); /* fallback */
@@ -86,116 +86,69 @@ body.type-help-faq {
           }
         }
       }
-      // Questions
-      h3 {
-        margin-bottom: 2.4rem;
-        color: #031232;
-            font-size: 1.7rem;
-            line-height: 2.8rem;
-            letter-spacing: 0.009rem;
+.row.news-item {
+    padding-top: 4.8rem;
+    padding-bottom: 4.8rem;
+    border-bottom: 2px solid #EEEFF1;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-right: 16px;
+    padding-left: 16px; 
+    @include media-breakpoint-up(md) {
+        padding-top: 6.4rem;
+        padding-bottom: 6.4rem;      
+    }
+    .readmore {
+        font-family: $sharpgrotesk-med-15;
+        font-size: 1.4rem;
+        letter-spacing: .064rem;
+        line-height: 4.4rem;
+        text-transform: uppercase;
+        &:after {
+            content: url('/images/icons/rightarrow.svg');
+            margin-left: .8rem;
+        }
+    }
+    h4 {
+        margin-bottom: 0rem;
         @include media-breakpoint-up(md) {
-            font-size: 1.85rem;
             line-height: 2.75rem;
+            font-size: 1.85rem;
             letter-spacing: 0.024rem;
         }
         @include media-breakpoint-up(lg) {
-            margin-bottom: 3.2rem;
-            font-size: 2.3rem;
             line-height: 3.4rem;
+            font-size: 2.3rem;
             letter-spacing: 0.03rem;
         }
-        @include media-breakpoint-up(xl) {
-            font-size: 2.8rem;
-            line-height: 4.2rem;
-            letter-spacing: 0.03rem;
-        }
-        }
-      h5 {
-            font-size: 1.4rem;
-            line-height: 2.1rem;
-            letter-spacing: 0.007rem;
-            margin-bottom: 0;
-        @include media-breakpoint-up(md) {
-            font-size: 1.6rem;
-            line-height: 2.4rem;
-            // letter-spacing: 0.024rem;
-        }
-        @include media-breakpoint-up(lg) {
-            font-size: 2rem;
-            font-size: 1.6rem;
-            line-height: 3rem;
-            letter-spacing: auto;
-          } 
-      }  
-      p {
-          font-size: 1.3rem;
-          line-height: 2rem;
-          @include media-breakpoint-up(md) {
-              font-size: 1.4rem;
-              line-height: 2.1rem;
-          }
-          @include media-breakpoint-up(lg) {
-            font-size: 1.5rem;
-            line-height: 2.4rem;
-        }
-            @include media-breakpoint-up(xl) {
-                font-size: 1.9rem;
-                line-height: 2.8rem;
+    }
+    p {
+        font-family: $maisonneue-book;
+            font-size: 1.3rem;
+            line-height: 2rem;
+            letter-spacing: 0;
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
+            color: #031232;
+
+            @include media-breakpoint-up(md) {
+              margin-top: 2rem;
+              margin-bottom: 1rem;
+              font-size: 1.6rem;
+              line-height: 2.5rem;
+              letter-spacing: 0;
             }
-      }  
-      .row.glossary {
-        padding-top: 5.6rem;
-        @include media-breakpoint-up(md) {
-          padding-top: 7.2rem;
-          padding-bottom: 4rem;
-        }
-      }
-      .row.data {
-        background-color: #F5F8FA;
-        padding: 8rem 16px 4rem;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      .row.map {
-        padding: 8rem 0 4rem;  
-      }
-      .accordion-section {
-        padding: 4.8rem 0;
-        padding: 2.4rem 0;
-        border-top: 2px solid #E9EAED;
-        a.question {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            h5 {
-                padding-right: 2.4rem;
+
+            @include media-breakpoint-up(lg) {
+              // margin-top: 3.2rem;
+              // font-size: 2.3rem;
+              // line-height: 3.4rem;
+              // letter-spacing: .012rem;
             }
-            i.fa-chevron-up {
-                transform: rotate(180deg);
-                padding-bottom: 6px;
-                &:before {
-                font-size: 1.8rem;
-                    @include media-breakpoint-up(md) {
-                        font-size: 1.8rem;
-                    }
-                }   
-            }
-            &:hover {
-                text-decoration: none;
-                color: $seda-red;
-                // color: $seda-lightblue;
-                // color: #5198c7;
-                // color: #6cc1aa;
-            }
-        }
-        .answer {
+        &.excerpt {
+            margin-bottom: 0.8rem;
             margin-top: 1.6rem;
-            }
-        }
-        .center-block {
-            float: none !important;
-        }
-        
-
-
-}    
+        }    
+    }
+}
+}

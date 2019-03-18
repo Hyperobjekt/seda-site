@@ -18,13 +18,18 @@
         }
     }
 
-    // Placeholder for active modal contents.
-    // var activeBio = null;
+    function toggleAbstract(e) {
+        // console.log('toggleAbstract()');
+        e.preventDefault();
+        $target = $(e.target);
+        $target.parents('.research-paper').toggleClass('abstract-visible');
+    }
 
     var updateModal = {
         activeBio: null,
         update: function() {
             console.log('updateModal.update()');
+            console.log(updateModal.activeBio);
             var $button = $(this.activeBio).find('button');
 
             // Get name, title, bio, and image
@@ -45,7 +50,19 @@
             $('#modalBio').html(bio);
             $('#peopleBioModal').modal('show');
 
-            // Check first and last status
+            // Check first and last position, disable buttons
+            if ($(updateModal.activeBio).prev().length <= 0) {
+                console.log('first item');
+                $('#prevBio').prop( "disabled", true);
+                $('#nextBio').prop( "disabled", false);
+            } else if ($(updateModal.activeBio).next().length <= 0) {
+                console.log('last item');
+                $('#prevBio').prop( "disabled", false);
+                $('#nextBio').prop( "disabled", true);
+            } else {
+                $('#prevBio').prop( "disabled", false);
+                $('#nextBio').prop( "disabled", false);
+            }
         }
     };
 
@@ -99,6 +116,31 @@
           });
         }
 
+        // Dropdown for article sorting on mobile
+        $('body.research .small-tab-nav ul li a').on('click', function(e) {
+            // console.log('Small tab nav selection');
+            $(this).tab('show');
+            // Store target.
+            $target = $(e.target);
+            // Clear all active and highlight classes.
+            $('body.research .small-tab-nav ul li a').removeClass('active highlight');
+            // Add proper classes to selected target.
+            $target.addClass('active highlight');
+        });
+
+        // Display article abstract and versions for entry on research page.
+        $('a.show-versions').on('click', function(e) {
+            // console.log('a.show-versions');
+            toggleAbstract(e);
+        });
+
+        $('body.research a[data-toggle="tab"]').on('click touchstart', function (e) {
+            // console.log('hide tab event');
+            if ($('.research-paper.abstract-visible').length >= 1) {
+                $('.research-paper.abstract-visible').removeClass('abstract-visible');
+            }
+        });
+
         $('#toggleDrawer').on('click', function() {
             // console.log('#toggleDrawer selected');
             $('#drawer').addClass('show');
@@ -108,5 +150,15 @@
             console.log('#closeDrawer selected');
             $('#drawer').removeClass('show');
         });
+
+        // Add Subnav active selection highlighting
+
+        $(".subnav a").click(function () {
+            $(".subnav a").removeClass("highlight");
+            $(this).addClass("highlight");
+        });
+
+
+
     });
 })(jQuery);

@@ -15699,7 +15699,7 @@ nav.navbar-light {
   transition: background-color .2s ease;
   padding-right: 0;
   padding-left: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 nav.navbar-light .navbar-brand {
@@ -18490,6 +18490,7 @@ body.type-help-faq h3 {
 
 @media (min-width: 992px) {
   body.type-help-faq h3 {
+    margin-bottom: 3.2rem;
     font-size: 2.3rem;
     line-height: 3.4rem;
     letter-spacing: 0.03rem;
@@ -18508,6 +18509,7 @@ body.type-help-faq h5 {
   font-size: 1.4rem;
   line-height: 2.1rem;
   letter-spacing: 0.007rem;
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -18520,6 +18522,7 @@ body.type-help-faq h5 {
 @media (min-width: 992px) {
   body.type-help-faq h5 {
     font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 3rem;
     letter-spacing: auto;
   }
@@ -18539,7 +18542,7 @@ body.type-help-faq p {
 
 @media (min-width: 992px) {
   body.type-help-faq p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 2.4rem;
   }
 }
@@ -18557,7 +18560,8 @@ body.type-help-faq .row.glossary {
 
 @media (min-width: 768px) {
   body.type-help-faq .row.glossary {
-    padding-top: 8rem;
+    padding-top: 7.2rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -18574,6 +18578,7 @@ body.type-help-faq .row.map {
 
 body.type-help-faq .accordion-section {
   padding: 4.8rem 0;
+  padding: 2.4rem 0;
   border-top: 2px solid #E9EAED;
 }
 
@@ -18589,6 +18594,7 @@ body.type-help-faq .accordion-section a.question h5 {
 
 body.type-help-faq .accordion-section a.question i.fa-chevron-up {
   transform: rotate(180deg);
+  padding-bottom: 6px;
 }
 
 body.type-help-faq .accordion-section a.question i.fa-chevron-up:before {
@@ -18597,7 +18603,7 @@ body.type-help-faq .accordion-section a.question i.fa-chevron-up:before {
 
 @media (min-width: 768px) {
   body.type-help-faq .accordion-section a.question i.fa-chevron-up:before {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -18612,6 +18618,190 @@ body.type-help-faq .accordion-section .answer {
 
 body.type-help-faq .center-block {
   float: none !important;
+}
+
+body.type-news .hero {
+  background: linear-gradient(to bottom, #042965 5%, #041d55 75%);
+  background-blend-mode: soft-light;
+  background-repeat: no-repeat;
+  background-position: 0 bottom;
+  background-size: 120%;
+  height: 336px;
+  margin-top: -6.4rem;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  body.type-news .hero {
+    height: 448px;
+  }
+}
+
+body.type-news .hero .hero-child {
+  width: 100%;
+  height: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  background: url("/images/fourpapers2@2x.png");
+  background-repeat: no-repeat;
+  background-size: 84%;
+  background-position: center 70%;
+}
+
+@media (min-width: 576px) {
+  body.type-news .hero .hero-child {
+    background-size: 68%;
+    background-position: center;
+  }
+}
+
+@media (min-width: 1400px) {
+  body.type-news .hero .hero-child {
+    background-size: 68%;
+    background-position: center;
+  }
+}
+
+body.type-news .hero .hero-child .column {
+  margin-top: 13.2rem;
+  margin-bottom: 9.6rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  body.type-news .hero .hero-child .column {
+    margin-top: 15.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.type-news .hero .hero-child .column {
+    margin-top: 16rem;
+  }
+}
+
+body.type-news .hero .hero-child .column h2 {
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 2.6rem;
+  line-height: 2.55rem;
+  letter-spacing: .013rem;
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  body.type-news .hero .hero-child .column h2 {
+    font-size: 2.8rem;
+    line-height: 4.3rem;
+    letter-spacing: .014rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.type-news .hero .hero-child .column h2 {
+    font-size: 3.6rem;
+    line-height: 5.4rem;
+    letter-spacing: .018rem;
+  }
+}
+
+body.type-news .hero .hero-child .column p {
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  body.type-news .hero .hero-child .column p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  body.type-news .hero .hero-child .column p {
+    font-size: 2.3rem;
+    line-height: 3.45rem;
+    letter-spacing: auto;
+  }
+}
+
+body.type-news .row.news-item {
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+  border-bottom: 2px solid #EEEFF1;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+@media (min-width: 768px) {
+  body.type-news .row.news-item {
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+  }
+}
+
+body.type-news .row.news-item .readmore {
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  letter-spacing: .064rem;
+  line-height: 4.4rem;
+  text-transform: uppercase;
+}
+
+body.type-news .row.news-item .readmore:after {
+  content: url("/images/icons/rightarrow.svg");
+  margin-left: .8rem;
+}
+
+body.type-news .row.news-item h4 {
+  margin-bottom: 0rem;
+}
+
+@media (min-width: 768px) {
+  body.type-news .row.news-item h4 {
+    line-height: 2.75rem;
+    font-size: 1.85rem;
+    letter-spacing: 0.024rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.type-news .row.news-item h4 {
+    line-height: 3.4rem;
+    font-size: 2.3rem;
+    letter-spacing: 0.03rem;
+  }
+}
+
+body.type-news .row.news-item p {
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  margin-top: 1.8rem;
+  margin-bottom: 1rem;
+  color: #031232;
+}
+
+@media (min-width: 768px) {
+  body.type-news .row.news-item p {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    letter-spacing: 0;
+  }
+}
+
+body.type-news .row.news-item p.excerpt {
+  margin-bottom: 0.8rem;
+  margin-top: 1.6rem;
 }
 
 body.type-posts .hero {

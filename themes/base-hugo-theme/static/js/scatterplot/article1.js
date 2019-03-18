@@ -251,7 +251,7 @@ scatterplot.addState('state8', state10);
 scatterplot.loadState('state1', { notMerge: true });
 
 // when the component is ready, trigger the state change as desired
-scatterplot.on('ready', function(scatterplot) {
+// scatterplot.on('ready', function(scatterplot) {
   // setTimeout(() => {
   //   scatterplot.loadState('state2');
   // }, 4000)
@@ -267,7 +267,7 @@ scatterplot.on('ready', function(scatterplot) {
   // setTimeout(() => {
   //   scatterplot.loadState('state1', { notMerge: true })
   // }, 12000)
-})
+// })
 
 
 
@@ -349,13 +349,26 @@ scatterplot.on('ready', function(scatterplot) {
 
     // Only trigger scroll ever 50ms so less resources
     scatterplot.on('ready', function(scatterplot) {
+
+        // @lane: testing here to isolate the plot from my scroll logic.
+        setTimeout(() => {
+          scatterplot.loadState('state2');
+        }, 2000)
+        setTimeout(() => {
+          scatterplot.loadState('state1', { notMerge: true })
+        }, 4000)
+        setTimeout(() => {
+          scatterplot.loadState('state2')
+        }, 6000)
+        // end testing.
+
         var userScrolled = false;
         $(window).scroll(function() {
           userScrolled = true;
         });
         setInterval(function() {
           if (userScrolled) {
-            plot.update();
+            // plot.update(); // @lane, disabled default scroll event init here.
             userScrolled = false;
           }
         }, 50);

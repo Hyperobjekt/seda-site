@@ -62,9 +62,9 @@
     </div>
     {{ range $index, $element := first 2 (where .Site.Pages "Section" "posts") }}
         {{ if (eq $index 0) }}
-            <div class="card-container col-xs-12 col-md-6 col-xl-5 offset-xl-1">
+            <div class="card-container col-xs-12 col-md-5 col-xl-5 offset-md-1">
         {{ else }}
-            <div class="card-container col-xs-12 col-md-6 col-xl-5">
+            <div class="card-container col-xs-12 col-md-5 col-xl-5">
         {{ end }}
 
                 {{ partial "explorations-card.html" .}}

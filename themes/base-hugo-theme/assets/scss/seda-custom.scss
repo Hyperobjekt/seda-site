@@ -1076,16 +1076,16 @@ body.home {
       padding-top: 9.6rem;
       padding-bottom: 3.2rem;
       text-align: center;
-      order: 1;
+      //order: 1;
     }
     .card-container {
       // padding-top: 15px;
       // padding-bottom: 8rem;
       &:nth-of-type(3) {
-        order: 2;
+        //order: 2;
       }
       &:nth-of-type(2){
-        order: 3;
+        //order: 3;
       }
       .card {
         padding: 2.4rem;

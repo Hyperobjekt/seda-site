@@ -10,7 +10,4 @@ is_index: true
 - Add actual team members and bios
 - Make team member images clickable
 - Enlarge funder logos
-- Layout: 99% complete
-- Styling: 90% complete
-- Header / footer: in development
 - Page content: updated 3-9-19

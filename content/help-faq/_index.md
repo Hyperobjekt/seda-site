@@ -6,7 +6,4 @@ is_index: true
 ---
 - Most recent update: 3-14-19, added glossary & data questions
 - Hero image approval needed (image may work on another page if not this one)
-- Layout: 99% complete
-- Styling: 90% complete
-- Header / footer: in development
-- Page content: updated 3-9-19
+

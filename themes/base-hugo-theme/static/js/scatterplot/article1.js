@@ -5,13 +5,6 @@
 
 /** State 1: Show white scores on x axis and black scores on y axis */
 var state1 = function(scatterplot) {
-  scatterplot.setProps({
-    xVar: 'w_avg',
-    yVar: 'b_avg',
-    zVar: 'sz',
-  });
-  // get current echart options
-  const options = scatterplot.component.getOption();
   // this state is created from the base
   const base = scatterplot.getState('base');
   const baseOverrides = {
@@ -84,7 +77,12 @@ var state1 = function(scatterplot) {
       }
     }]
   }
-  return deepmerge.all([base, baseOverrides ]);
+  return {
+    xVar: 'w_avg',
+    yVar: 'b_avg',
+    zVar: 'sz',
+    options: deepmerge.all([base.options, baseOverrides ])
+  }
 }
 
 /** State 2: Highlight largest 25 districts  */
@@ -94,21 +92,23 @@ var state2 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 10)
-  return deepmerge(base, {
-    series: [
-      dataSeries,
-      {
-        type: 'scatter',
-        data: top100,
-        symbolSize: dataSeries.symbolSize,
-        itemStyle: {
-          borderWidth: 1,
-          borderColor: 'rgba(0,0,0,1)',
-          color: 'rgba(255,0,0,0.25)'
+  return {
+    options: deepmerge(base.options, {
+      series: [
+        dataSeries,
+        {
+          type: 'scatter',
+          data: top100,
+          symbolSize: dataSeries.symbolSize,
+          itemStyle: {
+            borderWidth: 1,
+            borderColor: 'rgba(0,0,0,1)',
+            color: 'rgba(255,0,0,0.25)'
+          }
         }
-      }
-    ]
-  })
+      ]
+    })
+  }
 };
 
 /** State 3: Highlight locations (Detroit, Gwinet, Washington) */
@@ -117,31 +117,28 @@ var state3 = function(scatterplot) {
   var base = scatterplot.getState('state2');
   var dataSeries = scatterplot.getDataSeries();
   var highlightedValues = scatterplot.getSeriesDataForIds(dataSeries.data, highlightIds);
-  return deepmerge(base, {
-    series: [
-      base.series[0],
-      base.series[1],
-      {
-        type: 'scatter',
-        data: highlightedValues,
-        symbolSize: dataSeries.symbolSize,
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.5)'
+  return {
+    options: deepmerge(base.options, {
+      series: [
+        base.series[0],
+        base.series[1],
+        {
+          type: 'scatter',
+          data: highlightedValues,
+          symbolSize: dataSeries.symbolSize,
+          itemStyle: {
+            borderWidth: 2,
+            borderColor: 'rgba(0,0,0,1)',
+            color: 'rgba(255,255,0,0.5)'
+          }
         }
-      }
-    ]
-  })
+      ]
+    })
+  }
 };
 
 /** State 4: Load new variables to show White/Black SES Gap and Achievement Gap */
 var state4 = function(scatterplot) {
-  scatterplot.setProps({
-    xVar: 'wb_ses',
-    yVar: 'wb_avg',
-    zVar: 'sz',
-  });
   // get current echart options
   const options = scatterplot.component.getOption();
   // this state is created from the base
@@ -191,7 +188,12 @@ var state4 = function(scatterplot) {
       }
     }]
   }
-  return deepmerge.all([ base, baseOverrides ]);
+  return {
+    xVar: 'wb_ses',
+    yVar: 'wb_avg',
+    zVar: 'sz',
+    options: deepmerge.all([ base.options, baseOverrides ])
+  }
 }
 
 /** State 5: Highlight largest districts */
@@ -248,7 +250,7 @@ scatterplot.addState('state7', state9);
 scatterplot.addState('state8', state10);
 
 // load the first state
-scatterplot.loadState('state1', { notMerge: true });
+scatterplot.loadState('state1');
 
 // when the component is ready, trigger the state change as desired
 // scatterplot.on('ready', function(scatterplot) {
@@ -353,13 +355,13 @@ scatterplot.loadState('state1', { notMerge: true });
         // @lane: testing here to isolate the plot from my scroll logic.
         setTimeout(() => {
           scatterplot.loadState('state2');
-        }, 2000)
+        }, 5000)
         setTimeout(() => {
           scatterplot.loadState('state1', { notMerge: true })
-        }, 4000)
+        }, 10000)
         setTimeout(() => {
           scatterplot.loadState('state2')
-        }, 6000)
+        }, 5000)
         // end testing.
 
         var userScrolled = false;

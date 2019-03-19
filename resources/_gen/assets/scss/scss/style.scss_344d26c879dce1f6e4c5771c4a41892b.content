@@ -18940,26 +18940,34 @@ body.type-posts .dyn-article .state-desc-wrapper:first-child {
   }
 }
 
-body.type-posts .dyn-article .state-desc-wrapper p {
+body.type-posts .dyn-article .state-desc-wrapper p,
+body.type-posts .dyn-article .state-desc-wrapper ul,
+body.type-posts .dyn-article .state-desc-wrapper li {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
   margin-top: 3.2rem;
 }
 
-body.type-posts .dyn-article .state-desc-wrapper p:first-child {
+body.type-posts .dyn-article .state-desc-wrapper p:first-child,
+body.type-posts .dyn-article .state-desc-wrapper ul:first-child,
+body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   margin-top: 0;
 }
 
 @media (min-width: 320px) {
-  body.type-posts .dyn-article .state-desc-wrapper p {
+  body.type-posts .dyn-article .state-desc-wrapper p,
+  body.type-posts .dyn-article .state-desc-wrapper ul,
+  body.type-posts .dyn-article .state-desc-wrapper li {
     font-size: 1.4rem;
     line-height: 2.1rem;
   }
 }
 
 @media (min-width: 768px) {
-  body.type-posts .dyn-article .state-desc-wrapper p {
+  body.type-posts .dyn-article .state-desc-wrapper p,
+  body.type-posts .dyn-article .state-desc-wrapper ul,
+  body.type-posts .dyn-article .state-desc-wrapper li {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.6rem;
@@ -18969,7 +18977,9 @@ body.type-posts .dyn-article .state-desc-wrapper p:first-child {
 }
 
 @media (min-width: 992px) {
-  body.type-posts .dyn-article .state-desc-wrapper p {
+  body.type-posts .dyn-article .state-desc-wrapper p,
+  body.type-posts .dyn-article .state-desc-wrapper ul,
+  body.type-posts .dyn-article .state-desc-wrapper li {
     font-size: 1.6rem;
     line-height: 2.4rem;
     margin-top: 3.2rem;
@@ -18977,7 +18987,9 @@ body.type-posts .dyn-article .state-desc-wrapper p:first-child {
 }
 
 @media (min-width: 1400px) {
-  body.type-posts .dyn-article .state-desc-wrapper p {
+  body.type-posts .dyn-article .state-desc-wrapper p,
+  body.type-posts .dyn-article .state-desc-wrapper ul,
+  body.type-posts .dyn-article .state-desc-wrapper li {
     font-size: 2.0rem;
     line-height: 3.0rem;
     margin-top: 3.2rem;

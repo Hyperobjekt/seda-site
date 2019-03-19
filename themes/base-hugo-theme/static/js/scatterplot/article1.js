@@ -16,6 +16,10 @@ var state1 = function(scatterplot) {
       min:-4,
       max:3,
       name: 'Black Average Performance',
+      textStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
+      }
     },
     xAxis: {
       min: -3,
@@ -40,18 +44,18 @@ var state1 = function(scatterplot) {
               coord: [-3, -3],
               symbol: 'none',
               lineStyle: {
-                color: '#999'
+                color: '#d21cd2'// '#ef5aef'// '#FF003E'// '#999'
               }
             },
             { coord: [ 3,  3], symbol: 'none' },
           ],
           [
             {
-              name: '',
+              name: '', // Y axis
               coord: [0, -4],
               symbol: 'none',
               lineStyle: {
-                color: 'rgba(0,0,0,0.2)'
+                color: '#adadad' // 'rgba(0,0,0,0.6)'
               }
             },
             {
@@ -61,11 +65,11 @@ var state1 = function(scatterplot) {
           ],
           [
             {
-              name: '',
+              name: '', // x axis
               coord: [-3, 0],
               symbol: 'none',
               lineStyle: {
-                color: 'rgba(0,0,0,0.2)'
+                color: '#adadad' // 'rgba(0,0,0,0.2)'
               }
             },
             {
@@ -120,8 +124,9 @@ var state3 = function(scatterplot) {
   return {
     options: deepmerge(base.options, {
       series: [
-        base.series[0],
-        base.series[1],
+        // base.series[0],
+        // base.series[1],
+        dataSeries,
         {
           type: 'scatter',
           data: highlightedValues,
@@ -353,15 +358,15 @@ scatterplot.loadState('state1');
     scatterplot.on('ready', function(scatterplot) {
 
         // @lane: testing here to isolate the plot from my scroll logic.
-        setTimeout(() => {
-          scatterplot.loadState('state2');
-        }, 5000)
-        setTimeout(() => {
-          scatterplot.loadState('state1', { notMerge: true })
-        }, 10000)
-        setTimeout(() => {
-          scatterplot.loadState('state2')
-        }, 15000)
+        // setTimeout(() => {
+        //   scatterplot.loadState('state2');
+        // }, 5000)
+        // setTimeout(() => {
+        //   scatterplot.loadState('state1', { notMerge: true })
+        // }, 10000)
+        // setTimeout(() => {
+        //   scatterplot.loadState('state2')
+        // }, 15000)
         // end testing.
 
         var userScrolled = false;
@@ -370,7 +375,7 @@ scatterplot.loadState('state1');
         });
         setInterval(function() {
           if (userScrolled) {
-            // plot.update(); // @lane, disabled default scroll event init here.
+            plot.update(); // @lane, disabled default scroll event init here.
             userScrolled = false;
           }
         }, 50);

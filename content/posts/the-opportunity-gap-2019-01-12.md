@@ -11,13 +11,10 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 {{% state-wrapper state="state1" notmerge="true" %}}
 
-  This figure shows the average performance of black and white students in each US school district in math and English language arts in grade 3.
-
-  Each circle is a school district (one of ~2400 district in which there are enough white and black students to reliably estimate both white and black achievement in grade 3. The size of the bubble is proportionate to the number of black children enrolled in the school district.
-
-  If a district falls on the diagonal line, that means that white and black students have, on average, equal test scores (and so equal opportunity). In districts below the line, black students have had lower educational opportunity by 3rd grade. The further below the line, the more unequal the opportunity.
-
-  In nearly every district in America, white students score higher on state standardized tests than black students (meaning they have had more educational opportunity), with large differences in achievement amongst white and black students within most districts.
+  1. This figure shows the average performance of black and white students in each US school district in math and English language arts in grade 3.
+  2. Each circle is a school district (one of ~2400 district in which there are enough white and black students to reliably estimate both white and black achievement in grade 3. The size of the bubble is proportionate to the number of black children enrolled in the school district.
+  3. If a district falls on the diagonal line, that means that white and black students have, on average, equal test scores (and so equal opportunity). In districts below the line, black students have had lower educational opportunity by 3rd grade. The further below the line, the more unequal the opportunity.
+  4. In nearly every district in America, white students score higher on state standardized tests than black students (meaning they have had more educational opportunity), with large differences in achievement amongst white and black students within most districts.
 
 {{% /state-wrapper %}}
 

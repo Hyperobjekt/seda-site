@@ -105,7 +105,9 @@ body.type-posts {
         @include media-breakpoint-up(md) {
           width: 80%;
         }
-        p {
+        p,
+        ul,
+        li {
           font-family: $maisonneue-book;
           // color: $white;
           font-size: 1.3rem;

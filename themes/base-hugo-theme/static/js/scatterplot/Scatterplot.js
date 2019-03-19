@@ -2,7 +2,7 @@
  * Helper class for easier scatterplot updates
  */
 function Scatterplot(container, props) {
-  
+
   var _self = this;
   var _ready = false;
   var _handlers = {};
@@ -13,13 +13,31 @@ function Scatterplot(container, props) {
     '#07a2a4', '#9a7fd1', '#588dd5', '#f5994e', '#c05050',
     '#59678c', '#c9ab00', '#7eb00a', '#6f5553', '#c14089'
   ];
-  
+
   var theme = {
     color: colorPalette,
     title: {
       textStyle: {
         fontWeight: 'normal',
-        color: '#000'
+        color: '#fff',
+        fontFamily: 'SharpGrotesk-Medium20'
+      },
+      subtextStyle: {
+        fontWeight: 'normal',
+        color: '#fff',
+        fontFamily: 'MaisonNeue-Medium'
+      }
+    },
+    yAxis: {
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
+      }
+    },
+    xAxis: {
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
       }
     },
     visualMap: {
@@ -49,7 +67,7 @@ function Scatterplot(container, props) {
       }
     },
     grid: {
-      borderColor: '#eee'
+      borderColor: '#fff'
     },
     valueAxis: {
       axisLine: {
@@ -63,17 +81,19 @@ function Scatterplot(container, props) {
       splitLine: {
         show: false,
       },
-      nameTextStyle: {
-        color: '#000',
+      nameTextStyle: { // Styles for x and y axis labels
+        color: '#fff',
         fontSize: 12,
-        fontWeight: 'normal'
+        fontWeight: 'normal',
+        fontFamily: 'MaisonNeue-Medium'
       },
       nameLocation: 'middle',
       nameGap: 32,
-      axisLabel: {
+      axisLabel: { // Styles for grid numbers
         inside: false,
         textVerticalAlign: 'middle',
-        color: '#999',
+        color: '#fff',
+        fontFamily: 'MaisonNeue-Medium',
         fontSize: 12,
       }
     },
@@ -94,7 +114,7 @@ function Scatterplot(container, props) {
       color: colorPalette
     }
   };
-  
+
   this.states = {
     // default state shared by all scatterplots
     // https://ecomfe.github.io/echarts-doc/public/en/option.html
@@ -102,11 +122,12 @@ function Scatterplot(container, props) {
       options: {
         grid: {
           top: 24,
-          bottom: 48,
+          bottom: 42,
           left: 24,
-          right: 48,
+          right: 34,
         },
-        yAxis: { 
+        yAxis: {
+          nameGap: 18,
           position: 'right',
           splitLine: {
             show: false,
@@ -116,7 +137,7 @@ function Scatterplot(container, props) {
           }
         },
         xAxis: {
-          nameGap: 32,
+          nameGap: 26,
           nameTextStyle: {
             fontSize: 12,
             fontWeight: 'normal'
@@ -128,16 +149,16 @@ function Scatterplot(container, props) {
       }
     }
   }
-  
+
   // add a ref prop to get a reference to the react component instance
-  this.props = Object.assign( 
-    (props || {}), 
-    { 
+  this.props = Object.assign(
+    (props || {}),
+    {
       prefix: 'districts',
       options: this.states.base.options,
       endpoint: 'https://d2fypeb6f974r1.cloudfront.net/dev/scatterplot/',
-      ref: function(ref) { 
-        _self.component = ref; 
+      ref: function(ref) {
+        _self.component = ref;
       },
       onReady: function(echartInstance) {
         _ready = true;
@@ -146,17 +167,17 @@ function Scatterplot(container, props) {
       theme: theme
     }
   );
-  
+
   /**
    * Triggers an event with `eventName` and runs all handlers
    */
   this.trigger = function(eventName, data) {
-    _handlers[eventName] && 
+    _handlers[eventName] &&
     _handlers[eventName].forEach(function(h) {
       h.apply(null, data)
     })
   }
-  
+
   /**
    * Registers an event handler with the associated eventName
    * If it's a ready handler and everything is ready, run immediately.
@@ -170,7 +191,7 @@ function Scatterplot(container, props) {
       handler(_self.component, _self.component.echart)
     }
   }
-  
+
   /**
    * Set a state generator for the scatterplot
    */
@@ -233,7 +254,7 @@ function Scatterplot(container, props) {
       container
     );
   }
-  
+
   this.render()
 
 }
@@ -265,7 +286,7 @@ Scatterplot.prototype.getSeriesDataForIds = function(values, ids) {
 
 /** Returns an array of values that fall within the range on the provided axis */
 Scatterplot.prototype.getSeriesDataInRange = function(values, axis, range) {
-  var index = axis === 'x' ? 0 : 
+  var index = axis === 'x' ? 0 :
     axis === 'y' ? 1 : 2;
   return values.filter(function(v) {
     return v[index] > range.min && v[index] < range.max;

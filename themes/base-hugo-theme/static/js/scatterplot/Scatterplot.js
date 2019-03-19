@@ -61,12 +61,20 @@ function Scatterplot(container, props) {
         show: false,
       },
       splitLine: {
-        lineStyle: {
-          color: ['#eee']
-        }
+        show: false,
       },
       nameTextStyle: {
-        color: '#000'
+        color: '#000',
+        fontSize: 12,
+        fontWeight: 'normal'
+      },
+      nameLocation: 'middle',
+      nameGap: 32,
+      axisLabel: {
+        inside: false,
+        textVerticalAlign: 'middle',
+        color: '#999',
+        fontSize: 12,
       }
     },
     line: {
@@ -100,20 +108,10 @@ function Scatterplot(container, props) {
         },
         yAxis: { 
           position: 'right',
-          nameLocation: 'middle',
-          nameGap: 32,
-          nameTextStyle: {
-            fontSize: 12,
-            fontWeight: 'normal'
-          },
           splitLine: {
             show: false,
           },
           axisLabel: {
-            inside: false,
-            textVerticalAlign: 'middle',
-            color: '#999',
-            fontSize: 12,
             align: 'right',
           }
         },
@@ -123,12 +121,6 @@ function Scatterplot(container, props) {
             fontSize: 12,
             fontWeight: 'normal'
           },
-          axisLabel: {
-            inside: false,
-            textVerticalAlign: 'middle',
-            color: '#999',
-            fontSize: 12,
-          }
         },
         tooltip: {
           trigger: 'item'

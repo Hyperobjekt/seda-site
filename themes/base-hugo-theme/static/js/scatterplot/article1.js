@@ -361,7 +361,7 @@ scatterplot.loadState('state1');
         }, 10000)
         setTimeout(() => {
           scatterplot.loadState('state2')
-        }, 5000)
+        }, 15000)
         // end testing.
 
         var userScrolled = false;

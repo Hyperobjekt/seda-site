@@ -125,6 +125,7 @@ function Scatterplot(container, props) {
           bottom: 42,
           left: 24,
           right: 34,
+          zlevel: 100,
         },
         yAxis: {
           nameGap: 18,
@@ -134,7 +135,8 @@ function Scatterplot(container, props) {
           },
           axisLabel: {
             align: 'right',
-          }
+          },
+          zlevel: 101,
         },
         xAxis: {
           nameGap: 26,
@@ -142,6 +144,7 @@ function Scatterplot(container, props) {
             fontSize: 12,
             fontWeight: 'normal'
           },
+          zlevel: 102,
         },
         tooltip: {
           trigger: 'item'

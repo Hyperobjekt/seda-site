@@ -44,7 +44,7 @@ var state1 = function(scatterplot) {
               coord: [-3, -3],
               symbol: 'none',
               lineStyle: {
-                color: '#d21cd2'// '#ef5aef'// '#FF003E'// '#999'
+                color:  '#dc69aa' // '#95706d'// '#8d98b3' // '#999'
               }
             },
             { coord: [ 3,  3], symbol: 'none' },
@@ -95,9 +95,12 @@ var state2 = function(scatterplot) {
   var base = scatterplot.getState('state1');
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 10)
+  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   return {
     options: deepmerge(base.options, {
+      title: {
+        subtext: '100 Largest U.S. School Districts 2009-2016'
+      },
       series: [
         dataSeries,
         {
@@ -107,7 +110,7 @@ var state2 = function(scatterplot) {
           itemStyle: {
             borderWidth: 1,
             borderColor: 'rgba(0,0,0,1)',
-            color: 'rgba(255,0,0,0.25)'
+            color: '#b6a2de' // 'rgba(255,0,0,0.25)'
           }
         }
       ]
@@ -118,9 +121,14 @@ var state2 = function(scatterplot) {
 /** State 3: Highlight locations (Detroit, Gwinet, Washington) */
 var state3 = function(scatterplot) {
   var highlightIds = [ '0641580', '2612000', '1302550' ]
+  var highlightLabels = [ 'Detroit, MI', 'Gwinnet County, GA', 'Washington, D.C.'];
   var base = scatterplot.getState('state2');
   var dataSeries = scatterplot.getDataSeries();
   var highlightedValues = scatterplot.getSeriesDataForIds(dataSeries.data, highlightIds);
+  console.log(highlightedValues);
+  // highlightedValues[0][1] = 'Detroit, MI';
+  // highlightedValues[1][1] = 'Gwinnet County, GA';
+  // console.log(highlightedValues);
   return {
     options: deepmerge(base.options, {
       series: [
@@ -135,6 +143,15 @@ var state3 = function(scatterplot) {
             borderWidth: 2,
             borderColor: 'rgba(0,0,0,1)',
             color: 'rgba(255,255,0,0.5)'
+          },
+          label: {
+            show: true,
+            position: 'right',
+            backgroundColor: '#042965',
+            borderColor: '#042965',
+            padding: [6, 8],
+            borderRadius: 3,
+            color: '#dc69aa'
           }
         }
       ]
@@ -150,13 +167,22 @@ var state4 = function(scatterplot) {
   const base = scatterplot.getState('base');
   const baseOverrides = {
     title: {
-      text: 'White-Black Achievement Gaps',
-      subtext: 'by Differences in Average Family Socioeconomic Resources'
+      text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+      subtext: 'US School Districts 2009-2016',
+      textStyle: {
+        fontSize: '14'
+      }
+    },
+    grid: {
+      right: 42,
     },
     yAxis: {
       min:-5,
       max:0,
-      name: 'White-Black Achievement Gap (Grade Levels)',
+      name: 'White-Black Achievement Gap\nby Grade Levels',
+      nameTextStyle: { // Styles for x and y axis labels
+        fontSize: 10,
+      },
     },
     xAxis: {
       min: -1,
@@ -180,8 +206,16 @@ var state4 = function(scatterplot) {
               name: 'no racial disparity',
               coord: [0, -5],
               symbol: 'none',
+              // lineStyle: {
+              //   color: 'rgba(0,0,0,0.2)'
+              // }
               lineStyle: {
-                color: 'rgba(0,0,0,0.2)'
+                color:  '#dc69aa' // '#95706d'// '#8d98b3' // '#999'
+              },
+              label: {
+                // verticalAlign: 'bottom'
+                // position: 'left',
+                // rotate: -90
               }
             },
             {
@@ -205,6 +239,7 @@ var state4 = function(scatterplot) {
 var state5 = function(scatterplot) {
   var options = scatterplot.component.getOption();
   var base = scatterplot.getState('state4');
+
   return options;
 }
 

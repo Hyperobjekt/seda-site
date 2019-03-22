@@ -147,7 +147,20 @@ function Scatterplot(container, props) {
           zlevel: 102,
         },
         tooltip: {
-          trigger: 'item'
+          trigger: 'item',
+          formatter: function(item) {
+            const data = _self.data[_self.props.prefix];
+            const itemName = 
+              data && 
+              data.name &&
+              data.name[item.value[3]] ?
+              data.name[item.value[3]] : 'Unavailable'
+            console.log(data);
+            return itemName + '<br />'
+              + 'X: ' + item.value[0] + '\n'
+              + 'Y: ' + item.value[1]
+              
+          }
         },
       }
     }
@@ -160,12 +173,20 @@ function Scatterplot(container, props) {
       prefix: 'districts',
       options: this.states.base.options,
       endpoint: 'https://d2fypeb6f974r1.cloudfront.net/dev/scatterplot/',
+      baseVars: {
+        'counties': ['id', 'name', 'lat', 'lon', 'all_avg', 'all_ses', 'sz' ],
+        'districts': ['id', 'name', 'lat', 'lon', 'all_avg', 'all_ses', 'sz' ],
+        'schools': ['id', 'name', 'lat', 'lon', 'all_avg', 'frl_pct', 'sz' ]
+      },
       ref: function(ref) {
         _self.component = ref;
       },
       onReady: function(echartInstance) {
         _ready = true;
         _self.trigger('ready', [_self])
+      },
+      onDataLoaded: function(data) {
+        _self.data = data
       },
       theme: theme
     }

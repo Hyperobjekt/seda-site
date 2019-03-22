@@ -85,6 +85,7 @@ var state1 = function(scatterplot) {
     xVar: 'w_avg',
     yVar: 'b_avg',
     zVar: 'sz',
+    highlighted: [],
     options: deepmerge.all([base.options, baseOverrides ])
   }
 }
@@ -97,6 +98,7 @@ var state2 = function(scatterplot) {
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   return {
+    highlighted: [],
     options: deepmerge(base.options, {
       title: {
         subtext: '100 Largest U.S. School Districts 2009-2016'
@@ -120,25 +122,22 @@ var state2 = function(scatterplot) {
 
 /** State 3: Highlight locations (Detroit, Gwinet, Washington) */
 var state3 = function(scatterplot) {
-  var highlightIds = [ '0641580', '2612000', '1302550' ]
-  var highlightLabels = [ 'Detroit, MI', 'Gwinnet County, GA', 'Washington, D.C.'];
+  var highlight = {
+    '0641580': 'Washington, D.C.', 
+    '2612000': 'Detroit, MI', 
+    '1302550': 'Gwinnet County, GA'
+  }
   var base = scatterplot.getState('state2');
   var dataSeries = scatterplot.getDataSeries();
-  var highlightedValues = scatterplot.getSeriesDataForIds(dataSeries.data, highlightIds);
-  console.log(highlightedValues);
-  // highlightedValues[0][1] = 'Detroit, MI';
-  // highlightedValues[1][1] = 'Gwinnet County, GA';
-  // console.log(highlightedValues);
   return {
+    highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
       series: [
         // base.series[0],
         // base.series[1],
         dataSeries,
         {
-          type: 'scatter',
-          data: highlightedValues,
-          symbolSize: dataSeries.symbolSize,
+          id: 'highlighted',
           itemStyle: {
             borderWidth: 2,
             borderColor: 'rgba(0,0,0,1)',
@@ -151,7 +150,10 @@ var state3 = function(scatterplot) {
             borderColor: '#042965',
             padding: [6, 8],
             borderRadius: 3,
-            color: '#dc69aa'
+            color: '#dc69aa',
+            formatter: function(item) {
+              return highlight[item.value[3]]
+            }
           }
         }
       ]
@@ -228,6 +230,7 @@ var state4 = function(scatterplot) {
     }]
   }
   return {
+    highlighted: [],
     xVar: 'wb_ses',
     yVar: 'wb_avg',
     zVar: 'sz',

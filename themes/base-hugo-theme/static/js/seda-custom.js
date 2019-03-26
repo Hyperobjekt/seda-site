@@ -161,4 +161,20 @@
 
 
     });
+    /* Homepage animations */
+    $( document ).ready(function() { // Tells the function to wait to preform until everything on the page has loaded.
+        $(window).scroll(function() { // Says this function is preformed continuously while scrolling.
+            var windowHeight = $( window ).height(),
+                Scroll = $(window).scrollTop() + windowHeight - 300, // This variable finds the distance you have scrolled from the top.
+                trendGraphic = $('#trendgraphic').offset().top; // This variable finds the distance between #section-one and the top. Replace #section-one with the ID of your section.
+    
+            if (Scroll >= trendGraphic) { // If you have scrolled past section one do this.
+                $("#trendgraphic").addClass("move"); // Adds class of current-menu-item to the menu item with a class of menu-item-1
+            } 
+    
+        });
+    });
+
+
 })(jQuery);
+

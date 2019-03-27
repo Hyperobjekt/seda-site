@@ -1,5 +1,5 @@
 (function($) {
-    var jQuery = $.noConflict(true);
+    var jQuery = $.noConflict(false);
     var $ = jQuery;
 
     function checkScroll(y) {

@@ -52,7 +52,17 @@ function Scatterplot(container, props) {
       }
     },
     tooltip: {
-      backgroundColor: 'rgba(0,0,0,0.85)',
+      backgroundColor: '#042965',
+      borderColor: '#2ec7c9', // '#fff', // '#042965',
+      padding: [6, 10],
+      borderRadius: 4,
+      borderWidth: 0,
+      extraCssText: 'box-shadow: 0px 0px 3px #2ec7c9;', // #ffb980
+      textStyle: {
+        color: '#fff', // '#dc69aa',
+        fontWeight: '500',
+        fontFamily: 'MaisonNeue-Medium'
+      },
       axisPointer: {
         type: 'line',
         lineStyle: {
@@ -85,7 +95,7 @@ function Scatterplot(container, props) {
         color: '#fff',
         fontSize: 12,
         fontWeight: 'normal',
-        fontFamily: 'MaisonNeue-Medium'
+        fontFamily: 'SharpGrotesk-Medium20' // 'MaisonNeue-Medium'
       },
       nameLocation: 'middle',
       nameGap: 32,
@@ -150,8 +160,8 @@ function Scatterplot(container, props) {
           trigger: 'item',
           formatter: function(item) {
             const data = _self.data[_self.props.prefix];
-            const itemName = 
-              data && 
+            const itemName =
+              data &&
               data.name &&
               data.name[item.value[3]] ?
               data.name[item.value[3]] : 'Unavailable'
@@ -159,7 +169,7 @@ function Scatterplot(container, props) {
             return itemName + '<br />'
               + 'X: ' + item.value[0] + '\n'
               + 'Y: ' + item.value[1]
-              
+
           }
         },
       }

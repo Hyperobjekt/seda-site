@@ -4,8 +4,11 @@
 <script src='https://unpkg.com/react-seda-scatterplot@1.0.18/umd/react-seda-scatterplot.min.js'></script>
 <script src='https://unpkg.com/deepmerge@2.2.1/dist/umd.js'></script>
 <script  src="{{ "js/scatterplot/Scatterplot.js" | absURL }}"></script>
+<!-- Load article states -->
 {{ $a := "js/scatterplot/" }}
 {{ $b := .Params.scatterplotID }}
 {{ $c := ".js" }}
-{{ $scriptPath := (print $a $b $c)}}
-<script  src="{{ $scriptPath  | absURL }}"></script>
+{{ $articlePath := (print $a $b $c)}}
+<script  src="{{ $articlePath  | absURL }}"></script>
+<!-- Load script to manage scrolling -->
+<script  src="{{ "js/scatterplot/plot.js"  | absURL }}"></script>

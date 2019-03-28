@@ -1,0 +1,75 @@
+// T R E N D  G R A P H I C //
+#trendgraphic {
+    svg {
+    opacity: 0;
+    }
+    &.move {
+        svg {
+            opacity: 1;
+            } 
+        g#Wrapper-group {
+            animation: fadein 0.4s forwards;
+            animation-delay: 0s;
+            opacity: 0;       
+        }
+        @keyframes fadein {
+            0% {  
+            transform: translateY(50px);
+            }
+            100% {
+            opacity: 1;
+            transform: translateY(0px);  
+            }   
+        }
+        g#Dark-Blue-school {
+            animation: fadein1 0.5s ease;
+            animation-delay: 0.3s;
+            animation-fill-mode: forwards; 
+            opacity: 0;
+            transform: translate(37.273438px, 200px);
+        }   
+        @keyframes fadein1 {
+            0% {
+            transform: translate(37.273438px, 199px);  
+            }
+            100% {
+            transform: translate(37.273438px, 149.008148px); 
+            opacity: 1;   
+            }
+        }
+        g#Med-Blue-school {
+            animation: fadein2 0.5s ease;
+            animation-delay: .6s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            transform: translate(38px, 120.368049px); 
+        }     
+        @keyframes fadein2 {
+            0% {
+            transform: translate(38px, 137.368049px);
+            
+            }
+            100% {
+            transform: translate(38px, 87.368049px); 
+            opacity: 1; 
+            }   
+        } 
+        g#Green-school {     
+            animation: fadein3 0.5s ease; 
+            animation-delay: .9s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            transform: translate(37.273438px, 25.008148px);
+        }  
+        @keyframes fadein3 {
+            0% {
+            opacity: 0; 
+            transform: translate(37.273438px, 75.008148px);  
+            }  
+            100% {
+            opacity: 1;
+            transform: translate(37.273438px, 25.008148px);
+            }
+        }   
+    }   
+    }

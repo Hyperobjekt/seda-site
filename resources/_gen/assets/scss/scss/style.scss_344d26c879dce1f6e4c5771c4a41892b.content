@@ -15620,6 +15620,8 @@ h3 {
 
 .colormidblue {
   color: #103698;
+  color: #ff003e;
+  text-transform: uppercase;
 }
 
 .btn-custom {

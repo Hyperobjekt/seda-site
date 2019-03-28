@@ -74,11 +74,17 @@ There is a strong relationship between a district’s gap in achievement between
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state4" %}}
+{{% state-wrapper state="state7" %}}
 
-  <p>Even in places with no racial disparities in socioeconomic status, we notice a large gap in achievement between white and black students on average (about 1 grade level on average). [EXPLAIN what this means]</p>
+Even in places with no racial disparities in socioeconomic status, we notice a large gap in achievement between white and black students on average (about 1 grade level on average). [EXPLAIN what this means]
 
-  [comment]: <> (<p> tags necessary because there's only one. Can be removed if more content is added to go with this state.)
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 
 {{% /state-wrapper %}}
 

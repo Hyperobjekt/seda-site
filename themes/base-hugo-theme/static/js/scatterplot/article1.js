@@ -363,6 +363,7 @@ var state6 = function(scatterplot) {
 /** State 7: Highlight districts around x=0 */
 var state7 = function(scatterplot) {
   var options = scatterplot.component.getOption();
+  var base = scatterplot.getState('state4');
   return options;
 }
 

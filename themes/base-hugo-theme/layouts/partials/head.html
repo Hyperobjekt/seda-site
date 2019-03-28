@@ -58,12 +58,13 @@
     <!-- If site is being served (ostensibly dev) don't compress and minify -->
     {{ $options := (dict "targetPath" "style.css" "outputStyle" "expanded" "enableSourceMap" true ) }}
     {{ $style := resources.Get "scss/style.scss" | resources.ToCSS $options  }}
-    <link rel="stylesheet" href="{{ ($style).Permalink }}">
+    <link rel="stylesheet" href="{{ ($style).RelPermalink }}">
   {{ else }}
     <!-- If site is production, compress and minify -->
     {{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" false ) }}
-    {{ $style := resources.Get "scss/style.scss" | toCSS $options | postCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ $css := resources.Get "scss/style.scss" | resources.ToCSS $options  }}
+    {{ $style := $css | resources.PostCSS }}
+    <link rel="stylesheet" href="{{ ($style | minify | fingerprint).RelPermalink }}">
   {{ end }}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | relURL }}">

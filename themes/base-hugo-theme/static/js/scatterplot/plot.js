@@ -30,7 +30,7 @@
                     return $(el);
                 }
             });
-            console.log(activeWrappers);
+            // console.log(activeWrappers);
             if (activeWrappers.length == 1) {
                 console.log('One item in activeWrappers.');
                 (plot.scatterplot).removeClass('transitional');
@@ -89,5 +89,14 @@
             userScrolled = false;
           }
         }, 50);
+
+        // var range = {
+        //   min: -1,
+        //   max: 1
+        // };
+        // var dataSeries = scatterplot.getDataSeries();
+        // var nearZero = scatterplot.getSeriesDataInRange(dataSeries.data, 'x', range);
+        // console.log('====> logging nearZero:');
+        // console.log(nearZero);
     });
 })(jQuery);

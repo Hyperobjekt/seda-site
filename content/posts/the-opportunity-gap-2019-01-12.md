@@ -74,7 +74,7 @@ There is a strong relationship between a district’s gap in achievement between
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state7" %}}
+{{% state-wrapper state="state7" notmerge="true" %}}
 
 Even in places with no racial disparities in socioeconomic status, we notice a large gap in achievement between white and black students on average (about 1 grade level on average). [EXPLAIN what this means]
 
@@ -88,23 +88,31 @@ Even in places with no racial disparities in socioeconomic status, we notice a l
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state2" %}}
+{{% state-wrapper state="state8" %}}
 
-  But racial differences in family resources aren’t the only thing that matter. Even districts with similar racial socioeconomic disparities can have very large differences in their achievement. For example, [Dekalb and Columbus – same SES disparity, but DK has gap of almost 4 grade levels, while Columbus gap is less than 2].
+But racial differences in family resources aren’t the only thing that matter. Even districts with similar racial socioeconomic disparities can have very large differences in their achievement. For example, San Bernadino and Denver have the same SES disparity, but Denver has gap of almost 4 grade levels, while San Bernadino's gap is less than 2 grade levels.
 
-  Another reason for the gap in achievement between white and black students within a district may be that on average black students attend more segregated schools with limited resources as compared to white students.
+Another reason for the gap in achievement between white and black students within a district may be that on average black students attend more segregated schools with limited resources as compared to white students.
 
-  The most segregated districts are those with large racial socioeconomic disparities – when white and black familie shav every different resources, they can afford to live in very different neighborhoods, on average.  But even among places with similar SES disparities, there is a wide range of segregation. And the places with higher segregation tend to have larger achievement gaps.
+The most segregated districts are those with large racial socioeconomic disparities – when white and black familie shav every different resources, they can afford to live in very different neighborhoods, on average.  But even among places with similar SES disparities, there is a wide range of segregation. And the places with higher segregation tend to have larger achievement gaps.
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state1" %}}
+{{% state-wrapper state="state9" %}}
 
-  This figure shows a lot of variation in differences in exposure to school poverty between white and black students in a district. For example black students in [highlight district at x=.5] are much more likely to attend a higher poverty school than their white peers. In contrast, black and white students in [district at x=0] attend high poverty schools at similar rates. Disparity in exposure to school poverty is measured by racial differences in exposure to free lunch-eligible schoolmates.
+This figure shows a lot of variation in differences in exposure to school poverty between white and black students in a district. For example black students in [highlight district at x=.5] are much more likely to attend a higher poverty school than their white peers. In contrast, black and white students in [district at x=0] attend high poverty schools at similar rates. Disparity in exposure to school poverty is measured by racial differences in exposure to free lunch-eligible schoolmates.
 
-  There is a strong relationship between a district’s gap in achievement between white and black students and differences in exposure to school poverty. Racial achievement gaps are larger in places where black students attend higher poverty schools than their white peers.
+<br/>
+<br/>
+<br/>
 
-  This suggests that school poverty may be correlated with negative conditions that influence educational achievement, such as schools with fewer resources, more crime, and fewer positive role models.
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="stat10" %}}
+
+There is a strong relationship between a district’s gap in achievement between white and black students and differences in exposure to school poverty. Racial achievement gaps are larger in places where black students attend higher poverty schools than their white peers.
+
+This suggests that school poverty may be correlated with negative conditions that influence educational achievement, such as schools with fewer resources, more crime, and fewer positive role models.
 
 {{% /state-wrapper %}}
 

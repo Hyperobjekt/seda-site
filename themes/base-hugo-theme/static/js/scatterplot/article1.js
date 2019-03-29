@@ -219,8 +219,8 @@ var state4 = function(scatterplot) {
       right: 42,
     },
     yAxis: {
-      min:-5,
-      max:0,
+      min: -5,
+      max: 0,
       name: 'White-Black Achievement Gap\nby Grade Levels',
       nameTextStyle: { // Styles for x and y axis labels
         fontSize: 12,
@@ -364,14 +364,217 @@ var state6 = function(scatterplot) {
 var state7 = function(scatterplot) {
   var options = scatterplot.component.getOption();
   var base = scatterplot.getState('state4');
-  return options;
+  // return options;
+  var dataSeries = scatterplot.getDataSeries();
+  // dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+  // var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  var range = {
+    min: -.15,
+    max: .15
+  };
+  var nearZero = scatterplot.getSeriesDataInRange(dataSeries.data, 'x', range);
+  return {
+    highlighted: [],
+    options: deepmerge(base.options, {
+      title: {
+        subtext: 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016'
+      },
+      series: [
+        dataSeries,
+        {
+          type: 'scatter',
+          data: nearZero,
+          symbolSize: dataSeries.symbolSize,
+          itemStyle: {
+            borderWidth: 1,
+            borderColor: 'rgba(0,0,0,1)',
+            color: '#b6a2de' // 'rgba(255,0,0,0.25)'
+          }
+        }
+      ]
+    })
+  }
+}
+
+var state8 = function(scatterplot) {
+  // get current echart options
+  const options = scatterplot.component.getOption();
+  // this state is created from the base
+  const base = scatterplot.getState('base');
+  var highlight = {
+    '0803360': 'Denver, CO',
+    '0634170': 'San Bernardino, CA'
+  }
+  const baseOverrides = {
+    title: {
+      text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+      subtext: 'US School Districts 2009-2016',
+      textStyle: {
+        fontSize: 18,
+        lineHeight: 32
+      }
+    },
+    grid: {
+      right: 42,
+    },
+    yAxis: {
+      min:-5,
+      max:0,
+      name: 'White-Black Achievement Gap\nby Grade Levels',
+      nameTextStyle: { // Styles for x and y axis labels
+        fontSize: 12,
+        lineHeight: 14
+      },
+    },
+    xAxis: {
+      min: -1,
+      max: 6,
+      name: 'White-Black Socioeconomic Disparity',
+    },
+    series: [{
+      type:'scatter',
+      markLine: {
+        animation: false,
+        silent: true,
+        label: {
+          position: 'middle',
+          fontFamily: 'MaisonNeue-Medium',
+          fontWeight: '600',
+          fontSize: 12,
+          textBorderColor: '#042965',
+          textBorderWidth: 1,
+          textShadowColor: '#042965',
+          formatter: function(value) {
+            return value.name
+          }
+        },
+        data: [
+          [
+            {
+              name: 'no racial disparity',
+              coord: [0, -5],
+              symbol: 'none',
+              lineStyle: {
+                color:  '#dc69aa',
+                type: 'solid',
+                width: 2
+              },
+              label: {
+                // verticalAlign: 'bottom'
+                // position: 'left',
+                // rotate: -90
+              }
+            },
+            {
+              coord: [ 0, 0],
+              symbol: 'none'
+            },
+          ]
+        ]
+      }
+    },
+    {
+      id: 'highlighted',
+      itemStyle: {
+        borderColor: '#042965', // 'rgba(0,0,0,1)',
+        color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
+        borderWidth: 2,
+        // borderColor: '#042965',
+        // color: 'rgba(255,255,0,0.5)'
+      },
+      label: {
+        show: true,
+        position: 'right',
+        backgroundColor: 'rgba(255,255,0,0.97)',
+        borderColor: '#042965',
+        fontSize: 12,
+        fontWeight: 600,
+        fontFamily: 'MaisonNeue-Medium',
+        padding: [6, 8],
+        borderRadius: 3,
+        color: '#042965',
+        formatter: function(item) {
+          return highlight[item.value[3]]
+        }
+      }
+    }]
+  }
+  return {
+    highlighted: Object.keys(highlight),
+    xVar: 'wb_ses',
+    yVar: 'wb_avg',
+    zVar: 'sz',
+    options: deepmerge.all([ base.options, baseOverrides ])
+  }
 }
 
 /** State 8: Highlight Dekalb and Columbus districts */
-var state8 = function(scatterplot) {
-  var options = scatterplot.component.getOption();
-  return options;
-}
+// var state8 = function(scatterplot) {
+//   var options = scatterplot.component.getOption();
+//   var base = scatterplot.getState('state4');
+//   var dataSeries = scatterplot.getDataSeries();
+//   // dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+//   // var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+//   var highlight = {
+//     // '0101140': 'DeKalb, GA',
+//     '1301740': 'DeKalb County',
+//     '0803360': 'Denver, CO',
+//     '0100008': 'Madison, WI',
+//     '3904380': 'Columbus, OH',
+//     '2801200': 'Columbus municipal',
+//     '1907980': 'columbus community'
+//   }
+//   return {
+//     highlighted: Object.keys(highlight),
+//     xVar: 'wb_ses',
+//     yVar: 'wb_avg',
+//     zVar: 'sz',
+//     options: deepmerge.all([ base.options, {
+//       yAxis: {
+//         min:-5,
+//         max:0,
+//         name: 'White-Black Achievement Gap\nby Grade Levels',
+//         nameTextStyle: { // Styles for x and y axis labels
+//           fontSize: 12,
+//           lineHeight: 14
+//         },
+//       },
+//       xAxis: {
+//         min: -1,
+//         max: 6,
+//         name: 'White-Black Socioeconomic Disparity',
+//       },
+//       series: [
+//         dataSeries,
+        // {
+        //   id: 'highlighted',
+        //   itemStyle: {
+        //     borderColor: '#042965', // 'rgba(0,0,0,1)',
+        //     color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
+        //     borderWidth: 2,
+        //     // borderColor: '#042965',
+        //     // color: 'rgba(255,255,0,0.5)'
+        //   },
+        //   label: {
+        //     show: true,
+        //     position: 'right',
+        //     backgroundColor: 'rgba(255,255,0,0.97)',
+        //     borderColor: '#042965',
+        //     fontSize: 12,
+        //     fontWeight: 600,
+        //     fontFamily: 'MaisonNeue-Medium',
+        //     padding: [6, 8],
+        //     borderRadius: 3,
+        //     color: '#042965',
+        //     formatter: function(item) {
+        //       return highlight[item.value[3]]
+        //     }
+        //   }
+        // }
+//       ]}
+//     ])
+//   }
+// }
 
 /** State 9: Highlight least and most segregated */
 var state9 = function(scatterplot) {
@@ -398,8 +601,8 @@ scatterplot.addState('state5', state5);
 scatterplot.addState('state6', state6);
 scatterplot.addState('state7', state7);
 scatterplot.addState('state8', state8);
-scatterplot.addState('state7', state9);
-scatterplot.addState('state8', state10);
+// scatterplot.addState('state7', state9);
+// scatterplot.addState('state8', state10);
 
 // load the first state
 scatterplot.loadState('state1');

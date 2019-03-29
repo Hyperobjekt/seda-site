@@ -388,7 +388,7 @@ var state7 = function(scatterplot) {
           itemStyle: {
             borderWidth: 1,
             borderColor: 'rgba(0,0,0,1)',
-            color: '#b6a2de' // 'rgba(255,0,0,0.25)'
+            color: '#ffb87f' // '#b6a2de' // 'rgba(255,0,0,0.25)'
           }
         }
       ]
@@ -508,82 +508,136 @@ var state8 = function(scatterplot) {
   }
 }
 
-/** State 8: Highlight Dekalb and Columbus districts */
-// var state8 = function(scatterplot) {
-//   var options = scatterplot.component.getOption();
-//   var base = scatterplot.getState('state4');
-//   var dataSeries = scatterplot.getDataSeries();
-//   // dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-//   // var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-//   var highlight = {
-//     // '0101140': 'DeKalb, GA',
-//     '1301740': 'DeKalb County',
-//     '0803360': 'Denver, CO',
-//     '0100008': 'Madison, WI',
-//     '3904380': 'Columbus, OH',
-//     '2801200': 'Columbus municipal',
-//     '1907980': 'columbus community'
-//   }
-//   return {
-//     highlighted: Object.keys(highlight),
-//     xVar: 'wb_ses',
-//     yVar: 'wb_avg',
-//     zVar: 'sz',
-//     options: deepmerge.all([ base.options, {
-//       yAxis: {
-//         min:-5,
-//         max:0,
-//         name: 'White-Black Achievement Gap\nby Grade Levels',
-//         nameTextStyle: { // Styles for x and y axis labels
-//           fontSize: 12,
-//           lineHeight: 14
-//         },
-//       },
-//       xAxis: {
-//         min: -1,
-//         max: 6,
-//         name: 'White-Black Socioeconomic Disparity',
-//       },
-//       series: [
-//         dataSeries,
-        // {
-        //   id: 'highlighted',
-        //   itemStyle: {
-        //     borderColor: '#042965', // 'rgba(0,0,0,1)',
-        //     color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
-        //     borderWidth: 2,
-        //     // borderColor: '#042965',
-        //     // color: 'rgba(255,255,0,0.5)'
-        //   },
-        //   label: {
-        //     show: true,
-        //     position: 'right',
-        //     backgroundColor: 'rgba(255,255,0,0.97)',
-        //     borderColor: '#042965',
-        //     fontSize: 12,
-        //     fontWeight: 600,
-        //     fontFamily: 'MaisonNeue-Medium',
-        //     padding: [6, 8],
-        //     borderRadius: 3,
-        //     color: '#042965',
-        //     formatter: function(item) {
-        //       return highlight[item.value[3]]
-        //     }
-        //   }
-        // }
-//       ]}
-//     ])
-//   }
-// }
-
-/** State 9: Highlight least and most segregated */
+/* Highlight least and most segregated */
 var state9 = function(scatterplot) {
-  var options = scatterplot.component.getOption();
-  return options;
+  console.log('loading state9');
+  // get current echart options
+  // const options = scatterplot.component.getOption();
+  // this state is created from the base
+  const base = scatterplot.getState('base');
+  // Build series most seg to highlight
+  var dataSeries = scatterplot.getDataSeries();
+  // console.log(dataSeries.data);
+  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+  var top20 = scatterplot.getSeriesDataBySize(dataSeries.data, 20)
+  const baseOverrides = {
+    title: {
+      text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+      subtext: 'US School Districts 2009-2016',
+      textStyle: {
+        fontSize: 18,
+        lineHeight: 32
+      }
+    },
+    grid: {
+      right: 42,
+    },
+    yAxis: {
+      min:-5,
+      max:0,
+      name: 'White-Black Achievement Gap\nby Grade Levels',
+      nameTextStyle: { // Styles for x and y axis labels
+        fontSize: 12,
+        lineHeight: 14
+      },
+    },
+    xAxis: {
+      min: -1,
+      max: 6,
+      name: 'White-Black Socioeconomic Disparity',
+    },
+    series: [
+      {
+        type: 'scatter',
+        data: top20,
+        symbolSize: dataSeries.symbolSize,
+        itemStyle: {
+          borderWidth: 1,
+          borderColor: 'rgba(0,0,0,1)',
+          color: '#ffb87f' // '#b6a2de' // 'rgba(255,0,0,0.25)'
+        }
+      },
+      {
+      type:'scatter',
+      markLine: {
+        animation: false,
+        silent: true,
+        label: {
+          position: 'middle',
+          fontFamily: 'MaisonNeue-Medium',
+          fontWeight: '600',
+          fontSize: 12,
+          textBorderColor: '#042965',
+          textBorderWidth: 1,
+          textShadowColor: '#042965',
+          formatter: function(value) {
+            return value.name
+          }
+        },
+        data: [
+          [
+            {
+              name: 'no racial disparity',
+              coord: [0, -5],
+              symbol: 'none',
+              lineStyle: {
+                color:  '#dc69aa',
+                type: 'solid',
+                width: 2
+              },
+              label: {}
+            },
+            {
+              coord: [ 0, 0],
+              symbol: 'none'
+            },
+          ]
+        ]
+      }
+    },
+    {
+      id: 'highlighted',
+      itemStyle: {
+        borderColor: '#042965',
+        color: 'rgba(255,255,0,0.97)',
+        borderWidth: 2,
+        // borderColor: '#042965',
+        // color: 'rgba(255,255,0,0.5)'
+      },
+      label: {
+        show: true,
+        position: 'right',
+        backgroundColor: 'rgba(255,255,0,0.97)',
+        borderColor: '#042965',
+        fontSize: 12,
+        fontWeight: 600,
+        fontFamily: 'MaisonNeue-Medium',
+        padding: [6, 8],
+        borderRadius: 3,
+        color: '#042965',
+        formatter: function(item) {
+          return highlight[item.value[3]]
+        }
+      }
+    }]
+  }
+  return {
+    highlighted: [], // Object.keys(highlight),
+    xVar: 'wb_ses',
+    yVar: 'wb_avg',
+    zVar: 'wb_seg',
+    options: deepmerge.all([ base.options, baseOverrides ])
+  }
 }
 
 /** State 10: Achievement vs. Gap in Exposure to School Poverty */
 var state10 = function(scatterplot) {
+  var options = scatterplot.component.getOption();
+  return options;
+}
+
+/** State 11: Achievement vs. Gap in Exposure to School Poverty */
+var state11 = function(scatterplot) {
   var options = scatterplot.component.getOption();
   return options;
 }
@@ -601,8 +655,9 @@ scatterplot.addState('state5', state5);
 scatterplot.addState('state6', state6);
 scatterplot.addState('state7', state7);
 scatterplot.addState('state8', state8);
-// scatterplot.addState('state7', state9);
-// scatterplot.addState('state8', state10);
+scatterplot.addState('state9', state9);
+scatterplot.addState('state10', state10);
+scatterplot.addState('state11', state11);
 
 // load the first state
 scatterplot.loadState('state1');

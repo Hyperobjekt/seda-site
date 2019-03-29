@@ -165,7 +165,7 @@ function Scatterplot(container, props) {
               data.name &&
               data.name[item.value[3]] ?
               data.name[item.value[3]] : 'Unavailable'
-            console.log(data);
+            // console.log(data);
             return itemName + '<br />'
               + 'X: ' + item.value[0] + '\n'
               + 'Y: ' + item.value[1]

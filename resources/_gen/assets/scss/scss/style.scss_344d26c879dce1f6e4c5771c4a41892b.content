@@ -19095,9 +19095,19 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg path#y-mainline {
+#avg-graphic {
+  opacity: 0;
+}
+
+#avg-graphic.move {
+  opacity: 1;
+  transition: opacity .3s ease;
+}
+
+#avg-graphic.move svg path#y-mainline {
   animation: drawY 1s forwards;
   animation-fill-mode: backwards;
+  animation-delay: .3s;
 }
 
 @keyframes drawY {
@@ -19109,10 +19119,10 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg path#ypoint1 {
+#avg-graphic.move svg path#ypoint1 {
   animation: drawPoint1 .3s forwards;
   opacity: 0;
-  animation-delay: .8s;
+  animation-delay: 1.1s;
 }
 
 @keyframes drawPoint1 {
@@ -19126,9 +19136,9 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg path#ypoint2 {
+#avg-graphic.move svg path#ypoint2 {
   animation: drawPoint2 .3s forwards;
-  animation-delay: 0.8s;
+  animation-delay: 1.1s;
   opacity: 0;
 }
 
@@ -19143,9 +19153,10 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg path#x-mainline {
+#avg-graphic.move svg path#x-mainline {
   animation: drawX 1s forwards;
   animation-fill-mode: backwards;
+  animation-delay: .3s;
 }
 
 @keyframes drawX {
@@ -19157,9 +19168,9 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg path#xpoint1 {
+#avg-graphic.move svg path#xpoint1 {
   animation: drawXPoint1 .3s forwards;
-  animation-delay: .8s;
+  animation-delay: 1.1s;
   opacity: 0;
 }
 
@@ -19174,9 +19185,9 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg path#xpoint2 {
+#avg-graphic.move svg path#xpoint2 {
   animation: drawXPoint2 .3s forwards;
-  animation-delay: .8s;
+  animation-delay: 1.1s;
   opacity: 0;
 }
 
@@ -19191,31 +19202,31 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg g#Kid-1 {
-  animation: riseKid1 1.5s forwards;
+#avg-graphic.move svg g#Kid-1 {
+  animation: riseKid1 1.8s forwards;
   animation-fill-mode: forwards;
   /* svg#lowscores {
-                animation: riseKid2 2s forwards;
-                animation-fill-mode: forwards;
-                @keyframes riseKid2 {
-                    0% {
-                        height: 0px;
+                    animation: riseKid2 2s forwards;
+                    animation-fill-mode: forwards;
+                    @keyframes riseKid2 {
+                        0% {
+                            height: 0px;
+                        }
+                        50% {
+                            height: 0px;
+                        }
+                        100% {
+                            height: 150px;
+                        }
                     }
-                    50% {
-                        height: 0px;
-                    }
-                    100% {
-                        height: 150px;
-                    }
-                }
-            } */
+                } */
 }
 
 @keyframes riseKid1 {
   0% {
     transform: translate(80px, 164px);
   }
-  66% {
+  72% {
     transform: translate(80px, 164px);
   }
   100% {
@@ -19223,8 +19234,8 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg g#Kid-2 {
-  animation: riseKid2 1.8s forwards;
+#avg-graphic.move svg g#Kid-2 {
+  animation: riseKid2 2.1s forwards;
   animation-fill-mode: forwards;
 }
 
@@ -19232,7 +19243,7 @@ body.type-explorations .hero .hero-child .column p {
   0% {
     transform: translate(174px, 166px);
   }
-  50% {
+  60% {
     transform: translate(174px, 166px);
   }
   100% {
@@ -19240,8 +19251,8 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg g#Kid-3 {
-  animation: riseKid3 2s forwards;
+#avg-graphic.move svg g#Kid-3 {
+  animation: riseKid3 2.3s forwards;
   animation-fill-mode: forwards;
 }
 
@@ -19249,7 +19260,7 @@ body.type-explorations .hero .hero-child .column p {
   0% {
     transform: translate(268px, 166px);
   }
-  50% {
+  60% {
     transform: translate(268px, 166px);
   }
   100% {
@@ -19257,9 +19268,9 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg text#Scores tspan {
+#avg-graphic.move svg text#Scores tspan {
   animation: scores .5s forwards;
-  animation-delay: .25s;
+  animation-delay: .55s;
   animation-fill-mode: forwards;
   opacity: 0;
 }
@@ -19275,9 +19286,9 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#avg-graphic svg text#Opportunity tspan {
+#avg-graphic.move svg text#Opportunity tspan {
   animation: scores .5s forwards;
-  animation-delay: .25s;
+  animation-delay: .55s;
   animation-fill-mode: forwards;
   opacity: 0;
 }

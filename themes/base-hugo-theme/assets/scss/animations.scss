@@ -157,7 +157,7 @@
         }
         text#Scores tspan { 
                 animation: scores .5s forwards;
-                animation-delay: .2s;
+                animation-delay: .25s;
                 animation-fill-mode: forwards; 
                 opacity: 0;
             @keyframes scores {
@@ -174,7 +174,7 @@
         }
         text#Opportunity tspan { 
             animation: scores .5s forwards;
-            animation-delay: .2s;
+            animation-delay: .25s;
             animation-fill-mode: forwards; 
             opacity: 0;
         @keyframes scores {

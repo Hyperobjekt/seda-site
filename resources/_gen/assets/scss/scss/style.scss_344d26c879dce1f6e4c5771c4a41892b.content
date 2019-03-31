@@ -19260,7 +19260,7 @@ body.type-explorations .hero .hero-child .column p {
 
 #avg-graphic svg text#Scores tspan {
   animation: scores .5s forwards;
-  animation-delay: .2s;
+  animation-delay: .25s;
   animation-fill-mode: forwards;
   opacity: 0;
 }
@@ -19278,7 +19278,7 @@ body.type-explorations .hero .hero-child .column p {
 
 #avg-graphic svg text#Opportunity tspan {
   animation: scores .5s forwards;
-  animation-delay: .2s;
+  animation-delay: .25s;
   animation-fill-mode: forwards;
   opacity: 0;
 }

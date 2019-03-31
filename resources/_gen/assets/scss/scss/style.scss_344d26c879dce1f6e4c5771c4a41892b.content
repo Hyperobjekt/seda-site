@@ -18917,7 +18917,6 @@ body.type-posts .dyn-article {
 }
 
 body.type-posts .dyn-article .state-desc-wrapper {
-  margin-top: 12rem;
   margin-bottom: 12rem;
 }
 

@@ -19095,6 +19095,10 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
+#avg-graphic {
+  opacity: 0;
+}
+
 #avg-graphic.move {
   opacity: 1;
   transition: opacity .3s ease;

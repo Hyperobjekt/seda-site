@@ -19112,10 +19112,12 @@ body.type-explorations .hero .hero-child .column p {
 
 @keyframes drawY {
   0% {
-    d: path("M10.5,230 L10.5,230");
+    stroke-dashoffset: 228.46;
+    stroke-dasharray: 228.46;
   }
   100% {
-    d: path("M10.5,230 L10.5,1.54125875");
+    stroke-dashoffset: 0;
+    stroke-dasharray: 228.46;
   }
 }
 
@@ -19128,11 +19130,13 @@ body.type-explorations .hero .hero-child .column p {
 @keyframes drawPoint1 {
   0% {
     opacity: 1;
-    d: path("M9.56541441,9.55726626 L10,9.991851852");
+    stroke-dashoffset: 12.11;
+    stroke-dasharray: 12.11;
   }
   100% {
     opacity: 1;
-    d: path("M9.56541441,9.55726626 L1,0.991851852");
+    stroke-dashoffset: 0;
+    stroke-dasharray: 12.11;
   }
 }
 
@@ -19144,12 +19148,14 @@ body.type-explorations .hero .hero-child .column p {
 
 @keyframes drawPoint2 {
   0% {
-    d: path("M19,9 L19, 9");
     opacity: 1;
+    stroke-dashoffset: 12.11;
+    stroke-dasharray: 12.11;
   }
   100% {
     opacity: 1;
-    d: path("M19,9 L10.5,0.5");
+    stroke-dashoffset: 0;
+    stroke-dasharray: 12.11;
   }
 }
 
@@ -19161,10 +19167,12 @@ body.type-explorations .hero .hero-child .column p {
 
 @keyframes drawX {
   0% {
-    d: path("M167,176.512207 L167,176.512207");
+    stroke-dashoffset: 333.47;
+    stroke-dasharray: 333.47;
   }
   100% {
-    d: path("M167,176.512207 L167,-156.958741");
+    stroke-dashoffset: 0;
+    stroke-dasharray: 333.47;
   }
 }
 
@@ -19177,11 +19185,13 @@ body.type-explorations .hero .hero-child .column p {
 @keyframes drawXPoint1 {
   0% {
     opacity: 1;
-    d: path("M335.065414,10.0572663 L334.5,9.491852");
+    stroke-dashoffset: 12.11;
+    stroke-dasharray: 12.11;
   }
   100% {
     opacity: 1;
-    d: path("M335.065414,10.0572663 L326.5,1.49185185");
+    stroke-dashoffset: 0;
+    stroke-dasharray: 12.11;
   }
 }
 
@@ -19194,11 +19204,13 @@ body.type-explorations .hero .hero-child .column p {
 @keyframes drawXPoint2 {
   0% {
     opacity: 1;
-    d: path("M335,18 L335,18");
+    stroke-dashoffset: 12.11;
+    stroke-dasharray: 12.11;
   }
   100% {
     opacity: 1;
-    d: path("M335,18 L326.5,9.5");
+    stroke-dashoffset: 0;
+    stroke-dasharray: 12.11;
   }
 }
 
@@ -19230,7 +19242,7 @@ body.type-explorations .hero .hero-child .column p {
     transform: translate(80px, 164px);
   }
   100% {
-    translate: 80px, 112.262502px;
+    transform: translate(80px, 112.262502px);
   }
 }
 
@@ -19247,7 +19259,7 @@ body.type-explorations .hero .hero-child .column p {
     transform: translate(174px, 166px);
   }
   100% {
-    translate: 174px, 52px;
+    transform: translate(174px, 52px);
   }
 }
 
@@ -19264,7 +19276,7 @@ body.type-explorations .hero .hero-child .column p {
     transform: translate(268px, 166px);
   }
   100% {
-    translate: 268px, 0px;
+    transform: translate(268px, 0px);
   }
 }
 

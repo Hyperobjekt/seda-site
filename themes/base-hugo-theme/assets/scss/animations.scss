@@ -1,7 +1,7 @@
 // A V E R A G E  S C O R E S  G R A P H I C
 
 #avg-graphic {
-    opacity: 0;
+    // opacity: 0;
     &.move {
         opacity: 1;
         transition: opacity .3s ease;

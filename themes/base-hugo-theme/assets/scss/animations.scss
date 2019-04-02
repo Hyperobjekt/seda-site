@@ -222,6 +222,551 @@
     }    
 }
 
+// G R O W T H  G R A P H I C
+
+#growth-graphic {
+    opacity: 0;
+    &.move {
+        opacity: 1;
+        transition: opacity .3s ease;
+        svg {
+            g#School-1 {
+                animation: shuffleSchool1 .5s forwards;
+                animation-fill-mode: forwards;
+                @keyframes shuffleSchool1 {
+                    0% {
+                        transform: translate(-100px, 17px);
+                    }
+                    100% {
+                        transform: translate(0px, 17px);
+                    }
+                }
+            }
+            text#School-1 {
+                opacity: 0;
+                animation: shuffleSchoolText1 .5s forwards;
+                //animation-fill-mode: forwards;
+                @keyframes shuffleSchoolText1 {
+                    0% {
+                        transform: translate(-90px, 0px);
+                        opacity: 1;
+                    }
+                    66% {
+                        //opacity: 0;
+                    }
+                    100% {
+                        transform: translate(0px, 0px);
+                        opacity: 1;
+                    }
+                }
+            }
+            g#School-2 {
+                animation: shuffleSchool2 .7s forwards;
+                animation-fill-mode: forwards;
+                @keyframes shuffleSchool2 {
+                    0% {
+                        transform: translate(-100px, 17px);
+                    }
+                    100% {
+                        transform: translate(116px, 17px);
+                    }
+                }
+            }
+            text#School-2 {
+                opacity: 0;
+                animation: shuffleSchoolText2 .7s forwards;
+                //animation-fill-mode: forwards;
+                @keyframes shuffleSchoolText2 {
+                    0% {
+                        opacity: 0;
+                        transform: translate(-330px, 0px);
+                    }
+                    95% {
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translate(0px, 0px);
+                        opacity: 1;
+                    }
+                }
+            }
+            g#School-3 {
+                animation: shuffleSchool3 0.9s forwards;
+                animation-fill-mode: forwards;
+                @keyframes shuffleSchool3 {
+                    0% {
+                        transform: translate(-100px, 17px);
+                    }
+                    100% {
+                        transform: translate(232px, 17px);
+                    }
+                }
+            }
+            text#School-3 {
+                opacity: 0;
+                animation: shuffleSchoolText3 .9s forwards;
+                //animation-fill-mode: forwards;
+                @keyframes shuffleSchoolText3 {
+                    0% {
+                        transform: translate(-330px, 0px);
+                        opacity: 0;
+                    }
+                    80% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translate(0px, 0px);
+                    }
+                }
+            }
+            // Y Axis
+            $growthYAxisDelay: 1.3s;
+            g#y-axis {
+                path#y-axis-top {
+                    opacity: 0;
+                    animation: yUp .6s ease;
+                    animation-delay: $growthYAxisDelay;
+                    animation-fill-mode: forwards;
+                }
+                @keyframes yUp {
+                    0% {
+                        opacity: 1;
+                        stroke-dashoffset: 82;
+                        stroke-dasharray: 82;
+                    }
+                    100% {
+                        opacity: 1;
+                        stroke-dashoffset: 0;
+                        stroke-dasharray: 82;
+                    }
+                }
+                // Top cap of y axis
+                path#y-axis-top-cap {
+                    opacity: 0;
+                    animation: riseCap .6s forwards;
+                    animation-fill-mode: forwards;
+                    animation-delay: $growthYAxisDelay;
+                
+                }
+                @keyframes riseCap {
+                    0% {
+                        transform: translate(0px, 81px);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translate(0px, 0px);
+                        opacity: 1;
+                    }
+                }
+            
+                path#y-axis-bottom {
+                    animation: yDown .6s ease;
+                    animation-delay: $growthYAxisDelay;
+                    opacity: 0;
+                    animation-fill-mode: forwards;
+                }
+                @keyframes yDown {
+                    0% {
+                        //d: path('M10.5,230 L10.5,230');
+                        stroke-dashoffset: 82;
+                        stroke-dasharray: 82;
+                        opacity: 1;
+                    }
+                    100% {
+                        //d: path('M10.5,230 L10.5,1.54125875');
+                        stroke-dashoffset: 0;
+                        stroke-dasharray: 82;
+                        opacity: 1;
+                    }
+                }
+                // Bottom cap of y axis
+                path#y-axis-bottom-cap {
+                    animation: dropCap .6s forwards;
+                    animation-fill-mode: forwards;
+                    animation-delay: $growthYAxisDelay;
+                    opacity: 0;
+                    
+                }
+                @keyframes dropCap {
+                    0% {
+                        transform: translate(0px, -81px);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translate(0px, 0px);
+                        opacity: 1;
+                    }
+                }
+                $growthYAxisTextDelay: 1.9s;
+                text#Grades {
+                    opacity: 0;
+                    animation: gradeAppear .3s forwards;
+                    animation-delay: $growthYAxisTextDelay;
+                    animation-fill-mode: forwards;
+                }
+                @keyframes gradeAppear {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+                text#num8, text#num3 {
+                    opacity: 0;
+                    animation: gradeNumAppear .3s forwards;
+                    animation-delay: $growthYAxisTextDelay;
+                    animation-fill-mode: forwards;
+                }
+                @keyframes gradeNumAppear {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            }
+            // School 1 Stairs
+            $stepSpeed: .5s;
+            $stepDelay: .9s;
+            g#Kid-1 {
+                animation: kidStep1 $stepSpeed forwards;
+                animation-delay: $stepDelay;
+                transform: translate(21.041030px, 90px);
+            }
+            @keyframes  kidStep1 {
+                0% {
+                    transform: translate(21.041030px, 90px);
+                }
+                100% {
+                    transform: translate(21.041030px, 75px);
+                }
+            } 
+            g#Steps-1 {
+                rect#Step1-1 {
+                
+                }
+                rect#Step1-2 {
+                    animation: step1-2 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(5px);
+                }
+                @keyframes  step1-2 {
+                    0% {
+                        transform: translateY(5px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                } 
+                rect#Step1-3 {
+                    animation: step1-3 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(10px);
+                }
+                @keyframes  step1-3 {
+                    0% {
+                        transform: translateY(10px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step1-4 {
+                    animation: step1-4 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(15px);
+                }
+                @keyframes  step1-4 {
+                    0% {
+                        transform: translateY(15px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step1-5 {
+                    animation: step1-5 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(20px);
+                }
+                @keyframes  step1-5 {
+                    0% {
+                        transform: translateY(20px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step1-6 {
+                    animation: step1-6 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(25px);
+                }
+                @keyframes  step1-6 {
+                    0% {
+                        transform: translateY(25px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step1-7 {
+                    animation: step1-7 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(30px);
+                }
+                @keyframes  step1-7 {
+                    0% {
+                        transform: translateY(30px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step1-8 {
+                    animation: step1-7 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(35px);
+                }
+                @keyframes  step1-8 {
+                    0% {
+                        transform: translateY(35px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+            }
+
+            // School 2 Stairs
+
+            g#Kid-2 {
+                animation: kidStep2 $stepSpeed forwards;
+                animation-delay: $stepDelay;
+                transform: translate(34px, 90px);
+            }
+            @keyframes  kidStep2 {
+                0% {
+                    transform: translate(34px, 90px);
+                }
+                100% {
+                    transform: translate(34px, 60px);
+                }
+            } 
+            g#Steps-2 {
+                rect#Step2-1 {
+                
+                }
+                rect#Step2-2 {
+                    animation: step2-2 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(7px);
+                }
+                @keyframes  step2-2 {
+                    0% {
+                        transform: translateY(7px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                } 
+                rect#Step2-3 {
+                    animation: step2-3 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(14px);
+                }
+                @keyframes  step2-3 {
+                    0% {
+                        transform: translateY(14px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step2-4 {
+                    animation: step2-4 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(21px);
+                }
+                @keyframes  step2-4 {
+                    0% {
+                        transform: translateY(21px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step2-5 {
+                    animation: step2-5 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(28px);
+                }
+                @keyframes  step2-5 {
+                    0% {
+                        transform: translateY(28px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step2-6 {
+                    animation: step2-6 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(35px);
+                }
+                @keyframes  step2-6 {
+                    0% {
+                        transform: translateY(35px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step2-7 {
+                    animation: step2-7 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(42px);
+                }
+                @keyframes  step2-7 {
+                    0% {
+                        transform: translateY(42px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step2-8 {
+                    animation: step2-7 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(49px);
+                }
+                @keyframes  step2-8 {
+                    0% {
+                        transform: translateY(49px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+            }
+            // School 3 Stairs
+
+            g#Kid-3 {
+                animation: kidStep3 $stepSpeed forwards;
+                animation-delay: $stepDelay;
+                transform: translate(27px, 90px);
+            }
+            @keyframes  kidStep3 {
+                0% {
+                    transform: translate(27px, 90px);
+                }
+                100% {
+                    transform: translate(27px, 43px);
+                }
+            } 
+            g#Steps-3 {
+                rect#Step3-1 {
+                
+                }
+                rect#Step3-2 {
+                    animation: step3-2 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(12px);
+                }
+                @keyframes  step3-2 {
+                    0% {
+                        transform: translateY(12px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                } 
+                rect#Step3-3 {
+                    animation: step3-3 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(24px);
+                }
+                @keyframes  step3-3 {
+                    0% {
+                        transform: translateY(24px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step3-4 {
+                    animation: step3-4 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(36px);
+                }
+                @keyframes  step3-4 {
+                    0% {
+                        transform: translateY(36px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step3-5 {
+                    animation: step3-5 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(48px);
+                }
+                @keyframes  step3-5 {
+                    0% {
+                        transform: translateY(48px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step3-6 {
+                    animation: step3-6 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(60px);
+                }
+                @keyframes  step3-6 {
+                    0% {
+                        transform: translateY(60px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step3-7 {
+                    animation: step3-7 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(72px);
+                }
+                @keyframes  step3-7 {
+                    0% {
+                        transform: translateY(72px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                rect#Step3-8 {
+                    animation: step3-8 $stepSpeed forwards;
+                    animation-delay: $stepDelay;
+                    transform: translateY(84px);
+                }
+                @keyframes  step3-8 {
+                    0% {
+                        transform: translateY(84px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+            }
+        }
+    }
+}
+
 // T R E N D  G R A P H I C //
 #trendgraphic {
     svg {

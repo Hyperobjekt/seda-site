@@ -30,10 +30,14 @@
           var windowHeight = $( window ).height(),
               Scroll = $(window).scrollTop() + windowHeight - 300, // This variable finds the distance you have scrolled from the top.
               avgGraphic = $('#avg-graphic').offset().top; 
+              growthGraphic = $('#growth-graphic').offset().top;
               trendGraphic = $('#trendgraphic').offset().top; 
            if (Scroll >= avgGraphic) { // If you have scrolled past this section do this.
               $("#avg-graphic").addClass("move"); // Adds class of current-menu-item to the menu item with a class of menu-item-1
           }  
+          if (Scroll >= growthGraphic) { // If you have scrolled past this section do this.
+            $("#growth-graphic").addClass("move"); // Adds class of current-menu-item to the menu item with a class of menu-item-1
+        }  
            if (Scroll >= trendGraphic) { // If you have scrolled past this section do this.
             $("#trendgraphic").addClass("move");  
         }

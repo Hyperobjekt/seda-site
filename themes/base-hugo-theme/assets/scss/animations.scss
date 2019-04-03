@@ -445,10 +445,10 @@
                 }
             } 
             g#Steps-1 {
-                rect#Step1-1 {
+                path#Step1-1 {
                 
                 }
-                path#Step1-2 {
+                rect#Step1-2 {
                     animation: step1-2 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translate(0px, 5px);
@@ -461,7 +461,7 @@
                         transform: translate(0px, 0px);
                     }
                 } 
-                scroll-padding-right: #Step1-3 {
+                path#Step1-3 {
                     animation: step1-3 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translate(0px, 10px);
@@ -487,7 +487,7 @@
                         transform: translateY(0px);
                     }
                 }
-                rect#Step1-5 {
+                path#Step1-5 {
                     animation: step1-5 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(20px);
@@ -500,7 +500,7 @@
                         transform: translateY(0px);
                     }
                 }
-                rect#Step1-6 {
+                path#Step1-6 {
                     animation: step1-6 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(25px);
@@ -513,7 +513,7 @@
                         transform: translateY(0px);
                     }
                 }
-                rect#Step1-7 {
+                path#Step1-7 {
                     animation: step1-7 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(30px);
@@ -526,7 +526,7 @@
                         transform: translateY(0px);
                     }
                 }
-                rect#Step1-8 {
+                path#Step1-8 {
                     animation: step1-7 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(35px);

@@ -19549,15 +19549,15 @@ body.type-explorations .hero .hero-child .column p {
 #growth-graphic.move svg g#Steps-1 rect#Step1-2 {
   animation: step1-2 0.5s forwards;
   animation-delay: 0.9s;
-  transform: translateY(5px);
+  transform: translate(0px, 5px);
 }
 
 @keyframes step1-2 {
   0% {
-    transform: translateY(5px);
+    transform: translate(0px, 5px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translate(0px, 0px);
   }
 }
 

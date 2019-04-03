@@ -451,14 +451,14 @@
                 rect#Step1-2 {
                     animation: step1-2 $stepSpeed forwards;
                     animation-delay: $stepDelay;
-                    transform: translateY(5px);
+                    transform: translate(0px, 5px);
                 }
                 @keyframes  step1-2 {
                     0% {
-                        transform: translateY(5px);
+                        transform: translate(0px, 5px);
                     }
                     100% {
-                        transform: translateY(0px);
+                        transform: translate(0px, 0px);
                     }
                 } 
                 rect#Step1-3 {

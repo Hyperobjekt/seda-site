@@ -230,15 +230,15 @@
         opacity: 1;
         transition: opacity .3s ease;
         svg {
-            g#School-1 {
+            polygon#school-rect-1 {
                 animation: shuffleSchool1 .5s forwards;
                 animation-fill-mode: forwards;
                 @keyframes shuffleSchool1 {
                     0% {
-                        transform: translate(-100px, 17px);
+                        transform: translate(-100px, 0px);
                     }
                     100% {
-                        transform: translate(0px, 17px);
+                        transform: translate(0px, 0px);
                     }
                 }
             }
@@ -260,15 +260,15 @@
                     }
                 }
             }
-            g#School-2 {
+            polygon#school-rect-2 {
                 animation: shuffleSchool2 .7s forwards;
                 animation-fill-mode: forwards;
                 @keyframes shuffleSchool2 {
                     0% {
-                        transform: translate(-100px, 17px);
+                        transform: translate(-100px, 0px);
                     }
                     100% {
-                        transform: translate(116px, 17px);
+                        transform: translate(0px, 0px);
                     }
                 }
             }
@@ -290,15 +290,15 @@
                     }
                 }
             }
-            g#School-3 {
+            polygon#school-rect-3 {
                 animation: shuffleSchool3 0.9s forwards;
                 animation-fill-mode: forwards;
                 @keyframes shuffleSchool3 {
                     0% {
-                        transform: translate(-100px, 17px);
+                        transform: translate(-100px, 0px);
                     }
                     100% {
-                        transform: translate(232px, 17px);
+                        transform: translate(0px, 0px);
                     }
                 }
             }
@@ -321,7 +321,7 @@
                 }
             }
             // Y Axis
-            $growthYAxisDelay: 1.3s;
+            $growthYAxisDelay: .5s;
             g#y-axis {
                 path#y-axis-top {
                     opacity: 0;
@@ -398,7 +398,7 @@
                         opacity: 1;
                     }
                 }
-                $growthYAxisTextDelay: 1.9s;
+                $growthYAxisTextDelay: .9s;
                 text#Grades {
                     opacity: 0;
                     animation: gradeAppear .3s forwards;
@@ -430,7 +430,7 @@
             }
             // School 1 Stairs
             $stepSpeed: .5s;
-            $stepDelay: .9s;
+            $stepDelay: 1.5s;
             g#Kid-1 {
                 animation: kidStep1 $stepSpeed forwards;
                 animation-delay: $stepDelay;

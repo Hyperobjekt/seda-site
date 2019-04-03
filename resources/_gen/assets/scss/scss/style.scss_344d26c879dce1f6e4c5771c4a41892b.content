@@ -19325,7 +19325,7 @@ body.type-explorations .hero .hero-child .column p {
   transition: opacity .3s ease;
 }
 
-#growth-graphic.move svg polygon#school-rect-1 {
+#growth-graphic.move svg g#school-rect-1 {
   animation: shuffleSchool1 .5s forwards;
   animation-fill-mode: forwards;
 }
@@ -19357,7 +19357,7 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg polygon#school-rect-2 {
+#growth-graphic.move svg g#school-rect-2 {
   animation: shuffleSchool2 .7s forwards;
   animation-fill-mode: forwards;
 }
@@ -19390,7 +19390,7 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg polygon#school-rect-3 {
+#growth-graphic.move svg g#school-rect-3 {
   animation: shuffleSchool3 0.9s forwards;
   animation-fill-mode: forwards;
 }

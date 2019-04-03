@@ -230,7 +230,7 @@
         opacity: 1;
         transition: opacity .3s ease;
         svg {
-            polygon#school-rect-1 {
+            g#school-rect-1 {
                 animation: shuffleSchool1 .5s forwards;
                 animation-fill-mode: forwards;
                 @keyframes shuffleSchool1 {
@@ -260,7 +260,7 @@
                     }
                 }
             }
-            polygon#school-rect-2 {
+            g#school-rect-2 {
                 animation: shuffleSchool2 .7s forwards;
                 animation-fill-mode: forwards;
                 @keyframes shuffleSchool2 {
@@ -290,7 +290,7 @@
                     }
                 }
             }
-            polygon#school-rect-3 {
+            g#school-rect-3 {
                 animation: shuffleSchool3 0.9s forwards;
                 animation-fill-mode: forwards;
                 @keyframes shuffleSchool3 {

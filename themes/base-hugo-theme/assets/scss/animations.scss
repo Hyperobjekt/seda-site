@@ -448,7 +448,7 @@
                 rect#Step1-1 {
                 
                 }
-                rect#Step1-2 {
+                path#Step1-2 {
                     animation: step1-2 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translate(0px, 5px);
@@ -461,7 +461,7 @@
                         transform: translate(0px, 0px);
                     }
                 } 
-                rect#Step1-3 {
+                scroll-padding-right: #Step1-3 {
                     animation: step1-3 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translate(0px, 10px);
@@ -474,7 +474,7 @@
                         transform: translate(0px, 0px);
                     }
                 }
-                rect#Step1-4 {
+                path#Step1-4 {
                     animation: step1-4 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(15px);

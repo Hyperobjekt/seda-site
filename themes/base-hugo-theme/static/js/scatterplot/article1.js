@@ -3,6 +3,140 @@
  * - article storyboard: https://docs.google.com/document/d/1adz0CwXI8WKok8ePVQEcSmlRQwRIjKaKvd8Am6OFfhY/edit
  */
 
+// Placeholders for segregation series operations
+const segHighlightSize = 30;
+let baseData = [];
+let highlightLeast = {};
+let highlightMost = {};
+let highlightMostArr = [];
+let bwLeastSeg = [];
+let bwMostSeg = [];
+
+/**
+ * Build object to pass into plots highlighting least segregated.
+ */
+function buildLeastSeg() {
+  console.log('buildLeastSeg()');
+  var i = 0;
+  while (Object.keys(highlightLeast).length < segHighlightSize) {
+    $el = bwLeastSeg[i];
+    var index = baseData.findIndex(row => row[0] === $el[0]);
+    var row = baseData[index];
+    if (index >= 0) {
+      highlightLeast[$el[0]] = row[1];
+    } else {
+      console.log('Entry not found.');
+    }
+    i++;
+  }
+  console.log('Logging highlightLeast.');
+  console.log(highlightLeast);
+}
+
+/**
+ * Build object to pass into plots highlighting most segregated.
+ */
+function buildMostSeg(stateSeries) {
+  console.log('buildMostSeg()');
+  // console.log(stateSeries);
+  var i = 0;
+  // while (Object.keys(highlightMost).length < segHighlightSize) {
+  while (highlightMostArr.length < segHighlightSize) {
+    $el = bwMostSeg[i];
+    // console.log($el);
+    var index = stateSeries.findIndex(row => row[3] === $el[0]);
+    var row = stateSeries[index];
+    if (index >= 0) {
+      // highlightMost[$el[0]] = row[1];
+      highlightMostArr.push(row);
+    } else {
+      console.log('Entry not found.');
+    }
+    i++;
+  }
+  console.log('Logging highlightMost.');
+  console.log(highlightMostArr);
+  return highlightMostArr;
+}
+
+//
+// Fetch base data to fetch district names and assemble highlight objects
+const baseCSV = "https://d2fypeb6f974r1.cloudfront.net/dev/scatterplot/districts-base.csv";
+var baseReq = new XMLHttpRequest();
+baseReq.open("GET", baseCSV, true);
+baseReq.onload = function (e) {
+  if (baseReq.readyState === 4) {
+    if (baseReq.status === 200) {
+      console.log('Base data request successful.');
+      var csvResponse = this.responseText;
+      var json = Papa.parse(csvResponse);
+      baseData = json.data;
+      // console.log('Logging baseData.');
+      // console.log(baseData);
+    } else {
+      console.error(baseReq.statusText);
+    }
+  }
+};
+baseReq.onerror = function (e) {
+  console.error('Failed to fetch segregation data.\n' + xhr.statusText);
+};
+baseReq.send(null);
+
+//
+// Fetch the additional segregation data for state 9.
+//
+const segCSV = 'https://d2fypeb6f974r1.cloudfront.net/dev/scatterplot/districts-wb_seg.csv';
+var xhr = new XMLHttpRequest();
+xhr.open("GET", segCSV, true);
+xhr.onload = function (e) {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      // console.log(xhr.responseText);
+      console.log('Seg data request finished.');
+      // console.log(this.responseText);
+      var csvResponse = this.responseText;
+      var json = Papa.parse(csvResponse);
+      var data = json.data;
+      // console.log(data);
+      // Trim off column headings and any blank rows
+      data = data.filter(function(e) { return e[0] !== 'id' });
+      data = data.filter(function(e) { return e[0] !== '' });
+      // console.log(data);
+      var sortAsc = data.sort(function(a, b) {
+        if ( a[1] < b[1] )
+            return -1;
+        if ( a[1] > b[1] )
+            return 1;
+        return 0;
+      });;
+      // Size of the completed most and least.
+      var size = 50;
+      bwLeastSeg = sortAsc.slice(0, size);
+      // console.log(bwLeastSeg);
+      bwMostSeg = sortAsc.slice((sortAsc.length - 1) - size, sortAsc.length - 1);
+      // console.log(bw_most_seg);
+      // If the base data has loaded, build the series.
+      function checkBaseDataLoad() {
+        if (baseData.length >= 1) {
+          buildLeastSeg();
+          // buildMostSeg();
+          clearInterval(checkBaseInt);
+        } else {
+          console.log('Nothing in baseData');
+        }
+      }
+      var checkBaseInt = setInterval(checkBaseDataLoad, 1000);
+    } else {
+      console.error(xhr.statusText);
+    }
+  }
+};
+xhr.onerror = function (e) {
+  console.error(xhr.statusText);
+};
+xhr.send(null);
+
 /** State 1: Show white scores on x axis and black scores on y axis */
 var state1 = function(scatterplot) {
   // this state is created from the base
@@ -101,6 +235,7 @@ var state2 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  // console.log(top100);
   return {
     highlighted: [],
     options: deepmerge(base.options, {
@@ -517,9 +652,15 @@ var state9 = function(scatterplot) {
   const base = scatterplot.getState('base');
   // Build series most seg to highlight
   var dataSeries = scatterplot.getDataSeries();
+  var mostSegregatedSeries = buildMostSeg(dataSeries.data);
   // console.log(dataSeries.data);
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-  var top20 = scatterplot.getSeriesDataBySize(dataSeries.data, 20)
+  // dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+  // var top20 = scatterplot.getSeriesDataBySize(dataSeries.data, 20)
+  // var highlight = {
+  //   '0803360': 'Denver, CO',
+  //   '0634170': 'San Bernardino, CA'
+  // }
+  // highlightLeast, highlightmost
   const baseOverrides = {
     title: {
       text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
@@ -528,6 +669,35 @@ var state9 = function(scatterplot) {
         fontSize: 18,
         lineHeight: 32
       }
+    },
+    legend: {
+      show: true,
+      right: 20,
+      bottom: 20,
+      data: [
+        {
+          name: 'Least Segregated',
+          // compulsorily set icon as a circle
+          icon: 'circle',
+          itemStyle: {
+            borderColor: '#042965',
+            color: 'rgba(255,255,0,0.97)',
+            borderWidth: 2,
+          },
+          textStyle: {
+              color: 'yellow'
+          }
+        },
+        {
+          name: 'Most Segregated',
+          // compulsorily set icon as a circle
+          icon: 'circle',
+          // set up the text in red
+          textStyle: {
+              color: 'blue'
+          }
+        }
+      ]
     },
     grid: {
       right: 42,
@@ -547,9 +717,10 @@ var state9 = function(scatterplot) {
       name: 'White-Black Socioeconomic Disparity',
     },
     series: [
+      dataSeries,
       {
         type: 'scatter',
-        data: top20,
+        data: mostSegregatedSeries,
         symbolSize: dataSeries.symbolSize,
         itemStyle: {
           borderWidth: 1,
@@ -605,7 +776,7 @@ var state9 = function(scatterplot) {
         // color: 'rgba(255,255,0,0.5)'
       },
       label: {
-        show: true,
+        show: false,
         position: 'right',
         backgroundColor: 'rgba(255,255,0,0.97)',
         borderColor: '#042965',
@@ -616,16 +787,16 @@ var state9 = function(scatterplot) {
         borderRadius: 3,
         color: '#042965',
         formatter: function(item) {
-          return highlight[item.value[3]]
+          return highlightLeast[item.value[3]]
         }
       }
     }]
   }
   return {
-    highlighted: [], // Object.keys(highlight),
+    highlighted: Object.keys(highlightLeast),
     xVar: 'wb_ses',
     yVar: 'wb_avg',
-    zVar: 'wb_seg',
+    zVar: 'sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }

@@ -11,9 +11,9 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 {{% state-wrapper state="state1" notmerge="true" %}}
 
-This figure shows the average performance of black and white students in each US school district in math and English language arts in grade 3.
 
-Each circle is a school district (one of ~2400 district in which there are enough white and black students to reliably estimate both white and black achievement in grade 3. The size of the bubble is proportionate to the number of black children enrolled in the school district.
+<p>This figure shows the average performance of black and white students in each US school district in math and English language arts in grade 3. Each circle is a school district (one of ~2400 district in which there are enough white and black students to reliably estimate both white and black achievement in grade 3). The size of the bubble is proportionate to the number of black children enrolled in the school district. Districts which lie on or and above the diagonal line have no black/white achievement gap. The farther a district sits below the diagonal line, the greater the achievement gap in that district.</p>
+
 
 {{% /state-wrapper %}}
 
@@ -30,7 +30,7 @@ In nearly every district in America, white students score higher on state standa
 
 {{% state-wrapper state="state3" notmerge="false" %}}
 
-If we compare Detroit, MI, Gwinnet County, GA, Washington D.C, we notice that the average black student in Gwinnet County, GA scores approximately at grade level, while the average white students scores almost 2 years above grade level. In contrast, in Detroit both black and white students score approximately 2 grade levels below the average district. In DC… etc.
+If we compare Detroit, MI, Gwinnet County, GA, Washington D.C, we notice that the average black student in Gwinnet County, GA scores approximately at grade level, while the average white students scores almost 2 years above grade level. In contrast, in Detroit both black and white students score approximately 2 grade levels below the average district. In DC, black student scores are lower than whites but the disparity is not as marked as in Gwinnet County.
 
 There are very few districts where black students score, on average, at or above the national average.
 
@@ -39,8 +39,6 @@ One reason for the gap in achievement between white and black students within a 
 Why is the opportunity gap larger in some places than others? What factors contribute to it?
 
 One factor that leads to larger achievement gaps is racial differences in family economic and educational resources. In communities where white families have higher incomes and the parents of white children have more education than in black children’s families, opportunity gaps are larger. In part this is because these differences mean that white and black families have different resources that they can use to provide educational opportunities for their children (like access to high-quality preschool programs, summer camps and enrichment activities).
-
-[some explanation that in the previous figure the distance of a district below the diagonal line tells us how large the achievement/opportunity gap is. Then explain we’re now going to look at those gaps. They will be on the vertical axis below]
 
 {{% /state-wrapper %}}
 
@@ -76,7 +74,7 @@ There is a strong relationship between a district’s gap in achievement between
 
 {{% state-wrapper state="state7" notmerge="true" %}}
 
-Even in places with no racial disparities in socioeconomic status, we notice a large gap in achievement between white and black students on average (about 1 grade level on average). [EXPLAIN what this means]
+Even in places with no racial disparities in socioeconomic status, we notice a large gap in achievement between white and black students on average. This gap is typically about 1 grade level.
 
 <br/>
 <br/>
@@ -109,15 +107,7 @@ The most segregated districts are those with large racial socioeconomic disparit
 
 {{% state-wrapper state="state10" %}}
 
-This figure shows a lot of variation in differences in exposure to school poverty between white and black students in a district. For example black students in [highlight district at x=.5] are much more likely to attend a higher poverty school than their white peers. In contrast, black and white students in [district at x=0] attend high poverty schools at similar rates. Disparity in exposure to school poverty is measured by racial differences in exposure to free lunch-eligible schoolmates.
-
-<br/>
-<br/>
-<br/>
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state11" %}}
+This figure shows a lot of variation in differences in exposure to school poverty between white and black students in a district. For example black students in District of Columbia Public School District are much more likely to attend a higher poverty school than their white peers. In contrast, black and white students in Detroit attend high poverty schools at similar rates. Disparity in exposure to school poverty is measured by racial differences in exposure to free lunch-eligible schoolmates.
 
 There is a strong relationship between a district’s gap in achievement between white and black students and differences in exposure to school poverty. Racial achievement gaps are larger in places where black students attend higher poverty schools than their white peers.
 

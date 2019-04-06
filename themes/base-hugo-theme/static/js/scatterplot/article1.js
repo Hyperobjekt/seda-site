@@ -4,84 +4,55 @@
  */
 
 // Placeholders for segregation series operations
-const segHighlightSize = 30;
-let baseData = [];
-let highlightLeast = {};
-let highlightMost = {};
-let highlightMostArr = [];
-let bwLeastSeg = [];
-let bwMostSeg = [];
+let segData = [];
 
 /**
- * Build object to pass into plots highlighting least segregated.
+ * Slice array according from beginning according to provided size.
+ * @param Array arr
+ * @param Number size
  */
-function buildLeastSeg() {
-  console.log('buildLeastSeg()');
-  var i = 0;
-  while (Object.keys(highlightLeast).length < segHighlightSize) {
-    $el = bwLeastSeg[i];
-    var index = baseData.findIndex(row => row[0] === $el[0]);
-    var row = baseData[index];
-    if (index >= 0) {
-      highlightLeast[$el[0]] = row[1];
-    } else {
-      console.log('Entry not found.');
-    }
-    i++;
-  }
-  console.log('Logging highlightLeast.');
-  console.log(highlightLeast);
+function sliceLeast(arr, size) {
+  return arr.slice(0, size - 1)
 }
 
 /**
- * Build object to pass into plots highlighting most segregated.
+ * Slice array from end according to provided size.
+ * @param Array arr
+ * @param Number size
  */
-function buildMostSeg(stateSeries) {
-  console.log('buildMostSeg()');
-  // console.log(stateSeries);
-  var i = 0;
-  // while (Object.keys(highlightMost).length < segHighlightSize) {
-  while (highlightMostArr.length < segHighlightSize) {
-    $el = bwMostSeg[i];
-    // console.log($el);
-    var index = stateSeries.findIndex(row => row[3] === $el[0]);
-    var row = stateSeries[index];
-    if (index >= 0) {
-      // highlightMost[$el[0]] = row[1];
-      highlightMostArr.push(row);
-    } else {
-      console.log('Entry not found.');
-    }
-    i++;
-  }
-  console.log('Logging highlightMost.');
-  console.log(highlightMostArr);
-  return highlightMostArr;
+function sliceMost(arr, size) {
+  return arr.slice((arr.length - 1) - (size-1), (arr.length - 1))
 }
 
-//
-// Fetch base data to fetch district names and assemble highlight objects
-const baseCSV = "https://d2fypeb6f974r1.cloudfront.net/dev/scatterplot/districts-base.csv";
-var baseReq = new XMLHttpRequest();
-baseReq.open("GET", baseCSV, true);
-baseReq.onload = function (e) {
-  if (baseReq.readyState === 4) {
-    if (baseReq.status === 200) {
-      console.log('Base data request successful.');
-      var csvResponse = this.responseText;
-      var json = Papa.parse(csvResponse);
-      baseData = json.data;
-      // console.log('Logging baseData.');
-      // console.log(baseData);
-    } else {
-      console.error(baseReq.statusText);
-    }
-  }
-};
-baseReq.onerror = function (e) {
-  console.error('Failed to fetch segregation data.\n' + xhr.statusText);
-};
-baseReq.send(null);
+/**
+ * Sort provided array by segregation stats
+ * @param Array data
+ * @returns Array returnArr
+ */
+function sortDataBySeg(data) {
+  // console.log('sortDataBySeg()');
+  // console.log(data);
+  // Loop through the data.
+  // Locate row using ID.
+  // Add seg stat to each row.
+  data.forEach(function(el) {
+    var index = segData.findIndex(row => row[0] === el[3]);
+    // console.log('have an index, it is ' + index);
+    el[4] = segData[index][1];
+    // console.log(el)
+  });
+  // Sort by seg stat
+  returnArr = data.sort(function(a, b) {
+    if ( a[4] < b[4] )
+        return -1;
+    if ( a[4] > b[4] )
+        return 1;
+    return 0;
+  });
+  // console.log('Logging segSortedTop100.');
+  // console.log(returnArr);
+  return returnArr;
+}
 
 //
 // Fetch the additional segregation data for state 9.
@@ -97,36 +68,13 @@ xhr.onload = function (e) {
       // console.log(this.responseText);
       var csvResponse = this.responseText;
       var json = Papa.parse(csvResponse);
-      var data = json.data;
-      // console.log(data);
+      segData = json.data;
+      // console.log('logging segregation data');
+      // console.log(segData);
       // Trim off column headings and any blank rows
-      data = data.filter(function(e) { return e[0] !== 'id' });
-      data = data.filter(function(e) { return e[0] !== '' });
+      segData = segData.filter(function(e) { return e[0] !== 'id' });
+      segData = segData.filter(function(e) { return e[0] !== '' });
       // console.log(data);
-      var sortAsc = data.sort(function(a, b) {
-        if ( a[1] < b[1] )
-            return -1;
-        if ( a[1] > b[1] )
-            return 1;
-        return 0;
-      });;
-      // Size of the completed most and least.
-      var size = 50;
-      bwLeastSeg = sortAsc.slice(0, size);
-      // console.log(bwLeastSeg);
-      bwMostSeg = sortAsc.slice((sortAsc.length - 1) - size, sortAsc.length - 1);
-      // console.log(bw_most_seg);
-      // If the base data has loaded, build the series.
-      function checkBaseDataLoad() {
-        if (baseData.length >= 1) {
-          buildLeastSeg();
-          // buildMostSeg();
-          clearInterval(checkBaseInt);
-        } else {
-          console.log('Nothing in baseData');
-        }
-      }
-      var checkBaseInt = setInterval(checkBaseDataLoad, 1000);
     } else {
       console.error(xhr.statusText);
     }
@@ -169,6 +117,10 @@ var state1 = function(scatterplot) {
           position: 'middle',
           fontFamily: 'MaisonNeue-Medium',
           fontWeight: '600',
+          fontSize: 12,
+          textBorderWidth: 3,
+          textBorderColor: '#042965',
+          textShadowColor: '#042965',
           formatter: function(value) {
             return value.name
           }
@@ -182,7 +134,11 @@ var state1 = function(scatterplot) {
               lineStyle: {
                 color: '#dc69aa', // '#95706d'// '#8d98b3' // '#999'
                 type: 'solid',
-                width: 2
+                width: 2,
+                shadowOffsetY: 0,
+                shadowOffsetX: 0,
+                shadowBlur: 2,
+                shadowColor: '#042965'
               }
             },
             { coord: [ 3,  3], symbol: 'none' },
@@ -354,7 +310,7 @@ var state4 = function(scatterplot) {
       right: 42,
     },
     yAxis: {
-      min: -5,
+      min: -6,
       max: 0,
       name: 'White-Black Achievement Gap\nby Grade Levels',
       nameTextStyle: { // Styles for x and y axis labels
@@ -363,8 +319,8 @@ var state4 = function(scatterplot) {
       },
     },
     xAxis: {
-      min: -1,
-      max: 6,
+      min: -3,
+      max: 7,
       name: 'White-Black Socioeconomic Disparity',
     },
     series: [{
@@ -378,7 +334,7 @@ var state4 = function(scatterplot) {
           fontWeight: '600',
           fontSize: 12,
           textBorderColor: '#042965',
-          textBorderWidth: 1,
+          textBorderWidth: 3,
           textShadowColor: '#042965',
           formatter: function(value) {
             return value.name
@@ -388,12 +344,16 @@ var state4 = function(scatterplot) {
           [
             {
               name: 'no racial disparity',
-              coord: [0, -5],
+              coord: [0, -6],
               symbol: 'none',
               lineStyle: {
                 color:  '#dc69aa',
                 type: 'solid',
-                width: 2
+                width: 2,
+                shadowOffsetY: 0,
+                shadowOffsetX: 0,
+                shadowBlur: 3,
+                shadowColor: '#042965'
               },
               label: {
                 // verticalAlign: 'bottom'
@@ -402,7 +362,7 @@ var state4 = function(scatterplot) {
               }
             },
             {
-              coord: [ 0, 0],
+              coord: [ 0, -1],
               symbol: 'none'
             },
           ]
@@ -553,7 +513,7 @@ var state8 = function(scatterplot) {
       right: 42,
     },
     yAxis: {
-      min:-5,
+      min:-6,
       max:0,
       name: 'White-Black Achievement Gap\nby Grade Levels',
       nameTextStyle: { // Styles for x and y axis labels
@@ -562,8 +522,8 @@ var state8 = function(scatterplot) {
       },
     },
     xAxis: {
-      min: -1,
-      max: 6,
+      min: -3,
+      max: 7,
       name: 'White-Black Socioeconomic Disparity',
     },
     series: [{
@@ -587,12 +547,16 @@ var state8 = function(scatterplot) {
           [
             {
               name: 'no racial disparity',
-              coord: [0, -5],
+              coord: [0, -6],
               symbol: 'none',
               lineStyle: {
                 color:  '#dc69aa',
                 type: 'solid',
-                width: 2
+                width: 2,
+                shadowOffsetY: 0,
+                shadowOffsetX: 0,
+                shadowBlur: 3,
+                shadowColor: '#042965'
               },
               label: {
                 // verticalAlign: 'bottom'
@@ -601,7 +565,7 @@ var state8 = function(scatterplot) {
               }
             },
             {
-              coord: [ 0, 0],
+              coord: [ 0, -1],
               symbol: 'none'
             },
           ]
@@ -646,25 +610,19 @@ var state8 = function(scatterplot) {
 /* Highlight least and most segregated */
 var state9 = function(scatterplot) {
   console.log('loading state9');
-  // get current echart options
-  // const options = scatterplot.component.getOption();
   // this state is created from the base
   const base = scatterplot.getState('base');
   // Build series most seg to highlight
   var dataSeries = scatterplot.getDataSeries();
-  var mostSegregatedSeries = buildMostSeg(dataSeries.data);
-  // console.log(dataSeries.data);
-  // dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-  // var top20 = scatterplot.getSeriesDataBySize(dataSeries.data, 20)
-  // var highlight = {
-  //   '0803360': 'Denver, CO',
-  //   '0634170': 'San Bernardino, CA'
-  // }
-  // highlightLeast, highlightmost
+  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  // console.log(top100);
+  var segSortedTop100 = sortDataBySeg(top100);
+  var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
+  var mostSegregatedSeries = sliceMost(segSortedTop100, 10);
   const baseOverrides = {
     title: {
       text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
-      subtext: 'US School Districts 2009-2016',
+      subtext: 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016',
       textStyle: {
         fontSize: 18,
         lineHeight: 32
@@ -673,7 +631,8 @@ var state9 = function(scatterplot) {
     legend: {
       show: true,
       right: 20,
-      bottom: 20,
+      top: 20,
+      zlevel: 5000,
       data: [
         {
           name: 'Least Segregated',
@@ -703,7 +662,7 @@ var state9 = function(scatterplot) {
       right: 42,
     },
     yAxis: {
-      min:-5,
+      min:-6,
       max:0,
       name: 'White-Black Achievement Gap\nby Grade Levels',
       nameTextStyle: { // Styles for x and y axis labels
@@ -712,20 +671,30 @@ var state9 = function(scatterplot) {
       },
     },
     xAxis: {
-      min: -1,
-      max: 6,
+      min: -3,
+      max: 7,
       name: 'White-Black Socioeconomic Disparity',
     },
     series: [
       dataSeries,
       {
         type: 'scatter',
-        data: mostSegregatedSeries,
-        symbolSize: dataSeries.symbolSize,
+        data: leastSegregatedSeries,
+        symbolSize: dataSeries.symbolSize, // 6,
         itemStyle: {
-          borderWidth: 1,
+          borderWidth: 2,
           borderColor: 'rgba(0,0,0,1)',
-          color: '#ffb87f' // '#b6a2de' // 'rgba(255,0,0,0.25)'
+          color: 'rgba(255,255,0,0.97)' // '#042965'
+        }
+      },
+      {
+        type: 'scatter',
+        data: mostSegregatedSeries,
+        symbolSize: dataSeries.symbolSize, // 6,
+        itemStyle: {
+          borderWidth: 2,
+          borderColor: 'rgba(0,0,0,1)',
+          color: '#ef7715' // '#dc69aa' // '#ffb87f' // '#b6a2de' // 'rgba(255,0,0,0.25)'
         }
       },
       {
@@ -749,51 +718,30 @@ var state9 = function(scatterplot) {
           [
             {
               name: 'no racial disparity',
-              coord: [0, -5],
+              coord: [0, -6],
               symbol: 'none',
               lineStyle: {
                 color:  '#dc69aa',
                 type: 'solid',
-                width: 2
+                width: 2,
+                shadowOffsetY: 0,
+                shadowOffsetX: 0,
+                shadowBlur: 3,
+                shadowColor: '#042965'
               },
               label: {}
             },
             {
-              coord: [ 0, 0],
+              coord: [ 0, -1],
               symbol: 'none'
             },
           ]
         ]
       }
-    },
-    {
-      id: 'highlighted',
-      itemStyle: {
-        borderColor: '#042965',
-        color: 'rgba(255,255,0,0.97)',
-        borderWidth: 2,
-        // borderColor: '#042965',
-        // color: 'rgba(255,255,0,0.5)'
-      },
-      label: {
-        show: false,
-        position: 'right',
-        backgroundColor: 'rgba(255,255,0,0.97)',
-        borderColor: '#042965',
-        fontSize: 12,
-        fontWeight: 600,
-        fontFamily: 'MaisonNeue-Medium',
-        padding: [6, 8],
-        borderRadius: 3,
-        color: '#042965',
-        formatter: function(item) {
-          return highlightLeast[item.value[3]]
-        }
-      }
     }]
   }
   return {
-    highlighted: Object.keys(highlightLeast),
+    highlighted: [],
     xVar: 'wb_ses',
     yVar: 'wb_avg',
     zVar: 'sz',
@@ -803,8 +751,128 @@ var state9 = function(scatterplot) {
 
 /** State 10: Achievement vs. Gap in Exposure to School Poverty */
 var state10 = function(scatterplot) {
+  const base = scatterplot.getState('base');
+  var dataSeries = scatterplot.getDataSeries();
   var options = scatterplot.component.getOption();
-  return options;
+  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  var highlight = {
+    '1100030': 'District of Columbia',
+    '2612000': 'Detroit, MI'
+  }
+  // return options;
+  const baseOverrides = {
+    title: {
+      text: 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty',
+      subtext: '100 Largest US School Districts 2009-2016',
+      textStyle: {
+        fontSize: 18,
+        lineHeight: 32
+      }
+    },
+    grid: {
+      right: 42,
+    },
+    yAxis: {
+      min:-6,
+      max:1,
+      name: 'White-Black Achievement Gap\nby Grade Levels',
+      nameTextStyle: { // Styles for x and y axis labels
+        fontSize: 12,
+        lineHeight: 14
+      },
+    },
+    xAxis: {
+      min: -3,
+      max: 8,
+      name: 'Black-White Difference in Average School Poverty Rates',
+    },
+    series: [
+      dataSeries,
+      {
+        type: 'scatter',
+        data: top100,
+        symbolSize: dataSeries.symbolSize,
+        itemStyle: {
+          borderWidth: 1,
+          borderColor: 'rgba(0,0,0,1)',
+          color: '#b6a2de' // 'rgba(255,0,0,0.25)'
+        }
+      },
+      {
+        type:'scatter',
+        markLine: {
+          animation: false,
+          silent: true,
+          label: {
+            position: 'middle',
+            fontFamily: 'MaisonNeue-Medium',
+            fontWeight: '600',
+            fontSize: 12,
+            textBorderColor: '#042965',
+            textBorderWidth: 1,
+            textShadowColor: '#042965',
+            formatter: function(value) {
+              return value.name
+            }
+          },
+          data: [
+            [
+              {
+                name: 'equal exposure to poverty',
+                coord: [0, -4],
+                symbol: 'none',
+                lineStyle: {
+                  color:  '#dc69aa',
+                  type: 'solid',
+                  width: 2,
+                  shadowOffsetY: 0,
+                  shadowOffsetX: 0,
+                  shadowBlur: 3,
+                  shadowColor: '#042965'
+                },
+                label: {}
+              },
+              {
+                coord: [ 0, 2],
+                symbol: 'none'
+              },
+            ]
+          ]
+        }
+      },
+      {
+        id: 'highlighted',
+        itemStyle: {
+          borderWidth: 2,
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.5)'
+        },
+        label: {
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return highlight[item.value[3]]
+          }
+        }
+      }
+    ]
+  }
+  return {
+    highlighted: Object.keys(highlight),
+    xVar: 'wb_pov',
+    yVar: 'wb_avg',
+    zVar: 'sz',
+    options: deepmerge.all([ base.options, baseOverrides ])
+  }
 }
 
 /** State 11: Achievement vs. Gap in Exposure to School Poverty */

@@ -60,21 +60,25 @@
                 plot.isTransitional = true;
                 console.log('In transition. State = ' + state);
             }
+        },
+        getCoords: function() {
+          plot.top = (plot.scatterplot).offset().top;
+          plot.height = (plot.scatterplot).find('> div').height();
+          plot.bottom = Number(plot.top) + Number(plot.height);
         }
     };
 
     // Get top and bottom y coords of the scatterplot
     plot.scatterplot = $('#scatterplot');
     plot.wrappers = $('.state-desc-wrapper');
-    plot.top = (plot.scatterplot).offset().top;
-    plot.height = (plot.scatterplot).find('> div').height();
-    plot.bottom = Number(plot.top) + Number(plot.height);
+    plot.getCoords();
 
     // Reset them if the screen is resized
     $( window ).resize(function() {
-        plot.top = (plot.scatterplot).offset().top;
-        plot.height = (plot.scatterplot).find('> div').height();
-        plot.bottom = Number(plot.top) + Number(plot.height);
+        // plot.top = (plot.scatterplot).offset().top;
+        // plot.height = (plot.scatterplot).find('> div').height();
+        // plot.bottom = Number(plot.top) + Number(plot.height);
+        plot.getCoords();
     });
 
     // Only trigger scroll ever 50ms so less resources
@@ -89,14 +93,5 @@
             userScrolled = false;
           }
         }, 50);
-
-        // var range = {
-        //   min: -1,
-        //   max: 1
-        // };
-        // var dataSeries = scatterplot.getDataSeries();
-        // var nearZero = scatterplot.getSeriesDataInRange(dataSeries.data, 'x', range);
-        // console.log('====> logging nearZero:');
-        // console.log(nearZero);
     });
 })(jQuery);

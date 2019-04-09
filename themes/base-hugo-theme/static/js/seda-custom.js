@@ -192,7 +192,7 @@
         var dkbluepath = anime.path('#dkblueline');
         var medbluepath = anime.path('#medblueline');
         var greenpath = anime.path('#greenline');
-        var schoolstart = 1000;
+        var schoolstart = 1200;
 
         var initTrend = anime({
             targets: ['#trendgraphic svg'],
@@ -294,6 +294,36 @@
             delay: schoolstart,
             autoplay: false,
         });
+        //Scores Text
+        var trendStep9 = anime({
+            targets: ['text#Scores'],
+            opacity: 1,
+            easing: 'linear',
+            duration: 250,
+            direction: 'linear',
+            delay: 375,
+            autoplay: false,
+        });
+        //2009 Text
+        var trendStep10 = anime({
+            targets: ['text#t2009'],
+            opacity: 1,
+            easing: 'linear',
+            duration: 250,
+            direction: 'linear',
+            delay: 250,
+            autoplay: false,
+        });
+        //2016 Text
+        var trendStep11 = anime({
+            targets: ['text#t2016'],
+            opacity: 1,
+            easing: 'linear',
+            duration: 250,
+            direction: 'linear',
+            delay: 500,
+            autoplay: false,
+        });
 
        // Store these once so you don't repeatedly query the DOM for them.
         var trendGraphic1 = null;
@@ -323,6 +353,9 @@
             trendStep6.play();
             trendStep7.play();
             trendStep8.play();
+            trendStep9.play();
+            trendStep10.play();
+            trendStep11.play();
         }
         }
         setElPositions();

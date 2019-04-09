@@ -19891,10 +19891,6 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#trendgraphic svg {
-  opacity: 0;
-}
-
 #trendgraphic.move {
   /*
         g#Wrapper-group {
@@ -19961,10 +19957,6 @@ body.type-explorations .hero .hero-child .column p {
             transform: translate(37.273438px, 25.008148px);
             }
         }   */
-}
-
-#trendgraphic.move svg {
-  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

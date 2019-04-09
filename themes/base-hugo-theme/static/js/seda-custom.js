@@ -1,6 +1,10 @@
+
+
 (function($) {
     var jQuery = $.noConflict(false);
     var $ = jQuery;
+
+    
 
     function checkScroll(y) {
         // console.log(checkScroll);
@@ -38,9 +42,9 @@
           if (Scroll >= growthGraphic) { // If you have scrolled past this section do this.
             $("#growth-graphic").addClass("move"); // Adds class of current-menu-item to the menu item with a class of menu-item-1
         }  
-           if (Scroll >= trendGraphic) { // If you have scrolled past this section do this.
-            $("#trendgraphic").addClass("move");  
-        }
+           //if (Scroll >= trendGraphic) { // If you have scrolled past this section do this.
+           // $("#trendgraphic").addClass("move");  
+        // }
       });
     }
 
@@ -86,6 +90,8 @@
     };
 
     $( document ).ready(function() {
+
+
         // Manage navbar appearance by scroll position
         $( window ).scroll(function() {
           var t = $(window).scrollTop();
@@ -181,6 +187,173 @@
         if (($('body.home') && $("#trendgraphic").length >= 1)) {
           initHomepageAnimations();
         }
+
+
+        var dkbluepath = anime.path('#dkblueline');
+        var medbluepath = anime.path('#medblueline');
+        var greenpath = anime.path('#greenline');
+        var schoolstart = 1000;
+
+        var initTrend = anime({
+            targets: ['#trendgraphic svg'],
+            opacity: 1,
+            duration: 250,
+            autoplay: false,
+            easing: 'easeInOutQuad',
+            direction: 'linear',
+        });
+        var trendStep = anime({
+        // Opacity of schools    
+            targets: ['#grnschool', '#medblueschool', '#dkblueschool'],
+            opacity: 1,
+            duration: 250,
+            delay: schoolstart,
+            easing: 'easeInOutQuad',
+            direction: 'linear',
+            //loop: true
+        });
+
+        var trendStep1 = anime({
+        //Dark Blue School Animation
+        targets: ['.schoolshape'],
+        translateX: dkbluepath('x'),
+          translateY: dkbluepath('y'),
+          //rotate: path('angle'),
+          direction: 'linear',
+          easing: 'easeInOutQuad',
+          duration: 1500,
+          delay: schoolstart,
+          autoplay: false,
+          //loop: true
+        });
+        var trendStep2 = anime({
+        //Medium Blue School Animation
+        targets: ['#medblueschool .mbschoolshape'],
+        translateX: medbluepath('x'),
+            translateY: medbluepath('y'),
+            //rotate: path('angle'),
+            direction: 'linear',
+            easing: 'easeInOutQuad',
+            duration: 1500,
+            delay: schoolstart,
+            //loop: true
+        });
+        var trendStep3 = anime({
+        //Green School Animation
+        targets: ['#grnschool .grnschoolshape'],
+        translateX: greenpath('x'),
+            translateY: greenpath('y'),
+            //rotate: path('angle'),
+            direction: 'linear',
+            easing: 'easeInOutQuad',
+            duration: 1500,
+            delay: schoolstart,
+            //loop: true
+        });
+        //Y Axis Line
+        var trendStep4 = anime({
+            targets: ['#y-axis-trend #y-axisline'],
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutQuad',
+            duration: 1000,
+            //delay: function(el, i) { return i * 250 },
+            direction: 'linear',
+            //loop: true
+        });
+        //Y Axis Cap
+        var trendStep5 = anime({
+            targets: ['#y-axis-cap path'],
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutQuad',
+            duration: 250,
+            delay: 1000,
+            //delay: function(el, i) { return i * 250 },
+            direction: 'linear',
+            //loop: true
+        });
+        //X Axis Line
+        var trendStep6 = anime({
+            targets: ['#x-axis-trend-2 #x-axis-line'],
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutQuad',
+            duration: 1000,
+            //delay: function(el, i) { return i * 250 },
+            direction: 'linear',
+            //loop: true
+        });
+        //X Axis Cap
+        var trendStep7 = anime({
+            targets: ['#x-axis-cap path'],
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutQuad',
+            duration: 250,
+            delay: 1000,
+            //delay: function(el, i) { return i * 250 },
+            direction: 'linear',
+            //loop: true
+        });
+        //Trend Lines
+        var trendStep8 = anime({
+            targets: ['#trendlines path'],
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutQuad',
+            duration: 1500,
+            //delay: function(el, i) { return i * 250 },
+            direction: 'linear',
+            loop: false,
+            delay: schoolstart,
+        });
+
+       // Store these once so you don't repeatedly query the DOM for them.
+        var trendGraphic1 = null;
+        var windowHeight = null;
+        /**
+         * Set or reset position and height of elements which effect scroll calculations.
+         */
+        function setElPositions() {
+        var trendGraphic1 = $('#trendgraphic').offset().top;
+        var windowHeight = $( window ).height();
+        }
+        /**
+         * Check scroll position and animate target if conditions positive
+         */
+        var animated = false;
+        function checkScrollPosition() {
+        Scroll = $(window).scrollTop() + windowHeight - 300;
+        if (Scroll >= trendGraphic1 && !animated) { // If you have scrolled past this section do this.
+            animated = true; // Turn off the flag so you don't do it over and over.
+            initTrend.play();
+            trendStep.play();
+            trendStep1.play();
+            trendStep2.play();
+            trendStep3.play();
+            trendStep4.play();
+            trendStep5.play();
+            trendStep6.play();
+            trendStep7.play();
+            trendStep8.play();
+        }
+        }
+        setElPositions();
+        $(window).resize(function() {
+        setElPositions();
+        })
+
+       
+        var userScrolled = false;
+        $(window).scroll(function() {
+        userScrolled = true;
+        });
+
+        setInterval(function() {
+        if (userScrolled) {
+            checkScrollPosition();
+            userScrolled = false;
+        }
+        }, 50);
+      
+
+      
 
     });
 

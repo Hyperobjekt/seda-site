@@ -35,7 +35,7 @@
               Scroll = $(window).scrollTop() + windowHeight - 300, // This variable finds the distance you have scrolled from the top.
               avgGraphic = $('#avg-graphic').offset().top; 
               growthGraphic = $('#growth-graphic').offset().top;
-              trendGraphic = $('#trendgraphic').offset().top; 
+              //trendGraphic = $('#trendgraphic').offset().top; 
            if (Scroll >= avgGraphic) { // If you have scrolled past this section do this.
               $("#avg-graphic").addClass("move"); // Adds class of current-menu-item to the menu item with a class of menu-item-1
           }  
@@ -210,45 +210,41 @@
             delay: schoolstart,
             easing: 'easeInOutQuad',
             direction: 'linear',
-            //loop: true
+            autoplay: false,
         });
 
         var trendStep1 = anime({
         //Dark Blue School Animation
-        targets: ['.schoolshape'],
+        targets: ['#dkblueschool .schoolshape'],
         translateX: dkbluepath('x'),
           translateY: dkbluepath('y'),
-          //rotate: path('angle'),
           direction: 'linear',
           easing: 'easeInOutQuad',
           duration: 1500,
           delay: schoolstart,
           autoplay: false,
-          //loop: true
         });
         var trendStep2 = anime({
         //Medium Blue School Animation
         targets: ['#medblueschool .mbschoolshape'],
         translateX: medbluepath('x'),
             translateY: medbluepath('y'),
-            //rotate: path('angle'),
             direction: 'linear',
             easing: 'easeInOutQuad',
             duration: 1500,
             delay: schoolstart,
-            //loop: true
+            autoplay: false,
         });
         var trendStep3 = anime({
         //Green School Animation
         targets: ['#grnschool .grnschoolshape'],
         translateX: greenpath('x'),
             translateY: greenpath('y'),
-            //rotate: path('angle'),
             direction: 'linear',
             easing: 'easeInOutQuad',
             duration: 1500,
             delay: schoolstart,
-            //loop: true
+            autoplay: false,
         });
         //Y Axis Line
         var trendStep4 = anime({
@@ -256,9 +252,8 @@
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'easeInOutQuad',
             duration: 1000,
-            //delay: function(el, i) { return i * 250 },
             direction: 'linear',
-            //loop: true
+            autoplay: false,
         });
         //Y Axis Cap
         var trendStep5 = anime({
@@ -267,9 +262,8 @@
             easing: 'easeInOutQuad',
             duration: 250,
             delay: 1000,
-            //delay: function(el, i) { return i * 250 },
             direction: 'linear',
-            //loop: true
+            autoplay: false,
         });
         //X Axis Line
         var trendStep6 = anime({
@@ -277,9 +271,8 @@
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'easeInOutQuad',
             duration: 1000,
-            //delay: function(el, i) { return i * 250 },
             direction: 'linear',
-            //loop: true
+            autoplay: false,
         });
         //X Axis Cap
         var trendStep7 = anime({
@@ -288,9 +281,8 @@
             easing: 'easeInOutQuad',
             duration: 250,
             delay: 1000,
-            //delay: function(el, i) { return i * 250 },
             direction: 'linear',
-            //loop: true
+            autoplay: false,
         });
         //Trend Lines
         var trendStep8 = anime({
@@ -298,10 +290,9 @@
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'easeInOutQuad',
             duration: 1500,
-            //delay: function(el, i) { return i * 250 },
             direction: 'linear',
-            loop: false,
             delay: schoolstart,
+            autoplay: false,
         });
 
        // Store these once so you don't repeatedly query the DOM for them.

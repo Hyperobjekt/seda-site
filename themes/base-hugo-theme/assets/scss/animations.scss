@@ -767,15 +767,20 @@
     }
 }
 
-// T R E N D  G R A P H I C //
+//  T R E N D  G R A P H I C  //
 #trendgraphic {
     svg {
-    opacity: 0;
+    //opacity: 0;
+
     }
     &.move {
         svg {
-            opacity: 1;
+            //opacity: 1;
+                
             } 
+
+         
+        /*
         g#Wrapper-group {
             animation: fadein 0.4s forwards;
             animation-delay: 0s;
@@ -839,6 +844,10 @@
             opacity: 1;
             transform: translate(37.273438px, 25.008148px);
             }
-        }   
+        }   */
+        
     }   
+
     }
+
+ 

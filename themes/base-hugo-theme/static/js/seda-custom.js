@@ -1,6 +1,10 @@
+
+
 (function($) {
     var jQuery = $.noConflict(false);
     var $ = jQuery;
+
+    
 
     function checkScroll(y) {
         // console.log(checkScroll);
@@ -25,23 +29,200 @@
         $target.parents('.research-paper').toggleClass('abstract-visible');
     }
 
-    function initHomepageAnimations() {
-      $(window).scroll(function() { // Says this function is preformed continuously while scrolling.
-          var windowHeight = $( window ).height(),
-              Scroll = $(window).scrollTop() + windowHeight - 300, // This variable finds the distance you have scrolled from the top.
-              avgGraphic = $('#avg-graphic').offset().top; 
-              growthGraphic = $('#growth-graphic').offset().top;
-              trendGraphic = $('#trendgraphic').offset().top; 
-           if (Scroll >= avgGraphic) { // If you have scrolled past this section do this.
-              $("#avg-graphic").addClass("move"); // Adds class of current-menu-item to the menu item with a class of menu-item-1
-          }  
-          if (Scroll >= growthGraphic) { // If you have scrolled past this section do this.
-            $("#growth-graphic").addClass("move"); // Adds class of current-menu-item to the menu item with a class of menu-item-1
-        }  
-           if (Scroll >= trendGraphic) { // If you have scrolled past this section do this.
-            $("#trendgraphic").addClass("move");  
-        }
-      });
+    var dkbluepath = anime.path('#dkblueline');
+    var medbluepath = anime.path('#medblueline');
+    var greenpath = anime.path('#greenline');
+    var schoolstart = 1200;
+
+    var initTrend = anime({
+        targets: ['#trendgraphic svg'],
+        opacity: 1,
+        duration: 250,
+        autoplay: false,
+        easing: 'easeInOutQuad',
+        direction: 'linear',
+    });
+    var trendStep = anime({
+    // Opacity of schools    
+        targets: ['#grnschool', '#medblueschool', '#dkblueschool'],
+        opacity: 1,
+        duration: 250,
+        delay: schoolstart,
+        easing: 'easeInOutQuad',
+        direction: 'linear',
+        autoplay: false,
+    });
+
+    var trendStep1 = anime({
+    //Dark Blue School Animation
+    targets: ['#dkblueschool .schoolshape'],
+    translateX: dkbluepath('x'),
+      translateY: dkbluepath('y'),
+      direction: 'linear',
+      easing: 'easeInOutQuad',
+      duration: 1500,
+      delay: schoolstart,
+      autoplay: false,
+    });
+    var trendStep2 = anime({
+    //Medium Blue School Animation
+    targets: ['#medblueschool .mbschoolshape'],
+    translateX: medbluepath('x'),
+        translateY: medbluepath('y'),
+        direction: 'linear',
+        easing: 'easeInOutQuad',
+        duration: 1500,
+        delay: schoolstart,
+        autoplay: false,
+    });
+    var trendStep3 = anime({
+    //Green School Animation
+    targets: ['#grnschool .grnschoolshape'],
+    translateX: greenpath('x'),
+        translateY: greenpath('y'),
+        direction: 'linear',
+        easing: 'easeInOutQuad',
+        duration: 1500,
+        delay: schoolstart,
+        autoplay: false,
+    });
+    //Y Axis Line
+    var trendStep4 = anime({
+        targets: ['#y-axis-trend #y-axisline'],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutQuad',
+        duration: 1000,
+        direction: 'linear',
+        autoplay: false,
+    });
+    //Y Axis Cap
+    var trendStep5 = anime({
+        targets: ['#y-axis-cap path'],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutQuad',
+        duration: 250,
+        delay: 1000,
+        direction: 'linear',
+        autoplay: false,
+    });
+    //X Axis Line
+    var trendStep6 = anime({
+        targets: ['#x-axis-trend-2 #x-axis-line'],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutQuad',
+        duration: 1000,
+        direction: 'linear',
+        autoplay: false,
+    });
+    //X Axis Cap
+    var trendStep7 = anime({
+        targets: ['#x-axis-cap path'],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutQuad',
+        duration: 250,
+        delay: 1000,
+        direction: 'linear',
+        autoplay: false,
+    });
+    //Trend Lines
+    var trendStep8 = anime({
+        targets: ['#trendlines path'],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutQuad',
+        duration: 1500,
+        direction: 'linear',
+        delay: schoolstart,
+        autoplay: false,
+    });
+    //Scores Text
+    var trendStep9 = anime({
+        targets: ['text#Scores'],
+        opacity: 1,
+        easing: 'linear',
+        duration: 250,
+        direction: 'linear',
+        delay: 375,
+        autoplay: false,
+    });
+    //2009 Text
+    var trendStep10 = anime({
+        targets: ['text#t2009'],
+        opacity: 1,
+        easing: 'linear',
+        duration: 250,
+        direction: 'linear',
+        delay: 250,
+        autoplay: false,
+    });
+    //2016 Text
+    var trendStep11 = anime({
+        targets: ['text#t2016'],
+        opacity: 1,
+        easing: 'linear',
+        duration: 250,
+        direction: 'linear',
+        delay: 500,
+        autoplay: false,
+    });
+
+    function animateTrendGraphic() {
+      // console.log('animateTrendGraphic()');
+      initTrend.play();
+      trendStep.play();
+      trendStep1.play();
+      trendStep2.play();
+      trendStep3.play();
+      trendStep4.play();
+      trendStep5.play();
+      trendStep6.play();
+      trendStep7.play();
+      trendStep8.play();
+      trendStep9.play();
+      trendStep10.play();
+      trendStep11.play();
+    }
+
+    var avgGraphic = null;
+    var growthGraphic = null;
+    var trendGraphic = null;
+    var windowHeight = null;
+    var avgGraphicAnimated = false;
+    var growthGraphicAnimated = false;
+    var trendGraphicAnimated = false;
+
+    function setElPositions() {
+      // console.log('setElPositions()');
+      avgGraphic = $('#avg-graphic').offset().top;
+      growthGraphic = $('#growth-graphic').offset().top;
+      trendGraphic = $('#trendgraphic').offset().top;
+      windowHeight = $( window ).height();
+      // console.log('avgGraphic offset = ' + avgGraphic);
+      // console.log('growthGraphic offset = ' + growthGraphic);
+      // console.log('trendGraphic offset = ' + trendGraphic);
+      // console.log('windowHeight = ' + windowHeight);
+    }
+
+    function checkHomepageAnimations() {
+      var Scroll = $(window).scrollTop() + windowHeight - 300;
+      // console.log('scroll = ' + Scroll);
+
+      if (Scroll >= avgGraphic && !avgGraphicAnimated) {
+        // console.log('trigger avgGraphic');
+        $("#avg-graphic").addClass("move");
+        avgGraphicAnimated = true;
+      }
+
+      if (Scroll >= growthGraphic && !growthGraphicAnimated) {
+        // console.log('trigger growthGraphic');
+        $("#growth-graphic").addClass("move");
+        growthGraphicAnimated = true;
+      }
+
+      if (Scroll >= trendGraphic && !trendGraphicAnimated) {
+        // console.log('trigger trendGraphic');
+        animateTrendGraphic();
+        trendGraphicAnimated = true;
+      }
     }
 
     var updateModal = {
@@ -85,103 +266,119 @@
         }
     };
 
-    $( document ).ready(function() {
-        // Manage navbar appearance by scroll position
-        $( window ).scroll(function() {
-          var t = $(window).scrollTop();
-          checkScroll(t);
-        });
-        // Check on page load as well.
+  $( document ).ready(function() {
+    // Manage navbar appearance by scroll position
+    $( window ).scroll(function() {
+      var t = $(window).scrollTop();
+      checkScroll(t);
+    });
+    // Check on page load as well.
+    var t = $(window).scrollTop();
+    checkScroll(t);
+
+    // Smooth scroll down on button click
+    $('.scroll-to-section').on('click', function(e) {
+        console.log('click');
+        e.preventDefault();
+        var target_id = $(e.target).attr('data-scroll-target');
+        // console.log(target_id);
+        $target = $('#' + target_id);
+        // console.log($target);
+        $('html, body').animate({
+            scrollTop: ($target.offset().top) - 63
+        }, 500);
         var t = $(window).scrollTop();
         checkScroll(t);
-
-        // Smooth scroll down on button click
-        $('.scroll-to-section').on('click', function(e) {
-            console.log('click');
-            e.preventDefault();
-            var target_id = $(e.target).attr('data-scroll-target');
-            // console.log(target_id);
-            $target = $('#' + target_id);
-            // console.log($target);
-            $('html, body').animate({
-                scrollTop: ($target.offset().top) - 63
-            }, 500);
-            var t = $(window).scrollTop();
-            checkScroll(t);
-        });
-
-        // Handle bio modals
-        if ($('button.launch-people-bio').length >= 1) {
-          // console.log('exists');
-          $('button.launch-people-bio').click(function(e) {
-            e.preventDefault();
-            var $button = $(e.target);
-            // Store active bio so navigation between then works.
-            updateModal.activeBio = $button.closest('.column-people');
-            updateModal.update();
-
-            $('#prevBio').on('click', function() {
-                if ($(updateModal.activeBio).prev().length >= 1) {
-                    updateModal.activeBio = $(updateModal.activeBio).prev();
-                    updateModal.update();
-                }
-            });
-            $('#nextBio').on('click', function() {
-                if ($(updateModal.activeBio).next().length >= 1) {
-                    updateModal.activeBio = $(updateModal.activeBio).next();
-                    updateModal.update();
-                }
-            });
-          });
-        }
-
-        // Dropdown for article sorting on mobile
-        $('body.research .small-tab-nav ul li a').on('click', function(e) {
-            // console.log('Small tab nav selection');
-            $(this).tab('show');
-            // Store target.
-            $target = $(e.target);
-            // Clear all active and highlight classes.
-            $('body.research .small-tab-nav ul li a').removeClass('active highlight');
-            // Add proper classes to selected target.
-            $target.addClass('active highlight');
-        });
-
-        // Display article abstract and versions for entry on research page.
-        $('a.show-versions').on('click', function(e) {
-            // console.log('a.show-versions');
-            toggleAbstract(e);
-        });
-
-        $('body.research a[data-toggle="tab"]').on('click touchstart', function (e) {
-            // console.log('hide tab event');
-            if ($('.research-paper.abstract-visible').length >= 1) {
-                $('.research-paper.abstract-visible').removeClass('abstract-visible');
-            }
-        });
-
-        $('#toggleDrawer').on('click', function() {
-            // console.log('#toggleDrawer selected');
-            $('#drawer').addClass('show');
-        });
-
-        $('#closeDrawer').on('click', function() {
-            console.log('#closeDrawer selected');
-            $('#drawer').removeClass('show');
-        });
-
-        // Add Subnav active selection highlighting
-
-        $(".subnav a").click(function () {
-            $(".subnav a").removeClass("highlight");
-            $(this).addClass("highlight");
-        });
-
-        /* Homepage animations */
-        if (($('body.home') && $("#trendgraphic").length >= 1)) {
-          initHomepageAnimations();
-        }
-
     });
 
+    // Handle bio modals
+    if ($('button.launch-people-bio').length >= 1) {
+      // console.log('exists');
+      $('button.launch-people-bio').click(function(e) {
+        e.preventDefault();
+        var $button = $(e.target);
+        // Store active bio so navigation between then works.
+        updateModal.activeBio = $button.closest('.column-people');
+        updateModal.update();
+
+        $('#prevBio').on('click', function() {
+            if ($(updateModal.activeBio).prev().length >= 1) {
+                updateModal.activeBio = $(updateModal.activeBio).prev();
+                updateModal.update();
+            }
+        });
+        $('#nextBio').on('click', function() {
+            if ($(updateModal.activeBio).next().length >= 1) {
+                updateModal.activeBio = $(updateModal.activeBio).next();
+                updateModal.update();
+            }
+        });
+      });
+    }
+
+    // Dropdown for article sorting on mobile
+    $('body.research .small-tab-nav ul li a').on('click', function(e) {
+        // console.log('Small tab nav selection');
+        $(this).tab('show');
+        // Store target.
+        $target = $(e.target);
+        // Clear all active and highlight classes.
+        $('body.research .small-tab-nav ul li a').removeClass('active highlight');
+        // Add proper classes to selected target.
+        $target.addClass('active highlight');
+    });
+
+    // Display article abstract and versions for entry on research page.
+    $('a.show-versions').on('click', function(e) {
+        // console.log('a.show-versions');
+        toggleAbstract(e);
+    });
+
+    $('body.research a[data-toggle="tab"]').on('click touchstart', function (e) {
+        // console.log('hide tab event');
+        if ($('.research-paper.abstract-visible').length >= 1) {
+            $('.research-paper.abstract-visible').removeClass('abstract-visible');
+        }
+    });
+
+    $('#toggleDrawer').on('click', function() {
+        // console.log('#toggleDrawer selected');
+        $('#drawer').addClass('show');
+    });
+
+    $('#closeDrawer').on('click', function() {
+        console.log('#closeDrawer selected');
+        $('#drawer').removeClass('show');
+    });
+
+    // Add Subnav active selection highlighting
+    $(".subnav a").click(function () {
+        $(".subnav a").removeClass("highlight");
+        $(this).addClass("highlight");
+    });
+
+    setElPositions();
+      $(window).resize(function() {
+      setElPositions();
+    })
+    setElPositions();
+
+    var userScrolled = false;
+    var svgScrollEvt = $(window).scroll(function() {
+      userScrolled = true;
+    });
+    var svgScrollInt = setInterval(function() {
+      if (avgGraphicAnimated && growthGraphicAnimated && trendGraphicAnimated) {
+        // Remove listener and interval
+        // console.log('removing listener and interval');
+        $(window).off("scroll", svgScrollEvt);
+        clearInterval(svgScrollInt);
+      } else {
+        if (userScrolled) {
+            checkHomepageAnimations();
+            userScrolled = false;
+        }
+      }
+    }, 50);
+  });
 })(jQuery);

@@ -352,7 +352,6 @@
     });
 
     // Add Subnav active selection highlighting
-
     $(".subnav a").click(function () {
         $(".subnav a").removeClass("highlight");
         $(this).addClass("highlight");
@@ -365,15 +364,21 @@
     setElPositions();
 
     var userScrolled = false;
-    $(window).scroll(function() {
-    userScrolled = true;
+    var svgScrollEvt = $(window).scroll(function() {
+      userScrolled = true;
     });
-    setInterval(function() {
-    if (userScrolled) {
-        // checkScrollPosition();
-        checkHomepageAnimations();
-        userScrolled = false;
-    }
+    var svgScrollInt = setInterval(function() {
+      if (avgGraphicAnimated && growthGraphicAnimated && trendGraphicAnimated) {
+        // Remove listener and interval
+        // console.log('removing listener and interval');
+        $(window).off("scroll", svgScrollEvt);
+        clearInterval(svgScrollInt);
+      } else {
+        if (userScrolled) {
+            checkHomepageAnimations();
+            userScrolled = false;
+        }
+      }
     }, 50);
   });
 })(jQuery);

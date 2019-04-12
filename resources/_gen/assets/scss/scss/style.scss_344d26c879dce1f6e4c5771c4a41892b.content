@@ -17073,6 +17073,10 @@ body.about .row.people-current, body.about .row.people-former {
   text-align: center;
 }
 
+body.about .row.people-current .column-people, body.about .row.people-former .column-people {
+  cursor: pointer;
+}
+
 body.about .row.people-current img, body.about .row.people-former img {
   border-radius: 62px;
 }

@@ -1539,6 +1539,9 @@ body.about {
   .row {
     &.people-current,
     &.people-former {
+      .column-people {
+        cursor: pointer;
+      }
       text-align: center;
       img {
         border-radius: 62px;

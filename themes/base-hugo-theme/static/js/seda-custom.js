@@ -29,141 +29,164 @@
         $target.parents('.research-paper').toggleClass('abstract-visible');
     }
 
-    var dkbluepath = anime.path('#dkblueline');
-    var medbluepath = anime.path('#medblueline');
-    var greenpath = anime.path('#greenline');
-    var schoolstart = 1200;
+    // Variables for anime
+    var dkbluepath = null;
+    var medbluepath = null;
+    var greenpath = null;
+    var schoolstart = null;
+    var initTrend = null;
+    var trendStep = null;
+    var trendStep1 = null;
+    var trendStep2 = null;
+    var trendStep3 = null;
+    var trendStep4 = null;
+    var trendStep5 = null;
+    var trendStep6 = null;
+    var trendStep7 = null;
+    var trendStep8 = null;
+    var trendStep9 = null;
+    var trendStep10 = null;
+    var trendStep11 = null;
 
-    var initTrend = anime({
-        targets: ['#trendgraphic svg'],
-        opacity: 1,
-        duration: 250,
-        autoplay: false,
-        easing: 'easeInOutQuad',
-        direction: 'linear',
-    });
-    var trendStep = anime({
-    // Opacity of schools    
-        targets: ['#grnschool', '#medblueschool', '#dkblueschool'],
-        opacity: 1,
-        duration: 250,
-        delay: schoolstart,
-        easing: 'easeInOutQuad',
-        direction: 'linear',
-        autoplay: false,
-    });
+    /**
+     * Sets up all the animation targets and chars
+     */
+    function setupAnime() {
+      dkbluepath = anime.path('#dkblueline');
+      medbluepath = anime.path('#medblueline');
+      greenpath = anime.path('#greenline');
+      schoolstart = 1200;
 
-    var trendStep1 = anime({
-    //Dark Blue School Animation
-    targets: ['#dkblueschool .schoolshape'],
-    translateX: dkbluepath('x'),
-      translateY: dkbluepath('y'),
-      direction: 'linear',
-      easing: 'easeInOutQuad',
-      duration: 1500,
-      delay: schoolstart,
-      autoplay: false,
-    });
-    var trendStep2 = anime({
-    //Medium Blue School Animation
-    targets: ['#medblueschool .mbschoolshape'],
-    translateX: medbluepath('x'),
-        translateY: medbluepath('y'),
+      initTrend = anime({
+          targets: ['#trendgraphic svg'],
+          opacity: 1,
+          duration: 250,
+          autoplay: false,
+          easing: 'easeInOutQuad',
+          direction: 'linear',
+      });
+      trendStep = anime({
+        // Opacity of schools    
+          targets: ['#grnschool', '#medblueschool', '#dkblueschool'],
+          opacity: 1,
+          duration: 250,
+          delay: schoolstart,
+          easing: 'easeInOutQuad',
+          direction: 'linear',
+          autoplay: false,
+      });
+      trendStep1 = anime({
+        //Dark Blue School Animation
+        targets: ['#dkblueschool .schoolshape'],
+        translateX: dkbluepath('x'),
+        translateY: dkbluepath('y'),
         direction: 'linear',
         easing: 'easeInOutQuad',
         duration: 1500,
         delay: schoolstart,
         autoplay: false,
-    });
-    var trendStep3 = anime({
-    //Green School Animation
-    targets: ['#grnschool .grnschoolshape'],
-    translateX: greenpath('x'),
-        translateY: greenpath('y'),
-        direction: 'linear',
-        easing: 'easeInOutQuad',
-        duration: 1500,
-        delay: schoolstart,
-        autoplay: false,
-    });
-    //Y Axis Line
-    var trendStep4 = anime({
-        targets: ['#y-axis-trend #y-axisline'],
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutQuad',
-        duration: 1000,
-        direction: 'linear',
-        autoplay: false,
-    });
-    //Y Axis Cap
-    var trendStep5 = anime({
-        targets: ['#y-axis-cap path'],
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutQuad',
-        duration: 250,
-        delay: 1000,
-        direction: 'linear',
-        autoplay: false,
-    });
-    //X Axis Line
-    var trendStep6 = anime({
-        targets: ['#x-axis-trend-2 #x-axis-line'],
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutQuad',
-        duration: 1000,
-        direction: 'linear',
-        autoplay: false,
-    });
-    //X Axis Cap
-    var trendStep7 = anime({
-        targets: ['#x-axis-cap path'],
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutQuad',
-        duration: 250,
-        delay: 1000,
-        direction: 'linear',
-        autoplay: false,
-    });
-    //Trend Lines
-    var trendStep8 = anime({
-        targets: ['#trendlines path'],
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutQuad',
-        duration: 1500,
-        direction: 'linear',
-        delay: schoolstart,
-        autoplay: false,
-    });
-    //Scores Text
-    var trendStep9 = anime({
-        targets: ['text#Scores'],
-        opacity: 1,
-        easing: 'linear',
-        duration: 250,
-        direction: 'linear',
-        delay: 375,
-        autoplay: false,
-    });
-    //2009 Text
-    var trendStep10 = anime({
-        targets: ['text#t2009'],
-        opacity: 1,
-        easing: 'linear',
-        duration: 250,
-        direction: 'linear',
-        delay: 250,
-        autoplay: false,
-    });
-    //2016 Text
-    var trendStep11 = anime({
-        targets: ['text#t2016'],
-        opacity: 1,
-        easing: 'linear',
-        duration: 250,
-        direction: 'linear',
-        delay: 500,
-        autoplay: false,
-    });
+      });
+      trendStep2 = anime({
+        //Medium Blue School Animation
+        targets: ['#medblueschool .mbschoolshape'],
+        translateX: medbluepath('x'),
+          translateY: medbluepath('y'),
+          direction: 'linear',
+          easing: 'easeInOutQuad',
+          duration: 1500,
+          delay: schoolstart,
+          autoplay: false,
+      });
+      trendStep3 = anime({
+      //Green School Animation
+        targets: ['#grnschool .grnschoolshape'],
+          translateX: greenpath('x'),
+          translateY: greenpath('y'),
+          direction: 'linear',
+          easing: 'easeInOutQuad',
+          duration: 1500,
+          delay: schoolstart,
+          autoplay: false,
+      });
+      //Y Axis Line
+      trendStep4 = anime({
+          targets: ['#y-axis-trend #y-axisline'],
+          strokeDashoffset: [anime.setDashoffset, 0],
+          easing: 'easeInOutQuad',
+          duration: 1000,
+          direction: 'linear',
+          autoplay: false,
+      });
+      //Y Axis Cap
+      trendStep5 = anime({
+          targets: ['#y-axis-cap path'],
+          strokeDashoffset: [anime.setDashoffset, 0],
+          easing: 'easeInOutQuad',
+          duration: 250,
+          delay: 1000,
+          direction: 'linear',
+          autoplay: false,
+      });
+      //X Axis Line
+      trendStep6 = anime({
+          targets: ['#x-axis-trend-2 #x-axis-line'],
+          strokeDashoffset: [anime.setDashoffset, 0],
+          easing: 'easeInOutQuad',
+          duration: 1000,
+          direction: 'linear',
+          autoplay: false,
+      });
+      //X Axis Cap
+      trendStep7 = anime({
+          targets: ['#x-axis-cap path'],
+          strokeDashoffset: [anime.setDashoffset, 0],
+          easing: 'easeInOutQuad',
+          duration: 250,
+          delay: 1000,
+          direction: 'linear',
+          autoplay: false,
+      });
+      //Trend Lines
+      trendStep8 = anime({
+          targets: ['#trendlines path'],
+          strokeDashoffset: [anime.setDashoffset, 0],
+          easing: 'easeInOutQuad',
+          duration: 1500,
+          direction: 'linear',
+          delay: schoolstart,
+          autoplay: false,
+      });
+      //Scores Text
+      trendStep9 = anime({
+          targets: ['text#Scores'],
+          opacity: 1,
+          easing: 'linear',
+          duration: 250,
+          direction: 'linear',
+          delay: 375,
+          autoplay: false,
+      });
+      //2009 Text
+      trendStep10 = anime({
+          targets: ['text#t2009'],
+          opacity: 1,
+          easing: 'linear',
+          duration: 250,
+          direction: 'linear',
+          delay: 250,
+          autoplay: false,
+      });
+      //2016 Text
+      trendStep11 = anime({
+          targets: ['text#t2016'],
+          opacity: 1,
+          easing: 'linear',
+          duration: 250,
+          direction: 'linear',
+          delay: 500,
+          autoplay: false,
+      });
+    }
 
     function animateTrendGraphic() {
       // console.log('animateTrendGraphic()');
@@ -292,9 +315,9 @@
     });
 
     // Handle bio modals
-    if ($('button.launch-people-bio').length >= 1) {
+    if ($('.launch-people-bio').length >= 1) {
       // console.log('exists');
-      $('button.launch-people-bio').click(function(e) {
+      $('.launch-people-bio').click(function(e) {
         e.preventDefault();
         var $button = $(e.target);
         // Store active bio so navigation between then works.
@@ -357,28 +380,32 @@
         $(this).addClass("highlight");
     });
 
-    setElPositions();
-      $(window).resize(function() {
+    if ($('body.home').length >= 1) {
+      console.log('setting up home page animations');
       setElPositions();
-    })
-    setElPositions();
+        $(window).resize(function() {
+        setElPositions();
+      })
+      setElPositions();
 
-    var userScrolled = false;
-    var svgScrollEvt = $(window).scroll(function() {
-      userScrolled = true;
-    });
-    var svgScrollInt = setInterval(function() {
-      if (avgGraphicAnimated && growthGraphicAnimated && trendGraphicAnimated) {
-        // Remove listener and interval
-        // console.log('removing listener and interval');
-        $(window).off("scroll", svgScrollEvt);
-        clearInterval(svgScrollInt);
-      } else {
-        if (userScrolled) {
+      var userScrolled = false;
+      var svgScrollEvt = $(window).scroll(function() {
+        userScrolled = true;
+      });
+      var svgScrollInt = setInterval(function() {
+        if (avgGraphicAnimated && growthGraphicAnimated && trendGraphicAnimated) {
+          // Remove listener and interval
+          // console.log('removing listener and interval');
+          $(window).off("scroll", svgScrollEvt);
+          clearInterval(svgScrollInt);
+        } else {
+          if (userScrolled) {
+            setupAnime();
             checkHomepageAnimations();
             userScrolled = false;
+          }
         }
-      }
-    }, 50);
+      }, 50);
+    }
   });
 })(jQuery);

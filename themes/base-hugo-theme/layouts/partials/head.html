@@ -75,9 +75,11 @@
   <meta name="theme-color" content="#ffffff">
   <!-- font awesome for social icons in footer -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  {{ if eq .Page.Type "posts" }}
+    <link rel="stylesheet" href="https://unpkg.com/react-seda-search/css/react-seda-search.css" crossorigin="anonymous">
+  {{ end }}
   <!-- Netlify -->
   <link rel="stylesheet" href="https://use.typekit.net/ayl0mep.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <!-- Page title -->
   {{ $title := print .Title " | " .Site.Title }}
   {{ if .IsHome }}

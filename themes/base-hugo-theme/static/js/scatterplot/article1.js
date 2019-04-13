@@ -5,6 +5,8 @@
 
 // Placeholders for segregation series operations
 let segData = [];
+let searchItemIDs = [];
+let names = [];
 
 /**
  * Slice array according from beginning according to provided size.
@@ -89,10 +91,27 @@ xhr.send(null);
 var state1 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
+  if (names.length <= 0 &&
+    scatterplot && 
+    scatterplot.data && 
+    scatterplot.data.districts &&
+    scatterplot.data.districts.name) {
+    names = scatterplot.data.districts.name;
+    // console.log(names);
+  }
+  var dataSeries = [];
+  var searchSeries = [];
+  if (scatterplot && scatterplot.data) {
+    var dataSeries = scatterplot.getDataSeries();
+    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  }
   const baseOverrides = {
     title: {
       text: 'White and Black Students\' Average Performance',
       subtext: 'U.S. School Districts 2009-2016'
+    },
+    legend: {
+      show: true,
     },
     yAxis: {
       min:-4,
@@ -108,24 +127,25 @@ var state1 = function(scatterplot) {
       max: 4,
       name: 'White Average Performance',
     },
-    series: [{
-      type:'scatter',
-      markLine: {
-        animation: false,
-        silent: true,
-        label: {
-          position: 'middle',
-          fontFamily: 'MaisonNeue-Medium',
-          fontWeight: '600',
-          fontSize: 12,
-          textBorderWidth: 3,
-          textBorderColor: '#042965',
-          textShadowColor: '#042965',
-          formatter: function(value) {
-            return value.name
-          }
-        },
-        data: [
+    series: [
+      {
+        type:'scatter',
+        markLine: {
+          animation: false,
+          silent: true,
+          label: {
+            position: 'middle',
+            fontFamily: 'MaisonNeue-Medium',
+            fontWeight: '600',
+            fontSize: 12,
+            textBorderWidth: 3,
+            textBorderColor: '#042965',
+            textShadowColor: '#042965',
+            formatter: function(value) {
+              return value.name
+            }
+          },
+          data: [
           [
             {
               name: 'white student scores = black student scores',
@@ -173,7 +193,34 @@ var state1 = function(scatterplot) {
           ]
         ]
       }
-    }]
+      },
+      {
+        type: 'scatter',
+        data: searchSeries,
+        symbolSize: dataSeries.symbolSize,
+        itemStyle: {
+          borderWidth: 1,
+          borderColor: 'red',
+          color: 'red' // 'rgba(255,0,0,0.25)'
+        },
+        label: {
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return names[item.value[3]]
+          }
+        }
+      }
+    ]
   }
   return {
     xVar: 'w_avg',
@@ -191,6 +238,9 @@ var state2 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  var searchSeries =
+    (scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs).length >= 1) ? scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs) : 
+    [];
   // console.log(top100);
   return {
     highlighted: [],
@@ -630,31 +680,28 @@ var state9 = function(scatterplot) {
     },
     legend: {
       show: true,
-      right: 20,
-      top: 20,
-      zlevel: 5000,
+      orient: 'vertical',
+      textStyle: {
+        color: '#fff',
+        fontFamily: 'MaisonNeue-Medium',
+        fontWeight: '600',
+        fontSize: 12
+      },
+      backgroundColor: '#042965',
+      borderColor: '#dc69aa',
+      borderWidth: 2,
+      borderRadius: 3,
+      padding: 6,
+      right: 55,
+      bottom: 45,
       data: [
         {
           name: 'Least Segregated',
-          // compulsorily set icon as a circle
           icon: 'circle',
-          itemStyle: {
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)',
-            borderWidth: 2,
-          },
-          textStyle: {
-              color: 'yellow'
-          }
         },
         {
           name: 'Most Segregated',
-          // compulsorily set icon as a circle
           icon: 'circle',
-          // set up the text in red
-          textStyle: {
-              color: 'blue'
-          }
         }
       ]
     },
@@ -680,21 +727,23 @@ var state9 = function(scatterplot) {
       {
         type: 'scatter',
         data: leastSegregatedSeries,
-        symbolSize: dataSeries.symbolSize, // 6,
+        name: "Least Segregated",
+        symbolSize: 12, // dataSeries.symbolSize,
         itemStyle: {
           borderWidth: 2,
           borderColor: 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.97)' // '#042965'
+          color: 'rgba(255,255,0,0.97)'
         }
       },
       {
         type: 'scatter',
         data: mostSegregatedSeries,
-        symbolSize: dataSeries.symbolSize, // 6,
+        name: "Most Segregated",
+        symbolSize: 12, // dataSeries.symbolSize,
         itemStyle: {
           borderWidth: 2,
           borderColor: 'rgba(0,0,0,1)',
-          color: '#ef7715' // '#dc69aa' // '#ffb87f' // '#b6a2de' // 'rgba(255,0,0,0.25)'
+          color: '#ef7715'
         }
       },
       {
@@ -717,8 +766,8 @@ var state9 = function(scatterplot) {
         data: [
           [
             {
-              name: 'no racial disparity',
-              coord: [0, -6],
+              name: '',
+              coord: [6, -2.95],
               symbol: 'none',
               lineStyle: {
                 color:  '#dc69aa',
@@ -732,7 +781,7 @@ var state9 = function(scatterplot) {
               label: {}
             },
             {
-              coord: [ 0, -1],
+              coord: [ -2, -3.5],
               symbol: 'none'
             },
           ]
@@ -819,7 +868,7 @@ var state10 = function(scatterplot) {
             [
               {
                 name: 'equal exposure to poverty',
-                coord: [0, -4],
+                coord: [0, -6],
                 symbol: 'none',
                 lineStyle: {
                   color:  '#dc69aa',
@@ -833,7 +882,7 @@ var state10 = function(scatterplot) {
                 label: {}
               },
               {
-                coord: [ 0, 2],
+                coord: [ 0, -0.5],
                 symbol: 'none'
               },
             ]
@@ -899,23 +948,5 @@ scatterplot.addState('state10', state10);
 scatterplot.addState('state11', state11);
 
 // load the first state
-scatterplot.loadState('state1');
+// scatterplot.loadState('state1');
 
-// when the component is ready, trigger the state change as desired
-// scatterplot.on('ready', function(scatterplot) {
-  // setTimeout(() => {
-  //   scatterplot.loadState('state2');
-  // }, 4000)
-  // setTimeout(() => {
-  //   scatterplot.loadState('state1', { notMerge: true })
-  // }, 6000)
-  // setTimeout(() => {
-  //   scatterplot.loadState('state2')
-  // }, 8000)
-  // setTimeout(() => {
-  //   scatterplot.loadState('state3', { notMerge: true })
-  // }, 10000)
-  // setTimeout(() => {
-  //   scatterplot.loadState('state1', { notMerge: true })
-  // }, 12000)
-// })

@@ -326,3 +326,4 @@ Scatterplot.prototype.getSeriesDataInRange = function(values, axis, range) {
     return v[index] > range.min && v[index] < range.max;
   })
 }
+

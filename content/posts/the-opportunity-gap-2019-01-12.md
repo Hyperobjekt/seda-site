@@ -11,9 +11,9 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 {{% state-wrapper state="state1" notmerge="true" %}}
 
+This figure shows the average performance of black and white students in each US school district in math and English language arts in grade 3. Each circle is a school district (one of ~2400 district in which there are enough white and black students to reliably estimate both white and black achievement in grade 3).
 
-<p>This figure shows the average performance of black and white students in each US school district in math and English language arts in grade 3. Each circle is a school district (one of ~2400 district in which there are enough white and black students to reliably estimate both white and black achievement in grade 3). The size of the bubble is proportionate to the number of black children enrolled in the school district. Districts which lie on or and above the diagonal line have no black/white achievement gap. The farther a district sits below the diagonal line, the greater the achievement gap in that district.</p>
-
+The size of the bubble is proportionate to the number of black children enrolled in the school district. Districts which lie on or and above the diagonal line have no black/white achievement gap. The farther a district sits below the diagonal line, the greater the achievement gap in that district.
 
 {{% /state-wrapper %}}
 
@@ -97,7 +97,7 @@ But racial differences in family resources aren’t the only thing that matter. 
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state9" %}}
+{{% state-wrapper state="state9" notmerge="true" %}}
 
 Another reason for the gap in achievement between white and black students within a district may be that on average black students attend more segregated schools with limited resources as compared to white students.
 
@@ -105,7 +105,7 @@ The most segregated districts are those with large racial socioeconomic disparit
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state10" %}}
+{{% state-wrapper state="state10" notmerge="true" %}}
 
 This figure shows a lot of variation in differences in exposure to school poverty between white and black students in a district. For example black students in District of Columbia Public School District are much more likely to attend a higher poverty school than their white peers. In contrast, black and white students in Detroit attend high poverty schools at similar rates. Disparity in exposure to school poverty is measured by racial differences in exposure to free lunch-eligible schoolmates.
 

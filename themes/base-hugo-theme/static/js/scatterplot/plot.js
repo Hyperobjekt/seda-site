@@ -10,6 +10,50 @@
         bottom: null,
         isTransitional: false,
         activeState: 'state1',
+        // searchItemIDs: [],
+        searchEl: null,
+        searchProps: { // Props passed in to init the search input(s)
+          algoliaId: 'QPJ12WSVR4',
+          algoliaKey: '6f80cf800b99d05f2396cfa10373adfc',
+          onSuggestionSelected: function(hit) {
+            // document.getElementById('result').innerHTML =
+            //   JSON.stringify(hit, null, 2);
+            // console.log(JSON.stringify(hit, null, 2));
+            // var id = hit['id'];
+            // plot.searchItemIDs[0] = hit['id'];
+            searchItemIDs[0] = hit['id'];
+            console.log(searchItemIDs);
+            scatterplot.loadState(plot.activeState);
+          },
+          indices: ['districts'],
+          inputProps: {
+            placeholder: 'Highlight a district...'
+          }
+        },
+        renderSearch: function() {
+          // $elements = $('.search-component');
+          // $elements.each(function(el) {
+          //   (plot.searchEl).push(new plot.searchInit(plot.searchProps, el));
+          // });
+          var rootEl = document.getElementById('searchComponent');
+          plot.searchEl = new plot.searchInit(plot.searchProps, rootEl);
+        },
+        searchInit: function(props, container) {
+          var _self = this;
+
+          // add reference to the component to props
+          var refProps = Object.assign(props, {
+            ref: function(ref) { _self.component = ref; }
+          });
+
+          this.render = function(props) {
+            ReactDOM.render(
+              React.createElement(SedaSearch, props, null),
+              container
+            );
+          }
+          this.render(refProps);
+        },
         update: function() {
             //  console.log('update');
             var activeWrappers = $.grep(plot.wrappers, function(el) {
@@ -32,7 +76,7 @@
             });
             // console.log(activeWrappers);
             if (activeWrappers.length == 1) {
-                console.log('One item in activeWrappers.');
+                // console.log('One item in activeWrappers.');
                 (plot.scatterplot).removeClass('transitional');
                 plot.isTransitional = false;
                 // Set state to the first one.
@@ -42,10 +86,10 @@
                     $(activeWrappers[0]).attr('data-plot-notmerge') ?
                     $(activeWrappers[0]).attr('data-plot-notmerge') :
                     false;
-                console.log(
-                    'State = ' + state +
-                    '. Active state = ' + plot.activeState +
-                    '. NotMerge = ' + String(notmerge) + '.' );
+                // console.log(
+                //     'State = ' + state +
+                //     '. Active state = ' + plot.activeState +
+                //     '. NotMerge = ' + String(notmerge) + '.' );
                 if (state !== plot.activeState) {
                     console.log('loading new state ' + state);
                     if (notmerge) {
@@ -93,5 +137,10 @@
             userScrolled = false;
           }
         }, 50);
+
+        if ($('.search-component').length >= 1) {
+          plot.renderSearch();
+        }
     });
+    scatterplot.loadState('state1');
 })(jQuery);

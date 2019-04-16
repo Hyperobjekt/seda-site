@@ -15511,13 +15511,13 @@ body {
 }
 
 .row {
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 nav.navbar > div {
@@ -15567,7 +15567,7 @@ nav a {
 
 h3 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 2.4rem;
+  font-size: 1.7rem;
 }
 
 .container.parent {
@@ -16134,6 +16134,12 @@ body.home .hero .hero-child .column h2 {
   line-height: 2.4rem;
   letter-spacing: .009rem;
   margin-top: 65%;
+  /* @include media-breakpoint-up(mm) {
+            font-size: 3.6rem;
+            line-height: 5.4rem;
+            letter-spacing: .018rem;
+            margin-top: 55%;
+          } */
 }
 
 @keyframes fade-in2 {
@@ -16145,21 +16151,12 @@ body.home .hero .hero-child .column h2 {
   }
 }
 
-@media (min-width: 320px) {
+@media (min-width: 576px) {
   body.home .hero .hero-child .column h2 {
     font-size: 2.88rem;
     line-height: 4.32rem;
     letter-spacing: .014rem;
     margin-top: 65%;
-  }
-}
-
-@media (min-width: 576px) {
-  body.home .hero .hero-child .column h2 {
-    font-size: 3.6rem;
-    line-height: 5.4rem;
-    letter-spacing: .018rem;
-    margin-top: 55%;
   }
 }
 
@@ -16196,6 +16193,7 @@ body.home .hero .hero-child .column p {
   font-size: 1.3rem;
   line-height: 2.0rem;
   margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
   animation: fade-in3 1s forwards;
   animation-delay: 3s;
   opacity: 0;
@@ -16212,8 +16210,8 @@ body.home .hero .hero-child .column p {
 
 @media (min-width: 320px) {
   body.home .hero .hero-child .column p {
-    font-size: 1.4rem;
-    line-height: 2.1rem;
+    font-size: 1.3rem;
+    line-height: 2rem;
   }
 }
 
@@ -16347,12 +16345,12 @@ body.home #main {
 .row.fact.some-things-to-know h3 {
   font-size: 1.7rem;
   line-height: 2.7rem;
-  letter-spacing: .08rem;
+  letter-spacing: .0rem;
 }
 
 @media (min-width: 320px) {
   .row.fact.some-things-to-know {
-    padding: 4.8rem 0;
+    padding: 4rem 0;
   }
 }
 
@@ -16384,18 +16382,21 @@ body.home #main {
 }
 
 .row.fact.fact-1, .row.fact.fact-2, .row.fact.fact-3 {
-  padding: 3.2rem 0 4rem;
+  padding: 4.8rem 0 4rem;
 }
 
 .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
-  font-size: 1.7rem;
-  line-height: 2.9rem;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  padding-bottom: 1.6rem;
 }
 
 .row.fact.fact-1 p, .row.fact.fact-2 p, .row.fact.fact-3 p {
+  color: #5D5D5D;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
+  padding-bottom: 4rem;
 }
 
 @media (min-width: 768px) {

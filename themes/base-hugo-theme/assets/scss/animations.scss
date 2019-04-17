@@ -769,6 +769,20 @@
 
 //  T R E N D  G R A P H I C  //
 #trendgraphic {
+    .animation-3__container {
+        width: 100%;
+        height:0;
+        /** 100*286/388 = 73.7113402061856 (100 * (height / width)) */
+        padding-top: 73.7113402061856%; 
+        position:relative;
+      }
+      
+      .animation-3__container svg {
+        position: absolute;
+        top:0;left:0;right:0;bottom:0;
+        width: 100%;
+        height: 100%;
+      }
     svg {
     //opacity: 0;
 

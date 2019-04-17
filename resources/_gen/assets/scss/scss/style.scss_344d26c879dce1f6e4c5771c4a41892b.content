@@ -15570,6 +15570,27 @@ h3 {
   font-size: 1.7rem;
 }
 
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  h3 {
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  h3 {
+    font-size: 2.1rem;
+    line-height: 3.15rem;
+  }
+}
+
 .container.parent {
   padding-right: 0;
   padding-left: 0;
@@ -15705,12 +15726,12 @@ nav.navbar-light {
 nav.navbar-light .navbar-brand {
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
-  background-image: url("/images/logo.svg");
-  width: 189px;
+  background-image: url("/images/logo-ext.svg");
+  width: 290px;
   background-size: 100%;
   background-position: 0 0;
   background-repeat: no-repeat;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 nav.navbar-light.sticky-top {
@@ -15732,8 +15753,8 @@ nav.navbar-light.sticky-top {
 
 nav.navbar-light.sticky-top .navbar-brand {
   animation: opacity-fill .3s;
-  background-image: url("/images/logo2.svg");
-  width: 189px;
+  background-image: url("/images/logo-ext2.svg");
+  width: 290px;
   background-size: 100%;
 }
 

@@ -77,7 +77,7 @@
       });
       trendStep1 = anime({
         //Dark Blue School Animation
-        targets: ['#dkblueschool .schoolshape'],
+        targets: ['#dkblueschool'],
         translateX: dkbluepath('x'),
         translateY: dkbluepath('y'),
         direction: 'linear',
@@ -88,7 +88,7 @@
       });
       trendStep2 = anime({
         //Medium Blue School Animation
-        targets: ['#medblueschool .mbschoolshape'],
+        targets: ['#medblueschool'],
         translateX: medbluepath('x'),
           translateY: medbluepath('y'),
           direction: 'linear',
@@ -99,7 +99,7 @@
       });
       trendStep3 = anime({
       //Green School Animation
-        targets: ['#grnschool .grnschoolshape'],
+        targets: ['#grnschool'],
           translateX: greenpath('x'),
           translateY: greenpath('y'),
           direction: 'linear',

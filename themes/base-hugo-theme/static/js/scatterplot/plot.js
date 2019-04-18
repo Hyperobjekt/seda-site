@@ -16,11 +16,6 @@
           algoliaId: 'QPJ12WSVR4',
           algoliaKey: '6f80cf800b99d05f2396cfa10373adfc',
           onSuggestionSelected: function(hit) {
-            // document.getElementById('result').innerHTML =
-            //   JSON.stringify(hit, null, 2);
-            // console.log(JSON.stringify(hit, null, 2));
-            // var id = hit['id'];
-            // plot.searchItemIDs[0] = hit['id'];
             searchItemIDs[0] = hit['id'];
             console.log(searchItemIDs);
             scatterplot.loadState(plot.activeState);

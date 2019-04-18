@@ -91,6 +91,7 @@ xhr.send(null);
 var state1 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
+  // Set up array of district IDs and names for building search series.
   if (names.length <= 0 &&
     scatterplot && 
     scatterplot.data && 
@@ -102,7 +103,7 @@ var state1 = function(scatterplot) {
   var dataSeries = [];
   var searchSeries = [];
   if (scatterplot && scatterplot.data) {
-    var dataSeries = scatterplot.getDataSeries();
+    dataSeries = scatterplot.getDataSeries();
     searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
   }
   const baseOverrides = {
@@ -197,15 +198,17 @@ var state1 = function(scatterplot) {
       {
         type: 'scatter',
         data: searchSeries,
-        symbolSize: dataSeries.symbolSize,
+        symbolSize: 15, // dataSeries.symbolSize,
+        zlevel: 1000,
         itemStyle: {
-          borderWidth: 1,
-          borderColor: 'red',
-          color: 'red' // 'rgba(255,0,0,0.25)'
+          borderWidth: 2,
+          borderColor: '#042965',
+          color: 'rgba(255,255,0,0.97)'
         },
         label: {
           show: true,
           position: 'right',
+          width: "25%",
           backgroundColor: 'rgba(255,255,0,0.97)',
           borderColor: '#042965',
           fontSize: 12,
@@ -238,9 +241,10 @@ var state2 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  var searchSeries =
-    (scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs).length >= 1) ? scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs) : 
-    [];
+  var searchSeries = [];
+  if (scatterplot && scatterplot.data) {
+    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  }
   // console.log(top100);
   return {
     highlighted: [],
@@ -273,6 +277,34 @@ var state2 = function(scatterplot) {
             borderColor: 'rgba(0,0,0,1)',
             color: '#b6a2de' // 'rgba(255,0,0,0.25)'
           }
+        },
+        {
+          type: 'scatter',
+          data: searchSeries,
+          symbolSize: 15, // dataSeries.symbolSize,
+          zlevel: 1000,
+          itemStyle: {
+            borderWidth: 2,
+            borderColor: '#042965',
+            color: 'rgba(255,255,0,0.97)'
+          },
+          label: {
+            show: true,
+            position: 'right',
+            width: "25%",
+            backgroundColor: 'rgba(255,255,0,0.97)',
+            borderColor: '#042965',
+            fontSize: 12,
+            fontWeight: 600,
+            fontFamily: 'MaisonNeue-Medium',
+            lineHeight: 28,
+            padding: [6, 8],
+            borderRadius: 3,
+            color: '#042965',
+            formatter: function(item) {
+              return names[item.value[3]]
+            }
+          }
         }
       ]
     })
@@ -288,6 +320,10 @@ var state3 = function(scatterplot) {
   }
   var base = scatterplot.getState('state2');
   var dataSeries = scatterplot.getDataSeries();
+  var searchSeries = [];
+  if (scatterplot && scatterplot.data) {
+    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  }
   return {
     xVar: 'w_avg',
     yVar: 'b_avg',
@@ -335,6 +371,34 @@ var state3 = function(scatterplot) {
               return highlight[item.value[3]]
             }
           }
+        },
+        {
+          type: 'scatter',
+          data: searchSeries,
+          symbolSize: 15, // dataSeries.symbolSize,
+          zlevel: 1000,
+          itemStyle: {
+            borderWidth: 2,
+            borderColor: '#042965',
+            color: 'rgba(255,255,0,0.97)'
+          },
+          label: {
+            show: true,
+            position: 'right',
+            width: "25%",
+            backgroundColor: 'rgba(255,255,0,0.97)',
+            borderColor: '#042965',
+            fontSize: 12,
+            fontWeight: 600,
+            fontFamily: 'MaisonNeue-Medium',
+            lineHeight: 28,
+            padding: [6, 8],
+            borderRadius: 3,
+            color: '#042965',
+            formatter: function(item) {
+              return names[item.value[3]]
+            }
+          }
         }
       ]
     })
@@ -347,6 +411,11 @@ var state4 = function(scatterplot) {
   const options = scatterplot.component.getOption();
   // this state is created from the base
   const base = scatterplot.getState('base');
+  var dataSeries = scatterplot.getDataSeries();
+  var searchSeries = [];
+  if (scatterplot && scatterplot.data) {
+    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  }
   const baseOverrides = {
     title: {
       text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
@@ -373,7 +442,8 @@ var state4 = function(scatterplot) {
       max: 7,
       name: 'White-Black Socioeconomic Disparity',
     },
-    series: [{
+    series: [
+      {
       type:'scatter',
       markLine: {
         animation: false,
@@ -418,7 +488,36 @@ var state4 = function(scatterplot) {
           ]
         ]
       }
-    }]
+    },
+    {
+      type: 'scatter',
+      data: searchSeries,
+      symbolSize: 15, // dataSeries.symbolSize,
+      zlevel: 1000,
+      itemStyle: {
+        borderWidth: 2,
+        borderColor: '#042965',
+        color: 'rgba(255,255,0,0.97)'
+      },
+      label: {
+        show: true,
+        position: 'right',
+        width: "25%",
+        backgroundColor: 'rgba(255,255,0,0.97)',
+        borderColor: '#042965',
+        fontSize: 12,
+        fontWeight: 600,
+        fontFamily: 'MaisonNeue-Medium',
+        lineHeight: 28,
+        padding: [6, 8],
+        borderRadius: 3,
+        color: '#042965',
+        formatter: function(item) {
+          return names[item.value[3]]
+        }
+      }
+    }
+  ]
   }
   return {
     highlighted: [],

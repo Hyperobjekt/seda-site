@@ -873,6 +873,20 @@ body.home {
 
 .row {
   &.fact {
+    .superhead {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-family: $sharpgrotesk-med-15;
+      margin-bottom: .8rem;
+      letter-spacing: 0.055rem;
+      @include media-breakpoint-up(md) {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+      }
+      img {
+        margin-right: .8rem;
+      }
+    }
     text-align: left;
     background-color: $seda-lightgray; // $seda-paleblue;
     &:nth-child(odd) {

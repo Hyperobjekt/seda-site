@@ -16353,6 +16353,25 @@ body.home #main {
   background-color: #f8f8f8;
 }
 
+.row.fact .superhead {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  margin-bottom: .8rem;
+  letter-spacing: 0.055rem;
+}
+
+@media (min-width: 768px) {
+  .row.fact .superhead {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+}
+
+.row.fact .superhead img {
+  margin-right: .8rem;
+}
+
 .row.fact:nth-child(odd) {
   background-color: transparent;
 }

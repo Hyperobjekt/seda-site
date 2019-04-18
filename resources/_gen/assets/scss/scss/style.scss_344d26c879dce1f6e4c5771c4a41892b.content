@@ -15521,7 +15521,13 @@ body {
 }
 
 nav.navbar > div {
-  padding: 0 24px;
+  padding: 0 16px;
+}
+
+@media (min-width: 576px) {
+  nav.navbar > div {
+    padding: 0 24px;
+  }
 }
 
 @media (min-width: 992px) {

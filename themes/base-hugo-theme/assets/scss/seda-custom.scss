@@ -25,6 +25,12 @@ body {
   //   margin: 0 12px;
   //
   // }
+  
+}
+nav.navbar > div {
+  padding: 0 16px;
+}
+@include media-breakpoint-up(mm) {
   nav.navbar > div {
     padding: 0 24px;
   }

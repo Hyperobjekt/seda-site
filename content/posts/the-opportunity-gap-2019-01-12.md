@@ -28,7 +28,7 @@ In nearly every district in America, white students score higher on state standa
 {{% /state-wrapper %}}
 
 
-{{% state-wrapper state="state3" notmerge="false" %}}
+{{% state-wrapper state="state3" notmerge="true" %}}
 
 If we compare Detroit, MI, Gwinnet County, GA, Washington D.C, we notice that the average black student in Gwinnet County, GA scores approximately at grade level, while the average white students scores almost 2 years above grade level. In contrast, in Detroit both black and white students score approximately 2 grade levels below the average district. In DC, black student scores are lower than whites but the disparity is not as marked as in Gwinnet County.
 

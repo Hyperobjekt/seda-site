@@ -1,0 +1,10 @@
+name: "Kenneth Shores"
+role: "collaborator" # director, staff, or partner
+title: "Assistant Professor, Pennsylvania State University" # maybe different from role; is displayed
+image: "/uploads/kshores-full.jpg" # will be cropped to center square & rounded
+thumb: "/uploads/kshores-sm.jpg"
+current: true # true or false (for former)
+weight: 50
+blurb: >
+  I am an Assistant Professor at Pennsylvania State University studying education inequality and policy tools for its remediation. Relying on quantitative methodologies, this research includes both description and prevention/intervention. On the descriptive side, I am primarily interested in using large datasets to document racial/ethnic and socioeconomic disparities in student learning and educational policy (e.g., school disciplinary policy). I have additional work using conjoint survey designs to describe individual understanding of and preferences for social inequality. On the prevention/intervention side, I use quasi-experimental methods to identify the effects of environmental contexts on student outcomes as well as policies that are effective at remediating outcome inequality. 
+

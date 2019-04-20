@@ -25,6 +25,12 @@ body {
   //   margin: 0 12px;
   //
   // }
+  
+}
+nav.navbar > div {
+  padding: 0 16px;
+}
+@include media-breakpoint-up(mm) {
   nav.navbar > div {
     padding: 0 24px;
   }
@@ -873,6 +879,20 @@ body.home {
 
 .row {
   &.fact {
+    .superhead {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-family: $sharpgrotesk-med-15;
+      margin-bottom: .8rem;
+      letter-spacing: 0.055rem;
+      @include media-breakpoint-up(md) {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+      }
+      img {
+        margin-right: .8rem;
+      }
+    }
     text-align: left;
     background-color: $seda-lightgray; // $seda-paleblue;
     &:nth-child(odd) {
@@ -1527,7 +1547,7 @@ body.about {
     &.who-we-are-former {
       text-align: center;
       margin-top: 4.8rem;
-      margin-bottom: 4.8rem;
+      margin-bottom: 0;
       h3 {
         color: $seda-dark;
         font-family: $sharpgrotesk-med-15;
@@ -1736,7 +1756,7 @@ body.about {
         margin: 0 auto;
       }
       .modal-body {
-        padding: 3.2rem;
+        padding: 1.6rem 3.2rem 3.2rem;
       }
       .modal-pic {
         padding-left: 0;
@@ -1785,6 +1805,9 @@ body.about {
         font-size: 3.2rem;
         font-weight: 100;
         pointer-events: none;
+        position: relative;
+        top: 2px;
+        left: .5px;
       }
     }
     .modal-image {
@@ -1847,7 +1870,7 @@ body.about {
             line-height: 2.7rem;
           }
           #modalTitle {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             line-height: 2.1rem;
           }
         }

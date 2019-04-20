@@ -15521,7 +15521,13 @@ body {
 }
 
 nav.navbar > div {
-  padding: 0 24px;
+  padding: 0 16px;
+}
+
+@media (min-width: 576px) {
+  nav.navbar > div {
+    padding: 0 24px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -16353,6 +16359,25 @@ body.home #main {
   background-color: #f8f8f8;
 }
 
+.row.fact .superhead {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  margin-bottom: .8rem;
+  letter-spacing: 0.055rem;
+}
+
+@media (min-width: 768px) {
+  .row.fact .superhead {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+}
+
+.row.fact .superhead img {
+  margin-right: .8rem;
+}
+
 .row.fact:nth-child(odd) {
   background-color: transparent;
 }
@@ -17063,7 +17088,7 @@ body.about .row.mission .column-text p {
 body.about .row.who-we-are, body.about .row.who-we-are-former {
   text-align: center;
   margin-top: 4.8rem;
-  margin-bottom: 4.8rem;
+  margin-bottom: 0;
 }
 
 body.about .row.who-we-are h3, body.about .row.who-we-are-former h3 {
@@ -17303,7 +17328,7 @@ body.about .modal {
     margin: 0 auto;
   }
   body.about .modal .modal-body {
-    padding: 3.2rem;
+    padding: 1.6rem 3.2rem 3.2rem;
   }
   body.about .modal .modal-pic {
     padding-left: 0;
@@ -17349,6 +17374,9 @@ body.about .modal button.close span {
   font-size: 3.2rem;
   font-weight: 100;
   pointer-events: none;
+  position: relative;
+  top: 2px;
+  left: .5px;
 }
 
 body.about .modal .modal-image {
@@ -17410,7 +17438,7 @@ body.about .modal .modal-bio #modalBio {
     line-height: 2.7rem;
   }
   body.about .modal .modal-bio .modal-meta #modalTitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 2.1rem;
   }
   body.about .modal .modal-bio #modalBio {
@@ -19983,6 +20011,32 @@ body.type-explorations .hero .hero-child .column p {
             transform: translate(37.273438px, 25.008148px);
             }
         }   */
+}
+
+.who-we-are h4 {
+  margin-bottom: 4rem;
+}
+
+.bigimage {
+  display: none;
+}
+
+.modal-pic img {
+  max-width: 100%;
+}
+
+body.about .column-people:hover .pic {
+  filter: brightness(103%);
+  transition: filter .3s ease;
+}
+
+body.about .column-people:hover .pic button {
+  transition: background-color .3s ease;
+  background-color: #ff003e !important;
+}
+
+body.about .row.people-former .flex-row, body.about .row.people-current .flex-row {
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

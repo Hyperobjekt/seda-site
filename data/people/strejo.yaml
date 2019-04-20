@@ -1,0 +1,9 @@
+name: "Sam Trejo"
+role: "student" # director, staff, or partner
+title: "" # maybe different from role; is displayed
+image: "/uploads/strejo-full.jpg" # will be cropped to center square & rounded
+thumb: "/uploads/strejo-sm.jpg"
+current: true # true or false (for former)
+weight: 130
+blurb: >
+  Sam Trejo is a doctoral candidate in Economics and Education at Stanford University and an NSF and IES Graduate Research Fellow. He is also pursuing two masters degrees at Stanford, in Economics and in Sociology. Before coming to Stanford, Sam received his bachelor’s degree from The University of Texas with a double-major in Economics and Plan II Honors. Sam specializes in applied econometrics and causal inference; his research interests include Public Economics, Health Economics, Social Science Genomics, and Poverty & Inequality. His work also explores how integrating social science and biological methods can inform social policy. Apart from quantitative social science research, Sam enjoys camping, bikes, board games, and Chinese food.

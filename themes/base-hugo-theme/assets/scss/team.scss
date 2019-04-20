@@ -1,0 +1,31 @@
+.who-we-are {
+    h4 {
+        margin-bottom: 4rem;
+    }
+    
+}
+.bigimage {
+    display: none;
+}
+.modal-pic {
+    img {
+        max-width: 100%;
+    }
+}
+body.about { 
+    .column-people:hover {
+        .pic {
+            filter: brightness(103%);
+            transition: filter .3s ease;
+        }
+        .pic button {
+            transition: background-color .3s ease;
+            background-color: $seda-red !important;
+        }
+    }    
+    .row.people-former, .row.people-current {
+        .flex-row {
+            justify-content: center;
+        }
+    }
+}

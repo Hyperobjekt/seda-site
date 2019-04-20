@@ -14,7 +14,7 @@
         searchEl: null,
         searchProps: { // Props passed in to init the search input(s)
           algoliaId: 'QPJ12WSVR4',
-          algoliaKey: '6f80cf800b99d05f2396cfa10373adfc',
+          algoliaKey: 'bae9e4604dbd263cc47c48bfb30dd5dc',
           onSuggestionSelected: function(hit) {
             searchItemIDs[0] = hit['id'];
             console.log(searchItemIDs);

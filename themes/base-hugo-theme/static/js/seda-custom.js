@@ -265,9 +265,11 @@
             var bio = $button.parent().siblings('.bio').html();
             /// console.log('bio = ' + bio);
             var image = $button.closest('.column-people').children('.pic').attr('style');
+            var bigimage = $button.parent().siblings('.bigimage').html();
 
             // Set contents
             $('#modalImg').attr('style', image);
+            $('img#bigimage').attr('src', bigimage);
             $('#modalName').text(name);
             $('#modalTitle').html(title);
             $('#modalBio').html(bio);

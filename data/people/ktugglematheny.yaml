@@ -1,0 +1,9 @@
+name: "Kaylee Tuggle Matheny"
+role: "student" # director, staff, or partner
+title: "" # maybe different from role; is displayed
+image: "/uploads/ktugglematheny-full.jpg" # will be cropped to center square & rounded
+thumb: "/uploads/ktugglematheny-sm.jpg"
+current: true # true or false (for former)
+weight: 140
+blurb: >
+  Kaylee Tuggle Matheny is a doctoral student in Education Policy and Sociology of Education and is a recipient of the Institute of Education Sciences (IES) predoctoral training fellowship. Prior to coming to Stanford, Kaylee earned a BA in sociology and creative writing from Emory University. She went on to teach World Literature at a Georgia public high school. She is interested in utilizing mixed methods to understand how socioeconomic status mediates educational opportunity and how education impacts social mobility.

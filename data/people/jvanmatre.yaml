@@ -1,0 +1,9 @@
+name: "Joseph Van Matre"
+role: "former" # director, staff, or partner
+title: "Institutional Research and Academic Planning" # maybe different from role; is displayed
+image: "/uploads/jvanmatre-full.jpg" # will be cropped to center square & rounded
+thumb: "/uploads/jvanmatre-sm.jpg"
+current: true # true or false (for former)
+weight: 170
+blurb: >
+  Joseph Van Matre is an educational researcher who worked for SEDA from 2016-2017 as a research data analyst on data included in SEDA versions 1.1 and 2.0. His work centers on understanding and improving educational achievement, especially among students from economic, racial, and gender/sexual minority groups that have been historically underserved. He holds a BA and a BS from the University of Arkansas and an MA in Economics from Vanderbilt University.

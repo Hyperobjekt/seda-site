@@ -20025,6 +20025,11 @@ body.type-explorations .hero .hero-child .column p {
   max-width: 100%;
 }
 
+body.about .column-people:hover .pic {
+  filter: brightness(103%);
+  transition: filter .3s ease;
+}
+
 body.about .column-people:hover .pic button {
   transition: background-color .3s ease;
   background-color: #ff003e !important;

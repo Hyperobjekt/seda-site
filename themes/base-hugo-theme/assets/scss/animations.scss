@@ -1,3 +1,24 @@
+// H E R O  M A P  G R A P H I C
+
+svg g#map-plot {
+    g#circles  {
+       // animation: scale-dots 1s ease forwards;
+      // opacity: 0;
+       //transform: scale(0);
+        @keyframes scale-dots {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+               
+        }
+    }
+}
+
 // A V E R A G E  S C O R E S  G R A P H I C
 
 #avg-graphic {

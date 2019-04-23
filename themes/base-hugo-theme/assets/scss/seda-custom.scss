@@ -607,9 +607,9 @@ body.home {
       width: 100%;
       height: 100%;
       // z-index: 1;
-      opacity: 0;
-      animation: fade-in 2s forwards;
-      animation-delay: .9s;
+     // opacity: 0;
+      //animation: fade-in 2s forwards;
+     // animation-delay: .9s;
       @keyframes fade-in {
         0% {
           opacity: 0;
@@ -620,7 +620,7 @@ body.home {
       }
       //opacity: 0.7;
       //background-image: url('http://placekitten.com/1500/1000');
-      background: url('/images/map-counties-3-996.png');
+      //background: url('/images/mapplot.svg');
       background-repeat: no-repeat;
       background-position: center 9.7rem;
       background-size: 290px 195px;
@@ -645,9 +645,9 @@ body.home {
       @include media-breakpoint-up(lg) {
         // background-size: 686px 461px;
         background-size: 928px /* 624px */;
-        background-size: 996px auto;
+        background-size: 880px auto;
         // background-position: center 7.7rem;
-        background-position: center 11.2rem;
+        background-position: center 9.2rem;
       }
 
       @include media-breakpoint-up(xl) {
@@ -657,9 +657,9 @@ body.home {
   }
     .hero-child {
       height: 100vh;
-      opacity: 0;
-      animation: fade-in5 2s forwards;
-      animation-delay: .9s;
+      //opacity: 0;
+      //animation: fade-in5 2s forwards;
+      //animation-delay: .9s;
       @keyframes fade-in5 {
         0% {
           opacity: 0;
@@ -671,7 +671,8 @@ body.home {
       // background: url('/images/usa_counties_large_white_outline.png');
 
       #hero-overlay {
-        background-color: #00113a75;
+       // background-color: #00113a75;
+       display: none;
         z-index: 1;
         margin-left: -16px;
         margin-right: -16px;

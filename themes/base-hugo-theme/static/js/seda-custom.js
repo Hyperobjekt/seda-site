@@ -29,6 +29,45 @@
         $target.parents('.research-paper').toggleClass('abstract-visible');
     }
 
+    anime({
+      targets: ['.plotpoints'],
+      opacity: [.05, .15],
+      easing: 'easeOutCubic',
+      delay: anime.stagger(30, {start: 400}) // increase delay by 100ms for each elements.
+    });
+    anime({
+      targets: ['#mainland'],
+      opacity: [0.2, 0.6],
+      easing: 'easeInSine',
+      duration: 1400,
+      delay: 1800, // increase delay by 100ms for each elements.
+      
+    });
+    anime({
+      targets: ['#mainland'],
+      easing: 'easeInSine',
+      duration: 1000,
+      delay: 1800, // increase delay by 100ms for each elements.
+      translateX: [10, 0],
+    });
+    anime({
+      targets: ['g#hp-x-line path', 'g#Grades path#axis-line-2'],
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      duration: 2000,
+     
+    });
+    anime({
+      targets: 'g#Grades text',
+      translateY: [448, 0],
+      easing: 'easeInOutSine',
+      duration: 2000,
+     
+    });
+    
+
+
+
     // Variables for anime
     var dkbluepath = null;
     var medbluepath = null;

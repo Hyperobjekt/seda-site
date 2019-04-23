@@ -16074,10 +16074,6 @@ body.home .hero .hero-child:before {
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  animation: fade-in 2s forwards;
-  animation-delay: .9s;
-  background: url("/images/map-counties-3-996.png");
   background-repeat: no-repeat;
   background-position: center 9.7rem;
   background-size: 290px 195px;
@@ -16116,8 +16112,8 @@ body.home .hero .hero-child:before {
 @media (min-width: 992px) {
   body.home .hero .hero-child:before {
     background-size: 928px;
-    background-size: 996px auto;
-    background-position: center 11.2rem;
+    background-size: 880px auto;
+    background-position: center 9.2rem;
   }
 }
 
@@ -16130,9 +16126,6 @@ body.home .hero .hero-child:before {
 
 body.home .hero .hero-child {
   height: 100vh;
-  opacity: 0;
-  animation: fade-in5 2s forwards;
-  animation-delay: .9s;
 }
 
 @keyframes fade-in5 {
@@ -16145,7 +16138,7 @@ body.home .hero .hero-child {
 }
 
 body.home .hero .hero-child #hero-overlay {
-  background-color: #00113a75;
+  display: none;
   z-index: 1;
   margin-left: -16px;
   margin-right: -16px;
@@ -19146,6 +19139,17 @@ body.type-explorations .hero .hero-child .column p {
     font-size: 2.3rem;
     line-height: 3.45rem;
     letter-spacing: auto;
+  }
+}
+
+@keyframes scale-dots {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

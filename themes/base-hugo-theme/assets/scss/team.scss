@@ -13,10 +13,17 @@
     }
 }
 body.about { 
+    .column-people {
+         .pic {
+            background-size: contain; 
+            background-blend-mode: color;
+        } 
+    }
     .column-people:hover {
         .pic {
-            filter: brightness(103%);
-            transition: filter .3s ease;
+            //filter: none;
+            background-blend-mode: color-burn;
+            transition: background-blend-mode .3s ease;
         }
         .pic button {
             transition: background-color .3s ease;

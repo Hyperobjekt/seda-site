@@ -1,6 +1,6 @@
 name: "Sean Reardon"
-role: "director" # director, staff, or partner
-title: "Professor of Poverty and Inequality in Education, Stanford University" # maybe different from role; is displayed
+role: "collaborator" # director, staff, or partner
+title: "Project Director & Professor of Poverty and Inequality in Education, Stanford University" # maybe different from role; is displayed
 image: "/uploads/sreardon-full.jpg" # will be cropped to center square & rounded
 thumb: "/uploads/sreardon-sm.jpg"
 weight: 1

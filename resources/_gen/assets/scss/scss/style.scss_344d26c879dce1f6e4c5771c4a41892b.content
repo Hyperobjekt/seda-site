@@ -20025,9 +20025,14 @@ body.type-explorations .hero .hero-child .column p {
   max-width: 100%;
 }
 
+body.about .column-people .pic {
+  background-size: contain;
+  background-blend-mode: color;
+}
+
 body.about .column-people:hover .pic {
-  filter: brightness(103%);
-  transition: filter .3s ease;
+  background-blend-mode: color-burn;
+  transition: background-blend-mode .3s ease;
 }
 
 body.about .column-people:hover .pic button {

@@ -248,6 +248,9 @@ nav.navbar-light {
   padding-left: 0;
   z-index: 3;
   // opacity: 0;
+  @include media-breakpoint-down(sm) {
+    height: 5.6rem;
+  }
 
   .navbar-brand {
     padding-top: 1.6rem;
@@ -259,6 +262,9 @@ nav.navbar-light {
     background-position: 0 0;
     background-repeat: no-repeat;
     margin-top: 4px;
+    @include media-breakpoint-down(sm) {
+      width: 230px;
+    }
   }
 
   &.sticky-top {
@@ -293,6 +299,9 @@ nav.navbar-light {
     //height: 33px;
     width: 290px;
     background-size: 100%;
+      @include media-breakpoint-down(sm) {
+        width: 230px;
+      }
     }
     .drawer-toggle {
       .navbar-toggler-icon {
@@ -326,6 +335,9 @@ nav.navbar-light {
       background-repeat: no-repeat;
       height: 38px;
       width: 33px;
+      @include media-breakpoint-down(sm) {
+        height: 24px;
+      }
     }
   }
 

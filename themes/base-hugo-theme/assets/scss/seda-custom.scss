@@ -1554,7 +1554,7 @@ body.about {
         font-size: 1.2rem;
         letter-spacing: .055rem;
         text-transform: uppercase;
-        margin-bottom: 1.6rem;
+        margin-bottom: 3.6rem;
         @include media-breakpoint-up(md) {
           font-size: 1.4rem;
           line-height: 1.7rem;
@@ -1656,6 +1656,7 @@ body.about {
 
     &.people-former {
       margin-bottom: 6.4rem;
+      margin-bottom: 1.6rem; 
     }
   }
 

@@ -17097,7 +17097,7 @@ body.about .row.who-we-are h3, body.about .row.who-we-are-former h3 {
   font-size: 1.2rem;
   letter-spacing: .055rem;
   text-transform: uppercase;
-  margin-bottom: 1.6rem;
+  margin-bottom: 3.6rem;
 }
 
 @media (min-width: 768px) {
@@ -17215,6 +17215,7 @@ body.about .row.people-current .bio, body.about .row.people-former .bio {
 
 body.about .row.people-former {
   margin-bottom: 6.4rem;
+  margin-bottom: 1.6rem;
 }
 
 body.about .row.quote {
@@ -20042,6 +20043,15 @@ body.about .column-people:hover .pic button {
 
 body.about .row.people-former .flex-row, body.about .row.people-current .flex-row {
   justify-content: center;
+}
+
+body.about .who-we-are-former.leadership h4 {
+  margin-top: 3.2rem;
+  margin-bottom: 2.4rem;
+}
+
+body.about .row.quote.m-0 {
+  margin-top: 5.6rem !important;
 }
 
 /*# sourceMappingURL=style.css.map */

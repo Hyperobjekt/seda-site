@@ -1296,6 +1296,7 @@ body.about {
       // background-position: -400px 10%;
     }
     @include media-breakpoint-up(xl) {
+      height: 592px;
       // background-size: 2200px 478px;
       // background-position: -400px 10%;
     }
@@ -1304,17 +1305,22 @@ body.about {
       height: 100%;
       margin-right: 0;
       margin-left: 0;
-      background: url('/images/about-plot-2x.png');
+      background: url('/images/heroes/about-lines-graph.svg');
       background-repeat: no-repeat;
       background-position: left bottom;
       background-size: 1030px 378px;
+      background-size: 100%;
       @include media-breakpoint-up(mm) {
-        background-size: 1600px 378px;
-        background-position: -100px bottom;
+        background-size: cover;
+        //background-position: -100px bottom;
+        background-size: 100%;
+        background-position: center bottom;
       }
       @include media-breakpoint-up(xl) {
         background-size: 2000px 378px;
         background-position: -200px bottom;
+        background-size: 100%;
+        background-position: center bottom;
       }
       .column {
         margin-top: 13.2rem;
@@ -1326,6 +1332,9 @@ body.about {
         }
         @include media-breakpoint-up(lg) {
           margin-top: 16rem;
+        }
+        @include media-breakpoint-up(xl) {
+          margin-top: 22rem;
         }
         h2 {
           font-family: $sharpgrotesk-med-20;
@@ -1735,13 +1744,14 @@ body.about {
     &.funder-logos {
       margin-top: 4.8rem;
       margin-bottom: 4.8rem;
+      align-items: flex-end;
     }
   }
 
   .row {
     &.history {
       padding-top: 3.2rem;
-      padding-bottom: 4.8rem;
+      padding-bottom: 8rem;
     }
   }
 

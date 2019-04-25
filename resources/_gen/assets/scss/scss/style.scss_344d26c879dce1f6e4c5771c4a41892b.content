@@ -16760,21 +16760,29 @@ body.about .hero {
   }
 }
 
+@media (min-width: 1400px) {
+  body.about .hero {
+    height: 592px;
+  }
+}
+
 body.about .hero .hero-child {
   width: 100%;
   height: 100%;
   margin-right: 0;
   margin-left: 0;
-  background: url("/images/about-plot-2x.png");
+  background: url("/images/heroes/about-lines-graph.svg");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 1030px 378px;
+  background-size: 100%;
 }
 
 @media (min-width: 576px) {
   body.about .hero .hero-child {
-    background-size: 1600px 378px;
-    background-position: -100px bottom;
+    background-size: cover;
+    background-size: 100%;
+    background-position: center bottom;
   }
 }
 
@@ -16782,6 +16790,8 @@ body.about .hero .hero-child {
   body.about .hero .hero-child {
     background-size: 2000px 378px;
     background-position: -200px bottom;
+    background-size: 100%;
+    background-position: center bottom;
   }
 }
 
@@ -16801,6 +16811,12 @@ body.about .hero .hero-child .column {
 @media (min-width: 992px) {
   body.about .hero .hero-child .column {
     margin-top: 16rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  body.about .hero .hero-child .column {
+    margin-top: 22rem;
   }
 }
 
@@ -17309,11 +17325,12 @@ body.about .row.funders p {
 body.about .row.funder-logos {
   margin-top: 4.8rem;
   margin-bottom: 4.8rem;
+  align-items: flex-end;
 }
 
 body.about .row.history {
   padding-top: 3.2rem;
-  padding-bottom: 4.8rem;
+  padding-bottom: 8rem;
 }
 
 body.about .modal {
@@ -20052,6 +20069,11 @@ body.about .who-we-are-former.leadership h4 {
 
 body.about .row.quote.m-0 {
   margin-top: 5.6rem !important;
+}
+
+body.about .row.funder-logos .p-2.rsf {
+  top: 5px;
+  position: relative;
 }
 
 /*# sourceMappingURL=style.css.map */

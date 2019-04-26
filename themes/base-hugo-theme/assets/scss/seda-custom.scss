@@ -1994,6 +1994,7 @@ body.research {
       // background-position: -400px 10%;
     }
     @include media-breakpoint-up(xl) {
+      height: 592px;
       // background-size: 2200px 478px;
       // background-position: -400px 10%;
     }
@@ -2003,17 +2004,17 @@ body.research {
       height: 100%;
       margin-right: 0;
       margin-left: 0;
-      background: url('/images/about-plot-2x.png');
+      background: url('/images/heroes/research-graph.svg');
       background-repeat: no-repeat;
-      background-position: left bottom;
-      background-size: 1030px 378px;
+      background-size: 84%;
+      background-position: center 64%;
       @include media-breakpoint-up(mm) {
-        background-size: 1600px 378px;
-        background-position: -100px bottom;
+        background-size: 60%;
+        background-position: center 50%;
       }
       @include media-breakpoint-up(xl) {
-        background-size: 2000px 378px;
-        background-position: -200px bottom;
+        background-size: 60%;
+        background-position: center 50%;
       }
       .column {
         margin-top: 13.2rem;
@@ -2065,39 +2066,56 @@ body.research {
 
 
   .subnav ul.nav-tabs {
-    border-bottom: 0;
+    //border-bottom: 0;
   }
   .large-tab-nav {
     display: none;
   }
   .large-tab-nav {
+    
     a {
       border: none; // 1px solid transparent;
       border-bottom: 4px solid transparent;
       padding-bottom: 5px;
       margin-top: 0px;
-      &:hover {
-        color: $seda-dark;
-        border: none; // 1px solid transparent;
-        border-bottom: 4px solid $seda-navy;
-        padding-bottom: 5px;
-        margin-top: 0px;
+      @include media-breakpoint-up(md) {
+        &:hover {
+          color: $seda-dark;
+          border: none; // 1px solid transparent;
+          border-bottom: 4px solid $seda-navy;
+          padding-bottom: 20px;
+          margin-top: 16px;
+        }
+        &.active {
+          color: $seda-dark;
+          border: none;
+          border-bottom: 4px solid #04143c;
+          padding-bottom: 20px;
+          margin-top: 16px;
+        }
       }
-      &:active {
-        color: $seda-dark;
-        border: none; // 1px solid transparent;
-        border-bottom: 4px solid $seda-navy;
-        padding-bottom: 5px;
-        margin-top: 0px;
-      }
-      &.active {
-        color: $seda-dark;
-        border: none;
-        border-bottom: 4px solid $seda-navy;
-        padding-bottom: 5px;
-        margin-top: 0px;
-      }
+      @include media-breakpoint-up(lg) {
+        &:hover {
+          color: $seda-dark;
+          border: none; // 1px solid transparent;
+          border-bottom: 4px solid $seda-navy;
+          padding-bottom: 8px;
+          margin-top: 4px;
+        }
+        &.active {
+          color: $seda-dark;
+          border: none;
+          border-bottom: 4px solid $seda-navy;
+          padding-bottom: 8px;
+          margin-top: 4px;
+        }
+      }  
     }
+    
+  }
+  .nav-link {
+    display: block;
+    padding: 0.5rem 0rem;
   }
   .small-tab-nav {
     a {
@@ -2111,6 +2129,10 @@ body.research {
   }
   .tab-content {
     margin-top: 3.2rem;
+    @include media-breakpoint-up(md) {
+      margin-top: 8rem;
+    }
+    
   }
   @include media-breakpoint-up(md) {
     .small-tab-nav {
@@ -2127,14 +2149,14 @@ body.research {
 
 
   .research-paper {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, .2);
     padding: 2.4rem;
     margin-bottom: 3.2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     @include media-breakpoint-up(md) {
-      padding: 3.2rem;
+      padding: 4.8rem;
       flex-wrap: nowrap;
     }
 
@@ -2157,6 +2179,7 @@ body.research {
         margin-left: 3.2rem;
         h5 {
           margin-top: 0;
+          margin-bottom: 1.6rem;
         }
       }
       @include media-breakpoint-up(lg) {
@@ -2175,7 +2198,7 @@ body.research {
         line-height: 2.7rem;
         letter-spacing: .024rem;
       }
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-up(lg) {
         font-size: 2.3rem;
         line-height: 3.4rem;
         letter-spacing: .03rem;
@@ -2192,8 +2215,9 @@ body.research {
       line-height: 2.1rem;
       letter-spacing: 0;
       color: $seda-dark;
-      margin-bottom: 2.4rem;
-      @include media-breakpoint-up(xl) {
+      margin-bottom: 2.6rem;
+      margin-top: 2rem;
+      @include media-breakpoint-up(lg) {
         font-size: 1.6rem;
         line-height: 2.5rem;
       }
@@ -2212,9 +2236,15 @@ body.research {
         text-transform: uppercase;
         padding: 1.6rem;
         display: block;
-        @include media-breakpoint-up(xl) {
+        cursor: pointer;
+        @include media-breakpoint-up(md) {
+          font-size: 1.4rem;
+          line-height: 1.4rem;
+          letter-spacing: .064rem;
+        }
+        @include media-breakpoint-up(lg) {
           font-size: 1.8rem;
-          line-height: 3.618rem;
+          line-height: 2rem;
           letter-spacing: .07rem;
         }
         &:after {
@@ -2232,7 +2262,13 @@ body.research {
       }
       @include media-breakpoint-up(md) {
         text-align: left;
-        justify-content: space-around;
+        justify-content: space-between;
+      }
+    }
+    
+    .btn-custom {
+      @include media-breakpoint-up(md) {
+        width: 269px;
       }
     }
 
@@ -2263,6 +2299,9 @@ body.research {
       }
 
       .meta {
+        hr {
+          margin-bottom: 2rem;
+        }
         h4 {
           font-family: $sharpgrotesk-med-20;
           font-size: 1.7rem;
@@ -2355,7 +2394,7 @@ body.research {
       }
       .abstract-and-meta {
         // transition: opacity 2s ease-out 200ms, height 2s ease-out, max-height 2s ease-out;
-        padding-top: 1.6rem;
+        padding-top: 4.6rem;
         opacity: 1;
         height: auto;
         max-height: 1000px;

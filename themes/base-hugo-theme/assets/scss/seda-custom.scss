@@ -257,13 +257,16 @@ nav.navbar-light {
     padding-bottom: 1.6rem;
     background-image: url("/images/logo-ext.svg");
     //height: 33px;
-    width: 290px;
+    width: 238px;
     background-size: 100%;
     background-position: 0 0;
     background-repeat: no-repeat;
     margin-top: 4px;
-    @include media-breakpoint-down(sm) {
-      width: 230px;
+    @include media-breakpoint-up(smm) {
+      width: 276px;
+    }
+    @include media-breakpoint-up(mm) {
+      width: 290px;
     }
   }
 

@@ -1,7 +1,7 @@
 categories: ["technical", "related"] # uses-seda, technical, related
 authors: ["Laura Bellows"]
 title: "Immigration Enforcement and Student Achievement: the Negative Spillover of Secure Communities"
-image: "/uploads/test.jpg" # will be cropped to center square & rounded
+image: "themes/base-hugo-theme/static/papers/wp18-13-v201806_0.pdfg" # will be cropped to center square & rounded
 versions:
   - date: "2018-02-01"
     order: 0

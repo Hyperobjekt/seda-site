@@ -7,7 +7,8 @@
     {{ $imgParams.Set "alt" "Article image" }}
     <div class="img flex-child">
         <!-- Call image partial -->
-        {{ partial "imgproc.html" (dict "context" . "imgParams" $imgParams ) }}
+        {{/* partial "imgproc.html" (dict "context" . "imgParams" $imgParams ) */}}
+        <img src="{{ .image }}" />
     </div>
     <div class="info flex-child">
         <h5 tabindex="0">{{ .title }}</h5>

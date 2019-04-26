@@ -1,7 +1,7 @@
 categories: ["uses-seda", "technical"] # uses-seda, technical, related
 authors: ["Sean F. Reardon", "Demetra Kalogrides", "Ken Shores"]
 title: "The Geography of Racial/Ethnic Test Score Gaps"
-image: "/uploads/test.jpg" # will be cropped to center square & rounded
+image: "/images/papers/geography-racial-test-scores.jpg" # will be cropped to center square & rounded
 versions:
   - date: "2018-03"
     order: 0

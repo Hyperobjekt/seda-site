@@ -17361,7 +17361,7 @@ nav.navbar-light.sticky-top {
 nav.navbar-light.sticky-top .navbar-brand {
   animation: opacity-fill .3s;
   background-image: url("/images/logo-ext2.svg");
-  width: 290px;
+  width: 238px;
   background-size: 100%;
 }
 
@@ -17376,9 +17376,15 @@ nav.navbar-light.sticky-top .navbar-brand {
   }
 }
 
-@media (max-width: 373.98px) {
+@media (min-width: 374px) {
   nav.navbar-light.sticky-top .navbar-brand {
-    width: 230px;
+    width: 276px;
+  }
+}
+
+@media (min-width: 576px) {
+  nav.navbar-light.sticky-top .navbar-brand {
+    width: 290px;
   }
 }
 

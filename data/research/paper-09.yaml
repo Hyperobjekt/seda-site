@@ -5,7 +5,7 @@ image: "/images/papers/gender-gap.jpg" # will be cropped to center square & roun
 versions:
   - date: "2018-06"
     order: 0
-    link: "themes/base-hugo-theme/static/papers/wp18-13-v201806_0.pdf"
+    link: "/papers/wp18-13-v201806_0.pdf"
 abstract: |
   In the first systematic study of gender achievement gaps in U.S. school districts, we estimate male-female test score gaps in math and English Language Arts (ELA) for nearly 10,000 school districts in the U.S. We use state accountability test data from third through eighth grade students in the 2008-09 through 2014-15 school years. The average school district in our sample has no gender achievement gap in math, but a gap of roughly 0.23 standard deviations in ELA that favors girls. Both math and ELA gender achievement gaps vary among school districts and are positively correlated – some districts have more male-favoring gaps and some more female-favoring gaps. We find that math gaps tend to favor males more in socioeconomically advantaged school districts and in districts with larger gender disparities in adult socioeconomic status. These two variables explain about one fifth of the variation in the math gaps. However, we find little or no association between the ELA gender gap and either socioeconomic variable, and we explain virtually none of the geographic variation in ELA gaps.
 

@@ -10,6 +10,9 @@ html {
 body {
   overflow-x: hidden;
 }
+#main {
+  //overflow: hidden;
+}
 
 // Custom gutter widths
 @include media-breakpoint-up(xs) {

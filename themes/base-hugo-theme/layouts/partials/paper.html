@@ -27,14 +27,14 @@
             {{ range first 1 $sortedVersions }}
                 <a href="{{ .link | relURL }}" class="btn btn-custom download-paper" target="_blank" tabindex="0">Download Latest Version</a>
             {{ end }}
-            <a id="" class="show-versions">Show Abstract & Previous Versions</a>
+            <a id="" class="show-versions">Show Abstract & All Versions</a>
         </div>
         <div class="abstract-and-meta">
             <div class="abstract" id="" tabindex="0">
                 {{ .abstract | markdownify }}
             </div>
             <div class="meta">
-                <h4 tabindex="0">Previous Versions</h4>
+                <h4 tabindex="0">All Versions</h4>
                 <hr>
                 {{range $sortedVersions }}
                     <a href="{{ .link | relURL }}" target="_blank" class="version-link" aria-label="Download version from {{ .date }}" tabindex="0">

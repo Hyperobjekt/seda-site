@@ -2164,13 +2164,13 @@ body.research {
     }
 
     img {
-      width: 84px;
-      height: 80px;
-      text-align: left;
+      width: 142px;
+      height: auto;
+      text-align: center;
       flex: 1 1 auto;
       @include media-breakpoint-up(md) {
-        width: 141px;
-        height: 136px;
+        width: 142px;
+        height: auto;
         flex: 0 0 auto;
       }
     }

@@ -108,87 +108,84 @@ var state1 = function(scatterplot) {
   }
   const baseOverrides = {
     title: {
-      text: 'White and Black Students\' Average Performance',
+      text: 'Academic Achievement and\nSocioeconomic Status, Grade 3',
       subtext: 'U.S. School Districts 2009-2016'
     },
     legend: {
       show: true,
     },
     yAxis: {
-      min:-4,
-      max:3,
-      name: 'Black Average Performance',
+      min:-5,
+      max:5,
+      name: 'Average Achievement (in Grade Levels)',
       textStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
         color: '#FF003E',
       }
     },
     xAxis: {
-      min: -3,
-      max: 4,
-      name: 'White Average Performance',
+      min: -4,
+      max: 3.5,
+      name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
       {
         type:'scatter',
-        markLine: {
-          animation: false,
-          silent: true,
-          label: {
-            position: 'middle',
-            fontFamily: 'MaisonNeue-Medium',
-            fontWeight: '600',
-            fontSize: 12,
-            textBorderWidth: 3,
-            textBorderColor: '#042965',
-            textShadowColor: '#042965',
-            formatter: function(value) {
-              return value.name
-            }
-          },
-          data: [
-          [
-            {
-              name: 'white student scores = black student scores',
-              coord: [-3, -3],
-              symbol: 'none',
-              lineStyle: {
-                color: '#dc69aa', // '#95706d'// '#8d98b3' // '#999'
-                type: 'solid',
-                width: 2,
-                shadowOffsetY: 0,
-                shadowOffsetX: 0,
-                shadowBlur: 2,
-                shadowColor: '#042965'
+          markLine: {
+            animation: false,
+            silent: true,
+            label: {
+              position: 'middle',
+              fontFamily: 'MaisonNeue-Medium',
+              fontWeight: '600',
+              fontSize: 12,
+              textBorderWidth: 3,
+              textBorderColor: '#042965',
+              textShadowColor: '#042965',
+              formatter: function(value) {
+                return value.name
               }
             },
-            { coord: [ 3,  3], symbol: 'none' },
-          ],
+            data: [
+            [
+              {
+                name: '', // upper right markline
+                coord: [3, 3.75],
+                symbol: 'none',
+                lineStyle: {
+                  color: '#adadad'
+                }
+              },
+              {
+                coord: [-1, -1.5],
+                symbol: 'none'
+              },
+            ],
           [
             {
-              name: '', // Y axis
-              coord: [0, -4],
+              name: '', // lower left markline
+              coord: [1.75, 1],
               symbol: 'none',
               lineStyle: {
-                color: '#adadad' // 'rgba(0,0,0,0.6)'
+                color: '#adadad'
               }
             },
             {
-              coord: [ 0,  3],
+              coord: [-4, -3],
               symbol: 'none'
             },
           ],
           [
             {
               name: '', // x axis
-              coord: [-3, 0],
+              coord: [-4, 0],
               symbol: 'none',
               lineStyle: {
                 color: '#adadad' // 'rgba(0,0,0,0.2)'
               }
             },
             {
-              coord: [4, 0],
+              coord: [3.5, 0],
               symbol: 'none'
             },
           ]
@@ -226,8 +223,8 @@ var state1 = function(scatterplot) {
     ]
   }
   return {
-    xVar: 'w_avg',
-    yVar: 'b_avg',
+    xVar: 'all_ses',
+    yVar: 'all_avg',
     zVar: 'sz',
     highlighted: [],
     options: deepmerge.all([base.options, baseOverrides ])
@@ -352,8 +349,6 @@ var state3 = function(scatterplot) {
         name: 'White Average Performance',
       },
       series: [
-        // base.series[0],
-        // base.series[1],
         dataSeries,
         {
           type: 'scatter',
@@ -419,7 +414,7 @@ var state3 = function(scatterplot) {
         },
         {
           type:'scatter',
-          markLine: {
+            markLine: {
             animation: false,
             silent: true,
             label: {
@@ -1147,11 +1142,11 @@ var state10 = function(scatterplot) {
   const base = scatterplot.getState('base');
   var dataSeries = scatterplot.getDataSeries();
   var options = scatterplot.component.getOption();
-  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  var highlight = {
-    '1100030': 'District of Columbia',
-    '2612000': 'Detroit, MI'
-  }
+  // var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  // var highlight = {
+  //   '1100030': 'District of Columbia',
+  //   '2612000': 'Detroit, MI'
+  // }
   var searchSeries = [];
   if (scatterplot && scatterplot.data) {
     searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
@@ -1159,8 +1154,8 @@ var state10 = function(scatterplot) {
   // return options;
   const baseOverrides = {
     title: {
-      text: 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty',
-      subtext: '100 Largest US School Districts 2009-2016',
+      text: '3rd Grade Achievement vs.\nAchievement Growth (Grades per Year), by District',
+      subtext: 'US School Districts 2009-2016',
       textStyle: {
         fontSize: 18,
         lineHeight: 32
@@ -1170,9 +1165,9 @@ var state10 = function(scatterplot) {
       right: 42,
     },
     yAxis: {
-      min:-6,
-      max:1,
-      name: 'White-Black Achievement Gap\nby Grade Levels',
+      min: 0.4,
+      max: 1.6,
+      name: 'Years of Growth per Grade',
       nameTextStyle: { // Styles for x and y axis labels
         fontSize: 12,
         lineHeight: 14
@@ -1180,87 +1175,11 @@ var state10 = function(scatterplot) {
     },
     xAxis: {
       min: -3,
-      max: 8,
-      name: 'Black-White Difference in Average School Poverty Rates',
+      max: 3,
+      name: 'Average Grade 3 Achievement',
     },
     series: [
       dataSeries,
-      {
-        type: 'scatter',
-        data: top100,
-        symbolSize: dataSeries.symbolSize,
-        itemStyle: {
-          borderWidth: 1,
-          borderColor: 'rgba(0,0,0,1)',
-          color: '#b6a2de' // 'rgba(255,0,0,0.25)'
-        }
-      },
-      {
-        type:'scatter',
-        markLine: {
-          animation: false,
-          silent: true,
-          label: {
-            position: 'middle',
-            fontFamily: 'MaisonNeue-Medium',
-            fontWeight: '600',
-            fontSize: 12,
-            textBorderColor: '#042965',
-            textBorderWidth: 1,
-            textShadowColor: '#042965',
-            formatter: function(value) {
-              return value.name
-            }
-          },
-          data: [
-            [
-              {
-                name: 'equal exposure to poverty',
-                coord: [0, -6],
-                symbol: 'none',
-                lineStyle: {
-                  color:  '#dc69aa',
-                  type: 'solid',
-                  width: 2,
-                  shadowOffsetY: 0,
-                  shadowOffsetX: 0,
-                  shadowBlur: 3,
-                  shadowColor: '#042965'
-                },
-                label: {}
-              },
-              {
-                coord: [ 0, -0.5],
-                symbol: 'none'
-              },
-            ]
-          ]
-        }
-      },
-      {
-        id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.5)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
-      },
       {
         type: 'scatter',
         data: searchSeries,
@@ -1288,13 +1207,47 @@ var state10 = function(scatterplot) {
             return names[item.value[3]]
           }
         }
+      },
+      {
+        type:'scatter',
+          markLine: {
+          data: [
+          [
+            {
+              name: '', // Y axis
+              coord: [0, 0.4],
+              symbol: 'none',
+              lineStyle: {
+                color: '#adadad'
+              }
+            },
+            {
+              coord: [ 0,  1.6],
+              symbol: 'none'
+            },
+          ],
+          [
+            {
+              name: 'x axis', // x axis
+              coord: [-3, 0.95],
+              symbol: 'none',
+              lineStyle: {
+                color: '#adadad'
+              }
+            },
+            {
+              coord: [3, 0.95],
+              symbol: 'none'
+            },
+          ]
+        ]}
       }
     ]
   }
   return {
-    highlighted: Object.keys(highlight),
-    xVar: 'wb_pov',
-    yVar: 'wb_avg',
+    highlighted: [], // Object.keys(highlight),
+    xVar: 'all_avg',
+    yVar: 'all_grd',
     zVar: 'sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }

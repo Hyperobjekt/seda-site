@@ -19339,6 +19339,10 @@ body.research .tab-content {
   }
   body.research .large-tab-nav {
     display: block;
+    border-bottom: 2px solid #E9EAED;
+  }
+  body.research .large-tab-nav ul {
+    border-bottom: none;
   }
 }
 
@@ -19491,7 +19495,7 @@ body.research .research-paper .controls .show-versions:after {
 
 @media (min-width: 768px) {
   body.research .research-paper .btn-custom {
-    width: 269px;
+    width: 232px;
   }
 }
 

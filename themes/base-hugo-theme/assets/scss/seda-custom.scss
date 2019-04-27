@@ -2143,6 +2143,10 @@ body.research {
     }
     .large-tab-nav {
       display: block;
+      border-bottom: 2px solid #E9EAED;
+      ul {
+        border-bottom: none;
+      }
     }
     .tab-content {
       // margin-top: 11.2rem;
@@ -2271,7 +2275,7 @@ body.research {
     
     .btn-custom {
       @include media-breakpoint-up(md) {
-        width: 269px;
+        width: 232px;
       }
     }
 

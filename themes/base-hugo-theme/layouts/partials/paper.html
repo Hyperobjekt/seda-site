@@ -39,11 +39,11 @@
                 {{ .abstract | markdownify }}
             </div>
             <div class="meta">
-                {{ if isset . "link" }}
+               
                 <h4 tabindex="0">All Versions</h4>
                 <hr>
                 {{range $sortedVersions }}
-                    
+                {{ if isset . "link" }}
                     <a href="{{ .link | relURL }}" target="_blank" class="version-link" aria-label="Download version from {{ .date }}" tabindex="0">
                         <span class="date">{{ .date }}</span>
                         <span class="label">Download now</span>

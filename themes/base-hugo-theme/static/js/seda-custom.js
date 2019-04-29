@@ -31,37 +31,44 @@
 
     anime({
       targets: ['.plotpoints'],
-      opacity: [.05, .15],
+      opacity: [0, .15],
       easing: 'easeOutCubic',
-      delay: anime.stagger(30, {start: 400}) // increase delay by 100ms for each elements.
+      delay: anime.stagger(24, {start: 300}) // increase delayfor each elements.
     });
     anime({
       targets: ['#mainland'],
-      opacity: [0.2, 0.6],
+      opacity: [0, 0.6],
       easing: 'easeInSine',
-      duration: 1400,
-      delay: 1800, // increase delay by 100ms for each elements.
+      duration: 800,
+      delay: 1200, // increase delay by 100ms for each elements.
       
     });
     anime({
       targets: ['#mainland'],
       easing: 'easeInSine',
-      duration: 1000,
-      delay: 1800, // increase delay by 100ms for each elements.
-      translateX: [10, 0],
+      duration: 800,
+      delay: 1400, // increase delay by 100ms for each elements.
+      translateY: [10, 0],
     });
     anime({
       targets: ['g#hp-x-line path', 'g#Grades path#axis-line-2'],
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
-      duration: 2000,
+      duration: 1400,
      
     });
     anime({
       targets: 'g#Grades text',
-      translateY: [448, 0],
+      translateY: [400, 0],
       easing: 'easeInOutSine',
-      duration: 2000,
+      duration: 1400,
+     
+    });
+    anime({
+      targets: 'g#ses-metric text',
+      translateX: [-500, 0],
+      easing: 'easeInOutSine',
+      duration: 1400,
      
     });
     

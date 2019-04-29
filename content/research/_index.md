@@ -3,6 +3,6 @@ title: "Research"
 date: "2019-03-14"
 type: "research"
 is_index: true
-byline: "This page will have content added shortly. Please check back soon."
+byline: "Papers produced by (and using data from) the Stanford Education Data Archive"
 ---
 - Developing. Check back later!

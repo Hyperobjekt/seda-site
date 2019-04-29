@@ -13,10 +13,17 @@
     }
 }
 body.about { 
+    .column-people {
+         .pic {
+            background-size: contain; 
+            background-blend-mode: color;
+        } 
+    }
     .column-people:hover {
         .pic {
-            filter: brightness(103%);
-            transition: filter .3s ease;
+            //filter: none;
+            background-blend-mode: color-burn;
+            transition: background-blend-mode .3s ease;
         }
         .pic button {
             transition: background-color .3s ease;
@@ -26,6 +33,21 @@ body.about {
     .row.people-former, .row.people-current {
         .flex-row {
             justify-content: center;
+        }
+    }
+    .who-we-are-former.leadership {
+        h4 {
+            margin-top: 3.2rem;
+            margin-bottom: 2.4rem;
+        }
+    }
+    .row.quote.m-0 {
+        margin-top: 5.6rem !important;
+    }
+    .row.funder-logos {
+        .p-2.rsf {
+            top: 5px;
+            position: relative;
         }
     }
 }

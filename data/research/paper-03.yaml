@@ -1,23 +1,10 @@
-categories: ["uses-seda", "technical"] # uses-seda, technical, related
-authors: ["Sean F. Reardon", "Erin Fahle", "Demetra Kalogrides", "Anne Podolsky", "Rosalía C. Zárate"]
-title: "Gender Achievement Gaps in U.S. School Districts"
-image: "/uploads/test.jpg" # will be cropped to center square & rounded
+categories: ["uses-seda"] # uses-seda, technical, related
+authors: ["Laura Bellows"]
+title: "Immigration Enforcement and Student Achievement: the Negative Spillover of Secure Communities"
+image: "/images/papers/immigration-enforcement.jpg" # will be cropped to center square & rounded
 versions:
-  - date: "2018-02-01"
+  - date: "2018-12"
     order: 0
-    link: "/images/test.pdf"
-  - date: "2018-02-01"
-    order: 1
-    link: "/images/test.pdf"
-  - date: "2018-02-01"
-    order: 2
-    link: "/images/test.pdf"
-  - date: "2018-02-01"
-    order: 3
-    link: "/images/test.pdf"
+    link: "/papers/immigration_enforcement_and_achievement.pdf"
 abstract: |
-  In the first systematic study of gender achievement gaps in U.S. school districts, we estimate male-female test score gaps in math and English Language Arts (ELA) for nearly 10,000 school districts in the U.S. We use state accountability test data from third through eighth grade students in the 2008-09 through 2014-15 school years. The average school district in our sample has no gender achievement gap in math, but a gap of roughly 0.23 standard deviations in ELA that favors girls. Both math and ELA gender achievement gaps vary among school districts and are positively correlated – some districts have more male-favoring gaps and some more female-favoring gaps. We find that math gaps tend to favor males more in socioeconomically advantaged school districts and in districts with larger gender disparities in adult socioeconomic status. These two variables explain about one fifth of the variation in the math gaps. However, we find little or no association between the ELA gender gap and either socioeconomic variable, and we explain virtually none of the geographic variation in ELA gaps.
-
-  To download a data file with the gender achievement gap estimates produced in this paper, please click here to sign the data use agreement. Upon signing, you will be redirected to the Stanford Education Data Archive where you can download the data file from this paper.
-
-  This map displays Empirical Bayes estimates of the average achievement gaps in math and English language arts in nearly 10,000 U.S. public school districts. A gap of zero indicates that there is no achievement gap in that district. Negative gaps (shown in orange) indicate that female students score higher on average than male students in the district; positive achievement gaps (shown in blue) indicate that male students score higher on average than female students in the district. The gaps displayed are in standard deviation units; for reference, a third of a standard deviation gap is approximately a one grade level difference.
+  Over the past decade, U.S. immigration enforcement policies have increasingly targeted unauthorized immigrants residing in the U.S. interior, many of whom are the parents of U.S.-citizen children. Heightened immigration enforcement may affect student achievement through stress, income effects, or student mobility. I use one such immigration enforcement policy, Secure Communities, to examine how immigration enforcement affects student achievement. I use the staggered activation of Secure Communities across counties between 2008 and 2013 to measure its impact on average achievement for Hispanic students, as well as non-Hispanic black and white students. My results suggest that the implementation of Secure Communities decreased average achievement for Hispanic students in English Language Arts (ELA), although not in math. I also find that Secure Communities negatively affected the performance of non-Hispanic black students in ELA. Similarly, I find that increases in county removals due to Secure Communities are associated with decreased achievement for both Hispanic and non-Hispanic black students in ELA.

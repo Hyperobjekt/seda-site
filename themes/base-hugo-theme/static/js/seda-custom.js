@@ -289,10 +289,10 @@
 
     var updateModal = {
         activeBio: null,
+        allBios: null,
         update: function() {
-            console.log('updateModal.update()');
-            console.log(updateModal.activeBio);
-            var $button = $(this.activeBio).find('button');
+            // console.log('updateModal.update()');
+            var $button = $(this.allBios[this.activeBio]).find('button');
 
             // Get name, title, bio, and image
             var parent = $button.parent();
@@ -315,12 +315,12 @@
             $('#peopleBioModal').modal('show');
 
             // Check first and last position, disable buttons
-            if ($(updateModal.activeBio).prev().length <= 0) {
-                console.log('first item');
+            if (this.activeBio <= 0) {
+                // console.log('first item');
                 $('#prevBio').prop( "disabled", true);
                 $('#nextBio').prop( "disabled", false);
-            } else if ($(updateModal.activeBio).next().length <= 0) {
-                console.log('last item');
+            } else if (this.activeBio >= ((this.allBios).length - 1)) {
+                // console.log('last item');
                 $('#prevBio').prop( "disabled", false);
                 $('#nextBio').prop( "disabled", true);
             } else {
@@ -357,23 +357,26 @@
 
     // Handle bio modals
     if ($('.launch-people-bio').length >= 1) {
-      // console.log('exists');
+      // Store the complete collection of bios
+      // so we can switch between them all.
+      updateModal.allBios = $('.column-people');
       $('.launch-people-bio').click(function(e) {
         e.preventDefault();
         var $button = $(e.target);
-        // Store active bio so navigation between then works.
-        updateModal.activeBio = $button.closest('.column-people');
+        // Store active bio index so navigation between them works.
+        updateModal.activeBio = (updateModal.allBios).index($button.closest('.column-people'));
+        // console.log(updateModal.activeBio);
         updateModal.update();
 
         $('#prevBio').on('click', function() {
-            if ($(updateModal.activeBio).prev().length >= 1) {
-                updateModal.activeBio = $(updateModal.activeBio).prev();
+            if (updateModal.activeBio >= 1) {
+                updateModal.activeBio = updateModal.activeBio - 1;
                 updateModal.update();
             }
         });
         $('#nextBio').on('click', function() {
-            if ($(updateModal.activeBio).next().length >= 1) {
-                updateModal.activeBio = $(updateModal.activeBio).next();
+            if (updateModal.activeBio < (updateModal.allBios).length - 1) {
+                updateModal.activeBio = updateModal.activeBio + 1;
                 updateModal.update();
             }
         });

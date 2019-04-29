@@ -1,0 +1,9 @@
+name: "Ralph Rogers"
+role: "staff" # director, staff, or partner
+title: "" # maybe different from role; is displayed
+image: "" # will be cropped to center square & rounded
+thumb: "/images/icons/person-placeholder.png"
+current: true # true or false (for former)
+weight: 158
+blurb: >
+  

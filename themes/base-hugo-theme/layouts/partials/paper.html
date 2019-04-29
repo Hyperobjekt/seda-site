@@ -7,7 +7,8 @@
     {{ $imgParams.Set "alt" "Article image" }}
     <div class="img flex-child">
         <!-- Call image partial -->
-        {{ partial "imgproc.html" (dict "context" . "imgParams" $imgParams ) }}
+        {{/* partial "imgproc.html" (dict "context" . "imgParams" $imgParams ) */}}
+        <img src="{{ .image }}" />
     </div>
     <div class="info flex-child">
         <h5 tabindex="0">{{ .title }}</h5>
@@ -25,22 +26,29 @@
         {{ $sortedVersions := sort .versions "date" "desc" }}
         <div class="controls flex-parent">
             {{ range first 1 $sortedVersions }}
-                <a href="{{ .link | relURL }}" class="btn btn-custom download-paper" target="_blank" tabindex="0">Download Latest Version</a>
-            {{ end }}
-            <a id="" class="show-versions">Show Previous Versions</a>
+                {{ if isset . "link" }}
+                    <a href="{{ .link | relURL }}" class="btn btn-custom download-paper" target="_blank" tabindex="0">Download Latest Version</a>
+                    <a id="" class="show-versions">Show Abstract & All Versions</a>
+                {{ else }}
+                    <a id="" class="show-versions">Show Abstract</a>
+                {{ end }}    
+            {{ end }}    
         </div>
         <div class="abstract-and-meta">
             <div class="abstract" id="" tabindex="0">
                 {{ .abstract | markdownify }}
             </div>
             <div class="meta">
-                <h4 tabindex="0">Previous Versions</h4>
+               
+                <h4 tabindex="0">All Versions</h4>
                 <hr>
                 {{range $sortedVersions }}
+                {{ if isset . "link" }}
                     <a href="{{ .link | relURL }}" target="_blank" class="version-link" aria-label="Download version from {{ .date }}" tabindex="0">
                         <span class="date">{{ .date }}</span>
                         <span class="label">Download now</span>
                     </a>
+                    {{ end }}
                 {{ end }}
             </div>
         </div>

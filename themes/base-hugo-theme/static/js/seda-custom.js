@@ -62,6 +62,7 @@
       translateY: [400, 0],
       easing: 'easeInOutSine',
       duration: 1400,
+      direction: normal,
      
     });
     anime({
@@ -69,6 +70,7 @@
       translateX: [-500, 0],
       easing: 'easeInOutSine',
       duration: 1400,
+      direction: normal,
      
     });
     

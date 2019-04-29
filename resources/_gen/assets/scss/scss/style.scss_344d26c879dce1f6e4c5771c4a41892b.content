@@ -17765,7 +17765,7 @@ body.home .hero .hero-child svg {
 }
 
 body.home .hero .hero-child svg g#ses-metric {
-  clip-path: polygon(0px 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0px 0, 100% 0, 100% 100%, 0px 100%);
 }
 
 body.home .hero .hero-child svg g#Grades {

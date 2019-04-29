@@ -39,17 +39,17 @@
       targets: ['#mainland'],
       opacity: [0, 0.6],
       easing: 'easeInSine',
-      duration: 800,
-      delay: 1200, 
+      duration: 1200,
+      delay: 1400, 
       
     });
-    anime({
+   /* anime({
       targets: ['#mainland'],
       easing: 'easeInSine',
       duration: 800,
       delay: 1400, 
       translateY: [10, 0],
-    });
+    }); */
     anime({
       targets: ['#grades path#axis-line-2'],
       strokeDashoffset: [anime.setDashoffset, 0],
@@ -69,7 +69,6 @@
       easing: 'easeInOutSine',
       duration: 1400,
 
-     
     });
     anime({
       targets: 'g#ses-metric text',

@@ -33,33 +33,39 @@
       targets: ['.plotpoints'],
       opacity: [0, .15],
       easing: 'easeOutCubic',
-      delay: anime.stagger(24, {start: 300}) // increase delayfor each elements.
+      delay: anime.stagger(24, {start: 300}) // increase delay for each elements.
     });
     anime({
       targets: ['#mainland'],
       opacity: [0, 0.6],
       easing: 'easeInSine',
       duration: 800,
-      delay: 1200, // increase delay by 100ms for each elements.
+      delay: 1200, 
       
     });
     anime({
       targets: ['#mainland'],
       easing: 'easeInSine',
       duration: 800,
-      delay: 1400, // increase delay by 100ms for each elements.
+      delay: 1400, 
       translateY: [10, 0],
     });
     anime({
-      targets: ['g#hp-x-line path', 'g#Grades path#axis-line-2'],
+      targets: ['#grades path#axis-line-2'],
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      duration: 1400,
+    });
+    anime({
+      targets: ['#hp-x-line path#map-x'],
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1400,
      
     });
     anime({
-      targets: 'g#Grades text',
-      translateY: [400, 0],
+      targets: 'g#grades text',
+      transform: ['translate(0 400)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
       easing: 'easeInOutSine',
       duration: 1400,
 
@@ -67,12 +73,12 @@
     });
     anime({
       targets: 'g#ses-metric text',
-      translateX: [-500, 0],
+      transform: ['translate(-500 0)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
       easing: 'easeInOutSine',
       duration: 1400,
-     
-    });
-    
+    });    
+
+
 
 
 

@@ -17828,6 +17828,7 @@ body.home .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
     letter-spacing: .018rem;
+    margin-top: 6%;
   }
 }
 

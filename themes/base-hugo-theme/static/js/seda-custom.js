@@ -29,6 +29,9 @@
         $target.parents('.research-paper').toggleClass('abstract-visible');
     }
 
+    anime.set('#mainland', {
+      opacity: [0]
+    });
     anime({ // Scatterplot points
       targets: ['.plotpoints'],
       opacity: [0, .25],

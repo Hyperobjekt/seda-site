@@ -33,8 +33,14 @@
     'body.home .hero-child p', 'body.home .hero-child button'], {
       opacity: [0]
     });
-    anime.set(['g#grades text'], {
-      transform: ['translate(0 400)']
+    anime.set(['g#grades text', 'g#ses-metric text', '#grades path#axis-line-2', '#hp-x-line path#map-x'], {
+      opacity: [0]
+    });
+    anime({
+      targets: ['g#grades text', 'g#ses-metric text', '#grades path#axis-line-2', '#hp-x-line path#map-x'], 
+      opacity: [0, 1],
+      duration: 10, 
+      delay: 5
     });
     anime({ // Scatterplot points
       targets: ['.plotpoints'],

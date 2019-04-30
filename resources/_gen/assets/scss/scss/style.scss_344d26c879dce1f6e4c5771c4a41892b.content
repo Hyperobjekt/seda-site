@@ -17768,7 +17768,7 @@ body.home .hero .hero-child {
 body.home .hero .hero-child svg {
   width: 76%;
   min-height: 480px;
-  max-height: 90vh;
+  max-height: 80vh;
 }
 
 body.home .hero .hero-child svg g#ses-metric {

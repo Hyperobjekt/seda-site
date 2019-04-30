@@ -31,17 +31,19 @@
 
     anime({ // Scatterplot points
       targets: ['.plotpoints'],
-      opacity: [0, .15],
+      opacity: [0, .25],
       easing: 'easeOutCubic',
       delay: anime.stagger(24, {start: 300}) // increase delay for each element.
     });
     anime({ // Map
       targets: ['#mainland'],
-      opacity: [0, 0.6],
+      keyframes: [
+        {opacity: 0.8, delay: 1400, duration: 1000},
+        {opacity: 0.6, delay: 2400, duration: 800},
+      ],
       easing: 'easeInSine',
-      duration: 1200,
-      delay: 1400, 
-      
+      //duration: 1200,
+      //delay: 1400, 
     });
    /* anime({
       targets: ['#mainland'],
@@ -82,7 +84,7 @@
       opacity: [0, 1], 
       easing: 'easeInOutSine',
       duration: 1000,
-      delay: 2800,
+      delay: 3000,
     });  
 
     anime({ // Body text
@@ -90,7 +92,7 @@
       opacity: [0, 1], 
       easing: 'easeInOutSine',
       duration: 800,
-      delay: 3800,
+      delay: 4000,
     });  
 
     anime({ // Button
@@ -99,7 +101,7 @@
       transform: ['translate(100 0)', 'translate(0 0 )'],
       easing: 'easeInOutSine',
       duration: 800,
-      delay: 5000,
+      delay: 5200,
     });
 
 

@@ -29,8 +29,12 @@
         $target.parents('.research-paper').toggleClass('abstract-visible');
     }
 
-    anime.set('#mainland', {
+    anime.set(['#mainland', '.plotpoints', 'body.home .hero-child h2',
+    'body.home .hero-child p', 'body.home .hero-child button'], {
       opacity: [0]
+    });
+    anime.set(['g#grades text'], {
+      transform: ['translate(0 400)']
     });
     anime({ // Scatterplot points
       targets: ['.plotpoints'],
@@ -45,16 +49,7 @@
         {opacity: 0.6, delay: 2400, duration: 800},
       ],
       easing: 'easeInSine',
-      //duration: 1200,
-      //delay: 1400, 
     });
-   /* anime({
-      targets: ['#mainland'],
-      easing: 'easeInSine',
-      duration: 800,
-      delay: 1400, 
-      translateY: [10, 0],
-    }); */
     anime({ // Y Axis
       targets: ['#grades path#axis-line-2'],
       strokeDashoffset: [anime.setDashoffset, 0],

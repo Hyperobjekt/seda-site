@@ -29,13 +29,13 @@
         $target.parents('.research-paper').toggleClass('abstract-visible');
     }
 
-    anime({
+    anime({ // Scatterplot points
       targets: ['.plotpoints'],
       opacity: [0, .15],
       easing: 'easeOutCubic',
-      delay: anime.stagger(24, {start: 300}) // increase delay for each elements.
+      delay: anime.stagger(24, {start: 300}) // increase delay for each element.
     });
-    anime({
+    anime({ // Map
       targets: ['#mainland'],
       opacity: [0, 0.6],
       easing: 'easeInSine',
@@ -50,32 +50,57 @@
       delay: 1400, 
       translateY: [10, 0],
     }); */
-    anime({
+    anime({ // Y Axis
       targets: ['#grades path#axis-line-2'],
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1400,
     });
-    anime({
+    anime({ // X Axis
       targets: ['#hp-x-line path#map-x'],
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1400,
      
     });
-    anime({
+    anime({ // Grades
       targets: 'g#grades text',
       transform: ['translate(0 400)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
       easing: 'easeInOutSine',
       duration: 1400,
 
     });
-    anime({
+    anime({ // Numbers
       targets: 'g#ses-metric text',
       transform: ['translate(-500 0)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
       easing: 'easeInOutSine',
       duration: 1400,
-    });    
+    });  
+    
+    anime({ // Headline text
+      targets: 'body.home .hero-child h2',
+      opacity: [0, 1], 
+      easing: 'easeInOutSine',
+      duration: 1000,
+      delay: 2800,
+    });  
+
+    anime({ // Body text
+      targets: 'body.home .hero-child p',
+      opacity: [0, 1], 
+      easing: 'easeInOutSine',
+      duration: 800,
+      delay: 3800,
+    });  
+
+    anime({ // Button
+      targets: 'body.home .hero-child button',
+      opacity: [0, 1], 
+      transform: ['translate(100 0)', 'translate(0 0 )'],
+      easing: 'easeInOutSine',
+      duration: 800,
+      delay: 5000,
+    });
 
 
 

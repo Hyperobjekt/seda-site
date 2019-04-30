@@ -17681,6 +17681,7 @@ img.float-left {
 
 body.home .hero {
   height: 100vh;
+  min-height: 540px;
   margin-top: -6.4rem;
   background: linear-gradient(to bottom, #061d56 5%, #04143c 75%);
   background-repeat: no-repeat;
@@ -17753,6 +17754,7 @@ body.home .hero .hero-child:before {
 
 body.home .hero .hero-child {
   height: 100vh;
+  min-height: 540px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -17765,6 +17767,8 @@ body.home .hero .hero-child {
 
 body.home .hero .hero-child svg {
   width: 76%;
+  min-height: 480px;
+  max-height: 90vh;
 }
 
 body.home .hero .hero-child svg g#ses-metric {

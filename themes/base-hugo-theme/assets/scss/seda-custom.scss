@@ -615,6 +615,7 @@ img {
 body.home {
   .hero {
     height: 100vh;
+    min-height: 540px;
     margin-top: -6.4rem;
     background: linear-gradient(to bottom, rgba(6, 29, 86, 100%) 5%, rgba(4, 20, 60, 100%) 75%);
     background-repeat: no-repeat;
@@ -685,6 +686,7 @@ body.home {
   }
     .hero-child {
       height: 100vh;
+      min-height: 540px;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -699,7 +701,8 @@ body.home {
       //animation-delay: .9s;
       svg {
         width: 76%;
-        // height: 448px;
+        min-height: 480px;
+        max-height: 90vh;
         g#ses-metric {
           clip-path: polygon(0px 0, 100% 0, 100% 100%, 0px 100%);
         }

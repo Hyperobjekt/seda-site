@@ -21160,7 +21160,7 @@ body.type-explorations .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg text#School-2 {
+#growth-graphic.move svg path#divider-line {
   opacity: 0;
   animation: shuffleSchoolText2 .7s forwards;
 }

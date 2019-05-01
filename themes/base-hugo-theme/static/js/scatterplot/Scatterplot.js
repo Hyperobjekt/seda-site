@@ -183,11 +183,12 @@ function Scatterplot(container, props) {
       prefix: 'districts',
       options: this.states.base.options,
       endpoint: 'https://d2fypeb6f974r1.cloudfront.net/dev/scatterplot/',
-      baseVars: {
-        'counties': ['id', 'name', 'lat', 'lon', 'all_avg', 'all_ses', 'sz' ],
-        'districts': ['id', 'name', 'lat', 'lon', 'all_avg', 'all_ses', 'sz' ],
-        'schools': ['id', 'name', 'lat', 'lon', 'all_avg', 'frl_pct', 'sz' ]
+      metaVars: {
+        'counties': ['id', 'name', 'lat', 'lon', 'all_sz' ],
+        'districts': ['id', 'name', 'lat', 'lon', 'all_sz' ],
+        'schools': ['id', 'name', 'lat', 'lon', 'all_sz' ]
       },
+      data: {},
       ref: function(ref) {
         _self.component = ref;
       },
@@ -195,8 +196,12 @@ function Scatterplot(container, props) {
         _ready = true;
         _self.trigger('ready', [_self])
       },
-      onDataLoaded: function(data) {
-        _self.data = data
+      onData: function(data, region) {
+        let currData = ((_self.data && _self.data[region]) || {})
+        const newData = {}
+        newData[region] = Object.assign(currData, data)
+        _self.data = Object.assign((_self.data || {}), newData)
+        _self.setProps({data:_self.data})
       },
       theme: theme
     }
@@ -257,6 +262,10 @@ function Scatterplot(container, props) {
     } else {
       throw new Error('no state found for ' + stateName)
     }
+  }
+
+  this.getScatterplotSeries = function (xVar, yVar, zVar, ids) {
+
   }
 
   this.getDataSeries = function() {

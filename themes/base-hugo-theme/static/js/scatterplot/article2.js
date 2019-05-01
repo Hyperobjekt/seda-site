@@ -32,6 +32,7 @@ function sliceMost(arr, size) {
  * @returns Array returnArr
  */
 function sortDataBySeg(data) {
+    return data
   // console.log('sortDataBySeg()');
   // console.log(data);
   // Loop through the data.
@@ -225,7 +226,7 @@ var state1 = function(scatterplot) {
   return {
     xVar: 'all_ses',
     yVar: 'all_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     highlighted: [],
     options: deepmerge.all([base.options, baseOverrides ])
   }
@@ -327,7 +328,7 @@ var state3 = function(scatterplot) {
   return {
     xVar: 'w_avg',
     yVar: 'b_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
       title: {
@@ -600,7 +601,7 @@ var state4 = function(scatterplot) {
     highlighted: [],
     xVar: 'wb_ses',
     yVar: 'wb_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -958,7 +959,7 @@ var state8 = function(scatterplot) {
     highlighted: Object.keys(highlight),
     xVar: 'wb_ses',
     yVar: 'wb_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -1132,7 +1133,7 @@ var state9 = function(scatterplot) {
     highlighted: [],
     xVar: 'wb_ses',
     yVar: 'wb_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -1248,7 +1249,7 @@ var state10 = function(scatterplot) {
     highlighted: [], // Object.keys(highlight),
     xVar: 'all_avg',
     yVar: 'all_grd',
-    zVar: 'sz',
+    zVar: 'all_sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }

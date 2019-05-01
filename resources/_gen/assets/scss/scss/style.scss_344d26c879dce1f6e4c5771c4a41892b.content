@@ -19209,20 +19209,20 @@ body.research .hero .hero-child {
   margin-left: 0;
   background: url("/images/heroes/research-graph.svg");
   background-repeat: no-repeat;
-  background-size: 84%;
+  background-size: 94%;
   background-position: center 64%;
 }
 
 @media (min-width: 576px) {
   body.research .hero .hero-child {
-    background-size: 60%;
+    background-size: 70%;
     background-position: center 50%;
   }
 }
 
 @media (min-width: 1400px) {
   body.research .hero .hero-child {
-    background-size: 60%;
+    background-size: 70%;
     background-position: center 50%;
   }
 }
@@ -19327,14 +19327,14 @@ body.research .large-tab-nav a {
     border: none;
     border-bottom: 4px solid #04143c;
     padding-bottom: 8px;
-    margin-top: 4px;
+    margin-top: 2px;
   }
   body.research .large-tab-nav a.active {
     color: #031232;
     border: none;
     border-bottom: 4px solid #04143c;
     padding-bottom: 8px;
-    margin-top: 4px;
+    margin-top: 2px;
   }
 }
 
@@ -19355,9 +19355,17 @@ body.research .tab-content {
   margin-top: 3.2rem;
 }
 
+body.research .tab-content hr {
+  border-top: 1px solid #E9EAED;
+}
+
+body.research .tab-content hr:last-child {
+  display: none;
+}
+
 @media (min-width: 768px) {
   body.research .tab-content {
-    margin-top: 8rem;
+    margin-top: 2.4rem;
   }
 }
 
@@ -19367,7 +19375,7 @@ body.research .tab-content {
   }
   body.research .large-tab-nav {
     display: block;
-    border-bottom: 2px solid #E9EAED;
+    border-bottom: 1px solid #E9EAED;
   }
   body.research .large-tab-nav ul {
     border-bottom: none;
@@ -19375,9 +19383,8 @@ body.research .tab-content {
 }
 
 body.research .research-paper {
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-  padding: 2.4rem;
-  margin-bottom: 3.2rem;
+  padding: 3.2rem;
+  margin-bottom: 0rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -19385,9 +19392,10 @@ body.research .research-paper {
 
 @media (min-width: 768px) {
   body.research .research-paper {
-    padding: 4.8rem;
+    padding: 6.4rem;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    margin-bottom: 0;
   }
 }
 
@@ -19572,6 +19580,7 @@ body.research .research-paper .abstract-and-meta .abstract p {
 
 body.research .research-paper .abstract-and-meta .meta hr {
   margin-bottom: 2rem;
+  border-top: 1px solid #E9EAED;
 }
 
 body.research .research-paper .abstract-and-meta .meta h4 {

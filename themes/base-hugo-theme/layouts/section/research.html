@@ -46,37 +46,50 @@
         <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
             <h3 tabindex="0">Papers using SEDA Data</h3>
         </div> -->
-        <div class="col-xs-12 col-sm-12 col-md-10 col-xl-8 mx-auto">
+        
             {{ range .Site.Data.research }}
             {{ if in .categories "uses-seda" }}
-            {{ partial "paper" . }}
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-10 col-xl-8 mx-auto">
+                    {{ partial "paper" . }}
+                </div>
+            </div>  
+            <hr>  
             {{ end }}
             {{ end }}
-        </div>
+       
     </div>
     <div class="tab-pane fade" id="technical" role="tabpanel" aria-labelledby="technical-tab">
         <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
              <h3 tabindex="0">Techincal and Methodological</h3>
         </div> -->
-        <div class="col-xs-12 col-sm-12 col-md-10 col-xl-8 mx-auto">
+       
             {{ range .Site.Data.research }}
             {{ if in .categories "technical" }}
-            {{ partial "paper" . }}
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-10 col-xl-8 mx-auto">
+                    {{ partial "paper" . }}
+                </div>
+            </div>  
             {{ end }}
             {{ end }}
-        </div>
+        
     </div>
     <div class="tab-pane fade" id="related" role="tabpanel" aria-labelledby="related-tab">
         <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
             <h3 tabindex="0">Related Papers</h3>
         </div> -->
-        <div class="col-xs-12 col-sm-12 col-md-10 col-xl-8 mx-auto">
+       
             {{ range .Site.Data.research }}
             {{ if in .categories "related" }}
-            {{ partial "paper" . }}
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-10 col-xl-8 mx-auto">
+                    {{ partial "paper" . }}
+                </div>
+            </div>  
             {{ end }}
             {{ end }}
-        </div>
+     
     </div>
 </div>
 

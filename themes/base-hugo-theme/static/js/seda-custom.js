@@ -29,6 +29,89 @@
         $target.parents('.research-paper').toggleClass('abstract-visible');
     }
 
+    anime.set(['#mainland', '.plotpoints', 'body.home .hero-child h2',
+    'body.home .hero-child p', 'body.home .hero-child button'], {
+      opacity: [0]
+    });
+    /* anime.set(['g#grades text', 'g#ses-metric text', '#grades path#axis-line-2', '#hp-x-line path#map-x'], {
+      opacity: [0]
+    }); */
+    anime({
+      targets: ['g#ses-metric', 'g#grades', 'g#hp-x-line'], 
+      opacity: [0, .3],
+      duration: 1, 
+      delay: 1
+    });
+    anime({ // Scatterplot points
+      targets: ['.plotpoints'],
+      opacity: [0, .25],
+      easing: 'easeOutCubic',
+      delay: anime.stagger(24, {start: 300}) // increase delay for each element.
+    });
+    anime({ // Map
+      targets: ['#mainland'],
+      keyframes: [
+        {opacity: 0.8, delay: 1400, duration: 1000},
+        {opacity: 0.6, delay: 2400, duration: 800},
+      ],
+      easing: 'easeInSine',
+    });
+    anime({ // Y Axis
+      targets: ['#grades path#axis-line-2'],
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      duration: 1400,
+    });
+    anime({ // X Axis
+      targets: ['#hp-x-line path#map-x'],
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      duration: 1400,
+     
+    });
+    anime({ // Grades
+      targets: 'g#grades text',
+      transform: ['translate(0 400)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
+      easing: 'easeInOutSine',
+      duration: 1400,
+
+    });
+    anime({ // Numbers
+      targets: 'g#ses-metric text',
+      transform: ['translate(-500 0)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
+      easing: 'easeInOutSine',
+      duration: 1400,
+    });  
+    
+    anime({ // Headline text
+      targets: 'body.home .hero-child h2',
+      opacity: [0, 1], 
+      easing: 'easeInOutSine',
+      duration: 1000,
+      delay: 3000,
+    });  
+
+    anime({ // Body text
+      targets: 'body.home .hero-child p',
+      opacity: [0, 1], 
+      easing: 'easeInOutSine',
+      duration: 800,
+      delay: 4000,
+    });  
+
+    anime({ // Button
+      targets: 'body.home .hero-child button',
+      opacity: [0, 1], 
+      transform: ['translate(100 0)', 'translate(0 0 )'],
+      easing: 'easeInOutSine',
+      duration: 800,
+      delay: 5200,
+    });
+
+
+
+
+
     // Variables for anime
     var dkbluepath = null;
     var medbluepath = null;

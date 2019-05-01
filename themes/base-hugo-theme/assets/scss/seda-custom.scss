@@ -615,6 +615,7 @@ img {
 body.home {
   .hero {
     height: 100vh;
+    min-height: 540px;
     margin-top: -6.4rem;
     background: linear-gradient(to bottom, rgba(6, 29, 86, 100%) 5%, rgba(4, 20, 60, 100%) 75%);
     background-repeat: no-repeat;
@@ -635,9 +636,9 @@ body.home {
       width: 100%;
       height: 100%;
       // z-index: 1;
-      opacity: 0;
-      animation: fade-in 2s forwards;
-      animation-delay: .9s;
+     // opacity: 0;
+      //animation: fade-in 2s forwards;
+     // animation-delay: .9s;
       @keyframes fade-in {
         0% {
           opacity: 0;
@@ -648,7 +649,7 @@ body.home {
       }
       //opacity: 0.7;
       //background-image: url('http://placekitten.com/1500/1000');
-      background: url('/images/map-counties-3-996.png');
+      //background: url('/images/mapplot.svg');
       background-repeat: no-repeat;
       background-position: center 9.7rem;
       background-size: 290px 195px;
@@ -673,9 +674,9 @@ body.home {
       @include media-breakpoint-up(lg) {
         // background-size: 686px 461px;
         background-size: 928px /* 624px */;
-        background-size: 996px auto;
+        background-size: 880px auto;
         // background-position: center 7.7rem;
-        background-position: center 11.2rem;
+        background-position: center 9.2rem;
       }
 
       @include media-breakpoint-up(xl) {
@@ -685,9 +686,36 @@ body.home {
   }
     .hero-child {
       height: 100vh;
-      opacity: 0;
-      animation: fade-in5 2s forwards;
-      animation-delay: .9s;
+      min-height: 540px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -webkit-transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0) scale(1.0, 1.0);
+      transform: translateZ(0);
+      // font-smoothing: antialiased !important;
+      //opacity: 0;
+      //animation: fade-in5 2s forwards;
+      //animation-delay: .9s;
+      svg {
+        width: 76%;
+        min-height: 480px;
+        max-height: 80vh;
+        .plotpoints, #hp-x-line path#map-x, #grades path#axis-line-2,
+        g#grades text, g#ses-metric text  {
+          // opacity: 0;
+        }
+        g#ses-metric {
+          //opacity: 0;
+          clip-path: polygon(0px 0, 100% 0, 100% 100%, 0px 100%);
+        }
+        g#Grades {
+          //opacity: 0;
+          clip-path: polygon(0px 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
       @keyframes fade-in5 {
         0% {
           opacity: 0;
@@ -699,25 +727,35 @@ body.home {
       // background: url('/images/usa_counties_large_white_outline.png');
 
       #hero-overlay {
-        background-color: #00113a75;
+       // background-color: #00113a75;
+       // display: none;
         z-index: 1;
-        margin-left: -16px;
-        margin-right: -16px;
+        // margin-left: -16px;
+        // margin-right: -16px;
+        position: absolute;
       }
 
 
       .column {
+        
         h2 {
         opacity: 0;
-        animation: fade-in2 1s forwards;
-        animation-delay: 2s;
-
+        // animation: fade-in2 1.5s forwards;
+        // animation-delay: 2.8s;
           @keyframes fade-in2 {
             0% {
               opacity: 0;
+              //transform: translateY(4px);
             }
+
+            75% {
+              opacity: 1;
+              //transform: translateY(0px);
+            }
+
             100% {
               opacity: 1;
+              ///transform: translateY(0px);
             }
           }
           font-family: $sharpgrotesk-med-20;
@@ -725,13 +763,13 @@ body.home {
           font-size: 1.7rem;
           line-height: 2.4rem;
           letter-spacing: .009rem;
-          margin-top: 65%;
+          // margin-top: 65%;
 
           @include media-breakpoint-up(mm) {
             font-size: 2.88rem;
             line-height: 4.32rem;
             letter-spacing: .014rem;
-            margin-top: 65%;
+            // margin-top: 65%;
           }
 
          /* @include media-breakpoint-up(mm) {
@@ -745,21 +783,21 @@ body.home {
             font-size: 3.6rem;
             line-height: 5.4rem;
             letter-spacing: .018rem;
-            margin-top: 45%;
+            margin-top: 6%;
           }
 
           @include media-breakpoint-up(lg) {
             font-size: 3.6rem;
             line-height: 5.4rem;
             letter-spacing: .018rem;
-            margin-top: 40vh;
+            // margin-top: 20vh;
           }
 
           @include media-breakpoint-up(xl) {
             font-size: 4.3rem;
             line-height: 6.45rem;
             letter-spacing: .022rem;
-            margin-top: 28vh;
+            // margin-top: 20vh;
           }
 
 
@@ -772,12 +810,18 @@ body.home {
           line-height: 2.0rem;
           margin-top: 3.2rem;
           margin-bottom: 3.2rem;
-          animation: fade-in3 1s forwards;
-          animation-delay: 3s;
+          // animation: fade-in3 1s forwards;
+          animation-delay: 3.8s;
+          z-index: 2;
           opacity: 0;
           @keyframes fade-in3 {
             0% {
               opacity: 0;
+              //transform: translateY(4px);
+            }
+            75% {
+              opacity: 1;
+              //transform: translateY(0px);
             }
             100% {
               opacity: 1;
@@ -817,20 +861,20 @@ body.home {
         }
 
         button {
-          animation: fade-in4 0.5s forwards;
-          animation-delay: 4.5s;
+          //animation: fade-in4 0.5s forwards;
+          //animation-delay: 5s;
           opacity: 0;
           position: relative;
 
           @keyframes fade-in4 {
             0% {
-              opacity: 0;
-              bottom: -16px
+              //opacity: 0;
+             transform: translateY(4px);
             }
 
             100% {
-              bottom: 0px;
-              opacity: 1;
+              transform: translateY(0px);
+              //opacity: 1;
             }
           }
         }

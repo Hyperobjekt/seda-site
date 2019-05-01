@@ -26,7 +26,7 @@ anchor = "smart"
     weight = 1
 
 [[menu.main]]
-	name = "Map"
+	name = "Opportunity Explorer"
 	url = "http://seda-split.surge.sh/counties/avg/all/2.85/37.79/-95.6"
     weight = 1
 

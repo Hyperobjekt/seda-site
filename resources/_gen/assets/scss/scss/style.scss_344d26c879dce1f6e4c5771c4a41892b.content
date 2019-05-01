@@ -17681,6 +17681,7 @@ img.float-left {
 
 body.home .hero {
   height: 100vh;
+  min-height: 540px;
   margin-top: -6.4rem;
   background: linear-gradient(to bottom, #061d56 5%, #04143c 75%);
   background-repeat: no-repeat;
@@ -17701,10 +17702,6 @@ body.home .hero .hero-child:before {
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  animation: fade-in 2s forwards;
-  animation-delay: .9s;
-  background: url("/images/map-counties-3-996.png");
   background-repeat: no-repeat;
   background-position: center 9.7rem;
   background-size: 290px 195px;
@@ -17743,8 +17740,8 @@ body.home .hero .hero-child:before {
 @media (min-width: 992px) {
   body.home .hero .hero-child:before {
     background-size: 928px;
-    background-size: 996px auto;
-    background-position: center 11.2rem;
+    background-size: 880px auto;
+    background-position: center 9.2rem;
   }
 }
 
@@ -17757,9 +17754,29 @@ body.home .hero .hero-child:before {
 
 body.home .hero .hero-child {
   height: 100vh;
-  opacity: 0;
-  animation: fade-in5 2s forwards;
-  animation-delay: .9s;
+  min-height: 540px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  transform: translateZ(0);
+}
+
+body.home .hero .hero-child svg {
+  width: 76%;
+  min-height: 480px;
+  max-height: 80vh;
+}
+
+body.home .hero .hero-child svg g#ses-metric {
+  clip-path: polygon(0px 0, 100% 0, 100% 100%, 0px 100%);
+}
+
+body.home .hero .hero-child svg g#Grades {
+  clip-path: polygon(0px 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 @keyframes fade-in5 {
@@ -17772,22 +17789,17 @@ body.home .hero .hero-child {
 }
 
 body.home .hero .hero-child #hero-overlay {
-  background-color: #00113a75;
   z-index: 1;
-  margin-left: -16px;
-  margin-right: -16px;
+  position: absolute;
 }
 
 body.home .hero .hero-child .column h2 {
   opacity: 0;
-  animation: fade-in2 1s forwards;
-  animation-delay: 2s;
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   color: #ffffff;
   font-size: 1.7rem;
   line-height: 2.4rem;
   letter-spacing: .009rem;
-  margin-top: 65%;
   /* @include media-breakpoint-up(mm) {
             font-size: 3.6rem;
             line-height: 5.4rem;
@@ -17800,6 +17812,9 @@ body.home .hero .hero-child .column h2 {
   0% {
     opacity: 0;
   }
+  75% {
+    opacity: 1;
+  }
   100% {
     opacity: 1;
   }
@@ -17810,7 +17825,6 @@ body.home .hero .hero-child .column h2 {
     font-size: 2.88rem;
     line-height: 4.32rem;
     letter-spacing: .014rem;
-    margin-top: 65%;
   }
 }
 
@@ -17819,7 +17833,7 @@ body.home .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
     letter-spacing: .018rem;
-    margin-top: 45%;
+    margin-top: 6%;
   }
 }
 
@@ -17828,7 +17842,6 @@ body.home .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
     letter-spacing: .018rem;
-    margin-top: 40vh;
   }
 }
 
@@ -17837,7 +17850,6 @@ body.home .hero .hero-child .column h2 {
     font-size: 4.3rem;
     line-height: 6.45rem;
     letter-spacing: .022rem;
-    margin-top: 28vh;
   }
 }
 
@@ -17848,14 +17860,17 @@ body.home .hero .hero-child .column p {
   line-height: 2.0rem;
   margin-top: 3.2rem;
   margin-bottom: 3.2rem;
-  animation: fade-in3 1s forwards;
-  animation-delay: 3s;
+  animation-delay: 3.8s;
+  z-index: 2;
   opacity: 0;
 }
 
 @keyframes fade-in3 {
   0% {
     opacity: 0;
+  }
+  75% {
+    opacity: 1;
   }
   100% {
     opacity: 1;
@@ -17902,20 +17917,16 @@ body.home .hero .hero-child .column a.btn {
 }
 
 body.home .hero .hero-child .column button {
-  animation: fade-in4 0.5s forwards;
-  animation-delay: 4.5s;
   opacity: 0;
   position: relative;
 }
 
 @keyframes fade-in4 {
   0% {
-    opacity: 0;
-    bottom: -16px;
+    transform: translateY(4px);
   }
   100% {
-    bottom: 0px;
-    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
@@ -20881,6 +20892,17 @@ body.type-explorations .hero .hero-child .column p {
     font-size: 2.3rem;
     line-height: 3.45rem;
     letter-spacing: auto;
+  }
+}
+
+@keyframes scale-dots {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

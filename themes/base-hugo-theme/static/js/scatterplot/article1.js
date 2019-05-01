@@ -27,6 +27,18 @@ function sliceMost(arr, size) {
 }
 
 /**
+ * Pulls the largest IDs from an object containing id: value pairs
+ * @param {object} objData id: value pairs, (eg. { "010001": 4.5, "010002", 10, ...})
+ * @param {number} num number of ids to return (e.g. 1)
+ * @returns {array} array of ids with the largest values (e.g. [ "010002" ])
+ */
+function getLargestIds(objData, num) {
+  return Object.keys(objData).sort(function(a, b) {
+    return objData[b] - objData[a];
+  }).slice(0, num);
+}
+
+/**
  * Sort provided array by segregation stats
  * @param Array data
  * @returns Array returnArr
@@ -90,7 +102,6 @@ xhr.send(null);
 /** State 1: Show white scores on x axis and black scores on y axis */
 var state1 = function(scatterplot) {
   // this state is created from the base
-  const base = scatterplot.getState('base');
   // Set up array of district IDs and names for building search series.
   if (names.length <= 0 &&
     scatterplot && 
@@ -191,9 +202,8 @@ var state1 = function(scatterplot) {
               coord: [4, 0],
               symbol: 'none'
             },
-          ]
-        ]
-      }
+          ]]
+        }
       },
       {
         type: 'scatter',
@@ -228,9 +238,9 @@ var state1 = function(scatterplot) {
   return {
     xVar: 'w_avg',
     yVar: 'b_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     highlighted: [],
-    options: deepmerge.all([base.options, baseOverrides ])
+    options: baseOverrides
   }
 }
 
@@ -247,6 +257,7 @@ var state2 = function(scatterplot) {
   }
   // console.log(top100);
   return {
+    selected: [],
     highlighted: [],
     options: deepmerge(base.options, {
       title: {
@@ -322,7 +333,7 @@ var state3 = function(scatterplot) {
   var base = scatterplot.getState('base');
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
   var searchSeries = [];
   if (scatterplot && scatterplot.data) {
     searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
@@ -330,9 +341,10 @@ var state3 = function(scatterplot) {
   return {
     xVar: 'w_avg',
     yVar: 'b_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     highlighted: Object.keys(highlight),
-    options: deepmerge(base.options, {
+    selected: top100,
+    options: {
       title: {
         text: 'White and Black Students\' Average Performance',
         subtext: 'U.S. School Districts 2009-2016'
@@ -352,18 +364,17 @@ var state3 = function(scatterplot) {
         name: 'White Average Performance',
       },
       series: [
-        // base.series[0],
-        // base.series[1],
-        dataSeries,
+        { id: 'base' },
         {
+          id: 'selected',
           type: 'scatter',
-          data: top100,
           symbolSize: dataSeries.symbolSize,
           itemStyle: {
             borderWidth: 1,
             borderColor: 'rgba(0,0,0,1)',
             color: '#b6a2de' // 'rgba(255,0,0,0.25)'
-          }
+          },
+          z: 2
         },
         {
           id: 'highlighted',
@@ -483,7 +494,7 @@ var state3 = function(scatterplot) {
           ]}
         }
       ]
-    })
+    }
   }
 };
 
@@ -602,10 +613,11 @@ var state4 = function(scatterplot) {
   ]
   }
   return {
+    selected: [],
     highlighted: [],
     xVar: 'wb_ses',
     yVar: 'wb_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -963,7 +975,7 @@ var state8 = function(scatterplot) {
     highlighted: Object.keys(highlight),
     xVar: 'wb_ses',
     yVar: 'wb_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -1137,7 +1149,7 @@ var state9 = function(scatterplot) {
     highlighted: [],
     xVar: 'wb_ses',
     yVar: 'wb_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -1295,7 +1307,7 @@ var state10 = function(scatterplot) {
     highlighted: Object.keys(highlight),
     xVar: 'wb_pov',
     yVar: 'wb_avg',
-    zVar: 'sz',
+    zVar: 'all_sz',
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }

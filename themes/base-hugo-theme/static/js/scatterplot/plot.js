@@ -50,7 +50,7 @@
           this.render(refProps);
         },
         update: function() {
-            //  console.log('update');
+             console.log('update');
             var activeWrappers = $.grep(plot.wrappers, function(el) {
                 // Get top and bottom y coords of wrapper
                 plot.top = (plot.scatterplot).offset().top;

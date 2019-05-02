@@ -64,7 +64,7 @@ body.type-posts {
               line-height: 4.3rem;
               letter-spacing: .014rem;
             }
-            @include media-breakpoint-up(xl) {
+            @include media-breakpoint-up(lg) {
               font-size: 3.6rem;
               line-height: 5.4rem;
               letter-spacing: .018rem;
@@ -80,7 +80,7 @@ body.type-posts {
               line-height: 2.5rem;
               letter-spacing: auto;
             }
-            @include media-breakpoint-up(xl) {
+            @include media-breakpoint-up(lg) {
               font-size: 2.3rem;
               line-height: 3.45rem;
               letter-spacing: auto;
@@ -103,7 +103,7 @@ body.type-posts {
             margin-top: 0;
         }
         @include media-breakpoint-up(md) {
-          width: 92%;
+          width: 80%;
         }
         p,
         ul,
@@ -132,8 +132,8 @@ body.type-posts {
           }
 
           @include media-breakpoint-up(lg) {
-            font-size: 1.5rem;
-            line-height: 2.5rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
             margin-top: 3.2rem;
           }
 

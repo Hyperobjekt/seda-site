@@ -17847,8 +17847,8 @@ body.home .hero .hero-child .column h2 {
 
 @media (min-width: 768px) {
   body.home .hero .hero-child .column h2 {
-    font-size: 3.6rem;
-    line-height: 5.4rem;
+    font-size: 3.2rem;
+    line-height: 4.8rem;
     letter-spacing: .018rem;
     margin-top: 6%;
   }
@@ -17856,16 +17856,16 @@ body.home .hero .hero-child .column h2 {
 
 @media (min-width: 992px) {
   body.home .hero .hero-child .column h2 {
-    font-size: 3.6rem;
-    line-height: 5.4rem;
+    font-size: 3.2rem;
+    line-height: 4.8rem;
     letter-spacing: .018rem;
   }
 }
 
 @media (min-width: 1280px) {
   body.home .hero .hero-child .column h2 {
-    font-size: 4.3rem;
-    line-height: 6.45rem;
+    font-size: 3.6rem;
+    line-height: 5.4rem;
     letter-spacing: .022rem;
   }
 }
@@ -17923,8 +17923,8 @@ body.home .hero .hero-child .column p {
 
 @media (min-width: 1280px) {
   body.home .hero .hero-child .column p {
-    font-size: 2.0rem;
-    line-height: 3.0rem;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
     margin-top: 3.2rem;
   }
 }
@@ -18012,8 +18012,8 @@ body.home #main {
 
 @media (min-width: 1280px) {
   .row.subscribe h3 {
-    font-size: 2.8rem;
-    line-height: 4.2rem;
+    font-size: 2.3rem;
+    line-height: 3.4rem;
     letter-spacing: .03rem;
   }
 }
@@ -18085,19 +18085,19 @@ body.home #main {
 
 @media (min-width: 992px) {
   .row.fact.some-things-to-know h3 {
-    font-size: 2.3rem;
-    line-height: 3.4rem;
+    font-size: 2rem;
+    line-height: 3rem;
     letter-spacing: .03rem;
   }
 }
 
 @media (min-width: 1280px) {
   .row.fact.some-things-to-know {
-    padding: 8.0rem 0;
+    padding: 4.8rem 0;
   }
   .row.fact.some-things-to-know h3 {
-    font-size: 2.8rem;
-    line-height: 4.2rem;
+    font-size: 2.3rem;
+    line-height: 3.4rem;
     letter-spacing: .03rem;
   }
 }
@@ -18136,8 +18136,8 @@ body.home #main {
 
 @media (min-width: 992px) {
   .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
-    font-size: 2.3rem;
-    line-height: 3.4rem;
+    font-size: 2rem;
+    line-height: 3rem;
     letter-spacing: .03rem;
   }
   .row.fact.fact-1 p, .row.fact.fact-2 p, .row.fact.fact-3 p {
@@ -18148,13 +18148,13 @@ body.home #main {
 
 @media (min-width: 1280px) {
   .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
-    font-size: 2.8rem;
-    line-height: 4.2rem;
+    font-size: 2.3rem;
+    line-height: 3.4rem;
     letter-spacing: .03rem;
   }
   .row.fact.fact-1 p, .row.fact.fact-2 p, .row.fact.fact-3 p {
-    font-size: 1.9rem;
-    line-height: 2.8rem;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -18197,16 +18197,16 @@ body.home #main {
 
 @media (min-width: 992px) {
   .row.map-invite .scatterplot p {
-    font-size: 2.3rem;
-    line-height: 3.4rem;
+    font-size: 2rem;
+    line-height: 3rem;
     letter-spacing: .003rem;
   }
 }
 
 @media (min-width: 1280px) {
   .row.map-invite .scatterplot p {
-    font-size: 2.8rem;
-    line-height: 4.2rem;
+    font-size: 2.3rem;
+    line-height: 3.4rem;
     letter-spacing: .003rem;
   }
 }
@@ -18274,6 +18274,36 @@ body.home #main {
 
 .row.latest-explorations {
   background-color: #f5f8fa;
+}
+
+.row.latest-explorations h3 {
+  font-size: 1.7rem;
+  line-height: 2.7rem;
+  letter-spacing: .0rem;
+}
+
+@media (min-width: 768px) {
+  .row.latest-explorations h3 {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .row.latest-explorations h3 {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .row.latest-explorations h3 {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .03rem;
+  }
 }
 
 .row.latest-explorations .heading {
@@ -18424,6 +18454,8 @@ body.home #main {
   height: 30px;
   background-repeat: no-repeat;
   background-position: bottom;
+  top: 2px;
+  position: relative;
 }
 
 body.about .hero {

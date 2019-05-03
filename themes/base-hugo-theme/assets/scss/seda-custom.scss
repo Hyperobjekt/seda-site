@@ -515,6 +515,11 @@ img {
     top: 64px;
   }
   @include media-breakpoint-up(md) {
+    height: 5.6rem;
+    position: sticky;
+    top: 64px;
+  }
+  @include media-breakpoint-up(lg) {
     height: 6.4rem;
     position: sticky;
     top: 64px;
@@ -1383,12 +1388,17 @@ body.about {
     margin-right: 0;
     margin-left: 0;
     @include media-breakpoint-up(md) {
-      height: 448px;
+      height: 360px;
+      // background-size: 120% 80%;
+      // background-position: -400px 10%;
+    }
+    @include media-breakpoint-up(lg) {
+      height: 432px;
       // background-size: 120% 80%;
       // background-position: -400px 10%;
     }
     @include media-breakpoint-up(xl) {
-      height: 592px;
+      height: 480px;
       // background-size: 2200px 478px;
       // background-position: -400px 10%;
     }
@@ -1420,13 +1430,13 @@ body.about {
         text-align: center;
         color: $white;
         @include media-breakpoint-up(md) {
-          margin-top: 15.2rem;
+          margin-top: 13.8rem;
         }
         @include media-breakpoint-up(lg) {
           margin-top: 16rem;
         }
         @include media-breakpoint-up(xl) {
-          margin-top: 22rem;
+          margin-top: 17.6rem;
         }
         h2 {
           font-family: $sharpgrotesk-med-20;
@@ -1440,6 +1450,11 @@ body.about {
             letter-spacing: .014rem;
           }
           @include media-breakpoint-up(lg) {
+            font-size: 3rem;
+            line-height: 4.5rem;
+            letter-spacing: .018rem;
+          }
+          @include media-breakpoint-up(xl) {
             font-size: 3.6rem;
             line-height: 5.4rem;
             letter-spacing: .018rem;
@@ -1456,6 +1471,11 @@ body.about {
             letter-spacing: auto;
           }
           @include media-breakpoint-up(lg) {
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            letter-spacing: auto;
+          }
+          @include media-breakpoint-up(xl) {
             font-size: 2.3rem;
             line-height: 3.45rem;
             letter-spacing: auto;
@@ -1507,6 +1527,11 @@ body.about {
           line-height: 2.7rem;
         }
         @include media-breakpoint-up(lg) {
+          font-size: 2rem;
+          line-height: 3rem;
+          letter-spacing: .03rem;
+        }
+        @include media-breakpoint-up(xl) {
           font-size: 2.3rem;
           line-height: 3.4rem;
           letter-spacing: .03rem;
@@ -1525,6 +1550,10 @@ body.about {
         @include media-breakpoint-up(lg) {
           font-size: 1.6rem;
           line-height: 2.4rem;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: 1.7rem;
+          line-height: 2.5rem;
         }
       }
     }
@@ -1619,6 +1648,11 @@ body.about {
             line-height: 2.7rem;
           }
           @include media-breakpoint-up(lg) {
+            font-size: 2rem;
+            line-height: 3rem;
+            letter-spacing: .03rem;
+          }
+          @include media-breakpoint-up(xl) {
             font-size: 2.3rem;
             line-height: 3.4rem;
             letter-spacing: .03rem;
@@ -1637,6 +1671,10 @@ body.about {
           @include media-breakpoint-up(lg) {
             font-size: 1.6rem;
             line-height: 2.4rem;
+          }
+          @include media-breakpoint-up(xl) {
+            font-size: 1.7rem;
+            line-height: 2.5rem;
           }
         }
       }
@@ -1825,6 +1863,11 @@ body.about {
           line-height: 2.7rem;
         }
         @include media-breakpoint-up(lg) {
+          font-size: 2rem;
+          line-height: 3rem;
+          letter-spacing: .03rem;
+        }
+        @include media-breakpoint-up(xl) {
           font-size: 2.3rem;
           line-height: 3.4rem;
           letter-spacing: .03rem;
@@ -1844,6 +1887,21 @@ body.about {
     &.history {
       padding-top: 3.2rem;
       padding-bottom: 8rem;
+      p {
+        color: $seda-gray;
+        @include media-breakpoint-up(md) {
+          font-size: 1.4rem;
+          line-height: 2.1rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: 1.7rem;
+          line-height: 2.5rem;
+        }
+      }
     }
   }
 

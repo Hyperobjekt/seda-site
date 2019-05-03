@@ -17568,6 +17568,14 @@ img.float-left {
 
 @media (min-width: 768px) {
   .subnav {
+    height: 5.6rem;
+    position: sticky;
+    top: 64px;
+  }
+}
+
+@media (min-width: 992px) {
+  .subnav {
     height: 6.4rem;
     position: sticky;
     top: 64px;
@@ -18423,13 +18431,19 @@ body.about .hero {
 
 @media (min-width: 768px) {
   body.about .hero {
-    height: 448px;
+    height: 360px;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .hero {
+    height: 432px;
   }
 }
 
 @media (min-width: 1280px) {
   body.about .hero {
-    height: 592px;
+    height: 480px;
   }
 }
 
@@ -18471,7 +18485,7 @@ body.about .hero .hero-child .column {
 
 @media (min-width: 768px) {
   body.about .hero .hero-child .column {
-    margin-top: 15.2rem;
+    margin-top: 13.8rem;
   }
 }
 
@@ -18483,7 +18497,7 @@ body.about .hero .hero-child .column {
 
 @media (min-width: 1280px) {
   body.about .hero .hero-child .column {
-    margin-top: 22rem;
+    margin-top: 17.6rem;
   }
 }
 
@@ -18504,6 +18518,14 @@ body.about .hero .hero-child .column h2 {
 }
 
 @media (min-width: 992px) {
+  body.about .hero .hero-child .column h2 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    letter-spacing: .018rem;
+  }
+}
+
+@media (min-width: 1280px) {
   body.about .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
@@ -18527,6 +18549,14 @@ body.about .hero .hero-child .column p {
 }
 
 @media (min-width: 992px) {
+  body.about .hero .hero-child .column p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: auto;
+  }
+}
+
+@media (min-width: 1280px) {
   body.about .hero .hero-child .column p {
     font-size: 2.3rem;
     line-height: 3.45rem;
@@ -18589,6 +18619,14 @@ body.about .row.background h4 {
 
 @media (min-width: 992px) {
   body.about .row.background h4 {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.about .row.background h4 {
     font-size: 2.3rem;
     line-height: 3.4rem;
     letter-spacing: .03rem;
@@ -18614,6 +18652,13 @@ body.about .row.background p {
   body.about .row.background p {
     font-size: 1.6rem;
     line-height: 2.4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.about .row.background p {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -18740,6 +18785,14 @@ body.about .row.mission .column-text h4 {
 
 @media (min-width: 992px) {
   body.about .row.mission .column-text h4 {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.about .row.mission .column-text h4 {
     font-size: 2.3rem;
     line-height: 3.4rem;
     letter-spacing: .03rem;
@@ -18765,6 +18818,13 @@ body.about .row.mission .column-text p {
   body.about .row.mission .column-text p {
     font-size: 1.6rem;
     line-height: 2.4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.about .row.mission .column-text p {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -18983,6 +19043,14 @@ body.about .row.funders p {
 
 @media (min-width: 992px) {
   body.about .row.funders p {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.about .row.funders p {
     font-size: 2.3rem;
     line-height: 3.4rem;
     letter-spacing: .03rem;
@@ -18998,6 +19066,31 @@ body.about .row.funder-logos {
 body.about .row.history {
   padding-top: 3.2rem;
   padding-bottom: 8rem;
+}
+
+body.about .row.history p {
+  color: #5d5d5d;
+}
+
+@media (min-width: 768px) {
+  body.about .row.history p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  body.about .row.history p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.about .row.history p {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+  }
 }
 
 body.about .modal {
@@ -20887,8 +20980,8 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   body.type-posts .dyn-article .state-desc-wrapper p,
   body.type-posts .dyn-article .state-desc-wrapper ul,
   body.type-posts .dyn-article .state-desc-wrapper li {
-    font-size: 2.0rem;
-    line-height: 3.0rem;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
     margin-top: 3.2rem;
   }
 }
@@ -21939,6 +22032,13 @@ body.about .row.people-former .flex-row, body.about .row.people-current .flex-ro
 body.about .who-we-are-former.leadership h4 {
   margin-top: 3.2rem;
   margin-bottom: 2.4rem;
+}
+
+@media (min-width: 992px) {
+  body.about .who-we-are-former.leadership h4 {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+  }
 }
 
 body.about .row.quote.m-0 {

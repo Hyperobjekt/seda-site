@@ -243,6 +243,13 @@ input.form-control {
 }
 
 // Header
+
+body.type-help-faq, body.research {
+  nav.sticky-top {
+    box-shadow: none;
+  }
+}
+
 nav.navbar-light {
   height: 6.4rem;
   background-color: transparent; // $seda-dark;
@@ -524,6 +531,10 @@ img {
     position: sticky;
     top: 64px;
   }
+  &.sticky-top {
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    transition: background-color .2s ease;
+  }
   &.d-md-none {
     display: flex;
     justify-content: center;
@@ -568,7 +579,7 @@ img {
     list-style: none;
     margin-bottom: 0;
     justify-content: space-between;
-    border-bottom: 2px solid #E9EAED;
+    // border-bottom: 2px solid #E9EAED;
     height: 100%;
     li {
       font-size: 1.2rem;
@@ -2293,7 +2304,7 @@ body.research {
     }
     .large-tab-nav {
       display: block;
-      border-bottom: 1px solid #E9EAED;
+      // border-bottom: 1px solid #E9EAED;
       ul {
         border-bottom: none;
       }

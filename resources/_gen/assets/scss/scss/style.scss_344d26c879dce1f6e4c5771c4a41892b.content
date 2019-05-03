@@ -17305,6 +17305,7 @@ input.form-control {
 
 body.type-help-faq nav.sticky-top, body.research nav.sticky-top {
   box-shadow: none;
+  border-bottom: 1px solid #ddeaf3;
 }
 
 nav.navbar-light {

@@ -581,8 +581,8 @@ img {
         margin-top: 4px;
       }
       @include media-breakpoint-up(lg) {
-        font-size: 1.8rem;
-        line-height: 3.818rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
         letter-spacing: 0.07rem;
       }
       a {
@@ -2108,6 +2108,11 @@ body.research {
             letter-spacing: .014rem;
           }
           @include media-breakpoint-up(lg) {
+            font-size: 3rem;
+            line-height: 4.5rem;
+            letter-spacing: .018rem;
+          }
+          @include media-breakpoint-up(xl) {
             font-size: 3.6rem;
             line-height: 5.4rem;
             letter-spacing: .018rem;
@@ -2124,6 +2129,11 @@ body.research {
             letter-spacing: auto;
           }
           @include media-breakpoint-up(lg) {
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            letter-spacing: auto;
+          }
+          @include media-breakpoint-up(xl) {
             font-size: 2.3rem;
             line-height: 3.45rem;
             letter-spacing: auto;
@@ -2144,39 +2154,39 @@ body.research {
     
     a {
       border: none; // 1px solid transparent;
-      border-bottom: 4px solid transparent;
+      border-bottom: 0px solid transparent;
       padding-bottom: 5px;
       margin-top: 0px;
       @include media-breakpoint-up(md) {
         &:hover {
           color: $seda-dark;
           border: none; // 1px solid transparent;
-          border-bottom: 4px solid $seda-navy;
-          padding-bottom: 20px;
-          margin-top: 16px;
+          border-bottom: 2px solid $seda-navy;
+          padding-bottom: 16px;
+          margin-top: 12px;
         }
         &.active {
           color: $seda-dark;
           border: none;
-          border-bottom: 4px solid #04143c;
-          padding-bottom: 20px;
-          margin-top: 16px;
+          border-bottom: 2px solid #04143c;
+          padding-bottom: 16px;
+          margin-top: 12px;
         }
       }
       @include media-breakpoint-up(lg) {
         &:hover {
           color: $seda-dark;
           border: none; // 1px solid transparent;
-          border-bottom: 4px solid $seda-navy;
-          padding-bottom: 8px;
-          margin-top: 2px;
+          border-bottom: 2px solid $seda-navy;
+          padding-bottom: 16px;
+          margin-top: 12px;
         }
         &.active {
           color: $seda-dark;
           border: none;
-          border-bottom: 4px solid $seda-navy;
-          padding-bottom: 8px;
-          margin-top: 2px;
+          border-bottom: 2px solid $seda-navy;
+          padding-bottom: 16px;
+          margin-top: 12px;
         }
       }  
     }
@@ -2280,8 +2290,8 @@ body.research {
         letter-spacing: .024rem;
       }
       @include media-breakpoint-up(lg) {
-        font-size: 2.3rem;
-        line-height: 3.4rem;
+        font-size: 2rem;
+        line-height: 3rem;
         letter-spacing: .03rem;
       }
     }
@@ -2304,7 +2314,7 @@ body.research {
       }
       @include media-breakpoint-up(lg) {
         font-size: 1.6rem;
-        line-height: 2.5rem;
+        line-height: 2.4rem;
       }
     }
 
@@ -2329,8 +2339,8 @@ body.research {
           padding: 1.6rem;
         }
         @include media-breakpoint-up(lg) {
-          font-size: 1.8rem;
-          line-height: 2rem;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
           letter-spacing: .07rem;
         }
         &:after {

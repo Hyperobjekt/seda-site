@@ -17646,8 +17646,8 @@ img.float-left {
 
 @media (min-width: 992px) {
   .subnav ul li {
-    font-size: 1.8rem;
-    line-height: 3.818rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     letter-spacing: 0.07rem;
   }
 }
@@ -19275,6 +19275,14 @@ body.research .hero .hero-child .column h2 {
 
 @media (min-width: 992px) {
   body.research .hero .hero-child .column h2 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    letter-spacing: .018rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  body.research .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
     letter-spacing: .018rem;
@@ -19298,6 +19306,14 @@ body.research .hero .hero-child .column p {
 
 @media (min-width: 992px) {
   body.research .hero .hero-child .column p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  body.research .hero .hero-child .column p {
     font-size: 2.3rem;
     line-height: 3.45rem;
     letter-spacing: auto;
@@ -19310,7 +19326,7 @@ body.research .large-tab-nav {
 
 body.research .large-tab-nav a {
   border: none;
-  border-bottom: 4px solid transparent;
+  border-bottom: 0px solid transparent;
   padding-bottom: 5px;
   margin-top: 0px;
 }
@@ -19319,16 +19335,16 @@ body.research .large-tab-nav a {
   body.research .large-tab-nav a:hover {
     color: #031232;
     border: none;
-    border-bottom: 4px solid #04143c;
-    padding-bottom: 20px;
-    margin-top: 16px;
+    border-bottom: 2px solid #04143c;
+    padding-bottom: 16px;
+    margin-top: 12px;
   }
   body.research .large-tab-nav a.active {
     color: #031232;
     border: none;
-    border-bottom: 4px solid #04143c;
-    padding-bottom: 20px;
-    margin-top: 16px;
+    border-bottom: 2px solid #04143c;
+    padding-bottom: 16px;
+    margin-top: 12px;
   }
 }
 
@@ -19336,16 +19352,16 @@ body.research .large-tab-nav a {
   body.research .large-tab-nav a:hover {
     color: #031232;
     border: none;
-    border-bottom: 4px solid #04143c;
-    padding-bottom: 8px;
-    margin-top: 2px;
+    border-bottom: 2px solid #04143c;
+    padding-bottom: 16px;
+    margin-top: 12px;
   }
   body.research .large-tab-nav a.active {
     color: #031232;
     border: none;
-    border-bottom: 4px solid #04143c;
-    padding-bottom: 8px;
-    margin-top: 2px;
+    border-bottom: 2px solid #04143c;
+    padding-bottom: 16px;
+    margin-top: 12px;
   }
 }
 
@@ -19464,8 +19480,8 @@ body.research .research-paper h5 {
 
 @media (min-width: 992px) {
   body.research .research-paper h5 {
-    font-size: 2.3rem;
-    line-height: 3.4rem;
+    font-size: 2rem;
+    line-height: 3rem;
     letter-spacing: .03rem;
   }
 }
@@ -19490,7 +19506,7 @@ body.research .research-paper .authors {
 @media (min-width: 992px) {
   body.research .research-paper .authors {
     font-size: 1.6rem;
-    line-height: 2.5rem;
+    line-height: 2.4rem;
   }
 }
 
@@ -19524,8 +19540,8 @@ body.research .research-paper .controls .show-versions {
 
 @media (min-width: 992px) {
   body.research .research-paper .controls .show-versions {
-    font-size: 1.8rem;
-    line-height: 2rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     letter-spacing: .07rem;
   }
 }
@@ -20438,7 +20454,7 @@ body.type-news .hero .hero-child {
   height: 100%;
   margin-right: 0;
   margin-left: 0;
-  background: url("/images/fourpapers2@2x.png");
+  background: url("/images/heroes/in-the-news.svg");
   background-repeat: no-repeat;
   background-size: 84%;
   background-position: center 70%;
@@ -20446,14 +20462,14 @@ body.type-news .hero .hero-child {
 
 @media (min-width: 576px) {
   body.type-news .hero .hero-child {
-    background-size: 68%;
+    background-size: 52%;
     background-position: center;
   }
 }
 
 @media (min-width: 1400px) {
   body.type-news .hero .hero-child {
-    background-size: 68%;
+    background-size: 52%;
     background-position: center;
   }
 }
@@ -20851,13 +20867,13 @@ body.type-explorations .hero .hero-child {
   height: 100%;
   margin-right: 0;
   margin-left: 0;
-  background: url("/images/fourpapers2@2x.png");
+  background: url("/images/heroes/explorations-plot.svg");
   background-repeat: no-repeat;
-  background-size: 84%;
+  background-size: 92%;
   background-position: center 70%;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   body.type-explorations .hero .hero-child {
     background-size: 68%;
     background-position: center;
@@ -20866,7 +20882,7 @@ body.type-explorations .hero .hero-child {
 
 @media (min-width: 1400px) {
   body.type-explorations .hero .hero-child {
-    background-size: 68%;
+    background-size: 76%;
     background-position: center;
   }
 }

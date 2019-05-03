@@ -27,16 +27,16 @@ body.type-explorations {
           height: 100%;
           margin-right: 0;
           margin-left: 0;
-          background: url('/images/fourpapers2@2x.png');
+          background: url('/images/heroes/explorations-plot.svg');
           background-repeat: no-repeat;
-          background-size: 84%;
+          background-size: 92%;
           background-position: center 70%;
-          @include media-breakpoint-up(mm) {
+          @include media-breakpoint-up(md) {
             background-size: 68%;
             background-position: center;
           }
           @include media-breakpoint-up(xl) {
-            background-size: 68%;
+            background-size: 76%;
             background-position: center;
           }
           .column {

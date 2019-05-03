@@ -19203,13 +19203,13 @@ body.research .hero {
 
 @media (min-width: 768px) {
   body.research .hero {
-    height: 448px;
+    height: 432px;
   }
 }
 
 @media (min-width: 1280px) {
   body.research .hero {
-    height: 592px;
+    height: 480px;
   }
 }
 
@@ -19482,6 +19482,14 @@ body.research .research-paper h5 {
   body.research .research-paper h5 {
     font-size: 2rem;
     line-height: 3rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.research .research-paper h5 {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
     letter-spacing: .03rem;
   }
 }

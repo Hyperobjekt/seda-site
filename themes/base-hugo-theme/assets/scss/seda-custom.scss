@@ -2058,12 +2058,12 @@ body.research {
     margin-right: 0;
     margin-left: 0;
     @include media-breakpoint-up(md) {
-      height: 448px;
+      height: 432px;
       // background-size: 120% 80%;
       // background-position: -400px 10%;
     }
     @include media-breakpoint-up(xl) {
-      height: 592px;
+      height: 480px;
       // background-size: 2200px 478px;
       // background-position: -400px 10%;
     }
@@ -2292,6 +2292,11 @@ body.research {
       @include media-breakpoint-up(lg) {
         font-size: 2rem;
         line-height: 3rem;
+        letter-spacing: .03rem;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 2.3rem;
+        line-height: 3.4rem;
         letter-spacing: .03rem;
       }
     }

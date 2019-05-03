@@ -16,18 +16,12 @@ body.type-posts {
       margin-left: 0;
       @include media-breakpoint-up(md) {
         height: 360px;
-        // background-size: 120% 80%;
-        // background-position: -400px 10%;
       }
       @include media-breakpoint-up(lg) {
         height: 432px;
-        // background-size: 120% 80%;
-        // background-position: -400px 10%;
       }
       @include media-breakpoint-up(xl) {
         height: 480px;
-        // background-size: 2200px 478px;
-        // background-position: -400px 10%;
       }
 
 

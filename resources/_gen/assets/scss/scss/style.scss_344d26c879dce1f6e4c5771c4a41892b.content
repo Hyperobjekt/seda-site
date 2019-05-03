@@ -20312,7 +20312,19 @@ body.type-help-faq .hero {
 
 @media (min-width: 768px) {
   body.type-help-faq .hero {
-    height: 448px;
+    height: 360px;
+  }
+}
+
+@media (min-width: 992px) {
+  body.type-help-faq .hero {
+    height: 432px;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-help-faq .hero {
+    height: 480px;
   }
 }
 
@@ -20321,22 +20333,21 @@ body.type-help-faq .hero .hero-child {
   height: 100%;
   margin-right: 0;
   margin-left: 0;
-  background: url("/images/fourpapers2@2x.png");
+  background: url("/images/heroes/help-faq.svg");
   background-repeat: no-repeat;
-  background-size: 84%;
-  background-position: center 70%;
+  background-size: 50%;
+  background-position: center;
 }
 
 @media (min-width: 576px) {
   body.type-help-faq .hero .hero-child {
-    background-size: 68%;
+    background-size: 38%;
     background-position: center;
   }
 }
 
 @media (min-width: 1280px) {
   body.type-help-faq .hero .hero-child {
-    background-size: 68%;
     background-position: center;
   }
 }
@@ -20350,13 +20361,19 @@ body.type-help-faq .hero .hero-child .column {
 
 @media (min-width: 768px) {
   body.type-help-faq .hero .hero-child .column {
-    margin-top: 15.2rem;
+    margin-top: 13.8rem;
   }
 }
 
 @media (min-width: 992px) {
   body.type-help-faq .hero .hero-child .column {
-    margin-top: 16rem;
+    margin-top: 17rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-help-faq .hero .hero-child .column {
+    margin-top: 19rem;
   }
 }
 
@@ -20377,6 +20394,14 @@ body.type-help-faq .hero .hero-child .column h2 {
 }
 
 @media (min-width: 992px) {
+  body.type-help-faq .hero .hero-child .column h2 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    letter-spacing: .018rem;
+  }
+}
+
+@media (min-width: 1280px) {
   body.type-help-faq .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
@@ -20400,6 +20425,14 @@ body.type-help-faq .hero .hero-child .column p {
 }
 
 @media (min-width: 992px) {
+  body.type-help-faq .hero .hero-child .column p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: auto;
+  }
+}
+
+@media (min-width: 1280px) {
   body.type-help-faq .hero .hero-child .column p {
     font-size: 2.3rem;
     line-height: 3.45rem;

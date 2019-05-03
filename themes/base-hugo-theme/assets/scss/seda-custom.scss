@@ -1248,14 +1248,19 @@ body.home {
             @include media-breakpoint-up(md) {
               font-size: 1.85rem;
               line-height: 2.7rem;
-              letter-spacing: .009rem;
+              letter-spacing: .024rem;
             }
-
             @include media-breakpoint-up(lg) {
+              margin-top: 2.4rem;
+              font-size: 2rem;
+              line-height: 3rem;
+              letter-spacing: .03rem;
+            }
+            @include media-breakpoint-up(xl) {
               margin-top: 3.2rem;
               font-size: 2.3rem;
               line-height: 3.4rem;
-              letter-spacing: .012rem;
+              letter-spacing: .03rem;
             }
           }
 
@@ -2058,6 +2063,11 @@ body.research {
     margin-right: 0;
     margin-left: 0;
     @include media-breakpoint-up(md) {
+      height: 360px;
+      // background-size: 120% 80%;
+      // background-position: -400px 10%;
+    }
+    @include media-breakpoint-up(lg) {
       height: 432px;
       // background-size: 120% 80%;
       // background-position: -400px 10%;
@@ -2194,7 +2204,7 @@ body.research {
   }
   .nav-link {
     display: block;
-    padding: 0.5rem 0rem;
+    // padding: 0.5rem 0rem;
   }
   .small-tab-nav {
     a {
@@ -2341,7 +2351,7 @@ body.research {
           font-size: 1.4rem;
           line-height: 1.4rem;
           letter-spacing: .064rem;
-          padding: 1.6rem;
+          padding: 1.6rem 0;
         }
         @include media-breakpoint-up(lg) {
           font-size: 1.6rem;
@@ -2370,6 +2380,7 @@ body.research {
     .btn-custom {
       @include media-breakpoint-up(md) {
         width: 232px;
+        margin: 0 1.6rem .8rem 0;
       }
     }
 
@@ -2411,11 +2422,16 @@ body.research {
           letter-spacing: .009rem;
           margin-top: 3.2rem;
           @include media-breakpoint-up(md) {
-            font-size: 1.8rem;
-            line-height: 2.75rem;
-            letter-spacing: .023rem;
+            font-size: 1.85rem;
+            line-height: 2.7rem;
+            letter-spacing: .024rem;
           }
           @include media-breakpoint-up(lg) {
+            font-size: 2rem;
+            line-height: 3rem;
+            letter-spacing: .03rem;
+          }
+          @include media-breakpoint-up(xl) {
             font-size: 2.3rem;
             line-height: 3.4rem;
             letter-spacing: .03rem;

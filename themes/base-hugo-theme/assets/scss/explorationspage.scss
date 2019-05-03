@@ -12,11 +12,17 @@ body.type-explorations {
         margin-right: 0;
         margin-left: 0;
         @include media-breakpoint-up(md) {
-          height: 448px;
+          height: 360px;
+          // background-size: 120% 80%;
+          // background-position: -400px 10%;
+        }
+        @include media-breakpoint-up(lg) {
+          height: 432px;
           // background-size: 120% 80%;
           // background-position: -400px 10%;
         }
         @include media-breakpoint-up(xl) {
+          height: 480px;
           // background-size: 2200px 478px;
           // background-position: -400px 10%;
         }
@@ -32,7 +38,7 @@ body.type-explorations {
           background-size: 92%;
           background-position: center 70%;
           @include media-breakpoint-up(md) {
-            background-size: 68%;
+            background-size: 88%;
             background-position: center;
           }
           @include media-breakpoint-up(xl) {
@@ -62,6 +68,11 @@ body.type-explorations {
                 letter-spacing: .014rem;
               }
               @include media-breakpoint-up(lg) {
+                font-size: 3rem;
+                line-height: 4.5rem;
+                letter-spacing: .018rem;
+              }
+              @include media-breakpoint-up(xl) {
                 font-size: 3.6rem;
                 line-height: 5.4rem;
                 letter-spacing: .018rem;
@@ -78,6 +89,11 @@ body.type-explorations {
                 letter-spacing: auto;
               }
               @include media-breakpoint-up(lg) {
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+                letter-spacing: auto;
+              }
+              @include media-breakpoint-up(xl) {
                 font-size: 2.3rem;
                 line-height: 3.45rem;
                 letter-spacing: auto;

@@ -18302,16 +18302,25 @@ body.home #main {
   .row.latest-explorations .card-container .card .card-body .card-title {
     font-size: 1.85rem;
     line-height: 2.7rem;
-    letter-spacing: .009rem;
+    letter-spacing: .024rem;
   }
 }
 
 @media (min-width: 992px) {
   .row.latest-explorations .card-container .card .card-body .card-title {
+    margin-top: 2.4rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .row.latest-explorations .card-container .card .card-body .card-title {
     margin-top: 3.2rem;
     font-size: 2.3rem;
     line-height: 3.4rem;
-    letter-spacing: .012rem;
+    letter-spacing: .03rem;
   }
 }
 
@@ -19203,6 +19212,12 @@ body.research .hero {
 
 @media (min-width: 768px) {
   body.research .hero {
+    height: 360px;
+  }
+}
+
+@media (min-width: 992px) {
+  body.research .hero {
     height: 432px;
   }
 }
@@ -19367,7 +19382,6 @@ body.research .large-tab-nav a {
 
 body.research .nav-link {
   display: block;
-  padding: 0.5rem 0rem;
 }
 
 body.research .small-tab-nav a.active {
@@ -19542,7 +19556,7 @@ body.research .research-paper .controls .show-versions {
     font-size: 1.4rem;
     line-height: 1.4rem;
     letter-spacing: .064rem;
-    padding: 1.6rem;
+    padding: 1.6rem 0;
   }
 }
 
@@ -19576,6 +19590,7 @@ body.research .research-paper .controls .show-versions:after {
 @media (min-width: 768px) {
   body.research .research-paper .btn-custom {
     width: 232px;
+    margin: 0 1.6rem .8rem 0;
   }
 }
 
@@ -19628,13 +19643,21 @@ body.research .research-paper .abstract-and-meta .meta h4 {
 
 @media (min-width: 768px) {
   body.research .research-paper .abstract-and-meta .meta h4 {
-    font-size: 1.8rem;
-    line-height: 2.75rem;
-    letter-spacing: .023rem;
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+    letter-spacing: .024rem;
   }
 }
 
 @media (min-width: 992px) {
+  body.research .research-paper .abstract-and-meta .meta h4 {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media (min-width: 1280px) {
   body.research .research-paper .abstract-and-meta .meta h4 {
     font-size: 2.3rem;
     line-height: 3.4rem;
@@ -20633,7 +20656,19 @@ body.type-posts .hero {
 
 @media (min-width: 768px) {
   body.type-posts .hero {
-    height: 448px;
+    height: 360px;
+  }
+}
+
+@media (min-width: 992px) {
+  body.type-posts .hero {
+    height: 432px;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-posts .hero {
+    height: 480px;
   }
 }
 
@@ -20663,30 +20698,20 @@ body.type-posts .hero .hero-child {
 }
 
 body.type-posts .hero .hero-child .column {
-  margin-top: 13.2rem;
-  margin-bottom: 9.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   color: #ffffff;
-}
-
-@media (min-width: 768px) {
-  body.type-posts .hero .hero-child .column {
-    margin-top: 15.2rem;
-  }
-}
-
-@media (min-width: 992px) {
-  body.type-posts .hero .hero-child .column {
-    margin-top: 16rem;
-  }
 }
 
 body.type-posts .hero .hero-child .column h2 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 2.6rem;
-  line-height: 2.55rem;
+  line-height: 3.8rem;
   letter-spacing: .013rem;
   margin-bottom: 1.6rem;
+  margin-top: 2.4rem;
 }
 
 @media (min-width: 768px) {
@@ -20698,6 +20723,14 @@ body.type-posts .hero .hero-child .column h2 {
 }
 
 @media (min-width: 992px) {
+  body.type-posts .hero .hero-child .column h2 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    letter-spacing: .018rem;
+  }
+}
+
+@media (min-width: 1280px) {
   body.type-posts .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
@@ -20721,6 +20754,14 @@ body.type-posts .hero .hero-child .column p {
 }
 
 @media (min-width: 992px) {
+  body.type-posts .hero .hero-child .column p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: auto;
+  }
+}
+
+@media (min-width: 1280px) {
   body.type-posts .hero .hero-child .column p {
     font-size: 2.3rem;
     line-height: 3.45rem;
@@ -20866,7 +20907,19 @@ body.type-explorations .hero {
 
 @media (min-width: 768px) {
   body.type-explorations .hero {
-    height: 448px;
+    height: 360px;
+  }
+}
+
+@media (min-width: 992px) {
+  body.type-explorations .hero {
+    height: 432px;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-explorations .hero {
+    height: 480px;
   }
 }
 
@@ -20883,7 +20936,7 @@ body.type-explorations .hero .hero-child {
 
 @media (min-width: 768px) {
   body.type-explorations .hero .hero-child {
-    background-size: 68%;
+    background-size: 88%;
     background-position: center;
   }
 }
@@ -20932,6 +20985,14 @@ body.type-explorations .hero .hero-child .column h2 {
 
 @media (min-width: 992px) {
   body.type-explorations .hero .hero-child .column h2 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    letter-spacing: .018rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-explorations .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
     letter-spacing: .018rem;
@@ -20954,6 +21015,14 @@ body.type-explorations .hero .hero-child .column p {
 }
 
 @media (min-width: 992px) {
+  body.type-explorations .hero .hero-child .column p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: auto;
+  }
+}
+
+@media (min-width: 1280px) {
   body.type-explorations .hero .hero-child .column p {
     font-size: 2.3rem;
     line-height: 3.45rem;

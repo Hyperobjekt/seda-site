@@ -1,11 +1,11 @@
 <div class="card">
-    {{ $img := strings.TrimPrefix "/uploads/" .Params.image }}
+    {{/* $img := strings.TrimPrefix "/uploads/" .Params.image }}
     {{ with $.Site.GetPage "page" "uploads/_index.md" }}
         {{ with .Resources.GetMatch $img }}
-              {{$imgcrop := .Fill "118x112 Center"}}
-              <img class="img-thumbnail" src="{{ $imgcrop.RelPermalink }}" width="" height="" alt="Gathering of people talking" tabindex="0">
-        {{ end }}
-    {{ end }}
+              {{$imgcrop := .Fill "118x112 Center" */}}
+              <img class="img-thumbnail" src="{{ .Params.image }}" width="" height="" alt="" tabindex="0">
+        {{/* end }}
+    {{ end */}}
     <div class="card-body">
         <h4 class="card-title" tabindex="0">{{ .Title }}</h4>
         <hr>

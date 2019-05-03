@@ -18278,7 +18278,7 @@ body.home #main {
 }
 
 .row.latest-explorations .card-container .card .img-thumbnail {
-  width: 84px;
+  width: 120px;
   height: 80px;
   padding: 0;
   background-color: #ffffff;
@@ -20704,6 +20704,48 @@ body.type-posts .hero .hero-child .column p {
   }
 }
 
+body.type-posts .crumbs {
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  letter-spacing: .055rem;
+  text-transform: uppercase;
+  border: 0;
+  background-color: transparent;
+  margin-top: 2.4rem;
+  margin-bottom: -2.4rem;
+}
+
+body.type-posts .crumbs span.med-blue, body.type-posts .crumbs a {
+  color: #7086AB;
+}
+
+body.type-posts .crumbs span.crumb-carat {
+  padding: 0 1.6rem;
+}
+
+body.type-posts .crumbs a:hover {
+  text-decoration: underline;
+  color: #031232;
+}
+
+body.type-posts .crumbs:disabled {
+  opacity: .5;
+}
+
+body.type-posts .crumbs:disabled:before {
+  opacity: .5;
+}
+
+body.type-posts .crumbs:disabled:after {
+  opacity: .5;
+}
+
+body.type-posts .crumbs:disabled:hover {
+  opacity: .5;
+  color: #979797;
+  text-decoration: none;
+}
+
 body.type-posts .dyn-article {
   margin-top: 5.6rem;
   margin-bottom: 8rem;
@@ -20726,7 +20768,7 @@ body.type-posts .dyn-article .state-desc-wrapper:first-child {
 
 @media (min-width: 768px) {
   body.type-posts .dyn-article .state-desc-wrapper {
-    width: 80%;
+    width: 94%;
   }
 }
 

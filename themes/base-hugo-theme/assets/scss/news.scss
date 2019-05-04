@@ -27,16 +27,16 @@ body.type-news {
           height: 100%;
           margin-right: 0;
           margin-left: 0;
-          background: url('/images/fourpapers2@2x.png');
+          background: url('/images/heroes/in-the-news.svg');
           background-repeat: no-repeat;
           background-size: 84%;
           background-position: center 70%;
           @include media-breakpoint-up(mm) {
-            background-size: 68%;
+            background-size: 52%;
             background-position: center;
           }
           @include media-breakpoint-up(xl) {
-            background-size: 68%;
+            background-size: 52%;
             background-position: center;
           }
           .column {

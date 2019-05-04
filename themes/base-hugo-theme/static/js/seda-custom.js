@@ -16,9 +16,11 @@
         if (y <= (heroHeight - 64)) {
             // $('body').addClass('scroll-top');
             $('nav').removeClass('sticky-top');
+            $('.subnav').removeClass('sticky-top');
         } else if (y > (heroHeight - 64)) {
             // $('body').removeClass('scroll-top');
             $('nav').addClass('sticky-top');
+            $('.subnav').addClass('sticky-top');
         }
     }
 
@@ -107,10 +109,6 @@
       duration: 800,
       delay: 5200,
     });
-
-
-
-
 
     // Variables for anime
     var dkbluepath = null;

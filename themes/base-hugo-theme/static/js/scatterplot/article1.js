@@ -103,7 +103,7 @@ xhr.send(null);
 var state1 = function(scatterplot) {
   // this state is created from the base
   // Set up array of district IDs and names for building search series.
-  if (names.length <= 0 &&
+  if (Object.keys(names).length <= 0 &&
     scatterplot && 
     scatterplot.data && 
     scatterplot.data.districts &&
@@ -111,12 +111,19 @@ var state1 = function(scatterplot) {
     names = scatterplot.data.districts.name;
     // console.log(names);
   }
+
+  var base = scatterplot.getState('base');
   var dataSeries = [];
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    dataSeries = scatterplot.getDataSeries();
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
+
   const baseOverrides = {
     title: {
       text: 'White and Black Students\' Average Performance',
@@ -128,6 +135,7 @@ var state1 = function(scatterplot) {
     yAxis: {
       min:-4,
       max:3,
+      position: 'right',
       name: 'Black Average Performance',
       textStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -206,19 +214,15 @@ var state1 = function(scatterplot) {
         }
       },
       {
-        type: 'scatter',
-        data: searchSeries,
-        symbolSize: 15, // dataSeries.symbolSize,
-        zlevel: 1000,
+        id: 'highlighted',
         itemStyle: {
           borderWidth: 2,
-          borderColor: '#042965',
-          color: 'rgba(255,255,0,0.97)'
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.5)'
         },
         label: {
           show: true,
           position: 'right',
-          width: "25%",
           backgroundColor: 'rgba(255,255,0,0.97)',
           borderColor: '#042965',
           fontSize: 12,
@@ -229,17 +233,45 @@ var state1 = function(scatterplot) {
           borderRadius: 3,
           color: '#042965',
           formatter: function(item) {
-            return names[item.value[3]]
+            return highlight[item.value[3]]
           }
         }
       }
+      // {
+      //   type: 'scatter',
+      //   data: searchSeries,
+      //   symbolSize: 15, // dataSeries.symbolSize,
+      //   zlevel: 1000,
+      //   itemStyle: {
+      //     borderWidth: 2,
+      //     borderColor: '#042965',
+      //     color: 'rgba(255,255,0,0.97)'
+      //   },
+      //   label: {
+      //     show: true,
+      //     position: 'right',
+      //     width: "25%",
+      //     backgroundColor: 'rgba(255,255,0,0.97)',
+      //     borderColor: '#042965',
+      //     fontSize: 12,
+      //     fontWeight: 600,
+      //     fontFamily: 'MaisonNeue-Medium',
+      //     lineHeight: 28,
+      //     padding: [6, 8],
+      //     borderRadius: 3,
+      //     color: '#042965',
+      //     formatter: function(item) {
+      //       return names[item.value[3]]
+      //     }
+      //   }
+      // }
     ]
   }
   return {
     xVar: 'w_avg',
     yVar: 'b_avg',
     zVar: 'all_sz',
-    highlighted: [],
+    highlighted: Object.keys(highlight),
     options: baseOverrides
   }
 }
@@ -251,14 +283,23 @@ var state2 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // var searchSeries = [];
+  // if (scatterplot && scatterplot.data) {
+  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // }
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
   // console.log(top100);
   return {
     selected: [],
-    highlighted: [],
+    highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
       title: {
         subtext: '100 Largest U.S. School Districts 2009-2016'
@@ -266,6 +307,7 @@ var state2 = function(scatterplot) {
       yAxis: {
         min:-4,
         max:3,
+        // position: 'right',
         name: 'Black Average Performance',
         textStyle: {
           fontFamily: 'SharpGrotesk-Medium20',
@@ -278,7 +320,8 @@ var state2 = function(scatterplot) {
         name: 'White Average Performance',
       },
       series: [
-        dataSeries,
+        // dataSeries,
+        { id: 'base' },
         {
           type: 'scatter',
           data: top100,
@@ -290,19 +333,15 @@ var state2 = function(scatterplot) {
           }
         },
         {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
+          id: 'highlighted',
           itemStyle: {
             borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
+            borderColor: '#042965', // 'rgba(0,0,0,1)',
+            color: 'rgba(255,255,0,0.5)'
           },
           label: {
             show: true,
             position: 'right',
-            width: "25%",
             backgroundColor: 'rgba(255,255,0,0.97)',
             borderColor: '#042965',
             fontSize: 12,
@@ -313,10 +352,38 @@ var state2 = function(scatterplot) {
             borderRadius: 3,
             color: '#042965',
             formatter: function(item) {
-              return names[item.value[3]]
+              return highlight[item.value[3]]
             }
           }
-        }
+        },
+        // {
+        //   type: 'scatter',
+        //   data: searchSeries,
+        //   symbolSize: 15, // dataSeries.symbolSize,
+        //   zlevel: 1000,
+        //   itemStyle: {
+        //     borderWidth: 2,
+        //     borderColor: '#042965',
+        //     color: 'rgba(255,255,0,0.97)'
+        //   },
+        //   label: {
+        //     show: true,
+        //     position: 'right',
+        //     width: "25%",
+        //     backgroundColor: 'rgba(255,255,0,0.97)',
+        //     borderColor: '#042965',
+        //     fontSize: 12,
+        //     fontWeight: 600,
+        //     fontFamily: 'MaisonNeue-Medium',
+        //     lineHeight: 28,
+        //     padding: [6, 8],
+        //     borderRadius: 3,
+        //     color: '#042965',
+        //     formatter: function(item) {
+        //       return names[item.value[3]]
+        //     }
+        //   }
+        // }
       ]
     })
   }
@@ -324,20 +391,28 @@ var state2 = function(scatterplot) {
 
 /** State 3: Highlight locations (Detroit, Gwinet, Washington) */
 var state3 = function(scatterplot) {
-  var highlight = {
-    '0641580': 'Washington, D.C.',
-    '2612000': 'Detroit, MI',
-    '1302550': 'Gwinnet County, GA'
+  var highlight = {};
+  highlight['0641580'] = 'Washington, D.C.';
+  highlight['2612000'] = 'Detroit, MI';
+  highlight['1302550'] = 'Gwinnet County, GA';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
+  // console.log(highlight);
   // var base = scatterplot.getState('state2');
   var base = scatterplot.getState('base');
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
   var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
-  }
+  // var searchSeries = [];
+  // if (scatterplot && scatterplot.data) {
+  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // }
   return {
     xVar: 'w_avg',
     yVar: 'b_avg',
@@ -352,6 +427,7 @@ var state3 = function(scatterplot) {
       yAxis: {
         min:-4,
         max:3,
+        position: 'right',
         name: 'Black Average Performance',
         textStyle: {
           fontFamily: 'SharpGrotesk-Medium20',
@@ -400,34 +476,34 @@ var state3 = function(scatterplot) {
             }
           }
         },
-        {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
-          itemStyle: {
-            borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            width: "25%",
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return names[item.value[3]]
-            }
-          }
-        },
+        // {
+        //   type: 'scatter',
+        //   data: searchSeries,
+        //   symbolSize: 15, // dataSeries.symbolSize,
+        //   zlevel: 1000,
+        //   itemStyle: {
+        //     borderWidth: 2,
+        //     borderColor: '#042965',
+        //     color: 'rgba(255,255,0,0.97)'
+        //   },
+        //   label: {
+        //     show: true,
+        //     position: 'right',
+        //     width: "25%",
+        //     backgroundColor: 'rgba(255,255,0,0.97)',
+        //     borderColor: '#042965',
+        //     fontSize: 12,
+        //     fontWeight: 600,
+        //     fontFamily: 'MaisonNeue-Medium',
+        //     lineHeight: 28,
+        //     padding: [6, 8],
+        //     borderRadius: 3,
+        //     color: '#042965',
+        //     formatter: function(item) {
+        //       return names[item.value[3]]
+        //     }
+        //   }
+        // },
         {
           type:'scatter',
           markLine: {
@@ -505,9 +581,18 @@ var state4 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
   var dataSeries = scatterplot.getDataSeries();
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // var searchSeries = [];
+  // if (scatterplot && scatterplot.data) {
+  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // }
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
   const baseOverrides = {
     title: {
@@ -583,19 +668,15 @@ var state4 = function(scatterplot) {
       }
     },
     {
-      type: 'scatter',
-      data: searchSeries,
-      symbolSize: 15, // dataSeries.symbolSize,
-      zlevel: 1000,
+      id: 'highlighted',
       itemStyle: {
         borderWidth: 2,
-        borderColor: '#042965',
-        color: 'rgba(255,255,0,0.97)'
+        borderColor: '#042965', // 'rgba(0,0,0,1)',
+        color: 'rgba(255,255,0,0.5)'
       },
       label: {
         show: true,
         position: 'right',
-        width: "25%",
         backgroundColor: 'rgba(255,255,0,0.97)',
         borderColor: '#042965',
         fontSize: 12,
@@ -606,15 +687,44 @@ var state4 = function(scatterplot) {
         borderRadius: 3,
         color: '#042965',
         formatter: function(item) {
-          return names[item.value[3]]
+          // console.log(item);
+          return highlight[item.value[3]]
         }
       }
     }
+    // {
+    //   type: 'scatter',
+    //   data: searchSeries,
+    //   symbolSize: 15, // dataSeries.symbolSize,
+    //   zlevel: 1000,
+    //   itemStyle: {
+    //     borderWidth: 2,
+    //     borderColor: '#042965',
+    //     color: 'rgba(255,255,0,0.97)'
+    //   },
+    //   label: {
+    //     show: true,
+    //     position: 'right',
+    //     width: "25%",
+    //     backgroundColor: 'rgba(255,255,0,0.97)',
+    //     borderColor: '#042965',
+    //     fontSize: 12,
+    //     fontWeight: 600,
+    //     fontFamily: 'MaisonNeue-Medium',
+    //     lineHeight: 28,
+    //     padding: [6, 8],
+    //     borderRadius: 3,
+    //     color: '#042965',
+    //     formatter: function(item) {
+    //       return names[item.value[3]]
+    //     }
+    //   }
+    // }
   ]
   }
   return {
     selected: [],
-    highlighted: [],
+    highlighted: Object.keys(highlight),
     xVar: 'wb_ses',
     yVar: 'wb_avg',
     zVar: 'all_sz',
@@ -627,20 +737,120 @@ var state5 = function(scatterplot) {
   var options = scatterplot.component.getOption();
   var dataSeries = scatterplot.getDataSeries();
   var base = scatterplot.getState('state4');
-  var highlight = {
-    '0641580': 'Washington, D.C.',
-    '2612000': 'Detroit, MI',
-    '1300120': 'Atlanta, GA'
-  }
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  var highlight = {};
+  highlight['0641580'] = 'Washington, D.C.';
+  highlight['2612000'] = 'Detroit, MI';
+  highlight['1302550'] = 'Gwinnet County, GA';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
   return {
     highlighted: Object.keys(highlight),
     options: deepmerge.all([ base.options, {
       series: [
+        // dataSeries,
+        { id: 'base' },
+        {
+          id: 'highlighted',
+          itemStyle: {
+            borderWidth: 2,
+            borderColor: '#042965', // 'rgba(0,0,0,1)',
+            color: 'rgba(255,255,0,0.5)'
+          },
+          label: {
+            show: true,
+            position: 'right',
+            backgroundColor: 'rgba(255,255,0,0.97)',
+            borderColor: '#042965',
+            fontSize: 12,
+            fontWeight: 600,
+            fontFamily: 'MaisonNeue-Medium',
+            lineHeight: 28,
+            padding: [6, 8],
+            borderRadius: 3,
+            color: '#042965',
+            formatter: function(item) {
+              return highlight[item.value[1]]
+            }
+          }
+        }
+        // {
+        //   type: 'scatter',
+        //   data: searchSeries,
+        //   symbolSize: 15, // dataSeries.symbolSize,
+        //   zlevel: 1000,
+        //   itemStyle: {
+        //     borderWidth: 2,
+        //     borderColor: '#042965',
+        //     color: 'rgba(255,255,0,0.97)'
+        //   },
+        //   label: {
+        //     show: true,
+        //     position: 'right',
+        //     width: "25%",
+        //     backgroundColor: 'rgba(255,255,0,0.97)',
+        //     borderColor: '#042965',
+        //     fontSize: 12,
+        //     fontWeight: 600,
+        //     fontFamily: 'MaisonNeue-Medium',
+        //     lineHeight: 28,
+        //     padding: [6, 8],
+        //     borderRadius: 3,
+        //     color: '#042965',
+        //     formatter: function(item) {
+        //       return names[item.value[3]]
+        //     }
+        //   }
+        // }
+      ]}
+    ])
+  }
+}
+
+/** State 6: Gwinnett, DC, and Detroit school districts */
+var state6 = function(scatterplot) {
+  var options = scatterplot.component.getOption();
+  var base = scatterplot.getState('state5');
+  // return options;
+  var dataSeries = scatterplot.getDataSeries();
+  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  // var searchSeries = [];
+  // if (scatterplot && scatterplot.data) {
+  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // }
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
+  }
+  return {
+    highlighted: Object.keys(highlight),
+    options: deepmerge(base.options, {
+      title: {
+        subtext: '100 Largest U.S. School Districts 2009-2016'
+      },
+      series: [
         dataSeries,
+        {
+          type: 'scatter',
+          data: top100,
+          symbolSize: dataSeries.symbolSize,
+          itemStyle: {
+            borderWidth: 1,
+            borderColor: 'rgba(0,0,0,1)',
+            color: '#b6a2de' // 'rgba(255,0,0,0.25)'
+          }
+        },
         {
           id: 'highlighted',
           itemStyle: {
@@ -665,98 +875,35 @@ var state5 = function(scatterplot) {
               return highlight[item.value[3]]
             }
           }
-        },
-        {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
-          itemStyle: {
-            borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            width: "25%",
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return names[item.value[3]]
-            }
-          }
         }
-      ]}
-    ])
-  }
-}
-
-/** State 6: Gwinnett, DC, and Detroit school districts */
-var state6 = function(scatterplot) {
-  var options = scatterplot.component.getOption();
-  var base = scatterplot.getState('state5');
-  // return options;
-  var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
-  }
-  return {
-    highlighted: state5.highlighted,
-    options: deepmerge(base.options, {
-      title: {
-        subtext: '100 Largest U.S. School Districts 2009-2016'
-      },
-      series: [
-        dataSeries,
-        {
-          type: 'scatter',
-          data: top100,
-          symbolSize: dataSeries.symbolSize,
-          itemStyle: {
-            borderWidth: 1,
-            borderColor: 'rgba(0,0,0,1)',
-            color: '#b6a2de' // 'rgba(255,0,0,0.25)'
-          }
-        },
-        {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
-          itemStyle: {
-            borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            width: "25%",
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return names[item.value[3]]
-            }
-          }
-        }
+        // {
+        //   type: 'scatter',
+        //   data: searchSeries,
+        //   symbolSize: 15, // dataSeries.symbolSize,
+        //   zlevel: 1000,
+        //   itemStyle: {
+        //     borderWidth: 2,
+        //     borderColor: '#042965',
+        //     color: 'rgba(255,255,0,0.97)'
+        //   },
+        //   label: {
+        //     show: true,
+        //     position: 'right',
+        //     width: "25%",
+        //     backgroundColor: 'rgba(255,255,0,0.97)',
+        //     borderColor: '#042965',
+        //     fontSize: 12,
+        //     fontWeight: 600,
+        //     fontFamily: 'MaisonNeue-Medium',
+        //     lineHeight: 28,
+        //     padding: [6, 8],
+        //     borderRadius: 3,
+        //     color: '#042965',
+        //     formatter: function(item) {
+        //       return names[item.value[3]]
+        //     }
+        //   }
+        // }
       ]
     })
   }
@@ -775,12 +922,21 @@ var state7 = function(scatterplot) {
     max: .15
   };
   var nearZero = scatterplot.getSeriesDataInRange(dataSeries.data, 'x', range);
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // var searchSeries = [];
+  // if (scatterplot && scatterplot.data) {
+  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // }
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
   return {
-    highlighted: [],
+    highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
       title: {
         subtext: 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016'
@@ -798,33 +954,58 @@ var state7 = function(scatterplot) {
           }
         },
         {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
+          id: 'highlighted',
           itemStyle: {
+            borderColor: '#042965', // 'rgba(0,0,0,1)',
+            color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
             borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
+            // borderColor: '#042965',
+            // color: 'rgba(255,255,0,0.5)'
           },
           label: {
             show: true,
             position: 'right',
-            width: "25%",
             backgroundColor: 'rgba(255,255,0,0.97)',
             borderColor: '#042965',
             fontSize: 12,
             fontWeight: 600,
             fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
             padding: [6, 8],
             borderRadius: 3,
             color: '#042965',
             formatter: function(item) {
-              return names[item.value[3]]
+              return highlight[item.value[3]]
             }
           }
         }
+        // {
+        //   type: 'scatter',
+        //   data: searchSeries,
+        //   symbolSize: 15, // dataSeries.symbolSize,
+        //   zlevel: 1000,
+        //   itemStyle: {
+        //     borderWidth: 2,
+        //     borderColor: '#042965',
+        //     color: 'rgba(255,255,0,0.97)'
+        //   },
+        //   label: {
+        //     show: true,
+        //     position: 'right',
+        //     width: "25%",
+        //     backgroundColor: 'rgba(255,255,0,0.97)',
+        //     borderColor: '#042965',
+        //     fontSize: 12,
+        //     fontWeight: 600,
+        //     fontFamily: 'MaisonNeue-Medium',
+        //     lineHeight: 28,
+        //     padding: [6, 8],
+        //     borderRadius: 3,
+        //     color: '#042965',
+        //     formatter: function(item) {
+        //       return names[item.value[3]]
+        //     }
+        //   }
+        // }
       ]
     })
   }
@@ -840,10 +1021,18 @@ var state8 = function(scatterplot) {
     '0803360': 'Denver, CO',
     '0634170': 'San Bernardino, CA'
   }
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
+  // var searchSeries = [];
+  // if (scatterplot && scatterplot.data) {
+  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // }
   const baseOverrides = {
     title: {
       text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
@@ -941,38 +1130,41 @@ var state8 = function(scatterplot) {
           return highlight[item.value[3]]
         }
       }
-    },
-    {
-      type: 'scatter',
-      data: searchSeries,
-      symbolSize: 15, // dataSeries.symbolSize,
-      zlevel: 1000,
-      itemStyle: {
-        borderWidth: 2,
-        borderColor: '#042965',
-        color: 'rgba(255,255,0,0.97)'
-      },
-      label: {
-        show: true,
-        position: 'right',
-        width: "25%",
-        backgroundColor: 'rgba(255,255,0,0.97)',
-        borderColor: '#042965',
-        fontSize: 12,
-        fontWeight: 600,
-        fontFamily: 'MaisonNeue-Medium',
-        lineHeight: 28,
-        padding: [6, 8],
-        borderRadius: 3,
-        color: '#042965',
-        formatter: function(item) {
-          return names[item.value[3]]
-        }
-      }
-    }]
+    }
+    // ,
+    // {
+    //   type: 'scatter',
+    //   data: searchSeries,
+    //   symbolSize: 15, // dataSeries.symbolSize,
+    //   zlevel: 1000,
+    //   itemStyle: {
+    //     borderWidth: 2,
+    //     borderColor: '#042965',
+    //     color: 'rgba(255,255,0,0.97)'
+    //   },
+    //   label: {
+    //     show: true,
+    //     position: 'right',
+    //     width: "25%",
+    //     backgroundColor: 'rgba(255,255,0,0.97)',
+    //     borderColor: '#042965',
+    //     fontSize: 12,
+    //     fontWeight: 600,
+    //     fontFamily: 'MaisonNeue-Medium',
+    //     lineHeight: 28,
+    //     padding: [6, 8],
+    //     borderRadius: 3,
+    //     color: '#042965',
+    //     formatter: function(item) {
+    //       return names[item.value[3]]
+    //     }
+    //   }
+    // }
+    ]
   }
   return {
     highlighted: Object.keys(highlight),
+    selected: [],
     xVar: 'wb_ses',
     yVar: 'wb_avg',
     zVar: 'all_sz',
@@ -984,17 +1176,29 @@ var state8 = function(scatterplot) {
 var state9 = function(scatterplot) {
   console.log('loading state9');
   // this state is created from the base
-  const base = scatterplot.getState('base');
+  const base = scatterplot.getState('state8');
   // Build series most seg to highlight
   var dataSeries = scatterplot.getDataSeries();
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  // console.log(top100);
+  // var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100);
+  // var newTop100 = scatterplot.getSeriesDataForIds(dataSeries.data, top100);
+  // var top100 = scatterplot.getSeriesDataBySize(scatterplot.data['districts']['all_sz'], 100);
+  // console.log(newTop100);
   var segSortedTop100 = sortDataBySeg(top100);
   var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
   var mostSegregatedSeries = sliceMost(segSortedTop100, 10);
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // var searchSeries = [];
+  // if (scatterplot && scatterplot.data) {
+  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // }
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
   const baseOverrides = {
     title: {
@@ -1050,7 +1254,8 @@ var state9 = function(scatterplot) {
       name: 'White-Black Socioeconomic Disparity',
     },
     series: [
-      dataSeries,
+      // dataSeries,
+      { id: 'base'},
       {
         type: 'scatter',
         data: leastSegregatedSeries,
@@ -1116,58 +1321,100 @@ var state9 = function(scatterplot) {
       }
     },
     {
-      type: 'scatter',
-      data: searchSeries,
-      symbolSize: 15, // dataSeries.symbolSize,
-      zlevel: 1000,
+      id: 'highlighted',
       itemStyle: {
+        borderColor: '#042965', // 'rgba(0,0,0,1)',
+        color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
         borderWidth: 2,
-        borderColor: '#042965',
-        color: 'rgba(255,255,0,0.97)'
+        // borderColor: '#042965',
+        // color: 'rgba(255,255,0,0.5)'
       },
       label: {
         show: true,
         position: 'right',
-        width: "25%",
         backgroundColor: 'rgba(255,255,0,0.97)',
         borderColor: '#042965',
         fontSize: 12,
         fontWeight: 600,
         fontFamily: 'MaisonNeue-Medium',
-        lineHeight: 28,
         padding: [6, 8],
         borderRadius: 3,
         color: '#042965',
         formatter: function(item) {
-          return names[item.value[3]]
+          return highlight[item.value[3]]
         }
       }
     }
+    // {
+    //   type: 'scatter',
+    //   data: searchSeries,
+    //   symbolSize: 15, // dataSeries.symbolSize,
+    //   zlevel: 1000,
+    //   itemStyle: {
+    //     borderWidth: 2,
+    //     borderColor: '#042965',
+    //     color: 'rgba(255,255,0,0.97)'
+    //   },
+    //   label: {
+    //     show: true,
+    //     position: 'right',
+    //     width: "25%",
+    //     backgroundColor: 'rgba(255,255,0,0.97)',
+    //     borderColor: '#042965',
+    //     fontSize: 12,
+    //     fontWeight: 600,
+    //     fontFamily: 'MaisonNeue-Medium',
+    //     lineHeight: 28,
+    //     padding: [6, 8],
+    //     borderRadius: 3,
+    //     color: '#042965',
+    //     formatter: function(item) {
+    //       return names[item.value[3]]
+    //     }
+    //   }
+    // }
   ]
   }
   return {
-    highlighted: [],
+    highlighted: Object.keys(highlight),
     xVar: 'wb_ses',
     yVar: 'wb_avg',
     zVar: 'all_sz',
+    onDataLoaded: function() {
+      console.log('data loaded');
+      console.log(scatterplot.data);
+    },
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
 
 /** State 10: Achievement vs. Gap in Exposure to School Poverty */
 var state10 = function(scatterplot) {
-  const base = scatterplot.getState('base');
+  const options = scatterplot.component.getOption();
+  const base = scatterplot.getState('state4');
+  // var dataSeries = scatterplot.getDataSeries();
+  // var options = scatterplot.component.getOption();
+  // var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  // var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
   var dataSeries = scatterplot.getDataSeries();
-  var options = scatterplot.component.getOption();
-  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+  // var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
   var highlight = {
     '1100030': 'District of Columbia',
     '2612000': 'Detroit, MI'
   }
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
+  // var searchSeries = [];
+  // if (scatterplot && scatterplot.data) {
+  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // }
   // return options;
   const baseOverrides = {
     title: {
@@ -1191,21 +1438,33 @@ var state10 = function(scatterplot) {
       },
     },
     xAxis: {
-      min: -3,
-      max: 8,
+      min: -0.25,
+      max: 0.75,
       name: 'Black-White Difference in Average School Poverty Rates',
     },
     series: [
-      dataSeries,
+      // dataSeries,
+      { id: 'base' },
+      // {
+      //   type: 'scatter',
+      //   data: top100,
+      //   symbolSize: dataSeries.symbolSize,
+      //   itemStyle: {
+      //     borderWidth: 1,
+      //     borderColor: 'rgba(0,0,0,1)',
+      //     color: '#b6a2de' // 'rgba(255,0,0,0.25)'
+      //   }
+      // },
       {
+        id: 'selected',
         type: 'scatter',
-        data: top100,
         symbolSize: dataSeries.symbolSize,
         itemStyle: {
           borderWidth: 1,
           borderColor: 'rgba(0,0,0,1)',
           color: '#b6a2de' // 'rgba(255,0,0,0.25)'
-        }
+        },
+        z: 2
       },
       {
         type:'scatter',
@@ -1272,39 +1531,41 @@ var state10 = function(scatterplot) {
             return highlight[item.value[3]]
           }
         }
-      },
-      {
-        type: 'scatter',
-        data: searchSeries,
-        symbolSize: 15, // dataSeries.symbolSize,
-        zlevel: 1000,
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965',
-          color: 'rgba(255,255,0,0.97)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          width: "25%",
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return names[item.value[3]]
-          }
-        }
       }
+      // ,
+      // {
+      //   type: 'scatter',
+      //   data: searchSeries,
+      //   symbolSize: 15, // dataSeries.symbolSize,
+      //   zlevel: 1000,
+      //   itemStyle: {
+      //     borderWidth: 2,
+      //     borderColor: '#042965',
+      //     color: 'rgba(255,255,0,0.97)'
+      //   },
+      //   label: {
+      //     show: true,
+      //     position: 'right',
+      //     width: "25%",
+      //     backgroundColor: 'rgba(255,255,0,0.97)',
+      //     borderColor: '#042965',
+      //     fontSize: 12,
+      //     fontWeight: 600,
+      //     fontFamily: 'MaisonNeue-Medium',
+      //     lineHeight: 28,
+      //     padding: [6, 8],
+      //     borderRadius: 3,
+      //     color: '#042965',
+      //     formatter: function(item) {
+      //       return names[item.value[3]]
+      //     }
+      //   }
+      // }
     ]
   }
   return {
     highlighted: Object.keys(highlight),
+    selected: [],
     xVar: 'wb_pov',
     yVar: 'wb_avg',
     zVar: 'all_sz',

@@ -195,6 +195,33 @@ body.type-posts {
         }
       }
     }
+
+  input.react-autosuggest__input {
+    background: #F7FAFF;
+    border: 1px solid #E7E8ED;
+    border-radius: 0;
+    border-bottom: 1px solid #5D76A0;
+    color: #173B75;
+    font-family: $maisonneue-book;
+    font-size: 1.4rem;
+    &::placeholder,
+    &::-webkit-input-placeholder {
+      color: #173B75;
+    }
+
+    &.react-autosuggest__input--open {
+      border: 0;
+    }
+  }
+
+  .react-autosuggest__suggestions-container {
+    border: 1px solid #5D76A0;
+
+    .react-autosuggest__suggestion:hover {
+      background-color: #DBE8FF;
+    }
+  }
+
     // p {
     //     font-family: $maisonneue-book;
     //     // color: $white;

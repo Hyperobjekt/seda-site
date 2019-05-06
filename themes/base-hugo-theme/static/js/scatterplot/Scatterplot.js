@@ -20,13 +20,16 @@ function Scatterplot(container, props) {
       textStyle: {
         fontWeight: 'normal',
         color: '#fff',
-        fontFamily: 'SharpGrotesk-Medium20'
+        fontFamily: 'SharpGrotesk-Medium20',
+        textAlign: 'center'
       },
       subtextStyle: {
         fontWeight: 'normal',
         color: '#fff',
-        fontFamily: 'MaisonNeue-Medium'
-      }
+        fontFamily: 'MaisonNeue-Medium',
+        textAlign: 'center'
+      },
+      textAlign: 'center'
     },
     yAxis: {
       nameTextStyle: {
@@ -53,11 +56,11 @@ function Scatterplot(container, props) {
     },
     tooltip: {
       backgroundColor: '#042965',
-      borderColor: '#2ec7c9', // '#fff', // '#042965',
+      borderColor: 'rgba(255, 255, 255, 0.5)', // '#fff', // '#042965',
       padding: [6, 10],
       borderRadius: 4,
-      borderWidth: 0,
-      extraCssText: 'box-shadow: 0px 0px 3px #2ec7c9;', // #ffb980
+      borderWidth: 0.5,
+      // extraCssText: 'box-shadow: 0px 0px 3px #2ec7c9;', // #ffb980
       textStyle: {
         color: '#fff', // '#dc69aa',
         fontWeight: '500',
@@ -82,7 +85,7 @@ function Scatterplot(container, props) {
     valueAxis: {
       axisLine: {
         lineStyle: {
-          color: '#008acd'
+          color: '#fff' // '#008acd'
         }
       },
       splitArea: {
@@ -116,7 +119,7 @@ function Scatterplot(container, props) {
       symbol: 'circle',
       itemStyle: {
         borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.5)',
+        borderColor: '#006358', // 'rgba(0,0,0,0.5)',
         borderOpacity:0.5,
       }
     },
@@ -130,18 +133,38 @@ function Scatterplot(container, props) {
     // https://ecomfe.github.io/echarts-doc/public/en/option.html
     base: {
       options: {
+        title: {
+          textStyle: {
+            fontWeight: 'normal',
+            color: '#fff',
+            fontFamily: 'SharpGrotesk-Medium20',
+            textAlign: 'center'
+          },
+          subtextStyle: {
+            fontWeight: 'normal',
+            color: '#fff',
+            fontFamily: 'MaisonNeue-Medium',
+            textAlign: 'center'
+          },
+          textAlign: 'center'
+        },
         grid: {
-          top: 24,
+          top: 56,
           bottom: 42,
           left: 24,
           right: 34,
           zlevel: 100,
         },
         yAxis: {
-          nameGap: 18,
+          nameGap: 24,
           position: 'right',
           splitLine: {
             show: false,
+          },
+          nameTextStyle: {
+            fontFamily: 'SharpGrotesk-Medium20',
+            color: '#FFF',
+            fontSize: 12,
           },
           axisLabel: {
             align: 'right',
@@ -151,13 +174,16 @@ function Scatterplot(container, props) {
         xAxis: {
           nameGap: 26,
           nameTextStyle: {
+            fontFamily: 'SharpGrotesk-Medium20',
+            color: '#FFF',
             fontSize: 12,
-            fontWeight: 'normal'
+            // fontWeight: 'normal'
           },
           zlevel: 102,
         },
         tooltip: {
           trigger: 'item',
+          // borderColor: '#fff',
           formatter: function(item) {
             const data = _self.data[_self.props.prefix];
             const itemName =
@@ -167,8 +193,8 @@ function Scatterplot(container, props) {
               data.name[item.value[3]] : 'Unavailable'
             // console.log(data);
             return itemName + '<br />'
-              + 'X: ' + item.value[0] + '\n'
-              + 'Y: ' + item.value[1]
+              + 'X: ' + item.value[0] + "\n"
+              + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1]
 
           }
         },

@@ -283,7 +283,7 @@ var state1 = function(scatterplot) {
         itemStyle: {
           borderWidth: 1,
           borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.5)'
+          color: 'rgba(255,255,0,0.8)'
         },
         label: {
           show: true,
@@ -346,7 +346,7 @@ var state2 = function(scatterplot) {
   // state 2 is based on state 1
   var base = scatterplot.getState('state1');
   var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   // var searchSeries = [];
   // if (scatterplot && scatterplot.data) {
@@ -472,7 +472,7 @@ var state3 = function(scatterplot) {
   // var base = scatterplot.getState('state2');
   var base = scatterplot.getState('state2');
   var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
   // var searchSeries = [];
   // if (scatterplot && scatterplot.data) {
@@ -960,7 +960,7 @@ var state6 = function(scatterplot) {
   var base = scatterplot.getState('state5');
   // return options;
   var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   // var searchSeries = [];
   // if (scatterplot && scatterplot.data) {
@@ -1520,7 +1520,7 @@ var state10 = function(scatterplot) {
   // var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   // var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
   var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
+  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   // var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
   var highlight = {
     '1100030': 'District of Columbia',

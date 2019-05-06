@@ -1667,6 +1667,7 @@ var state10 = function(scatterplot) {
       min: -0.25,
       max: 0.75,
       name: 'Black-White Difference in Average School Poverty Rates',
+      interval: .25
     },
     series: [
       // dataSeries,

@@ -129,9 +129,8 @@ var state1 = function(scatterplot) {
       text: 'White and Black Students\' Average Performance',
       subtext: 'U.S. School Districts 2009-2016',
       textAlign: 'center',
-      left: 'auto',
-      right: 'auto',
-      top: '10px'
+      left: '50%',
+      top: '10px',
     },
     legend: {
       show: true,
@@ -489,24 +488,10 @@ var state3 = function(scatterplot) {
       title: {
         text: 'White and Black Students\' Average Performance',
         subtext: 'U.S. School Districts 2009-2016',
-        textAlign: 'center'
-
+        textAlign: 'center',
+        left: '50%',
+        top: '10px',
       },
-      // yAxis: {
-      //   min:-3,
-      //   max:3,
-      //   position: 'right',
-      //   name: 'Black Average Performance',
-      //   textStyle: {
-      //     fontFamily: 'SharpGrotesk-Medium20',
-      //     color: '#FF003E',
-      //   }
-      // },
-      // xAxis: {
-      //   min: -3,
-      //   max: 4,
-      //   name: 'White Average Performance',
-      // },
       grid: {
         top: 80,
         bottom: 40,
@@ -809,10 +794,9 @@ var state4 = function(scatterplot) {
     title: {
       text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
       subtext: 'US School Districts 2009-2016',
-      textStyle: {
-        fontSize: 18,
-        lineHeight: 32
-      }
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
     },
     grid: {
       right: 52,
@@ -906,34 +890,6 @@ var state4 = function(scatterplot) {
         }
       }
     }
-    // {
-    //   type: 'scatter',
-    //   data: searchSeries,
-    //   symbolSize: 15, // dataSeries.symbolSize,
-    //   zlevel: 1000,
-    //   itemStyle: {
-    //     borderWidth: 2,
-    //     borderColor: '#042965',
-    //     color: 'rgba(255,255,0,0.97)'
-    //   },
-    //   label: {
-    //     show: true,
-    //     position: 'right',
-    //     width: "25%",
-    //     backgroundColor: 'rgba(255,255,0,0.97)',
-    //     borderColor: '#042965',
-    //     fontSize: 12,
-    //     fontWeight: 600,
-    //     fontFamily: 'MaisonNeue-Medium',
-    //     lineHeight: 28,
-    //     padding: [6, 8],
-    //     borderRadius: 3,
-    //     color: '#042965',
-    //     formatter: function(item) {
-    //       return names[item.value[3]]
-    //     }
-    //   }
-    // }
   ]
   }
   return {
@@ -993,34 +949,6 @@ var state5 = function(scatterplot) {
             }
           }
         }
-        // {
-        //   type: 'scatter',
-        //   data: searchSeries,
-        //   symbolSize: 15, // dataSeries.symbolSize,
-        //   zlevel: 1000,
-        //   itemStyle: {
-        //     borderWidth: 2,
-        //     borderColor: '#042965',
-        //     color: 'rgba(255,255,0,0.97)'
-        //   },
-        //   label: {
-        //     show: true,
-        //     position: 'right',
-        //     width: "25%",
-        //     backgroundColor: 'rgba(255,255,0,0.97)',
-        //     borderColor: '#042965',
-        //     fontSize: 12,
-        //     fontWeight: 600,
-        //     fontFamily: 'MaisonNeue-Medium',
-        //     lineHeight: 28,
-        //     padding: [6, 8],
-        //     borderRadius: 3,
-        //     color: '#042965',
-        //     formatter: function(item) {
-        //       return names[item.value[3]]
-        //     }
-        //   }
-        // }
       ]}
     ])
   }
@@ -1254,10 +1182,9 @@ var state8 = function(scatterplot) {
     title: {
       text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
       subtext: 'US School Districts 2009-2016',
-      textStyle: {
-        fontSize: 18,
-        lineHeight: 32
-      }
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
     },
     grid: {
       right: 52,
@@ -1356,35 +1283,6 @@ var state8 = function(scatterplot) {
         }
       }
     }
-    // ,
-    // {
-    //   type: 'scatter',
-    //   data: searchSeries,
-    //   symbolSize: 15, // dataSeries.symbolSize,
-    //   zlevel: 1000,
-    //   itemStyle: {
-    //     borderWidth: 2,
-    //     borderColor: '#042965',
-    //     color: 'rgba(255,255,0,0.97)'
-    //   },
-    //   label: {
-    //     show: true,
-    //     position: 'right',
-    //     width: "25%",
-    //     backgroundColor: 'rgba(255,255,0,0.97)',
-    //     borderColor: '#042965',
-    //     fontSize: 12,
-    //     fontWeight: 600,
-    //     fontFamily: 'MaisonNeue-Medium',
-    //     lineHeight: 28,
-    //     padding: [6, 8],
-    //     borderRadius: 3,
-    //     color: '#042965',
-    //     formatter: function(item) {
-    //       return names[item.value[3]]
-    //     }
-    //   }
-    // }
     ]
   }
   return {
@@ -1430,10 +1328,9 @@ var state9 = function(scatterplot) {
     title: {
       text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
       subtext: 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016',
-      textStyle: {
-        fontSize: 18,
-        lineHeight: 32
-      }
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
     },
     legend: {
       show: true,
@@ -1646,10 +1543,9 @@ var state10 = function(scatterplot) {
     title: {
       text: 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty',
       subtext: '100 Largest US School Districts 2009-2016',
-      textStyle: {
-        fontSize: 18,
-        lineHeight: 32
-      }
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
     },
     grid: {
       right: 52,

@@ -20338,6 +20338,40 @@ body.kind-404 p {
   }
 }
 
+body.type-help-faq .hero-child {
+  background: url("/images/heroes/help-faq.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+
+@media (min-width: 576px) {
+  body.type-help-faq .hero-child {
+    background-size: 38%;
+    background-position: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-help-faq .hero-child {
+    background-position: center;
+  }
+}
+
+body.type-help-faq.methods .hero-child {
+  background: url("/images/heroes/methods-bar-graph.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+
+@media (min-width: 576px) {
+  body.type-help-faq.methods .hero-child {
+    background-size: 40%;
+    background-position: center bottom;
+  }
+}
+
 body.type-help-faq .hero {
   background: linear-gradient(to bottom, #042965 5%, #041d55 75%);
   background-blend-mode: soft-light;
@@ -20373,23 +20407,6 @@ body.type-help-faq .hero .hero-child {
   height: 100%;
   margin-right: 0;
   margin-left: 0;
-  background: url("/images/heroes/help-faq.svg");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: center;
-}
-
-@media (min-width: 576px) {
-  body.type-help-faq .hero .hero-child {
-    background-size: 38%;
-    background-position: center;
-  }
-}
-
-@media (min-width: 1280px) {
-  body.type-help-faq .hero .hero-child {
-    background-position: center;
-  }
 }
 
 body.type-help-faq .hero .hero-child .column {

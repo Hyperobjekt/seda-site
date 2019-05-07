@@ -348,10 +348,6 @@ var state2 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  // var searchSeries = [];
-  // if (scatterplot && scatterplot.data) {
-  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
-  // }
   var highlight = {};
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.

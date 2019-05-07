@@ -102,22 +102,29 @@ var state1 = function(scatterplot) {
     // console.log(names);
   }
   var dataSeries = [];
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    dataSeries = scatterplot.getDataSeries();
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    console.log(highlight);
   }
   const baseOverrides = {
     title: {
-      text: 'Academic Achievement and\nSocioeconomic Status, Grade 3',
-      subtext: 'U.S. School Districts 2009-2016'
+      text: 'Academic Achievement and Socioeconomic Status, Grade 3',
+      subtext: 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
     },
     legend: {
       show: true,
     },
     yAxis: {
-      min:-5,
-      max:5,
+      min: -0.5,
+      max: 9,
       name: 'Average Achievement (in Grade Levels)',
       textStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -128,8 +135,37 @@ var state1 = function(scatterplot) {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      textStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
+      }
     },
     series: [
+      { id: 'base' },
+      {
+        id: 'highlighted',
+        itemStyle: {
+          borderWidth: 1,
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.95)'
+        },
+        label: {
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return highlight[item.value[3]]
+          }
+        }
+      },
       {
         type:'scatter',
           markLine: {
@@ -151,222 +187,144 @@ var state1 = function(scatterplot) {
             [
               {
                 name: '', // upper right markline
-                coord: [3, 3.75],
+                coord: [3, 6],
                 symbol: 'none',
                 lineStyle: {
-                  color: '#adadad'
-                }
+                  color: '#fff', // '#adadad'
+                  type: 'solid'
+                },
               },
               {
-                coord: [-1, -1.5],
+                coord: [-1.75, .75],
                 symbol: 'none'
               },
             ],
           [
             {
               name: '', // lower left markline
-              coord: [1.75, 1],
+              coord: [1, 2.5],
               symbol: 'none',
               lineStyle: {
-                color: '#adadad'
-              }
+                color: '#fff', // '#adadad'
+                type: 'solid'
+              },
             },
             {
-              coord: [-4, -3],
+              coord: [-3.75, 1],
               symbol: 'none'
             },
           ],
           [
             {
               name: '', // x axis
-              coord: [-4, 0],
+              coord: [-3.5, 3],
               symbol: 'none',
+              // lineStyle: {
+              //   color: '#adadad' // 'rgba(0,0,0,0.2)'
+              // }
               lineStyle: {
-                color: '#adadad' // 'rgba(0,0,0,0.2)'
+                // color: '#fff', // 'rgba(0,0,0,0.6)'
+                color: {
+                  type: 'linear',
+                  x: 0,
+                  y: 0,
+                  x2: 1,
+                  y2: 0,
+                  colorStops: [{
+                      offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
+                  },
+                  {
+                    offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // color at 25% position
+                  },
+                  {
+                    offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // color at 50% position
+                  },
+                  {
+                      offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
+                  }],
+                  global: false // false by default
+                },
+                type: 'solid'
               }
             },
             {
-              coord: [3.5, 0],
+              coord: [3, 3],
               symbol: 'none'
             },
           ]
         ]
       }
       },
-      {
-        type: 'scatter',
-        data: searchSeries,
-        symbolSize: 15, // dataSeries.symbolSize,
-        zlevel: 1000,
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965',
-          color: 'rgba(255,255,0,0.97)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          width: "25%",
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return names[item.value[3]]
-          }
-        }
-      }
     ]
   }
   return {
     xVar: 'all_ses',
-    yVar: 'all_avg',
+    yVar: 'all_avg3',
     zVar: 'all_sz',
-    highlighted: [],
+    highlighted: Object.keys(highlight),
     options: deepmerge.all([base.options, baseOverrides ])
   }
 }
 
 /** State 2: Highlight largest 25 districts  */
 var state2 = function(scatterplot) {
+  if (names.length <= 0 &&
+    scatterplot && 
+    scatterplot.data && 
+    scatterplot.data.districts &&
+    scatterplot.data.districts.name) {
+    names = scatterplot.data.districts.name;
+    // console.log(names);
+  }
   // state 2 is based on state 1
-  var base = scatterplot.getState('state1');
-  var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
-  }
-  // console.log(top100);
-  return {
-    highlighted: [],
-    options: deepmerge(base.options, {
-      title: {
-        subtext: '100 Largest U.S. School Districts 2009-2016'
-      },
-      yAxis: {
-        min:-4,
-        max:3,
-        name: 'Black Average Performance',
-        textStyle: {
-          fontFamily: 'SharpGrotesk-Medium20',
-          color: '#FF003E',
-        }
-      },
-      xAxis: {
-        min: -3,
-        max: 4,
-        name: 'White Average Performance',
-      },
-      series: [
-        dataSeries,
-        {
-          type: 'scatter',
-          data: top100,
-          symbolSize: dataSeries.symbolSize,
-          itemStyle: {
-            borderWidth: 1,
-            borderColor: 'rgba(0,0,0,1)',
-            color: '#b6a2de' // 'rgba(255,0,0,0.25)'
-          }
-        },
-        {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
-          itemStyle: {
-            borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            width: "25%",
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return names[item.value[3]]
-            }
-          }
-        }
-      ]
-    })
-  }
-};
-
-/** State 3: Highlight locations (Detroit, Gwinet, Washington) */
-var state3 = function(scatterplot) {
-  var highlight = {
-    '0641580': 'Washington, D.C.',
-    '2612000': 'Detroit, MI',
-    '1302550': 'Gwinnet County, GA'
-  }
-  // var base = scatterplot.getState('state2');
   var base = scatterplot.getState('base');
-  var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  var highlight = {};
+  highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
   return {
-    xVar: 'w_avg',
-    yVar: 'b_avg',
+    xVar: 'all_ses',
+    yVar: 'all_avg3',
     zVar: 'all_sz',
+    selected: [],
     highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
       title: {
-        text: 'White and Black Students\' Average Performance',
-        subtext: 'U.S. School Districts 2009-2016'
+        text: 'Academic Achievement and Socioeconomic Status, Grade 3',
+        subtext: 'U.S. School Districts 2009-2016',
+        textAlign: 'center',
+        left: '50%',
+        top: '10px',
       },
       yAxis: {
-        min:-4,
-        max:3,
-        name: 'Black Average Performance',
+        min: -0.5,
+        max: 9,
+        name: 'Average Achievement (in Grade Levels)',
         textStyle: {
           fontFamily: 'SharpGrotesk-Medium20',
           color: '#FF003E',
         }
       },
       xAxis: {
-        min: -3,
-        max: 4,
-        name: 'White Average Performance',
+        min: -4,
+        max: 3.5,
+        name: 'Poor/Disadvantaged to Affluent/Advantaged',
       },
       series: [
-        dataSeries,
-        {
-          type: 'scatter',
-          data: top100,
-          symbolSize: dataSeries.symbolSize,
-          itemStyle: {
-            borderWidth: 1,
-            borderColor: 'rgba(0,0,0,1)',
-            color: '#b6a2de' // 'rgba(255,0,0,0.25)'
-          }
-        },
+        { id: 'base' },
         {
           id: 'highlighted',
           itemStyle: {
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#042965', // 'rgba(0,0,0,1)',
-            color: 'rgba(255,255,0,0.5)'
+            color: 'rgba(255,255,0,0.95)'
           },
           label: {
             show: true,
@@ -386,19 +344,100 @@ var state3 = function(scatterplot) {
           }
         },
         {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
+          type:'scatter',
+            markLine: {
+              animation: false,
+              silent: true,
+              label: {
+                position: 'middle',
+                fontFamily: 'MaisonNeue-Medium',
+                fontWeight: '600',
+                fontSize: 12,
+                textBorderWidth: 3,
+                textBorderColor: '#042965',
+                textShadowColor: '#042965',
+                formatter: function(value) {
+                  return value.name
+                }
+              },
+              data: [
+              [
+                {
+                  name: '', // Grade level
+                  coord: [-3.5, 3],
+                  symbol: 'none',
+                  lineStyle: {
+                    color: '#fff', // '#adadad'
+                    type: 'solid',
+                    width: 2
+                  },
+                },
+                {
+                  coord: [3, 3],
+                  symbol: 'none'
+                },
+              ],
+            ]
+          }
+        },
+      ]
+    })
+  }
+};
+
+/** State 3: Highlight locations (Detroit, Gwinet, Washington) */
+var state3 = function(scatterplot) {
+  var base = scatterplot.getState('base');
+  var highlight = {};
+  highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
+  }
+  return {
+    xVar: 'all_ses',
+    yVar: 'all_avg4',
+    zVar: 'all_sz',
+    highlighted: Object.keys(highlight),
+    options: deepmerge(base.options, {
+      title: {
+        text: 'Academic Achievement and Socioeconomic Status, Grade 4',
+        subtext: 'U.S. School Districts 2009-2016',
+        textAlign: 'center',
+        left: '50%',
+        top: '10px',
+      },
+      yAxis: {
+        min: -0.5,
+        max: 9,
+        name: 'Average Achievement (in Grade Levels)',
+        textStyle: {
+          fontFamily: 'SharpGrotesk-Medium20',
+          color: '#FF003E',
+        }
+      },
+      xAxis: {
+        min: -4,
+        max: 3.5,
+        name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      },
+      series: [
+        { id: 'base' },
+        {
+          id: 'highlighted',
           itemStyle: {
             borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
+            borderColor: '#042965', // 'rgba(0,0,0,1)',
+            color: 'rgba(255,255,0,0.95)'
           },
           label: {
             show: true,
             position: 'right',
-            width: "25%",
             backgroundColor: 'rgba(255,255,0,0.97)',
             borderColor: '#042965',
             fontSize: 12,
@@ -409,13 +448,120 @@ var state3 = function(scatterplot) {
             borderRadius: 3,
             color: '#042965',
             formatter: function(item) {
-              return names[item.value[3]]
+              return highlight[item.value[3]]
             }
           }
         },
         {
           type:'scatter',
             markLine: {
+              animation: false,
+              silent: true,
+              label: {
+                position: 'middle',
+                fontFamily: 'MaisonNeue-Medium',
+                fontWeight: '600',
+                fontSize: 12,
+                textBorderWidth: 3,
+                textBorderColor: '#042965',
+                textShadowColor: '#042965',
+                formatter: function(value) {
+                  return value.name
+                }
+              },
+              data: [
+              [
+                {
+                  name: '', // Grade level
+                  coord: [-3.5, 4],
+                  symbol: 'none',
+                  lineStyle: {
+                    color: '#fff', // '#adadad'
+                    type: 'solid',
+                    width: 2
+                  },
+                },
+                {
+                  coord: [3, 4],
+                  symbol: 'none'
+                },
+              ],
+            ]
+          }
+        },
+      ]
+    })
+  }
+};
+
+/** State 4: Grade 5 */
+var state4 = function(scatterplot) {
+  // get current echart options
+  const options = scatterplot.component.getOption();
+  // this state is created from the base
+  const base = scatterplot.getState('base');
+  var highlight = {};
+  highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
+  }
+  const baseOverrides = {
+    title: {
+      text: 'Academic Achievement and Socioeconomic Status, Grade 5',
+      subtext: 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
+    },
+    yAxis: {
+      min: -0.5,
+      max: 9,
+      name: 'Average Achievement (in Grade Levels)',
+      textStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
+      }
+    },
+    xAxis: {
+      min: -4,
+      max: 3.5,
+      name: 'Poor/Disadvantaged to Affluent/Advantaged',
+    },
+    series: [
+      { id: 'base' },
+      {
+        id: 'highlighted',
+        itemStyle: {
+          borderWidth: 2,
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.95)'
+        },
+        label: {
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return highlight[item.value[3]]
+          }
+        }
+      },
+      {
+        type:'scatter',
+          markLine: {
             animation: false,
             silent: true,
             label: {
@@ -431,709 +577,682 @@ var state3 = function(scatterplot) {
               }
             },
             data: [
-            [
-              {
-                name: 'white student scores = black student scores',
-                coord: [-3, -3],
-                symbol: 'none',
-                lineStyle: {
-                  color: '#dc69aa', // '#95706d'// '#8d98b3' // '#999'
-                  type: 'solid',
-                  width: 2,
-                  shadowOffsetY: 0,
-                  shadowOffsetX: 0,
-                  shadowBlur: 2,
-                  shadowColor: '#042965'
-                }
-              },
-              { coord: [ 3,  3], symbol: 'none' },
-            ],
-            [
-              {
-                name: '', // Y axis
-                coord: [0, -4],
-                symbol: 'none',
-                lineStyle: {
-                  color: '#adadad' // 'rgba(0,0,0,0.6)'
-                }
-              },
-              {
-                coord: [ 0,  3],
-                symbol: 'none'
-              },
-            ],
-            [
-              {
-                name: '', // x axis
-                coord: [-3, 0],
-                symbol: 'none',
-                lineStyle: {
-                  color: '#adadad' // 'rgba(0,0,0,0.2)'
-                }
-              },
-              {
-                coord: [4, 0],
-                symbol: 'none'
-              },
-            ]
-          ]}
-        }
-      ]
-    })
-  }
-};
-
-/** State 4: Load new variables to show White/Black SES Gap and Achievement Gap */
-var state4 = function(scatterplot) {
-  // get current echart options
-  const options = scatterplot.component.getOption();
-  // this state is created from the base
-  const base = scatterplot.getState('base');
-  var dataSeries = scatterplot.getDataSeries();
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
-  }
-  const baseOverrides = {
-    title: {
-      text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
-      subtext: 'US School Districts 2009-2016',
-      textStyle: {
-        fontSize: 18,
-        lineHeight: 32
-      }
-    },
-    grid: {
-      right: 42,
-    },
-    yAxis: {
-      min: -6,
-      max: 0,
-      name: 'White-Black Achievement Gap\nby Grade Levels',
-      nameTextStyle: { // Styles for x and y axis labels
-        fontSize: 12,
-        lineHeight: 14
-      },
-    },
-    xAxis: {
-      min: -3,
-      max: 7,
-      name: 'White-Black Socioeconomic Disparity',
-    },
-    series: [
-      {
-      type:'scatter',
-      markLine: {
-        animation: false,
-        silent: true,
-        label: {
-          position: 'middle',
-          fontFamily: 'MaisonNeue-Medium',
-          fontWeight: '600',
-          fontSize: 12,
-          textBorderColor: '#042965',
-          textBorderWidth: 3,
-          textShadowColor: '#042965',
-          formatter: function(value) {
-            return value.name
-          }
-        },
-        data: [
-          [
-            {
-              name: 'no racial disparity',
-              coord: [0, -6],
-              symbol: 'none',
-              lineStyle: {
-                color:  '#dc69aa',
-                type: 'solid',
-                width: 2,
-                shadowOffsetY: 0,
-                shadowOffsetX: 0,
-                shadowBlur: 3,
-                shadowColor: '#042965'
-              },
-              label: {
-                // verticalAlign: 'bottom'
-                // position: 'left',
-                // rotate: -90
-              }
-            },
-            {
-              coord: [ 0, -1],
-              symbol: 'none'
-            },
+              [
+                {
+                  name: '', // Grade level
+                  coord: [-3.5, 5],
+                  symbol: 'none',
+                  lineStyle: {
+                    color: '#fff', // '#adadad'
+                    type: 'solid',
+                    width: 2
+                  },
+                },
+                {
+                  coord: [3, 5],
+                  symbol: 'none'
+                },
+              ],
           ]
-        ]
-      }
-    },
-    {
-      type: 'scatter',
-      data: searchSeries,
-      symbolSize: 15, // dataSeries.symbolSize,
-      zlevel: 1000,
-      itemStyle: {
-        borderWidth: 2,
-        borderColor: '#042965',
-        color: 'rgba(255,255,0,0.97)'
-      },
-      label: {
-        show: true,
-        position: 'right',
-        width: "25%",
-        backgroundColor: 'rgba(255,255,0,0.97)',
-        borderColor: '#042965',
-        fontSize: 12,
-        fontWeight: 600,
-        fontFamily: 'MaisonNeue-Medium',
-        lineHeight: 28,
-        padding: [6, 8],
-        borderRadius: 3,
-        color: '#042965',
-        formatter: function(item) {
-          return names[item.value[3]]
         }
-      }
-    }
-  ]
+      },
+    ]
   }
   return {
-    highlighted: [],
-    xVar: 'wb_ses',
-    yVar: 'wb_avg',
+    xVar: 'all_ses',
+    yVar: 'all_avg5',
     zVar: 'all_sz',
+    highlighted: Object.keys(highlight),
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
 
-/** State 5: Highlight largest districts */
+/** State 5, Grade 6 */
 var state5 = function(scatterplot) {
-  var options = scatterplot.component.getOption();
-  var dataSeries = scatterplot.getDataSeries();
-  var base = scatterplot.getState('state4');
-  var highlight = {
-    '0641580': 'Washington, D.C.',
-    '2612000': 'Detroit, MI',
-    '1300120': 'Atlanta, GA'
+  // get current echart options
+  const options = scatterplot.component.getOption();
+  // this state is created from the base
+  const base = scatterplot.getState('base');
+  var highlight = {};
+  highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  const baseOverrides = {
+    title: {
+      text: 'Academic Achievement and Socioeconomic Status, Grade 6',
+      subtext: 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
+    },
+    yAxis: {
+      min: -0.5,
+      max: 9,
+      name: 'Average Achievement (in Grade Levels)',
+      textStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
+      }
+    },
+    xAxis: {
+      min: -4,
+      max: 3.5,
+      name: 'Poor/Disadvantaged to Affluent/Advantaged',
+    },
+    series: [
+      { id: 'base' },
+      {
+        id: 'highlighted',
+        itemStyle: {
+          borderWidth: 2,
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.95)'
+        },
+        label: {
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return highlight[item.value[3]]
+          }
+        }
+      },
+      {
+        type:'scatter',
+          markLine: {
+            animation: false,
+            silent: true,
+            label: {
+              position: 'middle',
+              fontFamily: 'MaisonNeue-Medium',
+              fontWeight: '600',
+              fontSize: 12,
+              textBorderWidth: 3,
+              textBorderColor: '#042965',
+              textShadowColor: '#042965',
+              formatter: function(value) {
+                return value.name
+              }
+            },
+            data: [
+              [
+                {
+                  name: '', // Grade level
+                  coord: [-3.5, 6],
+                  symbol: 'none',
+                  lineStyle: {
+                    color: '#fff', // '#adadad'
+                    type: 'solid',
+                    width: 2
+                  },
+                },
+                {
+                  coord: [3, 6],
+                  symbol: 'none'
+                },
+              ],
+          ]
+        }
+      },
+    ]
   }
   return {
+    xVar: 'all_ses',
+    yVar: 'all_avg6',
+    zVar: 'all_sz',
     highlighted: Object.keys(highlight),
-    options: deepmerge.all([ base.options, {
-      series: [
-        dataSeries,
-        {
-          id: 'highlighted',
-          itemStyle: {
-            borderColor: '#042965', // 'rgba(0,0,0,1)',
-            color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
-            borderWidth: 2,
-            // borderColor: '#042965',
-            // color: 'rgba(255,255,0,0.5)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return highlight[item.value[3]]
-            }
-          }
-        },
-        {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
-          itemStyle: {
-            borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            width: "25%",
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return names[item.value[3]]
-            }
-          }
-        }
-      ]}
-    ])
+    options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
 
-/** State 6: Gwinnett, DC, and Detroit school districts */
+/** State 6, Grade 7 */
 var state6 = function(scatterplot) {
-  var options = scatterplot.component.getOption();
-  var base = scatterplot.getState('state5');
-  // return options;
-  var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // get current echart options
+  const options = scatterplot.component.getOption();
+  // this state is created from the base
+  const base = scatterplot.getState('base');
+  var highlight = {};
+  highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
-  return {
-    highlighted: state5.highlighted,
-    options: deepmerge(base.options, {
-      title: {
-        subtext: '100 Largest U.S. School Districts 2009-2016'
-      },
-      series: [
-        dataSeries,
-        {
-          type: 'scatter',
-          data: top100,
-          symbolSize: dataSeries.symbolSize,
-          itemStyle: {
-            borderWidth: 1,
-            borderColor: 'rgba(0,0,0,1)',
-            color: '#b6a2de' // 'rgba(255,0,0,0.25)'
-          }
+  const baseOverrides = {
+    title: {
+      text: 'Academic Achievement and Socioeconomic Status, Grade 7',
+      subtext: 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
+    },
+    yAxis: {
+      min: -0.5,
+      max: 9,
+      name: 'Average Achievement (in Grade Levels)',
+      textStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
+      }
+    },
+    xAxis: {
+      min: -4,
+      max: 3.5,
+      name: 'Poor/Disadvantaged to Affluent/Advantaged',
+    },
+    series: [
+      { id: 'base' },
+      {
+        id: 'highlighted',
+        itemStyle: {
+          borderWidth: 2,
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.95)'
         },
-        {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
-          itemStyle: {
-            borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            width: "25%",
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return names[item.value[3]]
-            }
+        label: {
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return highlight[item.value[3]]
           }
         }
-      ]
-    })
+      },
+      {
+        type:'scatter',
+          markLine: {
+            animation: false,
+            silent: true,
+            label: {
+              position: 'middle',
+              fontFamily: 'MaisonNeue-Medium',
+              fontWeight: '600',
+              fontSize: 12,
+              textBorderWidth: 3,
+              textBorderColor: '#042965',
+              textShadowColor: '#042965',
+              formatter: function(value) {
+                return value.name
+              }
+            },
+            data: [
+              [
+                {
+                  name: '', // Grade level
+                  coord: [-3.5, 7],
+                  symbol: 'none',
+                  lineStyle: {
+                    color: '#fff', // '#adadad'
+                    type: 'solid',
+                    width: 2
+                  },
+                },
+                {
+                  coord: [3, 7],
+                  symbol: 'none'
+                },
+              ],
+          ]
+        }
+      },
+    ]
+  }
+  return {
+    xVar: 'all_ses',
+    yVar: 'all_avg7',
+    zVar: 'all_sz',
+    highlighted: Object.keys(highlight),
+    options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
 
-/** State 7: Highlight districts around x=0 */
+/** State 7, Grade 8 */
 var state7 = function(scatterplot) {
-  var options = scatterplot.component.getOption();
-  var base = scatterplot.getState('state4');
-  // return options;
-  var dataSeries = scatterplot.getDataSeries();
-  // dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.2 })
-  // var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  var range = {
-    min: -.15,
-    max: .15
-  };
-  var nearZero = scatterplot.getSeriesDataInRange(dataSeries.data, 'x', range);
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  // get current echart options
+  const options = scatterplot.component.getOption();
+  // this state is created from the base
+  const base = scatterplot.getState('base');
+  var highlight = {};
+  highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
-  return {
-    highlighted: [],
-    options: deepmerge(base.options, {
-      title: {
-        subtext: 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016'
-      },
-      series: [
-        dataSeries,
-        {
-          type: 'scatter',
-          data: nearZero,
-          symbolSize: dataSeries.symbolSize,
-          itemStyle: {
-            borderWidth: 1,
-            borderColor: 'rgba(0,0,0,1)',
-            color: '#ffb87f' // '#b6a2de' // 'rgba(255,0,0,0.25)'
-          }
+  const baseOverrides = {
+    title: {
+      text: 'Academic Achievement and Socioeconomic Status, Grade 8',
+      subtext: 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
+    },
+    yAxis: {
+      min: -0.5,
+      max: 9,
+      name: 'Average Achievement (in Grade Levels)',
+      textStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
+      }
+    },
+    xAxis: {
+      min: -4,
+      max: 3.5,
+      name: 'Poor/Disadvantaged to Affluent/Advantaged',
+    },
+    series: [
+      { id: 'base' },
+      {
+        id: 'highlighted',
+        itemStyle: {
+          borderWidth: 2,
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.95)'
         },
-        {
-          type: 'scatter',
-          data: searchSeries,
-          symbolSize: 15, // dataSeries.symbolSize,
-          zlevel: 1000,
-          itemStyle: {
-            borderWidth: 2,
-            borderColor: '#042965',
-            color: 'rgba(255,255,0,0.97)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            width: "25%",
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return names[item.value[3]]
-            }
+        label: {
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return highlight[item.value[3]]
           }
         }
-      ]
-    })
+      },
+      {
+        type:'scatter',
+          markLine: {
+            animation: false,
+            silent: true,
+            label: {
+              position: 'middle',
+              fontFamily: 'MaisonNeue-Medium',
+              fontWeight: '600',
+              fontSize: 12,
+              textBorderWidth: 3,
+              textBorderColor: '#042965',
+              textShadowColor: '#042965',
+              formatter: function(value) {
+                return value.name
+              }
+            },
+            data: [
+              [
+                {
+                  name: '', // Grade level
+                  coord: [-3.5, 8],
+                  symbol: 'none',
+                  lineStyle: {
+                    color: '#fff', // '#adadad'
+                    type: 'solid',
+                    width: 2
+                  },
+                },
+                {
+                  coord: [3, 8],
+                  symbol: 'none'
+                },
+              ],
+          ]
+        }
+      },
+    ]
+  }
+  return {
+    xVar: 'all_ses',
+    yVar: 'all_avg8',
+    zVar: 'all_sz',
+    highlighted: Object.keys(highlight),
+    options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
 
+/** State 8, Avg achievement grade 3 vs years growth per grade */
 var state8 = function(scatterplot) {
   // get current echart options
   const options = scatterplot.component.getOption();
   // this state is created from the base
   const base = scatterplot.getState('base');
-  var dataSeries = scatterplot.getDataSeries();
-  var highlight = {
-    '0803360': 'Denver, CO',
-    '0634170': 'San Bernardino, CA'
-  }
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
   const baseOverrides = {
     title: {
-      text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
-      subtext: 'US School Districts 2009-2016',
-      textStyle: {
-        fontSize: 18,
-        lineHeight: 32
-      }
-    },
-    grid: {
-      right: 42,
+      text: 'Third Grade Achievement vs. Achievement Growth (Grades per Year)',
+      subtext: 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
     },
     yAxis: {
-      min:-6,
-      max:0,
-      name: 'White-Black Achievement Gap\nby Grade Levels',
-      nameTextStyle: { // Styles for x and y axis labels
-        fontSize: 12,
-        lineHeight: 14
-      },
+      min: 0.4,
+      max: 1.6,
+      name: 'Years of Growth per Grade',
+      textStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
+      }
     },
     xAxis: {
-      min: -3,
+      min: -1,
       max: 7,
-      name: 'White-Black Socioeconomic Disparity',
+      name: 'Average Grade 3 Achievement',
     },
     series: [
+      { id: 'base' },
       {
-      type:'scatter',
-      markLine: {
-        animation: false,
-        silent: true,
-        label: {
-          position: 'middle',
-          fontFamily: 'MaisonNeue-Medium',
-          fontWeight: '600',
-          fontSize: 12,
-          textBorderColor: '#042965',
-          textBorderWidth: 1,
-          textShadowColor: '#042965',
-          formatter: function(value) {
-            return value.name
-          }
+        id: 'highlighted',
+        itemStyle: {
+          borderWidth: 2,
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.95)'
         },
-        data: [
-          [
-            {
-              name: 'no racial disparity',
-              coord: [0, -6],
-              symbol: 'none',
-              lineStyle: {
-                color:  '#dc69aa',
-                type: 'solid',
-                width: 2,
-                shadowOffsetY: 0,
-                shadowOffsetX: 0,
-                shadowBlur: 3,
-                shadowColor: '#042965'
-              },
-              label: {
-                // verticalAlign: 'bottom'
-                // position: 'left',
-                // rotate: -90
-              }
+        label: {
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return highlight[item.value[3]]
+          }
+        }
+      },
+      {
+        type:'scatter',
+          markLine: {
+            animation: false,
+            silent: true,
+            label: {
+              backgroundColor: 'rgba(255, 255, 255, 0.75)',
+              borderRadius: 2,
+              padding: 5,
+              color: '#052965',
+              shadowColor: 'transparent',
+              textShadowColor: 'transparent',
+              textBorderColor: 'transparent'
             },
-            {
-              coord: [ 0, -1],
-              symbol: 'none'
-            },
+            data: [
+              [
+                {
+                  name: 'About Average', // Grade level
+                  coord: [3, 1.4],
+                  symbol: 'none',
+                  lineStyle: {
+                    color: '#fff', // '#adadad'
+                    type: 'solid',
+                    width: 2
+                  },
+                },
+                {
+                  coord: [3, 0.55],
+                  symbol: 'none'
+                },
+              ],
+              [
+                {
+                  name: '3 Grades Below Average', // Grade level
+                  coord: [0, 1.4],
+                  symbol: 'none',
+                  lineStyle: {
+                    color: '#fff', // '#adadad'
+                    type: 'solid',
+                    width: 2
+                  },
+                },
+                {
+                  coord: [0, 0.55],
+                  symbol: 'none'
+                },
+              ],
+              [
+                {
+                  name: '3 Grades Above Average', // Grade level
+                  coord: [6, 1.4],
+                  symbol: 'none',
+                  lineStyle: {
+                    color: '#fff', // '#adadad'
+                    type: 'solid',
+                    width: 2
+                  },
+                },
+                {
+                  coord: [6, 0.55],
+                  symbol: 'none'
+                },
+              ],
           ]
-        ]
-      }
-    },
-    {
-      id: 'highlighted',
-      itemStyle: {
-        borderColor: '#042965', // 'rgba(0,0,0,1)',
-        color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
-        borderWidth: 2,
-        // borderColor: '#042965',
-        // color: 'rgba(255,255,0,0.5)'
-      },
-      label: {
-        show: true,
-        position: 'right',
-        backgroundColor: 'rgba(255,255,0,0.97)',
-        borderColor: '#042965',
-        fontSize: 12,
-        fontWeight: 600,
-        fontFamily: 'MaisonNeue-Medium',
-        padding: [6, 8],
-        borderRadius: 3,
-        color: '#042965',
-        formatter: function(item) {
-          return highlight[item.value[3]]
         }
-      }
-    },
-    {
-      type: 'scatter',
-      data: searchSeries,
-      symbolSize: 15, // dataSeries.symbolSize,
-      zlevel: 1000,
-      itemStyle: {
-        borderWidth: 2,
-        borderColor: '#042965',
-        color: 'rgba(255,255,0,0.97)'
       },
-      label: {
-        show: true,
-        position: 'right',
-        width: "25%",
-        backgroundColor: 'rgba(255,255,0,0.97)',
-        borderColor: '#042965',
-        fontSize: 12,
-        fontWeight: 600,
-        fontFamily: 'MaisonNeue-Medium',
-        lineHeight: 28,
-        padding: [6, 8],
-        borderRadius: 3,
-        color: '#042965',
-        formatter: function(item) {
-          return names[item.value[3]]
-        }
-      }
-    }]
+    ]
   }
   return {
-    highlighted: Object.keys(highlight),
-    xVar: 'wb_ses',
-    yVar: 'wb_avg',
+    xVar: 'all_avg3',
+    yVar: 'all_grd',
     zVar: 'all_sz',
+    highlighted: Object.keys(highlight),
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
 
-/* Highlight least and most segregated */
+/** State 8, Avg achievement grade 3 vs years growth per grade */
 var state9 = function(scatterplot) {
-  console.log('loading state9');
+  // get current echart options
+  const options = scatterplot.component.getOption();
   // this state is created from the base
   const base = scatterplot.getState('base');
-  // Build series most seg to highlight
-  var dataSeries = scatterplot.getDataSeries();
-  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  // console.log(top100);
-  var segSortedTop100 = sortDataBySeg(top100);
-  var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
-  var mostSegregatedSeries = sliceMost(segSortedTop100, 10);
-  var searchSeries = [];
-  if (scatterplot && scatterplot.data) {
-    searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
   }
   const baseOverrides = {
     title: {
-      text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
-      subtext: 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016',
-      textStyle: {
-        fontSize: 18,
-        lineHeight: 32
-      }
-    },
-    legend: {
-      show: true,
-      orient: 'vertical',
-      textStyle: {
-        color: '#fff',
-        fontFamily: 'MaisonNeue-Medium',
-        fontWeight: '600',
-        fontSize: 12
-      },
-      backgroundColor: '#042965',
-      borderColor: '#dc69aa',
-      borderWidth: 2,
-      borderRadius: 3,
-      padding: 6,
-      right: 55,
-      bottom: 45,
-      data: [
-        {
-          name: 'Least Segregated',
-          icon: 'circle',
-        },
-        {
-          name: 'Most Segregated',
-          icon: 'circle',
-        }
-      ]
-    },
-    grid: {
-      right: 42,
+      text: 'Third Grade Achievement vs. Achievement Growth (Grades per Year)',
+      subtext: 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
     },
     yAxis: {
-      min:-6,
-      max:0,
-      name: 'White-Black Achievement Gap\nby Grade Levels',
-      nameTextStyle: { // Styles for x and y axis labels
-        fontSize: 12,
-        lineHeight: 14
-      },
+      min: 0.4,
+      max: 1.6,
+      name: 'Years of Growth per Grade',
+      textStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FF003E',
+      }
     },
     xAxis: {
-      min: -3,
+      min: -1,
       max: 7,
-      name: 'White-Black Socioeconomic Disparity',
+      name: 'Average Grade 3 Achievement',
     },
     series: [
-      dataSeries,
+      { id: 'base' },
       {
-        type: 'scatter',
-        data: leastSegregatedSeries,
-        name: "Least Segregated",
-        symbolSize: 12, // dataSeries.symbolSize,
+        id: 'highlighted',
         itemStyle: {
           borderWidth: 2,
-          borderColor: 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.97)'
-        }
-      },
-      {
-        type: 'scatter',
-        data: mostSegregatedSeries,
-        name: "Most Segregated",
-        symbolSize: 12, // dataSeries.symbolSize,
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: 'rgba(0,0,0,1)',
-          color: '#ef7715'
-        }
-      },
-      {
-      type:'scatter',
-      markLine: {
-        animation: false,
-        silent: true,
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.95)'
+        },
         label: {
-          position: 'middle',
-          fontFamily: 'MaisonNeue-Medium',
-          fontWeight: '600',
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
           fontSize: 12,
-          textBorderColor: '#042965',
-          textBorderWidth: 1,
-          textShadowColor: '#042965',
-          formatter: function(value) {
-            return value.name
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return highlight[item.value[3]]
+          }
+        }
+      },
+      {
+        type:'scatter',
+          markLine: {
+            animation: false,
+            silent: true,
+            label: {
+              backgroundColor: 'rgba(255, 255, 255, 0.75)',
+              borderRadius: 2,
+              padding: 5,
+              color: '#052965',
+              shadowColor: 'transparent',
+              textShadowColor: 'transparent',
+              textBorderColor: 'transparent'
+            },
+            data: [
+              [
+                {
+                  name: '', // Y axis
+                  coord: [3, 1.6],
+                  symbol: 'none',
+                  label: {
+                    show: false
+                  },
+                  lineStyle: {
+                    color: {
+                      type: 'linear',
+                      x: 0,
+                      y: 0,
+                      x2: 0,
+                      y2: 1,
+                      colorStops: [{
+                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
+                      },
+                      {
+                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)'
+                      },
+                      {
+                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)'
+                      },
+                      {
+                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
+                      }],
+                      global: false // false by default
+                    },
+                    type: 'solid'
+                  }
+                },
+                {
+                  coord: [ 3, 0.4 ],
+                  symbol: 'none',
+                  // lineStyle: {
+                  //   color: '#fff', // 'rgba(0,0,0,0.6)'
+                  //   type: 'dashed'
+                  // }
+                },
+              ],
+              [
+                {
+                  name: '', // x axis
+                  coord: [-0.5, 1],
+                  symbol: 'none',
+                  label: {
+                    show: false
+                  },
+                  lineStyle: {
+                    // color: '#fff', // 'rgba(0,0,0,0.6)'
+                    color: {
+                      type: 'linear',
+                      x: 0,
+                      y: 0,
+                      x2: 1,
+                      y2: 0,
+                      colorStops: [{
+                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // 'red' // color at 0% position
+                      },
+                      {
+                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
+                      },
+                      {
+                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
+                      },
+                      {
+                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // 'blue' // color at 100% position
+                      }],
+                      global: false // false by default
+                    },
+                    type: 'solid'
+                  }
+                },
+                {
+                  coord: [6.5, 1],
+                  symbol: 'none'
+                },
+              ]
+            ]
           }
         },
-        data: [
-          [
-            {
-              name: '',
-              coord: [6, -2.95],
-              symbol: 'none',
-              lineStyle: {
-                color:  '#dc69aa',
-                type: 'solid',
-                width: 2,
-                shadowOffsetY: 0,
-                shadowOffsetX: 0,
-                shadowBlur: 3,
-                shadowColor: '#042965'
-              },
-              label: {}
-            },
-            {
-              coord: [ -2, -3.5],
-              symbol: 'none'
-            },
-          ]
-        ]
-      }
-    },
-    {
-      type: 'scatter',
-      data: searchSeries,
-      symbolSize: 15, // dataSeries.symbolSize,
-      zlevel: 1000,
-      itemStyle: {
-        borderWidth: 2,
-        borderColor: '#042965',
-        color: 'rgba(255,255,0,0.97)'
-      },
-      label: {
-        show: true,
-        position: 'right',
-        width: "25%",
-        backgroundColor: 'rgba(255,255,0,0.97)',
-        borderColor: '#042965',
-        fontSize: 12,
-        fontWeight: 600,
-        fontFamily: 'MaisonNeue-Medium',
-        lineHeight: 28,
-        padding: [6, 8],
-        borderRadius: 3,
-        color: '#042965',
-        formatter: function(item) {
-          return names[item.value[3]]
-        }
-      }
-    }
-  ]
+      ]
   }
   return {
-    highlighted: [],
-    xVar: 'wb_ses',
-    yVar: 'wb_avg',
+    xVar: 'all_avg3',
+    yVar: 'all_grd',
     zVar: 'all_sz',
+    highlighted: Object.keys(highlight),
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -1160,7 +1279,10 @@ var state10 = function(scatterplot) {
       textStyle: {
         fontSize: 18,
         lineHeight: 32
-      }
+      },
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
     },
     grid: {
       right: 42,

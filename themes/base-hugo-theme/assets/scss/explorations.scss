@@ -220,6 +220,12 @@ body.type-posts {
     .react-autosuggest__suggestion:hover {
       background-color: #DBE8FF;
     }
+
+    .react-autosuggest__suggestion {
+      color: #173B75;
+      font-family: $maisonneue-book;
+      font-size: 1.4rem;
+    }
   }
 
     // p {

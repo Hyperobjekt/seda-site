@@ -86,26 +86,28 @@ For example, 3rd graders in Chicago test below a 2nd-grade level...
 
 ...Grade 8.
 
-<br>
-<br>
-
 By 8th grade they achieve near the national average, meaning that they experience the equivalent of six years of learning in the five years between 3rd and 8th grade. The results in Chicago show that a district’s low socioeconomic status isn’t predictive of student achievement over time, and that a poor district can give its students considerable opportunity—even a large one that enrolls hundreds of thousands of students.
+
+Some poor districts show an opposite trend. If you scoll back up through the grades, you'll see that third-grade students in Milwaukee test similarly at 2nd-grade levels as do Chicago students, but do not grow as much, so they are far behind the national average when they reach 8th grade.
+
+To be sure, growth rates don’t measure school impact alone. They may also depend on average family resources as well as other local conditions, including neighborhood characteristics and the availability of afterschool programs. But growth rates, unlike average test scores, tell us more about how much education students receive while in school.
+
+What these figures show is that there is very little relationship between average 3rd grade test scores and average growth as students move from grades 3 through 8. Districts with high grade 3 scores don’t have the same outcomes: there are many with high growth and many with low growth as students progress through elementary and middle school. The same is true for districts with low initial scores.
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state8" notmerge="true" %}}
 
-Some poor districts show an opposite trend. Third-grade students in Milwaukee test similarly at 2nd-grade levels as do Chicago students, but do not grow as much, so they are far behind the national average when they reach 8th grade.
+How much we can glean from 8th grade average scores also varies considerably. Some districts have higher grade 3 scores and lower growth while others have lower initial grade 3 scores and higher growth. Snapshots in time aren’t as revealing as measuring growth over time.
 
-To be sure, growth rates don’t measure school impact alone. They may also depend on average family resources as well as other local conditions, including neighborhood characteristics and the availability of afterschool programs. But growth rates, unlike average test scores, tell us more about how much education students receive while in school.
-
-This figure shows us that there is very little relationship between average 3rd grade test scores and average growth as students move from grades 3 through 8. Districts with high grade 3 scores don’t have the same outcomes; there are many with high growth and many with low growth as students progress through elementary and middle school. The same is true for districts with low initial scores.
+<br>
+<br>
+<br>
+<br>
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state9" notmerge="true" %}}
-
-How much we can glean from 8th grade average scores also varies considerably. Some districts have higher grade 3 scores and lower growth while others have lower initial grade 3 scores and higher growth. Snapshots in time aren’t as revealing as measuring growth over time.
 
 The four quadrants compare each district’s early educational opportunities to its growth opportunities.
 DESIGN NOTE: Can the following 4 bullets pop up when you hover your mouse over quadrants? (Possibly tooltips for each quadrant?)

@@ -175,6 +175,7 @@ var state1 = function(scatterplot) {
           silent: true,
           label: {
             position: 'middle',
+            
             fontFamily: 'MaisonNeue-Medium',
             fontWeight: '600',
             fontSize: 12,
@@ -198,7 +199,7 @@ var state1 = function(scatterplot) {
                 shadowOffsetY: 0,
                 shadowOffsetX: 0,
                 shadowBlur: 2,
-                shadowColor: '#042965'
+                shadowColor: '#042965',
               }
             },
             { coord: [ 3,  3], symbol: 'none' },
@@ -219,10 +220,10 @@ var state1 = function(scatterplot) {
                       offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
                   },
                   {
-                    offset: 0.25, color: 'rgba(255, 255, 255, 0.78)'
+                    offset: 0.25, color: 'rgba(255, 255, 255, 0.5)'
                   },
                   {
-                    offset: 0.75, color: 'rgba(255, 255, 255, 0.78)'
+                    offset: 0.75, color: 'rgba(255, 255, 255, 0.5)'
                   },
                   {
                       offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
@@ -258,10 +259,10 @@ var state1 = function(scatterplot) {
                       offset: 0, color: 'rgba(255, 255, 255, 0.18)' // 'red' // color at 0% position
                   },
                   {
-                    offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
+                    offset: 0.25, color: 'rgba(255, 255, 255, 0.5)' // 'blue' // color at 100% position
                   },
                   {
-                    offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
+                    offset: 0.75, color: 'rgba(255, 255, 255, 0.5)' // 'blue' // color at 100% position
                   },
                   {
                       offset: 1, color: 'rgba(255, 255, 255, 0.18)' // 'blue' // color at 100% position
@@ -392,7 +393,7 @@ var state2 = function(scatterplot) {
           data: top100,
           symbolSize: dataSeries.symbolSize,
           itemStyle: {
-            borderWidth: 1,
+            borderWidth: 0.7,
             borderColor: 'rgba(20, 33, 156, 1)',
             color: 'rgba(145, 115, 255, 1)' // '#b6a2de' // 'rgba(255,0,0,0.25)'
           }
@@ -532,7 +533,7 @@ var state3 = function(scatterplot) {
           type: 'scatter',
           symbolSize: dataSeries.symbolSize,
           itemStyle: {
-            borderWidth: 1,
+            borderWidth: 0.7,
             borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
             color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
           },
@@ -541,9 +542,9 @@ var state3 = function(scatterplot) {
         {
           id: 'highlighted',
           itemStyle: {
-            borderWidth: 1,
+            borderWidth: 0.7,
             borderColor: '#042965', // 'rgba(0,0,0,1)',
-            color: 'rgba(255,255,0,0.5)'
+            color: 'rgba(255,255,0,0.9)'
           },
           label: {
             show: true,
@@ -868,9 +869,9 @@ var state4 = function(scatterplot) {
     {
       id: 'highlighted',
       itemStyle: {
-        borderWidth: 1,
+        borderWidth: 0.7,
         borderColor: '#042965', // 'rgba(0,0,0,1)',
-        color: 'rgba(255,255,0,0.5)'
+        color: 'rgba(255,255,0,0.9)'
       },
       label: {
         show: true,
@@ -928,9 +929,9 @@ var state5 = function(scatterplot) {
         {
           id: 'highlighted',
           itemStyle: {
-            borderWidth: 1,
+            borderWidth: 0.7,
             borderColor: '#042965', // 'rgba(0,0,0,1)',
-            color: 'rgba(255,255,0,0.5)'
+            color: 'rgba(255,255,0,0.9)'
           },
           label: {
             show: true,
@@ -988,7 +989,7 @@ var state6 = function(scatterplot) {
           data: top100,
           symbolSize: dataSeries.symbolSize,
           itemStyle: {
-            borderWidth: 1,
+            borderWidth: 0.7,
             borderColor: 'rgba(20, 33, 156, 1)',
             color: 'rgba(145, 115, 255, 1)' // '#b6a2de' // 'rgba(255,0,0,0.25)'
           }
@@ -998,7 +999,7 @@ var state6 = function(scatterplot) {
           itemStyle: {
             borderColor: '#042965', // 'rgba(0,0,0,1)',
             color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
-            borderWidth: 1,
+            borderWidth: 0.7,
             // borderColor: '#042965',
             // color: 'rgba(255,255,0,0.5)'
           },
@@ -1090,7 +1091,7 @@ var state7 = function(scatterplot) {
           data: nearZero,
           symbolSize: dataSeries.symbolSize,
           itemStyle: {
-            borderWidth: 1,
+            borderWidth: 0.7,
             borderColor: 'rgba(0,0,0,1)',
             color: '#FF6500',
           }
@@ -1100,7 +1101,7 @@ var state7 = function(scatterplot) {
           itemStyle: {
             borderColor: '#042965', // 'rgba(0,0,0,1)',
             color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
-            borderWidth: 1,
+            borderWidth: 0.7,
             // borderColor: '#042965',
             // color: 'rgba(255,255,0,0.5)'
           },
@@ -1214,7 +1215,7 @@ var state8 = function(scatterplot) {
           position: 'middle',
           fontFamily: 'MaisonNeue-Medium',
           fontWeight: '600',
-          fontSize: 12,
+          fontSize: 14,
           textBorderColor: '#042965',
           textBorderWidth: 1,
           textShadowColor: '#042965',
@@ -1263,7 +1264,7 @@ var state8 = function(scatterplot) {
       itemStyle: {
         borderColor: '#042965', // 'rgba(0,0,0,1)',
         color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
-        borderWidth: 1,
+        borderWidth: 0.7,
         // borderColor: '#042965',
         // color: 'rgba(255,255,0,0.5)'
       },
@@ -1385,7 +1386,7 @@ var state9 = function(scatterplot) {
         name: "Least Segregated",
         symbolSize: 12, // dataSeries.symbolSize,
         itemStyle: {
-          borderWidth: 1,
+          borderWidth: 0.7,
           borderColor: 'rgba(0,0,0,1)',
           color: 'rgba(255,255,0,0.97)'
         }
@@ -1396,7 +1397,7 @@ var state9 = function(scatterplot) {
         name: "Most Segregated",
         symbolSize: 12, // dataSeries.symbolSize,
         itemStyle: {
-          borderWidth: 1,
+          borderWidth: 0.7,
           borderColor: 'rgba(0,0,0,1)',
           color: '#ef7715'
         }
@@ -1448,7 +1449,7 @@ var state9 = function(scatterplot) {
       itemStyle: {
         borderColor: '#042965', // 'rgba(0,0,0,1)',
         color: 'rgba(255,255,0,0.97)', // 'rgba(255,255,0,0.5)',
-        borderWidth: 1,
+        borderWidth: 0.7,
         // borderColor: '#042965',
         // color: 'rgba(255,255,0,0.5)'
       },
@@ -1583,7 +1584,7 @@ var state10 = function(scatterplot) {
         type: 'scatter',
         symbolSize: dataSeries.symbolSize,
         itemStyle: {
-          borderWidth: 1,
+          borderWidth: 0.7,
           borderColor: 'rgba(0,0,0,1)',
           color: '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
@@ -1663,9 +1664,9 @@ var state10 = function(scatterplot) {
       {
         id: 'highlighted',
         itemStyle: {
-          borderWidth: 1,
+          borderWidth: 0.7,
           borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.5)'
+          color: 'rgba(255,255,0,0.9)'
         },
         label: {
           show: true,

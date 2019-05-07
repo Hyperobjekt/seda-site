@@ -21102,6 +21102,10 @@ body.type-posts .react-autosuggest__suggestions-container .react-autosuggest__su
   background-color: #DBE8FF;
 }
 
+body.type-posts .search-component .ais-InstantSearch__root {
+  padding: 1rem 0;
+}
+
 body.type-explorations .hero {
   background: linear-gradient(to bottom, #042965 5%, #041d55 75%);
   background-blend-mode: soft-light;

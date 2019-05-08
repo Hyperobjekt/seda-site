@@ -118,9 +118,9 @@ function Scatterplot(container, props) {
     scatter: {
       symbol: 'circle',
       itemStyle: {
-        borderWidth: 1,
-        borderColor: '#006358', // 'rgba(0,0,0,0.5)',
-        borderOpacity:0.5,
+        borderWidth: 0.7,
+        borderColor: 'rgba(0,99,88,1)', // '#006358', // 'rgba(0,0,0,0.5)',
+        borderOpacity: 0,
       }
     },
     graph: {

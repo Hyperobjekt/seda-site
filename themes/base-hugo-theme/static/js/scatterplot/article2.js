@@ -92,22 +92,30 @@ var state1 = function(scatterplot) {
     legend: {
       show: true,
     },
+    grid: {
+      right: 32,
+    },
     yAxis: {
       min: -0.5,
       max: 9,
+      nameGap: 16,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     series: [
@@ -274,15 +282,23 @@ var state2 = function(scatterplot) {
         min: -0.5,
         max: 9,
         name: 'Average Achievement (in Grade Levels)',
-        textStyle: {
+        nameTextStyle: {
           fontFamily: 'SharpGrotesk-Medium20',
-          color: '#FF003E',
+          color: '#FFF',
+          fontSize: 12,
+          fontWeight: 'normal'
         }
       },
       xAxis: {
         min: -4,
         max: 3.5,
         name: 'Poor/Disadvantaged to Affluent/Advantaged',
+        nameTextStyle: {
+          fontFamily: 'SharpGrotesk-Medium20',
+          color: '#FFF',
+          fontSize: 12,
+          fontWeight: 'normal'
+        }
       },
       series: [
         { id: 'base' },
@@ -383,15 +399,23 @@ var state3 = function(scatterplot) {
         min: -0.5,
         max: 9,
         name: 'Average Achievement (in Grade Levels)',
-        textStyle: {
+        nameTextStyle: {
           fontFamily: 'SharpGrotesk-Medium20',
-          color: '#FF003E',
+          color: '#FFF',
+          fontSize: 12,
+          fontWeight: 'normal'
         }
       },
       xAxis: {
         min: -4,
         max: 3.5,
         name: 'Poor/Disadvantaged to Affluent/Advantaged',
+        nameTextStyle: {
+          fontFamily: 'SharpGrotesk-Medium20',
+          color: '#FFF',
+          fontSize: 12,
+          fontWeight: 'normal'
+        }
       },
       series: [
         { id: 'base' },
@@ -490,15 +514,23 @@ var state4 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -603,15 +635,23 @@ var state5 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -716,15 +756,23 @@ var state6 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -829,15 +877,23 @@ var state7 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -942,15 +998,23 @@ var state8 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -1055,15 +1119,23 @@ var state9 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -1168,15 +1240,23 @@ var state10 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -1281,15 +1361,23 @@ var state11 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -1394,15 +1482,23 @@ var state12 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -1507,15 +1603,23 @@ var state13 = function(scatterplot) {
       min: -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -1618,15 +1722,23 @@ var state14 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -1,
       max: 7,
       name: 'Average Grade 3 Achievement',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -1826,28 +1938,53 @@ var state15 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -1,
       max: 7,
       name: 'Average Grade 3 Achievement',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
       {
         id: 'selected',
         type: 'scatter',
+        name: 'High early opportunity,\nhigh growth opportunity',
         symbolSize: dataSeries.symbolSize,
         itemStyle: {
           borderWidth: 1,
           borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
-        z: 2
+        z: 2,
+        label: {
+          position: '6, 1.6',
+          show: false,
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            return 'test' // highlight[item.value[3]]
+          }
+        }
       },
       {
         id: 'highlighted',
@@ -2008,15 +2145,23 @@ var state16 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -1,
       max: 7,
       name: 'Average Grade 3 Achievement',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -2190,15 +2335,23 @@ var state17 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -1,
       max: 7,
       name: 'Average Grade 3 Achievement',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },
@@ -2372,15 +2525,23 @@ var state18 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      textStyle: {
+      nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
       }
     },
     xAxis: {
       min: -1,
       max: 7,
       name: 'Average Grade 3 Achievement',
+      nameTextStyle: {
+        fontFamily: 'SharpGrotesk-Medium20',
+        color: '#FFF',
+        fontSize: 12,
+        fontWeight: 'normal'
+      }
     },
     series: [
       { id: 'base' },

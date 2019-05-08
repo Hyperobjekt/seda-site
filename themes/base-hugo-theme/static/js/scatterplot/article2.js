@@ -232,6 +232,9 @@ var state1 = function(scatterplot) {
       },
     ]
   }
+  // console.log('state1');
+  // console.log(jQuery);
+  // console.log(baseOverrides.title.text);
   return {
     xVar: 'all_ses',
     yVar: 'all_avg3',
@@ -1969,6 +1972,30 @@ var state15 = function(scatterplot) {
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
         z: 2,
+        markPoint: {
+          itemStyle: {
+            color: 'transparent',
+          },
+          data: [
+            {
+              name: 'High early opportunity,\nhigh growth opportunity',
+              value: 'High early opportunity,\nhigh growth opportunity',
+              xAxis: 5,
+              yAxis: 1.4,
+              symbol: 'rect',
+              // positon: [3, 1.6],
+              symbolSize: [100, 50],
+              label: {
+                show: true,
+                position: 'inside',
+                verticalAlign: 'middle',
+                color: '#fff',
+                fontWeight: 600,
+                fontFamily: 'MaisonNeue-Medium',
+              },
+            }
+          ],
+        },
         label: {
           position: '6, 1.6',
           show: false,
@@ -2010,6 +2037,25 @@ var state15 = function(scatterplot) {
           }
         }
       },
+      // {
+      //   type: 'scatter',
+      //   name: 'Low early opportunity, high growth',
+      //   markPoint: {
+      //     symbol: 'rect',
+      //     positon: ['50%', 0],
+      //     symbolSize: ['50%', '50%'],
+      //     itemStyle: {
+      //       borderColor: '#fff',
+      //       borderWidth: 1,
+      //       color: 'blue'
+      //     },
+      //     label: {
+      //       show: true,
+      //       position: 'right'
+      //     },
+
+      //   }
+      // },
       {
         type:'scatter',
           markLine: {
@@ -2174,7 +2220,30 @@ var state16 = function(scatterplot) {
           borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
-        z: 2
+        z: 2,
+        markPoint: {
+          itemStyle: {
+            color: 'transparent',
+          },
+          data: [
+            {
+              value: 'Low early opportunity,\nlow growth opportunity',
+              xAxis: 0.5,
+              yAxis: 0.6,
+              symbol: 'rect',
+              // positon: [3, 1.6],
+              symbolSize: [100, 50],
+              label: {
+                show: true,
+                position: 'inside',
+                verticalAlign: 'middle',
+                color: '#fff',
+                fontWeight: 600,
+                fontFamily: 'MaisonNeue-Medium',
+              },
+            }
+          ],
+        },
       },
       {
         id: 'highlighted',
@@ -2364,7 +2433,30 @@ var state17 = function(scatterplot) {
           borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
-        z: 2
+        z: 2,
+        markPoint: {
+          itemStyle: {
+            color: 'transparent',
+          },
+          data: [
+            {
+              value: 'High early opportunity,\nlow growth opportunity',
+              xAxis: 5.5,
+              yAxis: 0.6,
+              symbol: 'rect',
+              // positon: [3, 1.6],
+              symbolSize: [100, 50],
+              label: {
+                show: true,
+                position: 'inside',
+                verticalAlign: 'middle',
+                color: '#fff',
+                fontWeight: 600,
+                fontFamily: 'MaisonNeue-Medium',
+              },
+            }
+          ],
+        },
       },
       {
         id: 'highlighted',
@@ -2554,7 +2646,29 @@ var state18 = function(scatterplot) {
           borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
-        z: 2
+        z: 2,
+        markPoint: {
+          itemStyle: {
+            color: 'transparent',
+          },
+          data: [
+            {
+              value: 'Low early opportunity,\nhigh growth opportunity',
+              xAxis: 0.5,
+              yAxis: 1.4,
+              symbol: 'rect',
+              symbolSize: [100, 50],
+              label: {
+                show: true,
+                position: 'inside',
+                verticalAlign: 'middle',
+                color: '#fff',
+                fontWeight: 600,
+                fontFamily: 'MaisonNeue-Medium',
+              },
+            }
+          ],
+        },
       },
       {
         id: 'highlighted',

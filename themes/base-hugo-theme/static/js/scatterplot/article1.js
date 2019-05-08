@@ -470,6 +470,7 @@ var state3 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
+  // console.log(top100);
   // var searchSeries = [];
   // if (scatterplot && scatterplot.data) {
   //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);

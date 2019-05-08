@@ -88,7 +88,67 @@ For example, 3rd graders in Chicago test below a 2nd-grade level...
 
 By 8th grade they achieve near the national average, meaning that they experience the equivalent of six years of learning in the five years between 3rd and 8th grade. The results in Chicago show that a district’s low socioeconomic status isn’t predictive of student achievement over time, and that a poor district can give its students considerable opportunity—even a large one that enrolls hundreds of thousands of students.
 
-Some poor districts show an opposite trend. If you scoll back up through the grades, you'll see that third-grade students in Milwaukee test similarly at 2nd-grade levels as do Chicago students, but do not grow as much, so they are far behind the national average when they reach 8th grade.
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state8" notmerge="true" %}}
+
+Some poor districts show an opposite trend. Third-grade students in Milwaukee test similarly at 2nd-grade levels as do Chicago students, but do not grow as much, so they are far behind the national average when they reach 8th grade...
+
+<br>
+<br>
+<br>
+<br>
+
+{{% /state-wrapper %}}
+
+
+{{% state-wrapper state="state9" notmerge="true" %}}
+
+...Grade 4...
+
+<br>
+<br>
+<br>
+<br>
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state10" notmerge="true" %}}
+
+...Grade 5...
+
+<br>
+<br>
+<br>
+<br>
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state11" notmerge="true" %}}
+
+...Grade 6...
+
+<br>
+<br>
+<br>
+<br>
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state12" notmerge="true" %}}
+
+...Grade 7...
+
+<br>
+<br>
+<br>
+<br>
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state13" notmerge="true" %}}
+
+...Grade 8.
 
 To be sure, growth rates don’t measure school impact alone. They may also depend on average family resources as well as other local conditions, including neighborhood characteristics and the availability of afterschool programs. But growth rates, unlike average test scores, tell us more about how much education students receive while in school.
 
@@ -96,7 +156,7 @@ What these figures show is that there is very little relationship between averag
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state8" notmerge="true" %}}
+{{% state-wrapper state="state14" notmerge="true" %}}
 
 How much we can glean from 8th grade average scores also varies considerably. Some districts have higher grade 3 scores and lower growth while others have lower initial grade 3 scores and higher growth. Snapshots in time aren’t as revealing as measuring growth over time.
 
@@ -107,19 +167,48 @@ How much we can glean from 8th grade average scores also varies considerably. So
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state9" notmerge="true" %}}
+{{% state-wrapper state="state15" notmerge="true" %}}
 
 The four quadrants compare each district’s early educational opportunities to its growth opportunities.
-DESIGN NOTE: Can the following 4 bullets pop up when you hover your mouse over quadrants? (Possibly tooltips for each quadrant?)
 
-* In the upper right: “These districts are characterized by high early educational opportunity and high growth opportunity; these are districts where students have high average achievement in grade 3 and have above average growth rates following that.”
-* In the lower left: “These districts characterized by the opposite pattern: low early and low-growth opportunity.”
-* In the bottom right: “These districts are where kids have lots of opportunities early on, but show low growth after grade 3. These communities may need to focus their investments in middle school opportunities.” 
-* In the upper left: “These are districts where kids very few opportunities early on, but show high growth after grade 3. These communities may need to focus their investments in early childhood opportunities.”
+In the upper right are districts characterized by high early educational opportunity and high growth opportunity; these are districts where students have high average achievement in grade 3 and have above average growth rates following that.
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state10" notmerge="true" %}}
+{{% state-wrapper state="state16" notmerge="true" %}}
+
+In the lower left are districts characterized by the opposite pattern: low early educational opportunity and low-growth opportunity.
+
+<br>
+<br>
+<br>
+<br>
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state17" notmerge="true" %}}
+
+In the bottom right are districts are where kids have lots of opportunities early on, but show low growth after grade 3. These communities may need to focus their investments in middle school opportunities.
+
+<br>
+<br>
+<br>
+<br>
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state18" notmerge="true" %}}
+
+In the upper left are districts where kids have very few opportunities early on, but show high growth after grade 3. These communities may need to focus their investments in early childhood opportunities.
+
+<br>
+<br>
+<br>
+<br>
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state19" notmerge="true" %}}
 
 This figure shows the relationship between average student growth and average family socioeconomic status in any given school district. Viewed a different way, it depicts the impact five years of school has on children between the ages of 9 and 14.
 

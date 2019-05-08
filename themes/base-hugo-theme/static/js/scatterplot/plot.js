@@ -17,7 +17,7 @@
           algoliaKey: 'bae9e4604dbd263cc47c48bfb30dd5dc',
           onSuggestionSelected: function(hit) {
             searchItemIDs[0] = hit['id'];
-            console.log(searchItemIDs);
+            // console.log(searchItemIDs);
             scatterplot.loadState(plot.activeState);
           },
           indices: ['districts'],
@@ -50,7 +50,7 @@
           this.render(refProps);
         },
         update: function() {
-             console.log('update');
+            // console.log('update');
             var activeWrappers = $.grep(plot.wrappers, function(el) {
                 // Get top and bottom y coords of wrapper
                 plot.top = (plot.scatterplot).offset().top;

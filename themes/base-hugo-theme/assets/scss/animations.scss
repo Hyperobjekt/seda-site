@@ -342,7 +342,7 @@ svg g#map-plot {
                 }
             }
             // Y Axis
-            $growthYAxisDelay: .5s;
+            /* $growthYAxisDelay: .5s;
             g#y-axis {
                 path#y-axis-top {
                     opacity: 0;
@@ -449,6 +449,7 @@ svg g#map-plot {
                     }
                 }
             }
+            */
             // School 1 Stairs
             $stepSpeed: .5s;
             $stepDelay: 1.5s;

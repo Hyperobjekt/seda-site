@@ -111,6 +111,13 @@
     });
 
     // Variables for anime
+    
+    var initGrowth = null;
+    var growthYAxis = null;
+    var growthYAxisCap = null;
+    var growthXAxis = null;
+    var growthXAxisCap = null;
+
     var dkbluepath = null;
     var medbluepath = null;
     var greenpath = null;
@@ -133,6 +140,55 @@
      * Sets up all the animation targets and chars
      */
     function setupAnime() {
+      initGrowth = anime({
+        targets: ['#growth-graphic svg'],
+        opacity: 1,
+        duration: 250,
+        autoplay: false,
+        easing: 'easeInOutQuad',
+        direction: 'linear',
+      });
+      // Growth Y Axis line
+      growthYAxis = anime({
+        targets: ['#y-axis-growth #growth-y-axisline'],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutQuad',
+        duration: 1000,
+        direction: 'linear',
+        autoplay: false,
+      });
+      // Growth Y Axis Cap
+        growthYAxisCap = anime({
+        targets: ['#y-axis-growth #growth-y-axis-cap path'],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutQuad',
+        duration: 250,
+        delay: 1000,
+        direction: 'linear',
+        autoplay: false,
+      });
+      //Growth X Axis Line
+        growthXAxis = anime({
+        targets: ['#x-axis-growth #growth-x-axis-line'],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutQuad',
+        duration: 1000,
+        direction: 'linear',
+        autoplay: false,
+    });
+    //Growth X Axis Cap
+        growthXAxisCap = anime({
+        targets: ['#x-axis-growth #growth-x-axis-cap path'],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutQuad',
+        duration: 250,
+        delay: 1000,
+        direction: 'linear',
+        autoplay: false,
+    });
+    }
+
+    function setupAnime2() {
       dkbluepath = anime.path('#dkblueline');
       medbluepath = anime.path('#medblueline');
       greenpath = anime.path('#greenline');
@@ -200,7 +256,7 @@
       });
       //Y Axis Cap
       trendStep5 = anime({
-          targets: ['#y-axis-cap path'],
+          targets: ['#y-axis-trend #y-axis-cap path'],
           strokeDashoffset: [anime.setDashoffset, 0],
           easing: 'easeInOutQuad',
           duration: 250,
@@ -219,7 +275,7 @@
       });
       //X Axis Cap
       trendStep7 = anime({
-          targets: ['#x-axis-cap path'],
+          targets: ['#x-axis-trend-2 #x-axis-cap path'],
           strokeDashoffset: [anime.setDashoffset, 0],
           easing: 'easeInOutQuad',
           duration: 250,
@@ -268,6 +324,15 @@
           autoplay: false,
       });
     }
+
+    function animateGrowthGraphic() {
+      // console.log('animateGrowthGraphic()');
+      initGrowth.play();
+      growthYAxis.play();
+      growthYAxisCap.play();
+      growthXAxis.play();
+      growthXAxisCap.play();
+    } 
 
     function animateTrendGraphic() {
       // console.log('animateTrendGraphic()');
@@ -319,6 +384,7 @@
       if (Scroll >= growthGraphic && !growthGraphicAnimated) {
         // console.log('trigger growthGraphic');
         $("#growth-graphic").addClass("move");
+        animateGrowthGraphic();
         growthGraphicAnimated = true;
       }
 
@@ -487,6 +553,7 @@
         } else {
           if (userScrolled) {
             setupAnime();
+            setupAnime2();
             checkHomepageAnimations();
             userScrolled = false;
           }

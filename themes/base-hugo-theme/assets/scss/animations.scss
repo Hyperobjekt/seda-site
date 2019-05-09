@@ -246,7 +246,7 @@ svg g#map-plot {
 // G R O W T H  G R A P H I C
 
 #growth-graphic {
-    opacity: 0;
+    opacity: 1;
     &.move {
         opacity: 1;
         transition: opacity .3s ease;

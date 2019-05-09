@@ -140,6 +140,7 @@
      * Sets up all the animation targets and chars
      */
    function setupAnime() {
+      
       initGrowth = anime({
         targets: ['#growth-graphic svg'],
         opacity: 1,
@@ -148,7 +149,7 @@
         easing: 'easeInOutQuad',
         direction: 'linear',
       });
-    
+  
       
       // Growth Y Axis line
       growthYAxis = anime({

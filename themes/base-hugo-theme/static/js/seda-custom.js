@@ -326,7 +326,7 @@
     }
 
     function animateGrowthGraphic() {
-      // console.log('animateGrowthGraphic()');
+      console.log('animateGrowthGraphic()');
       initGrowth.play();
       growthYAxis.play();
       growthYAxisCap.play();

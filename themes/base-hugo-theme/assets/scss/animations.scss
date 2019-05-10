@@ -452,7 +452,7 @@ svg g#map-plot {
             */
             // School 1 Stairs
             $stepSpeed: .5s;
-            $stepDelay: .5s;
+            $stepDelay: .8s;
             g#Kid-1 {
                 animation: kidStep1 $stepSpeed forwards;
                 animation-delay: $stepDelay;

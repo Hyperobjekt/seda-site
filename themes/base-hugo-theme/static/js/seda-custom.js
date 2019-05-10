@@ -136,11 +136,20 @@
     var trendStep10 = null;
     var trendStep11 = null;
 
+    var avgGraphic = null;
+    var growthGraphic = null;
+    var trendGraphic = null;
+    var windowHeight = null;
+    var avgGraphicAnimated = false;
+    var growthGraphicAnimated = false;
+    var trendGraphicAnimated = false;
+
     /**
      * Sets up all the animation targets and chars
      */
    function setupAnime() {
-      
+      // console.log('setupAnime');
+
       initGrowth = anime({
         targets: ['#growth-graphic svg'],
         opacity: 1,
@@ -330,7 +339,7 @@
     }
 
     function animateGrowthGraphic() {
-      console.log('animateGrowthGraphic()');
+      // console.log('animateGrowthGraphic()');
       initGrowth.play();
       growthYAxis.play();
       growthYAxisCap.play();
@@ -355,13 +364,6 @@
       trendStep11.play();
     }
 
-    var avgGraphic = null;
-    var growthGraphic = null;
-    var trendGraphic = null;
-    var windowHeight = null;
-    var avgGraphicAnimated = false;
-    var growthGraphicAnimated = false;
-    var trendGraphicAnimated = false;
 
     function setElPositions() {
       // console.log('setElPositions()');
@@ -387,6 +389,7 @@
 
       if (Scroll >= growthGraphic && !growthGraphicAnimated) {
         // console.log('trigger growthGraphic');
+        // console.log('growthGraphicAnimated = ' + growthGraphicAnimated);
         $("#growth-graphic").addClass("move");
         animateGrowthGraphic();
         growthGraphicAnimated = true;
@@ -543,7 +546,10 @@
         setElPositions();
       })
       setElPositions();
-
+      // Set up svg animations (one-time)
+      setupAnime();
+      setupAnime2();
+      // Scroll listener vars and interval
       var userScrolled = false;
       var svgScrollEvt = $(window).scroll(function() {
         userScrolled = true;
@@ -556,8 +562,6 @@
           clearInterval(svgScrollInt);
         } else {
           if (userScrolled) {
-            setupAnime();
-            setupAnime2();
             checkHomepageAnimations();
             userScrolled = false;
           }

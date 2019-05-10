@@ -452,18 +452,18 @@ svg g#map-plot {
             */
             // School 1 Stairs
             $stepSpeed: .5s;
-            $stepDelay: 1.5s;
+            $stepDelay: .5s;
             g#Kid-1 {
                 animation: kidStep1 $stepSpeed forwards;
                 animation-delay: $stepDelay;
-                transform: translate(21.041030px, 90px);
+                transform: translate(21.041030px, 102px);
             }
             @keyframes  kidStep1 {
                 0% {
-                    transform: translate(21.041030px, 90px);
+                    transform: translate(21.041030px, 102px);
                 }
                 100% {
-                    transform: translate(21.041030px, 75px);
+                    transform: translate(21.041030px, 87px);
                 }
             } 
             g#Steps-1 {
@@ -568,14 +568,14 @@ svg g#map-plot {
             g#Kid-2 {
                 animation: kidStep2 $stepSpeed forwards;
                 animation-delay: $stepDelay;
-                transform: translate(34px, 90px);
+                transform: translate(34px, 102px);
             }
             @keyframes  kidStep2 {
                 0% {
-                    transform: translate(34px, 90px);
+                    transform: translate(34px, 102px);
                 }
                 100% {
-                    transform: translate(34px, 60px);
+                    transform: translate(34px, 72px);
                 }
             } 
             g#Steps-2 {
@@ -679,14 +679,14 @@ svg g#map-plot {
             g#Kid-3 {
                 animation: kidStep3 $stepSpeed forwards;
                 animation-delay: $stepDelay;
-                transform: translate(27px, 90px);
+                transform: translate(27px, 102px);
             }
             @keyframes  kidStep3 {
                 0% {
-                    transform: translate(27px, 90px);
+                    transform: translate(27px, 102px);
                 }
                 100% {
-                    transform: translate(27px, 43px);
+                    transform: translate(27px, 55px);
                 }
             } 
             g#Steps-3 {

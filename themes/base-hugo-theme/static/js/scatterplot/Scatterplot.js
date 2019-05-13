@@ -134,6 +134,7 @@ function Scatterplot(container, props) {
     base: {
       options: {
         title: {
+          show: false,
           textStyle: {
             fontWeight: 'normal',
             color: '#fff',
@@ -149,7 +150,7 @@ function Scatterplot(container, props) {
           textAlign: 'center'
         },
         grid: {
-          top: 56,
+          top: 24,
           bottom: 42,
           left: 24,
           right: 34,

@@ -144,17 +144,18 @@ var state1 = function(scatterplot) {
       show: true,
     },
     grid: {
-      top: 24,
-      bottom: 40,
-      left: 24,
-      right: 44,
-      width: 'auto',
-      height: 'auto'
+      // top: 10,
+      // bottom: 32,
+      // left: 24,
+      // right: 32,
+      // width: 'auto',
+      // height: 'auto'
     },
     yAxis: {
       min:-3,
       max:3,
       position: 'right',
+      // nameGap: 36,
       name: 'Black Average Performance',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -173,7 +174,7 @@ var state1 = function(scatterplot) {
         fontWeight: 'normal',
         verticalAlign: 'bottom'
       },
-      nameGap: 36
+      // nameGap: 14
     },
     series: [
       {
@@ -453,12 +454,18 @@ var state3 = function(scatterplot) {
         show: false
       },
       grid: {
-        top: 80,
-        bottom: 40,
-        left: 24,
-        right: 52,
-        width: 'auto',
-        height: '60%'
+        top: 20,
+        bottom: 20,
+        left: 20,
+        right: 40,
+        zlevel: 100,
+        height: 280
+        // top: 80,
+        // bottom: 40,
+        // left: 24,
+        // right: 52,
+        // width: 'auto',
+        // height: '60%'
       },
       yAxis: {
         min:-3,
@@ -470,7 +477,7 @@ var state3 = function(scatterplot) {
           color: '#FFF',
           fontWeight: 'normal'
         },
-        nameGap: 32
+        nameGap: 24 // 22 // 32
       },
       xAxis: {
         min: -3,
@@ -483,7 +490,7 @@ var state3 = function(scatterplot) {
           fontWeight: 'normal',
           verticalAlign: 'bottom'
         },
-        nameGap: 36
+        nameGap: 26 // 36
       },
       series: [
         { id: 'base' },

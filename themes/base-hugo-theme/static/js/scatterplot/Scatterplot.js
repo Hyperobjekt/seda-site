@@ -150,14 +150,15 @@ function Scatterplot(container, props) {
           textAlign: 'center'
         },
         grid: {
-          top: 24,
-          bottom: 42,
-          left: 24,
-          right: 34,
+          top: 20,
+          bottom: 20,
+          left: 20,
+          right: 36,
           zlevel: 100,
+          height: 280
         },
         yAxis: {
-          nameGap: 24,
+          nameGap: 20,
           position: 'right',
           splitLine: {
             show: false,
@@ -173,7 +174,8 @@ function Scatterplot(container, props) {
           zlevel: 101,
         },
         xAxis: {
-          nameGap: 26,
+          nameGap: 26, // 26,
+          // bottom: 16,
           nameTextStyle: {
             fontFamily: 'SharpGrotesk-Medium20',
             color: '#FFF',

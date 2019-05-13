@@ -9,6 +9,9 @@ const jQ = jQuery;
 let segData = [];
 let searchItemIDs = [];
 let names = [];
+let Title = {};
+Title['text'] = '';
+Title['subtext'] = '';
 
 /**
  * Slice array according from beginning according to provided size.
@@ -126,10 +129,13 @@ var state1 = function(scatterplot) {
     // console.log(highlight);
   }
 
+  Title['text'] = 'White and Black Students\' Average Performance';
+  Title['subtext'] = 'U.S. School Districts 2009-2016';
+
   const baseOverrides = {
     title: {
-      text: 'White and Black Students\' Average Performance',
-      subtext: 'U.S. School Districts 2009-2016',
+      text: Title.text, // 'White and Black Students\' Average Performance',
+      subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
       textAlign: 'center',
       left: '50%',
       top: '10px',
@@ -177,7 +183,6 @@ var state1 = function(scatterplot) {
           silent: true,
           label: {
             position: 'middle',
-            
             fontFamily: 'MaisonNeue-Medium',
             fontWeight: '600',
             fontSize: 12,
@@ -308,8 +313,8 @@ var state1 = function(scatterplot) {
     ]
   }
   // Set title and subtitle
-  jQ('.column-scatterplot .title').text(baseOverrides.title.text);
-  jQ('.column-scatterplot .subtitle').text(baseOverrides.title.subtext);
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   return {
     xVar: 'w_avg',
     yVar: 'b_avg',
@@ -335,9 +340,12 @@ var state2 = function(scatterplot) {
     }
     // console.log(highlight);
   }
+  // Plot title and subtitle
+  Title['text'] = 'White and Black Students\' Average Performance';
+  Title['subtext'] = '100 Largest U.S. School Districts 2009-2016';
   const baseOverrides = {
     title: {
-      subtext: '100 Largest U.S. School Districts 2009-2016'
+      subtext: Title.subtext, // '100 Largest U.S. School Districts 2009-2016'
     },
     yAxis: {
       min:-3,
@@ -395,8 +403,8 @@ var state2 = function(scatterplot) {
   };
   // console.log(top100);
   // Set title and subtitle
-  jQ('.column-scatterplot .title').text(baseOverrides.title.text);
-  jQ('.column-scatterplot .subtitle').text(baseOverrides.title.subtext);
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   return {
     selected: [],
     highlighted: Object.keys(highlight),
@@ -418,214 +426,217 @@ var state3 = function(scatterplot) {
     }
     // console.log(highlight);
   }
-  // console.log(Object.keys(highlight));
-  // var base = scatterplot.getState('state2');
+  // console.log(highlight);
   var base = scatterplot.getState('state2');
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
-  // console.log(top100);
-  // var searchSeries = [];
-  // if (scatterplot && scatterplot.data) {
-  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
-  // }
-  const baseOverrides = {
-    title: {
-      text: 'White and Black Students\' Average Performance',
-      subtext: 'U.S. School Districts 2009-2016',
-      textAlign: 'center',
-      left: '50%',
-      top: '10px',
-      show: false
-    },
-    grid: {
-      top: 24,
-      bottom: 40,
-      left: 24,
-      right: 52,
-      width: 'auto',
-      height: 'auto'
-    },
-    yAxis: {
-      min:-3,
-      max:3,
-      position: 'right',
-      name: 'Black Average Performance',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontWeight: 'normal'
-      },
-      nameGap: 32
-    },
-    xAxis: {
-      min: -3,
-      max: 4,
-      name: 'White Average Performance',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal',
-        verticalAlign: 'bottom'
-      },
-      nameGap: 36
-    },
-    series: [
-      { id: 'base' },
-      {
-        id: 'selected',
-        type: 'scatter',
-        symbolSize: dataSeries.symbolSize,
-        itemStyle: {
-          borderWidth: 0.7,
-          borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
-          color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
-        },
-        z: 2
-      },
-      {
-        id: 'highlighted',
-        data: Object.entries(highlight),
-        itemStyle: {
-          borderWidth: 0.7,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.9)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]];
-          }
-        }
-      },
-      {
-        type:'scatter',
-        markLine: {
-          animation: false,
-          silent: true,
-          label: {
-            position: 'middle',
-            fontFamily: 'MaisonNeue-Medium',
-            fontWeight: '600',
-            fontSize: 12,
-            formatter: function(value) {
-              return value.name
-            }
-          },
-          data: [
-          [
-            {
-              name: 'white student scores = black student scores',
-              coord: [-2.5, -2.5],
-              symbol: 'none',
-              lineStyle: {
-                color: '#fff',
-                type: 'solid',
-                width: 1,
-                shadowOffsetY: 0,
-                shadowOffsetX: 0,
-                shadowBlur: 2,
-                shadowColor: '#042965'
-              }
-            },
-            { coord: [ 3,  3], symbol: 'none' },
-          ],
-          [
-            {
-              name: '', // Y axis
-              coord: [0, -3],
-              symbol: 'none',
-              lineStyle: {
-                color: {
-                  type: 'linear',
-                  x: 0,
-                  y: 0,
-                  x2: 0,
-                  y2: 1,
-                  colorStops: [{
-                      offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
-                  },
-                  {
-                    offset: 0.25, color: 'rgba(255, 255, 255, 0.78)'
-                  },
-                  {
-                    offset: 0.75, color: 'rgba(255, 255, 255, 0.78)'
-                  },
-                  {
-                      offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
-                  }],
-                  global: false // false by default
-                },
-                type: 'solid'
-              }
-            },
-            {
-              coord: [ 0,  3],
-              symbol: 'none',
-            },
-          ],
-          [
-            {
-              name: '', // x axis
-              coord: [-3, 0],
-              symbol: 'none',
-              lineStyle: {
-                // color: '#fff', // 'rgba(0,0,0,0.6)'
-                color: {
-                  type: 'linear',
-                  x: 0,
-                  y: 0,
-                  x2: 1,
-                  y2: 0,
-                  colorStops: [{
-                      offset: 0, color: 'rgba(255, 255, 255, 0.18)' // 'red' // color at 0% position
-                  },
-                  {
-                    offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                  },
-                  {
-                    offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                  },
-                  {
-                      offset: 1, color: 'rgba(255, 255, 255, 0.18)' // 'blue' // color at 100% position
-                  }],
-                  global: false // false by default
-                },
-                type: 'solid'
-              }
-            },
-            {
-              coord: [3, 0],
-              symbol: 'none'
-            },
-          ]]
-        }
-      }
-    ]
-  };
+  // Plot title and subtitle
+  Title['text'] = 'White and Black Students\' Average Performance';
+  Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
-  jQ('.column-scatterplot .title').text(baseOverrides.title.text);
-  jQ('.column-scatterplot .subtitle').text(baseOverrides.title.subtext);
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   return {
     xVar: 'w_avg',
     yVar: 'b_avg',
     zVar: 'all_sz',
     highlighted: Object.keys(highlight),
     selected: top100,
-    options: deepmerge(base.options, baseOverrides)
+    options: {
+      title: {
+        text: Title.text, // 'White and Black Students\' Average Performance',
+        subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
+        textAlign: 'center',
+        left: '50%',
+        top: '10px',
+        show: false
+      },
+      grid: {
+        top: 80,
+        bottom: 40,
+        left: 24,
+        right: 52,
+        width: 'auto',
+        height: '60%'
+      },
+      yAxis: {
+        min:-3,
+        max:3,
+        position: 'right',
+        name: 'Black Average Performance',
+        nameTextStyle: {
+          fontFamily: 'SharpGrotesk-Medium20',
+          color: '#FFF',
+          fontWeight: 'normal'
+        },
+        nameGap: 32
+      },
+      xAxis: {
+        min: -3,
+        max: 4,
+        name: 'White Average Performance',
+        nameTextStyle: {
+          fontFamily: 'SharpGrotesk-Medium20',
+          color: '#FFF',
+          fontSize: 12,
+          fontWeight: 'normal',
+          verticalAlign: 'bottom'
+        },
+        nameGap: 36
+      },
+      series: [
+        { id: 'base' },
+        {
+          id: 'selected',
+          type: 'scatter',
+          symbolSize: dataSeries.symbolSize,
+          itemStyle: {
+            borderWidth: 0.7,
+            borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
+            color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
+          },
+          z: 2
+        },
+        {
+          id: 'highlighted',
+          itemStyle: {
+            borderWidth: 0.7,
+            borderColor: '#042965', // 'rgba(0,0,0,1)',
+            color: 'rgba(255,255,0,0.9)'
+          },
+          label: {
+            show: true,
+            position: 'right',
+            backgroundColor: 'rgba(255,255,0,0.97)',
+            borderColor: '#042965',
+            fontSize: 12,
+            fontWeight: 600,
+            fontFamily: 'MaisonNeue-Medium',
+            lineHeight: 28,
+            padding: [6, 8],
+            borderRadius: 3,
+            color: '#042965',
+            formatter: function(item) {
+              return highlight[item.value[3]]
+            }
+          }
+        },
+        {
+          type:'scatter',
+          markLine: {
+            animation: false,
+            silent: true,
+            label: {
+              position: 'middle',
+              fontFamily: 'MaisonNeue-Medium',
+              fontWeight: '600',
+              fontSize: 12,
+              // textBorderWidth: 3,
+              // textBorderColor: '#042965',
+              // textShadowColor: '#042965',
+              formatter: function(value) {
+                return value.name
+              }
+            },
+            data: [
+            [
+              {
+                name: 'white student scores = black student scores',
+                coord: [-2.5, -2.5],
+                symbol: 'none',
+                lineStyle: {
+                  color: '#fff',
+                  type: 'solid',
+                  width: 1,
+                  shadowOffsetY: 0,
+                  shadowOffsetX: 0,
+                  shadowBlur: 2,
+                  shadowColor: '#042965'
+                }
+              },
+              { coord: [ 3,  3], symbol: 'none' },
+            ],
+            [
+              {
+                name: '', // Y axis
+                coord: [0, -3],
+                symbol: 'none',
+                lineStyle: {
+                  color: {
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
+                    },
+                    {
+                      offset: 0.25, color: 'rgba(255, 255, 255, 0.78)'
+                    },
+                    {
+                      offset: 0.75, color: 'rgba(255, 255, 255, 0.78)'
+                    },
+                    {
+                        offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
+                    }],
+                    global: false // false by default
+                  },
+                  type: 'solid'
+                }
+              },
+              {
+                coord: [ 0,  3],
+                symbol: 'none',
+                // lineStyle: {
+                //   color: '#fff', // 'rgba(0,0,0,0.6)'
+                //   type: 'dashed'
+                // }
+              },
+            ],
+            [
+              {
+                name: '', // x axis
+                coord: [-3, 0],
+                symbol: 'none',
+                lineStyle: {
+                  // color: '#fff', // 'rgba(0,0,0,0.6)'
+                  color: {
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 1,
+                    y2: 0,
+                    colorStops: [{
+                        offset: 0, color: 'rgba(255, 255, 255, 0.18)' // 'red' // color at 0% position
+                    },
+                    {
+                      offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
+                    },
+                    {
+                      offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
+                    },
+                    {
+                        offset: 1, color: 'rgba(255, 255, 255, 0.18)' // 'blue' // color at 100% position
+                    }],
+                    global: false // false by default
+                  },
+                  type: 'solid'
+                }
+              },
+              {
+                coord: [3, 0],
+                symbol: 'none'
+              },
+            ]]
+          }
+        }
+      ]
+    }
   }
 };
+
 
 /** State 4: Load new variables to show White/Black SES Gap and Achievement Gap */
 var state4 = function(scatterplot) {
@@ -634,10 +645,6 @@ var state4 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
   var dataSeries = scatterplot.getDataSeries();
-  // var searchSeries = [];
-  // if (scatterplot && scatterplot.data) {
-  //   searchSeries = scatterplot.getSeriesDataForIds(dataSeries.data, searchItemIDs);
-  // }
   var highlight = {};
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -647,9 +654,12 @@ var state4 = function(scatterplot) {
     }
     // console.log(highlight);
   }
-  const baseOverrides = {
-
-  }
+  // Plot title and subtitle
+  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
+  Title['subtext'] = 'US School Districts 2009-2016';
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   return {
     selected: [],
     highlighted: Object.keys(highlight),
@@ -658,8 +668,8 @@ var state4 = function(scatterplot) {
     zVar: 'all_sz',
     options: deepmerge.all([ base.options, {
       title: {
-        text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
-        subtext: 'US School Districts 2009-2016',
+        text: Title.text, // 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+        subtext: Title.subtext, // 'US School Districts 2009-2016',
         textAlign: 'center',
         left: '50%',
         top: '10px',
@@ -767,7 +777,6 @@ var state5 = function(scatterplot) {
   var options = scatterplot.component.getOption();
   var dataSeries = scatterplot.getDataSeries();
   var base = scatterplot.getState('state4');
-  // var base = scatterplot.getState('base');
   var highlight = {};
   highlight['0641580'] = 'Washington, D.C.';
   highlight['2612000'] = 'Detroit, MI';
@@ -780,38 +789,121 @@ var state5 = function(scatterplot) {
     }
     // console.log(highlight);
   }
+  // Plot title and subtitle
+  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
+  Title['subtext'] = 'US School Districts 2009-2016';
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   return {
     highlighted: Object.keys(highlight),
-    options: deepmerge.all([ base.options, {
+    selected: [],
+    xVar: 'wb_ses',
+    yVar: 'wb_avg',
+    zVar: 'all_sz',
+    options: {
+      title: {
+        text: Title.text, // 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+        subtext: Title.subtext, // 'US School Districts 2009-2016',
+        textAlign: 'center',
+        left: '50%',
+        top: '10px',
+      },
+      grid: {
+        right: 52,
+      },
+      yAxis: {
+        position: 'right',
+        min: -6,
+        max: 0,
+        name: 'White-Black Achievement Gap\nby Grade Levels',
+        nameTextStyle: { // Styles for x and y axis labels
+          fontSize: 12,
+          lineHeight: 14
+        },
+      },
+      xAxis: {
+        min: -3,
+        max: 7,
+        name: 'White-Black Socioeconomic Disparity',
+      },
       series: [
-        // dataSeries,
-        { id: 'base' },
         {
-          id: 'highlighted',
-          itemStyle: {
-            borderWidth: 0.7,
-            borderColor: '#042965', // 'rgba(0,0,0,1)',
-            color: 'rgba(255,255,0,0.9)'
-          },
+        type:'scatter',
+        markLine: {
+          animation: false,
+          silent: true,
           label: {
-            show: true,
-            position: 'right',
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
+            position: 'middle',
             fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return highlight[item.value[3]]
+            fontWeight: '600',
+            fontSize: 12,
+            textBorderColor: '#042965',
+            textBorderWidth: 3,
+            textShadowColor: '#042965',
+            formatter: function(value) {
+              return value.name
             }
+          },
+          data: [
+            [
+              {
+                name: 'no racial disparity',
+                coord: [0, -6],
+                symbol: 'none',
+                lineStyle: {
+                  color: '#fff', // '#dc69aa',
+                  type: 'solid',
+                  width: 1,
+                  shadowColor: 'transparent',
+                  textShadowColor: 'transparent',
+                  textBorderColor: 'transparent'
+                },
+                label: {
+                  backgroundColor: 'rgba(255, 255, 255, 0.75)',
+                  borderRadius: 2,
+                  padding: 5,
+                  position: 'middle',
+                  color: '#052965',
+                  shadowColor: 'transparent',
+                  textShadowColor: 'transparent',
+                  textBorderColor: 'transparent'
+                }
+              },
+              {
+                coord: [ 0, -1],
+                symbol: 'none'
+              },
+            ]
+          ]
+        }
+      },
+      {
+        id: 'highlighted',
+        itemStyle: {
+          borderWidth: 0.7,
+          borderColor: '#042965', // 'rgba(0,0,0,1)',
+          color: 'rgba(255,255,0,0.9)'
+        },
+        label: {
+          show: true,
+          position: 'right',
+          backgroundColor: 'rgba(255,255,0,0.97)',
+          borderColor: '#042965',
+          fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+          lineHeight: 28,
+          padding: [6, 8],
+          borderRadius: 3,
+          color: '#042965',
+          formatter: function(item) {
+            // console.log(item);
+            return highlight[item.value[3]]
           }
         }
-      ]}
-    ])
+      }
+    ]},
   }
 }
 
@@ -831,11 +923,17 @@ var state6 = function(scatterplot) {
     }
     // console.log(highlight);
   }
+  // Plot title and subtitle
+  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
+  Title['subtext'] = '100 Largest U.S. School Districts 2009-2016';
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   return {
     highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
       title: {
-        subtext: '100 Largest U.S. School Districts 2009-2016'
+        subtext: Title.subtext, // '100 Largest U.S. School Districts 2009-2016'
       },
       series: [
         dataSeries,
@@ -901,11 +999,17 @@ var state7 = function(scatterplot) {
     }
     // console.log(highlight);
   }
+  // Plot title and subtitle
+  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
+  Title['subtext'] = 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016';
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   return {
     highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
       title: {
-        subtext: 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016'
+        subtext: Title.subtext, // 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016'
       },
       series: [
         dataSeries,
@@ -966,10 +1070,16 @@ var state8 = function(scatterplot) {
     }
     // console.log(highlight);
   }
+  // Plot title and subtitle
+  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
+  Title['subtext'] = 'US School Districts 2009-2016';
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   const baseOverrides = {
     title: {
-      text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
-      subtext: 'US School Districts 2009-2016',
+      text: Title.text, // 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+      subtext: Title.subtext, // 'US School Districts 2009-2016',
       textAlign: 'center',
       left: '50%',
       top: '10px',
@@ -1104,10 +1214,16 @@ var state9 = function(scatterplot) {
     }
     // console.log(highlight);
   }
+  // Plot title and subtitle
+  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
+  Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   const baseOverrides = {
     title: {
-      text: 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
-      subtext: 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016',
+      text: Title.text, // 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+      subtext: Title.subtext, // 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016',
       textAlign: 'center',
       left: '50%',
       top: '10px',
@@ -1286,10 +1402,16 @@ var state10 = function(scatterplot) {
     }
     // console.log(highlight);
   }
+  // Plot title and subtitle
+  Title['text'] = 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty';
+  Title['subtext'] = '100 Largest US School Districts 2009-2016';
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   const baseOverrides = {
     title: {
-      text: 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty',
-      subtext: '100 Largest US School Districts 2009-2016',
+      text: Title.text, // 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty',
+      subtext: Title.subtext, // '100 Largest US School Districts 2009-2016',
       textAlign: 'center',
       left: '50%',
       top: '10px',

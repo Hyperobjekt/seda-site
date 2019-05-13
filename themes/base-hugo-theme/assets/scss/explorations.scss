@@ -233,6 +233,14 @@ body.type-posts {
       .rectangle {
         background: #042965;
         border: 10px solid #042965;
+        position: sticky;
+        position: -webkit-sticky; 
+        top: 202px; 
+        background: #042965; 
+        padding: 2rem; 
+        height: 361px;
+        border: 10px solid #042965;
+        min-width:600px;width:100%;
       }
 
       .search-component {

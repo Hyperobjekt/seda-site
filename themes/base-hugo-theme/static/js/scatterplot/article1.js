@@ -697,6 +697,11 @@ var state4 = function(scatterplot) {
         min: -3,
         max: 7,
         name: 'White-Black Socioeconomic Disparity',
+        nameTextStyle: { // Styles for x and y axis labels
+          fontSize: 12,
+          lineHeight: 14,
+          fontWeight: 'normal'
+        },
       },
       series: [
         {
@@ -810,6 +815,7 @@ var state5 = function(scatterplot) {
     zVar: 'all_sz',
     options: {
       title: {
+        show: false,
         text: Title.text, // 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
         subtext: Title.subtext, // 'US School Districts 2009-2016',
         textAlign: 'center',
@@ -818,6 +824,11 @@ var state5 = function(scatterplot) {
       },
       grid: {
         right: 52,
+        top: 20,
+        bottom: 20,
+        left: 20,
+        zlevel: 300,
+        height: 280
       },
       yAxis: {
         position: 'right',
@@ -828,13 +839,21 @@ var state5 = function(scatterplot) {
           fontSize: 12,
           lineHeight: 14
         },
+        nameGap: 22
       },
       xAxis: {
         min: -3,
         max: 7,
         name: 'White-Black Socioeconomic Disparity',
+        nameTextStyle: { // Styles for x and y axis labels
+          fontSize: 12,
+          lineHeight: 14,
+          fontWeight: 'normal'
+        },
+        nameGap: 26
       },
       series: [
+        { id: 'base' },
         {
         type:'scatter',
         markLine: {
@@ -1108,6 +1127,11 @@ var state8 = function(scatterplot) {
       min: -3,
       max: 7,
       name: 'White-Black Socioeconomic Disparity',
+      nameTextStyle: { // Styles for x and y axis labels
+        fontSize: 12,
+        lineHeight: 14,
+        fontWeight: 'normal'
+      },
     },
     series: [
       {
@@ -1278,6 +1302,11 @@ var state9 = function(scatterplot) {
       min: -3,
       max: 7,
       name: 'White-Black Socioeconomic Disparity',
+      nameTextStyle: { // Styles for x and y axis labels
+        fontSize: 12,
+        lineHeight: 14,
+        fontWeight: 'normal'
+      },
     },
     series: [
       // dataSeries,
@@ -1427,8 +1456,8 @@ var state10 = function(scatterplot) {
       right: 52,
     },
     yAxis: {
-      min:-6,
-      max:1,
+      min: -6,
+      max: 0,
       name: 'White-Black Achievement Gap\nby Grade Levels',
       nameTextStyle: { // Styles for x and y axis labels
         fontSize: 12,
@@ -1439,7 +1468,12 @@ var state10 = function(scatterplot) {
       min: -0.25,
       max: 0.75,
       name: 'Black-White Difference in Average School Poverty Rates',
-      interval: .25
+      interval: .25,
+      nameTextStyle: { // Styles for x and y axis labels
+        fontSize: 12,
+        lineHeight: 14,
+        fontWeight: 'normal'
+      },
     },
     series: [
       // dataSeries,

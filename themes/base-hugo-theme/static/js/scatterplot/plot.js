@@ -97,7 +97,7 @@
             } else if (activeWrappers.length === 0 || activeWrappers.length >= 1) {
                 (plot.scatterplot).addClass('transitional');
                 plot.isTransitional = true;
-                console.log('In transition. State = ' + state);
+                // console.log('In transition. State = ' + state);
             }
         },
         getCoords: function() {

@@ -179,10 +179,40 @@ var state1 = function(scatterplot) {
     series: [
       {
         type:'scatter',
+        // markPoint: { // Use markpoint instead of label for more control in positioning.
+        //   itemStyle: {
+        //     color: 'transparent',
+        //   },
+        //   data: [
+        //     {
+        //       value: 'white student scores = black student scores',
+        //       xAxis: 0,
+        //       yAxis: .4,
+        //       symbol: 'rect',
+        //       symbolSize: [100, 50],
+        //       label: {
+        //         show: true,
+        //         position: 'inside',
+        //         verticalAlign: 'middle',
+        //         color: '#fff',
+        //         fontWeight: 600,
+        //         fontFamily: 'MaisonNeue-Medium',
+        //         rotate: 29,
+        //         textShadowOffsetY: 0,
+        //         textShadowOffsetX: 0,
+        //         textShadowBlur: 2,
+        //         textShadowColor: '#042965',
+        //         textBorderColor: '#042965',
+        //         textBorderWidth: 2,
+        //       },
+        //     }
+        //   ],
+        // },
         markLine: {
           animation: false,
           silent: true,
           label: {
+            show: true,
             position: 'middle',
             fontFamily: 'MaisonNeue-Medium',
             fontWeight: '600',
@@ -706,10 +736,37 @@ var state4 = function(scatterplot) {
       series: [
         {
         type:'scatter',
+        markPoint: { // Use markpoint instead of label for more control in positioning.
+          itemStyle: {
+            color: 'transparent',
+          },
+          data: [
+            {
+              value: 'no racial disparity',
+              xAxis: -0.5,
+              yAxis: -3.5,
+              symbol: 'rect',
+              symbolSize: [100, 50],
+              label: {
+                show: true,
+                position: 'inside',
+                verticalAlign: 'middle',
+                color: '#042965',
+                fontWeight: 600,
+                fontFamily: 'MaisonNeue-Medium',
+                rotate: 90,
+                padding: [6, 8],
+                backgroundColor: 'rgba(255, 255, 255, 0.75)',
+                borderRadius: 3,
+              },
+            }
+          ],
+        },
         markLine: {
           animation: false,
           silent: true,
           label: {
+            show: false,
             position: 'middle',
             fontFamily: 'MaisonNeue-Medium',
             fontWeight: '600',
@@ -856,10 +913,37 @@ var state5 = function(scatterplot) {
         { id: 'base' },
         {
         type:'scatter',
+        markPoint: { // Use markpoint instead of label for more control in positioning.
+          itemStyle: {
+            color: 'transparent',
+          },
+          data: [
+            {
+              value: 'no racial disparity',
+              xAxis: -0.5,
+              yAxis: -3.5,
+              symbol: 'rect',
+              symbolSize: [100, 50],
+              label: {
+                show: true,
+                position: 'inside',
+                verticalAlign: 'middle',
+                color: '#042965',
+                fontWeight: 600,
+                fontFamily: 'MaisonNeue-Medium',
+                rotate: 90,
+                padding: [6, 8],
+                backgroundColor: 'rgba(255, 255, 255, 0.75)',
+                borderRadius: 3,
+              },
+            }
+          ],
+        },
         markLine: {
           animation: false,
           silent: true,
           label: {
+            show: false,
             position: 'middle',
             fontFamily: 'MaisonNeue-Medium',
             fontWeight: '600',
@@ -1137,10 +1221,37 @@ var state8 = function(scatterplot) {
       {
       type:'scatter',
       id: 'no-racial-disparity',
+      markPoint: { // Use markpoint instead of label for more control in positioning.
+        itemStyle: {
+          color: 'transparent',
+        },
+        data: [
+          {
+            value: 'no racial disparity',
+            xAxis: -0.5,
+            yAxis: -3.5,
+            symbol: 'rect',
+            symbolSize: [100, 50],
+            label: {
+              show: true,
+              position: 'inside',
+              verticalAlign: 'middle',
+              color: '#042965',
+              fontWeight: 600,
+              fontFamily: 'MaisonNeue-Medium',
+              rotate: 90,
+              padding: [6, 8],
+              backgroundColor: 'rgba(255, 255, 255, 0.75)',
+              borderRadius: 3,
+            },
+          }
+        ],
+      },
       markLine: {
         animation: false,
         silent: true,
         label: {
+          show: false,
           position: 'middle',
           fontFamily: 'MaisonNeue-Medium',
           fontWeight: '600',
@@ -1478,16 +1589,6 @@ var state10 = function(scatterplot) {
     series: [
       // dataSeries,
       { id: 'base' },
-      // {
-      //   type: 'scatter',
-      //   data: top100,
-      //   symbolSize: dataSeries.symbolSize,
-      //   itemStyle: {
-      //     borderWidth: 1,
-      //     borderColor: 'rgba(0,0,0,1)',
-      //     color: '#b6a2de' // 'rgba(255,0,0,0.25)'
-      //   }
-      // },
       {
         id: 'selected',
         type: 'scatter',
@@ -1501,10 +1602,37 @@ var state10 = function(scatterplot) {
       },
       {
         type:'scatter',
+        markPoint: { // Use markpoint instead of label for more control in positioning.
+          itemStyle: {
+            color: 'transparent',
+          },
+          data: [
+            {
+              value: 'equal exposure to poverty',
+              xAxis: -0.05,
+              yAxis: -3,
+              symbol: 'rect',
+              symbolSize: [100, 50],
+              label: {
+                show: true,
+                position: 'inside',
+                verticalAlign: 'middle',
+                color: '#042965',
+                fontWeight: 600,
+                fontFamily: 'MaisonNeue-Medium',
+                rotate: 90,
+                padding: [6, 8],
+                backgroundColor: 'rgba(255, 255, 255, 0.75)',
+                borderRadius: 3,
+              },
+            }
+          ],
+        },
         markLine: {
           animation: false,
           silent: true,
           label: {
+            show: false,
             position: 'middle',
             fontFamily: 'MaisonNeue-Medium',
             fontWeight: '600',
@@ -1522,20 +1650,6 @@ var state10 = function(scatterplot) {
                 name: 'equal exposure to poverty',
                 coord: [0, -6],
                 symbol: 'none',
-                // lineStyle: {
-                //   color: '#fff', // '#dc69aa',
-                //   type: 'solid',
-                //   width: 1,
-                //   shadowOffsetY: 0,
-                //   shadowOffsetX: 0,
-                //   shadowBlur: 3,
-                //   shadowColor: 'transparent' // '#042965'
-                // },
-                // label: {
-                //   padding: '6',
-                //   backgroundColor: '#fff',
-                //   color: 'black'
-                // }
                 lineStyle: {
                   color:  '#fff', // '#dc69aa',
                   type: 'solid',

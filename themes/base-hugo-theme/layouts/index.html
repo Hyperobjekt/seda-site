@@ -65,7 +65,7 @@
 
 <div id="scrollTarget2" class="row latest-explorations m-0">
     <div class="w-100 heading">
-        <h3 tabindex="0">Latest Explorations:</h3>
+        <h3 tabindex="0">Latest Discoveries:</h3>
     </div>
     {{ range $index, $element := first 2 (where .Site.Pages "Section" "posts") }}
         {{ if (eq $index 0) }}
@@ -79,7 +79,7 @@
             </div>
     {{ end }}
     <div class="w-100 all-explorations">
-        <a href="{{ "/explorations/" | absURL }}" tabindex="0" aria-label="Go to all explorations">All explorations</a>
+        <a href="{{ "/discoveries/" | absURL }}" tabindex="0" aria-label="Go to all Discoveries">All discoveries</a>
     </div>
 </div>
 

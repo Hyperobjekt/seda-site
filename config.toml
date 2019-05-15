@@ -31,8 +31,8 @@ anchor = "smart"
     weight = 1
 
 [[menu.main]]
-  name = "Explorations"
-  url = "/explorations/"
+  name = "Discoveries"
+  url = "/discoveries/"
     weight = 2
 
 [[menu.main]]

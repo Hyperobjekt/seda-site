@@ -21470,7 +21470,7 @@ body.type-discoveries .hero .hero-child .column p {
     transform: translate(174px, 166px);
   }
   100% {
-    transform: translate(174px, 52px);
+    transform: translate(174px, 68px);
   }
 }
 
@@ -21487,7 +21487,7 @@ body.type-discoveries .hero .hero-child .column p {
     transform: translate(268px, 166px);
   }
   100% {
-    transform: translate(268px, 0px);
+    transform: translate(268px, 14px);
   }
 }
 

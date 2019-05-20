@@ -240,7 +240,8 @@ body.type-posts {
         padding: 2rem; 
         height: 361px;
         border: 10px solid #042965;
-        min-width:600px;width:100%;
+        // min-width:600px;
+        width:100%;
       }
 
       .search-component {
@@ -266,6 +267,11 @@ body.type-posts {
 
     &.react-autosuggest__input--open {
       border: 0;
+    }
+
+    &.react-autosuggest__clear {
+      background-color: transparent;
+      top: 10px;
     }
   }
 

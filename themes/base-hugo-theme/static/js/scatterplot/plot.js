@@ -20,6 +20,13 @@
             // console.log(searchItemIDs);
             scatterplot.loadState(plot.activeState);
           },
+          onSelectedClear: function(e) {
+            // console.log(e);
+            // Clear search item array
+            searchItemIDs = [];
+            // Reload state
+            scatterplot.loadState(plot.activeState);
+          },
           indices: ['districts'],
           inputProps: {
             placeholder: 'Highlight a district...'

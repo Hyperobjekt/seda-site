@@ -717,9 +717,12 @@ body.home {
       //animation: fade-in5 2s forwards;
       //animation-delay: .9s;
       svg {
-        width: 76%;
+        width: 82%;
         min-height: 480px;
-        max-height: 80vh;
+        max-height: 84vh;
+        @include media-breakpoint-up(lg) {
+          transform: translateY(-3vh);
+        }
         .plotpoints, #hp-x-line path#map-x, #grades path#axis-line-2,
         g#grades text, g#ses-metric text  {
           // opacity: 0;
@@ -811,8 +814,8 @@ body.home {
           }
 
           @include media-breakpoint-up(xl) {
-            font-size: 3.6rem;
-            line-height: 5.4rem;
+            font-size: 3.4rem;
+            line-height: 5.1rem;
             letter-spacing: .022rem;
             // margin-top: 20vh;
           }
@@ -869,7 +872,7 @@ body.home {
           @include media-breakpoint-up(xl) {
             font-size: 1.7rem;
             line-height: 2.5rem;
-            margin-top: 3.2rem;
+            margin-top: 2.4rem;
           }
         }
 

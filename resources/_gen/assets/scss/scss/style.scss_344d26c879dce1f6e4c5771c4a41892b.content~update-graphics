@@ -17783,9 +17783,15 @@ body.home .hero .hero-child {
 }
 
 body.home .hero .hero-child svg {
-  width: 76%;
+  width: 82%;
   min-height: 480px;
-  max-height: 80vh;
+  max-height: 84vh;
+}
+
+@media (min-width: 992px) {
+  body.home .hero .hero-child svg {
+    transform: translateY(-3vh);
+  }
 }
 
 body.home .hero .hero-child svg g#ses-metric {
@@ -17864,8 +17870,8 @@ body.home .hero .hero-child .column h2 {
 
 @media (min-width: 1280px) {
   body.home .hero .hero-child .column h2 {
-    font-size: 3.6rem;
-    line-height: 5.4rem;
+    font-size: 3.4rem;
+    line-height: 5.1rem;
     letter-spacing: .022rem;
   }
 }
@@ -17925,7 +17931,7 @@ body.home .hero .hero-child .column p {
   body.home .hero .hero-child .column p {
     font-size: 1.7rem;
     line-height: 2.5rem;
-    margin-top: 3.2rem;
+    margin-top: 2.4rem;
   }
 }
 

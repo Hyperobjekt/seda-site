@@ -191,7 +191,7 @@ body.type-posts {
           line-height: 2.5rem;
           margin-top: 3.2rem;
         }
-        
+
       }
     }
   }
@@ -201,9 +201,9 @@ body.type-posts {
     min-height: 100%;
 
     .plot-parent {
-      position: sticky; 
-      position: -webkit-sticky; 
-      top: 202px; 
+      position: sticky;
+      position: -webkit-sticky;
+      top: 202px;
       // background: #042965;
       padding: 0 2rem;
       height: 360px;
@@ -234,10 +234,10 @@ body.type-posts {
         background: #042965;
         border: 10px solid #042965;
         position: sticky;
-        position: -webkit-sticky; 
-        top: 202px; 
-        background: #042965; 
-        padding: 2rem; 
+        position: -webkit-sticky;
+        top: 202px;
+        background: #042965;
+        padding: 2rem;
         height: 361px;
         border: 10px solid #042965;
         // min-width:600px;
@@ -252,24 +252,25 @@ body.type-posts {
     }
   }
 
-  input.react-autosuggest__input {
-    background: #F7FAFF;
-    border: 1px solid #E7E8ED;
-    border-radius: 0;
-    border-bottom: 1px solid #5D76A0;
-    color: #173B75;
-    font-family: $maisonneue-book;
-    font-size: 1.4rem;
-    &::placeholder,
-    &::-webkit-input-placeholder {
+  .react-autosuggest__input-wrapper {
+    input.react-autosuggest__input {
+      background: #F7FAFF;
+      border: 1px solid #E7E8ED;
+      border-radius: 0;
+      border-bottom: 1px solid #5D76A0;
       color: #173B75;
-    }
+      font-family: $maisonneue-book;
+      font-size: 1.4rem;
+      &::placeholder,
+      &::-webkit-input-placeholder {
+        color: #173B75;
+      }
 
-    &.react-autosuggest__input--open {
-      border: 0;
+      &.react-autosuggest__input--open {
+        border: 0;
+      }
     }
-
-    &.react-autosuggest__clear {
+    .react-autosuggest__clear {
       background-color: transparent;
       top: 10px;
     }

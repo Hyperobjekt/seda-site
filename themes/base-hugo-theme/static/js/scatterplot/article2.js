@@ -75,8 +75,8 @@ var state1 = function(scatterplot) {
   const base = scatterplot.getState('base');
   // Set up array of district IDs and names for building search series.
   if (names.length <= 0 &&
-    scatterplot && 
-    scatterplot.data && 
+    scatterplot &&
+    scatterplot.data &&
     scatterplot.data.districts &&
     scatterplot.data.districts.name) {
     names = scatterplot.data.districts.name;
@@ -114,8 +114,8 @@ var state1 = function(scatterplot) {
       right: 32,
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: -1, // -0.5,
+      max: 8, // 9,
       nameGap: 16,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
@@ -265,8 +265,8 @@ var state1 = function(scatterplot) {
 /** State 2: Highlight largest 25 districts  */
 var state2 = function(scatterplot) {
   if (names.length <= 0 &&
-    scatterplot && 
-    scatterplot.data && 
+    scatterplot &&
+    scatterplot.data &&
     scatterplot.data.districts &&
     scatterplot.data.districts.name) {
     names = scatterplot.data.districts.name;
@@ -307,8 +307,8 @@ var state2 = function(scatterplot) {
         top: '10px',
       },
       yAxis: {
-        min: -0.5,
-        max: 9,
+        min: -1, // -0.5,
+        max: 8, // 9,
         name: 'Average Achievement (in Grade Levels)',
         nameTextStyle: {
           fontFamily: 'SharpGrotesk-Medium20',
@@ -431,8 +431,8 @@ var state3 = function(scatterplot) {
         top: '10px',
       },
       yAxis: {
-        min: -0.5,
-        max: 9,
+        min: 1, // -0.5,
+        max: 8, // 9,
         name: 'Average Achievement (in Grade Levels)',
         nameTextStyle: {
           fontFamily: 'SharpGrotesk-Medium20',
@@ -553,8 +553,8 @@ var state4 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: 1, // -0.5,
+      max: 10, // 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -681,8 +681,8 @@ var state5 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: 2, // -0.5,
+      max: 11, // 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -809,8 +809,8 @@ var state6 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: 3, // -0.5,
+      max: 12, // 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -937,8 +937,8 @@ var state7 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: 4, // -0.5,
+      max: 13, // 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -1065,8 +1065,8 @@ var state8 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: -1, // -0.5,
+      max: 8, // 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -1193,7 +1193,7 @@ var state9 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
+      min: 0, // -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
@@ -1321,8 +1321,8 @@ var state10 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: 1, // -0.5,
+      max: 10, // 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -1449,8 +1449,8 @@ var state11 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: 2, // -0.5,
+      max: 11, // 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -1577,8 +1577,8 @@ var state12 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: 3, // -0.5,
+      max: 12, // 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -1705,8 +1705,8 @@ var state13 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -0.5,
-      max: 9,
+      min: 4, // -0.5,
+      max: 13, // 9,
       name: 'Average Achievement (in Grade Levels)',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -2075,43 +2075,77 @@ var state15 = function(scatterplot) {
         fontWeight: 'normal'
       }
     },
+
     series: [
       { id: 'base' },
       {
         id: 'selected',
         type: 'scatter',
-        name: 'High early opportunity,\nhigh growth opportunity',
+        // name: 'High early opportunity,\nhigh growth opportunity',
         symbolSize: dataSeries.symbolSize,
         itemStyle: {
+          zlevel: 500,
+          z: 500,
           borderWidth: 1,
           borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
-        z: 2,
-        markPoint: {
-          itemStyle: {
-            color: 'transparent',
-          },
-          data: [
-            {
-              name: 'High early opportunity,\nhigh growth opportunity',
-              value: 'High early opportunity,\nhigh growth opportunity',
-              xAxis: 5,
-              yAxis: 1.4,
-              symbol: 'rect',
-              // positon: [3, 1.6],
-              symbolSize: [100, 50],
-              label: {
-                show: true,
-                position: 'inside',
-                verticalAlign: 'middle',
-                color: '#fff',
-                fontWeight: 600,
-                fontFamily: 'MaisonNeue-Medium',
-              },
-            }
-          ],
-        },
+        // z: 2,
+        // markArea: {
+        //   zlevel: 1000,
+        //   z: 1000,
+        //   itemStyle: {
+        //     // color: '#fff',
+        //     borderType: 'solid',
+        //     // borderColor: 'red',
+        //     borderWidth: 2,
+        //     opacity: .75,
+        //     borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
+        //     color: 'rgba(145, 115, 255, 1)',
+        //   },
+        //   label: {
+        //     show: true,
+        //     position: 'inside',
+        //     verticalAlign: 'middle',
+        //     color: '#fff',
+        //     fontWeight: 600,
+        //     fontFamily: 'MaisonNeue-Medium',
+        //   },
+        //   data: [
+        //     [{
+        //       name: 'High early opportunity,\nhigh growth opportunity',
+        //       xAxis: 3,
+        //       yAxis: 1.6
+        //     }, {
+        //       xAxis: 6.5,
+        //       yAxis: 1
+        //     }],
+        //   ],
+        // },
+        // markPoint: {
+        //   itemStyle: {
+        //     color: 'transparent',
+        //   },
+        //   data: [
+        //     {
+        //       name: 'High early opportunity,\nhigh growth opportunity',
+        //       value: 'High early opportunity,\nhigh growth opportunity',
+        //       xAxis: 5,
+        //       yAxis: 1.4,
+        //       symbol: 'rect',
+        //       // positon: [3, 1.6],
+        //       symbolSize: [100, 50],
+        //       label: {
+        //         show: true,
+        //         position: 'inside',
+        //         verticalAlign: 'middle',
+        //         color: '#fff',
+        //         fontWeight: 600,
+        //         fontFamily: 'MaisonNeue-Medium',
+        //       },
+        //     }
+        //   ],
+        // },
         label: {
           position: '6, 1.6',
           show: false,
@@ -2246,14 +2280,62 @@ var state15 = function(scatterplot) {
             ]
           }
         },
-      ]
+    {
+      id: 'markarea',
+      type: 'scatter',
+      name: 'High early opportunity,\nhigh growth opportunity',
+      // zlevel: 100000,
+      z: 100000,
+      // symbolSize: dataSeries.symbolSize,
+      // itemStyle: {
+      //   zlevel: 500,
+      //   z: 500,
+      //   borderWidth: 1,
+      //   borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
+      //   color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
+      // },
+      // z: 2,
+      markArea: {
+        zlevel: 100000,
+        // z: 100000,
+        itemStyle: {
+          // color: '#fff',
+          borderType: 'solid',
+          // borderColor: 'red',
+          borderWidth: 2,
+          opacity: .75,
+          borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
+          color: 'rgba(145, 115, 255, 1)',
+        },
+        label: {
+          show: true,
+          position: 'insideTopRight',
+          verticalAlign: 'top',
+          padding: [5, 5, 0, 0],
+          color: '#fff',
+          fontWeight: 600,
+          fontFamily: 'MaisonNeue-Medium',
+        },
+        data: [
+          [{
+            name: 'High early opportunity,\nhigh growth opportunity',
+            xAxis: 3,
+            yAxis: 1.6
+          }, {
+            xAxis: 6.5,
+            yAxis: 1
+          }],
+        ],
+      }
+    }
+    ]
   }
   return {
     xVar: 'all_avg3',
     yVar: 'all_grd',
     zVar: 'all_sz',
     highlighted: Object.keys(highlight),
-    selected: quadrant,
+    selected: [],
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -3118,5 +3200,3 @@ scatterplot.addState('state16', state16);
 scatterplot.addState('state17', state17);
 scatterplot.addState('state18', state18);
 scatterplot.addState('state19', state19);
-
-

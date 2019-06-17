@@ -431,8 +431,8 @@ var state3 = function(scatterplot) {
         top: '10px',
       },
       yAxis: {
-        min: 1, // -0.5,
-        max: 8, // 9,
+        min: 0, // 1,
+        max: 9, // 8,
         name: 'Average Achievement (in Grade Levels)',
         nameTextStyle: {
           fontFamily: 'SharpGrotesk-Medium20',
@@ -2037,7 +2037,7 @@ var state15 = function(scatterplot) {
   }
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
-  var quadrant = getQuadrantSeries(2, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
+  // var quadrant = getQuadrantSeries(2, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
 
   // Update title and subtext placeholders
   Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
@@ -2084,44 +2084,12 @@ var state15 = function(scatterplot) {
         // name: 'High early opportunity,\nhigh growth opportunity',
         symbolSize: dataSeries.symbolSize,
         itemStyle: {
-          zlevel: 500,
-          z: 500,
+          zlevel: 50,
+          z: 50,
           borderWidth: 1,
           borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
-        // z: 2,
-        // markArea: {
-        //   zlevel: 1000,
-        //   z: 1000,
-        //   itemStyle: {
-        //     // color: '#fff',
-        //     borderType: 'solid',
-        //     // borderColor: 'red',
-        //     borderWidth: 2,
-        //     opacity: .75,
-        //     borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
-        //     color: 'rgba(145, 115, 255, 1)',
-        //   },
-        //   label: {
-        //     show: true,
-        //     position: 'inside',
-        //     verticalAlign: 'middle',
-        //     color: '#fff',
-        //     fontWeight: 600,
-        //     fontFamily: 'MaisonNeue-Medium',
-        //   },
-        //   data: [
-        //     [{
-        //       name: 'High early opportunity,\nhigh growth opportunity',
-        //       xAxis: 3,
-        //       yAxis: 1.6
-        //     }, {
-        //       xAxis: 6.5,
-        //       yAxis: 1
-        //     }],
-        //   ],
-        // },
         // markPoint: {
         //   itemStyle: {
         //     color: 'transparent',
@@ -2284,24 +2252,10 @@ var state15 = function(scatterplot) {
       id: 'markarea',
       type: 'scatter',
       name: 'High early opportunity,\nhigh growth opportunity',
-      // zlevel: 100000,
-      z: 100000,
-      // symbolSize: dataSeries.symbolSize,
-      // itemStyle: {
-      //   zlevel: 500,
-      //   z: 500,
-      //   borderWidth: 1,
-      //   borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
-      //   color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
-      // },
-      // z: 2,
       markArea: {
-        zlevel: 100000,
-        // z: 100000,
+        animation: true,
         itemStyle: {
-          // color: '#fff',
           borderType: 'solid',
-          // borderColor: 'red',
           borderWidth: 2,
           opacity: .75,
           borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
@@ -2327,7 +2281,7 @@ var state15 = function(scatterplot) {
           }],
         ],
       }
-    }
+    } // End markarea
     ]
   }
   return {
@@ -2357,7 +2311,7 @@ var state16 = function(scatterplot) {
   }
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
-  var quadrant = getQuadrantSeries(4, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
+  // var quadrant = getQuadrantSeries(4, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
 
   // Update title and subtext placeholders
   Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
@@ -2398,6 +2352,39 @@ var state16 = function(scatterplot) {
     series: [
       { id: 'base' },
       {
+        id: 'markarea',
+        type: 'scatter',
+        name: 'High early opportunity,\nhigh growth opportunity',
+        markArea: {
+          itemStyle: {
+            borderType: 'solid',
+            borderWidth: 2,
+            opacity: .75,
+            borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
+            color: 'rgba(145, 115, 255, 1)',
+          },
+          label: {
+            show: true,
+            position: 'insideBottomLeft',
+            verticalAlign: 'bottom',
+            padding: [0, 0, 5, 5],
+            color: '#fff',
+            fontWeight: 600,
+            fontFamily: 'MaisonNeue-Medium',
+          },
+          data: [
+            [{
+              name: 'Low early opportunity,\nlow growth opportunity',
+              xAxis: -1,
+              yAxis: 1
+            }, {
+              xAxis: 3,
+              yAxis: 0.4
+            }],
+          ],
+        }
+      }, // End markarea
+      {
         id: 'selected',
         type: 'scatter',
         symbolSize: dataSeries.symbolSize,
@@ -2407,29 +2394,29 @@ var state16 = function(scatterplot) {
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
         z: 2,
-        markPoint: {
-          itemStyle: {
-            color: 'transparent',
-          },
-          data: [
-            {
-              value: 'Low early opportunity,\nlow growth opportunity',
-              xAxis: 0.5,
-              yAxis: 0.6,
-              symbol: 'rect',
-              // positon: [3, 1.6],
-              symbolSize: [100, 50],
-              label: {
-                show: true,
-                position: 'inside',
-                verticalAlign: 'middle',
-                color: '#fff',
-                fontWeight: 600,
-                fontFamily: 'MaisonNeue-Medium',
-              },
-            }
-          ],
-        },
+        // markPoint: {
+        //   itemStyle: {
+        //     color: 'transparent',
+        //   },
+        //   data: [
+        //     {
+        //       value: 'Low early opportunity,\nlow growth opportunity',
+        //       xAxis: 0.5,
+        //       yAxis: 0.6,
+        //       symbol: 'rect',
+        //       // positon: [3, 1.6],
+        //       symbolSize: [100, 50],
+        //       label: {
+        //         show: true,
+        //         position: 'inside',
+        //         verticalAlign: 'middle',
+        //         color: '#fff',
+        //         fontWeight: 600,
+        //         fontFamily: 'MaisonNeue-Medium',
+        //       },
+        //     }
+        //   ],
+        // },
       },
       {
         id: 'highlighted',
@@ -2555,7 +2542,7 @@ var state16 = function(scatterplot) {
     yVar: 'all_grd',
     zVar: 'all_sz',
     highlighted: Object.keys(highlight),
-    selected: quadrant,
+    selected: [],
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -2577,7 +2564,7 @@ var state17 = function(scatterplot) {
   }
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
-  var quadrant = getQuadrantSeries(3, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
+  // var quadrant = getQuadrantSeries(3, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
 
   // Update title and subtext placeholders
   Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
@@ -2627,30 +2614,63 @@ var state17 = function(scatterplot) {
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
         z: 2,
-        markPoint: {
+        // markPoint: {
+        //   itemStyle: {
+        //     color: 'transparent',
+        //   },
+        //   data: [
+        //     {
+        //       value: 'High early opportunity,\nlow growth opportunity',
+        //       xAxis: 5.5,
+        //       yAxis: 0.6,
+        //       symbol: 'rect',
+        //       // positon: [3, 1.6],
+        //       symbolSize: [100, 50],
+        //       label: {
+        //         show: true,
+        //         position: 'inside',
+        //         verticalAlign: 'middle',
+        //         color: '#fff',
+        //         fontWeight: 600,
+        //         fontFamily: 'MaisonNeue-Medium',
+        //       },
+        //     }
+        //   ],
+        // }, // End markPoint
+      },
+      {
+        id: 'markarea',
+        type: 'scatter',
+        name: 'High early opportunity,\nlow growth opportunity',
+        markArea: {
           itemStyle: {
-            color: 'transparent',
+            borderType: 'solid',
+            borderWidth: 2,
+            opacity: .75,
+            borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
+            color: 'rgba(145, 115, 255, 1)',
+          },
+          label: {
+            show: true,
+            position: 'insideBottomRight',
+            verticalAlign: 'bottom',
+            padding: [0, 5, 5, 0],
+            color: '#fff',
+            fontWeight: 600,
+            fontFamily: 'MaisonNeue-Medium',
           },
           data: [
-            {
-              value: 'High early opportunity,\nlow growth opportunity',
-              xAxis: 5.5,
-              yAxis: 0.6,
-              symbol: 'rect',
-              // positon: [3, 1.6],
-              symbolSize: [100, 50],
-              label: {
-                show: true,
-                position: 'inside',
-                verticalAlign: 'middle',
-                color: '#fff',
-                fontWeight: 600,
-                fontFamily: 'MaisonNeue-Medium',
-              },
-            }
+            [{
+              name: 'High early opportunity,\nlow growth opportunity',
+              xAxis: 3,
+              yAxis: 1
+            }, {
+              xAxis: 6.5,
+              yAxis: 0.4
+            }],
           ],
-        },
-      },
+        }
+      }, // End markarea
       {
         id: 'highlighted',
         itemStyle: {
@@ -2775,7 +2795,7 @@ var state17 = function(scatterplot) {
     yVar: 'all_grd',
     zVar: 'all_sz',
     highlighted: Object.keys(highlight),
-    selected: quadrant,
+    selected: [],
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -2797,7 +2817,7 @@ var state18 = function(scatterplot) {
   }
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
-  var quadrant = getQuadrantSeries(1, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
+  // var quadrant = getQuadrantSeries(1, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
 
   // Update title and subtext placeholders
   Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
@@ -2847,29 +2867,62 @@ var state18 = function(scatterplot) {
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
         z: 2,
-        markPoint: {
+        // markPoint: {
+        //   itemStyle: {
+        //     color: 'transparent',
+        //   },
+        //   data: [
+        //     {
+        //       value: 'Low early opportunity,\nhigh growth opportunity',
+        //       xAxis: 0.5,
+        //       yAxis: 1.4,
+        //       symbol: 'rect',
+        //       symbolSize: [100, 50],
+        //       label: {
+        //         show: true,
+        //         position: 'inside',
+        //         verticalAlign: 'middle',
+        //         color: '#fff',
+        //         fontWeight: 600,
+        //         fontFamily: 'MaisonNeue-Medium',
+        //       },
+        //     }
+        //   ],
+        // },// end markPoint
+      },
+      {
+        id: 'markarea',
+        type: 'scatter',
+        name: 'Low early opportunity,\nhigh growth opportunity',
+        markArea: {
           itemStyle: {
-            color: 'transparent',
+            borderType: 'solid',
+            borderWidth: 2,
+            opacity: .75,
+            borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
+            color: 'rgba(145, 115, 255, 1)',
+          },
+          label: {
+            show: true,
+            position: 'insideTopLeft',
+            verticalAlign: 'top',
+            padding: [5, 0, 0, 5],
+            color: '#fff',
+            fontWeight: 600,
+            fontFamily: 'MaisonNeue-Medium',
           },
           data: [
-            {
-              value: 'Low early opportunity,\nhigh growth opportunity',
-              xAxis: 0.5,
-              yAxis: 1.4,
-              symbol: 'rect',
-              symbolSize: [100, 50],
-              label: {
-                show: true,
-                position: 'inside',
-                verticalAlign: 'middle',
-                color: '#fff',
-                fontWeight: 600,
-                fontFamily: 'MaisonNeue-Medium',
-              },
-            }
+            [{
+              name: 'Low early opportunity,\nhigh growth opportunity',
+              xAxis: -1,
+              yAxis: 1.6
+            }, {
+              xAxis: 3,
+              yAxis: 1
+            }],
           ],
-        },
-      },
+        }
+      }, // End markarea
       {
         id: 'highlighted',
         itemStyle: {
@@ -2994,7 +3047,7 @@ var state18 = function(scatterplot) {
     yVar: 'all_grd',
     zVar: 'all_sz',
     highlighted: Object.keys(highlight),
-    selected: quadrant,
+    selected: [],
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
@@ -3033,7 +3086,7 @@ var state19 = function(scatterplot) {
       top: '10px',
     },
     grid: {
-      right: 42,
+      right: 34,
     },
     yAxis: {
       min: 0.4,

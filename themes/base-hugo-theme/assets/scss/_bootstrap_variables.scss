@@ -49,6 +49,20 @@ $link-decoration: none;
 $link-hover-color: $seda-lightblue; // $aqua; // lighten($primary, 20%);
 $link-hover-decoration: underline;
 
+// Buttons
+
+.btn.btn-custom2 {
+  background-color: #ffffff;
+  color: $seda-navy;
+  // box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .20);
+  border: 1px solid $seda-navy;
+  &:hover {
+    background-color: $seda-navy;
+    transition: background-color .3s ease;
+    color: #fff;
+  }
+}
+
 // Load custom fonts
 // TODO: Adjust once you have copyrighted fonts
 @font-face {
@@ -112,26 +126,26 @@ $spacers: ();
 $spacers: map-merge(
   (
     0: 0,
-    1: 10px,
-    2: 20px,
-    3: 30px,
-    4: 40px,
-    5: 50px,
-    6: 60px,
-    7: 70px,
-    8: 80px,
-    9: 90px,
-    10: 100px,
-    11: 110px,
-    12: 120px,
-    13: 130px,
-    14: 140px,
-    15: 150px,
-    16: 160px,
-    17: 170px,
-    18: 180px,
-    19: 190px,
-    20: 200px,
+    1: .8rem,
+    2: 1.6rem,
+    3: 2.4rem,
+    4: 3.2rem,
+    5: 4rem,
+    6: 4.8rem,
+    7: 5.6rem,
+    8: 6.4rem,
+    9: 7.2rem,
+    10: 8rem,
+    11: 8.8rem,
+    12: 9.6rem,
+    13: 10.4rem,
+    14: 11.2rem,
+    15: 12rem,
+    16: 12.8rem,
+    17: 13.6rem,
+    18: 14.4rem,
+    19: 15.2rem,
+    20: 16rem,
   ),
   $spacers
 );

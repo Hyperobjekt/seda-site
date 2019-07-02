@@ -242,6 +242,15 @@ input.form-control {
   margin-left: 0;
 }
 
+td {
+  border: 1px solid #999;
+  padding: 1.6rem;
+  
+}
+tr:nth-child(even) {
+  background-color: #F5F8FA;
+}
+
 // Header
 
 body.type-help-faq, body.research {
@@ -911,15 +920,17 @@ body.home {
 // Subscribe row
 .row {
   &.subscribe {
-    text-align: center;
+    text-align: left;
     background-color: $seda-lightblue;
-    padding-top: 9.6rem;
-    padding-bottom: 9.6rem;
     input.form-control {
       width: 100%;
       @include media-breakpoint-up(md) {
         width: 1%;
+        flex: 1 1 auto;
       }
+    }
+    .input-group {
+      width: 60%;
     }
     .input-group-append {
       @include media-breakpoint-down(md) {
@@ -932,7 +943,7 @@ body.home {
     }
 
     h3 {
-      margin-bottom: 3.2rem;
+      // margin-bottom: 3.2rem;
       font-face: $sharpgrotesk-med-20;
       font-size: 1.7rem;
       line-height: 2.8rem;
@@ -951,9 +962,10 @@ body.home {
       }
 
       @include media-breakpoint-up(lg) {
-        font-size: 2.4rem;
-        line-height: 3.0rem;
-        letter-spacing: .03rem;
+        font-size: 1.9rem;
+        line-height: 2.85rem;
+        letter-spacing: .025rem;
+        font-family: SharpGrotesk-Medium20;
       }
 
       @include media-breakpoint-up(xl) {
@@ -1231,7 +1243,7 @@ body.home {
     }
     @include media-breakpoint-up(lg) {
       h3 {
-        font-size: 2rem;
+        font-size: 2.2rem;
         line-height: 3rem;
         letter-spacing: .03rem;
       }
@@ -1242,12 +1254,12 @@ body.home {
         font-size: 2.3rem;
         line-height: 3.4rem;
         letter-spacing: .03rem;
+        font-family: SharpGrotesk-Medium20;
       }
 
     }
     .heading {
-      padding-top: 9.6rem;
-      padding-bottom: 3.2rem;
+  
       text-align: center;
       //order: 1;
     }
@@ -1262,7 +1274,7 @@ body.home {
       }
       .card {
         padding: 2.4rem;
-        margin-bottom: 1.6rem;
+        //margin-bottom: 1.6rem;
         margin-top: 1.6rem;
 
         @include media-breakpoint-up(md) {
@@ -1274,8 +1286,13 @@ body.home {
         }
 
         .img-thumbnail {
+<<<<<<< Updated upstream
           width: 120px;
           height: 80px;
+=======
+          width: 81px;
+          height: 54px;
+>>>>>>> Stashed changes
           padding: 0;
           background-color: #ffffff;
           border: none;
@@ -1302,9 +1319,10 @@ body.home {
             }
             @include media-breakpoint-up(lg) {
               margin-top: 2.4rem;
-              font-size: 2rem;
-              line-height: 3rem;
-              letter-spacing: .03rem;
+              font-size: 1.6rem;
+              line-height: 2.4rem;
+              letter-spacing: .021rem;
+              font-family: SharpGrotesk-Medium20;
             }
             @include media-breakpoint-up(xl) {
               margin-top: 3.2rem;
@@ -1370,28 +1388,43 @@ body.home {
       }
     }
     .all-explorations {
+<<<<<<< Updated upstream
       padding-top: 3.2rem;
       padding-bottom: 9.6rem;
+=======
+>>>>>>> Stashed changes
       text-align: center;
       font-family: $sharpgrotesk-med-15;
       font-size: 1.2rem;
       letter-spacing: .055rem;
       text-transform: uppercase;
+<<<<<<< Updated upstream
       order: 4;
 
       a {
+=======
+      order: 4; 
+      .btn.btn-custom2 {
+        background-color: transparent;
+        &:hover {
+          background-color: $seda-navy;
+        }
+      }     
+>>>>>>> Stashed changes
         &:hover {
           text-decoration: underline;
           color: $seda-dark;
         }
+<<<<<<< Updated upstream
       }
+=======
+>>>>>>> Stashed changes
 
       @include media-breakpoint-up(md) {
         font-size: 1.4rem;
         line-height: 1.7rem;
         letter-spacing: .064rem;
       }
-
       @include media-breakpoint-up(xl) {
         font-size: 1.7rem;
         line-height: 2.0rem;
@@ -1414,6 +1447,43 @@ body.home {
       //   background-image: url('/images/right-arrow.svg');
       // }
     }
+<<<<<<< Updated upstream
+=======
+    .readmore {
+      text-align: center;
+      font-family: $sharpgrotesk-med-15;
+      font-size: 1.2rem;
+      letter-spacing: .055rem;
+      text-transform: uppercase;
+      order: 4;      
+        &:hover {
+          text-decoration: underline;
+          color: $seda-dark !important;
+        }
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.6rem;
+        letter-spacing: 0.073rem;
+        line-height: 2.4rem;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 1.7rem;
+        line-height: 2.0rem;
+        letter-spacing: .078rem;
+      }
+    }
+    .readmore:after {
+      content: "";
+      background-image: url('/images/right-arrow.svg');
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      top: 2px;
+      position: relative;
+    } 
+>>>>>>> Stashed changes
   }
 }
 

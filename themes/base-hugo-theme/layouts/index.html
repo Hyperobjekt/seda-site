@@ -65,7 +65,7 @@
 </div>
 
 <div id="scrollTarget2" class="row latest-explorations m-0">
-    <div class="w-100 heading">
+    <div class="w-100 heading pt-lg-9">
         <h3 tabindex="0">Latest Discoveries:</h3>
     </div>
     {{ range $index, $element := first 2 (where .Site.Pages "Section" "posts") }}
@@ -79,8 +79,13 @@
 
             </div>
     {{ end }}
+<<<<<<< Updated upstream
     <div class="w-100 all-explorations">
         <a href="{{ "/discoveries/" | absURL }}" tabindex="0" aria-label="Go to all Discoveries">All discoveries</a>
+=======
+    <div class="w-100 pb-lg-9 all-explorations">
+        <a class="btn btn-custom2 py-2 px-4" href="{{ "/discoveries/" | absURL }}" tabindex="0" aria-label="Go to all Discoveries">See all discoveries</a>
+>>>>>>> Stashed changes
     </div>
 </div>
 

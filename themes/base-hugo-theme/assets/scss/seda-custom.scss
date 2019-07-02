@@ -1286,13 +1286,8 @@ body.home {
         }
 
         .img-thumbnail {
-<<<<<<< Updated upstream
-          width: 120px;
-          height: 80px;
-=======
           width: 81px;
           height: 54px;
->>>>>>> Stashed changes
           padding: 0;
           background-color: #ffffff;
           border: none;
@@ -1388,21 +1383,11 @@ body.home {
       }
     }
     .all-explorations {
-<<<<<<< Updated upstream
-      padding-top: 3.2rem;
-      padding-bottom: 9.6rem;
-=======
->>>>>>> Stashed changes
       text-align: center;
       font-family: $sharpgrotesk-med-15;
       font-size: 1.2rem;
       letter-spacing: .055rem;
       text-transform: uppercase;
-<<<<<<< Updated upstream
-      order: 4;
-
-      a {
-=======
       order: 4; 
       .btn.btn-custom2 {
         background-color: transparent;
@@ -1410,15 +1395,10 @@ body.home {
           background-color: $seda-navy;
         }
       }     
->>>>>>> Stashed changes
         &:hover {
           text-decoration: underline;
           color: $seda-dark;
         }
-<<<<<<< Updated upstream
-      }
-=======
->>>>>>> Stashed changes
 
       @include media-breakpoint-up(md) {
         font-size: 1.4rem;
@@ -1447,8 +1427,6 @@ body.home {
       //   background-image: url('/images/right-arrow.svg');
       // }
     }
-<<<<<<< Updated upstream
-=======
     .readmore {
       text-align: center;
       font-family: $sharpgrotesk-med-15;
@@ -1483,7 +1461,6 @@ body.home {
       top: 2px;
       position: relative;
     } 
->>>>>>> Stashed changes
   }
 }
 

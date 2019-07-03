@@ -14,6 +14,8 @@ function Scatterplot(container, props) {
     '#59678c', '#c9ab00', '#7eb00a', '#6f5553', '#c14089'
   ];
 
+  var axisBlue = '#547892';
+
   var theme = {
     color: colorPalette,
     title: {
@@ -34,13 +36,18 @@ function Scatterplot(container, props) {
     yAxis: {
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: axisBlue,
+        fontWeight: 'normal',
+        fontSize: 12
       }
     },
     xAxis: {
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
+        color: axisBlue,
+        fontWeight: 'normal',
+        fontSize: 12,
+        verticalAlign: 'bottom'
       }
     },
     visualMap: {
@@ -105,7 +112,7 @@ function Scatterplot(container, props) {
       axisLabel: { // Styles for grid numbers
         inside: false,
         textVerticalAlign: 'middle',
-        color: '#fff',
+        color: axisBlue, // '#fff',
         fontFamily: 'MaisonNeue-Medium',
         fontSize: 12,
       }
@@ -364,4 +371,3 @@ Scatterplot.prototype.getSeriesDataInRange = function(values, axis, range) {
     return v[index] > range.min && v[index] < range.max;
   })
 }
-

@@ -13,6 +13,8 @@ let Title = {};
 Title['text'] = '';
 Title['subtext'] = '';
 
+const axisBlue = '#547892';
+
 /**
  * Slice array according from beginning according to provided size.
  * @param Array arr
@@ -109,8 +111,8 @@ var state1 = function(scatterplot) {
   // this state is created from the base
   // Set up array of district IDs and names for building search series.
   if (Object.keys(names).length <= 0 &&
-    scatterplot && 
-    scatterplot.data && 
+    scatterplot &&
+    scatterplot.data &&
     scatterplot.data.districts &&
     scatterplot.data.districts.name) {
     names = scatterplot.data.districts.name;
@@ -159,8 +161,9 @@ var state1 = function(scatterplot) {
       name: 'Black Average Performance',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontWeight: 'normal'
+        color: axisBlue,
+        fontWeight: 'normal',
+        fontSize: 11
       }
     },
     xAxis: {
@@ -169,8 +172,8 @@ var state1 = function(scatterplot) {
       name: 'White Average Performance',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
+        color: axisBlue,
+        fontSize: 11,
         fontWeight: 'normal',
         verticalAlign: 'bottom'
       },
@@ -231,7 +234,7 @@ var state1 = function(scatterplot) {
               coord: [-2.5, -2.5],
               symbol: 'none',
               lineStyle: {
-                color: '#fff',
+                color: axisBlue, // '#fff',
                 type: 'solid',
                 width: 1,
                 shadowOffsetY: 0,
@@ -1735,4 +1738,3 @@ scatterplot.addState('state7', state7);
 scatterplot.addState('state8', state8);
 scatterplot.addState('state9', state9);
 scatterplot.addState('state10', state10);
-

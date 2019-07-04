@@ -33,23 +33,6 @@ function Scatterplot(container, props) {
       },
       textAlign: 'center'
     },
-    yAxis: {
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: axisBlue,
-        fontWeight: 'normal',
-        fontSize: 12
-      }
-    },
-    xAxis: {
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: axisBlue,
-        fontWeight: 'normal',
-        fontSize: 12,
-        verticalAlign: 'bottom'
-      }
-    },
     visualMap: {
       itemWidth: 15,
       color: ['#5ab1ef', '#e0ffff']
@@ -87,7 +70,13 @@ function Scatterplot(container, props) {
       }
     },
     grid: {
-      borderColor: '#fff'
+      top: 10,
+      bottom: 32,
+      left: 10,
+      right: 32,
+      // width: 'auto',
+      // height: 'auto',
+      containLabel: true
     },
     valueAxis: {
       axisLine: {
@@ -124,10 +113,13 @@ function Scatterplot(container, props) {
     },
     scatter: {
       symbol: 'circle',
+      color: '#94E4FE',
       itemStyle: {
-        borderWidth: 0.7,
-        borderColor: 'rgba(0,99,88,1)', // '#006358', // 'rgba(0,0,0,0.5)',
-        borderOpacity: 0,
+        borderWidth: 0.5,
+        borderColor: '#81C2D7',
+        borderType: 'solid',
+        opacity: .5
+        // borderOpacity: 0,
       }
     },
     graph: {
@@ -157,37 +149,37 @@ function Scatterplot(container, props) {
           textAlign: 'center'
         },
         grid: {
-          top: 20,
-          bottom: 20,
-          left: 20,
-          right: 36,
+          top: 10,
+          bottom: 26,
+          left: 10,
+          right: 26,
           zlevel: 100,
-          height: 280
+          height: 'auto',// 280,
+          width: 'auto', // 'auto',
+          containLabel: true
         },
         yAxis: {
-          nameGap: 20,
           position: 'right',
           splitLine: {
             show: false,
           },
+          nameGap: 26,
           nameTextStyle: {
             fontFamily: 'SharpGrotesk-Medium20',
-            color: '#FFF',
-            fontSize: 12,
-          },
-          axisLabel: {
-            align: 'right',
+            color: axisBlue,
+            fontWeight: 'normal',
+            fontSize: 11
           },
           zlevel: 101,
         },
         xAxis: {
-          nameGap: 26, // 26,
-          // bottom: 16,
+          nameGap: 26,
           nameTextStyle: {
             fontFamily: 'SharpGrotesk-Medium20',
-            color: '#FFF',
-            fontSize: 12,
-            // fontWeight: 'normal'
+            color: axisBlue,
+            fontSize: 11,
+            fontWeight: 'normal',
+            verticalAlign: 'bottom'
           },
           zlevel: 102,
         },

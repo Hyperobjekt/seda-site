@@ -21189,7 +21189,7 @@ body.type-posts .column-scatterplot .plot-parent .rectangle {
   top: 202px;
   background: transparent;
   padding: 2rem;
-  height: 309px;
+  height: 330px;
   width: 100%;
 }
 

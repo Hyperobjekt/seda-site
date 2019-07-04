@@ -45,7 +45,7 @@ function Scatterplot(container, props) {
       }
     },
     tooltip: {
-      backgroundColor: '#042965',
+      backgroundColor: '#031232',
       borderColor: 'rgba(255, 255, 255, 0.5)', // '#fff', // '#042965',
       padding: [6, 10],
       borderRadius: 4,
@@ -54,7 +54,16 @@ function Scatterplot(container, props) {
       textStyle: {
         color: '#fff', // '#dc69aa',
         fontWeight: '500',
-        fontFamily: 'MaisonNeue-Medium'
+        fontFamily: 'SharpGrotesk-Medium20',
+        rich: {
+          span: {
+            fontFamily: 'SharpGrotesk-Medium20',
+          },
+          small: {
+            fontFamily: 'MaisonNeue-Medium',
+            fontSize: 6
+          },
+        }
       },
       axisPointer: {
         type: 'line',
@@ -165,19 +174,19 @@ function Scatterplot(container, props) {
           },
           nameGap: 26,
           nameTextStyle: {
-            fontFamily: 'SharpGrotesk-Medium20',
+            fontFamily: 'MaisonNeue-Medium',
             color: axisBlue,
             fontWeight: 'normal',
-            fontSize: 11
+            fontSize: 13
           },
           zlevel: 101,
         },
         xAxis: {
           nameGap: 26,
           nameTextStyle: {
-            fontFamily: 'SharpGrotesk-Medium20',
+            fontFamily: 'MaisonNeue-Medium',
             color: axisBlue,
-            fontSize: 11,
+            fontSize: 13,
             fontWeight: 'normal',
             verticalAlign: 'bottom'
           },
@@ -194,10 +203,9 @@ function Scatterplot(container, props) {
               data.name[item.value[3]] ?
               data.name[item.value[3]] : 'Unavailable'
             // console.log(data);
-            return itemName + '<br />'
-              + 'X: ' + item.value[0] + "\n"
-              + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1]
-
+            return  '<span>' + itemName + '</span><br>'
+              + '<small>X: ' + item.value[0]
+              + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1] + '</small>'
           }
         },
       }

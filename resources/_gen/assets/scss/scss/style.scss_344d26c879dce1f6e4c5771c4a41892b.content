@@ -21104,8 +21104,8 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   body.type-posts .dyn-article .state-desc-wrapper p,
   body.type-posts .dyn-article .state-desc-wrapper ul,
   body.type-posts .dyn-article .state-desc-wrapper li {
-    font-size: 1.4rem;
-    line-height: 2.1rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
   }
 }
 
@@ -21115,8 +21115,8 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   body.type-posts .dyn-article .state-desc-wrapper li {
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.3rem;
+    line-height: 2.1rem;
     margin-top: 3.2rem;
   }
 }
@@ -21125,8 +21125,8 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   body.type-posts .dyn-article .state-desc-wrapper p,
   body.type-posts .dyn-article .state-desc-wrapper ul,
   body.type-posts .dyn-article .state-desc-wrapper li {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
     margin-top: 3.2rem;
   }
 }
@@ -21135,8 +21135,8 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   body.type-posts .dyn-article .state-desc-wrapper p,
   body.type-posts .dyn-article .state-desc-wrapper ul,
   body.type-posts .dyn-article .state-desc-wrapper li {
-    font-size: 1.7rem;
-    line-height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
     margin-top: 3.2rem;
   }
 }
@@ -21159,14 +21159,14 @@ body.type-posts .column-scatterplot .plot-parent {
 body.type-posts .column-scatterplot .plot-parent .title,
 body.type-posts .column-scatterplot .plot-parent .subtitle {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  color: #052965;
+  color: #031232;
   text-align: center;
 }
 
 body.type-posts .column-scatterplot .plot-parent .title {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  letter-spacing: 0.016rem;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  letter-spacing: 0.018rem;
   width: 70%;
   margin: 0 auto;
 }

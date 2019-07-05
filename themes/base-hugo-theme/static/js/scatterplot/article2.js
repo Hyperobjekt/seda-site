@@ -1728,7 +1728,7 @@ var state15 = function(scatterplot) {
         name: 'High early opportunity,\nhigh growth opportunity',
         markLine: {
           silent: true,
-          animate: true,
+          animation: false,
           label: {
             show: true,
             position: 'insideTopRight',

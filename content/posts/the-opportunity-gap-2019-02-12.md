@@ -16,13 +16,17 @@ Despite popular belief, average test scores are a bad indicator for measuring ho
 
 There’s a better way.
 
-Measuring the growth of students’ test scores as they advance across the grades tells a more accurate story about a district’s impact on student learning. Some wealthy districts show a little learning across five years, some show a lot. Meanwhile, some poor districts show students who test way below average in grade 3 but catch up to the national average by grade 8. 
+Measuring the growth of students’ test scores as they advance across the grades tells a more accurate story about a district’s impact on student learning. Some wealthy districts show a little learning across five years, some show a lot. Meanwhile, some poor districts show students who test way below average in grade 3 but catch up to the national average by grade 8.
 
-The following charts tell an unexpected story of district quality and the amount of opportunity they afford students. These charts rely on standardized test scores for 45 million students across 11,000 school districts – nearly all in the U.S. 
+The following charts tell an unexpected story of district quality and the amount of opportunity they afford students. These charts rely on standardized test scores for 45 million students across 11,000 school districts – nearly all in the U.S.
 
 This figure shows the relationship between average 3rd grade achievement and average family socioeconomic status in any given school district. The trend is clear: The more affluence in a district, the higher the achievement among third graders.
 
 This shouldn’t be surprising. Affluent families and districts are able to provide much greater opportunities than poor ones early in children’s lives. Viewed a different way, this figure captures the opportunities available to students before they turn 9 years of age. Family income, neighborhood conditions, the availability of high-quality child care and pre-school programs, and the quality of schools in grades K-3 are all captured in 3rd grade average scores.
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state1_1" notmerge="true" %}}
 
 Notice the yellow line moving from the lower left to the upper right of the figure. Broadly, it’s a prediction for how well a district’s 3rd graders will perform given the district’s socioeconomic status. Many districts follow that prediction line. But we also see the districts that have low test scores despite their affluence and high scores despite their poverty. Some districts do better than we would predict, and some districts do worse than we would predict. There’s a lot of variation.
 

@@ -203,7 +203,7 @@ body.type-posts {
     .plot-parent {
       position: sticky;
       position: -webkit-sticky;
-      top: 202px;
+      top: 84px;
       // background: #042965;
       padding: 0 2rem;
       height: 360px;
@@ -224,7 +224,7 @@ body.type-posts {
         font-size: 1.8rem; // 2.4rem;
         line-height: 2.7rem; // 2.8rem;
         letter-spacing: 0.018rem;
-        width: 70%;
+        // width: 70%;
         margin: 0 auto;
       }
 
@@ -235,7 +235,7 @@ body.type-posts {
         letter-spacing: 0.014rem;
         padding-top: 0.8rem;
         margin-bottom: 1rem;
-        width: 60%;
+        // width: 60%;
         margin: 0 auto;
       }
 
@@ -246,8 +246,7 @@ body.type-posts {
         top: 202px;
         background: transparent;
         padding: 2rem;
-        height: 330px; // 361px;
-        // min-width:600px;
+        height: 330px;
         width:100%;
       }
 
@@ -264,12 +263,10 @@ body.type-posts {
       background: $seda-plot-lightblue;
       background-image: url('/images/magnify.svg');
       background-repeat: no-repeat;
-      background-size: 12px 12px;
-      background-position: 13px 48%;
-      padding-left: 33px;
-      // border: 1px solid #E7E8ED;
+      background-size: 18px 18px;
+      background-position: 15px 46%;
+      padding: 19px 30px 13px 44px;
       border-radius: 0;
-      // border-bottom: 1px solid #5D76A0;
       border: none;
       color: #173B75;
       font-family: $maisonneue-book;
@@ -277,6 +274,7 @@ body.type-posts {
       &::placeholder,
       &::-webkit-input-placeholder {
         color: $seda-new-better-different-sasha-plot-navy;
+        line-height: 1.6rem;
       }
 
       &.react-autosuggest__input--open {
@@ -284,8 +282,7 @@ body.type-posts {
       }
     }
     .react-autosuggest__clear {
-      // background-color: transparent;
-      top: 10px;
+      top: 9px;
       color: transparent;
       background-color: transparent;
       background-image: url('/images/input-clear.svg');

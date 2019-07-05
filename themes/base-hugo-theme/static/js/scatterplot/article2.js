@@ -203,15 +203,145 @@ var state1 = function(scatterplot) {
             animation: false,
             silent: true,
             data: [
+          //   [
+          //     {
+          //       name: '', // upper right markline
+          //       coord: [3, 6],
+          //       symbol: 'none',
+          //       lineStyle: {
+          //         color: '#052965', // '#adadad'
+          //         type: 'solid',
+          //         width: 0.5
+          //       },
+          //     },
+          //     {
+          //       coord: [-1.75, .75],
+          //       symbol: 'none'
+          //     },
+          //   ],
+          // [
+          //   {
+          //     name: '', // lower left markline
+          //     coord: [1, 2.5],
+          //     symbol: 'none',
+          //     lineStyle: {
+          //       color: '#052965', // '#adadad'
+          //       type: 'solid',
+          //       width: 0.5
+          //     },
+          //   },
+          //   {
+          //     coord: [-3.75, 1],
+          //     symbol: 'none'
+          //   },
+          // ],
+          [
+            {
+              name: '', // x axis
+              coord: [-3.5, 3],
+              symbol: 'none',
+              lineStyle: {
+                // color: '#fff', // 'rgba(0,0,0,0.6)'
+                color: '#052965',
+                type: 'solid',
+                width: 1
+              }
+            },
+            {
+              coord: [3, 3],
+              symbol: 'none'
+            },
+          ]
+        ]
+      }
+      },
+    ]
+  }
+  return {
+    xVar: 'all_ses',
+    yVar: 'all_avg3',
+    zVar: 'all_sz',
+    highlighted: Object.keys(highlight),
+    options: deepmerge.all([base.options, baseOverrides ])
+  }
+}
+
+/** State 1: Show white scores on x axis and black scores on y axis */
+var state1_1 = function(scatterplot) {
+  // this state is created from the base
+  const base = scatterplot.getState('base');
+  // Set up array of district IDs and names for building search series.
+  if (names.length <= 0 &&
+    scatterplot &&
+    scatterplot.data &&
+    scatterplot.data.districts &&
+    scatterplot.data.districts.name) {
+    names = scatterplot.data.districts.name;
+    // console.log(names);
+  }
+  var dataSeries = [];
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
+  }
+
+  // Update title and subtext placeholders
+  Title['text'] = 'Academic Achievement and Socioeconomic\nStatus, Grade 3';
+  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Set title and subtitle
+  Title.setTitle();
+
+  const baseOverrides = {
+    title: {
+      show: false,
+      text: Title.text, // 'Academic Achievement and Socioeconomic Status, Grade 3',
+      subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
+    },
+    legend: {
+      show: true,
+    },
+    grid: baseGrid,
+    yAxis: deepmerge(baseYAxis, {
+      min: -1,
+      max: 8,
+      name: 'Average Achievement (in Grade Levels)',
+    }),
+    xAxis: {
+      min: -4,
+      max: 3.5,
+      name: 'Poor/Disadvantaged to Affluent/Advantaged',
+    },
+    series: [
+      { id: 'base' },
+      {
+        id: 'highlighted',
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
+      },
+      {
+        type:'scatter',
+          markLine: {
+            animation: false,
+            silent: true,
+            data: [
             [
               {
                 name: '', // upper right markline
                 coord: [3, 6],
                 symbol: 'none',
                 lineStyle: {
-                  color: '#052965', // '#adadad'
+                  color: 'rgba(255, 192, 45, 1)',
                   type: 'solid',
-                  width: 0.5
+                  width: 2
                 },
               },
               {
@@ -225,9 +355,9 @@ var state1 = function(scatterplot) {
               coord: [1, 2.5],
               symbol: 'none',
               lineStyle: {
-                color: '#052965', // '#adadad'
+                color: 'rgba(255, 192, 45, 1)',
                 type: 'solid',
-                width: 0.5
+                width: 2
               },
             },
             {
@@ -1517,33 +1647,9 @@ var state15 = function(scatterplot) {
           zlevel: 50,
           z: 50,
           borderWidth: 1,
-          borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
-          color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
+          borderColor: 'rgba(20, 33, 156, 1)',
+          color: 'rgba(145, 115, 255, 1)',
         },
-        // markPoint: {
-        //   itemStyle: {
-        //     color: 'transparent',
-        //   },
-        //   data: [
-        //     {
-        //       name: 'High early opportunity,\nhigh growth opportunity',
-        //       value: 'High early opportunity,\nhigh growth opportunity',
-        //       xAxis: 5,
-        //       yAxis: 1.4,
-        //       symbol: 'rect',
-        //       // positon: [3, 1.6],
-        //       symbolSize: [100, 50],
-        //       label: {
-        //         show: true,
-        //         position: 'inside',
-        //         verticalAlign: 'middle',
-        //         color: '#fff',
-        //         fontWeight: 600,
-        //         fontFamily: 'MaisonNeue-Medium',
-        //       },
-        //     }
-        //   ],
-        // },
         label: {
           position: '6, 1.6',
           show: false,
@@ -1557,7 +1663,7 @@ var state15 = function(scatterplot) {
           borderRadius: 3,
           color: '#042965',
           formatter: function(item) {
-            return 'test' // highlight[item.value[3]]
+            return highlight[item.value[3]]
           }
         }
       },
@@ -1572,6 +1678,8 @@ var state15 = function(scatterplot) {
           markLine: {
             animation: false,
             silent: true,
+            symbol: 'none',
+            symbolSize: 0,
             data: [
               [
                 {
@@ -1607,48 +1715,73 @@ var state15 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [6.5, 1],
+                  coord: [7, 1],
                   symbol: 'none'
                 },
               ]
             ]
           }
         },
-    {
-      id: 'markarea',
-      silent: true,
-      type: 'scatter',
-      name: 'High early opportunity,\nhigh growth opportunity',
-      markArea: {
-        animation: true,
-        itemStyle: {
-          borderType: 'solid',
-          borderWidth: 0.5,
-          opacity: .75,
-          borderColor: 'rgba(125, 65, 187, 1)', // 'rgba(0,0,0,1)',
-          color: 'rgba(188, 114, 255, 1)',
-        },
-        label: {
-          show: true,
-          position: 'insideTopRight',
-          verticalAlign: 'top',
-          padding: [5, 5, 0, 0],
-          color: '#052965',
-          fontWeight: 500,
-          fontFamily: 'MaisonNeue-Medium',
-        },
-        data: [
-          [{
-            name: 'High early opportunity,\nhigh growth opportunity',
-            xAxis: 3,
-            yAxis: 1.6
-          }, {
-            xAxis: 6.5,
-            yAxis: 1
-          }],
-        ],
-      }
-    } // End markarea
+      {
+        id: 'markQuadrantLine',
+        type: 'scatter',
+        name: 'High early opportunity,\nhigh growth opportunity',
+        markLine: {
+          silent: true,
+          animate: true,
+          label: {
+            show: true,
+            position: 'insideTopRight',
+            verticalAlign: 'top',
+            padding: [5, 5, 0, 0],
+            color: '#052965',
+            fontWeight: 500,
+            fontFamily: 'MaisonNeue-Medium',
+          },
+          data: [
+            [{
+              coord: [3, 1.3],
+              symbol: 'none',
+              symbolSize: 0,
+              lineStyle: {
+                color: 'rgba(253, 165, 2, 1)', // 'red',
+                width: 140,
+                type: 'solid',
+                opacity: 0.65,
+
+              },
+            }, {
+              coord: [7, 1.3],
+              symbol: 'none',
+              symbolSize: 0
+            }],
+            [{
+              coord: [5, 1.35],
+              symbol: 'none',
+              name: 'High early opportunity,\nhigh growth opportunity',
+              symbolSize: 0,
+              lineStyle: {
+                color: 'transparent', // 'rgba(253, 165, 2, 1)', // 'red',
+                width: 0,
+                type: 'solid',
+                opacity: 0,
+
+              },
+              label: {
+                show: true,
+                color: '#052965',
+                fontWeight: 500,
+                fontFamily: 'MaisonNeue-Medium',
+                position: 'middle'
+              }
+            }, {
+              coord: [5.01, 1.35],
+              symbol: 'none',
+              symbolSize: 0
+            }]
+          ]
+        }
+      },
     ]
   }
   return {
@@ -1725,39 +1858,55 @@ var state16 = function(scatterplot) {
     series: [
       { id: 'base' },
       {
-        id: 'markarea',
-        silent: true,
+        id: 'markQuadrantLine',
         type: 'scatter',
-        name: 'High early opportunity,\nhigh growth opportunity',
-        markArea: {
-          itemStyle: {
-            borderType: 'solid',
-            borderWidth: 0.5,
-            opacity: .75,
-            borderColor: '#7D38BB',
-            color: '#BC72FF',
-          },
-          label: {
-            show: true,
-            position: 'insideBottomLeft',
-            verticalAlign: 'bottom',
-            padding: [0, 0, 5, 5],
-            color: '#052965',
-            fontWeight: 500,
-            fontFamily: 'MaisonNeue-Medium',
-          },
+        markLine: {
+          silent: true,
+          animate: true,
           data: [
             [{
-              name: 'Low early opportunity,\nlow growth opportunity',
-              xAxis: -1,
-              yAxis: 1
+              coord: [-1, 0.7],
+              symbol: 'none',
+              symbolSize: 0,
+              lineStyle: {
+                color: 'rgba(253, 165, 2, 1)', // 'red',
+                width: 140,
+                type: 'solid',
+                opacity: 0.65,
+
+              },
             }, {
-              xAxis: 3,
-              yAxis: 0.4
+              coord: [3, 0.7],
+              symbol: 'none',
+              symbolSize: 0
             }],
-          ],
+            [{
+              coord: [1, 0.6],
+              symbol: 'none',
+              name: 'High early opportunity,\nhigh growth opportunity',
+              symbolSize: 0,
+              lineStyle: {
+                color: 'transparent', // 'rgba(253, 165, 2, 1)', // 'red',
+                width: 0,
+                type: 'solid',
+                opacity: 0,
+
+              },
+              label: {
+                show: true,
+                position: 'middle',
+                color: '#052965',
+                fontWeight: 500,
+                fontFamily: 'MaisonNeue-Medium',
+              }
+            }, {
+              coord: [1.01, 0.6],
+              symbol: 'none',
+              symbolSize: 0
+            }]
+          ]
         }
-      }, // End markarea
+      }, // End markline
       {
         id: 'selected',
         type: 'scatter',
@@ -1819,7 +1968,7 @@ var state16 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [6.5, 1],
+                  coord: [7, 1],
                   symbol: 'none'
                 },
               ]
@@ -1907,39 +2056,55 @@ var state17 = function(scatterplot) {
         z: 2,
       },
       {
-        id: 'markarea',
-        silent: true,
+        id: 'markQuadrantLine',
         type: 'scatter',
-        name: 'High early opportunity,\nlow growth opportunity',
-        markArea: {
-          itemStyle: {
-            borderType: 'solid',
-            borderWidth: 0.5,
-            opacity: .75,
-            borderColor: '#7D38BB', // 'rgba(0,0,0,1)',
-            color: '#BC72FF',
-          },
-          label: {
-            show: true,
-            position: 'insideBottomRight',
-            verticalAlign: 'bottom',
-            padding: [0, 5, 5, 0],
-            color: '#052965',
-            fontWeight: 500,
-            fontFamily: 'MaisonNeue-Medium',
-          },
+        markLine: {
+          silent: true,
+          animate: true,
           data: [
             [{
-              name: 'High early opportunity,\nlow growth opportunity',
-              xAxis: 3,
-              yAxis: 1
+              coord: [3, 0.7],
+              symbol: 'none',
+              symbolSize: 0,
+              lineStyle: {
+                color: 'rgba(253, 165, 2, 1)', // 'red',
+                width: 140,
+                type: 'solid',
+                opacity: 0.65,
+
+              },
             }, {
-              xAxis: 6.5,
-              yAxis: 0.4
+              coord: [7, 0.7],
+              symbol: 'none',
+              symbolSize: 0
             }],
-          ],
+            [{
+              coord: [5, 0.6],
+              symbol: 'none',
+              name: 'High early opportunity,\nlow growth opportunity',
+              symbolSize: 0,
+              lineStyle: {
+                color: 'transparent', // 'rgba(253, 165, 2, 1)', // 'red',
+                width: 0,
+                type: 'solid',
+                opacity: 0,
+
+              },
+              label: {
+                show: true,
+                position: 'middle',
+                color: '#052965',
+                fontWeight: 500,
+                fontFamily: 'MaisonNeue-Medium',
+              }
+            }, {
+              coord: [5.01, 0.6],
+              symbol: 'none',
+              symbolSize: 0
+            }]
+          ]
         }
-      }, // End markarea
+      }, // End markline
       {
         id: 'highlighted',
         itemStyle: highlightedItemStyle,
@@ -1986,7 +2151,7 @@ var state17 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [6.5, 1],
+                  coord: [7, 1],
                   symbol: 'none'
                 },
               ]
@@ -2074,39 +2239,55 @@ var state18 = function(scatterplot) {
         z: 2,
       },
       {
-        id: 'markarea',
-        silent: true,
+        id: 'markQuadrantLine',
         type: 'scatter',
-        name: 'Low early opportunity,\nhigh growth opportunity',
-        markArea: {
-          itemStyle: {
-            borderType: 'solid',
-            borderWidth: 2,
-            opacity: .75,
-            borderColor: '#7D38BB',
-            color: '#BC72FF',
-          },
-          label: {
-            show: true,
-            position: 'insideTopLeft',
-            verticalAlign: 'top',
-            padding: [5, 0, 0, 5],
-            color: '#052965',
-            fontWeight: 500,
-            fontFamily: 'MaisonNeue-Medium',
-          },
+        markLine: {
+          silent: true,
+          animate: true,
           data: [
             [{
-              name: 'Low early opportunity,\nhigh growth opportunity',
-              xAxis: -1,
-              yAxis: 1.6
+              coord: [-1, 1.3],
+              symbol: 'none',
+              symbolSize: 0,
+              lineStyle: {
+                color: 'rgba(253, 165, 2, 1)', // 'red',
+                width: 140,
+                type: 'solid',
+                opacity: 0.65,
+
+              },
             }, {
-              xAxis: 3,
-              yAxis: 1
+              coord: [3, 1.3],
+              symbol: 'none',
+              symbolSize: 0
             }],
-          ],
+            [{
+              coord: [1, 1.2],
+              symbol: 'none',
+              name: 'Low early opportunity,\nhigh growth opportunity',
+              symbolSize: 0,
+              lineStyle: {
+                color: 'transparent', // 'rgba(253, 165, 2, 1)', // 'red',
+                width: 0,
+                type: 'solid',
+                opacity: 0,
+
+              },
+              label: {
+                show: true,
+                position: 'middle',
+                color: '#052965',
+                fontWeight: 500,
+                fontFamily: 'MaisonNeue-Medium',
+              }
+            }, {
+              coord: [1.01, 1.2],
+              symbol: 'none',
+              symbolSize: 0
+            }]
+          ]
         }
-      }, // End markarea
+      }, // End markline
       {
         id: 'highlighted',
         itemStyle: highlightedItemStyle,
@@ -2141,7 +2322,7 @@ var state18 = function(scatterplot) {
               [
                 {
                   name: '', // x axis
-                  coord: [-0.5, 1],
+                  coord: [-1, 1],
                   symbol: 'none',
                   label: {
                     show: false
@@ -2153,7 +2334,7 @@ var state18 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [6.5, 1],
+                  coord: [7, 1],
                   symbol: 'none'
                 },
               ]
@@ -2247,9 +2428,9 @@ var state19 = function(scatterplot) {
                 coord: [3, 1.25],
                 symbol: 'none',
                 lineStyle: {
-                  color: '#052965', // '#adadad'
+                  color: 'rgba(255, 192, 45, 1)',
                   type: 'solid',
-                  width: 0.5
+                  width: 2
                 },
               },
               {
@@ -2263,9 +2444,9 @@ var state19 = function(scatterplot) {
               coord: [1, 0.9],
               symbol: 'none',
               lineStyle: {
-                color: '#052965',
+                color: 'rgba(255, 192, 45, 1)',
                 type: 'solid',
-                width: 0.5
+                width: 2
               },
             },
             {
@@ -2314,6 +2495,7 @@ var scatterplot = new Scatterplot(rootEl);
 
 // set the states
 scatterplot.addState('state1', state1);
+scatterplot.addState('state1_1', state1_1);
 scatterplot.addState('state2', state2);
 scatterplot.addState('state3', state3);
 scatterplot.addState('state4', state4);

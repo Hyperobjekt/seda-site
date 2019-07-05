@@ -21196,8 +21196,8 @@ body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input
   background-image: url("/images/magnify.svg");
   background-repeat: no-repeat;
   background-size: 18px 18px;
-  background-position: 15px 46%;
-  padding: 19px 30px 13px 44px;
+  background-position: 17px 47%;
+  padding: 16px 30px 12px 44px;
   border-radius: 0;
   border: none;
   color: #173B75;
@@ -21215,7 +21215,7 @@ body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input
 }
 
 body.type-posts .react-autosuggest__input-wrapper .react-autosuggest__clear {
-  top: 9px;
+  top: 7.5px;
   color: transparent;
   background-color: transparent;
   background-image: url("/images/input-clear.svg");

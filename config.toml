@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Stanford Education Data Archive"
 theme = "base-hugo-theme"
-googleAnalytics = ""
+googleAnalytics = "UA-143360439-1"
 paginate = 5
 
 [imaging]

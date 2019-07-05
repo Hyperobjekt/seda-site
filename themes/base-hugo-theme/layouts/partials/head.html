@@ -30,6 +30,8 @@
     {{ end }}
   {{ end }}
 
+  <!-- GA -->
+  {{ template "_internal/google_analytics.html" . }}
   <!-- General metadata -->
   <meta name="description" content="{{ $.Scratch.Get "socialDescription" }}" />
   <meta name='author' content='{{ .Site.Title }}' />

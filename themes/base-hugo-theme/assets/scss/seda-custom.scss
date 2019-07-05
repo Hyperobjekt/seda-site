@@ -615,18 +615,65 @@ img {
         cursor: pointer;
         &.highlight {
           @include media-breakpoint-up(md) {
-            border-bottom: 4px solid #04143C;
-            margin-top: 22px;
-            padding-bottom: 19px;
+          //  border-bottom: 4px solid #04143C;
+         //   margin-top: 22px;
+         //   padding-bottom: 19px;
         }
           @include media-breakpoint-up(lg) {
-            margin-top: 10px;
-            padding-bottom: 7px;
+         //   margin-top: 10px;
+        //          padding-bottom: 7px;
           }
          }
       }
     }
   }
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+.large-tab-nav {
+  
+  a {
+    border: none; // 1px solid transparent;
+    border-bottom: 0px solid transparent;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    @include media-breakpoint-up(md) {
+      &:hover {
+        color: $seda-dark;
+        border: none; // 1px solid transparent;
+        border-bottom: 2px solid $seda-navy;
+        padding-bottom: 16px;
+        margin-top: 12px;
+        text-decoration: none;
+      }
+      &.active {
+        color: $seda-dark;
+        border: none;
+        border-bottom: 2px solid #04143c;
+        padding-bottom: 16px;
+        margin-top: 12px;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      &:hover {
+        color: $seda-dark;
+        border: none; // 1px solid transparent;
+        border-bottom: 2px solid $seda-navy;
+        padding-bottom: 16px;
+        margin-top: 12px;
+      }
+      &.active {
+        color: $seda-dark;
+        border: none;
+        border-bottom: 2px solid $seda-navy;
+        padding-bottom: 16px;
+        margin-top: 12px;
+      }
+    }  
+  }
+  
 }
 
 // Shadow effect
@@ -636,6 +683,8 @@ img {
 .drop-shadow-left {
   box-shadow: -2px 0px 5px rgba(0,0,0,.20);
 }
+
+
 
 // Hero
 body.home {

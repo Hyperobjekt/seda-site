@@ -197,15 +197,23 @@ function Scatterplot(container, props) {
           // borderColor: '#fff',
           formatter: function(item) {
             const data = _self.data[_self.props.prefix];
-            const itemName =
-              data &&
-              data.name &&
-              data.name[item.value[3]] ?
-              data.name[item.value[3]] : 'Unavailable'
-            // console.log(data);
-            return  '<span>' + itemName + '</span><br>'
-              + '<small>X: ' + item.value[0]
-              + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1] + '</small>'
+            let returnString = null;
+            if (!!item && !!item.value && !!item.value[3]) {
+              const itemName =
+                data &&
+                data.name &&
+                data.name[item.value[3]] ?
+                data.name[item.value[3]] : 'Unavailable'
+              // itemValue = item.value[3] ? item.value[3] : item.name;
+              returnString = '<span>' + itemName + '</span><br>'
+                + '<small>X: ' + item.value[0]
+                + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1] + '</small>';
+            } else {
+              // console.log(item);
+              // Send back a different string for the markarea tooltip.
+              returnString = '<span>' + item.data.name + '</span><br>'
+            }
+            return returnString;
           }
         },
       }

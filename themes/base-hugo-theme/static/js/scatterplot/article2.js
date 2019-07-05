@@ -6,6 +6,73 @@
 // Set local placeholder for jQuery
 const jQ = jQuery;
 
+const axisBlue = '#547892';
+const highlightedLabel = (highlight) => {
+  return {
+    show: true,
+    position: 'top',
+    backgroundColor: '#FFFCCF',
+    borderColor: '#7D38BB',
+    fontSize: 12,
+    fontWeight: 500,
+    fontFamily: 'SharpGrotesk-Medium20', // 'MaisonNeue-Medium',
+    lineHeight: 12,
+    padding: [8, 8],
+    borderRadius: 3,
+    color: '#052965',
+    formatter: function(item) {
+      return highlight[item.value[3]]
+    },
+  };
+}
+const highlightedItemStyle =  {
+  borderWidth: 0.5,
+  borderColor: '#FFC02D',
+  color: '#FFFCDD',
+  opacity: 0.9,
+};
+const selectedItemStyle = {
+  borderWidth: 0.7,
+  borderColor: '#7D38BB',
+  color: '#BC72FF',
+  opacity: 0.7,
+};
+const baseGrid = {
+  top: 10,
+  bottom: 26,
+  left: 10,
+  right: 26,
+  zlevel: 100,
+  height: 'auto',// 280,
+  width: 'auto', // 'auto',
+  containLabel: true
+};
+const baseYAxis = {
+  position: 'right',
+  splitLine: {
+    show: false,
+  },
+  nameGap: 26,
+  nameTextStyle: {
+    fontFamily: 'SharpGrotesk-Medium20',
+    color: axisBlue,
+    fontWeight: 'normal',
+    fontSize: 11
+  },
+  zlevel: 101,
+};
+const baseXAxis = {
+  nameGap: 26,
+  nameTextStyle: {
+    fontFamily: 'SharpGrotesk-Medium20',
+    color: axisBlue,
+    fontSize: 11,
+    fontWeight: 'normal',
+    verticalAlign: 'bottom'
+  },
+  zlevel: 102,
+};
+
 // Placeholders for segregation series operations
 // let segData = [];
 let searchItemIDs = [];
@@ -101,6 +168,7 @@ var state1 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text, // 'Academic Achievement and Socioeconomic Status, Grade 3',
       subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
       textAlign: 'center',
@@ -110,75 +178,30 @@ var state1 = function(scatterplot) {
     legend: {
       show: true,
     },
-    grid: {
-      right: 32,
-    },
-    yAxis: {
-      min: -1, // -0.5,
-      max: 8, // 9,
-      nameGap: 16,
+    grid: baseGrid,
+    yAxis: deepmerge(baseYAxis, {
+      min: -1,
+      max: 8,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
-    },
+    }),
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 1,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
             [
               {
@@ -186,8 +209,9 @@ var state1 = function(scatterplot) {
                 coord: [3, 6],
                 symbol: 'none',
                 lineStyle: {
-                  color: '#fff', // '#adadad'
-                  type: 'solid'
+                  color: '#052965', // '#adadad'
+                  type: 'solid',
+                  width: 0.5
                 },
               },
               {
@@ -201,8 +225,9 @@ var state1 = function(scatterplot) {
               coord: [1, 2.5],
               symbol: 'none',
               lineStyle: {
-                color: '#fff', // '#adadad'
-                type: 'solid'
+                color: '#052965', // '#adadad'
+                type: 'solid',
+                width: 0.5
               },
             },
             {
@@ -217,27 +242,9 @@ var state1 = function(scatterplot) {
               symbol: 'none',
               lineStyle: {
                 // color: '#fff', // 'rgba(0,0,0,0.6)'
-                color: {
-                  type: 'linear',
-                  x: 0,
-                  y: 0,
-                  x2: 1,
-                  y2: 0,
-                  colorStops: [{
-                      offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
-                  },
-                  {
-                    offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // color at 25% position
-                  },
-                  {
-                    offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // color at 50% position
-                  },
-                  {
-                      offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
-                  }],
-                  global: false // false by default
-                },
-                type: 'solid'
+                color: '#052965',
+                type: 'solid',
+                width: 1
               }
             },
             {
@@ -250,9 +257,6 @@ var state1 = function(scatterplot) {
       },
     ]
   }
-  // console.log('state1');
-  // console.log(jQuery);
-  // console.log(baseOverrides.title.text);
   return {
     xVar: 'all_ses',
     yVar: 'all_avg3',
@@ -300,8 +304,9 @@ var state2 = function(scatterplot) {
     highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
       title: {
-        text: Title.text, // 'Academic Achievement and Socioeconomic Status, Grade 3',
-        subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
+        show: false,
+        text: Title.text,
+        subtext: Title.subtext,
         textAlign: 'center',
         left: '50%',
         top: '10px',
@@ -310,67 +315,25 @@ var state2 = function(scatterplot) {
         min: -1, // -0.5,
         max: 8, // 9,
         name: 'Average Achievement (in Grade Levels)',
-        nameTextStyle: {
-          fontFamily: 'SharpGrotesk-Medium20',
-          color: '#FFF',
-          fontSize: 12,
-          fontWeight: 'normal'
-        }
       },
       xAxis: {
         min: -4,
         max: 3.5,
         name: 'Poor/Disadvantaged to Affluent/Advantaged',
-        nameTextStyle: {
-          fontFamily: 'SharpGrotesk-Medium20',
-          color: '#FFF',
-          fontSize: 12,
-          fontWeight: 'normal'
-        }
       },
       series: [
         { id: 'base' },
         {
           id: 'highlighted',
-          itemStyle: {
-            borderWidth: 1,
-            borderColor: '#042965', // 'rgba(0,0,0,1)',
-            color: 'rgba(255,255,0,0.95)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return highlight[item.value[3]]
-            }
-          }
+          itemStyle: highlightedItemStyle,
+          label: highlightedLabel(highlight),
+          zlevel: 500,
         },
         {
           type:'scatter',
             markLine: {
               animation: false,
               silent: true,
-              label: {
-                position: 'middle',
-                fontFamily: 'MaisonNeue-Medium',
-                fontWeight: '600',
-                fontSize: 12,
-                textBorderWidth: 3,
-                textBorderColor: '#042965',
-                textShadowColor: '#042965',
-                formatter: function(value) {
-                  return value.name
-                }
-              },
               data: [
               [
                 {
@@ -378,9 +341,9 @@ var state2 = function(scatterplot) {
                   coord: [-3.5, 3],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -424,6 +387,7 @@ var state3 = function(scatterplot) {
     highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
       title: {
+        show: false,
         text: Title.text,
         subtext: Title.subtext,
         textAlign: 'center',
@@ -431,70 +395,28 @@ var state3 = function(scatterplot) {
         top: '10px',
       },
       yAxis: {
-        min: 0, // 1,
-        max: 9, // 8,
+        min: 0,
+        max: 9,
         name: 'Average Achievement (in Grade Levels)',
-        nameTextStyle: {
-          fontFamily: 'SharpGrotesk-Medium20',
-          color: '#FFF',
-          fontSize: 12,
-          fontWeight: 'normal'
-        }
       },
       xAxis: {
         min: -4,
         max: 3.5,
         name: 'Poor/Disadvantaged to Affluent/Advantaged',
-        nameTextStyle: {
-          fontFamily: 'SharpGrotesk-Medium20',
-          color: '#FFF',
-          fontSize: 12,
-          fontWeight: 'normal'
-        }
       },
       series: [
         { id: 'base' },
         {
           id: 'highlighted',
-          itemStyle: {
-            borderWidth: 2,
-            borderColor: '#042965', // 'rgba(0,0,0,1)',
-            color: 'rgba(255,255,0,0.95)'
-          },
-          label: {
-            show: true,
-            position: 'right',
-            backgroundColor: 'rgba(255,255,0,0.97)',
-            borderColor: '#042965',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'MaisonNeue-Medium',
-            lineHeight: 28,
-            padding: [6, 8],
-            borderRadius: 3,
-            color: '#042965',
-            formatter: function(item) {
-              return highlight[item.value[3]]
-            }
-          }
+          itemStyle: highlightedItemStyle,
+          label: highlightedLabel(highlight),
+          zlevel: 500,
         },
         {
           type:'scatter',
             markLine: {
               animation: false,
               silent: true,
-              label: {
-                position: 'middle',
-                fontFamily: 'MaisonNeue-Medium',
-                fontWeight: '600',
-                fontSize: 12,
-                textBorderWidth: 3,
-                textBorderColor: '#042965',
-                textShadowColor: '#042965',
-                formatter: function(value) {
-                  return value.name
-                }
-              },
               data: [
               [
                 {
@@ -502,9 +424,9 @@ var state3 = function(scatterplot) {
                   coord: [-3.5, 4],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -546,6 +468,7 @@ var state4 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -556,67 +479,25 @@ var state4 = function(scatterplot) {
       min: 1, // -0.5,
       max: 10, // 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -624,9 +505,9 @@ var state4 = function(scatterplot) {
                   coord: [-3.5, 5],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -674,6 +555,7 @@ var state5 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -684,67 +566,37 @@ var state5 = function(scatterplot) {
       min: 2, // -0.5,
       max: 11, // 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
+      // nameTextStyle: {
+      //   fontFamily: 'SharpGrotesk-Medium20',
+      //   color: '#FFF',
+      //   fontSize: 12,
+      //   fontWeight: 'normal'
+      // }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
+      // nameTextStyle: {
+      //   fontFamily: 'SharpGrotesk-Medium20',
+      //   color: '#FFF',
+      //   fontSize: 12,
+      //   fontWeight: 'normal'
+      // }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -752,9 +604,9 @@ var state5 = function(scatterplot) {
                   coord: [-3.5, 6],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965',
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -802,6 +654,7 @@ var state6 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -812,67 +665,25 @@ var state6 = function(scatterplot) {
       min: 3, // -0.5,
       max: 12, // 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -880,9 +691,9 @@ var state6 = function(scatterplot) {
                   coord: [-3.5, 7],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -930,6 +741,7 @@ var state7 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -940,67 +752,25 @@ var state7 = function(scatterplot) {
       min: 4, // -0.5,
       max: 13, // 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -1008,9 +778,9 @@ var state7 = function(scatterplot) {
                   coord: [-3.5, 8],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1058,6 +828,7 @@ var state8 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -1068,67 +839,25 @@ var state8 = function(scatterplot) {
       min: -1, // -0.5,
       max: 8, // 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -1136,9 +865,9 @@ var state8 = function(scatterplot) {
                   coord: [-3.5, 3],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1186,6 +915,7 @@ var state9 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -1196,67 +926,25 @@ var state9 = function(scatterplot) {
       min: 0, // -0.5,
       max: 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -1264,9 +952,9 @@ var state9 = function(scatterplot) {
                   coord: [-3.5, 4],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1314,6 +1002,7 @@ var state10 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -1324,67 +1013,25 @@ var state10 = function(scatterplot) {
       min: 1, // -0.5,
       max: 10, // 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -1392,9 +1039,9 @@ var state10 = function(scatterplot) {
                   coord: [-3.5, 5],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1442,6 +1089,7 @@ var state11 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -1452,67 +1100,25 @@ var state11 = function(scatterplot) {
       min: 2, // -0.5,
       max: 11, // 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -1520,9 +1126,9 @@ var state11 = function(scatterplot) {
                   coord: [-3.5, 6],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1570,6 +1176,7 @@ var state12 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -1580,67 +1187,25 @@ var state12 = function(scatterplot) {
       min: 3, // -0.5,
       max: 12, // 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -1648,9 +1213,9 @@ var state12 = function(scatterplot) {
                   coord: [-3.5, 7],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965',
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1698,6 +1263,7 @@ var state13 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
@@ -1708,67 +1274,25 @@ var state13 = function(scatterplot) {
       min: 4, // -0.5,
       max: 13, // 9,
       name: 'Average Achievement (in Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
               [
                 {
@@ -1776,9 +1300,9 @@ var state13 = function(scatterplot) {
                   coord: [-3.5, 8],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965',
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1824,74 +1348,47 @@ var state14 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
       left: '50%',
       top: '10px',
     },
+    grid: {
+      top: 10,
+      bottom: 26,
+      left: 10,
+      right: 26,
+      zlevel: 100,
+      height: 'auto',// 280,
+      width: 'auto', // 'auto',
+      containLabel: true
+    },
     yAxis: {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
+      nameGap: 36
     },
     xAxis: {
       min: -1,
       max: 7,
       name: 'Average Grade 3 Achievement',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              backgroundColor: 'rgba(255, 255, 255, 0.75)',
-              borderRadius: 2,
-              padding: 5,
-              color: '#052965',
-              shadowColor: 'transparent',
-              textShadowColor: 'transparent',
-              textBorderColor: 'transparent'
-            },
             data: [
               [
                 {
@@ -1899,9 +1396,9 @@ var state14 = function(scatterplot) {
                   coord: [3, 1.4],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1915,9 +1412,9 @@ var state14 = function(scatterplot) {
                   coord: [0, 1.4],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1931,9 +1428,9 @@ var state14 = function(scatterplot) {
                   coord: [6, 1.4],
                   symbol: 'none',
                   lineStyle: {
-                    color: '#fff', // '#adadad'
+                    color: '#052965', // '#adadad'
                     type: 'solid',
-                    width: 2
+                    width: 1
                   },
                 },
                 {
@@ -1956,70 +1453,6 @@ var state14 = function(scatterplot) {
   }
 }
 
-function getQuadrantSeries(quadrant, xAxis, yAxis, xData, yData) {
-  // Quadrants clockwise from upper left:
-  // 1 | 2
-  // 4 | 3
-  //
-  // console.log('getQuadrantSeries');
-  // An array of arrays.
-  var xSorted = [];
-  // An array of district IDs.
-  var xySorted = [];
-  if (quadrant === 1 || quadrant === 4) {
-    // Filter for less than x
-    for (let i = 0; i < xData.length; i++) {
-      if (xData[i][1] < xAxis) {
-        xSorted.push(xData[i]);
-      }
-    }
-  } else {
-    // Filter for greater than x
-    for (let i = 0; i < xData.length; i++) {
-      if (xData[i][1] > xAxis) {
-        xSorted.push(xData[i]);
-      }
-    }
-  }
-  // console.log('xSorted');
-  // console.log(xSorted);
-
-  if (quadrant === 1 || quadrant === 2) {
-    // Filter for greater than y
-    for (let i = 0; i < xSorted.length; i++) {
-      // var yItem = yData.filter(el => el[0] == xSorted[i][0]);
-      var yItem = [];
-      for (let a = 0; a < yData.length; a++) {
-        if (yData[a][0] == xSorted[i][0]) {
-          yItem.push(yData[a]);
-          break;
-        }
-      }
-      if (yItem.length > 0 && yItem[0][1] > yAxis) {
-        // console.log('greater than y');
-        xySorted.push(xSorted[i][0]);
-      }
-    }
-  } else {
-    // Filter for less than y
-    for (let i = 0; i < xSorted.length; i++) {
-      var yItem = [];
-      for (let a = 0; a < yData.length; a++) {
-        if (yData[a][0] == xSorted[i][0]) {
-          yItem.push(yData[a]);
-          break;
-        }
-      }
-      if (yItem.length > 0 && yItem[0][1] < yAxis) {
-        // console.log('greater than y');
-        xySorted.push(xSorted[i][0]);
-      }
-    }
-  }
-  // console.log(xySorted);
-  return xySorted;
-}
-
 /** State 15, 2nd quadrant, upper right */
 var state15 = function(scatterplot) {
   // get current echart options
@@ -2037,8 +1470,6 @@ var state15 = function(scatterplot) {
   }
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
-  // var quadrant = getQuadrantSeries(2, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
-
   // Update title and subtext placeholders
   Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
@@ -2047,35 +1478,34 @@ var state15 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
       left: '50%',
       top: '10px',
     },
+    grid: {
+      top: 10,
+      bottom: 26,
+      left: 10,
+      right: 26,
+      zlevel: 100,
+      height: 'auto',// 280,
+      width: 'auto', // 'auto',
+      containLabel: true
+    },
     yAxis: {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
+      nameGap: 36
     },
     xAxis: {
       min: -1,
       max: 7,
       name: 'Average Grade 3 Achievement',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
-
     series: [
       { id: 'base' },
       {
@@ -2133,42 +1563,15 @@ var state15 = function(scatterplot) {
       },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              backgroundColor: 'rgba(255, 255, 255, 0.75)',
-              borderRadius: 2,
-              padding: 5,
-              color: '#052965',
-              shadowColor: 'transparent',
-              textShadowColor: 'transparent',
-              textBorderColor: 'transparent'
-            },
             data: [
               [
                 {
@@ -2179,27 +1582,9 @@ var state15 = function(scatterplot) {
                     show: false
                   },
                   lineStyle: {
-                    color: {
-                      type: 'linear',
-                      x: 0,
-                      y: 0,
-                      x2: 0,
-                      y2: 1,
-                      colorStops: [{
-                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
-                      },
-                      {
-                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)'
-                      },
-                      {
-                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)'
-                      },
-                      {
-                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
-                      }],
-                      global: false // false by default
-                    },
-                    type: 'solid'
+                    color: '#052965',
+                    type: 'solid',
+                    width: 1
                   }
                 },
                 {
@@ -2210,34 +1595,15 @@ var state15 = function(scatterplot) {
               [
                 {
                   name: '', // x axis
-                  coord: [-0.5, 1],
+                  coord: [-1, 1],
                   symbol: 'none',
                   label: {
                     show: false
                   },
                   lineStyle: {
-                    // color: '#fff', // 'rgba(0,0,0,0.6)'
-                    color: {
-                      type: 'linear',
-                      x: 0,
-                      y: 0,
-                      x2: 1,
-                      y2: 0,
-                      colorStops: [{
-                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // 'red' // color at 0% position
-                      },
-                      {
-                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                      },
-                      {
-                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                      },
-                      {
-                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // 'blue' // color at 100% position
-                      }],
-                      global: false // false by default
-                    },
-                    type: 'solid'
+                    color: '#052965',
+                    type: 'solid',
+                    width: 1
                   }
                 },
                 {
@@ -2250,24 +1616,25 @@ var state15 = function(scatterplot) {
         },
     {
       id: 'markarea',
+      silent: true,
       type: 'scatter',
       name: 'High early opportunity,\nhigh growth opportunity',
       markArea: {
         animation: true,
         itemStyle: {
           borderType: 'solid',
-          borderWidth: 2,
+          borderWidth: 0.5,
           opacity: .75,
-          borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
-          color: 'rgba(145, 115, 255, 1)',
+          borderColor: 'rgba(125, 65, 187, 1)', // 'rgba(0,0,0,1)',
+          color: 'rgba(188, 114, 255, 1)',
         },
         label: {
           show: true,
           position: 'insideTopRight',
           verticalAlign: 'top',
           padding: [5, 5, 0, 0],
-          color: '#fff',
-          fontWeight: 600,
+          color: '#052965',
+          fontWeight: 500,
           fontFamily: 'MaisonNeue-Medium',
         },
         data: [
@@ -2321,22 +1688,28 @@ var state16 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
       left: '50%',
       top: '10px',
     },
+    grid: {
+      top: 10,
+      bottom: 26,
+      left: 10,
+      right: 26,
+      zlevel: 100,
+      height: 'auto',// 280,
+      width: 'auto', // 'auto',
+      containLabel: true
+    },
     yAxis: {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
+      nameGap: 36
     },
     xAxis: {
       min: -1,
@@ -2353,23 +1726,24 @@ var state16 = function(scatterplot) {
       { id: 'base' },
       {
         id: 'markarea',
+        silent: true,
         type: 'scatter',
         name: 'High early opportunity,\nhigh growth opportunity',
         markArea: {
           itemStyle: {
             borderType: 'solid',
-            borderWidth: 2,
+            borderWidth: 0.5,
             opacity: .75,
-            borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
-            color: 'rgba(145, 115, 255, 1)',
+            borderColor: '#7D38BB',
+            color: '#BC72FF',
           },
           label: {
             show: true,
             position: 'insideBottomLeft',
             verticalAlign: 'bottom',
             padding: [0, 0, 5, 5],
-            color: '#fff',
-            fontWeight: 600,
+            color: '#052965',
+            fontWeight: 500,
             fontFamily: 'MaisonNeue-Medium',
           },
           data: [
@@ -2394,53 +1768,12 @@ var state16 = function(scatterplot) {
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
         z: 2,
-        // markPoint: {
-        //   itemStyle: {
-        //     color: 'transparent',
-        //   },
-        //   data: [
-        //     {
-        //       value: 'Low early opportunity,\nlow growth opportunity',
-        //       xAxis: 0.5,
-        //       yAxis: 0.6,
-        //       symbol: 'rect',
-        //       // positon: [3, 1.6],
-        //       symbolSize: [100, 50],
-        //       label: {
-        //         show: true,
-        //         position: 'inside',
-        //         verticalAlign: 'middle',
-        //         color: '#fff',
-        //         fontWeight: 600,
-        //         fontFamily: 'MaisonNeue-Medium',
-        //       },
-        //     }
-        //   ],
-        // },
       },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
@@ -2448,13 +1781,8 @@ var state16 = function(scatterplot) {
             animation: false,
             silent: true,
             label: {
-              backgroundColor: 'rgba(255, 255, 255, 0.75)',
-              borderRadius: 2,
               padding: 5,
               color: '#052965',
-              shadowColor: 'transparent',
-              textShadowColor: 'transparent',
-              textBorderColor: 'transparent'
             },
             data: [
               [
@@ -2466,27 +1794,9 @@ var state16 = function(scatterplot) {
                     show: false
                   },
                   lineStyle: {
-                    color: {
-                      type: 'linear',
-                      x: 0,
-                      y: 0,
-                      x2: 0,
-                      y2: 1,
-                      colorStops: [{
-                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
-                      },
-                      {
-                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)'
-                      },
-                      {
-                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)'
-                      },
-                      {
-                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
-                      }],
-                      global: false // false by default
-                    },
-                    type: 'solid'
+                    color: '#052965',
+                    type: 'solid',
+                    width: 1
                   }
                 },
                 {
@@ -2497,34 +1807,15 @@ var state16 = function(scatterplot) {
               [
                 {
                   name: '', // x axis
-                  coord: [-0.5, 1],
+                  coord: [-1, 1],
                   symbol: 'none',
                   label: {
                     show: false
                   },
                   lineStyle: {
-                    // color: '#fff', // 'rgba(0,0,0,0.6)'
-                    color: {
-                      type: 'linear',
-                      x: 0,
-                      y: 0,
-                      x2: 1,
-                      y2: 0,
-                      colorStops: [{
-                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // 'red' // color at 0% position
-                      },
-                      {
-                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                      },
-                      {
-                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                      },
-                      {
-                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // 'blue' // color at 100% position
-                      }],
-                      global: false // false by default
-                    },
-                    type: 'solid'
+                    color: '#052965',
+                    type: 'solid',
+                    width: 1
                   }
                 },
                 {
@@ -2574,33 +1865,33 @@ var state17 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
       left: '50%',
       top: '10px',
     },
+    grid: {
+      top: 10,
+      bottom: 26,
+      left: 10,
+      right: 26,
+      zlevel: 100,
+      height: 'auto',// 280,
+      width: 'auto', // 'auto',
+      containLabel: true
+    },
     yAxis: {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
+      nameGap: 36
     },
     xAxis: {
       min: -1,
       max: 7,
       name: 'Average Grade 3 Achievement',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
@@ -2614,49 +1905,27 @@ var state17 = function(scatterplot) {
           color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
         },
         z: 2,
-        // markPoint: {
-        //   itemStyle: {
-        //     color: 'transparent',
-        //   },
-        //   data: [
-        //     {
-        //       value: 'High early opportunity,\nlow growth opportunity',
-        //       xAxis: 5.5,
-        //       yAxis: 0.6,
-        //       symbol: 'rect',
-        //       // positon: [3, 1.6],
-        //       symbolSize: [100, 50],
-        //       label: {
-        //         show: true,
-        //         position: 'inside',
-        //         verticalAlign: 'middle',
-        //         color: '#fff',
-        //         fontWeight: 600,
-        //         fontFamily: 'MaisonNeue-Medium',
-        //       },
-        //     }
-        //   ],
-        // }, // End markPoint
       },
       {
         id: 'markarea',
+        silent: true,
         type: 'scatter',
         name: 'High early opportunity,\nlow growth opportunity',
         markArea: {
           itemStyle: {
             borderType: 'solid',
-            borderWidth: 2,
+            borderWidth: 0.5,
             opacity: .75,
-            borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
-            color: 'rgba(145, 115, 255, 1)',
+            borderColor: '#7D38BB', // 'rgba(0,0,0,1)',
+            color: '#BC72FF',
           },
           label: {
             show: true,
             position: 'insideBottomRight',
             verticalAlign: 'bottom',
             padding: [0, 5, 5, 0],
-            color: '#fff',
-            fontWeight: 600,
+            color: '#052965',
+            fontWeight: 500,
             fontFamily: 'MaisonNeue-Medium',
           },
           data: [
@@ -2673,42 +1942,15 @@ var state17 = function(scatterplot) {
       }, // End markarea
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              backgroundColor: 'rgba(255, 255, 255, 0.75)',
-              borderRadius: 2,
-              padding: 5,
-              color: '#052965',
-              shadowColor: 'transparent',
-              textShadowColor: 'transparent',
-              textBorderColor: 'transparent'
-            },
             data: [
               [
                 {
@@ -2719,27 +1961,9 @@ var state17 = function(scatterplot) {
                     show: false
                   },
                   lineStyle: {
-                    color: {
-                      type: 'linear',
-                      x: 0,
-                      y: 0,
-                      x2: 0,
-                      y2: 1,
-                      colorStops: [{
-                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
-                      },
-                      {
-                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)'
-                      },
-                      {
-                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)'
-                      },
-                      {
-                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
-                      }],
-                      global: false // false by default
-                    },
-                    type: 'solid'
+                    color: '#052965',
+                    type: 'solid',
+                    width: 1
                   }
                 },
                 {
@@ -2750,34 +1974,15 @@ var state17 = function(scatterplot) {
               [
                 {
                   name: '', // x axis
-                  coord: [-0.5, 1],
+                  coord: [-1, 1],
                   symbol: 'none',
                   label: {
                     show: false
                   },
                   lineStyle: {
-                    // color: '#fff', // 'rgba(0,0,0,0.6)'
-                    color: {
-                      type: 'linear',
-                      x: 0,
-                      y: 0,
-                      x2: 1,
-                      y2: 0,
-                      colorStops: [{
-                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // 'red' // color at 0% position
-                      },
-                      {
-                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                      },
-                      {
-                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                      },
-                      {
-                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // 'blue' // color at 100% position
-                      }],
-                      global: false // false by default
-                    },
-                    type: 'solid'
+                    color: '#052965',
+                    type: 'solid',
+                    width: 1
                   }
                 },
                 {
@@ -2827,33 +2032,33 @@ var state18 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textAlign: 'center',
       left: '50%',
       top: '10px',
     },
+    grid: {
+      top: 10,
+      bottom: 26,
+      left: 10,
+      right: 26,
+      zlevel: 100,
+      height: 'auto',// 280,
+      width: 'auto', // 'auto',
+      containLabel: true
+    },
     yAxis: {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
+      nameGap: 36
     },
     xAxis: {
       min: -1,
       max: 7,
       name: 'Average Grade 3 Achievement',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
-      }
     },
     series: [
       { id: 'base' },
@@ -2863,35 +2068,14 @@ var state18 = function(scatterplot) {
         symbolSize: dataSeries.symbolSize,
         itemStyle: {
           borderWidth: 1,
-          borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
-          color: 'rgba(145, 115, 255, 1)', // '#b6a2de' // 'rgba(255,0,0,0.25)'
+          borderColor: 'rgba(20, 33, 156, 1)',
+          color: 'rgba(145, 115, 255, 1)',
         },
         z: 2,
-        // markPoint: {
-        //   itemStyle: {
-        //     color: 'transparent',
-        //   },
-        //   data: [
-        //     {
-        //       value: 'Low early opportunity,\nhigh growth opportunity',
-        //       xAxis: 0.5,
-        //       yAxis: 1.4,
-        //       symbol: 'rect',
-        //       symbolSize: [100, 50],
-        //       label: {
-        //         show: true,
-        //         position: 'inside',
-        //         verticalAlign: 'middle',
-        //         color: '#fff',
-        //         fontWeight: 600,
-        //         fontFamily: 'MaisonNeue-Medium',
-        //       },
-        //     }
-        //   ],
-        // },// end markPoint
       },
       {
         id: 'markarea',
+        silent: true,
         type: 'scatter',
         name: 'Low early opportunity,\nhigh growth opportunity',
         markArea: {
@@ -2899,16 +2083,16 @@ var state18 = function(scatterplot) {
             borderType: 'solid',
             borderWidth: 2,
             opacity: .75,
-            borderColor: 'rgba(20, 33, 156, 1)', // 'rgba(0,0,0,1)',
-            color: 'rgba(145, 115, 255, 1)',
+            borderColor: '#7D38BB',
+            color: '#BC72FF',
           },
           label: {
             show: true,
             position: 'insideTopLeft',
             verticalAlign: 'top',
             padding: [5, 0, 0, 5],
-            color: '#fff',
-            fontWeight: 600,
+            color: '#052965',
+            fontWeight: 500,
             fontFamily: 'MaisonNeue-Medium',
           },
           data: [
@@ -2925,42 +2109,15 @@ var state18 = function(scatterplot) {
       }, // End markarea
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              backgroundColor: 'rgba(255, 255, 255, 0.75)',
-              borderRadius: 2,
-              padding: 5,
-              color: '#052965',
-              shadowColor: 'transparent',
-              textShadowColor: 'transparent',
-              textBorderColor: 'transparent'
-            },
             data: [
               [
                 {
@@ -2971,27 +2128,9 @@ var state18 = function(scatterplot) {
                     show: false
                   },
                   lineStyle: {
-                    color: {
-                      type: 'linear',
-                      x: 0,
-                      y: 0,
-                      x2: 0,
-                      y2: 1,
-                      colorStops: [{
-                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
-                      },
-                      {
-                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)'
-                      },
-                      {
-                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)'
-                      },
-                      {
-                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
-                      }],
-                      global: false // false by default
-                    },
-                    type: 'solid'
+                    color: '#052965',
+                    type: 'solid',
+                    width: 1
                   }
                 },
                 {
@@ -3008,28 +2147,9 @@ var state18 = function(scatterplot) {
                     show: false
                   },
                   lineStyle: {
-                    // color: '#fff', // 'rgba(0,0,0,0.6)'
-                    color: {
-                      type: 'linear',
-                      x: 0,
-                      y: 0,
-                      x2: 1,
-                      y2: 0,
-                      colorStops: [{
-                          offset: 0, color: 'rgba(255, 255, 255, 0.18)' // 'red' // color at 0% position
-                      },
-                      {
-                        offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                      },
-                      {
-                        offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // 'blue' // color at 100% position
-                      },
-                      {
-                          offset: 1, color: 'rgba(255, 255, 255, 0.18)' // 'blue' // color at 100% position
-                      }],
-                      global: false // false by default
-                    },
-                    type: 'solid'
+                    color: '#052965',
+                    type: 'solid',
+                    width: 1
                   }
                 },
                 {
@@ -3075,6 +2195,7 @@ var state19 = function(scatterplot) {
 
   const baseOverrides = {
     title: {
+      show: false,
       text: Title.text,
       subtext: Title.subtext,
       textStyle: {
@@ -3086,16 +2207,20 @@ var state19 = function(scatterplot) {
       top: '10px',
     },
     grid: {
-      right: 34,
+      top: 10,
+      bottom: 26,
+      left: 10,
+      right: 26,
+      zlevel: 100,
+      height: 'auto',// 280,
+      width: 'auto', // 'auto',
+      containLabel: true
     },
     yAxis: {
       min: 0.4,
       max: 1.6,
       name: 'Years of Growth per Grade',
-      nameTextStyle: { // Styles for x and y axis labels
-        fontSize: 12,
-        lineHeight: 14
-      },
+      nameGap: 36
     },
     xAxis: {
       min: -4,
@@ -3106,45 +2231,15 @@ var state19 = function(scatterplot) {
       { id: 'base' },
       {
         id: 'highlighted',
-        itemStyle: {
-          borderWidth: 2,
-          borderColor: '#042965', // 'rgba(0,0,0,1)',
-          color: 'rgba(255,255,0,0.95)'
-        },
-        label: {
-          show: true,
-          position: 'right',
-          backgroundColor: 'rgba(255,255,0,0.97)',
-          borderColor: '#042965',
-          fontSize: 12,
-          fontWeight: 600,
-          fontFamily: 'MaisonNeue-Medium',
-          lineHeight: 28,
-          padding: [6, 8],
-          borderRadius: 3,
-          color: '#042965',
-          formatter: function(item) {
-            return highlight[item.value[3]]
-          }
-        }
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
       },
       {
         type:'scatter',
           markLine: {
             animation: false,
             silent: true,
-            label: {
-              position: 'middle',
-              fontFamily: 'MaisonNeue-Medium',
-              fontWeight: '600',
-              fontSize: 12,
-              textBorderWidth: 3,
-              textBorderColor: '#042965',
-              textShadowColor: '#042965',
-              formatter: function(value) {
-                return value.name
-              }
-            },
             data: [
             [
               {
@@ -3152,8 +2247,9 @@ var state19 = function(scatterplot) {
                 coord: [3, 1.25],
                 symbol: 'none',
                 lineStyle: {
-                  color: '#fff', // '#adadad'
-                  type: 'solid'
+                  color: '#052965', // '#adadad'
+                  type: 'solid',
+                  width: 0.5
                 },
               },
               {
@@ -3167,8 +2263,9 @@ var state19 = function(scatterplot) {
               coord: [1, 0.9],
               symbol: 'none',
               lineStyle: {
-                color: '#fff', // '#adadad'
-                type: 'solid'
+                color: '#052965',
+                type: 'solid',
+                width: 0.5
               },
             },
             {
@@ -3186,27 +2283,9 @@ var state19 = function(scatterplot) {
               // }
               lineStyle: {
                 // color: '#fff', // 'rgba(0,0,0,0.6)'
-                color: {
-                  type: 'linear',
-                  x: 0,
-                  y: 0,
-                  x2: 1,
-                  y2: 0,
-                  colorStops: [{
-                      offset: 0, color: 'rgba(255, 255, 255, 0.18)' // color at 0% position
-                  },
-                  {
-                    offset: 0.25, color: 'rgba(255, 255, 255, 0.78)' // color at 25% position
-                  },
-                  {
-                    offset: 0.75, color: 'rgba(255, 255, 255, 0.78)' // color at 50% position
-                  },
-                  {
-                      offset: 1, color: 'rgba(255, 255, 255, 0.18)' // color at 100% position
-                  }],
-                  global: false // false by default
-                },
-                type: 'solid'
+                color: '#052965',
+                type: 'solid',
+                width: 1
               }
             },
             {

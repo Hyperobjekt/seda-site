@@ -21135,8 +21135,8 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   body.type-posts .dyn-article .state-desc-wrapper p,
   body.type-posts .dyn-article .state-desc-wrapper ul,
   body.type-posts .dyn-article .state-desc-wrapper li {
-    font-size: 1.4rem;
-    line-height: 2.1rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
   }
 }
 
@@ -21146,8 +21146,8 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   body.type-posts .dyn-article .state-desc-wrapper li {
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.3rem;
+    line-height: 2.1rem;
     margin-top: 3.2rem;
   }
 }
@@ -21156,8 +21156,8 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   body.type-posts .dyn-article .state-desc-wrapper p,
   body.type-posts .dyn-article .state-desc-wrapper ul,
   body.type-posts .dyn-article .state-desc-wrapper li {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
     margin-top: 3.2rem;
   }
 }
@@ -21166,8 +21166,8 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
   body.type-posts .dyn-article .state-desc-wrapper p,
   body.type-posts .dyn-article .state-desc-wrapper ul,
   body.type-posts .dyn-article .state-desc-wrapper li {
-    font-size: 1.7rem;
-    line-height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
     margin-top: 3.2rem;
   }
 }
@@ -21179,7 +21179,7 @@ body.type-posts .column-scatterplot {
 body.type-posts .column-scatterplot .plot-parent {
   position: sticky;
   position: -webkit-sticky;
-  top: 202px;
+  top: 84px;
   padding: 0 2rem;
   height: 360px;
   min-width: 300px;
@@ -21195,40 +21195,50 @@ body.type-posts .column-scatterplot .plot-parent .subtitle {
 }
 
 body.type-posts .column-scatterplot .plot-parent .title {
-  font-size: 2.4rem;
-  line-height: 2.8rem;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  letter-spacing: 0.018rem;
+  margin: 0 auto;
 }
 
 body.type-posts .column-scatterplot .plot-parent .subtitle {
-  font-size: 1.8rem;
+  font-family: "MaisonNeue-Medium", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: 0.014rem;
+  padding-top: 0.8rem;
   margin-bottom: 1rem;
+  margin: 0 auto;
 }
 
 body.type-posts .column-scatterplot .plot-parent .rectangle {
-  background: #042965;
-  border: 10px solid #042965;
+  border: none;
   position: sticky;
   position: -webkit-sticky;
   top: 202px;
-  background: #042965;
+  background: transparent;
   padding: 2rem;
-  height: 361px;
-  border: 10px solid #042965;
+  height: 330px;
   width: 100%;
 }
 
 body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input {
-  background: #F7FAFF;
-  border: 1px solid #E7E8ED;
+  background: #f5fdff;
+  background-image: url("/images/magnify.svg");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 17px 47%;
+  padding: 16px 30px 12px 44px;
   border-radius: 0;
-  border-bottom: 1px solid #5D76A0;
+  border: none;
   color: #173B75;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
 }
 
 body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input::placeholder, body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input::-webkit-input-placeholder {
-  color: #173B75;
+  color: #173b64;
+  line-height: 1.6rem;
 }
 
 body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input.react-autosuggest__input--open {
@@ -21236,20 +21246,24 @@ body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input
 }
 
 body.type-posts .react-autosuggest__input-wrapper .react-autosuggest__clear {
+  top: 7.5px;
+  color: transparent;
   background-color: transparent;
-  top: 10px;
+  background-image: url("/images/input-clear.svg");
+  background-repeat: no-repeat;
+  background-position: center 40%;
 }
 
 body.type-posts .react-autosuggest__suggestions-container {
-  border: 1px solid #5D76A0;
+  border: 1px solid #5d76a0;
 }
 
 body.type-posts .react-autosuggest__suggestions-container .react-autosuggest__suggestion:hover {
-  background-color: #DBE8FF;
+  background-color: #f5fdff;
 }
 
 body.type-posts .react-autosuggest__suggestions-container .react-autosuggest__suggestion {
-  color: #173B75;
+  color: #173b64;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
 }

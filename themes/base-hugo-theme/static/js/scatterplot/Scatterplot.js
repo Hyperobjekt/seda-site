@@ -14,6 +14,8 @@ function Scatterplot(container, props) {
     '#59678c', '#c9ab00', '#7eb00a', '#6f5553', '#c14089'
   ];
 
+  var axisBlue = '#547892';
+
   var theme = {
     color: colorPalette,
     title: {
@@ -31,18 +33,6 @@ function Scatterplot(container, props) {
       },
       textAlign: 'center'
     },
-    yAxis: {
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
-      }
-    },
-    xAxis: {
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FF003E',
-      }
-    },
     visualMap: {
       itemWidth: 15,
       color: ['#5ab1ef', '#e0ffff']
@@ -55,16 +45,21 @@ function Scatterplot(container, props) {
       }
     },
     tooltip: {
-      backgroundColor: '#042965',
-      borderColor: 'rgba(255, 255, 255, 0.5)', // '#fff', // '#042965',
+      backgroundColor: 'rgba(3, 18, 50, 80%)',
       padding: [6, 10],
-      borderRadius: 4,
-      borderWidth: 0.5,
-      // extraCssText: 'box-shadow: 0px 0px 3px #2ec7c9;', // #ffb980
       textStyle: {
         color: '#fff', // '#dc69aa',
         fontWeight: '500',
-        fontFamily: 'MaisonNeue-Medium'
+        fontFamily: 'SharpGrotesk-Medium20',
+        rich: {
+          span: {
+            fontFamily: 'SharpGrotesk-Medium20',
+          },
+          small: {
+            fontFamily: 'MaisonNeue-Medium',
+            fontSize: 6
+          },
+        }
       },
       axisPointer: {
         type: 'line',
@@ -80,7 +75,13 @@ function Scatterplot(container, props) {
       }
     },
     grid: {
-      borderColor: '#fff'
+      top: 10,
+      bottom: 32,
+      left: 10,
+      right: 32,
+      // width: 'auto',
+      // height: 'auto',
+      containLabel: true
     },
     valueAxis: {
       axisLine: {
@@ -105,7 +106,7 @@ function Scatterplot(container, props) {
       axisLabel: { // Styles for grid numbers
         inside: false,
         textVerticalAlign: 'middle',
-        color: '#fff',
+        color: axisBlue, // '#fff',
         fontFamily: 'MaisonNeue-Medium',
         fontSize: 12,
       }
@@ -117,10 +118,13 @@ function Scatterplot(container, props) {
     },
     scatter: {
       symbol: 'circle',
+      color: '#94E4FE',
       itemStyle: {
-        borderWidth: 0.7,
-        borderColor: 'rgba(0,99,88,1)', // '#006358', // 'rgba(0,0,0,0.5)',
-        borderOpacity: 0,
+        borderWidth: 0.5,
+        borderColor: '#81C2D7',
+        borderType: 'solid',
+        opacity: .5
+        // borderOpacity: 0,
       }
     },
     graph: {
@@ -150,37 +154,37 @@ function Scatterplot(container, props) {
           textAlign: 'center'
         },
         grid: {
-          top: 20,
-          bottom: 20,
-          left: 20,
-          right: 36,
+          top: 10,
+          bottom: 26,
+          left: 10,
+          right: 26,
           zlevel: 100,
-          height: 280
+          height: 'auto',// 280,
+          width: 'auto', // 'auto',
+          containLabel: true
         },
         yAxis: {
-          nameGap: 20,
           position: 'right',
           splitLine: {
             show: false,
           },
+          nameGap: 26,
           nameTextStyle: {
-            fontFamily: 'SharpGrotesk-Medium20',
-            color: '#FFF',
-            fontSize: 12,
-          },
-          axisLabel: {
-            align: 'right',
+            fontFamily: 'MaisonNeue-Medium',
+            color: axisBlue,
+            fontWeight: 'normal',
+            fontSize: 13
           },
           zlevel: 101,
         },
         xAxis: {
-          nameGap: 26, // 26,
-          // bottom: 16,
+          nameGap: 26,
           nameTextStyle: {
-            fontFamily: 'SharpGrotesk-Medium20',
-            color: '#FFF',
-            fontSize: 12,
-            // fontWeight: 'normal'
+            fontFamily: 'MaisonNeue-Medium',
+            color: axisBlue,
+            fontSize: 13,
+            fontWeight: 'normal',
+            verticalAlign: 'bottom'
           },
           zlevel: 102,
         },
@@ -189,16 +193,23 @@ function Scatterplot(container, props) {
           // borderColor: '#fff',
           formatter: function(item) {
             const data = _self.data[_self.props.prefix];
-            const itemName =
-              data &&
-              data.name &&
-              data.name[item.value[3]] ?
-              data.name[item.value[3]] : 'Unavailable'
-            // console.log(data);
-            return itemName + '<br />'
-              + 'X: ' + item.value[0] + "\n"
-              + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1]
-
+            let returnString = null;
+            if (!!item && !!item.value && !!item.value[3]) {
+              const itemName =
+                data &&
+                data.name &&
+                data.name[item.value[3]] ?
+                data.name[item.value[3]] : 'Unavailable'
+              // itemValue = item.value[3] ? item.value[3] : item.name;
+              returnString = '<span>' + itemName + '</span><br>'
+                + '<small>X: ' + item.value[0]
+                + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1] + '</small>';
+            } else {
+              // console.log(item);
+              // Send back a different string for the markarea tooltip.
+              returnString = '<span>' + item.data.name + '</span><br>'
+            }
+            return returnString;
           }
         },
       }
@@ -364,4 +375,3 @@ Scatterplot.prototype.getSeriesDataInRange = function(values, axis, range) {
     return v[index] > range.min && v[index] < range.max;
   })
 }
-

@@ -5,10 +5,7 @@
   <body class="h-100 {{ if .Page.Kind }} kind-{{ .Page.Kind }} {{ end }} {{ if .Page.Type }} type-{{ .Page.Type }} {{ end }} {{ lower (replace .Page.Title " " "-") }} {{ if eq (lower .Page.Title) "home" }}scroll-top {{ else }}scroll-top not-home{{ end}}">
     <!-- {{ if eq (lower .Page.Title) "home" }}scroll-top{{ end}} -->
     <!-- Removed classes "d-flex flex-column" from body element 2019-01-25 -->
-    <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RMFK5W"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+ 
     <div class="container-fluid p-0 parent">
       {{ partial "nav.html" . }}
       <main id="main">
@@ -25,6 +22,6 @@
   
 
     {{ partial "script.html" . }}
-    {{ template "_internal/google_analytics_async.html" . }}
+  
   </body>
 </html>

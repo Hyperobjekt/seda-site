@@ -18302,8 +18302,8 @@ body.home #main {
 
 @media (min-width: 768px) {
   .row.latest-explorations h3 {
-    font-size: 2.3rem;
-    line-height: 3.4rem;
+    font-size: 2rem;
+    line-height: 3rem;
     letter-spacing: .03rem;
   }
 }
@@ -18325,8 +18325,6 @@ body.home #main {
 }
 
 .row.latest-explorations .heading {
-  padding-top: 9.6rem;
-  padding-bottom: 3.2rem;
   text-align: center;
 }
 
@@ -18360,35 +18358,35 @@ body.home #main {
 
 .row.latest-explorations .card-container .card .card-body .card-title {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.7rem;
-  line-height: 2.8rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   letter-spacing: .009rem;
   margin-top: 1.8rem;
 }
 
 @media (min-width: 768px) {
   .row.latest-explorations .card-container .card .card-body .card-title {
-    font-size: 1.85rem;
-    line-height: 2.7rem;
-    letter-spacing: .024rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: .009rem;
   }
 }
 
 @media (min-width: 992px) {
   .row.latest-explorations .card-container .card .card-body .card-title {
     margin-top: 2.4rem;
-    font-size: 2rem;
-    line-height: 3rem;
-    letter-spacing: .03rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: .009rem;
   }
 }
 
 @media (min-width: 1280px) {
   .row.latest-explorations .card-container .card .card-body .card-title {
     margin-top: 3.2rem;
-    font-size: 2.3rem;
-    line-height: 3.4rem;
-    letter-spacing: .03rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .02rem;
   }
 }
 
@@ -18436,8 +18434,6 @@ body.home #main {
 }
 
 .row.latest-explorations .all-explorations, .row.latest-explorations .readmore {
-  padding-top: 3.2rem;
-  padding-bottom: 9.6rem;
   text-align: center;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.2rem;

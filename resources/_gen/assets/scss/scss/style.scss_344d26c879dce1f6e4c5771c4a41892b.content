@@ -17153,6 +17153,11 @@ nav.navbar > div {
   }
 }
 
+a:hover {
+  text-decoration: none;
+  color: #7086AB;
+}
+
 h1 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
 }

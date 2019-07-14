@@ -74,6 +74,13 @@ nav.navbar > div {
 }
 
 // Basic fonts and text styles
+
+a {
+  &:hover {
+    text-decoration: none;
+    color: #7086AB;
+  }
+}
 h1 {
   font-family: $sharpgrotesk-med-20;
 }

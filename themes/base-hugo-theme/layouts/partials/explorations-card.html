@@ -3,11 +3,11 @@
     {{ with $.Site.GetPage "page" "uploads/_index.md" }}
         {{ with .Resources.GetMatch $img }}
               {{$imgcrop := .Fill "118x112 Center" */}}
-              <img class="img-thumbnail" src="{{ .Params.image }}" width="" height="" alt="" tabindex="0">
+              <a href="{{ .Permalink }}"><img class="img-thumbnail" src="{{ .Params.image }}" width="" height="" alt="" tabindex="0"></a>
         {{/* end }}
     {{ end */}}
     <div class="card-body">
-        <h4 class="card-title" tabindex="0">{{ .Title }}</h4>
+        <a href="{{ .Permalink }}"><h4 class="card-title" tabindex="0">{{ .Title }}</h4></a>
         <hr>
         <author class="card-subtitle" tabindex="0">by {{ .Params.author }}</author>
         <div class="contents card-text" tabindex="0">{{ .Content | truncate 300 | plainify }}</div>

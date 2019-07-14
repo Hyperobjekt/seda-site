@@ -65,21 +65,21 @@
 </div>
 
 <div id="scrollTarget2" class="row latest-explorations m-0">
-    <div class="w-100 heading pt-lg-9">
-        <h3 tabindex="0">Latest Discoveries:</h3>
+    <div class="w-100 heading mt-7 mt-md-9">
+        <h3 tabindex="0" class="">Latest Discoveries:</h3>
     </div>
     {{ range $index, $element := first 2 (where .Site.Pages "Section" "posts") }}
         {{ if (eq $index 0) }}
-            <div class="card-container col-xs-12 col-md-5 col-xl-5 offset-md-1">
+            <div class="card-container col-xs-12 col-md-6 offset-md-0">
         {{ else }}
-            <div class="card-container col-xs-12 col-md-5 col-xl-5">
+            <div class="card-container col-xs-12 col-md-6">
         {{ end }}
 
-                {{ partial "explorations-card.html" .}}
+                {{ partial "explorations-card-home.html" .}}
 
             </div>
     {{ end }}
-    <div class="w-100 pb-lg-9 all-explorations">
+    <div class="w-100 all-explorations mb-8 mb-md-10">
         <a class="btn btn-custom2 py-2 px-4" href="{{ "/discoveries/" | absURL }}" tabindex="0" aria-label="Go to all Discoveries">See all discoveries</a>
     </div>
 </div>

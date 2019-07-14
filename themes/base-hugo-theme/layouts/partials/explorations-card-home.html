@@ -1,0 +1,13 @@
+<div class="card flex-row">
+    {{/* $img := strings.TrimPrefix "/uploads/" .Params.image }}
+    {{ with $.Site.GetPage "page" "uploads/_index.md" }}
+        {{ with .Resources.GetMatch $img }}
+              {{$imgcrop := .Fill "118x112 Center" */}}
+              <img class="img-thumbnail" src="{{ .Params.image }}" width="" height="" alt="" tabindex="0">
+        {{/* end }}
+    {{ end */}}
+    <div class="card-body">
+        <h4 class="card-title mt-0 ml-4" tabindex="0">{{ .Title }}</h4>
+        <a class="readmore ml-4" href="{{ .Permalink }}" tabindex="0">READ MORE</a>
+    </div>
+</div>

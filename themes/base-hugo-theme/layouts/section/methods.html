@@ -9,7 +9,7 @@
      </div>
 </div>
 
-<div class="row subnav d-md-none">
+<div class="row subnav d-md-none small-tab-nav">
      
         <div class="dropdown">
             <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,7 +26,7 @@
  
 </div>
 
-<div class="row subnav d-sm-none d-md-block">
+<div class="row subnav d-sm-none d-md-block large-tab-nav">
    
       <ul class="anchor-links col-md-8 mx-auto d-md-flex">
         <li >Jump to Section:</li>
@@ -44,7 +44,13 @@
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
         
         <div class="accordion">
-            {{ range .Site.Data.faq }}
+                {{ range (where .Site.RegularPages "Params.section" ("tabletest")) }}
+           
+                    {{ .Content  }}
+                {{ end }}    
+    
+            {{ range .Site.Data.methods }}
+                
                 {{ if eq .section "glossary" }} 
                 <!-- faq item -->
                 {{ partial "faqs" . }}

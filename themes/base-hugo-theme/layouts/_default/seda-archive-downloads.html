@@ -3,11 +3,32 @@
 <div id="hero" class="hero row" style="">
         <div class="hero-child row">
           <div class="column col-sm-10 offset-sm-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4 col-xl-6 offset-xl-3">
-            <h2 tabindex="0">Discoveries</h2>
-            <p tabindex="0">See what we're learning lorem ipsum dolor sit amet</p>
+            <h2 tabindex="0">SEDA Data Downloads</h2>
+            <p tabindex="0">Publicly available data files, technical documentation and data codebooks</p>
           </div>
          </div>
     </div>
+
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-1 my-6">
+        <p>
+                The Stanford Education Data Archive (SEDA) includes a number of publicly available data files, the technical documentation and data codebooks, listed on the following page. Data files are available in Stata (v13) and .csv formats.
+        </p>
+        <p>   
+                In publications, please cite the data as:
+                Sean F. Reardon, Andrew D. Ho., Benjamin R. Shear, Erin M. Fahle, Demetra Kalogrides, & Richard DiSalvo. (2018). Stanford Education Data Archive (Version 2.1). <a href="http://purl.stanford.edu/db586ns4974">http://purl.stanford.edu/db586ns4974</a>.
+        </p>
+        <p>        
+                If you have questions or note errors in the data, please contact us at <a href="mailto:sedasupport@stanford.edu">sedasupport@stanford.edu</a>
+        </p>
+        <div class="p-2 blue-bg mt-4">
+            <h3 class="mb-2">Notes</h3> 
+            <p>       
+                    The currently available data include district and county level average achievement (for all students and by race/ethnicity and gender), district and county level racial/ethnic and gender achievement gaps, and district level demographic/socioeconomic data. The most recent release (currently, Version 2.1) should always be used for reporting and analysis. Previous versions of the data are still available to facilitate research replication. Please review the technical documentation and codebooks that accompany the data sets. These documents review the data construction process and describes the contents of each file.
+            </p>
+        </div>    
+    </div>
+</div>    
 <div class="row subnav d-md-none small-tab-nav">
 
             <div class="dropdown">
@@ -34,7 +55,7 @@
         
 </div>
         
-<div class="row subnav large-tab-nav">
+<div class="row subnav large-tab-nav d-sm-none d-md-block">
     <ul class="nav nav-tabs col-lg-9 col-xl-8 mx-auto d-sm-none d-md-flex" id="data-dl-tabs" role="tablist">
       
         <li class="nav-item">
@@ -53,7 +74,7 @@
 </div>    
 
   
-    <div class="tab-content">
+    <div class="tab-content data-tables">
         
         {{ partial "version1" }}
         {{ partial "version1-1" }}

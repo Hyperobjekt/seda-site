@@ -1,0 +1,10 @@
+section: tabletest
+table: >
+  A: [1, 5]
+  B: [2, 6]
+  C: [3, 7]
+  <table>
+  <tbody>
+  <th>Hi</th>
+  </tbody>
+  </table>

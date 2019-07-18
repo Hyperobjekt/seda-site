@@ -22471,8 +22471,16 @@ body.about .row.funder-logos .p-2.rsf {
   margin-right: 16px;
 }
 
+.data-form input.form-control {
+  height: 48px;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  text-transform: uppercase;
+  text-align: left;
+}
+
 input[type=checkbox] {
   -moz-appearance: none;
+  -webkit-appearance: none;
   width: 40px;
   height: 40px;
   margin: 0;
@@ -22481,6 +22489,27 @@ input[type=checkbox] {
   box-shadow: none;
   display: inline-block;
   position: relative;
+}
+
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 20px;
+  border: solid #ff003e;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  margin: auto;
+}
+
+input[type=checkbox]:focus {
+  outline: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

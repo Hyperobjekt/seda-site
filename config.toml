@@ -27,7 +27,7 @@ anchor = "smart"
 
 [[menu.main]]
 	name = "Opportunity Explorer"
-	url = "http://seda-split.surge.sh/counties/avg/all/2.85/37.79/-95.6"
+	url = "http://seda-dev.surge.sh/"
     weight = 1
 
 [[menu.main]]
@@ -59,6 +59,11 @@ anchor = "smart"
     name = "In the news"
     url = "/news/"
     weight = 7
+
+[[menu.main]]
+    name = "Get the Data"
+    url = "/get-the-data/"
+    weight = 8    
 
 [permalinks]
   post = "/:year/:month/:day/:slug/"

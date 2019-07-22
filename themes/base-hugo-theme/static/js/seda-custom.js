@@ -4,7 +4,7 @@
     var jQuery = $.noConflict(false);
     var $ = jQuery;
 
-    
+
 
     function checkScroll(y) {
         // console.log(checkScroll);
@@ -39,9 +39,9 @@
       opacity: [0]
     }); */
     anime({
-      targets: ['g#ses-metric', 'g#grades', 'g#hp-x-line'], 
+      targets: ['g#ses-metric', 'g#grades', 'g#hp-x-line'],
       opacity: [0, .3],
-      duration: 1, 
+      duration: 1,
       delay: 1
     });
     anime({ // Scatterplot points
@@ -69,7 +69,7 @@
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       duration: 1400,
-     
+
     });
     anime({ // Grades
       targets: 'g#grades text',
@@ -83,27 +83,27 @@
       transform: ['translate(-500 0)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
       easing: 'easeInOutSine',
       duration: 1400,
-    });  
-    
+    });
+
     anime({ // Headline text
       targets: 'body.home .hero-child h2',
-      opacity: [0, 1], 
+      opacity: [0, 1],
       easing: 'easeInOutSine',
       duration: 1000,
       delay: 3000,
-    });  
+    });
 
     anime({ // Body text
       targets: 'body.home .hero-child p',
-      opacity: [0, 1], 
+      opacity: [0, 1],
       easing: 'easeInOutSine',
       duration: 800,
       delay: 4000,
-    });  
+    });
 
     anime({ // Button
       targets: 'body.home .hero-child button',
-      opacity: [0, 1], 
+      opacity: [0, 1],
       transform: ['translate(100 0)', 'translate(0 0 )'],
       easing: 'easeInOutSine',
       duration: 800,
@@ -111,7 +111,7 @@
     });
 
     // Variables for anime
-    
+
     var initGrowth = null;
     var growthYAxis = null;
     var growthYAxisCap = null;
@@ -158,8 +158,8 @@
         easing: 'easeInOutQuad',
         direction: 'linear',
       });
-  
-      
+
+
       // Growth Y Axis line
       growthYAxis = anime({
         targets: ['#y-axis-growth #growth-y-axisline'],
@@ -199,7 +199,7 @@
         autoplay: false,
     });
     }
-    
+
 
     function setupAnime2() {
       dkbluepath = anime.path('#dkblueline');
@@ -216,7 +216,7 @@
           direction: 'linear',
       });
       trendStep = anime({
-        // Opacity of schools    
+        // Opacity of schools
           targets: ['#grnschool', '#medblueschool', '#dkblueschool'],
           opacity: 1,
           duration: 250,
@@ -345,7 +345,7 @@
       growthYAxisCap.play();
       growthXAxis.play();
       growthXAxisCap.play();
-    } 
+    }
 
     function animateTrendGraphic() {
       // console.log('animateTrendGraphic()');
@@ -407,6 +407,8 @@
         allBios: null,
         update: function() {
             // console.log('updateModal.update()');
+            // console.log('activeBio = ');
+            // console.log(updateModal.activeBio);
             var $button = $(this.allBios[this.activeBio]).find('button');
 
             // Get name, title, bio, and image
@@ -475,7 +477,7 @@
       // Store the complete collection of bios
       // so we can switch between them all.
       updateModal.allBios = $('.column-people');
-      $('.launch-people-bio').click(function(e) {
+      $('.launch-people-bio').on('click', function(e) {
         e.preventDefault();
         var $button = $(e.target);
         // Store active bio index so navigation between them works.
@@ -494,6 +496,13 @@
                 updateModal.activeBio = updateModal.activeBio + 1;
                 updateModal.update();
             }
+        });
+        $('#peopleBioModal button.close').on('click', function() {
+          // console.log('closing, active bio = ');
+          // console.log(updateModal.activeBio);
+          updateModal.activeBio = 0;
+          $('#prevBio').unbind('click');
+          $('#nextBio').unbind('click');
         });
       });
     }

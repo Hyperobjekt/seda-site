@@ -20449,7 +20449,7 @@ body.kind-404 p {
   order: 1;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.7rem;
-  line-height: 2.4rem;
+  line-height: 3rem;
   letter-spacing: .066rem;
   display: flex;
   flex-flow: row wrap;

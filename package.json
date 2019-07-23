@@ -1,0 +1,28 @@
+{
+  "name": "seda-site",
+  "version": "1.0.0",
+  "description": "This is the web site for the Stanford Education Data Archive web site.",
+  "main": "postcss.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lambda-serve": "netlify-lambda serve ./src/",
+    "lambda-build": "netlify-lambda build ./src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyperobjekt/seda-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hyperobjekt/seda-site/issues"
+  },
+  "homepage": "https://github.com/Hyperobjekt/seda-site#readme",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "mailchimp-api-v3": "^1.13.1",
+    "netlify-lambda": "^1.5.0",
+    "winston": "^3.2.1"
+  }
+}

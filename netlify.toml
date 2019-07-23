@@ -1,6 +1,7 @@
 [build]
 publish = "public"
 command = "hugo --gc --minify"
+functions = "./functions"
 
 [context.production.environment]
 HUGO_VERSION = "0.53"
@@ -16,12 +17,14 @@ HUGO_ENV = "production"
 
 [context.deploy-preview]
 command = "hugo  --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+functions = "./functions"
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.53"
 
 [context.branch-deploy]
 command = "hugo  --gc --minify -b $DEPLOY_PRIME_URL"
+functions = "./functions"
 
 [context.branch-deploy.environment]
 HUGO_VERSION = "0.53"

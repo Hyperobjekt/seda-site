@@ -20552,6 +20552,21 @@ body.kind-404 p {
   }
 }
 
+form#getTheData .form-footer {
+  position: relative;
+}
+
+form#getTheData .form-footer .fa-spinner,
+form#getTheData .form-footer .fa-cog {
+  color: white;
+  position: absolute;
+  left: 135px;
+  top: 18px;
+  z-index: 3000;
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
 body.type-help-faq .hero-child {
   background: url("/images/heroes/help-faq.svg");
   background-repeat: no-repeat;

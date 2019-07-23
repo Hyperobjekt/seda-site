@@ -17,6 +17,9 @@ anchor = "smart"
   containerMaxWidth=1200
   showActiveNav=true
   paginage=5
+  localFunctionsPath = "http://localhost:9000"
+  # Update this path when the site goes live
+  productionFunctionsPath = "https://eop-staging.netlify.com/.netlify/functions"
 
 # main menu
 
@@ -63,7 +66,7 @@ anchor = "smart"
 [[menu.main]]
     name = "Get the Data"
     url = "/get-the-data/"
-    weight = 8    
+    weight = 8
 
 [permalinks]
   post = "/:year/:month/:day/:slug/"

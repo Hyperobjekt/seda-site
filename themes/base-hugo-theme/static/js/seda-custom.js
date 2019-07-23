@@ -3,9 +3,6 @@
 (function($) {
     var jQuery = $.noConflict(false);
     var $ = jQuery;
-
-
-
     function checkScroll(y) {
         // console.log(checkScroll);
         // If the scroll is at the top, not sticky.

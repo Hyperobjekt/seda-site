@@ -11,3 +11,7 @@
 {{ if eq .Page.Type "posts" }}
     {{ partial "scatterplot-scripts.html" . }}
 {{ end }}
+
+{{ if eq .Page.Name "Get the Data" }}
+  {{ partial "subscribe-scripts.html" . }}
+{{ end }}

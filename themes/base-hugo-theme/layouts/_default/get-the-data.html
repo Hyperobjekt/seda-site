@@ -9,32 +9,36 @@
          </div>
     </div>
 <div class="row data-form">
-      
+
             <div class="col-12 col-md-6 offset-md-3 mt-6 mb-12">
                     <p>Enter your email to access the data. By doing so, you will be subscribed to our newsletter and receive notifications of data updates.</p>
-                <form action="" method="post" name="get-the-data" class="validate mt-3" target="_blank">
+                <form id="getTheData" action="" method="post" name="get-the-data" class="validate mt-3" target="_blank">
                     <div>
+                      <div class="hidden" style="display:none;">
+                        <label>Don’t fill this out if you're human: <input  id="botField" name="bot-field" /></label>
+                      </div>
                         <div class="mc-field-group">
                             <label for="email-field" class="sr-only"></label>
                             <input id="email-field" class="form-control px-2" type="email" value="" name="email" required placeholder="{{ .Params.email }}">
                         </div>
-                        <!-- Removing checkbox -- add users to both newsletter and data downloads groups by default 
+                        <!-- Removing checkbox -- add users to both newsletter and data downloads groups by default
                         <div class="mc-field-group input-group my-3 d-flex align-items-center">
                             <input type="checkbox" value="1" name="newsletter" id="newsletter-check">
                             <label class="form-check-label" for="newsletter-check">Subscribe to our newsletter</label>
                         </div> -->
                         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true">
                             <input type="text" name="b_8e16f46a586eeb4578fbfe6ba_9c55c12d21" tabindex="-1" value="">
-                        </div>
+                        </div> -->
                         <div class="form-footer mt-4">
-                            <input type="submit" value="GET THE DATA" name="subscribe" id="mc-embedded-subscribe" class="btn btn-custom px-4">
+                          <i id="mcSpinner" class="fas fa-spinner fa-spin"></i>
+                          <input type="submit" value="GET THE DATA" name="subscribe" id="mc-embedded-subscribe" class="btn btn-custom px-4">
                         </div>
                     </div>
                 </form>
-            </div>  
-      
+            </div>
+
     </div>
 
 
-    {{ end }}    
+    {{ end }}

@@ -1,0 +1,12 @@
+{{ if .Site.IsServer }}
+  <!-- If site is being served (ostensibly dev) provide local path -->
+  <script>
+    var subscribePath = {{ .Site.Params.localFunctionsPath }};
+  </script>
+{{ else }}
+  <!-- If site is production, different path to fetch tweets -->
+  <script>
+    var subscribePath = {{ .Site.Params.productionFunctionsPath }};
+  </script>
+{{ end }}
+<script  src="{{ "js/subscribe-users.js" | absURL }}"></script>

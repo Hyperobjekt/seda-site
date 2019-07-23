@@ -45,7 +45,8 @@ function Scatterplot(container, props) {
       }
     },
     tooltip: {
-      backgroundColor: 'rgba(3, 18, 50, 80%)',
+      backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
+      extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',
       padding: [6, 10],
       textStyle: {
         color: '#fff', // '#dc69aa',

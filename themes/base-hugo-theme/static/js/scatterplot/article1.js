@@ -45,29 +45,10 @@ const highlightedItemStyle =  {
   borderColor: '#0677CE', // '#FFC02D',
   color: '#32A6FF', // '#FFFCDD',
   opacity: 0.9,
-  label: {
-    formatter: function(item) {
-      console.log(item);
-      const data = _self.data[_self.props.prefix];
-      let returnString = null;
-      if (!!item && !!item.value && !!item.value[3]) {
-        const itemName =
-          data &&
-          data.name &&
-          data.name[item.value[3]] ?
-          data.name[item.value[3]] : 'Unavailable'
-        // itemValue = item.value[3] ? item.value[3] : item.name;
-        returnString = '<span>' + itemName + '</span><br>'
-          + '<small>X: ' + item.value[0]
-          + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1] + '</small>';
-      } else {
-        // console.log(item);
-        // Send back a different string for the markarea tooltip.
-        returnString = '<span>' + item.data.name + '</span><br>'
-      }
-      return returnString;
-    }
-  }
+  shadowBlur: 4,
+  shadowColor: 'rgba(0, 0, 0, 0.5)',
+  shadowOffsetX: 0,
+  shadowOffsetY: 2
 };
 const selectedItemStyle = {
   borderWidth: 0.5,
@@ -425,6 +406,7 @@ var state1 = function(scatterplot) {
   }
 }
 
+let state2top100 = {};
 /** State 2: Highlight largest 25 districts  */
 var state2 = function(scatterplot) {
   // state 2 is based on state 1
@@ -432,6 +414,7 @@ var state2 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 1 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  state2top100 = top100;
   var highlight = {};
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -487,6 +470,7 @@ var state2 = function(scatterplot) {
 };
 
 /** State 3: Highlight locations (Detroit, Gwinet, Washington) */
+let state3top100 = {};
 var state3 = function(scatterplot) {
   var highlight = {};
   highlight['0641580'] = 'Washington, D.C.';
@@ -502,11 +486,12 @@ var state3 = function(scatterplot) {
     // console.log(highlight);
   }
   // console.log(highlight);
-  // var base = scatterplot.getState('state2');// state1
+  // var base = scatterplot.getState('state2');
   var base = scatterplot.getState('state2');
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
+  state3top100 = top100;
   // Plot title and subtitle
   Title['text'] = 'White and Black Students\' Average Performance';
   Title['subtext'] = 'U.S. School Districts 2009-2016';

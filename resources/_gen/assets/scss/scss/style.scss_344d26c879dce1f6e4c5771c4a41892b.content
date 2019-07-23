@@ -21340,7 +21340,8 @@ body.type-posts .column-scatterplot .plot-parent .subtitle {
   line-height: 2.1rem;
   letter-spacing: 0.014rem;
   padding-top: 0.8rem;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  width: 60%;
   margin: 0 auto;
 }
 

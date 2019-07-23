@@ -1,5 +1,6 @@
 /**
- * scatterplot states for article one
+ * scatterplot states for article one,
+ * Patterns of Racial/Ethnic Opportunity Gaps
  * - article storyboard: https://docs.google.com/document/d/1adz0CwXI8WKok8ePVQEcSmlRQwRIjKaKvd8Am6OFfhY/edit
  */
 
@@ -14,29 +15,66 @@ Title['text'] = '';
 Title['subtext'] = '';
 
 const axisBlue = '#547892';
+let activeHighlight = {};
 const highlightedLabel = (highlight) => {
+  // console.log('highlightedLabel');
+  activeHighlight = highlight;
   return {
     show: true,
     position: 'top',
-    backgroundColor: '#FFFCCF',
+    backgroundColor: '#0090FF', // '#FFFCCF',
     borderColor: '#7D38BB',
+    borderWidth: 0,
     fontSize: 12,
     fontWeight: 500,
     fontFamily: 'SharpGrotesk-Medium20', // 'MaisonNeue-Medium',
     lineHeight: 12,
     padding: [8, 8],
     borderRadius: 3,
-    color: '#052965',
+    opacity: 1,
+    color: '#fff', // '#052965',
     formatter: function(item) {
-      return highlight[item.value[3]]
+      // console.log(item);
+      // console.log(activeHighlight);
+      return activeHighlight[item.value[3]]
     },
   };
 }
 const highlightedItemStyle =  {
   borderWidth: 0.5,
-  borderColor: '#FFC02D',
-  color: '#FFFCDD',
+  borderColor: '#0677CE', // '#FFC02D',
+  color: '#32A6FF', // '#FFFCDD',
   opacity: 0.9,
+  label: {
+    formatter: function(item) {
+      console.log(item);
+      const data = _self.data[_self.props.prefix];
+      let returnString = null;
+      if (!!item && !!item.value && !!item.value[3]) {
+        const itemName =
+          data &&
+          data.name &&
+          data.name[item.value[3]] ?
+          data.name[item.value[3]] : 'Unavailable'
+        // itemValue = item.value[3] ? item.value[3] : item.name;
+        returnString = '<span>' + itemName + '</span><br>'
+          + '<small>X: ' + item.value[0]
+          + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1] + '</small>';
+      } else {
+        // console.log(item);
+        // Send back a different string for the markarea tooltip.
+        returnString = '<span>' + item.data.name + '</span><br>'
+      }
+      return returnString;
+    }
+  }
+};
+const selectedItemStyle = {
+  borderWidth: 0.5,
+  borderColor: '#109860', // '#7D38BB',
+  color: '#48CB95', // '#BC72FF',
+  opacity: 1,
+
 };
 const initialMarkline = {
   type:'scatter',
@@ -104,12 +142,6 @@ const initialMarkline = {
   ]
   }
 };
-const selectedItemStyle = {
-  borderWidth: 0.7,
-  borderColor: '#7D38BB',
-  color: '#BC72FF',
-  opacity: 0.7,
-};
 const baseGrid = {
   top: 10,
   bottom: 26,
@@ -163,7 +195,7 @@ const noRacialDisparityMarkline = {
     [
       {
         name: 'no racial disparity',
-        coord: [0, -6],
+        coord:  [0, -1], // [0, -6],
         symbol: 'none',
         lineStyle: {
           color: '#052965',
@@ -177,7 +209,7 @@ const noRacialDisparityMarkline = {
         }
       },
       {
-        coord: [ 0, 0],
+        coord:  [0, 6], // [ 0, 0],
         symbol: 'none'
       },
     ]
@@ -192,7 +224,7 @@ const segMarkline = {
       [
         {
           name: '',
-          coord: [6, -2.95],
+          coord: [6, 2.5],
           symbol: 'none',
           lineStyle: {
             color: '#052965',
@@ -201,13 +233,38 @@ const segMarkline = {
           },
         },
         {
-          coord: [ -2, -3.5],
+          coord: [-1, 2.25],
           symbol: 'none'
         },
       ]
     ]
   }
 };
+// const tooltip = {
+//   trigger: 'item',
+//   // borderColor: '#fff',
+//   formatter: function(item) {
+//     console.log(item);
+//     const data = _self.data[_self.props.prefix];
+//     let returnString = null;
+//     if (!!item && !!item.value && !!item.value[3]) {
+//       const itemName =
+//         data &&
+//         data.name &&
+//         data.name[item.value[3]] ?
+//         data.name[item.value[3]] : 'Unavailable'
+//       // itemValue = item.value[3] ? item.value[3] : item.name;
+//       returnString = '<span>' + itemName + '</span><br>'
+//         + '<small>X: ' + item.value[0]
+//         + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1] + '</small>';
+//     } else {
+//       // console.log(item);
+//       // Send back a different string for the markarea tooltip.
+//       returnString = '<span>' + item.data.name + '</span><br>'
+//     }
+//     return returnString;
+//   }
+// };
 
 /**
  * Slice array according from beginning according to provided size.
@@ -373,7 +430,7 @@ var state2 = function(scatterplot) {
   // state 2 is based on state 1
   var base = scatterplot.getState('state1');
   var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
+  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 1 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   var highlight = {};
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
@@ -435,6 +492,7 @@ var state3 = function(scatterplot) {
   highlight['0641580'] = 'Washington, D.C.';
   highlight['2612000'] = 'Detroit, MI';
   highlight['1302550'] = 'Gwinnet County, GA';
+  // console.log(highlight);
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -444,6 +502,7 @@ var state3 = function(scatterplot) {
     // console.log(highlight);
   }
   // console.log(highlight);
+  // var base = scatterplot.getState('state2');// state1
   var base = scatterplot.getState('state2');
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
@@ -454,7 +513,7 @@ var state3 = function(scatterplot) {
   // Set title and subtitle
   jQ('.column-scatterplot .title').text(Title.text);
   jQ('.column-scatterplot .subtitle').text(Title.subtext);
-  const options = {
+  const baseOverrides = {
     title: {
       text: Title.text, // 'White and Black Students\' Average Performance',
       subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
@@ -474,6 +533,7 @@ var state3 = function(scatterplot) {
       max: 4,
       name: 'White Average Performance',
     }),
+    // tooltip: tooltip,
     series: [
       { id: 'base' },
       {
@@ -481,13 +541,14 @@ var state3 = function(scatterplot) {
         type: 'scatter',
         symbolSize: dataSeries.symbolSize,
         itemStyle: selectedItemStyle,
-        z: 2
+        z: 2,
+        // tooltip: tooltip,
       },
       {
         id: 'highlighted',
         itemStyle: highlightedItemStyle,
-        label: highlightedLabel(highlight),
-        zlevel: 500
+        label: highlightedLabel(highlight, dataSeries),
+        zlevel: 500,
       },
       initialMarkline
     ]
@@ -498,7 +559,7 @@ var state3 = function(scatterplot) {
     zVar: 'all_sz',
     highlighted: Object.keys(highlight),
     selected: top100,
-    options: options // deepmerge(base.options, baseOverrides)
+    options: deepmerge(base.options, baseOverrides)
   }
 };
 
@@ -551,15 +612,16 @@ var state4 = function(scatterplot) {
         containLabel: true
       },
       yAxis: deepmerge(baseYAxis, {
-        min: -6,
-        max: 0,
+        min: -1, // -6,
+        max: 6, // 3, // 0,
         name: 'White-Black Achievement Gap\nby Grade Levels',
-        nameGap: 28,
+        nameGap: 24,
         lineHeight: 48,
+        // splitNumber: 7
       }),
       xAxis: deepmerge(baseXAxis, {
-        min: -3,
-        max: 7,
+        min: -1, // -3,
+        max: 6, // 7,
         name: 'White-Black Socioeconomic Disparity',
       }),
       series: [
@@ -627,14 +689,14 @@ var state5 = function(scatterplot) {
       },
       yAxis: deepmerge(baseYAxis, {
         position: 'right',
-        min: -6,
-        max: 0,
+        min: -1, // -6,
+        max: 6, // 0,
         name: 'White-Black Achievement Gap\nby Grade Levels',
-        nameGap: 28
+        nameGap: 24
       }),
       xAxis: deepmerge(baseXAxis, {
-        min: -3,
-        max: 7,
+        min: -1, // -3,
+        max: 6, // 7,
         name: 'White-Black Socioeconomic Disparity',
       }),
       series: [
@@ -743,11 +805,12 @@ var state7 = function(scatterplot) {
           type: 'scatter',
           data: nearZero,
           symbolSize: dataSeries.symbolSize,
-          itemStyle: {
-            borderWidth: 0.5,
-            borderColor: '#C56A12',
-            color: '#FD7D02',
-          },
+          itemStyle: selectedItemStyle,
+          // {
+          //   borderWidth: 0.5,
+          //   borderColor: '#C56A12',
+          //   color: '#FD7D02',
+          // },
           opacity: 0.8
         },
         {
@@ -760,13 +823,14 @@ var state7 = function(scatterplot) {
     })
   }
 }
-
+let state8dataSeries = {};
 var state8 = function(scatterplot) {
   // get current echart options
   const options = scatterplot.component.getOption();
   // this state is created from the base
   const base = scatterplot.getState('base');
   var dataSeries = scatterplot.getDataSeries();
+  state8dataSeries = dataSeries;
   var highlight = {};
   highlight['0803360'] = 'Denver, CO';
   highlight['0634170'] = 'San Bernardino, CA';
@@ -805,14 +869,14 @@ var state8 = function(scatterplot) {
       containLabel: true
     },
     yAxis: deepmerge(baseYAxis, {
-      min:-6,
-      max:0,
+      min: -1, // -6,
+      max: 6, // 0,
       name: 'White-Black Achievement Gap\nby Grade Levels',
-      nameGap: 28
+      nameGap: 24
     }),
     xAxis: deepmerge(baseYAxis, {
-      min: -3,
-      max: 7,
+      min: -1, // -3,
+      max: 6, // 7,
       name: 'White-Black Socioeconomic Disparity',
     }),
     series: [
@@ -840,17 +904,13 @@ var state8 = function(scatterplot) {
 
 /* Highlight least and most segregated */
 var state9 = function(scatterplot) {
-  console.log('loading state9');
+  // console.log('loading state9');
   // this state is created from the base
   // const base = scatterplot.getState('state8');
   const base = scatterplot.getState('base');
   // Build series most seg to highlight
-  var dataSeries = scatterplot.getDataSeries();
+  var dataSeries = state8dataSeries; // scatterplot.getDataSeries();
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
-  // var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100);
-  // var newTop100 = scatterplot.getSeriesDataForIds(dataSeries.data, top100);
-  // var top100 = scatterplot.getSeriesDataBySize(scatterplot.data['districts']['all_sz'], 100);
-  // console.log(newTop100);
   var segSortedTop100 = sortDataBySeg(top100);
   var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
   var mostSegregatedSeries = sliceMost(segSortedTop100, 10);
@@ -890,8 +950,8 @@ var state9 = function(scatterplot) {
       backgroundColor: 'rgba(255, 255, 255, 0.85)',
       borderRadius: 3,
       padding: 14,
-      right: 55,
-      bottom: 45,
+      left: 5,
+      top: 5,
       data: [
         {
           name: 'Least Segregated',
@@ -914,14 +974,14 @@ var state9 = function(scatterplot) {
       containLabel: true
     },
     yAxis: deepmerge(baseYAxis, {
-      min:-6,
-      max:0,
+      min: -1, // -6,
+      max: 6, // 0,
       name: 'White-Black Achievement Gap\nby Grade Levels',
-      nameGap: 28
+      nameGap: 24
     }),
     xAxis: deepmerge(baseXAxis, {
-      min: -3,
-      max: 7,
+      min: -1, // -3,
+      max: 6, // 7,
       name: 'White-Black Socioeconomic Disparity',
     }),
     series: [
@@ -934,9 +994,9 @@ var state9 = function(scatterplot) {
         symbolSize: 12,
         itemStyle: {
           borderWidth: 0.5,
-          borderColor: 'rgba(255, 192, 45, 100)',
-          color: 'rgba(255, 252, 216, 100)',
-          opacity: 0.75
+          borderColor: '#0D814E', // 'rgba(255, 192, 45, 100)',
+          color: '#1BC67A', // 'rgba(255, 252, 216, 100)',
+          opacity: 1
         },
       },
       {
@@ -946,9 +1006,9 @@ var state9 = function(scatterplot) {
         symbolSize: 12,
         itemStyle: {
           borderWidth: 0.5,
-          borderColor: '#C56A12',
-          color: '#FD7D02',
-          opacity: 0.75
+          borderColor: '#033E82', // '#C56A12',
+          color: '#187CF1', // '#FD7D02',
+          opacity: 1
         },
       },
       segMarkline,
@@ -1017,8 +1077,8 @@ var state10 = function(scatterplot) {
       containLabel: true
     },
     yAxis: deepmerge(baseYAxis, {
-      min: -6,
-      max: 0,
+      min: -1,
+      max: 7,
       name: 'White-Black Achievement Gap\nby Grade Levels',
       nameGap: 28
     }),
@@ -1063,7 +1123,7 @@ var state10 = function(scatterplot) {
             [
               {
                 name: 'equal exposure to poverty',
-                coord: [0, -6],
+                coord: [0, -1],
                 symbol: 'none',
                 lineStyle: {
                   color:  '#052965',
@@ -1072,7 +1132,7 @@ var state10 = function(scatterplot) {
                 },
               },
               {
-                coord: [ 0, -0.5],
+                coord: [ 0, 7],
                 symbol: 'none'
               },
             ]
@@ -1093,7 +1153,7 @@ var state10 = function(scatterplot) {
     xVar: 'wb_pov',
     yVar: 'wb_avg',
     zVar: 'all_sz',
-    options: baseOverrides // deepmerge.all([ base.options, baseOverrides ])
+    options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
 

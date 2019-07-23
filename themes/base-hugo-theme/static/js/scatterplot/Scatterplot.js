@@ -123,7 +123,7 @@ function Scatterplot(container, props) {
         borderWidth: 0.5,
         borderColor: '#81C2D7',
         borderType: 'solid',
-        opacity: .5
+        opacity: 1
         // borderOpacity: 0,
       }
     },
@@ -192,6 +192,7 @@ function Scatterplot(container, props) {
           trigger: 'item',
           // borderColor: '#fff',
           formatter: function(item) {
+            // console.log(item);
             const data = _self.data[_self.props.prefix];
             let returnString = null;
             if (!!item && !!item.value && !!item.value[3]) {

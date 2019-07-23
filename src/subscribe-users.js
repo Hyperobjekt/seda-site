@@ -1,9 +1,9 @@
 require("dotenv").config();
 const winston = require('winston');
 const logger = winston.createLogger({
-    transports: [
-        new winston.transports.Console()
-    ]
+  transports: [
+    new winston.transports.Console()
+  ]
 });
 
 const redirectPath = process.env.REDIRECT_PATH;

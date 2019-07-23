@@ -24,5 +24,8 @@
     "mailchimp-api-v3": "^1.13.1",
     "netlify-lambda": "^1.5.0",
     "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "postcss-cli": "^6.1.3"
   }
 }

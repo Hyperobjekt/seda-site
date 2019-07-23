@@ -19,7 +19,8 @@ anchor = "smart"
   paginage=5
   localFunctionsPath = "http://localhost:9000"
   # Update this path when the site goes live
-  productionFunctionsPath = "https://eop-staging.netlify.com/.netlify/functions"
+  productionFunctionsPath = "https://mailchimp-subscr--eop-staging.netlify.com/.netlify/functions"
+  # productionFunctionsPath = "https://eop-staging.netlify.com/.netlify/functions"
 
 # main menu
 

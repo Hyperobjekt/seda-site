@@ -46,7 +46,18 @@
             }, 600);
           },
           error: function(result) {
-            console.error('Something went wrong. Here\'s some information:\n\n' + result.responseJSON.title + ' \n' + result.responseJSON.detail);
+            let errStr = 'Something went wrong.';
+            if (result.responseJSON) {
+              if (result.responseJSON.title &&
+                result.responseJSON.detail) {
+                errStr = errStr +
+                '  Here\'s some information:\n\n' +
+                result.responseJSON.title +
+                ' \n' +
+                result.responseJSON.detail;
+              }
+            }
+            console.error(errStr);
             // Stop spinner spinning.
             $spinner.css({'opacity': 0});
             // Set form input to active.

@@ -13,6 +13,11 @@ let names = [];
 let Title = {};
 Title['text'] = '';
 Title['subtext'] = '';
+Title['setTitle'] = function() {
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').html(Title.text);
+  jQ('.column-scatterplot .subtitle').html(Title.subtext);
+}
 
 const axisBlue = '#547892';
 let activeHighlight = {};
@@ -55,7 +60,6 @@ const selectedItemStyle = {
   borderColor: '#109860', // '#7D38BB',
   color: '#48CB95', // '#BC72FF',
   opacity: 1,
-
 };
 const initialMarkline = {
   type:'scatter',
@@ -221,31 +225,6 @@ const segMarkline = {
     ]
   }
 };
-// const tooltip = {
-//   trigger: 'item',
-//   // borderColor: '#fff',
-//   formatter: function(item) {
-//     console.log(item);
-//     const data = _self.data[_self.props.prefix];
-//     let returnString = null;
-//     if (!!item && !!item.value && !!item.value[3]) {
-//       const itemName =
-//         data &&
-//         data.name &&
-//         data.name[item.value[3]] ?
-//         data.name[item.value[3]] : 'Unavailable'
-//       // itemValue = item.value[3] ? item.value[3] : item.name;
-//       returnString = '<span>' + itemName + '</span><br>'
-//         + '<small>X: ' + item.value[0]
-//         + '&nbsp;&nbsp;&nbsp;&nbsp;Y: ' + item.value[1] + '</small>';
-//     } else {
-//       // console.log(item);
-//       // Send back a different string for the markarea tooltip.
-//       returnString = '<span>' + item.data.name + '</span><br>'
-//     }
-//     return returnString;
-//   }
-// };
 
 /**
  * Slice array according from beginning according to provided size.
@@ -365,6 +344,7 @@ var state1 = function(scatterplot) {
 
   Title['text'] = 'White and Black Students\' Average Performance';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title.setTitle();
 
   const baseOverrides = {
     title: {
@@ -407,11 +387,13 @@ var state1 = function(scatterplot) {
 }
 
 let state2top100 = {};
+let state2series = {};
 /** State 2: Highlight largest 25 districts  */
 var state2 = function(scatterplot) {
   // state 2 is based on state 1
   var base = scatterplot.getState('state1');
   var dataSeries = scatterplot.getDataSeries();
+  state2series = dataSeries;
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 1 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   state2top100 = top100;
@@ -427,6 +409,7 @@ var state2 = function(scatterplot) {
   // Plot title and subtitle
   Title['text'] = 'White and Black Students\' Average Performance';
   Title['subtext'] = '100 Largest U.S. School Districts 2009-2016';
+  Title.setTitle();
   const baseOverrides = {
     title: {
       subtext: Title.subtext, // '100 Largest U.S. School Districts 2009-2016'
@@ -459,9 +442,6 @@ var state2 = function(scatterplot) {
     ]
   };
   // console.log(top100);
-  // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
   return {
     selected: [],
     highlighted: Object.keys(highlight),
@@ -471,6 +451,7 @@ var state2 = function(scatterplot) {
 
 /** State 3: Highlight locations (Detroit, Gwinet, Washington) */
 let state3top100 = {};
+let state3counter = 0;
 var state3 = function(scatterplot) {
   var highlight = {};
   highlight['0641580'] = 'Washington, D.C.';
@@ -487,17 +468,18 @@ var state3 = function(scatterplot) {
   }
   // console.log(highlight);
   // var base = scatterplot.getState('state2');
-  var base = scatterplot.getState('state2');
+  var base = scatterplot.getState('state1');
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
-  state3top100 = top100;
+  if (state3counter === 0) {
+    state3top100 = top100;
+  }
+  state3counter ++;
   // Plot title and subtitle
   Title['text'] = 'White and Black Students\' Average Performance';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
-  // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  Title.setTitle();
   const baseOverrides = {
     title: {
       text: Title.text, // 'White and Black Students\' Average Performance',
@@ -532,7 +514,7 @@ var state3 = function(scatterplot) {
       {
         id: 'highlighted',
         itemStyle: highlightedItemStyle,
-        label: highlightedLabel(highlight, dataSeries),
+        label: highlightedLabel(highlight),
         zlevel: 500,
       },
       initialMarkline
@@ -543,7 +525,7 @@ var state3 = function(scatterplot) {
     yVar: 'b_avg',
     zVar: 'all_sz',
     highlighted: Object.keys(highlight),
-    selected: top100,
+    selected: state3top100,
     options: deepmerge(base.options, baseOverrides)
   }
 };
@@ -568,9 +550,7 @@ var state4 = function(scatterplot) {
   // Plot title and subtitle
   Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
   Title['subtext'] = 'US School Districts 2009-2016';
-  // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  Title.setTitle();
   return {
     selected: [],
     highlighted: Object.keys(highlight),
@@ -644,9 +624,7 @@ var state5 = function(scatterplot) {
   // Plot title and subtitle
   Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
   Title['subtext'] = 'US School Districts 2009-2016';
-  // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  Title.setTitle();
   return {
     highlighted: Object.keys(highlight),
     selected: [],
@@ -720,9 +698,7 @@ var state6 = function(scatterplot) {
   // Plot title and subtitle
   Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
   Title['subtext'] = '100 Largest U.S. School Districts 2009-2016';
-  // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  Title.setTitle();
   return {
     highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
@@ -774,9 +750,7 @@ var state7 = function(scatterplot) {
   // Plot title and subtitle
   Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
   Title['subtext'] = 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016';
-  // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  Title.setTitle();
   return {
     highlighted: Object.keys(highlight),
     options: deepmerge(base.options, {
@@ -830,9 +804,7 @@ var state8 = function(scatterplot) {
   // Plot title and subtitle
   Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
   Title['subtext'] = 'US School Districts 2009-2016';
-  // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  Title.setTitle();
   const baseOverrides = {
     title: {
       show: false,
@@ -911,9 +883,8 @@ var state9 = function(scatterplot) {
   // Plot title and subtitle
   Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
   Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
-  // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  Title.setTitle();
+
   const baseOverrides = {
     title: {
       show: false,
@@ -1039,9 +1010,7 @@ var state10 = function(scatterplot) {
   // Plot title and subtitle
   Title['text'] = 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty';
   Title['subtext'] = '100 Largest US School Districts 2009-2016';
-  // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  Title.setTitle();
   const baseOverrides = {
     title: {
       show: false,

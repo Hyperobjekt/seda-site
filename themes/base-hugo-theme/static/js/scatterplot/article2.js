@@ -7,35 +7,46 @@
 const jQ = jQuery;
 
 const axisBlue = '#547892';
+let activeHighlight = {};
 const highlightedLabel = (highlight) => {
+  // console.log('highlightedLabel');
+  activeHighlight = highlight;
   return {
     show: true,
     position: 'top',
-    backgroundColor: '#FFFCCF',
+    backgroundColor: '#0090FF', // '#FFFCCF',
     borderColor: '#7D38BB',
+    borderWidth: 0,
     fontSize: 12,
     fontWeight: 500,
     fontFamily: 'SharpGrotesk-Medium20', // 'MaisonNeue-Medium',
     lineHeight: 12,
     padding: [8, 8],
     borderRadius: 3,
-    color: '#052965',
+    opacity: 1,
+    color: '#fff', // '#052965',
     formatter: function(item) {
-      return highlight[item.value[3]]
+      // console.log(item);
+      // console.log(activeHighlight);
+      return activeHighlight[item.value[3]]
     },
   };
 }
 const highlightedItemStyle =  {
   borderWidth: 0.5,
-  borderColor: '#FFC02D',
-  color: '#FFFCDD',
+  borderColor: '#0677CE', // '#FFC02D',
+  color: '#32A6FF', // '#FFFCDD',
   opacity: 0.9,
+  shadowBlur: 4,
+  shadowColor: 'rgba(0, 0, 0, 0.5)',
+  shadowOffsetX: 0,
+  shadowOffsetY: 2
 };
 const selectedItemStyle = {
-  borderWidth: 0.7,
-  borderColor: '#7D38BB',
-  color: '#BC72FF',
-  opacity: 0.7,
+  borderWidth: 0.5,
+  borderColor: '#109860', // '#7D38BB',
+  color: '#48CB95', // '#BC72FF',
+  opacity: 1,
 };
 const baseGrid = {
   top: 10,
@@ -83,8 +94,8 @@ Title['text'] = '';
 Title['subtext'] = '';
 Title['setTitle'] = function() {
   // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  jQ('.column-scatterplot .title').html(Title.text);
+  jQ('.column-scatterplot .subtitle').html(Title.subtext);
 }
 
 /**
@@ -161,7 +172,7 @@ var state1 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic\nStatus, Grade 3';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 3';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -180,13 +191,13 @@ var state1 = function(scatterplot) {
     },
     grid: baseGrid,
     yAxis: deepmerge(baseYAxis, {
-      min: -1,
-      max: 8,
+      min: -4,
+      max: 4,
       name: 'Average Achievement (in Grade Levels)',
     }),
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -203,57 +214,25 @@ var state1 = function(scatterplot) {
             animation: false,
             silent: true,
             data: [
-          //   [
-          //     {
-          //       name: '', // upper right markline
-          //       coord: [3, 6],
-          //       symbol: 'none',
-          //       lineStyle: {
-          //         color: '#052965', // '#adadad'
-          //         type: 'solid',
-          //         width: 0.5
-          //       },
-          //     },
-          //     {
-          //       coord: [-1.75, .75],
-          //       symbol: 'none'
-          //     },
-          //   ],
-          // [
-          //   {
-          //     name: '', // lower left markline
-          //     coord: [1, 2.5],
-          //     symbol: 'none',
-          //     lineStyle: {
-          //       color: '#052965', // '#adadad'
-          //       type: 'solid',
-          //       width: 0.5
-          //     },
-          //   },
-          //   {
-          //     coord: [-3.75, 1],
-          //     symbol: 'none'
-          //   },
-          // ],
-          [
-            {
-              name: '', // x axis
-              coord: [-3.5, 3],
-              symbol: 'none',
-              lineStyle: {
-                // color: '#fff', // 'rgba(0,0,0,0.6)'
-                color: '#052965',
-                type: 'solid',
-                width: 1
-              }
-            },
-            {
-              coord: [3, 3],
-              symbol: 'none'
-            },
+            [
+              {
+                name: '', // x axis
+                coord: [-4, 0],
+                symbol: 'none',
+                lineStyle: {
+                  // color: '#fff', // 'rgba(0,0,0,0.6)'
+                  color: '#052965',
+                  type: 'solid',
+                  width: 1
+                }
+              },
+              {
+                coord: [3, 0],
+                symbol: 'none'
+              },
+            ]
           ]
-        ]
-      }
+        }
       },
     ]
   }
@@ -262,7 +241,7 @@ var state1 = function(scatterplot) {
     yVar: 'all_avg3',
     zVar: 'all_sz',
     highlighted: Object.keys(highlight),
-    options: deepmerge.all([base.options, baseOverrides ])
+    options: deepmerge.all([base.options, baseOverrides])
   }
 }
 
@@ -291,7 +270,7 @@ var state1_1 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic\nStatus, Grade 3';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 3';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -310,13 +289,13 @@ var state1_1 = function(scatterplot) {
     },
     grid: baseGrid,
     yAxis: deepmerge(baseYAxis, {
-      min: -1,
-      max: 8,
+      min: -4,
+      max: 4,
       name: 'Average Achievement (in Grade Levels)',
     }),
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -336,7 +315,7 @@ var state1_1 = function(scatterplot) {
             [
               {
                 name: '', // upper right markline
-                coord: [3, 6],
+                coord: [-4, -1.75],
                 symbol: 'none',
                 lineStyle: {
                   color: 'rgba(255, 192, 45, 1)',
@@ -345,14 +324,14 @@ var state1_1 = function(scatterplot) {
                 },
               },
               {
-                coord: [-1.75, .75],
+                coord: [1, 0],
                 symbol: 'none'
               },
             ],
           [
             {
               name: '', // lower left markline
-              coord: [1, 2.5],
+              coord: [3, 3],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(255, 192, 45, 1)',
@@ -361,14 +340,14 @@ var state1_1 = function(scatterplot) {
               },
             },
             {
-              coord: [-3.75, 1],
+              coord: [-2, -2],
               symbol: 'none'
             },
           ],
           [
             {
               name: '', // x axis
-              coord: [-3.5, 3],
+              coord: [-4, 0],
               symbol: 'none',
               lineStyle: {
                 // color: '#fff', // 'rgba(0,0,0,0.6)'
@@ -378,7 +357,7 @@ var state1_1 = function(scatterplot) {
               }
             },
             {
-              coord: [3, 3],
+              coord: [3, 0],
               symbol: 'none'
             },
           ]
@@ -421,7 +400,7 @@ var state2 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 3';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 3';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -442,13 +421,13 @@ var state2 = function(scatterplot) {
         top: '10px',
       },
       yAxis: {
-        min: -1, // -0.5,
-        max: 8, // 9,
+        min: -4, // -0.5,
+        max: 4, // 9,
         name: 'Average Achievement (in Grade Levels)',
       },
       xAxis: {
         min: -4,
-        max: 3.5,
+        max: 3,
         name: 'Poor/Disadvantaged to Affluent/Advantaged',
       },
       series: [
@@ -468,7 +447,7 @@ var state2 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 3],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -477,7 +456,7 @@ var state2 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 3],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -505,7 +484,7 @@ var state3 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 4';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 4';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -525,13 +504,13 @@ var state3 = function(scatterplot) {
         top: '10px',
       },
       yAxis: {
-        min: 0,
-        max: 9,
+        min: -4,
+        max: 4,
         name: 'Average Achievement (in Grade Levels)',
       },
       xAxis: {
         min: -4,
-        max: 3.5,
+        max: 3,
         name: 'Poor/Disadvantaged to Affluent/Advantaged',
       },
       series: [
@@ -551,7 +530,7 @@ var state3 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 4],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -560,7 +539,7 @@ var state3 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 4],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -591,7 +570,7 @@ var state4 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 5';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 5';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -606,13 +585,13 @@ var state4 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: 1, // -0.5,
-      max: 10, // 9,
+      min: -4, // -0.5,
+      max: 4, // 9,
       name: 'Average Achievement (in Grade Levels)',
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -632,7 +611,7 @@ var state4 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 5],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -641,7 +620,7 @@ var state4 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 5],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -678,7 +657,7 @@ var state5 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 6';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 6';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -693,8 +672,8 @@ var state5 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: 2, // -0.5,
-      max: 11, // 9,
+      min: -4, // -0.5,
+      max: 4, // 9,
       name: 'Average Achievement (in Grade Levels)',
       // nameTextStyle: {
       //   fontFamily: 'SharpGrotesk-Medium20',
@@ -705,7 +684,7 @@ var state5 = function(scatterplot) {
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
       // nameTextStyle: {
       //   fontFamily: 'SharpGrotesk-Medium20',
@@ -731,7 +710,7 @@ var state5 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 6],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965',
@@ -740,7 +719,7 @@ var state5 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 6],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -777,7 +756,7 @@ var state6 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 7';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 7';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -792,13 +771,13 @@ var state6 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: 3, // -0.5,
-      max: 12, // 9,
+      min: -4, // -0.5,
+      max: 4, // 9,
       name: 'Average Achievement (in Grade Levels)',
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -818,7 +797,7 @@ var state6 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 7],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -827,7 +806,7 @@ var state6 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 7],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -864,7 +843,7 @@ var state7 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 8';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 8';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -879,13 +858,13 @@ var state7 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: 4, // -0.5,
-      max: 13, // 9,
+      min: -4,
+      max: 4,
       name: 'Average Achievement (in Grade Levels)',
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -905,7 +884,7 @@ var state7 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 8],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -914,7 +893,7 @@ var state7 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 8],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -951,7 +930,7 @@ var state8 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 3';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 3';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -966,13 +945,13 @@ var state8 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: -1, // -0.5,
-      max: 8, // 9,
+      min: -4, // -0.5,
+      max: 4, // 9,
       name: 'Average Achievement (in Grade Levels)',
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -992,7 +971,7 @@ var state8 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 3],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -1001,7 +980,7 @@ var state8 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 3],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -1038,7 +1017,7 @@ var state9 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 4';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 4';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -1053,13 +1032,13 @@ var state9 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: 0, // -0.5,
-      max: 9,
+      min: -4, // -0.5,
+      max: 4,
       name: 'Average Achievement (in Grade Levels)',
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -1079,7 +1058,7 @@ var state9 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 4],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -1088,7 +1067,7 @@ var state9 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 4],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -1125,7 +1104,7 @@ var state10 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 5';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 5';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -1140,13 +1119,13 @@ var state10 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: 1, // -0.5,
-      max: 10, // 9,
+      min: -4,
+      max: 4,
       name: 'Average Achievement (in Grade Levels)',
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -1166,7 +1145,7 @@ var state10 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 5],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -1175,7 +1154,7 @@ var state10 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 5],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -1212,7 +1191,7 @@ var state11 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 6';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 6';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -1227,13 +1206,13 @@ var state11 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: 2, // -0.5,
-      max: 11, // 9,
+      min: -4, // -0.5,
+      max: 4, // 9,
       name: 'Average Achievement (in Grade Levels)',
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -1253,7 +1232,7 @@ var state11 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 6],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -1262,7 +1241,7 @@ var state11 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 6],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -1299,7 +1278,7 @@ var state12 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 7';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 7';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -1314,13 +1293,13 @@ var state12 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: 3, // -0.5,
-      max: 12, // 9,
+      min: -4,
+      max: 4,
       name: 'Average Achievement (in Grade Levels)',
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -1340,7 +1319,7 @@ var state12 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 7],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965',
@@ -1349,7 +1328,7 @@ var state12 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 7],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -1386,7 +1365,7 @@ var state13 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Academic Achievement and Socioeconomic Status, Grade 8';
+  Title['text'] = 'Academic Achievement and Socioeconomic<br>Status, Grade 8';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -1401,13 +1380,13 @@ var state13 = function(scatterplot) {
       top: '10px',
     },
     yAxis: {
-      min: 4, // -0.5,
-      max: 13, // 9,
+      min: -4,
+      max: 4,
       name: 'Average Achievement (in Grade Levels)',
     },
     xAxis: {
       min: -4,
-      max: 3.5,
+      max: 3,
       name: 'Poor/Disadvantaged to Affluent/Advantaged',
     },
     series: [
@@ -1427,7 +1406,7 @@ var state13 = function(scatterplot) {
               [
                 {
                   name: '', // Grade level
-                  coord: [-3.5, 8],
+                  coord: [-4, 0],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965',
@@ -1436,7 +1415,7 @@ var state13 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 8],
+                  coord: [3, 0],
                   symbol: 'none'
                 },
               ],
@@ -1471,7 +1450,7 @@ var state14 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
+  Title['text'] = 'Third Grade Achievement vs. Achievement<br>Growth (Grades per Year)';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -1502,8 +1481,8 @@ var state14 = function(scatterplot) {
       nameGap: 36
     },
     xAxis: {
-      min: -1,
-      max: 7,
+      min: -4,
+      max: 4,
       name: 'Average Grade 3 Achievement',
     },
     series: [
@@ -1523,7 +1502,7 @@ var state14 = function(scatterplot) {
               [
                 {
                   name: 'About Average', // Grade level
-                  coord: [3, 1.4],
+                  coord: [0, 1.6],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -1532,14 +1511,14 @@ var state14 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [3, 0.55],
+                  coord: [0, 0.45],
                   symbol: 'none'
                 },
               ],
               [
                 {
                   name: '3 Grades Below Average', // Grade level
-                  coord: [0, 1.4],
+                  coord: [-3, 1.6],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -1548,14 +1527,14 @@ var state14 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [0, 0.55],
+                  coord: [-3, 0.45],
                   symbol: 'none'
                 },
               ],
               [
                 {
                   name: '3 Grades Above Average', // Grade level
-                  coord: [6, 1.4],
+                  coord: [3, 1.6],
                   symbol: 'none',
                   lineStyle: {
                     color: '#052965', // '#adadad'
@@ -1564,7 +1543,7 @@ var state14 = function(scatterplot) {
                   },
                 },
                 {
-                  coord: [6, 0.55],
+                  coord: [3, 0.45],
                   symbol: 'none'
                 },
               ],
@@ -1601,7 +1580,7 @@ var state15 = function(scatterplot) {
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
   // Update title and subtext placeholders
-  Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
+  Title['text'] = 'Third Grade Achievement vs. Achievement<br>Growth (Grades per Year)';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -1632,8 +1611,8 @@ var state15 = function(scatterplot) {
       nameGap: 36
     },
     xAxis: {
-      min: -1,
-      max: 7,
+      min: -4,
+      max: 4,
       name: 'Average Grade 3 Achievement',
     },
     series: [
@@ -1684,7 +1663,7 @@ var state15 = function(scatterplot) {
               [
                 {
                   name: '', // Y axis
-                  coord: [3, 1.6],
+                  coord: [0, 1.6],
                   symbol: 'none',
                   label: {
                     show: false
@@ -1696,14 +1675,14 @@ var state15 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [ 3, 0.4 ],
+                  coord: [ 0, 0.4 ],
                   symbol: 'none',
                 },
               ],
               [
                 {
                   name: '', // x axis
-                  coord: [-1, 1],
+                  coord: [-4, 1],
                   symbol: 'none',
                   label: {
                     show: false
@@ -1715,7 +1694,7 @@ var state15 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [7, 1],
+                  coord: [4, 1],
                   symbol: 'none'
                 },
               ]
@@ -1740,23 +1719,23 @@ var state15 = function(scatterplot) {
           },
           data: [
             [{
-              coord: [3, 1.3],
+              coord: [0, 1.3],
               symbol: 'none',
               symbolSize: 0,
               lineStyle: {
-                color: 'rgba(253, 165, 2, 1)', // 'red',
+                color: '#73D8AE', // 'rgba(253, 165, 2, 1)', // 'red',
                 width: 140,
                 type: 'solid',
                 opacity: 0.65,
 
               },
             }, {
-              coord: [7, 1.3],
+              coord: [4, 1.3],
               symbol: 'none',
               symbolSize: 0
             }],
             [{
-              coord: [5, 1.35],
+              coord: [2, 1.35],
               symbol: 'none',
               name: 'High early opportunity,\nhigh growth opportunity',
               symbolSize: 0,
@@ -1775,7 +1754,7 @@ var state15 = function(scatterplot) {
                 position: 'middle'
               }
             }, {
-              coord: [5.01, 1.35],
+              coord: [2.01, 1.35],
               symbol: 'none',
               symbolSize: 0
             }]
@@ -1814,7 +1793,7 @@ var state16 = function(scatterplot) {
   // var quadrant = getQuadrantSeries(4, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
 
   // Update title and subtext placeholders
-  Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
+  Title['text'] = 'Third Grade Achievement vs. Achievement<br>Growth (Grades per Year)';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -1845,8 +1824,8 @@ var state16 = function(scatterplot) {
       nameGap: 36
     },
     xAxis: {
-      min: -1,
-      max: 7,
+      min: -4,
+      max: 4,
       name: 'Average Grade 3 Achievement',
       nameTextStyle: {
         fontFamily: 'SharpGrotesk-Medium20',
@@ -1865,23 +1844,23 @@ var state16 = function(scatterplot) {
           animate: true,
           data: [
             [{
-              coord: [-1, 0.7],
+              coord: [-4, 0.7],
               symbol: 'none',
               symbolSize: 0,
               lineStyle: {
-                color: 'rgba(253, 165, 2, 1)', // 'red',
+                color: '#73D8AE', // 'rgba(253, 165, 2, 1)',
                 width: 140,
                 type: 'solid',
                 opacity: 0.65,
 
               },
             }, {
-              coord: [3, 0.7],
+              coord: [0, 0.7],
               symbol: 'none',
               symbolSize: 0
             }],
             [{
-              coord: [1, 0.6],
+              coord: [-2, 0.6],
               symbol: 'none',
               name: 'High early opportunity,\nhigh growth opportunity',
               symbolSize: 0,
@@ -1900,7 +1879,7 @@ var state16 = function(scatterplot) {
                 fontFamily: 'MaisonNeue-Medium',
               }
             }, {
-              coord: [1.01, 0.6],
+              coord: [-2.01, 0.6],
               symbol: 'none',
               symbolSize: 0
             }]
@@ -1937,7 +1916,7 @@ var state16 = function(scatterplot) {
               [
                 {
                   name: '', // Y axis
-                  coord: [3, 1.6],
+                  coord: [0, 1.6],
                   symbol: 'none',
                   label: {
                     show: false
@@ -1949,14 +1928,14 @@ var state16 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [ 3, 0.4 ],
+                  coord: [ 0, 0.4 ],
                   symbol: 'none',
                 },
               ],
               [
                 {
                   name: '', // x axis
-                  coord: [-1, 1],
+                  coord: [-4, 1],
                   symbol: 'none',
                   label: {
                     show: false
@@ -1968,7 +1947,7 @@ var state16 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [7, 1],
+                  coord: [4, 1],
                   symbol: 'none'
                 },
               ]
@@ -2007,7 +1986,7 @@ var state17 = function(scatterplot) {
   // var quadrant = getQuadrantSeries(3, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
 
   // Update title and subtext placeholders
-  Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
+  Title['text'] = 'Third Grade Achievement vs. Achievement<br>Growth (Grades per Year)';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -2038,8 +2017,8 @@ var state17 = function(scatterplot) {
       nameGap: 36
     },
     xAxis: {
-      min: -1,
-      max: 7,
+      min: -4,
+      max: 4,
       name: 'Average Grade 3 Achievement',
     },
     series: [
@@ -2063,23 +2042,23 @@ var state17 = function(scatterplot) {
           animate: true,
           data: [
             [{
-              coord: [3, 0.7],
+              coord: [0, 0.7],
               symbol: 'none',
               symbolSize: 0,
               lineStyle: {
-                color: 'rgba(253, 165, 2, 1)', // 'red',
+                color: '#73D8AE', // 'rgba(253, 165, 2, 1)', // 'red',
                 width: 140,
                 type: 'solid',
                 opacity: 0.65,
 
               },
             }, {
-              coord: [7, 0.7],
+              coord: [4, 0.7],
               symbol: 'none',
               symbolSize: 0
             }],
             [{
-              coord: [5, 0.6],
+              coord: [2, 0.6],
               symbol: 'none',
               name: 'High early opportunity,\nlow growth opportunity',
               symbolSize: 0,
@@ -2098,7 +2077,7 @@ var state17 = function(scatterplot) {
                 fontFamily: 'MaisonNeue-Medium',
               }
             }, {
-              coord: [5.01, 0.6],
+              coord: [2.01, 0.6],
               symbol: 'none',
               symbolSize: 0
             }]
@@ -2120,7 +2099,7 @@ var state17 = function(scatterplot) {
               [
                 {
                   name: '', // Y axis
-                  coord: [3, 1.6],
+                  coord: [0, 1.6],
                   symbol: 'none',
                   label: {
                     show: false
@@ -2132,14 +2111,14 @@ var state17 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [ 3, 0.4 ],
+                  coord: [0, 0.4],
                   symbol: 'none',
                 },
               ],
               [
                 {
                   name: '', // x axis
-                  coord: [-1, 1],
+                  coord: [-4, 1],
                   symbol: 'none',
                   label: {
                     show: false
@@ -2151,7 +2130,7 @@ var state17 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [7, 1],
+                  coord: [4, 1],
                   symbol: 'none'
                 },
               ]
@@ -2190,7 +2169,7 @@ var state18 = function(scatterplot) {
   // var quadrant = getQuadrantSeries(1, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
 
   // Update title and subtext placeholders
-  Title['text'] = 'Third Grade Achievement vs. Achievement Growth (Grades per Year)';
+  Title['text'] = 'Third Grade Achievement vs. Achievement<br>Growth (Grades per Year)';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
@@ -2221,8 +2200,8 @@ var state18 = function(scatterplot) {
       nameGap: 36
     },
     xAxis: {
-      min: -1,
-      max: 7,
+      min: -4,
+      max: 4,
       name: 'Average Grade 3 Achievement',
     },
     series: [
@@ -2246,23 +2225,23 @@ var state18 = function(scatterplot) {
           animate: true,
           data: [
             [{
-              coord: [-1, 1.3],
+              coord: [-4, 1.3],
               symbol: 'none',
               symbolSize: 0,
               lineStyle: {
-                color: 'rgba(253, 165, 2, 1)', // 'red',
+                color: '#73D8AE', // 'rgba(253, 165, 2, 1)', // 'red',
                 width: 140,
                 type: 'solid',
                 opacity: 0.65,
 
               },
             }, {
-              coord: [3, 1.3],
+              coord: [0, 1.3],
               symbol: 'none',
               symbolSize: 0
             }],
             [{
-              coord: [1, 1.2],
+              coord: [-2, 1.2],
               symbol: 'none',
               name: 'Low early opportunity,\nhigh growth opportunity',
               symbolSize: 0,
@@ -2281,7 +2260,7 @@ var state18 = function(scatterplot) {
                 fontFamily: 'MaisonNeue-Medium',
               }
             }, {
-              coord: [1.01, 1.2],
+              coord: [-2.01, 1.2],
               symbol: 'none',
               symbolSize: 0
             }]
@@ -2303,7 +2282,7 @@ var state18 = function(scatterplot) {
               [
                 {
                   name: '', // Y axis
-                  coord: [3, 1.6],
+                  coord: [0, 1.6],
                   symbol: 'none',
                   label: {
                     show: false
@@ -2315,14 +2294,14 @@ var state18 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [ 3, 0.4 ],
+                  coord: [0, 0.4],
                   symbol: 'none',
                 },
               ],
               [
                 {
                   name: '', // x axis
-                  coord: [-1, 1],
+                  coord: [-4, 1],
                   symbol: 'none',
                   label: {
                     show: false
@@ -2334,7 +2313,7 @@ var state18 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [7, 1],
+                  coord: [4, 1],
                   symbol: 'none'
                 },
               ]
@@ -2369,7 +2348,7 @@ var state19 = function(scatterplot) {
   }
 
   // Update title and subtext placeholders
-  Title['text'] = 'Achievement Growth vs. Family Socioeconomic Status, by District';
+  Title['text'] = 'Achievement Growth vs. Family Socioeconomic<br>Status, by District';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();

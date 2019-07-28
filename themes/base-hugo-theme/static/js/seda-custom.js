@@ -399,6 +399,39 @@
       }
     }
 
+    /**
+     * Checks if SVG Transforms are supported in the browser
+     * @returns {bool} true if supported, false if not
+     */
+    function supportsSVGTransforms() {
+      // create svg element
+      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 8 8');
+      Object.assign(svg.style, {
+        position: 'absolute', top: 0, left: 0, width: '8px', height: '8px', zIndex: 99999
+      });
+      // add a rectangle with a transform to the SVG
+      svg.innerHTML =
+        '<rect width="4" height="4" fill="#fff" style="transform: translate(4px, 4px)"/>';
+      document.body.appendChild(svg);
+      // check if the rectangle has been transformed
+      var result = document.elementFromPoint(6, 6) !== svg;
+      svg.parentNode.removeChild(svg);
+      return result;
+    }
+    if (supportsSVGTransforms()) {
+      // use svg animation
+      $('.svg-animated').removeClass('d-none');
+      $('.svg-static').addClass('d-none');
+      console.log('Browser supports SVG transforms');
+    } else {
+      // static fallback
+      $('.svg-static').removeClass('d-none');
+      $('.svg-animated').addClass('d-none');
+      console.log('Browser does not support SVG transforms');
+    }
+  
+
     var updateModal = {
         activeBio: null,
         allBios: null,

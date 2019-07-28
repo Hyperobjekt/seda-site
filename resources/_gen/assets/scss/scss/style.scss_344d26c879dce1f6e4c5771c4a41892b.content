@@ -17253,6 +17253,10 @@ h3 {
   background: #ddeaf3;
 }
 
+.white-bg {
+  background-color: #fff;
+}
+
 .btn-custom {
   display: inline-block;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -17994,6 +17998,13 @@ body.home .hero .hero-child svg {
   max-height: 84vh;
 }
 
+@media (max-width: 767.98px) {
+  body.home .hero .hero-child svg {
+    position: absolute;
+    top: -4%;
+  }
+}
+
 @media (min-width: 992px) {
   body.home .hero .hero-child svg {
     transform: translateY(-3vh);
@@ -18020,6 +18031,12 @@ body.home .hero .hero-child svg g#Grades {
 body.home .hero .hero-child #hero-overlay {
   z-index: 1;
   position: absolute;
+}
+
+@media (max-width: 767.98px) {
+  body.home .hero .hero-child #hero-overlay {
+    top: 30%;
+  }
 }
 
 body.home .hero .hero-child .column h2 {
@@ -18382,20 +18399,145 @@ body.home #main {
 .row.map-invite {
   background-color: #04143c;
   background-image: url("/images/scatterplot.svg");
-  background-size: 125%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 335px;
+}
+
+.row.map-invite .superhead {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  margin-bottom: .8rem;
+  letter-spacing: 0.055rem;
+  padding-bottom: 3px;
+}
+
+@media (min-width: 768px) {
+  .row.map-invite .superhead {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+  }
+}
+
+.row.map-invite h5.big-superhead {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  margin-bottom: .8rem;
+  letter-spacing: 0.055rem;
+  padding-bottom: 3px;
+}
+
+@media (min-width: 768px) {
+  .row.map-invite h5.big-superhead {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+  }
+}
+
+.row.map-invite .white-bg {
+  border-radius: 1px;
+}
+
+.row.map-invite .white-bg h4 {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+
+@media (min-width: 768px) {
+  .row.map-invite .white-bg h4 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .row.map-invite .white-bg p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .row.map-invite .white-bg h4 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: .03rem;
+  }
+  .row.map-invite .white-bg p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .row.map-invite .white-bg h4 {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+  }
+  .row.map-invite .white-bg p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+.row.map-invite .white-bg:hover {
+  color: #1c3ed3;
+  color: #3157a5;
+  box-shadow: 0px 0px 0px 6px #3157a5;
+}
+
+.row.map-invite .white-bg:hover p {
+  color: #3157a5;
+}
+
+.row.map-invite .white-bg:hover .superhead {
+  padding-bottom: 0px;
+  border-bottom: 3px solid #3157a5;
+}
+
+.row.map-invite .divider {
+  border-bottom: 1px solid #D8D8D8;
+}
+
+.row.map-invite p {
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: 0rem;
+  color: #5D5D5D;
+}
+
+@media (min-width: 768px) {
+  .row.map-invite p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    letter-spacing: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .row.map-invite p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    letter-spacing: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .row.map-invite p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0;
+  }
 }
 
 .row.map-invite .scatterplot {
   text-align: center;
   color: #ffffff;
-  padding-top: 6.4rem;
-  padding-bottom: 6.4rem;
 }
 
-.row.map-invite .scatterplot p {
+.row.map-invite .scatterplot h4 {
+  color: #fff;
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
   line-height: 2.1rem;
@@ -18403,7 +18545,7 @@ body.home #main {
 }
 
 @media (min-width: 768px) {
-  .row.map-invite .scatterplot p {
+  .row.map-invite .scatterplot h4 {
     font-size: 1.85rem;
     line-height: 2.7rem;
     letter-spacing: auto;
@@ -18411,7 +18553,7 @@ body.home #main {
 }
 
 @media (min-width: 992px) {
-  .row.map-invite .scatterplot p {
+  .row.map-invite .scatterplot h4 {
     font-size: 2rem;
     line-height: 3rem;
     letter-spacing: .003rem;
@@ -18419,7 +18561,7 @@ body.home #main {
 }
 
 @media (min-width: 1280px) {
-  .row.map-invite .scatterplot p {
+  .row.map-invite .scatterplot h4 {
     font-size: 2.3rem;
     line-height: 3.4rem;
     letter-spacing: .003rem;
@@ -18445,46 +18587,13 @@ body.home #main {
   background-image: url("/images/down-arrow.svg");
   display: inline-block;
   width: 20px;
-  height: 30px;
+  height: 17px;
   background-repeat: no-repeat;
   background-position: bottom;
 }
 
 .row.map-invite .scatterplot a:hover {
   text-decoration: underline;
-}
-
-@media (min-width: 768px) {
-  .row.map-invite .scatterplot {
-    padding-top: 6.4rem;
-    padding-bottom: 6.4rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .row.map-invite .scatterplot {
-    padding-top: 8.0rem;
-    padding-bottom: 8.0rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .row.map-invite .scatterplot {
-    padding-top: 10.2rem;
-    padding-bottom: 10.2rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .row.map-invite {
-    height: 416px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .row.map-invite {
-    height: 496px;
-  }
 }
 
 .row.latest-explorations {

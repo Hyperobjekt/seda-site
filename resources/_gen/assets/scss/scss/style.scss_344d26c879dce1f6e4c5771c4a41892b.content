@@ -17640,7 +17640,7 @@ img.float-left {
 }
 
 .hero .hero-child .column {
-  margin-top: 13.2rem;
+  margin-top: 9.2rem;
   margin-bottom: 9.6rem;
   text-align: center;
   color: #ffffff;
@@ -18009,6 +18009,13 @@ body.home .hero .hero-child svg, body.home .hero .hero-child img {
   }
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.home .hero .hero-child svg, body.home .hero .hero-child img {
+    position: absolute;
+    top: 2%;
+  }
+}
+
 @media (min-width: 992px) {
   body.home .hero .hero-child svg, body.home .hero .hero-child img {
     transform: translateY(-3vh);
@@ -18083,7 +18090,7 @@ body.home .hero .hero-child .column h2 {
     font-size: 3.2rem;
     line-height: 4.8rem;
     letter-spacing: .018rem;
-    margin-top: 6%;
+    margin-top: 46%;
   }
 }
 
@@ -18092,6 +18099,7 @@ body.home .hero .hero-child .column h2 {
     font-size: 3.2rem;
     line-height: 4.8rem;
     letter-spacing: .018rem;
+    margin-top: 6%;
   }
 }
 
@@ -18211,31 +18219,23 @@ body.home #main {
 
 .row.subscribe h3 {
   font-face: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.7rem;
-  line-height: 2.8rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   letter-spacing: .028rem;
-}
-
-@media (min-width: 320px) {
-  .row.subscribe h3 {
-    font-size: 1.8rem;
-    line-height: 2.7rem;
-    letter-spacing: .03rem;
-  }
 }
 
 @media (min-width: 768px) {
   .row.subscribe h3 {
-    font-size: 1.7rem;
-    line-height: 2.8rem;
+    font-size: 1.85rem;
+    line-height: 2.7rem;
     letter-spacing: .028rem;
   }
 }
 
 @media (min-width: 992px) {
   .row.subscribe h3 {
-    font-size: 1.9rem;
-    line-height: 2.85rem;
+    font-size: 2rem;
+    line-height: 3rem;
     letter-spacing: .025rem;
     font-family: SharpGrotesk-Medium20;
   }
@@ -18301,8 +18301,8 @@ body.home #main {
 }
 
 .row.fact.some-things-to-know h3 {
-  font-size: 1.7rem;
-  line-height: 2.7rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   letter-spacing: .0rem;
 }
 
@@ -18314,9 +18314,8 @@ body.home #main {
 
 @media (min-width: 768px) {
   .row.fact.some-things-to-know h3 {
-    font-size: 2.3rem;
-    line-height: 3.4rem;
-    letter-spacing: .03rem;
+    font-size: 1.85rem;
+    line-height: 2.7rem;
   }
 }
 
@@ -18324,7 +18323,7 @@ body.home #main {
   .row.fact.some-things-to-know h3 {
     font-size: 2rem;
     line-height: 3rem;
-    letter-spacing: .03rem;
+    letter-spacing: .025rem;
   }
 }
 

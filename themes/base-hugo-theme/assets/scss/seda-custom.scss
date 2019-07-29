@@ -576,7 +576,7 @@ img {
       background-position: center bottom;
     }
     .column {
-      margin-top: 13.2rem;
+      margin-top: 9.2rem;
       margin-bottom: 9.6rem;
       text-align: center;
       color: $white;
@@ -912,6 +912,10 @@ body.home {
           position: absolute;
           top: -4%;
         }
+        @include media-breakpoint-only(md) {
+          position: absolute;
+          top: 2%;
+        }
         @include media-breakpoint-up(lg) {
           transform: translateY(-3vh);
         }
@@ -998,7 +1002,7 @@ body.home {
             font-size: 3.2rem;
             line-height: 4.8rem;
             letter-spacing: .018rem;
-            margin-top: 6%;
+            margin-top: 46%;
           }
 
           @include media-breakpoint-up(lg) {
@@ -1006,6 +1010,7 @@ body.home {
             line-height: 4.8rem;
             letter-spacing: .018rem;
             // margin-top: 20vh;
+            margin-top: 6%;
           }
 
           @include media-breakpoint-up(xl) {
@@ -1131,25 +1136,19 @@ body.home {
     h3 {
       // margin-bottom: 3.2rem;
       font-face: $sharpgrotesk-med-20;
-      font-size: 1.7rem;
-      line-height: 2.8rem;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
       letter-spacing: .028rem;
 
-      @include media-breakpoint-up(sm) {
-        font-size: 1.8rem;
-        line-height: 2.7rem;
-        letter-spacing: .03rem;
-      }
-
       @include media-breakpoint-up(md) {
-        font-size: 1.7rem;
-        line-height: 2.8rem;
+        font-size: 1.85rem;
+        line-height: 2.7rem;
         letter-spacing: .028rem;
       }
 
       @include media-breakpoint-up(lg) {
-        font-size: 1.9rem;
-        line-height: 2.85rem;
+        font-size: 2rem;
+        line-height: 3rem;
         letter-spacing: .025rem;
         font-family: SharpGrotesk-Medium20;
       }
@@ -1213,9 +1212,10 @@ body.home {
       text-align: center;
       font-family: $sharpgrotesk-med-20;
       padding: 3.2rem 0;
+
       h3 {
-        font-size: 1.7rem;
-        line-height: 2.7rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
         letter-spacing: .0rem;
       }
       @include media-breakpoint-up(sm) {
@@ -1224,16 +1224,15 @@ body.home {
       @include media-breakpoint-up(md) {
         // padding: 8.0rem 0;
         h3 {
-          font-size: 2.3rem;
-          line-height: 3.4rem;
-          letter-spacing: .03rem;
+          font-size: 1.85rem;
+          line-height: 2.7rem;
         }
       }
       @include media-breakpoint-up(lg) {
         h3 {
           font-size: 2rem;
           line-height: 3rem;
-          letter-spacing: .03rem;
+          letter-spacing: .025rem;
         }
       }
       @include media-breakpoint-up(xl) {

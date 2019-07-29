@@ -423,6 +423,8 @@
       // use svg animation
       $('.svg-animated').removeClass('d-none');
       $('.svg-static').addClass('d-none');
+      //$('.svg-animated').addClass('d-none');
+      //$('.svg-static').removeClass('d-none');
       console.log('Browser supports SVG transforms');
     } else {
       // static fallback

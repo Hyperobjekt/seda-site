@@ -17992,30 +17992,34 @@ body.home .hero .hero-child {
   transform: translateZ(0);
 }
 
-body.home .hero .hero-child svg {
+body.home .hero .hero-child img {
+  opacity: 0.54;
+}
+
+body.home .hero .hero-child svg, body.home .hero .hero-child img {
   width: 82%;
   min-height: 480px;
   max-height: 84vh;
 }
 
 @media (max-width: 767.98px) {
-  body.home .hero .hero-child svg {
+  body.home .hero .hero-child svg, body.home .hero .hero-child img {
     position: absolute;
     top: -4%;
   }
 }
 
 @media (min-width: 992px) {
-  body.home .hero .hero-child svg {
+  body.home .hero .hero-child svg, body.home .hero .hero-child img {
     transform: translateY(-3vh);
   }
 }
 
-body.home .hero .hero-child svg g#ses-metric {
+body.home .hero .hero-child svg g#ses-metric, body.home .hero .hero-child img g#ses-metric {
   clip-path: polygon(0px 0, 100% 0, 100% 100%, 0px 100%);
 }
 
-body.home .hero .hero-child svg g#Grades {
+body.home .hero .hero-child svg g#Grades, body.home .hero .hero-child img g#Grades {
   clip-path: polygon(0px 0, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -18183,6 +18187,15 @@ body.home #main {
 .row.subscribe {
   text-align: left;
   background-color: #ddeaf3;
+  /* .input-group-append {
+      @include media-breakpoint-down(mm) {
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 2.4rem;
+      }
+    } */
 }
 
 .row.subscribe input.form-control {
@@ -18193,20 +18206,6 @@ body.home #main {
   .row.subscribe input.form-control {
     width: 1%;
     flex: 1 1 auto;
-  }
-}
-
-.row.subscribe .input-group {
-  width: 60%;
-}
-
-@media (max-width: 991.98px) {
-  .row.subscribe .input-group-append {
-    margin-left: 0px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 2.4rem;
   }
 }
 
@@ -18264,6 +18263,12 @@ body.home #main {
 .row.fact {
   text-align: left;
   background-color: #f8f8f8;
+}
+
+.row.fact img.svg-static {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 .row.fact .superhead {
@@ -18652,6 +18657,7 @@ body.home #main {
 .row.latest-explorations .card-container .card .img-thumbnail {
   width: 108px;
   height: 72px;
+  display: block;
   padding: 0;
   background-color: #ffffff;
   border: none;

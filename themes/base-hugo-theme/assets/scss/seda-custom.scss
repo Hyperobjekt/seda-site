@@ -169,6 +169,9 @@ h3 {
   color: #103698;
   //font-style: italic;
 }
+.color-tertiary {
+  color: #04143c;
+}
 .alt-bg {
   background: #f6f9f9;
 }
@@ -1323,12 +1326,17 @@ body.home {
 
 .row {
   &.map-invite {
-    background-color: $seda-navy;
-    background-image: url('/images/scatterplot.svg');
-    background-size: cover;
+    background-color: #f8f8f8;
+    background-image: url('/images/heroes/map-bg-2.svg');
+    background-size: 220%;
     background-repeat: no-repeat;
-    background-position: center;
-    //height: 335px;
+    background-position: center 8%;
+    @include media-breakpoint-up(md) {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      //height: 335px;
+    }
     .superhead {
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -1341,9 +1349,10 @@ body.home {
         line-height: 2.5rem;
       }
     }
-    h5.big-superhead {
+    h5.big-superhead, a.big-superhead {
       font-size: 1.2rem;
       text-transform: uppercase;
+      color: $tertiary;
       font-family: $sharpgrotesk-med-15;
       margin-bottom: .8rem;
       letter-spacing: 0.055rem;
@@ -1399,7 +1408,7 @@ body.home {
      
        color: $primary;
        color: #3157a5;
-       box-shadow: 0px 0px 0px 6px #3157a5;
+       box-shadow: 0px 0px 3px 0.5px #3157a5;
        //color: $seda-red;
        img {
         //filter: hue-rotate(306deg);
@@ -1451,7 +1460,7 @@ body.home {
       //padding-bottom: 6.4rem;
 
       h4 {
-        color: #fff;
+        //color: #fff;
         font-family: $sharpgrotesk-med-20;
         font-size: 1.4rem;
         line-height: 2.1rem;
@@ -1479,15 +1488,15 @@ body.home {
       }
       a {
         display: block;
-        color: $white;
-        font-family: $sharpgrotesk-med-15;
-        font-size: 1.2rem;
-        letter-spacing: .055rem;
-        text-transform: uppercase;
+        //color: $white;
+        //font-family: $sharpgrotesk-med-15;
+        //font-size: 1.2rem;
+        //letter-spacing: .055rem;
+        //text-transform: uppercase;
 
         &:after {
           content: "";
-          background-image: url('/images/down-arrow.svg');
+          background-image: url('/images/down-arrow-blk.svg');
           display: inline-block;
           width: 20px;
           height: 17px;
@@ -1534,7 +1543,7 @@ body.home {
 
 .row {
   &.latest-explorations {
-    background-color: $seda-paleblue;
+    background-color: #fff;
 
     h3 {
       font-size: 1.7rem;

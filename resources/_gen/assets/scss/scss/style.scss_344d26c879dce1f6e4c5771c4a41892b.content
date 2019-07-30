@@ -17245,6 +17245,10 @@ h3 {
   color: #103698;
 }
 
+.color-tertiary {
+  color: #04143c;
+}
+
 .alt-bg {
   background: #f6f9f9;
 }
@@ -18409,11 +18413,19 @@ body.home #main {
 }
 
 .row.map-invite {
-  background-color: #04143c;
-  background-image: url("/images/scatterplot.svg");
-  background-size: cover;
+  background-color: #f8f8f8;
+  background-image: url("/images/heroes/map-bg-2.svg");
+  background-size: 220%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 8%;
+}
+
+@media (min-width: 768px) {
+  .row.map-invite {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .row.map-invite .superhead {
@@ -18432,9 +18444,10 @@ body.home #main {
   }
 }
 
-.row.map-invite h5.big-superhead {
+.row.map-invite h5.big-superhead, .row.map-invite a.big-superhead {
   font-size: 1.2rem;
   text-transform: uppercase;
+  color: #04143c;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   margin-bottom: .8rem;
   letter-spacing: 0.055rem;
@@ -18442,7 +18455,7 @@ body.home #main {
 }
 
 @media (min-width: 768px) {
-  .row.map-invite h5.big-superhead {
+  .row.map-invite h5.big-superhead, .row.map-invite a.big-superhead {
     font-size: 1.7rem;
     line-height: 2.5rem;
   }
@@ -18495,7 +18508,7 @@ body.home #main {
 .row.map-invite .white-bg:hover {
   color: #1c3ed3;
   color: #3157a5;
-  box-shadow: 0px 0px 0px 6px #3157a5;
+  box-shadow: 0px 0px 3px 0.5px #3157a5;
 }
 
 .row.map-invite .white-bg:hover p {
@@ -18549,7 +18562,6 @@ body.home #main {
 }
 
 .row.map-invite .scatterplot h4 {
-  color: #fff;
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
   line-height: 2.1rem;
@@ -18587,16 +18599,11 @@ body.home #main {
 
 .row.map-invite .scatterplot a {
   display: block;
-  color: #ffffff;
-  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.2rem;
-  letter-spacing: .055rem;
-  text-transform: uppercase;
 }
 
 .row.map-invite .scatterplot a:after {
   content: "";
-  background-image: url("/images/down-arrow.svg");
+  background-image: url("/images/down-arrow-blk.svg");
   display: inline-block;
   width: 20px;
   height: 17px;
@@ -18609,7 +18616,7 @@ body.home #main {
 }
 
 .row.latest-explorations {
-  background-color: #f5f8fa;
+  background-color: #fff;
 }
 
 .row.latest-explorations h3 {

@@ -1,9 +1,13 @@
 name: "Ralph Rogers"
 role: "staff" # director, staff, or partner
 title: "" # maybe different from role; is displayed
-image: "" # will be cropped to center square & rounded
-thumb: "/images/icons/person-placeholder.png"
+image: "/uploads/rrogers-full.jpg" # will be cropped to center square & rounded
+thumb: "/uploads/rrogers-sm.jpg"
 current: true # true or false (for former)
 weight: 158
 blurb: >
+  During a 20-year marketing and communications career in Silicon Valley, Ralph led teams at large companies such as Apple Computer, and was also VP of Marketing in two tech startups. In 2002, he transitioned to the nonprofit sector to help organizations creating positive change in the world. Since that transition, he led the marketing team launching the new Asian Art Museum in San Francisco, led communications at the Stanford Center for Opportunity Policy in Education, the Stanford Graduate School of Business, and served as a board member of the San Francisco Zen Center.
+  <br /><br />
+  <ul><li>MBA, Stanford Graduate School of Business</li>
+  <li>BS, United States Military Academy</li></ul>
   

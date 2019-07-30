@@ -1,0 +1,9 @@
+name: "Richard DiSalvo"
+role: "former" # director, staff, or partner
+title: "Research Data Analyst" # maybe different from role; is displayed
+image: "/uploads/rdisalvo-full.jpg" # will be cropped to center square & rounded
+thumb: "/uploads/rdisalvo-sm.jpg"
+current: true # true or false (for former)
+weight: 160
+blurb: >
+  Richard worked as the SEDA Research Data Analyst for SEDA version 2.0, and supported the release of SEDA version 2.1. He is an applied economist conducting research in education, environment, and public health policy.

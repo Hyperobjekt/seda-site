@@ -17996,6 +17996,14 @@ body.home .hero .hero-child img {
   opacity: 0.54;
 }
 
+body.home .hero .hero-child img {
+  opacity: 0;
+}
+
+body.home .hero .hero-child img.opaque {
+  opacity: 1;
+}
+
 body.home .hero .hero-child svg, body.home .hero .hero-child img {
   width: 82%;
   min-height: 480px;

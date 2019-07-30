@@ -904,6 +904,12 @@ body.home {
       img {
         opacity: 0.54;
       }
+      img {
+        opacity: 0;
+        &.opaque {
+          opacity: 1;
+        }
+      }
       svg, img {
         width: 82%;
         min-height: 480px;

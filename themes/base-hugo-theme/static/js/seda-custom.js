@@ -582,6 +582,19 @@
         $(this).addClass("highlight");
     });
 
+    // Add href to URL for FAQ items
+    
+    $(function() {
+      $('.accordion-section .collapsed').click(function() {
+        if (history.pushState) {
+          history.replaceState(null, null, $(this).attr('href'));
+        }
+        else {
+          location.hash = $(this).attr('href');
+        }
+      });
+    });
+
     if ($('body.home').length >= 1) {
       console.log('setting up home page animations');
       setElPositions();

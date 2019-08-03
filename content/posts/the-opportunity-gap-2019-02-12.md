@@ -8,218 +8,116 @@ statustype: post
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
 ---
 
-{{% state-wrapper state="state1" notmerge="true" %}}
-
-Can a school district overcome the effects that poverty has on its students? To answer that question, we need to rethink how we measure a school district’s quality.
-
-Despite popular belief, average test scores are a bad indicator for measuring how much education students receive in a district. Average test scores by grade tell us more about the socioeconomic conditions of the students in a district than the district’s impact on student learning.
-
-There’s a better way.
-
-Measuring the growth of students’ test scores as they advance across the grades tells a more accurate story about a district’s impact on student learning. Some wealthy districts show a little learning across five years, some show a lot. Meanwhile, some poor districts show students who test way below average in grade 3 but catch up to the national average by grade 8.
-
-The following charts tell an unexpected story of district quality and the amount of opportunity they afford students. These charts rely on standardized test scores for 45 million students across 11,000 school districts – nearly all in the U.S.
-
-This figure shows the relationship between average 3rd grade achievement and average family socioeconomic status in any given school district. The trend is clear: The more affluence in a district, the higher the achievement among third graders.
-
-This shouldn’t be surprising. Affluent families and districts are able to provide much greater opportunities than poor ones early in children’s lives. Viewed a different way, this figure captures the opportunities available to students before they turn 9 years of age. Family income, neighborhood conditions, the availability of high-quality child care and pre-school programs, and the quality of schools in grades K-3 are all captured in 3rd grade average scores.
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state1_1" notmerge="true" %}}
-
-Notice the yellow line moving from the lower left to the upper right of the figure. Broadly, it’s a prediction for how well a district’s 3rd graders will perform given the district’s socioeconomic status. Many districts follow that prediction line. But we also see the districts that have low test scores despite their affluence and high scores despite their poverty. Some districts do better than we would predict, and some districts do worse than we would predict. There’s a lot of variation.
-
-{{% /state-wrapper %}}
-
 {{% state-wrapper state="state2" notmerge="true" %}}
 
-The relationship between socioeconomic status and achievement appears to change in different ways for different districts as students age through the school system.
+The Chicago Public Schools are more successful than they are given credit for. In 3rd grade, where our test data begins, students in Chicago test below a 2nd-grade level, as shown in the figure. 
 
-Unlike the clear trend connecting family wealth and average test scores, no such clear trend exists as students advance across the grades within the same district. In fact, a district’s wealth tells us little about the effectiveness of the district’s schools.
-
-For example, 3rd graders in Chicago test below a 2nd-grade level...
+This figure highlights the relationship between how rich a district is and how its students perform on standardized tests in 3rd grade. The horizontal axis shows the average family socioeconomic status (SES) in the district [link to FAQ for explanation], where 0 represents the SES of the average district in the U.S. More affluent districts are located to the right in the figure; poorer district to the left. In many ways the pattern shown here is not surprising: children’s scores are much higher in richer districts. In relatively affluent Anne Arundel County, MD, the average test scores are well above average in 3rd grade. In Chicago, by contrast, average test scores are far below average … 
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state3" notmerge="true" %}}
 
-...Grade 4...
-
-<br>
-<br>
-<br>
-<br>
+but by fourth grade, they have moved up ...
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state4" notmerge="true" %}}
 
-...Grade 5...
-
-<br>
-<br>
-<br>
-<br>
+and the same happens in fifth grade ...
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state5" notmerge="true" %}}
 
-...Grade 6...
-
-<br>
-<br>
-<br>
-<br>
+and sixth ...
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state6" notmerge="true" %}}
 
-...Grade 7...
-
-<br>
-<br>
-<br>
-<br>
+and seventh ...
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state7" notmerge="true" %}}
 
-...Grade 8.
+... and by 8th grade Chicago students achieve near the national average, meaning that they experience the equivalent of six years of average learning in the five years between 3rd and 8th grade. The families in Chicago’s public schools tend to be lower in socioeconomic status, and the average test scores are relatively modest, but, year after year, the schools are lifting children up at an impressive rate.   
 
-By 8th grade they achieve near the national average, meaning that they experience the equivalent of six years of learning in the five years between 3rd and 8th grade. The results in Chicago show that a district’s low socioeconomic status isn’t predictive of student achievement over time, and that a poor district can give its students considerable opportunity—even a large one that enrolls hundreds of thousands of students.
+In Anne Arundel, the opposite is true. Although students there are more affluent than average and score above a 4th grade level in 3rd grade, they learn at a far lower rate than their Chicago peers. By 8th grade their scores are only slightly above average. 
 
-{{% /state-wrapper %}}
+It’s common to think of the average test scores in a school as a rough measure of school quality. After all, if students are scoring well on tests, they must be learning something, right? To understand what is wrong with this assumption, though, consider a hospital. We wouldn’t assess a hospital based on the health of its patients; rather, we’d judge it on how much its patients’ health improves as a result of their time in the hospital. Similarly, we shouldn’t evaluate a school based on the average scores of its students, but rather by how much they the students learn while in school. If we can measure the change in test scores as students move from one grade to the next, we gain a more accurate picture of what a school is accomplishing.
 
-{{% state-wrapper state="state8" notmerge="true" %}}
-
-Some poor districts show an opposite trend. Third-grade students in Milwaukee test similarly at 2nd-grade levels as do Chicago students, but do not grow as much, so they are far behind the national average when they reach 8th grade...
-
-<br>
-<br>
-<br>
-<br>
-
-{{% /state-wrapper %}}
-
-
-{{% state-wrapper state="state9" notmerge="true" %}}
-
-...Grade 4...
-
-<br>
-<br>
-<br>
-<br>
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state10" notmerge="true" %}}
-
-...Grade 5...
-
-<br>
-<br>
-<br>
-<br>
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state11" notmerge="true" %}}
-
-...Grade 6...
-
-<br>
-<br>
-<br>
-<br>
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state12" notmerge="true" %}}
-
-...Grade 7...
-
-<br>
-<br>
-<br>
-<br>
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state13" notmerge="true" %}}
-
-...Grade 8.
-
-To be sure, growth rates don’t measure school impact alone. They may also depend on average family resources as well as other local conditions, including neighborhood characteristics and the availability of afterschool programs. But growth rates, unlike average test scores, tell us more about how much education students receive while in school.
-
-What these figures show is that there is very little relationship between average 3rd grade test scores and average growth as students move from grades 3 through 8. Districts with high grade 3 scores don’t have the same outcomes: there are many with high growth and many with low growth as students progress through elementary and middle school. The same is true for districts with low initial scores.
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state14" notmerge="true" %}}
-
-How much we can glean from 8th grade average scores also varies considerably. Some districts have higher grade 3 scores and lower growth while others have lower initial grade 3 scores and higher growth. Snapshots in time aren’t as revealing as measuring growth over time.
-
-<br>
-<br>
-<br>
-<br>
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state15" notmerge="true" %}}
-
-The four quadrants compare each district’s early educational opportunities to its growth opportunities.
-
-In the upper right are districts characterized by high early educational opportunity and high growth opportunity; these are districts where students have high average achievement in grade 3 and have above average growth rates following that.
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state16" notmerge="true" %}}
-
-In the lower left are districts characterized by the opposite pattern: low early educational opportunity and low-growth opportunity.
-
-<br>
-<br>
-<br>
-<br>
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state17" notmerge="true" %}}
-
-In the bottom right are districts are where kids have lots of opportunities early on, but show low growth after grade 3. These communities may need to focus their investments in middle school opportunities.
-
-<br>
-<br>
-<br>
-<br>
-
-{{% /state-wrapper %}}
-
-{{% state-wrapper state="state18" notmerge="true" %}}
-
-In the upper left are districts where kids have very few opportunities early on, but show high growth after grade 3. These communities may need to focus their investments in early childhood opportunities.
-
-<br>
-<br>
-<br>
-<br>
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state19" notmerge="true" %}}
 
-This figure shows the relationship between average student growth and average family socioeconomic status in any given school district. Viewed a different way, it depicts the impact five years of school has on children between the ages of 9 and 14.
+The Opportunity Explorer provides this data — the “learning rate” — for schools, school districts, and counties across the country. The result is an unexpected story of the quality of public education in the United States. We see, for example, that students in some relatively affluent districts—like Anne Arundel County—show little learning as they progress from one grade to the next. We discover, too, that students in some poor districts start off testing far below average but the schools seem appear to be doing an outstanding job, and the students eventually catch up to the national average. 
 
-It’s not to be confused with the first figure, which showed the relationship between average test scores and family affluence. The first is a snapshot, while this is tracking progress of the same set of students over time.
+This figure highlights the relationship between how rich a district is and how fast its students learn on average. As above, the horizontal axis shows the average SES in the district [link to FAQ for explanation]. But here the vertical axis represents districts’ learning rates: the higher the district is located in the figure, the faster students’ test scores improve from one grade to the next. 
 
-Unlike the first figure in this exploration, this one indicates a weak relationship between a district’s socioeconomic status and the growth in test scores. In fact, while students in poor and affluent districts start at very different points, they grow at similar rates as they progress from 3rd through 8th grade.
+On average, learning rates are modestly higher in more affluent districts than in less affluent ones, but the data reveal many exceptions. Chicago boasts a learning rate 22 percent above average. But Anne Arundel County has learning rates 16 percent slower than average.
 
-One takeaway is that districts with far more low-income students can impart as much learning as districts with more affluent students. Because student growth indicates how much kids learn as they move from 3rd to 8th grade, it’s a better measure of school quality than average achievement is.
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state8" notmerge="true" %}}
+
+Differences in learning rates add up. In Milwaukee, the scores of third-grade students in are similar to those in Chicago. But over time, their scores do not grow as much, so they are far behind the national average when they reach 8th grade.
+
+Shown here is Grade 3 ...
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state9" notmerge="true" %}}
+
+Grade 4 ...
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state10" notmerge="true" %}}
+
+Grade 5 ...
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state11" notmerge="true" %}}
+
+Grade 6 ...
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state12" notmerge="true" %}}
+
+Grade 7 ...
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state13" notmerge="true" %}}
+
+and Grade 8.
+
+Are the schools themselves the reason for this discrepancy in learning rates? It’s possible that other factors, such as family resources and the availability of afterschool programs within a given district, play some role. But even so, we have a better idea of how much students learn during their school years by looking at learning rates instead of average test scores. This brings us a step closer to understanding where public schools are most effective at providing learning opportunities and why the quality of public education can vary so dramatically from one school system to the next.
+
+In Chicago at least, a community may provide its children with relatively low educational opportunities in one part of their lives (prior to 3rd grade), but may nonetheless provide extensive opportunities in another period (in late elementary and middle school). Is Chicago an anomaly? Do most communities generally provide high educational opportunities at all ages, or low opportunities at all ages? Are places where children learn a lot early in childhood also the places where they tend to learn the most during their later schooling years? Or are many places like Chicago—able to provide high opportunities in some periods of childhood but less so in others?
+
+Again, the data provide us an answer. 
+
+{{% /state-wrapper %}}
+
+{{% state-wrapper state="state14" notmerge="true" %}}
+
+The next figure compares districts’ learning rates with average test scores in 3rd grade. As above, districts higher in the figure have higher learning rates. In places on the left, students have had relatively few educational opportunities by the time they reach 3rd grade; on the right side, early educational opportunities are high. (See [link to discovery] to understand why average test scores measure opportunity in and out of school.)  
+
+There is almost no relationship between the two measures. Districts with high scores in grade 3 don’t necessarily have high learning rates; nor do districts with low initial scores generally have low growth rates. 
+
+Districts in the upper right offer students substantial educational opportunities both before 3rd grade and through the middle school years. Those in the lower left show the opposite: educational opportunities are scarce both in early childhood and through the elementary and middle school years.
+
+More generally, the data tell us not only where there is more or less educational opportunity, but when opportunity is available in each place. In the bottom right, for example, are districts like Anne Arundel where students have plentiful educational opportunities early in life, but show low growth after grade 3. These communities may need to focus their investments in expanding learning opportunities in the late elementary and middle school years.
+
+In the upper left are districts, like Chicago, where educational opportunities are concentrated during the schooling years. Here children have few opportunities early on, but show high growth after grade 3. Children in such place may benefit the most from investments focused on improving early childhood opportunities. 
+
+If we want to improve children’s educational outcomes, we will need to change how—and where and when—we provide educational opportunities throughout children’s lives. Some people assume that we simply need to improve schools. Others argue that the schools are fine, but we need to provide more learning opportunities in early childhood—in children’s homes and childcare centers and preschool programs. The data show that there may be no one best strategy. Rather we need targeted strategies—targeted to specific age groups in specific places—to allow all of our children to reach their full potential, regardless of where they grow up. 
 
 {{% /state-wrapper %}}

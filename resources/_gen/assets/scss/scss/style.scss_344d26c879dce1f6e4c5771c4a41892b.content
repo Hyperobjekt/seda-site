@@ -21187,7 +21187,6 @@ body.type-posts {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
-  margin-top: 3.2rem;
 }
 
 body.type-posts:first-child {
@@ -21207,7 +21206,6 @@ body.type-posts:first-child {
     margin-right: auto;
     font-size: 1.3rem;
     line-height: 2.1rem;
-    margin-top: 3.2rem;
   }
 }
 
@@ -21215,7 +21213,6 @@ body.type-posts:first-child {
   body.type-posts {
     font-size: 1.5rem;
     line-height: 2.2rem;
-    margin-top: 3.2rem;
   }
 }
 
@@ -21223,7 +21220,6 @@ body.type-posts:first-child {
   body.type-posts {
     font-size: 1.5rem;
     line-height: 2.2rem;
-    margin-top: 3.2rem;
   }
 }
 
@@ -21370,9 +21366,11 @@ body.type-posts .crumbs {
   letter-spacing: .055rem;
   text-transform: uppercase;
   border: 0;
-  background-color: transparent;
-  margin-top: 2.4rem;
-  margin-bottom: -2.4rem;
+  background-color: #f3f3f3;
+  padding: 2.4rem 20px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: -1.6rem;
 }
 
 body.type-posts .crumbs span.med-blue, body.type-posts .crumbs a {

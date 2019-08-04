@@ -5,7 +5,7 @@ body.type-posts {
         // color: $white;
         font-size: 1.3rem;
         line-height: 2.0rem;
-        margin-top: 3.2rem;
+        //margin-top: 3.2rem;
         &:first-child {
             margin-top: 0;
         }
@@ -21,19 +21,19 @@ body.type-posts {
           margin-right: auto;
           font-size: 1.3rem;
           line-height: 2.1rem;
-          margin-top: 3.2rem;
+          //margin-top: 3.2rem;
         }
 
         @include media-breakpoint-up(lg) {
           font-size: 1.5rem;
           line-height: 2.2rem;
-          margin-top: 3.2rem;
+          //margin-top: 3.2rem;
         }
 
         @include media-breakpoint-up(xl) {
           font-size: 1.5rem;
           line-height: 2.2rem;
-          margin-top: 3.2rem;
+          //margin-top: 3.2rem;
         }
   .hero {
     background: linear-gradient(to bottom, rgba(4, 41, 101, 100%) 5%, rgba(4, 29, 85, 100%) 75%);
@@ -139,9 +139,11 @@ body.type-posts {
     letter-spacing: .055rem;
     text-transform: uppercase;
     border: 0;
-    background-color: transparent;
-    margin-top: 2.4rem;
-    margin-bottom: -2.4rem;
+    background-color: #f3f3f3;
+    padding: 2.4rem 20px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: -1.6rem;
     span.med-blue, a {
       color: #7086AB;
     }

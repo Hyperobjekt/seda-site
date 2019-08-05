@@ -245,7 +245,7 @@ var state1 = function(scatterplot) {
   }
 }
 
-/** State 1: Show white scores on x axis and black scores on y axis */
+/** State 1: Show basic chart */
 var state1_1 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
@@ -375,7 +375,7 @@ var state1_1 = function(scatterplot) {
   }
 }
 
-/** State 2: Highlight largest 25 districts  */
+/** State 2: Grade 3 Chicago + Anne Arundel  */
 var state2 = function(scatterplot) {
   if (names.length <= 0 &&
     scatterplot &&
@@ -388,7 +388,7 @@ var state2 = function(scatterplot) {
   // state 2 is based on state 1
   var base = scatterplot.getState('base');
   var highlight = {};
-  // highlight['5509600'] = 'Milwaukee School District';
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -468,11 +468,11 @@ var state2 = function(scatterplot) {
   }
 };
 
-/** State 3: Highlight locations (Detroit, Gwinet, Washington) */
+/** State 3: Grade 4 Chicago + Anne Arundel */
 var state3 = function(scatterplot) {
   var base = scatterplot.getState('base');
   var highlight = {};
-  // highlight['5509600'] = 'Milwaukee School District';
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -558,7 +558,7 @@ var state4 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
   var highlight = {};
-  // highlight['5509600'] = 'Milwaukee School District';
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -645,7 +645,7 @@ var state5 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
   var highlight = {};
-  // highlight['5509600'] = 'Milwaukee School District';
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -744,7 +744,7 @@ var state6 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
   var highlight = {};
-  // highlight['5509600'] = 'Milwaukee School District';
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -831,7 +831,7 @@ var state7 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
   var highlight = {};
-  // highlight['5509600'] = 'Milwaukee School District';
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -919,6 +919,7 @@ var state8 = function(scatterplot) {
   const base = scatterplot.getState('base');
   var highlight = {};
   highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -1006,6 +1007,7 @@ var state9 = function(scatterplot) {
   const base = scatterplot.getState('base');
   var highlight = {};
   highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -1093,6 +1095,7 @@ var state10 = function(scatterplot) {
   const base = scatterplot.getState('base');
   var highlight = {};
   highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -1180,6 +1183,7 @@ var state11 = function(scatterplot) {
   const base = scatterplot.getState('base');
   var highlight = {};
   highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -1267,6 +1271,7 @@ var state12 = function(scatterplot) {
   const base = scatterplot.getState('base');
   var highlight = {};
   highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -1354,6 +1359,7 @@ var state13 = function(scatterplot) {
   const base = scatterplot.getState('base');
   var highlight = {};
   highlight['5509600'] = 'Milwaukee School District';
+  highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -1433,13 +1439,16 @@ var state13 = function(scatterplot) {
   }
 }
 
-/** State 8, Avg achievement grade 3 vs years growth per grade */
+/** State 14, Avg achievement grade 3 vs years growth per grade */
 var state14 = function(scatterplot) {
   // get current echart options
   const options = scatterplot.component.getOption();
   // this state is created from the base
   const base = scatterplot.getState('base');
   var highlight = {};
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
+  highlight['1709930'] = 'Chicago Public School District';
+  highlight['5509600'] = 'Milwaukee School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -1563,12 +1572,16 @@ var state14 = function(scatterplot) {
 }
 
 /** State 15, 2nd quadrant, upper right */
+
 var state15 = function(scatterplot) {
   // get current echart options
   const options = scatterplot.component.getOption();
   // this state is created from the base
   const base = scatterplot.getState('base');
   var highlight = {};
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
+  highlight['1709930'] = 'Chicago Public School District';
+  highlight['5509600'] = 'Milwaukee School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -1750,6 +1763,7 @@ var state15 = function(scatterplot) {
                 show: true,
                 color: '#052965',
                 fontWeight: 500,
+                fontSize: 13,
                 fontFamily: 'MaisonNeue-Medium',
                 position: 'middle'
               }
@@ -1780,6 +1794,9 @@ var state16 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
   var highlight = {};
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
+  highlight['1709930'] = 'Chicago Public School District';
+  highlight['5509600'] = 'Milwaukee School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -1862,7 +1879,7 @@ var state16 = function(scatterplot) {
             [{
               coord: [-2, 0.6],
               symbol: 'none',
-              name: 'High early opportunity,\nhigh growth opportunity',
+              name: 'Low early opportunity,\nlow growth opportunity',
               symbolSize: 0,
               lineStyle: {
                 color: 'transparent', // 'rgba(253, 165, 2, 1)', // 'red',
@@ -1876,6 +1893,7 @@ var state16 = function(scatterplot) {
                 position: 'middle',
                 color: '#052965',
                 fontWeight: 500,
+                fontSize: 13,
                 fontFamily: 'MaisonNeue-Medium',
               }
             }, {
@@ -1967,12 +1985,16 @@ var state16 = function(scatterplot) {
 }
 
 /** State 17, 3rd quadrant, lower right */
+
 var state17 = function(scatterplot) {
   // get current echart options
   const options = scatterplot.component.getOption();
   // this state is created from the base
   const base = scatterplot.getState('base');
   var highlight = {};
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
+  highlight['1709930'] = 'Chicago Public School District';
+  highlight['5509600'] = 'Milwaukee School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -2074,6 +2096,7 @@ var state17 = function(scatterplot) {
                 position: 'middle',
                 color: '#052965',
                 fontWeight: 500,
+                fontSize: 13,
                 fontFamily: 'MaisonNeue-Medium',
               }
             }, {
@@ -2156,6 +2179,9 @@ var state18 = function(scatterplot) {
   // this state is created from the base
   const base = scatterplot.getState('base');
   var highlight = {};
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
+  highlight['1709930'] = 'Chicago Public School District';
+  highlight['5509600'] = 'Milwaukee School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -2232,8 +2258,7 @@ var state18 = function(scatterplot) {
                 color: '#73D8AE', // 'rgba(253, 165, 2, 1)', // 'red',
                 width: 140,
                 type: 'solid',
-                opacity: 0.65,
-
+                opacity: 0.6,
               },
             }, {
               coord: [0, 1.3],
@@ -2257,6 +2282,7 @@ var state18 = function(scatterplot) {
                 position: 'middle',
                 color: '#052965',
                 fontWeight: 500,
+                fontSize: 13,
                 fontFamily: 'MaisonNeue-Medium',
               }
             }, {
@@ -2271,7 +2297,7 @@ var state18 = function(scatterplot) {
         id: 'highlighted',
         itemStyle: highlightedItemStyle,
         label: highlightedLabel(highlight),
-        zlevel: 500,
+        zlevel: 0,
       },
       {
         type:'scatter',
@@ -2338,6 +2364,8 @@ var state19 = function(scatterplot) {
   // var dataSeries = scatterplot.getDataSeries();
   var options = scatterplot.component.getOption();
   var highlight = {};
+  highlight['2400060'] = 'Anne Arundel County Public Schools';
+  highlight['1709930'] = 'Chicago Public School District';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -2409,7 +2437,7 @@ var state19 = function(scatterplot) {
                 lineStyle: {
                   color: 'rgba(255, 192, 45, 1)',
                   type: 'solid',
-                  width: 2
+                  width: 0 // removing this line
                 },
               },
               {
@@ -2425,7 +2453,7 @@ var state19 = function(scatterplot) {
               lineStyle: {
                 color: 'rgba(255, 192, 45, 1)',
                 type: 'solid',
-                width: 2
+                width: 0 //removing this line
               },
             },
             {

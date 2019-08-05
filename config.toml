@@ -31,7 +31,7 @@ anchor = "smart"
 
 [[menu.main]]
 	name = "Opportunity Explorer"
-	url = "http://seda-dev.surge.sh/"
+	url = "https://eop-aug02.surge.sh/"
     weight = 1
 
 [[menu.main]]

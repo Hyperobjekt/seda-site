@@ -19,7 +19,7 @@ body.type-help-faq {
       background: url('/images/heroes/methods-bar-graph.svg');
       background-repeat: no-repeat;
       background-size: 50%;
-      background-position: center;
+      background-position: center bottom;
       @include media-breakpoint-up(mm) {
         background-size: 40%;
         background-position: center bottom;

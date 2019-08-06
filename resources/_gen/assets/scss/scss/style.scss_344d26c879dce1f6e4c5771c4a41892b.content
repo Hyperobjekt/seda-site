@@ -22276,7 +22276,7 @@ body.type-help-faq.methods .hero-child {
   background: url("/images/heroes/methods-bar-graph.svg");
   background-repeat: no-repeat;
   background-size: 50%;
-  background-position: center;
+  background-position: center bottom;
 }
 
 @media (min-width: 576px) {
@@ -22743,7 +22743,7 @@ body.methods .hero-child {
   background: url("/images/heroes/methods-bar-graph.svg");
   background-repeat: no-repeat;
   background-size: 50%;
-  background-position: center;
+  background-position: center bottom;
 }
 
 @media (min-width: 576px) {

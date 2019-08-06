@@ -10,87 +10,108 @@
      </div>
 </div>
 
-<div class="row subnav d-md-none small-tab-nav">
+<div class="row subnav small-tab-nav">
      
-        <div class="dropdown">
-            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Jump to Section:
-            </button>
+    <div class="dropdown">
+        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Jump to Section:
+        </button>
     <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
-      <ul class="anchor-links dropdown-menu">
-        <li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
-        <li><a data-scroll-target="data" class="scroll-to-section">Interpreting the Data</a></li>
-        <li><a data-scroll-target="map" class="scroll-to-section">Download Methods Paper (PDF)</a></li>
-    </ul>
+        <ul class="anchor-links dropdown-menu">
+            <li><a data-scroll-target="background" class="scroll-to-section">Background</a></li>
+            <li><a data-scroll-target="challenges" class="scroll-to-section">Challenges Working with Proficiency Data</a></li>
+            <li><a data-scroll-target="addressing" class="scroll-to-section">SEDA Methods: Addressing the Challenges</a></li>
+            <li><a data-scroll-target="raw-data" class="scroll-to-section">Raw Data</a></li>
+            <li><a data-scroll-target="prof-threshold" class="scroll-to-section">Recovering the Proficiency Thresholds</a></li>
+            <li><a data-scroll-target="placing-proficiency" class="scroll-to-section">Placing the Proficiency Thresholds on the Same Scale</a></li>
+            <li><a data-scroll-target="estimating-means" class="scroll-to-section">Estimating Means from Proficiency Count Data</a></li>
+            <li><a data-scroll-target="scaling-estimates" class="scroll-to-section">Scaling the Estimates to Grade Equivalents</a></li>
+            <li><a data-scroll-target="reducing" class="scroll-to-section">Reducing to 3 Parameters: Average, Growth, and Trend</a></li>
+            <li><a data-scroll-target="reporting" class="scroll-to-section">Reporting the Data</a></li>
+            <li><a data-scroll-target="interested" class="scroll-to-section">For Interested Readers and Data File Users</a></li>
+        </ul>
     <!--</div>-->
-  </div>
+    </div>
  
 </div>
 
-<div class="row subnav d-sm-none d-md-block large-tab-nav">
-   
-      <ul class="anchor-links col-md-8 mx-auto d-md-flex">
-        <li >Jump to Section:</li>
-        <li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
-        <li><a data-scroll-target="data" class="scroll-to-section">Interpreting the Data</a></li>
-        <li><a data-scroll-target="map" class="scroll-to-section">Download Methods Paper (PDF)</a></li>
-      </ul>
-    </div>
 
-
-<div class="row glossary" id="glossary">
+<div class="row glossary" id="background">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <h3 tabindex="0">Background</h3>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-       <p>Federal law requires all states to test all students in grades 3-8 each year in math and ELA (commonly called “accountability” testing). It also requires that states make the aggregated results of those tests publicly available.</p>
-       <p>All states report the test results for schools and school districts to the Department of Education’s National Center for Education Statistics (NCES), which houses this data in the EDFacts database. There are two versions of this data: a public version, available on their website, and a restricted version, available by request. For security, the public data is censored. Data for small places or small subgroups is not reported to ensure the privacy of the students. In contrast, the restricted data contains all data, regardless of number of students within the school/district or subgroup.</p>
+        {{ range (where .Site.RegularPages "Params.section" ("background")) }}
+            {{ .Content }}
+        {{ end }} 
     </div>
 </div>
-<div class="row data" id="data">
+<div class="row data" id="challenges">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <h3 tabindex="0">Challenges Working with Proficiency Data</h3>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <p>While there is a substantial amount of data from every state available in EDFacts, there are several key challenges when using it:</p>
-        <ol>
-            <li>States provide only “proficiency data”: the count of students at each of the proficiency levels (sometimes called “achievement levels” or “performance levels”). The levels represent different degrees of mastery of the subject-specific grade-level material. Levels are defined by score “thresholds”, which are set by experts in the field. Scoring above or below different thresholds determines placement into a specific proficiency level. Common levels include “below basic”, “basic”, “proficient” and “advanced”. An example is shown below.
-                <br><strong>ADD TABLE</strong><br>
-                <strong>ADD GRAPHIC</strong>
-            </li>
-            <li>Most states use their own test and define “proficiency” in different ways, meaning that we cannot directly compare test results in one state to another. Proficient in one state/grade/year/subject is not comparable to proficient in another.
-       
-                <p>Consider two states, State A and B that use same test, but set their own thresholds for proficiency.</p>
-                <p>State A: Higher Threshold for Proficiency</p>
-                <p>ADD GRAPHIC</p>
-                <p>State B: Lower Threshold for Proficiency</p>
-                <p>ADD GRAPHIC</p>
-                <p>Imagine both states had the same distribution of achievement, with 100 kids scoring a 55 on the exam, 200 scoring a 70, and 100 scoring an 85. Their assignment to proficiency categories would differ because of where the thresholds are placed.
-                    </p>
-                <p>ADD TABLE</p>   
-                <p>In this example, State B looks more “proficient” than State A because 300 of their students score proficient compared to 100 students in State A. But, their achievement was identical! The bottom line: If you only use the proficiency data without accounting for where they thresholds for proficiency are places, you could end up with the wrong conclusion about which state performed better.</p>
-                <p>This problem is actually even more complicated than the example suggests because states use different tests with material of varying difficulty and scores reported on different scales. So, it is not even clear that we could compare their proficiency thresholds.</p> 
-            </li> 
-            <li>Even within a state, different tests are used in different grade levels. This means that, for example, we cannot compare the performance of students in 4th grade in one year to that of students in 5th grade in the next year. In other words, we cannot measure average growth.</li>       
-            <li>States change the grade-level tests they use over time. This may result from changes in curricular standards; for example, the introduction of the Common Core State Standards led to many states adopting different tests. These test changes make it hard to compare average performance in one year to the next. In other words, we cannot recover reliable estimates of trends over time.</li>
-        </ol>
+        {{ range (where .Site.RegularPages "Params.section" ("challenges")) }}
+            {{ .Content }}
+        {{ end }} 
     </div>
 </div>
-<div class="row map" id="map">
+<div class="row map" id="addressing">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <h3 tabindex="0">Download Methods Paper</h3> 
+        {{ range (where .Site.RegularPages "Params.section" ("addressing")) }}
+            {{ .Content }}
+        {{ end }}
     </div>
+</div>
+<div class="row data" id="raw-data">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-       
-        <div class="accordion">
-            {{ range .Site.Data.faq }}
-                {{ if eq .section "map" }} 
-                <!-- faq item -->
-                {{ partial "faqs" . }}
-                {{ end }}
-            {{ end }}
-        </div> <!-- close accordion -->
+        {{ range (where .Site.RegularPages "Params.section" ("raw-data")) }}
+            {{ .Content }}
+        {{ end }}
     </div>
+</div>
+<div class="row map" id="prof-threshold">
+    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        {{ range (where .Site.RegularPages "Params.section" ("prof-threshold")) }}
+            {{ .Content }}
+        {{ end }} 
+    </div>
+</div>
+<div class="row data" id="placing-proficiency">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        {{ range (where .Site.RegularPages "Params.section" ("placing-proficiency")) }}
+            {{ .Content }}
+          {{ end }}  
+        </div>
+</div>
+<div class="row map" id="estimating-means">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        {{ range (where .Site.RegularPages "Params.section" ("estimating-means")) }}
+            {{ .Content }}
+          {{ end }}  
+        </div>
+</div>
+<div class="row data" id="scaling-estimates">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        {{ range (where .Site.RegularPages "Params.section" ("scaling-estimates")) }}
+            {{ .Content }}
+          {{ end }}  
+        </div>
+</div>
+<div class="row map" id="reducing">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        {{ range (where .Site.RegularPages "Params.section" ("reducing")) }}
+            {{ .Content }}
+          {{ end }}  
+        </div>
+</div>
+<div class="row data" id="reporting">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        {{ range (where .Site.RegularPages "Params.section" ("reporting")) }}
+            {{ .Content }}
+          {{ end }}  
+        </div>
+</div>
+<div class="row map" id="interested">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+        {{ range (where .Site.RegularPages "Params.section" ("interested")) }}
+            {{ .Content }}
+          {{ end }}  
+        </div>
 </div>
 
 

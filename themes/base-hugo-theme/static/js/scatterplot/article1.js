@@ -317,6 +317,76 @@ xhr.onerror = function (e) {
 };
 xhr.send(null);
 
+/** State 1add: Show white scores on x axis and black scores on y axis */
+var state1add = function(scatterplot) {
+  // this state is created from the base
+  // Set up array of district IDs and names for building search series.
+  if (Object.keys(names).length <= 0 &&
+    scatterplot &&
+    scatterplot.data &&
+    scatterplot.data.districts &&
+    scatterplot.data.districts.name) {
+    names = scatterplot.data.districts.name;
+    // console.log(names);
+  }
+
+  var base = scatterplot.getState('base');
+  var dataSeries = [];
+  var highlight = {};
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
+  }
+
+  Title['text'] = 'White and Black Students\' Average Performance';
+  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title.setTitle();
+
+  const baseOverrides = {
+    title: {
+      text: Title.text, // 'White and Black Students\' Average Performance',
+      subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
+    },
+    yAxis: {
+      min:-3,
+      max:3,
+      name: 'Black Average Performance',
+    },
+    xAxis: {
+      min: -3,
+      max: 4,
+      name: 'White Average Performance',
+    },
+    series: [
+      initialMarkline,
+      {
+        id: 'highlighted',
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
+      }
+    ]
+  }
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  return {
+    xVar: 'w_avg',
+    yVar: 'b_avg',
+    zVar: 'all_sz',
+    highlighted: Object.keys(highlight),
+    options: deepmerge.all([ base.options, baseOverrides ]) //  baseOverrides
+  }
+}
+
+
 /** State 1: Show white scores on x axis and black scores on y axis */
 var state1 = function(scatterplot) {
   // this state is created from the base
@@ -386,6 +456,9 @@ var state1 = function(scatterplot) {
   }
 }
 
+
+
+
 let state2top100 = {};
 let state2series = {};
 /** State 2: Highlight largest 25 districts  */
@@ -449,14 +522,21 @@ var state2 = function(scatterplot) {
   }
 };
 
+
+
+
+
+
 /** State 3: Highlight locations (Detroit, Gwinet, Washington) */
 let state3top100 = {};
 let state3counter = 0;
 var state3 = function(scatterplot) {
   var highlight = {};
-  highlight['0641580'] = 'Washington, D.C.';
-  highlight['2612000'] = 'Detroit, MI';
-  highlight['1302550'] = 'Gwinnet County, GA';
+  //highlight['1302220'] = 'Forsyth County';
+  highlight['1301230'] = 'Clayton County School District';
+  highlight['1302550'] = 'Gwinnet County School District';
+  highlight['1300120'] = 'Atlanta City School District';
+  //highlight['1201980'] = 'Walton County';
   // console.log(highlight);
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
@@ -610,9 +690,11 @@ var state5 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   var base = scatterplot.getState('state4');
   var highlight = {};
-  highlight['0641580'] = 'Washington, D.C.';
-  highlight['2612000'] = 'Detroit, MI';
-  highlight['1302550'] = 'Gwinnet County, GA';
+    //highlight['1302220'] = 'Forsyth County';
+    highlight['1301230'] = 'Clayton County';
+    highlight['1302550'] = 'Gwinnet County';
+    highlight['1300120'] = 'Atlanta City';
+    //highlight['1201980'] = 'Walton County';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -791,8 +873,9 @@ var state8 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   state8dataSeries = dataSeries;
   var highlight = {};
-  highlight['0803360'] = 'Denver, CO';
-  highlight['0634170'] = 'San Bernardino, CA';
+  highlight['1303930'] = 'Newton County';
+  highlight['1302550'] = 'Gwinnet County School District';
+  highlight['1201980'] = 'Walton County';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -1117,6 +1200,7 @@ var scatterplot = new Scatterplot(rootEl);
 
 // set the states
 scatterplot.addState('state1', state1);
+scatterplot.addState('state1add', state1);
 scatterplot.addState('state2', state2);
 scatterplot.addState('state3', state3);
 scatterplot.addState('state4', state4);

@@ -14,7 +14,9 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 Racial and ethnic disparities in children’s academic performance are a stubborn feature of the American educational landscape. Though these gaps are substantially smaller than they were 40 years ago, they remain quite large: the gap in standardized test scores between white and black students amounts to roughly two years of schooling. The gap between white and Hispanic students is almost as large.
 
-The first figure compares the average performance of black and white students. Each circle is a school district, and the size of the circle is proportionate to the number of black and white children enrolled in the school district. Districts that lie on the diagonal line have no black/white disparity in test scores, and the farther a district sits away from the diagonal line, the greater the gap in that district. 
+This first figure compares the average performance of black and white students. Each circle is a school district, and the size of the circle is proportionate to the number of black and white children enrolled in the school district. Districts that lie on the diagonal line have no black/white disparity in test scores, and the farther a district sits away from the diagonal line, the greater the gap in that district. 
+
+<b>ADD STATE HERE HIGHLIGHTING WALTON COUNTY SCHOOL DISTRICT: ID # 1201980</b>
 
 For example, in Georgia’s Walton County School District, east of Atlanta, the average white student scores 0.6 grade levels above the national average, while the average black student scores 1 grade levels below average; the gap is about 1.6 grade levels. These numbers make Walton County roughly typical for the nation in terms of white and black students’ average test scores. (Note that the circle for Walton County sits roughly in the middle of the cloud of school districts in the figure.) 
 
@@ -40,6 +42,7 @@ This is where fine-grained data can be so helpful. There are some 13,000 public 
 
 {{% state-wrapper state="state3" notmerge="true" %}}
 
+<br>
 The data show enormous variation in the size of opportunity gaps. Consider 3 school districts in the Atlanta metropolitan area.  
 
 In Clayton Co., just south of Atlanta, the gap is small, but that’s because both white and black students score well below average. Both groups experience quite low levels of educational opportunity.
@@ -55,68 +58,73 @@ Why are the opportunity gaps larger in some districts than in others? One factor
 
 {{% state-wrapper state="state4" notmerge="true" %}}
 
-In this figure, circles to the right of the line indicate that white families in the district have higher socioeconomic status, on average, than black families. (Circles to the left—of which there are very few—indicate the opposite.) The higher the circle, the larger the gap in achievement between a district’s white and black students. 
+<br>
+In this next figure, circles to the right of the line indicate that white families in the district have higher socioeconomic status, on average, than black families. (Circles to the left—of which there are very few—indicate the opposite.) The higher the circle, the larger the gap in achievement between a district’s white and black students. 
 
-<br/>
-<br/>
-<br/>
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state5" notmerge="" %}}
 
+<br>
 For example, in Clayton County, the white-black socioeconomic disparity is relatively small, and the white-black achievement gap is correspondingly small. The opposite is true in Atlanta, where a very large socioeconomic disparity is mirrored by an equally large achievement gap. 
-
-<br/>
-<br/>
-<br/>
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state6" notmerge="" %}}
 
+<br/>
 This pattern is evident more generally among the 100 largest districts, where those with larger differences in socioeconomic status between white and black families tend to have more substantial racial gaps in achievement. And in almost all districts, white children come from more economically advantaged families than their black schoolmates, a factor which contributes significantly to the white-black opportunity gap. 
 
 {{% /state-wrapper %}}
 
-{{% state-wrapper state="state7" notmerge="true" %}}
-
-<br/>
-<br/>
-Even in places with no racial disparities in socioeconomic status, we notice a large gap in achievement between white and black students on average. This gap is typically about 1 grade level.
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
 
-{{% /state-wrapper %}}
+<!--  Formerly linked with State 7 
+<br/>
+<br/>
+Even in places with no racial disparities in socioeconomic status, we notice a large gap in achievement between white and black students on average. This gap is typically about 1 grade level. -->
+
 
 {{% state-wrapper state="state8" %}}
 
+<br>
 But differences in the socioeconomic status of parents do not explain the entire gap. Even districts with similar socioeconomic disparities can have very different gaps. For example, Georgia’s Gwinett County school district has the same white-black disparity in socioeconomic status as Newton County just to its south, but Gwinett’s white-black achievement gap is twice that of Newton’s. Likewise, Walton County school district has a smaller achievement gap than Gwinett County, despite the fact that the socioeconomic gap is much larger in Walton County.
-
-
-<br>
-<br>
-<br>
-<br>
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state9" notmerge="true" %}}
 
-So what other factors contribute to unequal opportunity? Our research suggests that the most important determinant of achievement gaps is school segregation. This is readily evident in the data. In this figure, the horizontal axis indicates the degree to which black students are concentrated in different, higher-poverty, schools than white students in the same district. A value of 0 means that white and black students attend schools with equal poverty rates. Districts located to the right of the figure are the most highly segregated, where black students are concentrated in higher poverty schools and white students in lower poverty schools. The pattern is clear: more segregated districts consistently have larger achievement gaps than less segregated ones. Among the 5 Georgia districts we have looked at, Atlanta is twice as segregated as Gwinnett County and has an achievement gap more than twice as large. Clayton County, where white and black students are not segregated, has the smallest achievement gap.
+<br><br>
+<b>NOTE FOR THIS SECTION ON SEGREGATION: Instead of state 9, Figure needs to be revised to show this graph:
+
+<img src="/images/gap explorer.png" class="mw-100" />
+
+Walton County School District, Clayton County School District, Atlanta City School District, Newton County School District, and Gwinnet County School District should be highlighted on a chart of districts where x axis=Gap in Segregation, y axis=white/black gap in average test scores.
+
+(To see this in chart the Explorer, select white / black gap for districts, view the chart, then click "show secondary chart." It's the chart on the right.)
+
+We're probably going to have to figure out axis labels along the way.
+</b>
+
+<br>
+So what other factors contribute to unequal opportunity? Our research suggests that the most important determinant of achievement gaps is school segregation. This is readily evident in the data. 
+
+
+In this figure, the horizontal axis indicates the degree to which black students are concentrated in different, higher-poverty, schools than white students in the same district. A value of 0 means that white and black students attend schools with equal poverty rates. Districts located to the right of the figure are the most highly segregated, where black students are concentrated in higher poverty schools and white students in lower poverty schools. The pattern is clear: more segregated districts consistently have larger achievement gaps than less segregated ones. Among the 5 Georgia districts we have looked at, Atlanta is twice as segregated as Gwinnett County and has an achievement gap more than twice as large. Clayton County, where white and black students are not segregated, has the smallest achievement gap.
 
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state10" notmerge="true" %}}
+
 <br>
-<br>
+<b>NOTE FOR THIS SECTION: Instead of State 10, we need to repeat the last chart but instead highlight 
+
+Evanston, IL: id# 1714460<br>
+Berkeley, CA: id# 604740
+</b>
+
 Moreover, among the several thousand school districts in the US with more than a handful of black students, there is virtually no example of a district that is even moderately segregated schools where the achievement gap is not large. It is possible to have a large achievement gap in the absence of segregation (as in Berkeley, CA and Evanston, IL), but segregation appears to fundamentally limit equality of educational opportunity. If it is possible to provide equal educational opportunity under conditions of segregation, no community in the U.S. has discovered the way. Racial segregation, which has limited the opportunities of black children and families for generations, continues to limit them today.
 
 {{% /state-wrapper %}}

@@ -141,14 +141,15 @@ There is almost no relationship between the two measures. Districts with high sc
 {{% state-wrapper state="state15" notmerge="true" %}}
 
 Districts in the upper right offer students substantial educational opportunities both before 3rd grade and through the middle school years. 
-<br><br>
+<br>
+
+Those in the lower left show the opposite: educational opportunities are scarce both in early childhood and through the elementary and middle school years.
+
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state16" notmerge="true" %}}
 
-Those in the lower left show the opposite: educational opportunities are scarce both in early childhood and through the elementary and middle school years.
-
-
+<br>
 More generally, the data tell us not only where there is more or less educational opportunity, but when opportunity is available in each place. <br><br>
 
 
@@ -156,6 +157,7 @@ More generally, the data tell us not only where there is more or less educationa
 
 {{% state-wrapper state="state17" notmerge="true" %}}
 
+<br>
 In the bottom right, for example, are districts like Anne Arundel where students have plentiful educational opportunities early in life, but show low growth after grade 3. These communities may need to focus their investments in expanding learning opportunities in the late elementary and middle school years.<br><br>
 
 
@@ -163,6 +165,7 @@ In the bottom right, for example, are districts like Anne Arundel where students
 
 {{% state-wrapper state="state18" notmerge="true" %}}
 
+<br>
 In the upper left are districts, like Chicago, where educational opportunities are concentrated during the schooling years. Here children have few opportunities early on, but show high growth after grade 3. Children in such place may benefit the most from investments focused on improving early childhood opportunities. 
 
 If we want to improve children’s educational outcomes, we will need to change how—and where and when—we provide educational opportunities throughout children’s lives. Some people assume that we simply need to improve schools. Others argue that the schools are fine, but we need to provide more learning opportunities in early childhood—in children’s homes and childcare centers and preschool programs. The data show that there may be no one best strategy. Rather we need targeted strategies—targeted to specific age groups in specific places—to allow all of our children to reach their full potential, regardless of where they grow up. 

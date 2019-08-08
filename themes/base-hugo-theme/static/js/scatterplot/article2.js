@@ -32,6 +32,7 @@ const highlightedLabel = (highlight) => {
     },
   };
 }
+
 const highlightedItemStyle =  {
   borderWidth: 0.5,
   borderColor: '#0677CE', // '#FFC02D',
@@ -198,7 +199,7 @@ var state1 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -296,7 +297,7 @@ var state1_1 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -428,7 +429,7 @@ var state2 = function(scatterplot) {
       xAxis: {
         min: -4,
         max: 3,
-        name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+        name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
       },
       series: [
         { id: 'base' },
@@ -511,7 +512,7 @@ var state3 = function(scatterplot) {
       xAxis: {
         min: -4,
         max: 3,
-        name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+        name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
       },
       series: [
         { id: 'base' },
@@ -592,7 +593,7 @@ var state4 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -685,7 +686,7 @@ var state5 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
       // nameTextStyle: {
       //   fontFamily: 'SharpGrotesk-Medium20',
       //   color: '#FFF',
@@ -778,7 +779,7 @@ var state6 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -865,7 +866,7 @@ var state7 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -953,7 +954,7 @@ var state8 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -1041,7 +1042,7 @@ var state9 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -1129,7 +1130,7 @@ var state10 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -1217,7 +1218,7 @@ var state11 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -1305,7 +1306,7 @@ var state12 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -1393,7 +1394,7 @@ var state13 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },
@@ -2432,7 +2433,7 @@ var state19 = function(scatterplot) {
     xAxis: {
       min: -4,
       max: 3.5,
-      name: '←  POORER                    Socioeconomic Status                    RICHER  →',
+      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
     series: [
       { id: 'base' },

@@ -45,6 +45,32 @@ const highlightedLabel = (highlight) => {
     },
   };
 }
+// const state9HighlightedLabel = (highlight) => {
+//   // console.log('highlightedLabel');
+//   activeHighlight = highlight;
+//   console.log(activeHighlight);
+//   return {
+//     show: true,
+//     position: 'top',
+//     backgroundColor: 'transparent', // '#0090FF', // '#FFFCCF',
+//     borderColor: 'transparent', // '#7D38BB',
+//     borderWidth: 0,
+//     fontSize: 12,
+//     fontWeight: 500,
+//     fontFamily: 'SharpGrotesk-Medium20', // 'MaisonNeue-Medium',
+//     lineHeight: 12,
+//     padding: [8, 8],
+//     borderRadius: 3,
+//     opacity: 1,
+//     color: '#031232', // '#fff', // '#052965',
+//     formatter: function(item) {
+//       // console.log(item);
+//       // console.log(activeHighlight);
+//       return activeHighlight[item.value[3]]
+//     },
+//   };
+// }
+
 const highlightedItemStyle =  {
   borderWidth: 0.5,
   borderColor: '#0677CE', // '#FFC02D',
@@ -456,8 +482,75 @@ var state1 = function(scatterplot) {
   }
 }
 
+/** State 1: Show white scores on x axis and black scores on y axis */
+var state1_1 = function(scatterplot) {
+  // this state is created from the base
+  // Set up array of district IDs and names for building search series.
+  if (Object.keys(names).length <= 0 &&
+    scatterplot &&
+    scatterplot.data &&
+    scatterplot.data.districts &&
+    scatterplot.data.districts.name) {
+    names = scatterplot.data.districts.name;
+    // console.log(names);
+  }
 
+  var base = scatterplot.getState('base');
+  var dataSeries = [];
+  var highlight = {};
+  highlight['1201980'] = 'Walton County School District';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
+  }
 
+  Title['text'] = 'White and Black Students\' Average Performance';
+  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title.setTitle();
+
+  const baseOverrides = {
+    title: {
+      text: Title.text, // 'White and Black Students\' Average Performance',
+      subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
+    },
+    yAxis: {
+      min:-3,
+      max:3,
+      name: 'Black Average Performance',
+    },
+    xAxis: {
+      min: -3,
+      max: 4,
+      name: 'White Average Performance',
+    },
+    series: [
+      initialMarkline,
+      {
+        id: 'highlighted',
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500,
+      }
+    ]
+  }
+  // Set title and subtitle
+  jQ('.column-scatterplot .title').text(Title.text);
+  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  return {
+    xVar: 'w_avg',
+    yVar: 'b_avg',
+    zVar: 'all_sz',
+    highlighted: Object.keys(highlight),
+    options: deepmerge.all([ base.options, baseOverrides ]) //  baseOverrides
+  }
+}
 
 let state2top100 = {};
 let state2series = {};
@@ -521,11 +614,6 @@ var state2 = function(scatterplot) {
     options: deepmerge(base.options, baseOverrides)
   }
 };
-
-
-
-
-
 
 /** State 3: Highlight locations (Detroit, Gwinet, Washington) */
 let state3top100 = {};
@@ -942,6 +1030,136 @@ var state8 = function(scatterplot) {
   }
 }
 
+// /* Highlight least and most segregated */
+// var state9 = function(scatterplot) {
+//   // console.log('loading state9');
+//   // this state is created from the base
+//   // const base = scatterplot.getState('state8');
+//   const base = scatterplot.getState('base');
+//   // Build series most seg to highlight
+//   var dataSeries = state8dataSeries; // scatterplot.getDataSeries();
+//   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+//   var segSortedTop100 = sortDataBySeg(top100);
+//   var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
+//   var mostSegregatedSeries = sliceMost(segSortedTop100, 10);
+//   var highlight = {};
+//   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+//     // There's a search item selected.
+//     // Add it to the highlight object.
+//     if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
+//       highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+//     }
+//     // console.log(highlight);
+//   }
+//   // Plot title and subtitle
+//   Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
+//   Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
+//   Title.setTitle();
+//
+//   const baseOverrides = {
+//     title: {
+//       show: false,
+//       text: Title.text, // 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+//       subtext: Title.subtext, // 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016',
+//       textAlign: 'center',
+//       left: '50%',
+//       top: '10px',
+//     },
+//     legend: {
+//       show: true,
+//       orient: 'vertical',
+//       textStyle: {
+//         color: '#173B75',
+//         fontFamily: 'MaisonNeue-Book',
+//         fontWeight: '500',
+//         fontSize: 11
+//       },
+//       backgroundColor: 'rgba(255, 255, 255, 0.85)',
+//       borderRadius: 3,
+//       padding: 14,
+//       left: 5,
+//       top: 5,
+//       data: [
+//         {
+//           name: 'Least Segregated',
+//           icon: 'circle',
+//         },
+//         {
+//           name: 'Most Segregated',
+//           icon: 'circle',
+//         }
+//       ]
+//     },
+//     grid: {
+//       top: 10,
+//       bottom: 26,
+//       left: 10,
+//       right: 28,
+//       zlevel: 100,
+//       height: 'auto',
+//       width: 'auto',
+//       containLabel: true
+//     },
+//     yAxis: deepmerge(baseYAxis, {
+//       min: -1, // -6,
+//       max: 6, // 0,
+//       name: 'White-Black Achievement Gap\nby Grade Levels',
+//       nameGap: 24
+//     }),
+//     xAxis: deepmerge(baseXAxis, {
+//       min: -1, // -3,
+//       max: 6, // 7,
+//       name: 'White-Black Socioeconomic Disparity',
+//     }),
+//     series: [
+//       // dataSeries,
+//       { id: 'base'},
+//       {
+//         type: 'scatter',
+//         data: leastSegregatedSeries,
+//         name: "Least Segregated",
+//         symbolSize: 12,
+//         itemStyle: {
+//           borderWidth: 0.5,
+//           borderColor: '#0D814E', // 'rgba(255, 192, 45, 100)',
+//           color: '#1BC67A', // 'rgba(255, 252, 216, 100)',
+//           opacity: 1
+//         },
+//       },
+//       {
+//         type: 'scatter',
+//         data: mostSegregatedSeries,
+//         name: "Most Segregated",
+//         symbolSize: 12,
+//         itemStyle: {
+//           borderWidth: 0.5,
+//           borderColor: '#033E82', // '#C56A12',
+//           color: '#187CF1', // '#FD7D02',
+//           opacity: 1
+//         },
+//       },
+//       segMarkline,
+//       {
+//         id: 'highlighted',
+//         itemStyle: highlightedItemStyle,
+//         label: highlightedLabel(highlight),
+//         zlevel: 500
+//       },
+//     ]
+//   }
+//   return {
+//     highlighted: Object.keys(highlight),
+//     xVar: 'wb_ses',
+//     yVar: 'wb_avg',
+//     zVar: 'all_sz',
+//     onDataLoaded: function() {
+//       console.log('data loaded');
+//       console.log(scatterplot.data);
+//     },
+//     options: deepmerge.all([ base.options, baseOverrides ])
+//   }
+// }
+
 /* Highlight least and most segregated */
 var state9 = function(scatterplot) {
   // console.log('loading state9');
@@ -955,6 +1173,117 @@ var state9 = function(scatterplot) {
   var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
   var mostSegregatedSeries = sliceMost(segSortedTop100, 10);
   var highlight = {};
+  // highlight['1201980'] = 'Walton County School District';
+  highlight['1301230'] = 'Clayton County School District';
+  highlight['1300120'] = 'Atlanta City School District';
+  // highlight['1303930'] = 'Newton County School District';
+  highlight['1302550'] = 'Gwinnett County School District';
+  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+    // There's a search item selected.
+    // Add it to the highlight object.
+    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
+      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+    }
+    // console.log(highlight);
+  }
+  // Plot title and subtitle
+  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
+  Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
+  Title.setTitle();
+
+  const baseOverrides = {
+    title: {
+      show: false,
+      text: Title.text, // 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+      subtext: Title.subtext, // 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016',
+      textAlign: 'center',
+      left: '50%',
+      top: '10px',
+    },
+    legend: {
+      show: true,
+      orient: 'vertical',
+      textStyle: {
+        color: '#173B75',
+        fontFamily: 'MaisonNeue-Book',
+        fontWeight: '500',
+        fontSize: 11
+      },
+      backgroundColor: 'rgba(255, 255, 255, 0.85)',
+      borderRadius: 3,
+      padding: 14,
+      left: 5,
+      top: 5,
+      data: [
+        {
+          name: 'Least Segregated',
+          icon: 'circle',
+        },
+        {
+          name: 'Most Segregated',
+          icon: 'circle',
+        }
+      ]
+    },
+    grid: {
+      top: 10,
+      bottom: 26,
+      left: 10,
+      right: 28,
+      zlevel: 100,
+      height: 'auto',
+      width: 'auto',
+      containLabel: true
+    },
+    yAxis: deepmerge(baseYAxis, {
+      min: -1, // -6,
+      max: 6, // 0,
+      name: 'White-Black Achievement Gap\nby Grade Levels',
+      nameGap: 24
+    }),
+    xAxis: deepmerge(baseXAxis, {
+      min: -0.35, // -3,
+      max: 0.75, // 7,
+      name: 'White-Black Segregation Gap',
+    }),
+    series: [
+      { id: 'base'},
+      {
+        id: 'highlighted',
+        itemStyle: highlightedItemStyle,
+        label: highlightedLabel(highlight),
+        zlevel: 500
+      }
+    ]
+  }
+  return {
+    highlighted: Object.keys(highlight),
+    xVar: 'wb_seg',
+    yVar: 'wb_avg',
+    zVar: 'all_sz',
+    onDataLoaded: function() {
+      console.log('data loaded');
+      console.log(scatterplot.data);
+    },
+    options: deepmerge.all([ base.options, baseOverrides ])
+  }
+}
+
+/* Highlight least and most segregated */
+var state10 = function(scatterplot) {
+  // console.log('loading state9');
+  // this state is created from the base
+  // const base = scatterplot.getState('state8');
+  const base = scatterplot.getState('base');
+  // Build series most seg to highlight
+  var dataSeries = state8dataSeries; // scatterplot.getDataSeries();
+  var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+  var segSortedTop100 = sortDataBySeg(top100);
+  var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
+  var mostSegregatedSeries = sliceMost(segSortedTop100, 10);
+  var highlight = {};
+  highlight['1714460'] = 'Evanston, IL';
+  highlight['0604740'] = 'Berkeley, CA';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.
@@ -1072,127 +1401,128 @@ var state9 = function(scatterplot) {
   }
 }
 
+
 /** State 10: Achievement vs. Gap in Exposure to School Poverty */
-var state10 = function(scatterplot) {
-  const options = scatterplot.component.getOption();
-  const base = scatterplot.getState('base');
-  var dataSeries = scatterplot.getDataSeries();
-  dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
-  var highlight = {
-    '1100030': 'District of Columbia',
-    '2612000': 'Detroit, MI'
-  }
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
-  }
-  // Plot title and subtitle
-  Title['text'] = 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty';
-  Title['subtext'] = '100 Largest US School Districts 2009-2016';
-  Title.setTitle();
-  const baseOverrides = {
-    title: {
-      show: false,
-      text: Title.text, // 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty',
-      subtext: Title.subtext, // '100 Largest US School Districts 2009-2016',
-      textAlign: 'center',
-      left: '50%',
-      top: '10px',
-    },
-    grid: {
-      top: 10,
-      bottom: 26,
-      left: 10,
-      right: 28,
-      zlevel: 100,
-      height: 'auto',
-      width: 'auto',
-      containLabel: true
-    },
-    yAxis: deepmerge(baseYAxis, {
-      min: -1,
-      max: 7,
-      name: 'White-Black Achievement Gap\nby Grade Levels',
-      nameGap: 28
-    }),
-    xAxis: deepmerge(baseXAxis, {
-      min: -0.25,
-      max: 0.75,
-      name: 'Black-White Difference in Average School Poverty Rates',
-      interval: .25,
-    }),
-    series: [
-      // dataSeries,
-      { id: 'base' },
-      {
-        id: 'selected',
-        type: 'scatter',
-        symbolSize: dataSeries.symbolSize,
-        itemStyle: {
-          borderWidth: 0.7,
-          borderColor: 'rgba(0,0,0,1)',
-          color: '#b6a2de' // 'rgba(255,0,0,0.25)'
-        },
-        z: 2
-      },
-      {
-        type:'scatter',
-        markLine: {
-          animation: false,
-          silent: true,
-          label: {
-            show: true,
-            position: 'middle',
-            fontFamily: 'SharpGrotesk-Medium20',
-            fontWeight: '500',
-            fontSize: 11.52,
-            color:  '#052965',
-            padding: 4,
-            formatter: function(value) {
-              return value.name
-            }
-          },
-          data: [
-            [
-              {
-                name: 'equal exposure to poverty',
-                coord: [0, -1],
-                symbol: 'none',
-                lineStyle: {
-                  color:  '#052965',
-                  type: 'solid',
-                  width: 1,
-                },
-              },
-              {
-                coord: [ 0, 7],
-                symbol: 'none'
-              },
-            ]
-          ]
-        }
-      },
-      {
-        id: 'highlighted',
-        itemStyle: highlightedItemStyle,
-        label: highlightedLabel(highlight),
-        zlevel: 500
-      },
-    ]
-  }
-  return {
-    highlighted: Object.keys(highlight),
-    selected: [],
-    xVar: 'wb_pov',
-    yVar: 'wb_avg',
-    zVar: 'all_sz',
-    options: deepmerge.all([ base.options, baseOverrides ])
-  }
-}
+// var state10 = function(scatterplot) {
+//   const options = scatterplot.component.getOption();
+//   const base = scatterplot.getState('base');
+//   var dataSeries = scatterplot.getDataSeries();
+//   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
+//   var highlight = {
+//     '1100030': 'District of Columbia',
+//     '2612000': 'Detroit, MI'
+//   }
+//   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+//     // There's a search item selected.
+//     // Add it to the highlight object.
+//     if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
+//       highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+//     }
+//     // console.log(highlight);
+//   }
+//   // Plot title and subtitle
+//   Title['text'] = 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty';
+//   Title['subtext'] = '100 Largest US School Districts 2009-2016';
+//   Title.setTitle();
+//   const baseOverrides = {
+//     title: {
+//       show: false,
+//       text: Title.text, // 'White-Black Achievement Gaps by\nDifferences in White-Black Exposure to Poverty',
+//       subtext: Title.subtext, // '100 Largest US School Districts 2009-2016',
+//       textAlign: 'center',
+//       left: '50%',
+//       top: '10px',
+//     },
+//     grid: {
+//       top: 10,
+//       bottom: 26,
+//       left: 10,
+//       right: 28,
+//       zlevel: 100,
+//       height: 'auto',
+//       width: 'auto',
+//       containLabel: true
+//     },
+//     yAxis: deepmerge(baseYAxis, {
+//       min: -1,
+//       max: 7,
+//       name: 'White-Black Achievement Gap\nby Grade Levels',
+//       nameGap: 28
+//     }),
+//     xAxis: deepmerge(baseXAxis, {
+//       min: -0.25,
+//       max: 0.75,
+//       name: 'Black-White Difference in Average School Poverty Rates',
+//       interval: .25,
+//     }),
+//     series: [
+//       // dataSeries,
+//       { id: 'base' },
+//       {
+//         id: 'selected',
+//         type: 'scatter',
+//         symbolSize: dataSeries.symbolSize,
+//         itemStyle: {
+//           borderWidth: 0.7,
+//           borderColor: 'rgba(0,0,0,1)',
+//           color: '#b6a2de' // 'rgba(255,0,0,0.25)'
+//         },
+//         z: 2
+//       },
+//       {
+//         type:'scatter',
+//         markLine: {
+//           animation: false,
+//           silent: true,
+//           label: {
+//             show: true,
+//             position: 'middle',
+//             fontFamily: 'SharpGrotesk-Medium20',
+//             fontWeight: '500',
+//             fontSize: 11.52,
+//             color:  '#052965',
+//             padding: 4,
+//             formatter: function(value) {
+//               return value.name
+//             }
+//           },
+//           data: [
+//             [
+//               {
+//                 name: 'equal exposure to poverty',
+//                 coord: [0, -1],
+//                 symbol: 'none',
+//                 lineStyle: {
+//                   color:  '#052965',
+//                   type: 'solid',
+//                   width: 1,
+//                 },
+//               },
+//               {
+//                 coord: [ 0, 7],
+//                 symbol: 'none'
+//               },
+//             ]
+//           ]
+//         }
+//       },
+//       {
+//         id: 'highlighted',
+//         itemStyle: highlightedItemStyle,
+//         label: highlightedLabel(highlight),
+//         zlevel: 500
+//       },
+//     ]
+//   }
+//   return {
+//     highlighted: Object.keys(highlight),
+//     selected: [],
+//     xVar: 'wb_pov',
+//     yVar: 'wb_avg',
+//     zVar: 'all_sz',
+//     options: deepmerge.all([ base.options, baseOverrides ])
+//   }
+// }
 
 // create the component
 var rootEl = document.getElementById('scatterplot');
@@ -1200,7 +1530,7 @@ var scatterplot = new Scatterplot(rootEl);
 
 // set the states
 scatterplot.addState('state1', state1);
-scatterplot.addState('state1add', state1);
+scatterplot.addState('state1_1', state1_1);
 scatterplot.addState('state2', state2);
 scatterplot.addState('state3', state3);
 scatterplot.addState('state4', state4);

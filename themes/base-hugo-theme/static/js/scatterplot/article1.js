@@ -662,8 +662,8 @@ var state3 = function(scatterplot) {
     // console.log(highlight);
   }
   // console.log(highlight);
-  // var base = scatterplot.getState('state2');
-  var base = scatterplot.getState('state1');
+  var base = scatterplot.getState('base');
+  // var base = scatterplot.getState('state1');
   var dataSeries = scatterplot.getDataSeries();
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = getLargestIds(scatterplot.data['districts']['all_sz'], 100)
@@ -712,8 +712,73 @@ var state3 = function(scatterplot) {
         label: highlightedLabel(highlight),
         zlevel: 500,
       },
-     // initialMarkline
-    ] 
+      {
+        type:'scatter',
+        markLine: {
+          animation: false,
+          silent: true,
+          label: {
+            show: true,
+            position: 'middle',
+            fontFamily: 'SharpGrotesk-Medium20',
+            fontWeight: '500',
+            fontSize: 11.52,
+            padding: 4,
+            color: 'rgba(5, 41, 101, 100%)',
+            formatter: function(value) {
+              return value.name
+            }
+          },
+          data: [
+            [
+              {
+                name: '', // Y axis
+                coord: [0, -3],
+                symbol: 'none',
+                lineStyle: {
+                  color: '#547892',
+                  type: 'solid',
+                  width: 0.5,
+                }
+              },
+              {
+                coord: [ 0,  3],
+                symbol: 'none',
+              },
+            ],
+            [
+              {
+                name: '', // x axis
+                coord: [-3, 0],
+                symbol: 'none',
+                lineStyle: {
+                  color: '#547892',
+                  type: 'solid',
+                  width: 0.5,
+                }
+              },
+              {
+                coord: [3, 0],
+                symbol: 'none'
+              },
+            ],
+          [
+            {
+              name: '',
+              coord: [-2.5, -2.5],
+              symbol: 'none',
+              lineStyle: {
+                color: 'rgba(5, 41, 101, 100%)',
+                type: 'solid',
+                width: 1,
+              }
+            },
+            { coord: [ 3,  3], symbol: 'none' },
+          ],
+        ]
+        }
+      }
+    ]
   };
   return {
     xVar: 'w_avg',

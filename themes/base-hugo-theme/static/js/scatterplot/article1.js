@@ -27,17 +27,17 @@ const highlightedLabel = (highlight) => {
   return {
     show: true,
     position: 'top',
-    backgroundColor: '#0090FF', // '#FFFCCF',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // '#FFFCCF',
     borderColor: '#7D38BB',
     borderWidth: 0,
     fontSize: 12,
     fontWeight: 500,
     fontFamily: 'SharpGrotesk-Medium20', // 'MaisonNeue-Medium',
     lineHeight: 12,
-    padding: [8, 8],
+    padding: [5, 5],
     borderRadius: 3,
     opacity: 1,
-    color: '#fff', // '#052965',
+    color: 'rgba(25, 25, 25, 0.91)', // '#052965',
     formatter: function(item) {
       // console.log(item);
       // console.log(activeHighlight);
@@ -712,8 +712,8 @@ var state3 = function(scatterplot) {
         label: highlightedLabel(highlight),
         zlevel: 500,
       },
-      initialMarkline
-    ]
+     // initialMarkline
+    ] 
   };
   return {
     xVar: 'w_avg',
@@ -1312,8 +1312,8 @@ var state10 = function(scatterplot) {
   var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
   var mostSegregatedSeries = sliceMost(segSortedTop100, 10);
   var highlight = {};
-  highlight['1714460'] = 'Evanston, IL';
   highlight['0604740'] = 'Berkeley, CA';
+  highlight['1714460'] = 'Evanston, IL';
   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
     // There's a search item selected.
     // Add it to the highlight object.

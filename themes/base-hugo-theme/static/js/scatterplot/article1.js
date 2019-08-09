@@ -226,6 +226,33 @@ const noRacialDisparityMarkline = {
     ]
   ]
 };
+
+const zeroSegGapMarkline = {
+  type:'scatter',
+  markLine: {
+    animation: false,
+    silent: true,
+    data: [
+      [
+        {
+          name: '',
+          coord: [0, -1],
+          symbol: 'none',
+          lineStyle: {
+            color: '#052965',
+            type: 'solid',
+            width: 1,
+          },
+        },
+        {
+          coord: [0, 6],
+          symbol: 'none'
+        },
+      ]
+    ]
+  }
+};
+
 const segMarkline = {
   type:'scatter',
   markLine: {
@@ -1242,9 +1269,11 @@ var state9 = function(scatterplot) {
       nameGap: 24
     }),
     xAxis: deepmerge(baseXAxis, {
-      min: -0.35, // -3,
-      max: 0.75, // 7,
+      min: -0.3,
+      max: 0.7,
       name: 'White-Black Segregation Gap',
+      interval: 0.15,
+      scale: false
     }),
     series: [
       { id: 'base'},
@@ -1253,7 +1282,8 @@ var state9 = function(scatterplot) {
         itemStyle: highlightedItemStyle,
         label: highlightedLabel(highlight),
         zlevel: 500
-      }
+      },
+      zeroSegGapMarkline
     ]
   }
   return {
@@ -1271,7 +1301,7 @@ var state9 = function(scatterplot) {
 
 /* Highlight least and most segregated */
 var state10 = function(scatterplot) {
-  // console.log('loading state9');
+  // console.log('loading state10');
   // this state is created from the base
   // const base = scatterplot.getState('state8');
   const base = scatterplot.getState('base');
@@ -1348,49 +1378,26 @@ var state10 = function(scatterplot) {
       nameGap: 24
     }),
     xAxis: deepmerge(baseXAxis, {
-      min: -1, // -3,
-      max: 6, // 7,
-      name: 'White-Black Socioeconomic Disparity',
+      min: -0.3,
+      max: 0.7,
+      name: 'White-Black Segregation Gap',
+      interval: 0.15,
+      scale: false
     }),
     series: [
-      // dataSeries,
       { id: 'base'},
-      {
-        type: 'scatter',
-        data: leastSegregatedSeries,
-        name: "Least Segregated",
-        symbolSize: 12,
-        itemStyle: {
-          borderWidth: 0.5,
-          borderColor: '#0D814E', // 'rgba(255, 192, 45, 100)',
-          color: '#1BC67A', // 'rgba(255, 252, 216, 100)',
-          opacity: 1
-        },
-      },
-      {
-        type: 'scatter',
-        data: mostSegregatedSeries,
-        name: "Most Segregated",
-        symbolSize: 12,
-        itemStyle: {
-          borderWidth: 0.5,
-          borderColor: '#033E82', // '#C56A12',
-          color: '#187CF1', // '#FD7D02',
-          opacity: 1
-        },
-      },
-      segMarkline,
       {
         id: 'highlighted',
         itemStyle: highlightedItemStyle,
         label: highlightedLabel(highlight),
         zlevel: 500
       },
+      zeroSegGapMarkline
     ]
   }
   return {
     highlighted: Object.keys(highlight),
-    xVar: 'wb_ses',
+    xVar: 'wb_seg',
     yVar: 'wb_avg',
     zVar: 'all_sz',
     onDataLoaded: function() {
@@ -1400,6 +1407,138 @@ var state10 = function(scatterplot) {
     options: deepmerge.all([ base.options, baseOverrides ])
   }
 }
+
+/* Highlight least and most segregated */
+// var state10 = function(scatterplot) {
+//   // console.log('loading state9');
+//   // this state is created from the base
+//   // const base = scatterplot.getState('state8');
+//   const base = scatterplot.getState('base');
+//   // Build series most seg to highlight
+//   var dataSeries = state8dataSeries; // scatterplot.getDataSeries();
+//   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
+//   var segSortedTop100 = sortDataBySeg(top100);
+//   var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
+//   var mostSegregatedSeries = sliceMost(segSortedTop100, 10);
+//   var highlight = {};
+//   highlight['1714460'] = 'Evanston, IL';
+//   highlight['0604740'] = 'Berkeley, CA';
+//   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+//     // There's a search item selected.
+//     // Add it to the highlight object.
+//     if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
+//       highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+//     }
+//     // console.log(highlight);
+//   }
+//   // Plot title and subtitle
+//   Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
+//   Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
+//   Title.setTitle();
+//
+//   const baseOverrides = {
+//     title: {
+//       show: false,
+//       text: Title.text, // 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources',
+//       subtext: Title.subtext, // 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016',
+//       textAlign: 'center',
+//       left: '50%',
+//       top: '10px',
+//     },
+//     legend: {
+//       show: true,
+//       orient: 'vertical',
+//       textStyle: {
+//         color: '#173B75',
+//         fontFamily: 'MaisonNeue-Book',
+//         fontWeight: '500',
+//         fontSize: 11
+//       },
+//       backgroundColor: 'rgba(255, 255, 255, 0.85)',
+//       borderRadius: 3,
+//       padding: 14,
+//       left: 5,
+//       top: 5,
+//       data: [
+//         {
+//           name: 'Least Segregated',
+//           icon: 'circle',
+//         },
+//         {
+//           name: 'Most Segregated',
+//           icon: 'circle',
+//         }
+//       ]
+//     },
+//     grid: {
+//       top: 10,
+//       bottom: 26,
+//       left: 10,
+//       right: 28,
+//       zlevel: 100,
+//       height: 'auto',
+//       width: 'auto',
+//       containLabel: true
+//     },
+//     yAxis: deepmerge(baseYAxis, {
+//       min: -1, // -6,
+//       max: 6, // 0,
+//       name: 'White-Black Achievement Gap\nby Grade Levels',
+//       nameGap: 24
+//     }),
+//     xAxis: deepmerge(baseXAxis, {
+//       min: -1, // -3,
+//       max: 6, // 7,
+//       name: 'White-Black Socioeconomic Disparity',
+//     }),
+//     series: [
+//       // dataSeries,
+//       { id: 'base'},
+//       {
+//         type: 'scatter',
+//         data: leastSegregatedSeries,
+//         name: "Least Segregated",
+//         symbolSize: 12,
+//         itemStyle: {
+//           borderWidth: 0.5,
+//           borderColor: '#0D814E', // 'rgba(255, 192, 45, 100)',
+//           color: '#1BC67A', // 'rgba(255, 252, 216, 100)',
+//           opacity: 1
+//         },
+//       },
+//       {
+//         type: 'scatter',
+//         data: mostSegregatedSeries,
+//         name: "Most Segregated",
+//         symbolSize: 12,
+//         itemStyle: {
+//           borderWidth: 0.5,
+//           borderColor: '#033E82', // '#C56A12',
+//           color: '#187CF1', // '#FD7D02',
+//           opacity: 1
+//         },
+//       },
+//       segMarkline,
+//       {
+//         id: 'highlighted',
+//         itemStyle: highlightedItemStyle,
+//         label: highlightedLabel(highlight),
+//         zlevel: 500
+//       },
+//     ]
+//   }
+//   return {
+//     highlighted: Object.keys(highlight),
+//     xVar: 'wb_ses',
+//     yVar: 'wb_avg',
+//     zVar: 'all_sz',
+//     onDataLoaded: function() {
+//       console.log('data loaded');
+//       console.log(scatterplot.data);
+//     },
+//     options: deepmerge.all([ base.options, baseOverrides ])
+//   }
+// }
 
 
 /** State 10: Achievement vs. Gap in Exposure to School Poverty */

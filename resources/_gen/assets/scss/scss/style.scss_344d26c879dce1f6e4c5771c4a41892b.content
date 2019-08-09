@@ -21130,6 +21130,14 @@ body.type-posts .search-component .ais-InstantSearch__root {
   padding: 1rem 0;
 }
 
+body.type-posts .state-desc-wrapper {
+  border-top: 1.5px solid #c4e3ec;
+}
+
+body.type-posts .state-desc-wrapper:nth-of-type(1) {
+  border: none;
+}
+
 body.type-discoveries .hero {
   background: linear-gradient(to bottom, #042965 5%, #041d55 75%);
   background-blend-mode: soft-light;

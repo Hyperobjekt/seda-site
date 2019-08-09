@@ -14,7 +14,7 @@ const highlightedLabel = (highlight) => {
   return {
     show: true,
     position: 'top',
-    backgroundColor: '#0090FF', // '#FFFCCF',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)', // '#0090FF', // '#FFFCCF',
     borderColor: '#7D38BB',
     borderWidth: 0,
     fontSize: 12,
@@ -24,7 +24,7 @@ const highlightedLabel = (highlight) => {
     padding: [8, 8],
     borderRadius: 3,
     opacity: 1,
-    color: '#fff', // '#052965',
+    color: 'rgba(25, 25, 25, 0.91)', // '#fff', // '#052965',
     formatter: function(item) {
       // console.log(item);
       // console.log(activeHighlight);

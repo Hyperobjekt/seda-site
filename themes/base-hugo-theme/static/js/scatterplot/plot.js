@@ -60,7 +60,7 @@
             // console.log('update');
             var activeWrappers = $.grep(plot.wrappers, function(el) {
                 // Get top and bottom y coords of wrapper
-                plot.top = (plot.scatterplot).offset().top;
+                plot.top = (plot.scatterplot).offset().top +140;
                 var wrapperTop = $(el).offset().top; // $(el).offset().top - $(window).scrollTop();
                 var wrapperHeight = $(el).height();
                 var wrapperBottom = Number(wrapperTop) + Number(wrapperHeight);

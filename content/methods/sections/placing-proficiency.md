@@ -30,7 +30,11 @@ An example, let’s convert Threshold 1 onto the NAEP scale. First, we will mult
 
 This yields a new “linked” Threshold 1 of 175.3. The table below shows all three linked thresholds.
 
-ADD TABLE
+| Threshold 	| Original 	| Linked (on NAEP Scale) 	|
+|-----------	|----------	|------------------------	|
+| 1         	| -0.88    	| 175.3                  	|
+| 2         	| -0.25    	| 201.2                  	|
+| 3         	| 0.28     	| 223                    	|
 
 We repeat this step for every state in every subject, grade and year. The end result is a set of thresholds for every state, subject, grade and year that are all on the same scale, the NAEP scale. 
 

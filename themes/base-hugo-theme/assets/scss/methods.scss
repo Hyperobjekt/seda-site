@@ -281,13 +281,17 @@ body.methods {
     }
 
     .seda-table {
+        &.table thead th {
+            vertical-align: bottom;
+            border-bottom: unset;
+        }
         font-family: $sharpgrotesk-book-20;
         font-weight: 400;
         background-color: transparent;
         text-align: center !important;
         padding: 1.6rem 0 4rem;
         tbody tr {
-            border-left: 4px solid #64CFF2;
+            border-left: 2px solid #64CFF2;
         }
         thead tr {
             background-color: transparent !important;
@@ -308,9 +312,18 @@ body.methods {
             padding: 1.6rem;
             color: #0032A3;
         }
+        td:nth-child(1), th:nth-child(1) {
+            border-left: 4px solid #64CFF2;
+        }
+        &.left-2 {
+            td:nth-child(1), th:nth-child(1) {
+                border-left: 2px solid #64CFF2;
+            }
+        }
         &.first-col-bold {
             tr td:nth-child(1) {
                 font-weight: 700;
+            
             }
         }
     }

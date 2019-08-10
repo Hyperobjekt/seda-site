@@ -10,7 +10,7 @@ We have measures of the average test scores in up to 96 grade-year-subject cells
 <h5>Hypothetical Average Test Scores (Grade-level Equivalents), By Grade and Year</h5>
 
 
-{.table-responsive .seda-table .first-col-bold}
+{.table-responsive .table .seda-table .left-2 .first-col-bold}
 | Grade | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  8  | 8.5 | 8.6 | 8.7 | 8.8 | 8.9 | 9.0 | 9.1 | 9.2 |
@@ -32,7 +32,7 @@ To compute the average test score, we first use the information in the table to 
 <br><br>
 <h5>Hypothetical Average Test Scores (Grade-level Equivalents Relative to National Average), By Grade and Year</h5>
 
-{.table-responsive .seda-table .first-col-bold}
+{.table-responsive .table .seda-table .left-2 .first-col-bold}
 | Grade | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  8  | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1.0 | 1.1 | 1.2 |
@@ -52,7 +52,7 @@ To compute the average learning rate, we compare students’ average scores in o
 
 Hypothetical Average Test Scores (Grade-level Equivalents), By Grade and Year
 
-{.table-responsive .diag-arrow-bl .seda-table}
+{.table-responsive .table .diag-arrow-bl .left-2 .seda-table}
 
 | Grade | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -69,7 +69,7 @@ For example, we compare the average score in grade 3 in 2009 (3.0) to the averag
 
 To compute the average test score trend, we compare students’ average scores in one grade and year to those in the same grade in the next year (see below).
 
-{.table-responsive .rt-arrow-bl .seda-table}
+{.table-responsive .table .rt-arrow-bl .left-2 .seda-table}
 
 | Grade | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

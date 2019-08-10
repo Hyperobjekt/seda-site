@@ -30,12 +30,35 @@ An example, let’s convert Threshold 1 onto the NAEP scale. First, we will mult
 
 This yields a new “linked” Threshold 1 of 175.3. The table below shows all three linked thresholds.
 
-{.table-responsive .seda-table}
-| Threshold 	| Original 	| Linked (on NAEP Scale) 	|
-|-----------	|----------	|------------------------	|
-| 1         	| -0.88    	| 175.3                  	|
-| 2         	| -0.25    	| 201.2                  	|
-| 3         	| 0.28     	| 223                    	|
+<table class="seda-table table table-responsive">
+<thead>
+<tr>
+<th style="border-left-width: 2px;">Threshold</th>
+<th style="border-left-width: 2px;">Original</th>
+<th style="border-left-width: 2px;">Linked (on NAEP Scale)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="border-left-width: 2px;">1</td>
+<td>-0.88</td>
+<td>175.3</td>
+</tr>
+
+<tr>
+<td style="border-left-width: 2px;">2</td>
+<td>-0.25</td>
+<td>201.2</td>
+</tr>
+
+<tr>
+<td style="border-left-width: 2px;">3</td>
+<td>0.28</td>
+<td>223</td>
+</tr>
+</tbody>
+</table>
 
 We repeat this step for every state in every subject, grade and year. The end result is a set of thresholds for every state, subject, grade and year that are all on the same scale, the NAEP scale. 
 <br><br>

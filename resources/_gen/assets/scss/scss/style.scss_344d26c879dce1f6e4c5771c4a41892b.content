@@ -17261,6 +17261,10 @@ h3 {
   background-color: #fff;
 }
 
+.row.data .highlight, .row.map .highlight {
+  background-color: yellow;
+}
+
 .btn-custom {
   display: inline-block;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -23106,8 +23110,13 @@ body.methods pre code {
   padding: 1.6rem 0 4rem;
 }
 
+.seda-table.table thead th {
+  vertical-align: bottom;
+  border-bottom: unset;
+}
+
 .seda-table tbody tr {
-  border-left: 4px solid #64CFF2;
+  border-left: 2px solid #64CFF2;
 }
 
 .seda-table thead tr {
@@ -23129,6 +23138,14 @@ body.methods pre code {
   border: 2px solid #64CFF2;
   padding: 1.6rem;
   color: #0032A3;
+}
+
+.seda-table td:nth-child(1), .seda-table th:nth-child(1) {
+  border-left: 4px solid #64CFF2;
+}
+
+.seda-table.left-2 td:nth-child(1), .seda-table.left-2 th:nth-child(1) {
+  border-left: 2px solid #64CFF2;
 }
 
 .seda-table.first-col-bold tr td:nth-child(1) {

@@ -3,13 +3,13 @@ section: raw-data-two
 ---
 
 <table class="table table-responsive seda-table w-100">
-<thead><tr><th title="Field #1"></th>
-<th title="Field #2"></th>
-<th title="Field #3"></th>
-<th title="Field #4"></th>
-<th title="Field #5"></th>
-<th title="Field #6" style="background-color: transparent;"></th>
-<th colspan="4" style="background-color: #0032A3; color: #fff;"title="Field #7">Number of Students Scoring at</th>
+<thead><tr><th style="border: none;" title="Field #1"></th>
+<th style="border: none;" title="Field #2"></th>
+<th style="border: none;" title="Field #3"></th>
+<th style="border: none;" title="Field #4"></th>
+<th style="border: none;" title="Field #5"></th>
+<th style="border: none;" title="Field #6" style="background-color: transparent;"></th>
+<th colspan="4" style=""title="Field #7">Number of Students Scoring at</th>
 
 </tr></thead>
 <tbody><tr>

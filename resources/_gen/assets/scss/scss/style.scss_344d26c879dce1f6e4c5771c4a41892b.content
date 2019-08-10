@@ -23125,7 +23125,7 @@ body.methods pre code {
   background-color: transparent;
 }
 
-.seda-table td {
+.seda-table td, .seda-table th {
   border: 2px solid #64CFF2;
   padding: 1.6rem;
   color: #0032A3;

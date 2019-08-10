@@ -300,8 +300,10 @@ body.methods {
             color: #0032A3;
             text-align: center;
             background-color: transparent;
+           // background-color: #0032A3; 
+            //color: #fff;
         }
-        td {
+        td, th {
             border: 2px solid #64CFF2;
             padding: 1.6rem;
             color: #0032A3;

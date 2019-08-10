@@ -134,6 +134,7 @@ body.methods {
             line-height: 2.1rem;
             letter-spacing: 0.007rem;
             margin-bottom: 0;
+            padding-bottom: 0.8rem;
         @include media-breakpoint-up(md) {
             font-size: 1.6rem;
             line-height: 2.4rem;
@@ -144,9 +145,10 @@ body.methods {
             font-size: 1.6rem;
             line-height: 3rem;
             letter-spacing: auto;
+            padding-bottom: 1.6rem;
           } 
       }  
-      p {
+      p, li {
           font-size: 1.3rem;
           line-height: 2rem;
           @include media-breakpoint-up(md) {
@@ -154,14 +156,19 @@ body.methods {
               line-height: 2.1rem;
           }
           @include media-breakpoint-up(lg) {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             line-height: 2.4rem;
         }
             @include media-breakpoint-up(xl) {
-                font-size: 1.9rem;
-                line-height: 2.8rem;
+                font-size: 1.7rem;
+                line-height: 2.5rem;
             }
-      }  
+      } 
+      p, ul {
+        @include media-breakpoint-up(lg) {  
+            margin-bottom: 2.4rem;
+        }
+      } 
       .row.glossary {
         padding-top: 5.6rem;
         @include media-breakpoint-up(md) {
@@ -214,7 +221,95 @@ body.methods {
         .center-block {
             float: none !important;
         }
+        pre code {
+            color: #0032A3;
+            color:$seda-red;
+            display: block;
+            @include media-breakpoint-up(md) {
+                font-size: 1.4rem;
+                padding: 00 0.8rem;
+            }
+            @include media-breakpoint-up(md) {
+                font-size: 1.6rem;
+                padding: 0 0 1.6rem;
+            }
+            @include media-breakpoint-up(lgd) {
+                font-size: 1.8rem;
+                padding: 0 0 2.4rem;
+            }
+        }    
         
 
 
 }    
+
+    .rt-arrow-bl {
+        tr {
+            td:nth-child(1) {
+                font-weight: 700;
+            }
+            td:nth-child(1):after {
+                content: none;
+                
+                }
+            td:after {
+                content: url('/images/icons/rt-arrow-bl.svg');
+                margin-left: 8px;
+            }
+        }
+    }
+
+    .diag-arrow-bl {
+        tr:nth-child(1) {
+            td:after {
+                content: none;
+            }
+        } 
+        tr {
+            td:nth-child(1) {
+                font-weight: 700;
+            }
+            td:nth-child(1):after, td:last-child:after {
+                content: none;
+                }
+            td:after {
+                content: url('/images/icons/diag-arrow-bl.svg');
+                margin-left: 8px;
+            }
+        }
+        
+    }
+
+    .seda-table {
+        font-family: $sharpgrotesk-book-20;
+        font-weight: 400;
+        background-color: transparent;
+        text-align: center !important;
+        padding: 1.6rem 0 4rem;
+        tbody tr {
+            border-left: 4px solid #64CFF2;
+        }
+        thead tr {
+            background-color: transparent !important;
+            border-left: none;
+            th {
+                padding: .8rem;
+            }
+        }
+        th {
+            color: #0032A3;
+            text-align: center;
+            background-color: transparent;
+        }
+        td {
+            border: 2px solid #64CFF2;
+            padding: 1.6rem;
+            color: #0032A3;
+        }
+        &.first-col-bold {
+            tr td:nth-child(1) {
+                font-weight: 700;
+            }
+        }
+    }
+

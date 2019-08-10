@@ -4,7 +4,7 @@ section: estimating-means
 <h3>Estimating Means from Proficiency Count Data</h3>
 
 The next step of our process is to estimate the mean test score in each school and district for all students and by student subgroups (gender, race/ethnicity, and economic disadvantage). TO do this, we estimate heteroscedastic ordered probit models using both the raw proficiency count data (shown above) and the linked thresholds from the prior step. Under a set of assumptions (described in the technical documentation), this method allows us to recover unbiased and precise estimates of the mean standardized test score in a school or district for every subgroup, subject, grade and year. 
-
+<br><br>
 <h5>How do we know this worked?</h5>
 
 - Cite Reardon et al (JEBS) and Shear and Reardon (working paper). Show HETOP validation something or other.

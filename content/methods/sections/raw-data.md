@@ -18,7 +18,7 @@ The data also contain NCES identifiers, which allow the data to be linked to oth
 
 Below is a mock-up of the data format:
 
-<table class="table table-responsive">
+<table class="table-responsive seda-table">
 <thead><tr><th title="Field #1"></th>
 <th title="Field #2"></th>
 <th title="Field #3"></th>

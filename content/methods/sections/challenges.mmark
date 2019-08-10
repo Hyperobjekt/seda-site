@@ -9,6 +9,8 @@ States provide only “proficiency data”: the count of students at each of the
 
 <br>
 
+{.table-responsive .seda-table}
+
 | Test Score 	| Proficiency Level 	| Description                                	|
 |------------	|-------------------	|--------------------------------------------	|
 | 0-50       	| Below Basic       	| Inadequate performance; minimal mastery    	|
@@ -17,21 +19,29 @@ States provide only “proficiency data”: the count of students at each of the
 | 91-100     	| Advanced          	| Superior performance; complete mastery     	|
 
 <br>
-ADD GRAPHIC
+
+<img src="/images/methods/image2.png" class="w-100" />
+
+<br>
 
 Most states use their own test and define “proficiency” in different ways, meaning that we cannot directly compare test results in one state to another. Proficient in one state/grade/year/subject is not comparable to proficient in another. 
 
 Consider two states, State A and B that use same test, but set their own thresholds for proficiency.
-
+<br><br>
 ##### State A: Higher Threshold for Proficiency
 
-ADD GRAPHIC
+<img src="/images/methods/image2.png" class="w-100" />
 
+<br>
 ##### State B: Lower Threshold for Proficiency
 
-ADD GRAPHIC
+<img src="/images/methods/image3.png" class="w-100" />
+
+<br>
 
 Imagine both states had the same distribution of achievement, with 100 kids scoring a 55 on the exam, 200 scoring a 70, and 100 scoring an 85. Their assignment to proficiency categories would differ because of where the thresholds are placed.
+
+{.table-responsive .seda-table}
 
 |       	| Not Proficient 	|         	| Proficient 	|         	|
 |-------	|----------------	|---------	|------------	|---------	|

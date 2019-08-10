@@ -12,7 +12,7 @@ The uncertainty in the estimates comes from different sources:
 - Estimation:
 
 You can find information on the approximate margins of error of the estimates in the side panels that appear when you click on an individual school, district or county. If you want more detailed information on the uncertainty of specific estimates, we encourage you to download the data [link here] and explore the standard error estimates provided. 
-
+<br><br>
 <h5>Suppression of Estimates</h5>
 
 We do not report average performance, learning, and/or trend estimates if:

@@ -1,5 +1,11 @@
 body.type-help-faq {
-    
+  .toggle-accordion:before {
+    content: "Expand All";
+  }
+  
+  .toggle-accordion.active:before {
+    content: "Collapse All";
+  }
     .hero-child {
       background: url('/images/heroes/help-faq.svg');
       background-repeat: no-repeat;
@@ -230,6 +236,6 @@ body.type-help-faq {
             float: none !important;
         }
         
-
+       
 
 }    

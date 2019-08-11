@@ -22268,6 +22268,14 @@ input[type=checkbox]:focus {
   outline: 0;
 }
 
+body.type-help-faq .toggle-accordion:before {
+  content: "Expand All";
+}
+
+body.type-help-faq .toggle-accordion.active:before {
+  content: "Collapse All";
+}
+
 body.type-help-faq .hero-child {
   background: url("/images/heroes/help-faq.svg");
   background-repeat: no-repeat;

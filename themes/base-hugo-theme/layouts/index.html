@@ -103,7 +103,7 @@
     <div class="w-100 heading mt-7 mt-md-9">
         <h3 tabindex="0" class="">Latest Discoveries:</h3>
     </div>
-    {{ range $index, $element := first 2 (where .Site.Pages "Section" "posts") }}
+    {{ range $index, $element := first 2 (where .Site.Pages ".Params.statustype" "post") }}
         {{ if (eq $index 0) }}
             <div class="card-container col-xs-12 col-md-6 offset-md-0">
         {{ else }}

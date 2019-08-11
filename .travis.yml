@@ -11,7 +11,7 @@ install:
 
 script:
   - if [ "$TRAVIS_BRANCH" = "production" ]; then export HUGO_BASEURL=https://edopportunity.org/; fi
-  - if [ "$TRAVIS_BRANCH" = "staging" ]; then export HUGO_BASEURL=https://staging.edopporunity.org/; fi
+  - if [ "$TRAVIS_BRANCH" = "staging" ]; then export HUGO_BASEURL=https://staging.edopportunity.org/; fi
   - hugo version # prints the Hugo version, just in case.
   - hugo # build the website
 

@@ -21140,6 +21140,7 @@ body.type-posts .search-component .ais-InstantSearch__root {
 
 body.type-posts .state-desc-wrapper {
   border-top: 1.5px solid #daecf3;
+  border-top: 1.5px solid #e6e6e6;
 }
 
 body.type-posts .state-desc-wrapper:nth-of-type(1) {
@@ -22268,6 +22269,14 @@ input[type=checkbox]:focus {
   outline: 0;
 }
 
+body.type-help-faq p a, body.type-help-faq li a {
+  color: #ff003e;
+}
+
+body.type-help-faq a:hover {
+  text-decoration: underline;
+}
+
 body.type-help-faq .toggle-accordion:before {
   content: "Expand All";
 }
@@ -22491,27 +22500,27 @@ body.type-help-faq h5 {
   }
 }
 
-body.type-help-faq p {
+body.type-help-faq p, body.type-help-faq li {
   font-size: 1.3rem;
   line-height: 2rem;
 }
 
 @media (min-width: 768px) {
-  body.type-help-faq p {
+  body.type-help-faq p, body.type-help-faq li {
     font-size: 1.4rem;
     line-height: 2.1rem;
   }
 }
 
 @media (min-width: 992px) {
-  body.type-help-faq p {
+  body.type-help-faq p, body.type-help-faq li {
     font-size: 1.5rem;
     line-height: 2.4rem;
   }
 }
 
 @media (min-width: 1280px) {
-  body.type-help-faq p {
+  body.type-help-faq p, body.type-help-faq li {
     font-size: 1.9rem;
     line-height: 2.8rem;
   }
@@ -22572,11 +22581,11 @@ body.type-help-faq .accordion-section a.question i.fa-chevron-up:before {
 
 body.type-help-faq .accordion-section a.question:hover {
   text-decoration: none;
-  color: #ff003e;
+  color: #7086AB;
 }
 
 body.type-help-faq .accordion-section .answer {
-  margin-top: 1.6rem;
+  padding-top: 1.6rem;
 }
 
 body.type-help-faq .center-block {

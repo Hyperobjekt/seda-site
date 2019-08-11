@@ -1,5 +1,5 @@
 ---
-title: "How can I get help using and understanding the Educational Opportunity Explorer?"
+title: "How can I get help using the Educational Opportunity Explorer?"
 faqid: explorer-help
 section: "help" # director, staff, or partner
 weight: 10

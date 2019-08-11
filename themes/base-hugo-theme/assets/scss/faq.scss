@@ -1,4 +1,12 @@
 body.type-help-faq {
+  p a, li a {
+    color: $seda-red;
+    //font-weight: bold;
+  }
+  a:hover {
+    text-decoration: underline;
+  
+  }
   .toggle-accordion:before {
     content: "Expand All";
   }
@@ -167,7 +175,7 @@ body.type-help-faq {
             letter-spacing: auto;
           } 
       }  
-      p {
+      p, li {
           font-size: 1.3rem;
           line-height: 2rem;
           @include media-breakpoint-up(md) {
@@ -222,14 +230,14 @@ body.type-help-faq {
             }
             &:hover {
                 text-decoration: none;
-                color: $seda-red;
+                color: #7086AB;
                 // color: $seda-lightblue;
                 // color: #5198c7;
                 // color: #6cc1aa;
             }
         }
         .answer {
-            margin-top: 1.6rem;
+            padding-top: 1.6rem;
             }
         }
         .center-block {

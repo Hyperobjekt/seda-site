@@ -63,5 +63,5 @@ This yields a new “linked” Threshold 1 of 175.3. The table below shows all t
 We repeat this step for every state in every subject, grade and year. The end result is a set of thresholds for every state, subject, grade and year that are all on the same scale, the NAEP scale. 
 <br><br>
 <h5>How do we know this worked?</h5>
-- Reardon, Kalogrides & Ho (Linking)
-- Kuhfeld et al. (AERA Open)
+- <span class="highlight">Reardon, Kalogrides & Ho (Linking)</span>
+- <span class="highlight">Kuhfeld et al. (AERA Open)</span>

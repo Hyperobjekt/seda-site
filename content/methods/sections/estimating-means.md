@@ -7,7 +7,7 @@ The next step of our process is to estimate the mean test score in each school a
 <br><br>
 <h5>How do we know this worked?</h5>
 
-- Cite Reardon et al (JEBS) and Shear and Reardon (working paper). Show HETOP validation something or other.
+- <span class="highlight">Cite Reardon et al (JEBS) and Shear and Reardon (working paper). Show HETOP validation something or other.</span>
 
 To get estimates for each county (in a given subject, grade, and year) we take a weighted average of all the estimates from the districts that belong to that county. The weighted average accounts for the number of students served in each district, allowing estimates from large districts in a county to contribute more than small districts.
 Importantly, because we scaled the thresholds to a common scale, all of the recovered estimates are on a common scale, the NAEP scale.

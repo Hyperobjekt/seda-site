@@ -7,6 +7,6 @@ If you want more detail on the exact implementation of these methods in SEDA, pl
 
 If you want more detail on the methods, please review the following papers: 
 
-- HETOP: JEBS Paper, Shear/Reardon CEPA WP
-- Linking: Linking Paper
+- <span class="highlight">HETOP: JEBS Paper, Shear/Reardon CEPA WP</span>
+- <span class="highlight">Linking: Linking Paper</span>
 <br><br>

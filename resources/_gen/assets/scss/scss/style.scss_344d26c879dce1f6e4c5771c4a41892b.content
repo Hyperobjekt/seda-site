@@ -18358,7 +18358,7 @@ body.home #main {
   margin-right: .8rem;
 }
 
-.row.fact.fact-2 {
+.row.fact.fact-2, .row.fact.some-things-to-know {
   background-color: #f8f8f8;
 }
 

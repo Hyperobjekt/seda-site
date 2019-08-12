@@ -17,15 +17,20 @@
 
 <div id="scrollTarget1" class="row fact some-things-to-know m-0 scroll-to-target">
     <div class="col-xs-10 offset-xs-1 col-md-6 mx-auto">
-        <h3 class="py-0" tabindex="0">Test scores reveal three aspects of educational opportunity in America:</h3>
+        <h3 class="py-0" tabindex="0">Three key metrics offer insight into educational opportunity:</h3>
     </div>
 </div>
 
-<div class="row fact fact-1 m-0">
+<div class="row number-mark-container justify-content-center">
+    <div class="number-marker d-flex justify-content-center align-items-end">
+        1
+    </div>
+</div>
+
+<div class="row fact fact-1 m-0 align-items-center">
     <div class="col-xs-12 col-mm-10 offset-mm-1 col-md-6 col-lg-6 offset-lg-1">
-        <div class="superhead"><img src="/images/icons/avg-scores-symbol.svg" />Average Test Scores</div>
-        <h4 tabindex="0">The educational opportunities available in a community, both in and out of school, are reflected in children’s average test scores.</h4>
-        <p>Average test scores are influenced by children's opportunities to learn at home, in their neighborhoods, in childcare, preschool, and after-school programs, from peers and friends, and at school. Average test scores therefore reflect the total set of educational opportunities available in a community.</p>
+        <div class="metric-title d-flex justify-content-start align-items-start"><img class="mr-2" src="/images/icons/avg-scores-symbol.svg" /><h4 tabindex="0">Average Test Scores</h4></div>
+        <p>The educational opportunities available in a community, both in and out of school, are reflected in children’s average test scores. They are influenced by children's opportunities to learn at home, in their neighborhoods, in childcare, preschool, and after-school programs, from peers and friends, and at school. Average test scores therefore reflect the total set of educational opportunities available in a community.</p>
     </div>
     <div class="col-xs-12 col-mm-10 col-md-4 col-lg-4 hpgraphic" id="avg-graphic" style="height: 100%; width: 100%; background-color: #fff; display: flex; justify-content: center; align-items: center;">
         {{ partial "svg1" }}
@@ -33,23 +38,33 @@
     </div>
 </div>
 
-<div class="row fact fact-2 m-0">
+<div class="row number-mark-container justify-content-center">
+    <div class="number-marker d-flex justify-content-center align-items-end">
+        2
+    </div>
+</div>
+
+<div class="row fact fact-2 m-0 align-items-center">
     <div class="col-xs-12 col-mm-10 offset-mm-1  offset-md-0 col-md-4 col-lg-4 offset-md-1 hpgraphic" id="growth-graphic" style="height: auto; width: 100%; display: flex; align-items:center;">
         {{ partial "svg2" }}
         <img class="svg-static" src="/images/static-svgs/svg2.svg" />
     </div>
     <div class="col-xs-12 col-mm-10 offset-mm-1 offset-md-0 col-md-6 col-lg-6">
-        <div class="superhead"><img src="/images/icons/growth-scores-symbol.svg" />Learning Rates</div>
-        <h4 tabindex="0">The contribution of schools to educational opportunity is reflected in the growth of test scores while children attend school.</h4>
-        <p>Learning rates measure how much student scores improve each year while they are in school. They are a better indicator of school quality than average test scores, which are influenced by a range of experiences outside of school.</p>
+        <div class="metric-title d-flex justify-content-start align-items-start"><img class="mr-2" src="/images/icons/growth-scores-symbol.svg" /><h4 tabindex="0">Learning Rates</h4></div>
+        <p>The contribution of schools to educational opportunity is reflected in the growth of test scores while children attend school. Learning rates measure how much student scores improve each year while they are in school. They are a better indicator of school quality than average test scores, which are influenced by a range of experiences outside of school.</p>
     </div>
 </div>
 
-<div class="row fact fact-3 m-0">
+<div class="row number-mark-container justify-content-center">
+    <div class="number-marker d-flex justify-content-center align-items-end">
+        3
+    </div>
+</div>
+
+<div class="row fact fact-3 m-0 align-items-center">
     <div class="col-xs-12 col-mm-10 offset-mm-1 col-md-6 col-lg-6 offset-lg-1">
-        <div class="superhead"><img src="/images/icons/trend-scores-symbol.svg" />Trend in Test Scores</div>
-        <h4 tabindex="0">The change in a community’s educational opportunities, both in and out of school, is reflected in average test score gains or losses.</h4>
-        <p>Trends in test scores reflect both changes in school quality and changes in other family and community features that provide opportunities for children.</p>
+        <div class="metric-title d-flex justify-content-start align-items-start"><img class="mr-2" src="/images/icons/trend-scores-symbol.svg" /><h4 tabindex="0">Trend in Test Scores</h4></div>
+        <p>The change in a community’s educational opportunities, both in and out of school, is reflected in average test score gains or losses. Trends in test scores reflect both changes in school quality and changes in other family and community features that provide opportunities for children.</p>
     </div>
     <div class="col-xs-12 col-mm-10 offset-mm-1 col-md-4 offset-md-0 col-lg-4 hpgraphic" id="trendgraphic" style="height: auto; width: 100%; display: flex; align-items:center;">
         {{ partial "svg3" }}
@@ -59,7 +74,7 @@
 
 <div class="row map-invite m-0 py-8 py-lg-10 py-xl-13">
     <div class="scatterplot col-10 col-mm-8 offset-1 offset-mm-2">
-        <h4 class="color-tertiary" tabindex="0">Use the Educational Opportunity Explorer to learn more about educational opportunity in your community and across the US.</h4>
+        <h4 class="color-tertiary" tabindex="0">Use the Explorer to learn more about educational opportunity in your community and across the US.</h4>
         <h5 class="color-tertiary big-superhead mt-4 mt-md-5 mb-5" tabindex="0">What would you like to explore?</h5>
     </div><div class="col-1 col-mm-2"></div>
         <div class="col-1 col-lg-2"></div>
@@ -95,13 +110,13 @@
         <div class="col-md-1 col-lg-2"></div>    
         <!--<button data-scroll-target="#" class="btn btn-custom scroll-to-section" tabindex="0" aria-label="Go to next section">Get started</button>-->
     <div class="scatterplot col-xs-10 offset-xs-1 col-mm-8 offset-mm-2">    
-        <a href="#" data-scroll-target="scrollTarget2" class="scroll-to-section color-tertiary big-superhead mt-4 mt-md-5" tabindex="0">Or see what we are learning <br></a>
+        <a href="#" data-scroll-target="scrollTarget2" class="scroll-to-section color-tertiary big-superhead mt-4 mt-md-5" tabindex="0">(Or see what we are learning)<br></a>
     </div>
 </div>
 
 <div id="scrollTarget2" class="row latest-explorations m-0">
     <div class="w-100 heading mt-7 mt-md-9">
-        <h3 tabindex="0" class="">Latest Discoveries:</h3>
+        <h3 tabindex="0" class="">Latest Discoveries</h3>
     </div>
     {{ range $index, $element := first 2 (where .Site.Pages ".Params.statustype" "post") }}
         {{ if (eq $index 0) }}

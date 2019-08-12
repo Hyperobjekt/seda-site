@@ -18242,6 +18242,21 @@ body.home .hero .hero-child .column button {
   }
 }
 
+body.home .row.number-mark-container {
+  height: 0;
+}
+
+body.home .row.number-mark-container .number-marker {
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 19px;
+  width: 35px;
+  height: 35px;
+  border-radius: 17px;
+  background-color: #fff;
+  margin-top: -17px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
 body.home #main {
   background-color: #ffffff;
 }
@@ -18316,7 +18331,6 @@ body.home #main {
 
 .row.fact {
   text-align: left;
-  background-color: #f8f8f8;
 }
 
 .row.fact img.svg-static {
@@ -18344,8 +18358,8 @@ body.home #main {
   margin-right: .8rem;
 }
 
-.row.fact:nth-child(odd) {
-  background-color: transparent;
+.row.fact.fact-2 {
+  background-color: #f8f8f8;
 }
 
 .row.fact.some-things-to-know {

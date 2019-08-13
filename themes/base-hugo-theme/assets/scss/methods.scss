@@ -248,13 +248,15 @@ body.methods {
             td:nth-child(1) {
                 font-weight: 700;
             }
-            td:nth-child(1):after {
+            td:nth-child(1):after, td:nth-child(9):after {
                 content: none;
-                
+    
                 }
             td:after {
                 content: url('/images/icons/rt-arrow-bl.svg');
-                margin-left: 8px;
+                margin-left: -18px;
+                position: relative;
+                right: -26px;
             }
         }
     }
@@ -274,7 +276,12 @@ body.methods {
                 }
             td:after {
                 content: url('/images/icons/diag-arrow-bl.svg');
-                margin-left: 8px;
+                //margin-left: 8px;
+                margin-left: -11px;
+                top: -25px;
+                position: relative;
+                right: -26px;
+                
             }
         }
         

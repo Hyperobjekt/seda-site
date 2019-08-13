@@ -1,8 +1,10 @@
 ---
-title: "What Explains White-Black Differences in Average Test Scores?"
+title: "What Explains White-Black Differences in Average Test Scores" # for the body class -- can't use a ?
+displaytitle: "What Explains White-Black Differences in Average Test Scores?" # for what shows on the page
 subtitle: "Using fine-grained data to understand a stubborn problem"
 author: "Sean F. Reardon"
 date: "2019-01-12"
+hero: "/images/heroes/gaps-discovery-hero.svg"
 image: "/images/articles/racial-opportunity-gaps.jpg"
 scatterplotID: "article1" # used to name the JS file with the necessary states and prop attributes
 statustype: post

@@ -1,9 +1,9 @@
 {{ define "main" }}
 
 <div id="hero" class="hero row" style="">
-    <div class="hero-child row">
+    <div class="hero-child row" style="background-image:url('{{ .Params.hero }}');">
       <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-        <h2 tabindex="0">{{ .Title }}</h2>
+        <h2 tabindex="0">{{ .Params.displaytitle }}</h2>
         <p>{{ .Params.subtitle }}</p>
       </div>
      </div>

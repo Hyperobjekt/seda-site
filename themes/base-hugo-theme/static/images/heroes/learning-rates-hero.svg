@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700px" height="267px" viewBox="0 0 700 267" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Learning Rates Dots</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="99.3227987%" y1="0%" x2="1.71232713%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#051C56" offset="0%"></stop>
+            <stop stop-color="#16489C" offset="48.7263455%"></stop>
+            <stop stop-color="#041C56" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.875">
+        <g id="Affluent-Schools-v8-Copy" transform="translate(-146.000000, -105.000000)">
+            <g id="Learning-Rates-Dots" transform="translate(147.000000, 105.000000)">
+                <circle id="Oval-Copy-201" fill="#1A62DB" opacity="0.0392950149" cx="213" cy="240" r="27"></circle>
+                <circle id="Oval-Copy-202" fill="#1A62DB" opacity="0.0392950149" cx="281" cy="240" r="27"></circle>
+                <circle id="Oval-Copy-203" fill="#1A62DB" opacity="0.0392950149" cx="145" cy="240" r="27"></circle>
+                <circle id="Oval-Copy-204" fill="#1A62DB" opacity="0.0392950149" cx="349" cy="240" r="27"></circle>
+                <circle id="Oval-Copy-205" fill="#1A62DB" opacity="0.0392950149" cx="417" cy="240" r="27"></circle>
+                <circle id="Oval-Copy-257" fill="#1A62DB" opacity="0.0392950149" cx="553" cy="240" r="27"></circle>
+                <circle id="Oval-Copy-207" fill="#1A62DB" opacity="0.0392950149" cx="485" cy="240" r="27"></circle>
+                <ellipse id="Oval-Copy-223" fill="#175ED3" opacity="0.122581845" cx="485" cy="169.5" rx="27" ry="26.5"></ellipse>
+                <circle id="Oval-Copy-239" fill="#155CD3" opacity="0.25" cx="485" cy="98" r="27"></circle>
+                <ellipse id="Oval-Copy-255" fill="#1C66E2" opacity="0.35" cx="485" cy="26.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-217" fill="#144DAB" opacity="0.15" cx="213" cy="215.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-218" fill="#175DD2" opacity="0.122581845" cx="281" cy="228.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-219" fill="#1454C0" opacity="0.122581845" cx="145" cy="231.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-220" fill="#1549A0" opacity="0.15" cx="349" cy="224.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-221" fill="#1450B4" opacity="0.15" cx="417" cy="197.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-259" fill="#195BC9" opacity="0.122581845" cx="553" cy="182.5" rx="27" ry="26.5"></ellipse>
+                <circle id="Oval-Copy-233" fill="#082A70" cx="213" cy="191" r="27"></circle>
+                <circle id="Oval-Copy-234" fill="#1655BE" opacity="0.151692708" cx="281" cy="216" r="27"></circle>
+                <circle id="Oval-Copy-235" fill="#114EB3" opacity="0.151692708" cx="145" cy="224" r="27"></circle>
+                <circle id="Oval-Copy-236" fill="#0A2E72" cx="349" cy="209" r="27"></circle>
+                <circle id="Oval-Copy-237" fill="#062A6F" cx="417" cy="158" r="27"></circle>
+                <circle id="Oval-Copy-261" fill="#165BCD" opacity="0.25" cx="553" cy="125" r="27"></circle>
+                <ellipse id="Oval-Copy-249" fill="#0C357F" cx="213" cy="166.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-250" fill="#0B347F" cx="281" cy="204.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-251" fill="#0B3686" cx="145" cy="216.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-252" fill="#0A3585" cx="349" cy="192.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-253" fill="#0B388A" cx="417" cy="118.5" rx="27" ry="26.5"></ellipse>
+                <ellipse id="Oval-Copy-263" fill="#1A62DB" opacity="0.35" cx="553" cy="67.5" rx="27" ry="26.5"></ellipse>
+                <path d="M0.41796875,266.5 L698,266.5" id="Line-3" stroke="url(#linearGradient-1)" opacity="0.775855655" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

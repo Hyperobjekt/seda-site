@@ -20752,6 +20752,44 @@ form#getTheData .form-footer .fa-cog {
   transition: opacity 200ms ease-in;
 }
 
+body.type-posts.what-explains-white-black-differences-in-average-test-scores .hero .hero-child {
+  background-size: 92%;
+  background-position: center 70%;
+}
+
+@media (min-width: 768px) {
+  body.type-posts.what-explains-white-black-differences-in-average-test-scores .hero .hero-child {
+    background-size: 80%;
+    background-position: bottom center;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-posts.what-explains-white-black-differences-in-average-test-scores .hero .hero-child {
+    background-size: 88%;
+    background-position: bottom center;
+  }
+}
+
+body.type-posts.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
+  background-size: 92%;
+  background-position: center 70%;
+}
+
+@media (min-width: 768px) {
+  body.type-posts.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
+    background-size: 78%;
+    background-position: center center;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-posts.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
+    background-size: 78%;
+    background-position: center center;
+  }
+}
+
 body.type-posts {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;

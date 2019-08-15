@@ -5,7 +5,7 @@ subtitle: "Learning Rates Reveal How Schools Contribute to Educational Opportuni
 author: "Sean F. Reardon"
 date: "2019-02-12"
 hero: "/images/heroes/learning-rates-hero.svg"
-image: "/images/articles/racial-opportunity-gaps.jpg"
+image: "/images/articles/affluent-schools-sm.png"
 scatterplotID: "article2" # used to name the JS file with the necessary states and prop attributes
 statustype: post
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.

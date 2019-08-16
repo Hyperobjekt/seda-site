@@ -1,6 +1,7 @@
 body.type-help-faq {
   p a, li a {
     color: $seda-red;
+    color: #7086AB;
     //font-weight: bold;
   }
   a:hover {
@@ -115,6 +116,7 @@ body.type-help-faq {
               font-size: 1.3rem;
               line-height: 2rem;
               letter-spacing: 0;
+              color: #fff;
               @include media-breakpoint-up(md) {
                 font-size: 1.8rem;
                 line-height: 2.5rem;
@@ -178,6 +180,7 @@ body.type-help-faq {
       p, li {
           font-size: 1.3rem;
           line-height: 2rem;
+          color: #5d5d5d;
           @include media-breakpoint-up(md) {
               font-size: 1.4rem;
               line-height: 2.1rem;

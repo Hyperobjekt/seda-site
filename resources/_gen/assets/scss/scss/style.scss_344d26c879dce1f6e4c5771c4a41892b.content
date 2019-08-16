@@ -17739,6 +17739,112 @@ img.float-left {
   }
 }
 
+p {
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  p {
+    margin-bottom: 1.6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  p {
+    margin-bottom: 2.4rem;
+  }
+}
+
+p a {
+  color: #7086AB;
+}
+
+.base-style h3 {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  letter-spacing: .055rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  .base-style h3 {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: .064rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .base-style h3 {
+    font-size: 1.8rem;
+    line-height: 3.818rem;
+    letter-spacing: .07rem;
+  }
+}
+
+.base-style h4 {
+  color: #031232;
+  font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  letter-spacing: auto;
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  .base-style h4 {
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .base-style h4 {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .base-style h4 {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .03rem;
+  }
+}
+
+.base-style p {
+  color: #5d5d5d;
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.3rem;
+  line-height: 2.0rem;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  .base-style p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .base-style p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .base-style p {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+  }
+}
+
 .subnav {
   height: 4.8rem;
   position: sticky;
@@ -21193,6 +21299,7 @@ body.type-posts .search-component .ais-InstantSearch__root {
 body.type-posts .state-desc-wrapper {
   border-top: 1.5px solid #daecf3;
   border-top: 1.5px solid #e6e6e6;
+  border-top: 1.4px solid #89a2b3;
 }
 
 body.type-posts .state-desc-wrapper:nth-of-type(1) {
@@ -22323,6 +22430,7 @@ input[type=checkbox]:focus {
 
 body.type-help-faq p a, body.type-help-faq li a {
   color: #ff003e;
+  color: #7086AB;
 }
 
 body.type-help-faq a:hover {
@@ -22470,6 +22578,7 @@ body.type-help-faq .hero .hero-child .column p {
   font-size: 1.3rem;
   line-height: 2rem;
   letter-spacing: 0;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -22555,6 +22664,7 @@ body.type-help-faq h5 {
 body.type-help-faq p, body.type-help-faq li {
   font-size: 1.3rem;
   line-height: 2rem;
+  color: #5d5d5d;
 }
 
 @media (min-width: 768px) {

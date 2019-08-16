@@ -37,6 +37,7 @@ const highlightedItemStyle =  {
   borderWidth: 0.5,
   borderColor: '#0677CE', // '#FFC02D',
   color: '#32A6FF', // '#FFFCDD',
+  // color: '#0b337f',
   opacity: 0.9,
   shadowBlur: 4,
   shadowColor: 'rgba(0, 0, 0, 0.5)',

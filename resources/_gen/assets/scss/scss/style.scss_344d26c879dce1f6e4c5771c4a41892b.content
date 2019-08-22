@@ -21908,7 +21908,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-1 path#Step1-2 {
+#growth-graphic.move svg g#Steps-1 rect#Step1-2 {
   animation: step1-2 0.5s forwards;
   animation-delay: 1s;
   transform: translate(0px, 5px);
@@ -21923,7 +21923,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-1 path#Step1-3 {
+#growth-graphic.move svg g#Steps-1 rect#Step1-3 {
   animation: step1-3 0.5s forwards;
   animation-delay: 1s;
   transform: translate(0px, 10px);
@@ -21938,7 +21938,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-1 path#Step1-4 {
+#growth-graphic.move svg g#Steps-1 rect#Step1-4 {
   animation: step1-4 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(15px);
@@ -21953,7 +21953,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-1 path#Step1-5 {
+#growth-graphic.move svg g#Steps-1 rect#Step1-5 {
   animation: step1-5 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(20px);
@@ -21968,7 +21968,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-1 path#Step1-6 {
+#growth-graphic.move svg g#Steps-1 rect#Step1-6 {
   animation: step1-6 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(25px);
@@ -21983,7 +21983,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-1 path#Step1-7 {
+#growth-graphic.move svg g#Steps-1 rect#Step1-7 {
   animation: step1-7 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(30px);
@@ -21998,7 +21998,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-1 path#Step1-8 {
+#growth-graphic.move svg g#Steps-1 rect#Step1-8 {
   animation: step1-7 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(35px);
@@ -22028,7 +22028,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-2 path#Step2-2 {
+#growth-graphic.move svg g#Steps-2 rect#Step2-2 {
   animation: step2-2 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(7px);
@@ -22043,7 +22043,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-2 path#Step2-3 {
+#growth-graphic.move svg g#Steps-2 rect#Step2-3 {
   animation: step2-3 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(14px);
@@ -22058,7 +22058,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-2 path#Step2-4 {
+#growth-graphic.move svg g#Steps-2 rect#Step2-4 {
   animation: step2-4 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(21px);
@@ -22073,7 +22073,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-2 path#Step2-5 {
+#growth-graphic.move svg g#Steps-2 rect#Step2-5 {
   animation: step2-5 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(28px);
@@ -22088,7 +22088,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-2 path#Step2-6 {
+#growth-graphic.move svg g#Steps-2 rect#Step2-6 {
   animation: step2-6 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(35px);
@@ -22103,7 +22103,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-2 path#Step2-7 {
+#growth-graphic.move svg g#Steps-2 rect#Step2-7 {
   animation: step2-7 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(42px);
@@ -22118,7 +22118,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-2 path#Step2-8 {
+#growth-graphic.move svg g#Steps-2 rect#Step2-8 {
   animation: step2-7 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(49px);
@@ -22148,7 +22148,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-3 path#Step3-2 {
+#growth-graphic.move svg g#Steps-3 rect#Step3-2 {
   animation: step3-2 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(12px);
@@ -22163,7 +22163,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-3 path#Step3-3 {
+#growth-graphic.move svg g#Steps-3 rect#Step3-3 {
   animation: step3-3 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(24px);
@@ -22178,7 +22178,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-3 path#Step3-4 {
+#growth-graphic.move svg g#Steps-3 rect#Step3-4 {
   animation: step3-4 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(36px);
@@ -22193,7 +22193,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-3 path#Step3-5 {
+#growth-graphic.move svg g#Steps-3 rect#Step3-5 {
   animation: step3-5 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(48px);
@@ -22208,7 +22208,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-3 path#Step3-6 {
+#growth-graphic.move svg g#Steps-3 rect#Step3-6 {
   animation: step3-6 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(60px);
@@ -22223,7 +22223,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-3 path#Step3-7 {
+#growth-graphic.move svg g#Steps-3 rect#Step3-7 {
   animation: step3-7 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(72px);
@@ -22238,7 +22238,7 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Steps-3 path#Step3-8 {
+#growth-graphic.move svg g#Steps-3 rect#Step3-8 {
   animation: step3-8 0.5s forwards;
   animation-delay: 1s;
   transform: translateY(84px);

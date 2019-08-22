@@ -470,7 +470,7 @@ svg g#map-plot {
                 path#Step1-1 {
                 
                 }
-                path#Step1-2 {
+                rect#Step1-2 {
                     animation: step1-2 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translate(0px, 5px);
@@ -483,7 +483,7 @@ svg g#map-plot {
                         transform: translate(0px, 0px);
                     }
                 } 
-                path#Step1-3 {
+                rect#Step1-3 {
                     animation: step1-3 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translate(0px, 10px);
@@ -496,7 +496,7 @@ svg g#map-plot {
                         transform: translate(0px, 0px);
                     }
                 }
-                path#Step1-4 {
+                rect#Step1-4 {
                     animation: step1-4 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(15px);
@@ -509,7 +509,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step1-5 {
+                rect#Step1-5 {
                     animation: step1-5 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(20px);
@@ -522,7 +522,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step1-6 {
+                rect#Step1-6 {
                     animation: step1-6 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(25px);
@@ -535,7 +535,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step1-7 {
+                rect#Step1-7 {
                     animation: step1-7 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(30px);
@@ -548,7 +548,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step1-8 {
+                rect#Step1-8 {
                     animation: step1-7 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(35px);
@@ -579,10 +579,10 @@ svg g#map-plot {
                 }
             } 
             g#Steps-2 {
-                path#Step2-1 {
+                rect#Step2-1 {
                 
                 }
-                path#Step2-2 {
+                rect#Step2-2 {
                     animation: step2-2 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(7px);
@@ -595,7 +595,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 } 
-                path#Step2-3 {
+                rect#Step2-3 {
                     animation: step2-3 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(14px);
@@ -608,7 +608,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step2-4 {
+                rect#Step2-4 {
                     animation: step2-4 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(21px);
@@ -621,7 +621,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step2-5 {
+                rect#Step2-5 {
                     animation: step2-5 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(28px);
@@ -634,7 +634,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step2-6 {
+                rect#Step2-6 {
                     animation: step2-6 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(35px);
@@ -647,7 +647,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step2-7 {
+                rect#Step2-7 {
                     animation: step2-7 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(42px);
@@ -660,7 +660,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step2-8 {
+                rect#Step2-8 {
                     animation: step2-7 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(49px);
@@ -690,10 +690,10 @@ svg g#map-plot {
                 }
             } 
             g#Steps-3 {
-                path#Step3-1 {
+                rect#Step3-1 {
                 
                 }
-                path#Step3-2 {
+                rect#Step3-2 {
                     animation: step3-2 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(12px);
@@ -706,7 +706,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 } 
-                path#Step3-3 {
+                rect#Step3-3 {
                     animation: step3-3 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(24px);
@@ -719,7 +719,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step3-4 {
+                rect#Step3-4 {
                     animation: step3-4 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(36px);
@@ -732,7 +732,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step3-5 {
+                rect#Step3-5 {
                     animation: step3-5 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(48px);
@@ -745,7 +745,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step3-6 {
+                rect#Step3-6 {
                     animation: step3-6 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(60px);
@@ -758,7 +758,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step3-7 {
+                rect#Step3-7 {
                     animation: step3-7 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(72px);
@@ -771,7 +771,7 @@ svg g#map-plot {
                         transform: translateY(0px);
                     }
                 }
-                path#Step3-8 {
+                rect#Step3-8 {
                     animation: step3-8 $stepSpeed forwards;
                     animation-delay: $stepDelay;
                     transform: translateY(84px);

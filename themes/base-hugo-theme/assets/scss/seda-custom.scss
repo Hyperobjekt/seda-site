@@ -1212,18 +1212,18 @@ body.home {
 
 .row.number-mark-container {
   height: 0;
-  .number-marker {
-    font-family: $sharpgrotesk-med-20;
-    font-size: 19px;
-    width: 35px;
-    height: 35px;
-    border-radius: 17px;
-    //border: 1px solid blue;
-    background-color: #fff;
-    margin-top: -17px;
-    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.08);
-  } 
 }
+.number-marker {
+  font-family: $sharpgrotesk-med-20;
+  font-size: 19px;
+  width: 35px;
+  height: 35px;
+  border-radius: 17px;
+  //border: 1px solid blue;
+  background-color: #fff;
+  margin-top: -42px;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.08);
+} 
  #main {
     background-color: $white;
     // overflow-x: hidden;

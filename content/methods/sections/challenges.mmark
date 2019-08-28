@@ -59,12 +59,12 @@ Consider two states, State A and B that use same test, but set their own thresho
 <br><br>
 ##### State A: Higher Threshold for Proficiency
 
-<img src="/images/methods/image2.png" class="w-100" />
+<img src="/images/methods/scale-one.svg" class="w-100" />
 
 <br>
 ##### State B: Lower Threshold for Proficiency
 
-<img src="/images/methods/image3.png" class="w-100" />
+<img src="/images/methods/scale-two.svg" class="w-100" />
 
 <br>
 

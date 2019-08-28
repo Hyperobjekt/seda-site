@@ -11,6 +11,7 @@ Intuitively, we use the data form each state to determine what proportion of stu
 
 In 2014-15 a total of 463,068 students who took and received a score on the state-wide assessment. The percent of students scoring in each category is shown in the table below. These percentages correspond, roughly, to the percent of the area under the curve between each proficiency threshold.
 
-<img src="/images/methods/image5.png" class="w-100" />
+<img src="/images/methods/distribution-table.svg" class="w-100 mt-3 mb-8">
+<img src="/images/methods/distribution-chart.svg" class="w-75 mx-auto d-flex" />
 <br>
 

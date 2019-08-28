@@ -3,8 +3,9 @@ section: scaling-estimates
 ---
 <h3>Scaling the Estimates to Grade Equivalents</h3>
 
-On the website, we report all data in grade equivalent units, or what we call the Grade within Cohort Standardized (GCS) scale. On this scale, users can interpret 1-unit as 1-grade level. The national average performance, for comparison, is 3 in grade 3, 4 in grade 4, and so on. 
-To convert our estimates from the NAEP scale into grade equivalents, we have to first approximate the average amount students’ test scores grow in a grade on NAEP. To do this, we use data from three national NAEP cohorts: the cohorts who were in 4th grade in 2009, 2011, and 2013. Below we show the average national NAEP scores (Expanded Population Estimates) in grades 4 and 8 for these three cohorts. We average over the three cohorts to create a stable baseline (reference group) that uses as much information as possible.
+On the website, we report all data in grade levels, or what we call the Grade (within Cohort) Standardized (GCS) scale. On this scale, users can interpret 1-unit as 1-grade level. The national average performance, for comparison, is 3 in grade 3, 4 in grade 4, and so on. 
+<br><br>
+To convert our estimates from the NAEP scale into grade levels, we have to first approximate the average amount students’ test scores grow in a grade on NAEP. To do this, we use data from three national NAEP cohorts: the cohorts who were in 4th grade in 2009, 2011, and 2013. Below we show the average national NAEP scores in grades 4 and 8 for these three cohorts. We average over the three cohorts to create a stable baseline, or reference group.
 
 <table class="table-responsive table seda-table">
 <thead><tr><th style="border: none;" title="Field #1"></th>

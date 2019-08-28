@@ -3,10 +3,6 @@ section: interested
 ---
 <h3>For Interested Readers and Data File Users</h3>
 
-If you want more detail on the exact implementation of these methods in SEDA, please see the Technical Documentation. 
+For more detail on how we construct the estimated test score parameters using the methods described here, please see the [LINK Technical Documentation]. For more detail on the statistical methods we use, as well as information about how accurate the estimates are, please see our [LINK technical papers]. 
 
-If you want more detail on the methods, please review the following papers: 
-
-- <span class="highlight">HETOP: JEBS Paper, Shear/Reardon CEPA WP</span>
-- <span class="highlight">Linking: Linking Paper</span>
 <br><br>

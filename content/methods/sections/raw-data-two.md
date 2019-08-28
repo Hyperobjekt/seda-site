@@ -2,7 +2,7 @@
 section: raw-data-two
 ---
 
-<table class="table table-responsive seda-table w-100">
+<table class="table table-responsive seda-table mx-auto" style="max-width: 90%;">
 <thead><tr><th style="border: none;" title="Field #1"></th>
 <th style="border: none;" title="Field #2"></th>
 <th style="border: none;" title="Field #3"></th>

@@ -147,7 +147,8 @@ body.methods {
             letter-spacing: auto;
             padding-bottom: 1.6rem;
           } 
-      }  
+      } 
+       
       p, li {
           font-size: 1.3rem;
           line-height: 2rem;
@@ -184,6 +185,12 @@ body.methods {
       }
       .row.map {
         padding: 8rem 0 4rem;  
+      }
+      ol {
+        padding-left: 2rem;
+        li {
+          padding-left: 0.8rem;
+        }
       }
       .accordion-section {
         padding: 4.8rem 0;

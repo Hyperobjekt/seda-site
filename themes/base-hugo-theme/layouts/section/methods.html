@@ -49,16 +49,6 @@
             {{ .Content }}
         {{ end }} 
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto d-flex justify-content-center">
-        {{ range (where .Site.RegularPages "Params.section" ("challenges-two")) }}
-            {{ .Content }}
-        {{ end }} 
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        {{ range (where .Site.RegularPages "Params.section" ("challenges-three")) }}
-            {{ .Content }}
-        {{ end }} 
-    </div>
 </div>
 <div class="row map" id="addressing">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
@@ -78,11 +68,11 @@
             {{ .Content }}
         {{ end }}
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">      
-        {{ range (where .Site.RegularPages "Params.section" ("raw-data-three")) }}
+    <!--<div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">      
+        {{/* range (where .Site.RegularPages "Params.section" ("raw-data-three")) }}
             {{ .Content }}
-        {{ end }}
-    </div>
+        {{ end */}}
+    </div>-->
 </div>
 <div class="row map" id="prof-threshold">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">

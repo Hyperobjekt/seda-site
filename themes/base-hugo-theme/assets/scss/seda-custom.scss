@@ -1381,7 +1381,7 @@ body.home {
         font-family: $maisonneue-book;
         font-size: 1.3rem;
         line-height: 2.0rem;
-        padding-bottom: 4rem;
+        //padding-bottom: 4rem;
       }
       @include media-breakpoint-up(md) {
         padding: 9.6rem 0;
@@ -1419,6 +1419,48 @@ body.home {
           line-height: 2.5rem;
         }
       }
+      .readmore {
+        //padding-top: 3.2rem;
+        //padding-bottom: 9.6rem;
+        text-align: center;
+        font-family: $sharpgrotesk-med-15;
+        font-size: 1.2rem;
+        letter-spacing: .055rem;
+        text-transform: uppercase;
+        order: 4;
+        color: #5D5D5D;
+          &:hover {
+            text-decoration: underline;
+           color: $seda-dark !important;
+          }
+  
+  
+        @include media-breakpoint-up(md) {
+          font-size: 1.5rem;
+          line-height: 1.7rem;
+          letter-spacing: .064rem;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: 1.7rem;
+          line-height: 3.0rem;
+          letter-spacing: .078rem;
+        }
+  
+        // span.right-arrow {
+        //   background-image: url('/images/right-arrow.svg');
+        // }
+      }
+      .readmore:after {
+        content: "";
+        background-image: url('/images/right-arrow-gray.svg');
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        top: 2px;
+        position: relative;
+      }
     }
     &.fact-1 {
 
@@ -1449,6 +1491,74 @@ body.home {
       background-position: center;
       //height: 335px;
     }
+    h3 {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      letter-spacing: .0rem;
+    }
+    @include media-breakpoint-up(md) {
+      // padding: 8.0rem 0;
+      h3 {
+        font-size: 1.85rem;
+        line-height: 2.7rem;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      h3 {
+        font-size: 2rem;
+        line-height: 3rem;
+        letter-spacing: .025rem;
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      padding: 4.8rem 0;
+      h3 {
+        font-size: 2.3rem;
+        line-height: 3.4rem;
+        letter-spacing: .03rem;
+      }
+
+    }
+  
+    p {
+      font-family: $maisonneue-book;
+      //color: $white;
+      color: #5D5D5D;
+      font-size: 1.3rem;
+      line-height: 2.0rem;
+      margin-top: 3.2rem;
+      margin-bottom: 3.2rem;
+      // animation: fade-in3 1s forwards;
+    
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.3rem;
+        line-height: 2rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        margin-top: 3.2rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        margin-top: 1.6rem;
+        margin-bottom: 3.2rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: 1.7rem;
+        line-height: 2.5rem;
+        margin-top: 2.4rem;
+      }
+    }
+    
     .superhead {
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -1539,7 +1649,7 @@ body.home {
     .divider {
         border-bottom: 1px solid #D8D8D8;
     }
-    p {
+    /* p {
       font-family: $maisonneue-book;
       font-size: 1.4rem;
       line-height: 2.1rem;
@@ -1561,8 +1671,7 @@ body.home {
         line-height: 2.4rem;
         letter-spacing: 0;
       }
-    }
-
+    } */
     .scatterplot {
       // background-image: url('/images/scatterplot.svg');
       // background-size: 85%;
@@ -1598,7 +1707,11 @@ body.home {
         margin-top: 1.6rem;
         margin-bottom: 1.6rem;
       }
-      a {
+      a.btn-go {
+        display: inline-block;
+
+      }
+      a.big-superhead {
         display: block;
         //color: $white;
         //font-family: $sharpgrotesk-med-15;

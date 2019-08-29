@@ -80,19 +80,19 @@
                 <g id="Group" transform="translate(51.000000, 71.000000)">
                     <circle id="Oval" fill="#068451" cx="11.5" cy="11.5" r="11.5"></circle>
                     <text id="1" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#FFFFFF">
-                        <tspan x="8" y="15">1</tspan>
+                        <tspan x="8" y="16">1</tspan>
                     </text>
                 </g>
                 <g id="Group-Copy" transform="translate(51.000000, 124.000000)">
                     <circle id="Oval" fill="#0066FF" cx="11.5" cy="11.5" r="11.5"></circle>
                     <text id="2" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#FFFFFF">
-                        <tspan x="7" y="15">2</tspan>
+                        <tspan x="7" y="16">2</tspan>
                     </text>
                 </g>
                 <g id="Group-Copy-2" transform="translate(51.000000, 178.000000)">
                     <circle id="Oval" fill="#033074" cx="11.5" cy="11.5" r="11.5"></circle>
                     <text id="3" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#FFFFFF">
-                        <tspan x="7" y="15">3</tspan>
+                        <tspan x="7" y="16">3</tspan>
                     </text>
                 </g>
             </g>

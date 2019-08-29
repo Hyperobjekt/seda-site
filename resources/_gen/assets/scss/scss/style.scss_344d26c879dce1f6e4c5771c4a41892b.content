@@ -21296,10 +21296,12 @@ body.type-posts .search-component .ais-InstantSearch__root {
   padding: 1rem 0;
 }
 
-body.type-posts .state-desc-wrapper {
-  border-top: 1.5px solid #daecf3;
-  border-top: 1.5px solid #e6e6e6;
-  border-top: 1.4px solid #89a2b3;
+@media (min-width: 768px) {
+  body.type-posts .state-desc-wrapper {
+    border-top: 1.5px solid #daecf3;
+    border-top: 1.5px solid #e6e6e6;
+    border-top: 1.4px solid #89a2b3;
+  }
 }
 
 body.type-posts .state-desc-wrapper:nth-of-type(1) {

@@ -380,9 +380,11 @@ body.type-posts {
     //background-color: #f8f8f8;
     //outline: 16px solid rgb(245, 253, 255);
     //outline: 16px solid #f8f8f8;
-    border-top: 1.5px solid #daecf3;
-    border-top: 1.5px solid #e6e6e6;
-    border-top: 1.4px solid #89a2b3;
+    @include media-breakpoint-up(md) {
+      border-top: 1.5px solid #daecf3;
+      border-top: 1.5px solid #e6e6e6;
+      border-top: 1.4px solid #89a2b3;
+      }
     }
     .state-desc-wrapper:nth-of-type(1) {
       border: none;

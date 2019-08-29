@@ -20992,7 +20992,6 @@ body.type-posts .hero .hero-child {
 }
 
 body.type-posts .hero .hero-child .column {
-  margin-top: 13.2rem;
   margin-bottom: 9.6rem;
   text-align: center;
   color: #ffffff;
@@ -21013,7 +21012,7 @@ body.type-posts .hero .hero-child .column {
 body.type-posts .hero .hero-child .column h2 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 2.6rem;
-  line-height: 2.55rem;
+  line-height: 3.8rem;
   letter-spacing: .013rem;
   margin-bottom: 1.6rem;
 }
@@ -21126,6 +21125,13 @@ body.type-posts .dyn-article {
   body.type-posts .dyn-article {
     margin-top: 8rem;
     margin-bottom: 8rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.type-posts .dyn-article img {
+    margin-left: -24px;
+    width: calc(100% + 48px);
   }
 }
 

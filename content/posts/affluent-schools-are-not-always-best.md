@@ -15,6 +15,8 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 The Chicago Public Schools are more successful than they are given credit for. In 3rd grade, where our test data begins, students in Chicago test below a 2nd-grade level, as shown in the accompanying chart. 
 
+<img src="/images/articles/affluent-schools/state1.jpg" class="w-100 d-md-none" />
+
 This chart highlights the relationship between how rich a district is and how its students perform on standardized tests in 3rd grade. The horizontal axis shows the average family socioeconomic status (SES) in the district [link to FAQ for explanation], where 0 represents the SES of the average district in the U.S. More affluent districts are located to the right in the figure; poorer districts to the left. 
 
 In many ways the pattern shown here is not surprising: children’s scores are much higher in richer districts. In relatively affluent Anne Arundel County, MD, the average test scores are well above average in 3rd grade. In Chicago, by contrast, average test scores are far below average.<br><br>
@@ -28,11 +30,15 @@ In many ways the pattern shown here is not surprising: children’s scores are m
 
 {{% /state-wrapper %}}
 
+<img src="/images/articles/affluent-schools/state2.jpg" class="w-100 d-md-none" />
+
 {{% state-wrapper state="state4" notmerge="true" %}}
 
 <br><br>and the same happens in fifth grade ...<br><br><br>
 
 {{% /state-wrapper %}}
+
+<img src="/images/articles/affluent-schools/state3.jpg" class="w-100 d-md-none" />
 
 {{% state-wrapper state="state5" notmerge="true" %}}
 
@@ -40,15 +46,21 @@ In many ways the pattern shown here is not surprising: children’s scores are m
 
 {{% /state-wrapper %}}
 
+<img src="/images/articles/affluent-schools/state4.jpg" class="w-100 d-md-none" />
+
 {{% state-wrapper state="state6" notmerge="true" %}}
 
 <br><br>and seventh ...<br><br><br>
 
 {{% /state-wrapper %}}
 
+<img src="/images/articles/affluent-schools/state5.jpg" class="w-100 d-md-none" />
+
 {{% state-wrapper state="state7" notmerge="true" %}}
 
 <br><br>... and by 8th grade Chicago students achieve near the national average, meaning that they experience the equivalent of six years of average learning in the five years between 3rd and 8th grade. The families in Chicago’s public schools tend to be lower in socioeconomic status, and the average test scores are relatively modest, but, year after year, the schools are lifting children up at an impressive rate.   
+
+<img src="/images/articles/affluent-schools/state6.jpg" class="w-100 d-md-none" />
 
 In Anne Arundel, the opposite is true. Although students there are more affluent than average and score above a 4th grade level in 3rd grade, they learn at a far lower rate than their Chicago peers. By 8th grade their scores are only slightly above average. 
 
@@ -63,6 +75,8 @@ It’s common to think of the average test scores in a school as a rough measure
 
 This next figure highlights the relationship between how rich a district is and how fast its students learn on average. As above, the horizontal axis shows the average SES in the district [link to FAQ for explanation]. But here the vertical axis represents districts’ learning rates: the higher the district is located in the figure, the faster students’ test scores improve from one grade to the next. 
 
+<img src="/images/articles/affluent-schools/state7.jpg" class="w-100 d-md-none" />
+
 On average, learning rates are modestly higher in more affluent districts than in less affluent ones, but the data reveal many exceptions. Chicago boasts a learning rate 22 percent above average. But Anne Arundel County has learning rates 16 percent slower than average.
 <br><br>
 
@@ -76,11 +90,15 @@ Shown here is Grade 3 ...<br><br>
 
 {{% /state-wrapper %}}
 
+<img src="/images/articles/affluent-schools/state8.jpg" class="w-100 d-md-none" />
+
 {{% state-wrapper state="state9" notmerge="true" %}}
 
 <br><br>Grade 4 ...<br><br><br>
 
 {{% /state-wrapper %}}
+
+<img src="/images/articles/affluent-schools/state9.jpg" class="w-100 d-md-none" />
 
 {{% state-wrapper state="state10" notmerge="true" %}}
 
@@ -88,11 +106,15 @@ Shown here is Grade 3 ...<br><br>
 
 {{% /state-wrapper %}}
 
+<img src="/images/articles/affluent-schools/state10.jpg" class="w-100 d-md-none" />
+
 {{% state-wrapper state="state11" notmerge="true" %}}
 
 <br><br>Grade 6 ...<br><br><br>
 
 {{% /state-wrapper %}}
+
+<img src="/images/articles/affluent-schools/state11.jpg" class="w-100 d-md-none" />
 
 {{% state-wrapper state="state12" notmerge="true" %}}
 
@@ -100,9 +122,13 @@ Shown here is Grade 3 ...<br><br>
 
 {{% /state-wrapper %}}
 
+<img src="/images/articles/affluent-schools/state12.jpg" class="w-100 d-md-none" />
+
 {{% state-wrapper state="state13" notmerge="true" %}}
 
 <br><br>and Grade 8.
+
+<img src="/images/articles/affluent-schools/state13.jpg" class="w-100 d-md-none" />
 
 Are the schools themselves the reason for this discrepancy in learning rates? It’s possible that other factors, such as family resources and the availability of afterschool programs within a given district, play some role. But even so, we have a better idea of how much students learn during their school years by looking at learning rates instead of average test scores. This brings us a step closer to understanding where public schools are most effective at providing learning opportunities and why the quality of public education can vary so dramatically from one school system to the next.
 
@@ -116,13 +142,19 @@ Again, the data provide us an answer.<br><br>
 
 <br><br>The next figure compares districts’ learning rates with average test scores in 3rd grade. As above, districts higher in the figure have higher learning rates. In places on the left, students have had relatively few educational opportunities by the time they reach 3rd grade; on the right side, early educational opportunities are high. (See [link to discovery] to understand why average test scores measure opportunity in and out of school.)  
 
+<img src="/images/articles/affluent-schools/state14.jpg" class="w-100 d-md-none" />
+
 There is almost no relationship between the two measures. Districts with high scores in grade 3 don’t necessarily have high learning rates; nor do districts with low initial scores generally have low growth rates. <br><br>
 
 {{% /state-wrapper %}}
 
+<img src="/images/articles/affluent-schools/state15.jpg" class="w-100 d-md-none" />
+
 {{% state-wrapper state="state15" notmerge="true" %}}
 
 <br><br>Districts in the upper right offer students substantial educational opportunities both before 3rd grade and through the middle school years.
+
+<img src="/images/articles/affluent-schools/state16.jpg" class="w-100 d-md-none" />
 
 Those in the lower left show the opposite: educational opportunities are scarce both in early childhood and through the elementary and middle school years.<br><br>
 
@@ -134,12 +166,16 @@ Those in the lower left show the opposite: educational opportunities are scarce 
 
 {{% /state-wrapper %}}
 
+<img src="/images/articles/affluent-schools/state17.jpg" class="w-100 d-md-none" />
+
 {{% state-wrapper state="state17" notmerge="true" %}}
 
 <br><br>In the bottom right, for example, are districts like Anne Arundel where students have plentiful educational opportunities early in life, but show low growth after grade 3. These communities may need to focus their investments in expanding learning opportunities in the late elementary and middle school years.<br><br><br>
 
 
 {{% /state-wrapper %}}
+
+<img src="/images/articles/affluent-schools/state18.jpg" class="w-100 d-md-none" />
 
 {{% state-wrapper state="state18" notmerge="true" %}}
 

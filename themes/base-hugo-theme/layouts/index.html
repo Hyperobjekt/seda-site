@@ -8,7 +8,7 @@
       <div class="column col-sm-10 col-xl-9 mx-auto d-flex flex-column align-items-center">
        
         <h2 tabindex="0">We’re measuring educational opportunity in<br/>every community in America.</h2>
-        <p>The Stanford Education Data Archive has built the first national database of academic performance in the U.S., using more than 330 million test scores from every public school in the nation.</p>
+        <p>The Stanford Education Data Archive has built the first national database of academic performance, allowing you to explore test scores from every public school in the nation.</p>
         <button data-scroll-target="scrollTarget1" class="btn btn-custom scroll-to-section" tabindex="0" aria-label="Go to next section">LEARN MORE</button>
       </div>
       </div>
@@ -16,98 +16,106 @@
 </div>
 
 <div id="scrollTarget1" class="row fact some-things-to-know m-0 scroll-to-target">
-    <div class="col-xs-10 offset-xs-1 col-md-5 mx-auto">
-        <h3 class="py-0" tabindex="0">Three key metrics offer insight into educational opportunity:</h3>
+    <div class="col-xs-10 offset-xs-1 col-md-7 col-lg-6 col-xl-5 mx-auto">
+        <h3 class="py-0" tabindex="0">Use our Opportunity Explorer to view 3 measures of educational opportunity:</h3>
     </div>
 </div>
 
-<div class="row number-mark-container justify-content-center">
+<!--<div class="row number-mark-container justify-content-center">
     <div class="number-marker d-flex justify-content-center align-items-end">
         1
     </div>
-</div>
+</div>-->
 
 <div class="row fact fact-1 m-0 align-items-center">
-    <div class="col-xs-12 col-mm-10 offset-mm-1 col-md-6 col-lg-6 offset-lg-1">
+        <div class="col-12 col-md-1 offset-md-1 d-flex justify-content-center mb-5 mb-md-0">
+                <div class="number-marker d-flex justify-content-center align-items-end">
+                        1
+                </div>
+            </div>
+    <div class="order-2 order-md-1 col-xs-12 col-mm-10 offset-mm-1 col-md-5 offset-md-0 mt-4 mt-md-0">
         <div class="metric-title d-flex justify-content-start align-items-start"><img class="mr-2" src="/images/icons/avg-scores-symbol.svg" /><h4 tabindex="0">Average Test Scores</h4></div>
-        <p>The educational opportunities available in a community, both in and out of school, are reflected in children’s average test scores. They are influenced by children's opportunities to learn at home, in their neighborhoods, in childcare, preschool, and after-school programs, from peers and friends, and at school. Average test scores therefore reflect the total set of educational opportunities available in a community.</p>
+        <p>The educational opportunities available in a community, both in and out of school, are reflected in children’s 
+            average test scores. They are influenced by children's opportunities to learn at home, 
+            in their neighborhoods, in childcare, preschool, and after-school programs, from peers and friends, and at school. </p> 
+        
+        <div class="explorelink-block d-flex align-items-center"><a class="readmore order-1" 
+            href="/explorer/#/map/us/counties/avg/ses/all/3.5/38/-97">EXPLORE AVERAGE TEST SCORES 
+            <br class="d-sm-none d-md-block">IN YOUR SCHOOL & COMMUNITY</a><div class="linkright order-2 ml-1">{{ partial "right-carat" }}</div></div>
     </div>
-    <div class="col-xs-12 col-mm-10 col-md-4 col-lg-4 hpgraphic" id="avg-graphic" style="height: 100%; width: 100%; background-color: #fff; display: flex; justify-content: center; align-items: center;">
+    <div class="order-1 order-md-2 col-xs-12 col-mm-10 col-md-4 col-lg-4 hpgraphic" id="avg-graphic" style="height: 100%; width: 100%; background-color: #fff; display: flex; justify-content: center; align-items: center;">
         {{ partial "svg1" }}
         <img class="svg-static" src="/images/static-svgs/svg1.svg" />
     </div>
 </div>
 
-<div class="row number-mark-container justify-content-center">
-    <div class="number-marker d-flex justify-content-center align-items-end">
-        2
+<!--<div class="row number-mark-container justify-content-center">
+    <div class="d-flex justify-content-center align-items-end">
+        Start exploring average test scores, or keep reading
     </div>
-</div>
+</div>-->
 
 <div class="row fact fact-2 m-0 align-items-center">
-    <div class="col-xs-12 col-mm-10 offset-mm-1  offset-md-0 col-md-4 col-lg-4 offset-md-1 hpgraphic" id="growth-graphic" style="height: auto; width: 100%; display: flex; align-items:center;">
+        <div class="col-12 col-md-1 offset-md-1 d-flex justify-content-center mb-5 mb-md-0">
+                <div class="number-marker d-flex justify-content-center align-items-end">
+                        2
+                </div>
+            </div>
+    <div class="col-xs-12 col-mm-10 offset-mm-1 offset-md-0 col-md-4 col-lg-4 offset-md-0 hpgraphic order-md-3" id="growth-graphic" style="height: auto; width: 100%; display: flex; align-items:center;">
         {{ partial "svg2" }}
         <img class="svg-static" src="/images/static-svgs/svg2.svg" />
     </div>
-    <div class="col-xs-12 col-mm-10 offset-mm-1 offset-md-0 col-md-6 col-lg-6">
+    <div class="col-xs-12 col-mm-10 offset-mm-1 offset-md-0 col-md-5 order-md-2 mt-4 mt-md-0">
         <div class="metric-title d-flex justify-content-start align-items-start"><img class="mr-2" src="/images/icons/growth-scores-symbol.svg" /><h4 tabindex="0">Learning Rates</h4></div>
-        <p>The contribution of schools to educational opportunity is reflected in the growth of test scores while children attend school. Learning rates measure how much student scores improve each year while they are in school. They are a better indicator of school quality than average test scores, which are influenced by a range of experiences outside of school.</p>
+        <p>Learning rates measure how much student scores improve each year while they are in school. 
+            They are a better indicator of school quality than average test scores, 
+            which are influenced by a range of experiences outside of school.</p>
+            <div class="explorelink-block d-flex align-items-center"><a class="readmore order-1" 
+                href="/explorer/#/map/us/counties/avg/ses/all/3.5/38/-97">EXPLORE LEARNING RATES IN <br class="d-sm-none d-md-block">YOUR SCHOOL & COMMUNITY</a>
+                <div class="linkright order-2 ml-1">{{ partial "right-carat" }}</div></div>
     </div>
 </div>
 
-<div class="row number-mark-container justify-content-center">
-    <div class="number-marker d-flex justify-content-center align-items-end">
-        3
-    </div>
-</div>
+<!--<div class="row number-mark-container justify-content-center">
+        <div class="d-flex justify-content-center align-items-end">
+                Start exploring Learning Rates, or keep reading
+            </div>
+</div>-->
 
 <div class="row fact fact-3 m-0 align-items-center">
-    <div class="col-xs-12 col-mm-10 offset-mm-1 col-md-6 col-lg-6 offset-lg-1">
+        <div class="col-12 col-md-1 offset-md-1 d-flex justify-content-center">
+                <div class="number-marker d-flex justify-content-center align-items-end mb-5 mb-md-0">
+                        3
+                </div>
+            </div>
+    <div class="order-3 order-md-2 col-xs-12 col-mm-10 offset-mm-1 col-md-5 offset-md-0  mt-4 mt-md-0">
         <div class="metric-title d-flex justify-content-start align-items-start"><img class="mr-2" src="/images/icons/trend-scores-symbol.svg" /><h4 tabindex="0">Trend in Test Scores</h4></div>
-        <p>The change in a community’s educational opportunities, both in and out of school, is reflected in average test score gains or losses. Trends in test scores reflect both changes in school quality and changes in other family and community features that provide opportunities for children.</p>
+        <p>Tracking average test scores over time shows growth or decline in educational opportunity. 
+            These trends reflect shifts in school quality as well changes in other family and community characteristics.</p>
+            <div class="explorelink-block d-flex align-items-center">
+                <a class="readmore order-1" href="/explorer/#/map/us/counties/avg/ses/all/3.5/38/-97">EXPLORE TEST SCORE TRENDS 
+                    <br class="d-sm-none d-md-block">IN YOUR SCHOOL & COMMUNITY</a><div class="linkright order-2 ml-1">{{ partial "right-carat" }}</div></div>
     </div>
-    <div class="col-xs-12 col-mm-10 offset-mm-1 col-md-4 offset-md-0 col-lg-4 hpgraphic" id="trendgraphic" style="height: auto; width: 100%; display: flex; align-items:center;">
+    <div class="order-2 order-md-3 col-xs-12 col-mm-10 offset-mm-1 col-md-4 offset-md-0 col-lg-4 hpgraphic" id="trendgraphic" style="height: auto; width: 100%; display: flex; align-items:center;">
         {{ partial "svg3" }}
         <img class="svg-static" src="/images/static-svgs/svg3.svg" />
     </div>
 </div>
 
-<div class="row map-invite m-0 py-8 py-lg-10 py-xl-13">
+<div class="row map-invite m-0 py-6 py-lg-9 py-xl-10">
     <div class="scatterplot col-10 col-mm-8 offset-1 offset-mm-2">
-        <h4 class="color-tertiary" tabindex="0">Use the Explorer to learn more about educational opportunity in your community and across the US.</h4>
-        <h5 class="color-tertiary big-superhead mt-4 mt-md-5 mb-5" tabindex="0">What would you like to explore?</h5>
-    </div><div class="col-1 col-mm-2"></div>
-        <div class="col-1 col-lg-2"></div>
+        <h3 class="color-tertiary mb-3 mb-xl-4" tabindex="0">Ready to start exploring?</h3>
+        <!--<h5 class="color-tertiary big-superhead mt-4 mt-md-5 mb-5" tabindex="0">What would you like to explore?</h5>-->
+        <p class="mb-4 mb-xl-5">View charts and maps that show how counties, 
+            school districts, and individual schools score on these three metrics. 
+            You can also filter by demographics, explore opportunity gaps, 
+            export PDF reports, and more.
+        </p>
+        <a class="btn btn-custom go-btn" href="/explorer" tabindex="0">LET'S GO!</a>
+    </div>
        
-            <a href="/explorer/#/map/us/counties/avg/ses/all/3.5/38/-97" class="drop-shadow white-bg col-10 offset-1 col-md offset-md-0 d-flex flex-column align-items-center mb-3 mb-md-0 mx-md-1 p-0">
-                <img src="/images/icons/avg-scores-symbol.svg" class="my-2" />
-                <h4 class="text-center card-title px-0 mb-2 mx-1">Average Test Scores</h4>
-                <div class="divider w-100"></div>
-                <div class="d-flex flex-column justify-content-between align-items-center h-100">
-                    <p class="text-center m-2">See the educational opportunities available, both in and out of school, across America.</p>
-                    <div class="superhead mb-2">GO</div>
-                </div>    
-            </a>
-            
-        <a href="/explorer/#/map/us/counties/grd/ses/all/3.5/38/-97" class="drop-shadow white-bg col-10 offset-1 col-md offset-md-0 d-flex flex-column align-items-center mb-3 mb-md-0 mx-md-1 p-0">
-            <img src="/images/icons/growth-scores-symbol.svg" class="my-2" />
-            <h4 id="" class="card-title text-center mb-2 mx-1">Learning Rates</h4>
-            <div class="divider w-100"></div>
-            <div class="d-flex flex-column justify-content-between align-items-center h-100">
-                <p class="text-center m-2">See how the nation’s schools are contributing to educational opportunity.</p>
-                <div class="superhead mb-2">GO</div>   
-            </div>     
-        </a>
-        <a href="/explorer/#/map/us/counties/coh/ses/all/3.5/38/-97" class="drop-shadow white-bg col-10 offset-1 col-md offset-md-0 d-flex flex-column align-items-center mb-3 mb-md-0 mx-md-1 p-0">
-            <img src="/images/icons/trend-scores-symbol.svg" class="my-2" />
-            <h4 class="card-title text-center mb-2 mx-1">Test Score Trends</h4>
-            <div class="divider w-100"></div>
-            <div class="d-flex flex-column justify-content-between align-items-center h-100">
-                <p class="text-center m-2">See where educational opportunities are improving or declining in communities across the country.</p>
-                <div class="superhead mb-2">GO</div>
-            </div>    
-        </a>
-        <div class="col-md-1 col-lg-2"></div>    
+       
+        
         <!--<button data-scroll-target="#" class="btn btn-custom scroll-to-section" tabindex="0" aria-label="Go to next section">Get started</button>-->
     <div class="scatterplot col-xs-10 offset-xs-1 col-mm-8 offset-mm-2">    
         <a href="#" data-scroll-target="scrollTarget2" class="scroll-to-section color-tertiary big-superhead mt-4 mt-md-5" tabindex="0">(Or see what we are learning)<br></a>

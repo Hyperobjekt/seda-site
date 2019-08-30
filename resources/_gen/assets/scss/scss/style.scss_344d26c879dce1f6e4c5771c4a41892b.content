@@ -18352,14 +18352,14 @@ body.home .row.number-mark-container {
   height: 0;
 }
 
-body.home .row.number-mark-container .number-marker {
+body.home .number-marker {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 19px;
   width: 35px;
   height: 35px;
   border-radius: 17px;
   background-color: #fff;
-  margin-top: -17px;
+  margin-top: -42px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
 }
 
@@ -18527,7 +18527,6 @@ body.home #main {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
-  padding-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
@@ -18568,6 +18567,49 @@ body.home #main {
   }
 }
 
+.row.fact.fact-1 .readmore, .row.fact.fact-2 .readmore, .row.fact.fact-3 .readmore {
+  text-align: center;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.2rem;
+  letter-spacing: .055rem;
+  text-transform: uppercase;
+  order: 4;
+  color: #5D5D5D;
+}
+
+.row.fact.fact-1 .readmore:hover, .row.fact.fact-2 .readmore:hover, .row.fact.fact-3 .readmore:hover {
+  text-decoration: underline;
+  color: #031232 !important;
+}
+
+@media (min-width: 768px) {
+  .row.fact.fact-1 .readmore, .row.fact.fact-2 .readmore, .row.fact.fact-3 .readmore {
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    letter-spacing: .064rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .row.fact.fact-1 .readmore, .row.fact.fact-2 .readmore, .row.fact.fact-3 .readmore {
+    font-size: 1.7rem;
+    line-height: 3.0rem;
+    letter-spacing: .078rem;
+  }
+}
+
+.row.fact.fact-1 .readmore:after, .row.fact.fact-2 .readmore:after, .row.fact.fact-3 .readmore:after {
+  content: "";
+  background-image: url("/images/right-arrow-gray.svg");
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  top: 2px;
+  position: relative;
+}
+
 @media (max-width: 767.98px) {
   .row.fact.fact-2 {
     flex-direction: column-reverse;
@@ -18580,6 +18622,29 @@ body.home #main {
   background-size: 220%;
   background-repeat: no-repeat;
   background-position: center 8%;
+  /* p {
+      font-family: $maisonneue-book;
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+      letter-spacing: 0rem;
+      color: #5D5D5D;
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        letter-spacing: auto;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        letter-spacing: 0;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        letter-spacing: 0;
+      }
+    } */
 }
 
 @media (min-width: 768px) {
@@ -18587,6 +18652,82 @@ body.home #main {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+  }
+}
+
+.row.map-invite h3 {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: .0rem;
+}
+
+@media (min-width: 768px) {
+  .row.map-invite h3 {
+    font-size: 1.85rem;
+    line-height: 2.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .row.map-invite h3 {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .025rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .row.map-invite {
+    padding: 4.8rem 0;
+  }
+  .row.map-invite h3 {
+    font-size: 2.3rem;
+    line-height: 3.4rem;
+    letter-spacing: .03rem;
+  }
+}
+
+.row.map-invite p {
+  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  color: #5D5D5D;
+  font-size: 1.3rem;
+  line-height: 2.0rem;
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+}
+
+@media (min-width: 320px) {
+  .row.map-invite p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .row.map-invite p {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-top: 3.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .row.map-invite p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-top: 1.6rem;
+    margin-bottom: 3.2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .row.map-invite p {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    margin-top: 2.4rem;
   }
 }
 
@@ -18686,38 +18827,6 @@ body.home #main {
   border-bottom: 1px solid #D8D8D8;
 }
 
-.row.map-invite p {
-  font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.4rem;
-  line-height: 2.1rem;
-  letter-spacing: 0rem;
-  color: #5D5D5D;
-}
-
-@media (min-width: 768px) {
-  .row.map-invite p {
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    letter-spacing: auto;
-  }
-}
-
-@media (min-width: 992px) {
-  .row.map-invite p {
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    letter-spacing: 0;
-  }
-}
-
-@media (min-width: 1280px) {
-  .row.map-invite p {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-    letter-spacing: 0;
-  }
-}
-
 .row.map-invite .scatterplot {
   text-align: center;
   color: #ffffff;
@@ -18759,11 +18868,15 @@ body.home #main {
   margin-bottom: 1.6rem;
 }
 
-.row.map-invite .scatterplot a {
+.row.map-invite .scatterplot a.btn-go {
+  display: inline-block;
+}
+
+.row.map-invite .scatterplot a.big-superhead {
   display: block;
 }
 
-.row.map-invite .scatterplot a:after {
+.row.map-invite .scatterplot a.big-superhead:after {
   content: "";
   background-image: url("/images/down-arrow-blk.svg");
   display: inline-block;
@@ -18773,7 +18886,7 @@ body.home #main {
   background-position: bottom;
 }
 
-.row.map-invite .scatterplot a:hover {
+.row.map-invite .scatterplot a.big-superhead:hover {
   text-decoration: underline;
 }
 

@@ -18359,8 +18359,13 @@ body.home .number-marker {
   height: 35px;
   border-radius: 17px;
   background-color: #fff;
-  margin-top: -42px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+  body.home .number-marker {
+    margin-top: -42px;
+  }
 }
 
 body.home #main {
@@ -18514,6 +18519,17 @@ body.home #main {
 
 .row.fact.fact-1, .row.fact.fact-2, .row.fact.fact-3 {
   padding: 4.8rem 0 4rem;
+  /* .readmore:after {
+        content: "";
+        background-image: url('/images/right-arrow-gray.svg');
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        top: 2px;
+        position: relative;
+      } */
 }
 
 .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
@@ -18531,7 +18547,7 @@ body.home #main {
 
 @media (min-width: 768px) {
   .row.fact.fact-1, .row.fact.fact-2, .row.fact.fact-3 {
-    padding: 9.6rem 0;
+    padding: 3.2rem 0;
   }
   .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
     font-size: 1.85rem;
@@ -18544,6 +18560,9 @@ body.home #main {
 }
 
 @media (min-width: 992px) {
+  .row.fact.fact-1, .row.fact.fact-2, .row.fact.fact-3 {
+    padding: 5.6rem 0;
+  }
   .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
     font-size: 2rem;
     line-height: 3rem;
@@ -18556,6 +18575,9 @@ body.home #main {
 }
 
 @media (min-width: 1280px) {
+  .row.fact.fact-1, .row.fact.fact-2, .row.fact.fact-3 {
+    padding: 6.4rem 0;
+  }
   .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
     font-size: 2.3rem;
     line-height: 3.4rem;
@@ -18571,10 +18593,12 @@ body.home #main {
   text-align: center;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.2rem;
+  line-height: 1.5;
   letter-spacing: .055rem;
   text-transform: uppercase;
-  order: 4;
+  text-align: left;
   color: #5D5D5D;
+  color: #000;
 }
 
 .row.fact.fact-1 .readmore:hover, .row.fact.fact-2 .readmore:hover, .row.fact.fact-3 .readmore:hover {
@@ -18585,7 +18609,7 @@ body.home #main {
 @media (min-width: 768px) {
   .row.fact.fact-1 .readmore, .row.fact.fact-2 .readmore, .row.fact.fact-3 .readmore {
     font-size: 1.5rem;
-    line-height: 1.7rem;
+    line-height: 1.5;
     letter-spacing: .064rem;
   }
 }
@@ -18593,27 +18617,14 @@ body.home #main {
 @media (min-width: 1280px) {
   .row.fact.fact-1 .readmore, .row.fact.fact-2 .readmore, .row.fact.fact-3 .readmore {
     font-size: 1.7rem;
-    line-height: 3.0rem;
+    line-height: 1.5;
     letter-spacing: .078rem;
   }
 }
 
-.row.fact.fact-1 .readmore:after, .row.fact.fact-2 .readmore:after, .row.fact.fact-3 .readmore:after {
-  content: "";
-  background-image: url("/images/right-arrow-gray.svg");
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  top: 2px;
-  position: relative;
-}
-
-@media (max-width: 767.98px) {
-  .row.fact.fact-2 {
-    flex-direction: column-reverse;
-  }
+.row.fact.fact-1 svg.right-carat, .row.fact.fact-2 svg.right-carat, .row.fact.fact-3 svg.right-carat {
+  width: 3rem;
+  height: 3rem;
 }
 
 .row.map-invite {

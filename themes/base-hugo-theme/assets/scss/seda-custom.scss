@@ -1221,7 +1221,9 @@ body.home {
   border-radius: 17px;
   //border: 1px solid blue;
   background-color: #fff;
-  margin-top: -42px;
+  @include media-breakpoint-up(md) {
+    margin-top: -42px;
+  }
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.08);
 } 
  #main {
@@ -1384,7 +1386,7 @@ body.home {
         //padding-bottom: 4rem;
       }
       @include media-breakpoint-up(md) {
-        padding: 9.6rem 0;
+        padding: 3.2rem 0;
         h4 {
           font-size: 1.85rem;
           line-height: 2.7rem;
@@ -1396,7 +1398,7 @@ body.home {
         }
       }
       @include media-breakpoint-up(lg) {
-        // padding: 8.0rem 0;
+        padding: 5.6rem 0;
         h4 {
           font-size: 2rem;
           line-height: 3rem;
@@ -1408,7 +1410,7 @@ body.home {
         }
       }
       @include media-breakpoint-up(xl) {
-        // padding: 8.0rem 0;
+        padding: 6.4rem 0;
         h4 {
           font-size: 2.3rem;
           line-height: 3.4rem;
@@ -1425,10 +1427,13 @@ body.home {
         text-align: center;
         font-family: $sharpgrotesk-med-15;
         font-size: 1.2rem;
+        line-height: 1.5;
         letter-spacing: .055rem;
         text-transform: uppercase;
-        order: 4;
+        text-align: left;
+        //order: 4;
         color: #5D5D5D;
+        color: #000;
           &:hover {
             text-decoration: underline;
            color: $seda-dark !important;
@@ -1437,12 +1442,12 @@ body.home {
   
         @include media-breakpoint-up(md) {
           font-size: 1.5rem;
-          line-height: 1.7rem;
+          line-height: 1.5;
           letter-spacing: .064rem;
         }
         @include media-breakpoint-up(xl) {
           font-size: 1.7rem;
-          line-height: 3.0rem;
+          line-height: 1.5;
           letter-spacing: .078rem;
         }
   
@@ -1450,7 +1455,11 @@ body.home {
         //   background-image: url('/images/right-arrow.svg');
         // }
       }
-      .readmore:after {
+      svg.right-carat {
+        width: 3rem;
+        height: 3rem;
+      }
+      /* .readmore:after {
         content: "";
         background-image: url('/images/right-arrow-gray.svg');
         display: inline-block;
@@ -1460,7 +1469,7 @@ body.home {
         background-position: bottom;
         top: 2px;
         position: relative;
-      }
+      } */
     }
     &.fact-1 {
 
@@ -1468,7 +1477,7 @@ body.home {
     &.fact-2 {
 
       @include media-breakpoint-down(mm) {
-        flex-direction: column-reverse;
+        //flex-direction: column-reverse;
       }
 
     }

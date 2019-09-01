@@ -1,10 +1,19 @@
 ---
-title: "How do you know the data are accurate?"
+title: "How accurate are the data? How do you know the data are accurate?"
 faqid: data-accuracy
 section: "data" # director, staff, or partner
 weight: 100
 ---
-The data in SEDA use a variety of statistical and psychometric methods to measure average test scores, learning, and trends. Validation done by the SEDA research team shows that these methods recover unbiased school and district average test scores within each state <span class="highlight">[link to HETOP]</span> and enable comparisons of scores across states <span class="highlight">[link to linking paper]</span>. In addition, each score in SEDA has an associated “standard error” indicating how precise the estimate is. See the FAQ question, "Why do SEDA results disagree with results from my state test?" below, the <a href="/methods">Methods</a> section of the website, and the <span class="highlight">documentation</span> for more details.
+We have taken a number of steps to ensure the accuracy of the data reported here, though there may still be errors in the data. 
 
-<span class="highlight">[I’d like to see a fuller and less technical answer to the question: why should be believe you? What have you done to ensure that it is accurate]</span>
+First, we conduct a number of statistical analyses to ensure that our methods of converting the raw data into measures of average test scores are accurate. For example, in a small subset of school districts, students take the NAEP test in addition to their state-specific tests. Since the NAEP test is the same across districts, we can use these districts’ NAEP scores to determine the accuracy of our method of converting the state test scores to a common scale is accurate. When we do this, we find that our measures are very accurate, and generally yield the same conclusions about relative average test scores as we would get if all students took the NAEP test. For more information on these analyses, see [methods page]. 
+
+Second, one might be concerned that our learning rate estimates might be inaccurate, because they do not account for students’ moving in and out of schools and districts. For example, if many high-achieving students move out of a school or district in the later grades and/or many low-achieving students move in, the average test scores will appear to grow less from 3rd to 8th grade than they should. This would cause us to underestimate the learning rate in a school or district. 
+
+To determine how accurate our learning rate estimates are, we compared them to the estimated learning rate we would get if we could track individual students’ learning rates over time. Working with research partners who had access to student-level data in three states, we determined that our learning rate estimates are generally sufficiently accurate to allow comparisons among districts and schools. We did find that our learning rate estimates tend to be slightly less accurate for charter schools in those three states than for traditional public schools. On average, our estimated learning rates for charter schools tend to overstate the true learning rates in charter schools in these three states by roughly 5%. This is likely because charter schools have more student in- and out-mobility than traditional public schools. It suggests that comparisons between charter and traditional public schools learning rates should be interpreted with some caution. For more information on these analyses, see [LINK TO validation paper (still to be uploaded)].
+
+Third, we have constructed margins of error (“standard errors”) for each of the measures of average test scores, learning rates, and trends in average scores. These standard errors can be used in statistical analyses and comparisons. Interested users can download data files that include these standard errors [HERE: link to data download]. 
+
+Fourth, we do not show any estimates on the website where the margin of error is large. In places where there are a small number of students (or a small number of students of a given subgroup), the margin of error is sometimes large; we do not report data in such cases. Margins of error of school learning rates are also large when there are only 2 or 3 grade levels in a school; as a result, roughly one-third of schools are missing learning rates on the website. Note that estimates for all schools—even those with large margins of error—are in the downloadable data files for researchers. 
+
 

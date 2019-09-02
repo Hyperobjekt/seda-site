@@ -22788,7 +22788,7 @@ body.type-help-faq h5 {
 @media (min-width: 992px) {
   body.type-help-faq h5 {
     font-size: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     line-height: 3rem;
     letter-spacing: auto;
   }

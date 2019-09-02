@@ -22767,6 +22767,7 @@ body.type-help-faq h3 {
     font-size: 2.8rem;
     line-height: 4.2rem;
     letter-spacing: 0.03rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -22793,10 +22794,18 @@ body.type-help-faq h5 {
   }
 }
 
+@media (min-width: 992px) {
+  body.type-help-faq h5 {
+    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    letter-spacing: auto;
+  }
+}
+
 body.type-help-faq p, body.type-help-faq li {
   font-size: 1.3rem;
   line-height: 2rem;
-  color: #5d5d5d;
 }
 
 @media (min-width: 768px) {
@@ -22808,15 +22817,15 @@ body.type-help-faq p, body.type-help-faq li {
 
 @media (min-width: 992px) {
   body.type-help-faq p, body.type-help-faq li {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 2.4rem;
   }
 }
 
 @media (min-width: 1280px) {
   body.type-help-faq p, body.type-help-faq li {
-    font-size: 1.9rem;
-    line-height: 2.8rem;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -22845,6 +22854,12 @@ body.type-help-faq .accordion-section {
   padding: 4.8rem 0;
   padding: 2.4rem 0;
   border-top: 2px solid #E9EAED;
+}
+
+@media (min-width: 1280px) {
+  body.type-help-faq .accordion-section {
+    padding: 4rem 0;
+  }
 }
 
 body.type-help-faq .accordion-section a.question {

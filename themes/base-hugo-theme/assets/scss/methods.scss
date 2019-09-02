@@ -1,4 +1,5 @@
 body.methods {
+
     
     .hero-child {
       background: url('/images/heroes/methods-bar-graph.svg');
@@ -152,6 +153,7 @@ body.methods {
       p, li {
           font-size: 1.3rem;
           line-height: 2rem;
+          color: $seda-gray;
           @include media-breakpoint-up(md) {
               font-size: 1.4rem;
               line-height: 2.1rem;
@@ -170,6 +172,16 @@ body.methods {
             margin-bottom: 2.4rem;
         }
       } 
+      p a, li a {
+        color: $seda-red;
+        color: #7086AB;
+        color: $seda-navy;
+        //font-family: $maisonneue-bold;
+      }
+      a:hover {
+        text-decoration: underline;
+      
+      }
       .row.glossary {
         padding-top: 5.6rem;
         @include media-breakpoint-up(md) {

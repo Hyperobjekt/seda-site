@@ -17817,7 +17817,7 @@ p a {
 }
 
 .base-style p {
-  color: #5d5d5d;
+  color: #545454;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
@@ -19032,7 +19032,7 @@ body.home #main {
   letter-spacing: 0;
   margin-top: 1.8rem;
   margin-bottom: 2rem;
-  color: #5d5d5d;
+  color: #545454;
 }
 
 @media (min-width: 768px) {
@@ -19304,7 +19304,7 @@ body.about .row.background h4 {
 }
 
 body.about .row.background p {
-  color: #5d5d5d;
+  color: #545454;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
@@ -19470,7 +19470,7 @@ body.about .row.mission .column-text h4 {
 }
 
 body.about .row.mission .column-text p {
-  color: #5d5d5d;
+  color: #545454;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
@@ -19607,7 +19607,7 @@ body.about .row.people-current .name, body.about .row.people-former .name {
 }
 
 body.about .row.people-current .title, body.about .row.people-former .title {
-  color: #5d5d5d;
+  color: #545454;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.2rem;
   line-height: 1.8rem;
@@ -19739,7 +19739,7 @@ body.about .row.history {
 }
 
 body.about .row.history p {
-  color: #5d5d5d;
+  color: #545454;
 }
 
 @media (min-width: 768px) {
@@ -19865,7 +19865,7 @@ body.about .modal .modal-bio .modal-meta #modalTitle {
   font-size: 1.2rem;
   line-height: 1.8rem;
   letter-spacing: 0;
-  color: #5d5d5d;
+  color: #545454;
 }
 
 body.about .modal .modal-bio #modalBio {
@@ -20369,7 +20369,7 @@ body.research .research-paper .abstract-and-meta .abstract p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2rem;
-  color: #5d5d5d;
+  color: #545454;
 }
 
 @media (min-width: 768px) {
@@ -22563,6 +22563,7 @@ input[type=checkbox]:focus {
 body.type-help-faq p a, body.type-help-faq li a {
   color: #ff003e;
   color: #7086AB;
+  color: #04143c;
 }
 
 body.type-help-faq a:hover {
@@ -22797,7 +22798,7 @@ body.type-help-faq h5 {
 @media (min-width: 1280px) {
   body.type-help-faq h5 {
     font-size: 2rem;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     line-height: 2.7rem;
     letter-spacing: auto;
   }
@@ -22806,6 +22807,7 @@ body.type-help-faq h5 {
 body.type-help-faq p, body.type-help-faq li {
   font-size: 1.3rem;
   line-height: 2rem;
+  color: #545454;
 }
 
 @media (min-width: 768px) {
@@ -23280,6 +23282,7 @@ body.methods h5 {
 body.methods p, body.methods li {
   font-size: 1.3rem;
   line-height: 2rem;
+  color: #545454;
 }
 
 @media (min-width: 768px) {
@@ -23307,6 +23310,16 @@ body.methods p, body.methods li {
   body.methods p, body.methods ul {
     margin-bottom: 2.4rem;
   }
+}
+
+body.methods p a, body.methods li a {
+  color: #ff003e;
+  color: #7086AB;
+  color: #04143c;
+}
+
+body.methods a:hover {
+  text-decoration: underline;
 }
 
 body.methods .row.glossary {

@@ -2,7 +2,8 @@ body.type-help-faq {
   p a, li a {
     color: $seda-red;
     color: #7086AB;
-    //font-weight: bold;
+    color: $seda-navy;
+    //font-family: $maisonneue-bold;
   }
   a:hover {
     text-decoration: underline;
@@ -179,7 +180,7 @@ body.type-help-faq {
           }
           @include media-breakpoint-up(xl) {
             font-size: 2rem;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             line-height: 2.7rem;
             letter-spacing: auto;
           }  
@@ -187,6 +188,7 @@ body.type-help-faq {
       p, li {
         font-size: 1.3rem;
         line-height: 2rem;
+        color: $seda-gray;
         @include media-breakpoint-up(md) {
             font-size: 1.4rem;
             line-height: 2.1rem;

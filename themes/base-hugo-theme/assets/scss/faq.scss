@@ -176,13 +176,13 @@ body.type-help-faq {
             font-size: 1.6rem;
             line-height: 3rem;
             letter-spacing: auto;
-          } 
-          @include media-breakpoint-up(lg) {
+          }
+          @include media-breakpoint-up(xl) {
             font-size: 2rem;
             font-size: 1.8rem;
-            line-height: 3rem;
+            line-height: 2.7rem;
             letter-spacing: auto;
-          } 
+          }  
       }  
       p, li {
         font-size: 1.3rem;
@@ -195,10 +195,10 @@ body.type-help-faq {
           font-size: 1.6rem;
           line-height: 2.4rem;
         }
-          @include media-breakpoint-up(xl) {
-              font-size: 1.7rem;
-              line-height: 2.5rem;
-          }
+        @include media-breakpoint-up(xl) {
+          font-size: 1.7rem;
+          line-height: 2.6rem;
+      }
       }  
       .row.glossary {
         padding-top: 5.6rem;

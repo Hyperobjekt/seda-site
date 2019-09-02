@@ -1,5 +1,5 @@
 ---
-title: "What is the Gap in School Poverty and how is it measured?"
+title: "What does the gap in school poverty measure?"
 faqid: gap-in-school-poverty
 section: "data" # director, staff, or partner
 weight: 135

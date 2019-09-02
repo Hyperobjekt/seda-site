@@ -10,7 +10,7 @@ On the website, we note schools that serve exceptional student populations (larg
 
 + Special education schools or schools with a high percentage of students with disabilities: We flag schools that are explicitly identified as special education schools by the [Common Core of Data] (CCD) or the [Civil Rights Data Collection] (CRDC). We also flag schools where more than 40% of students are identified as having a disability in the CRDC data. Students with disabilities are identified per the Individuals with Disabilities Education Act (IDEA).
 
-+ Schools with a high percentage of gifted/talented students: We flag schools where more than 40% of the students in a school are enrolled in a gifted/talented program according to the CRDC data. We do not currently flag schools with selective admission (where students must pass a test to be admitted) because we do not have a comprehensive list of such schools.
++ Schools with a high percentage of students in gifted/talented programs or with selective admissions: We flag schools where more than 40% of the students in a school are enrolled in a gifted/talented program according to the CRDC data. We also flag some schools with selective admission policies (schools where students must pass a test to be admitted), but we do not have a comprehensive list of such schools, so not all selective admissions schools are yet identified in our data.
 
 + Schools with a high percentage of limited English proficient students: We flag schools where more than 50% of the students in a school are identified as limited English proficient (LEP) in the CRDC data. LEP students are classified by state definitions based on Title IX of the Elementary and Secondary Education Act (ESEA).
 

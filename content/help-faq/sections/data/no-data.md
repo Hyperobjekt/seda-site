@@ -13,7 +13,7 @@ There are several reasons that SEDA may not contain data for a school, district,
 - Students took different, incomparable tests within the same subject, grade, and year. This is something our methodology cannot adjust for.
 - We identified data errors that would result in inaccurate estimates.
 
-For more details, please see our <span class="highlight">technical documentation].
+For more details, please see our [technical documentation].
 
 
 

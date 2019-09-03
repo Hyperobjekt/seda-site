@@ -139,7 +139,7 @@ const initialMarkline = {
       ],
     [
       {
-        name: 'white student scores = black student scores',
+        name: 'white scores = black scores',
         coord: [-2.5, -2.5],
         symbol: 'none',
         lineStyle: {
@@ -470,7 +470,7 @@ var state1add = function(scatterplot) {
     // console.log(highlight);
   }
 
-  Title['text'] = 'White and Black Students\' Average Performance';
+  Title['text'] = 'White and Black Student Scores';
   Title['subtext'] = 'U.S. School Districts 2009-2016';
   Title.setTitle();
 
@@ -485,12 +485,12 @@ var state1add = function(scatterplot) {
     yAxis: {
       min:-3,
       max:3,
-      name: 'Black Average Performance',
+      name: 'Black Student Scores',
     },
     xAxis: {
       min: -3,
       max: 4,
-      name: 'White Average Performance',
+      name: 'White Student Scores',
     },
     series: [
       initialMarkline,
@@ -540,8 +540,8 @@ var state1 = function(scatterplot) {
     // console.log(highlight);
   }
 
-  Title['text'] = 'White and Black Students\' Average Performance';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['text'] = 'White and Black Student Scores';
+  //Title['subtext'] = 'U.S. School Districts 2009-2016';
   Title.setTitle();
 
   const baseOverrides = {
@@ -555,12 +555,12 @@ var state1 = function(scatterplot) {
     yAxis: {
       min:-3,
       max:3,
-      name: 'Black Average Performance',
+      name: 'Black Student Scores',
     },
     xAxis: {
       min: -3,
       max: 4,
-      name: 'White Average Performance',
+      name: 'White Student Scores',
     },
     series: [
       initialMarkline,
@@ -610,8 +610,8 @@ var state1_1 = function(scatterplot) {
     // console.log(highlight);
   }
 
-  Title['text'] = 'White and Black Students\' Average Performance';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['text'] = 'White and Black Student Scores';
+  //Title['subtext'] = 'U.S. School Districts 2009-2016';
   Title.setTitle();
 
   const baseOverrides = {
@@ -625,12 +625,12 @@ var state1_1 = function(scatterplot) {
     yAxis: {
       min:-3,
       max:3,
-      name: 'Black Average Performance',
+      name: 'Black Student Scores',
     },
     xAxis: {
       min: -3,
       max: 4,
-      name: 'White Average Performance',
+      name: 'White Student Scores',
     },
     series: [
       initialMarkline,
@@ -675,8 +675,8 @@ var state2 = function(scatterplot) {
     // console.log(highlight);
   }
   // Plot title and subtitle
-  Title['text'] = 'White and Black Students\' Average Performance';
-  Title['subtext'] = '100 Largest U.S. School Districts 2009-2016';
+  Title['text'] = 'White and Black Student Scores';
+  Title['subtext'] = '100 Largest Districts';
   Title.setTitle();
   const baseOverrides = {
     title: {
@@ -685,12 +685,12 @@ var state2 = function(scatterplot) {
     yAxis: {
       min:-3,
       max:3,
-      name: 'Black Average Performance',
+      name: 'Black Student Scores',
     },
     xAxis: {
       min: -3,
       max: 4,
-      name: 'White Average Performance',
+      name: 'White Student Scores',
     },
     series: [
       // dataSeries,
@@ -747,8 +747,8 @@ var state3 = function(scatterplot) {
   }
   state3counter ++;
   // Plot title and subtitle
-  Title['text'] = 'White and Black Students\' Average Performance';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['text'] = 'White and Black Student Scores';
+  //Title['subtext'] = 'U.S. School Districts 2009-2016';
   Title.setTitle();
   const baseOverrides = {
     title: {
@@ -763,12 +763,12 @@ var state3 = function(scatterplot) {
     yAxis: deepmerge(baseYAxis, {
       min:-3,
       max:3,
-      name: 'Black Average Performance',
+      name: 'Black Student Scores',
     }),
     xAxis: deepmerge(baseXAxis,{
       min: -3,
       max: 4,
-      name: 'White Average Performance',
+      name: 'White Student Scores',
     }),
     // tooltip: tooltip,
     series: [
@@ -883,8 +883,8 @@ var state4 = function(scatterplot) {
     // console.log(highlight);
   }
   // Plot title and subtitle
-  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
-  Title['subtext'] = 'US School Districts 2009-2016';
+  Title['text'] = 'Achievement Gaps and Affluence Gaps';
+  // Title['subtext'] = 'US School Districts 2009-2016';
   Title.setTitle();
   return {
     selected: [],
@@ -964,8 +964,8 @@ var state5 = function(scatterplot) {
     // console.log(highlight);
   }
   // Plot title and subtitle
-  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
-  Title['subtext'] = 'US School Districts 2009-2016';
+  Title['text'] = 'Achievement Gaps and Affluence Gaps';
+  // Title['subtext'] = 'US School Districts 2009-2016';
   Title.setTitle();
   return {
     highlighted: Object.keys(highlight),
@@ -1042,8 +1042,8 @@ var state6 = function(scatterplot) {
     // console.log(highlight);
   }
   // Plot title and subtitle
-  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
-  Title['subtext'] = '100 Largest U.S. School Districts 2009-2016';
+  Title['text'] = 'Achievement Gaps and Affluence Gaps';
+  // Title['subtext'] = '100 Largest Districts';
   Title.setTitle();
   return {
     highlighted: Object.keys(highlight),
@@ -1098,8 +1098,8 @@ var state7 = function(scatterplot) {
     // console.log(highlight);
   }
   // Plot title and subtitle
-  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
-  Title['subtext'] = 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016';
+  Title['text'] = 'Achievement Gaps and Affluence Gaps';
+  // Title['subtext'] = 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016';
   Title.setTitle();
   return {
     highlighted: Object.keys(highlight),
@@ -1157,8 +1157,8 @@ var state8 = function(scatterplot) {
     // console.log(highlight);
   }
   // Plot title and subtitle
-  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
-  Title['subtext'] = 'US School Districts 2009-2016';
+  Title['text'] = 'Achievement Gaps and Affluence Gaps';
+  //Title['subtext'] = 'US School Districts 2009-2016';
   Title.setTitle();
   const baseOverrides = {
     title: {
@@ -1375,8 +1375,8 @@ var state9 = function(scatterplot) {
     // console.log(highlight);
   }
   // Plot title and subtitle
-  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
-  Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
+  Title['text'] = 'Achievement Gaps and Segregation';
+  //Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
   Title.setTitle();
 
   const baseOverrides = {
@@ -1488,8 +1488,8 @@ var state10 = function(scatterplot) {
     // console.log(highlight);
   }
   // Plot title and subtitle
-  Title['text'] = 'White-Black Achievement Gaps by Differences\nin Average Family Socioeconomic Resources';
-  Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
+  Title['text'] = 'Achievement Gaps and Segregation';
+  //Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
   Title.setTitle();
 
   const baseOverrides = {

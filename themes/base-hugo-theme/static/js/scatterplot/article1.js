@@ -226,7 +226,82 @@ const noRacialDisparityMarkline = {
     ]
   ]
 };
-
+const noGapMarkline = {
+  animation: false,
+  silent: true,
+  label: {
+    show: false,
+    position: 'middle',
+    fontFamily: 'SharpGrotesk-Medium20',
+    fontWeight: '500',
+    fontSize: 11.52,
+    padding: 2,
+    formatter: function(value) {
+      return value.name
+    }
+  },
+  data: [
+    [
+      {
+        name: 'no achievement gap',
+        coord:  [-1, 0],
+        symbol: 'none',
+        lineStyle: {
+          color: '#052965',
+          type: 'solid',
+          width: 1,
+        },
+        label: {
+          padding: 2,
+          position: 'middle',
+          color: '#052965',
+        }
+      },
+      {
+        coord:  [6, 0], // [ 0, 0],
+        symbol: 'none'
+      },
+    ]
+  ]
+};
+const segNoGapMarkline = {
+  animation: false,
+  silent: true,
+  label: {
+    show: false,
+    position: 'middle',
+    fontFamily: 'SharpGrotesk-Medium20',
+    fontWeight: '500',
+    fontSize: 11.52,
+    padding: 2,
+    formatter: function(value) {
+      return value.name
+    }
+  },
+  data: [
+    [
+      {
+        name: 'no achievement gap',
+        coord:  [-0.3, 0],
+        symbol: 'none',
+        lineStyle: {
+          color: '#052965',
+          type: 'solid',
+          width: 1,
+        },
+        label: {
+          padding: 2,
+          position: 'middle',
+          color: '#052965',
+        }
+      },
+      {
+        coord:  [0.7, 0], // [ 0, 0],
+        symbol: 'none'
+      },
+    ]
+  ]
+};
 const zeroSegGapMarkline = {
   type:'scatter',
   markLine: {
@@ -851,16 +926,21 @@ var state4 = function(scatterplot) {
       }),
       series: [
         {
-        type:'scatter',
-        markLine: noRacialDisparityMarkline,
-      },
-      {
-        id: 'highlighted',
-        itemStyle: highlightedItemStyle,
-        label: highlightedLabel(highlight),
-        zlevel: 500,
-      },
-    ]}
+          type:'scatter',
+          markLine: noRacialDisparityMarkline,
+        },
+        {
+          type:'scatter',
+          markLine: noGapMarkline,
+        },
+        {
+          id: 'highlighted',
+          itemStyle: highlightedItemStyle,
+          label: highlightedLabel(highlight),
+          zlevel: 500,
+        },
+      ]
+    }
   }
 }
 
@@ -931,6 +1011,10 @@ var state5 = function(scatterplot) {
           markLine: noRacialDisparityMarkline
         },
         {
+          type:'scatter',
+          markLine: noGapMarkline,
+        },
+        {
           id: 'highlighted',
           itemStyle: highlightedItemStyle,
           label: highlightedLabel(highlight),
@@ -975,6 +1059,10 @@ var state6 = function(scatterplot) {
           data: top100,
           symbolSize: dataSeries.symbolSize,
           itemStyle: selectedItemStyle
+        },
+        {
+          type:'scatter',
+          markLine: noGapMarkline,
         },
         {
           id: 'highlighted',
@@ -1040,6 +1128,10 @@ var state7 = function(scatterplot) {
           label: highlightedLabel(highlight),
           zlevel: 500
         },
+        {
+          type:'scatter',
+          markLine: noGapMarkline,
+        }
       ]
     })
   }
@@ -1103,6 +1195,10 @@ var state8 = function(scatterplot) {
       {
         type:'scatter',
         markLine: noRacialDisparityMarkline
+      },
+      {
+        type:'scatter',
+        markLine: noGapMarkline,
       },
       {
         id: 'highlighted',
@@ -1348,6 +1444,10 @@ var state9 = function(scatterplot) {
         label: highlightedLabel(highlight),
         zlevel: 500
       },
+      {
+        type:'scatter',
+        markLine: segNoGapMarkline,
+      },
       zeroSegGapMarkline
     ]
   }
@@ -1456,6 +1556,10 @@ var state10 = function(scatterplot) {
         itemStyle: highlightedItemStyle,
         label: highlightedLabel(highlight),
         zlevel: 500
+      },
+      {
+        type:'scatter',
+        markLine: segNoGapMarkline,
       },
       zeroSegGapMarkline
     ]

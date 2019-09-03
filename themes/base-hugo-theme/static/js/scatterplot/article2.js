@@ -1,5 +1,5 @@
 /**
- * scatterplot states for article one
+ * scatterplot states for article two, "Affluent Schools Are Not Always the Best Schools"
  * - article storyboard: https://docs.google.com/document/d/1ShohEmEcoQoepsIBtQmzrUqAZ7pdFDL-i9dbfEaWtO0/edit
  */
 

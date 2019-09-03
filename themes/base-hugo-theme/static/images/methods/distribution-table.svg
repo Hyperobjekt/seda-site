@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="612px" height="218px" viewBox="0 0 612 218" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Distribution Table</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="methods-graphics-1-v2" transform="translate(-409.000000, -612.000000)">
+            <g id="Distribution-Table" transform="translate(409.000000, 612.000000)">
+                <rect id="Rectangle-Copy-4" stroke="#64CFF2" stroke-width="2" x="1" y="109" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-12" stroke="#64CFF2" stroke-width="2" x="1" y="1" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-5" stroke="#64CFF2" stroke-width="2" x="123" y="109" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-13" stroke="#64CFF2" stroke-width="2" x="123" y="1" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-6" stroke="#64CFF2" stroke-width="2" x="245" y="109" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-14" stroke="#64CFF2" stroke-width="2" x="245" y="1" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-7" stroke="#64CFF2" stroke-width="2" x="367" y="109" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-20" stroke="#64CFF2" stroke-width="2" x="489" y="109" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-15" stroke="#64CFF2" stroke-width="2" x="367" y="1" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-21" stroke="#64CFF2" stroke-width="2" x="489" y="1" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-8" stroke="#64CFF2" stroke-width="2" x="1" y="163" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-16" stroke="#64CFF2" stroke-width="2" x="1" y="55" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-9" stroke="#64CFF2" stroke-width="2" x="123" y="163" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-17" stroke="#64CFF2" stroke-width="2" x="123" y="55" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-10" stroke="#64CFF2" stroke-width="2" x="245" y="163" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-18" stroke="#64CFF2" stroke-width="2" x="245" y="55" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-11" stroke="#64CFF2" stroke-width="2" x="367" y="163" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-22" stroke="#64CFF2" stroke-width="2" x="489" y="163" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-19" stroke="#64CFF2" stroke-width="2" x="367" y="55" width="122" height="54"></rect>
+                <rect id="Rectangle-Copy-23" stroke="#64CFF2" stroke-width="2" x="489" y="55" width="122" height="54"></rect>
+                <text id="District" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#0031A3">
+                    <tspan x="36" y="32">District</tspan>
+                </text>
+                <text id="Level-1" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#0031A3">
+                    <tspan x="160" y="32">Level 1</tspan>
+                </text>
+                <text id="Level-2" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#0031A3">
+                    <tspan x="281" y="32">Level 2</tspan>
+                </text>
+                <text id="Level-3" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#0031A3">
+                    <tspan x="403" y="32">Level 3</tspan>
+                </text>
+                <text id="Level-4" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#0031A3">
+                    <tspan x="525" y="32">Level 4</tspan>
+                </text>
+                <text id="45-(-31%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#068451">
+                    <tspan x="151" y="86">45 ( 31%)</tspan>
+                </text>
+                <text id="64-(45%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#068451">
+                    <tspan x="274" y="86">64 (45%)</tspan>
+                </text>
+                <text id="34-(24%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#068451">
+                    <tspan x="397" y="86">34 (24%)</tspan>
+                </text>
+                <text id="37-(34%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#0066FF">
+                    <tspan x="275" y="140">37 (34%)</tspan>
+                </text>
+                <text id="33-(31%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#0066FF">
+                    <tspan x="398" y="140">33 (31%)</tspan>
+                </text>
+                <text id="34-(30%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#033074">
+                    <tspan x="274" y="194">34 (30%)</tspan>
+                </text>
+                <text id="56-(40%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#033074">
+                    <tspan x="396" y="194">56 (40%)</tspan>
+                </text>
+                <text id="0-(0%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#068451">
+                    <tspan x="527" y="86">0 (0%)</tspan>
+                </text>
+                <text id="17-(16%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#0066FF">
+                    <tspan x="522" y="140">17 (16%)</tspan>
+                </text>
+                <text id="23-(20%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#033074">
+                    <tspan x="518" y="194">23 (20%)</tspan>
+                </text>
+                <text id="21-(19%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#0066FF">
+                    <tspan x="155" y="140">21 (19%)</tspan>
+                </text>
+                <text id="0-(0%)" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22" fill="#033074">
+                    <tspan x="161" y="194">0 (0%)</tspan>
+                </text>
+                <g id="Group" transform="translate(51.000000, 71.000000)">
+                    <circle id="Oval" fill="#068451" cx="11.5" cy="11.5" r="11.5"></circle>
+                    <text id="1" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#FFFFFF">
+                        <tspan x="8" y="16">1</tspan>
+                    </text>
+                </g>
+                <g id="Group-Copy" transform="translate(51.000000, 124.000000)">
+                    <circle id="Oval" fill="#0066FF" cx="11.5" cy="11.5" r="11.5"></circle>
+                    <text id="2" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#FFFFFF">
+                        <tspan x="7" y="16">2</tspan>
+                    </text>
+                </g>
+                <g id="Group-Copy-2" transform="translate(51.000000, 178.000000)">
+                    <circle id="Oval" fill="#033074" cx="11.5" cy="11.5" r="11.5"></circle>
+                    <text id="3" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" fill="#FFFFFF">
+                        <tspan x="7" y="16">3</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

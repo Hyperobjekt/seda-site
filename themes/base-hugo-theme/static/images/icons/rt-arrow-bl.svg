@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21" height="11px" viewBox="0 0 98 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Right-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tablet" transform="translate(-701.000000, -277.000000)">
+            <g id="Right-arrow" transform="translate(706.000000, 277.000000)">
+                <polygon id="Triangle" fill="#0032A3" transform="translate(73.000000, 20.000000) rotate(90.000000) translate(-73.000000, -20.000000) " points="73 0 93 40 53 40"></polygon>
+                <path d="M0,20 L82,20" id="Line" stroke="#0032A3" stroke-width="9" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

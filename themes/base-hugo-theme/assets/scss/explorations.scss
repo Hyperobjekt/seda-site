@@ -1,5 +1,37 @@
 // Single Articles
 
+  // Heroes for specific discoveries
+
+body.type-posts.what-explains-white-black-differences-in-average-test-scores .hero {
+  .hero-child {
+    background-size: 92%;
+    background-position: center 70%;
+    @include media-breakpoint-up(md) {
+      background-size: 80%;
+      background-position: bottom center;
+    }
+    @include media-breakpoint-up(xl) {
+      background-size: 88%;
+      background-position: bottom center;
+    }
+  }
+}
+body.type-posts.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
+  background-size: 92%;
+  background-position: center 70%;
+  @include media-breakpoint-up(md) {
+    background-size: 78%;
+    background-position: center center;
+  }
+  @include media-breakpoint-up(xl) {
+    background-size: 78%;
+    background-position: center center;
+  }
+} 
+
+// General hero styles
+
+
 body.type-posts {
         font-family: $maisonneue-book;
         // color: $white;
@@ -76,7 +108,7 @@ body.type-posts {
             background-position: bottom center;
           }
           .column {
-            margin-top: 13.2rem;
+           // margin-top: 13.2rem;
             margin-bottom: 9.6rem;
             text-align: center;
             color: $white;
@@ -89,7 +121,7 @@ body.type-posts {
             h2 {
               font-family: $sharpgrotesk-med-20;
               font-size: 2.6rem;
-              line-height: 2.55rem;
+              line-height: 3.8rem;
               letter-spacing: .013rem;
               margin-bottom: 1.6rem;
               @include media-breakpoint-up(md) {
@@ -131,8 +163,9 @@ body.type-posts {
             }
           }
         }
-      
   }
+  
+
   .crumbs {
     font-family: $sharpgrotesk-med-15;
     font-size: 1.4rem;
@@ -176,7 +209,13 @@ body.type-posts {
     @include media-breakpoint-up(md) {
       margin-top: 8rem;
       margin-bottom: 8rem;
-    }
+      }
+    img {
+      @include media-breakpoint-down(mm) {
+        margin-left: -24px;
+        width: calc(100% + 48px);
+      }
+    }  
     .state-desc-wrapper {
       // margin-top: 12rem;
      // margin-bottom: 12rem;
@@ -347,7 +386,11 @@ body.type-posts {
     //background-color: #f8f8f8;
     //outline: 16px solid rgb(245, 253, 255);
     //outline: 16px solid #f8f8f8;
-    border-top: 1.5px solid #daecf3;
+    @include media-breakpoint-up(md) {
+      border-top: 1.5px solid #daecf3;
+      border-top: 1.5px solid #e6e6e6;
+      border-top: 1.4px solid #89a2b3;
+      }
     }
     .state-desc-wrapper:nth-of-type(1) {
       border: none;

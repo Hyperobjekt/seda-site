@@ -17,9 +17,9 @@
             </button>
     <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
       <ul class="anchor-links dropdown-menu">
-        <li><a data-scroll-target="glossary" class="scroll-to-section active">Glossary</a></li>
-        <li><a data-scroll-target="data" class="scroll-to-section">Interpreting the Data</a></li>
-        <li><a data-scroll-target="map" class="scroll-to-section">Using the Map</a></li>
+        <!--<li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>-->
+        <li><a data-scroll-target="data" class="scroll-to-section active ">Understanding the Data</a></li>
+        <li><a data-scroll-target="map" class="scroll-to-section">Using the Explorer</a></li>
     </ul>
     <!--</div>-->
   </div>
@@ -28,64 +28,57 @@
 
 <div class="row subnav d-sm-none d-md-block large-tab-nav">
    
-      <ul class="anchor-links col-md-8 mx-auto d-md-flex">
+      <ul class="anchor-links col-md-8 mx-auto d-md-flex justify-content-around">
         <li >Jump to Section:</li>
-        <li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
-        <li><a data-scroll-target="data" class="scroll-to-section">Interpreting the Data</a></li>
-        <li><a data-scroll-target="map" class="scroll-to-section">Using the Map</a></li>
+        <!--<li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>-->
+        <li><a data-scroll-target="data" class="scroll-to-section">Understanding the Data</a></li>
+        <li><a data-scroll-target="map" class="scroll-to-section">Using the Explorer</a></li>
       </ul>
     </div>
 
-
+{{ range (where .Site.RegularPages "Params.section" ("glossary")) }}
 <div class="row glossary" id="glossary">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <h3 tabindex="0">Glossary</h3>
+        <h3 tabindex="0">{{ .Params.glossary }}</h3>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
         
         <div class="accordion">
-            {{ range .Site.Data.faq.glossary }}
-                {{ if eq .section "glossary" }} 
-                <!-- faq item -->
+           
                 {{ partial "faqs" . }}
-                {{ end }}
-            {{ end }}
+      
         </div> <!-- close accordion -->
     </div>
 </div>
+{{ end }}
 <div class="row data" id="data">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <h3 tabindex="0">Interpreting the Data</h3>
+        <h3 tabindex="0">Understanding the Data</h3>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
         
         <div class="accordion">
-            {{ range .Site.Data.faq.data }}
-                {{ if eq .section "data" }} 
-                <!-- faq item -->
+            {{ range (where .Site.RegularPages "Params.section" ("data")) }}
                 {{ partial "faqs" . }}
-                {{ end }}
             {{ end }}
         </div> <!-- close accordion -->
     </div>
 </div>
-<div class="row map" id="map">
+<div class="row map alt-bg mx-0 px-2" id="map">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <h3 tabindex="0">Using the Map</h3> 
+        <h3 tabindex="0">Using the Opportunity Explorer</h3> 
     </div>
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
        
         <div class="accordion">
-            {{ range .Site.Data.faq.map }}
-                {{ if eq .section "map" }} 
-                <!-- faq item -->
+            {{ range (where .Site.RegularPages "Params.section" ("help")) }}
                 {{ partial "faqs" . }}
-                {{ end }}
             {{ end }}
         </div> <!-- close accordion -->
     </div>
 </div>
 
+<a href="javascript:void(0)" class="d-none toggle-accordion active" accordion-id="#accordion"></a>
 
 
 {{ partial "subscribe.html" .}}

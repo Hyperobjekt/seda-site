@@ -1,9 +1,11 @@
 name: "Belen Chavez"
 role: "staff" # director, staff, or partner
-title: "" # maybe different from role; is displayed
-image: "" # will be cropped to center square & rounded
-thumb: "/images/icons/person-placeholder.png"
+title: "Research Data Analyst" # maybe different from role; is displayed
+image: "/uploads/bchavez-full.jpg" # will be cropped to center square & rounded
+thumb: "/uploads/bchavez-sm.jpg"
 current: true # true or false (for former)
 weight: 155
 blurb: >
+
+  Belen Chavez is a SEDA Research Data Analyst at the Center for Education Policy Analysis. She manages the data for Stanford Education Data Archive (SEDA). Belen is an applied data analyst and has previous data experience in e-commerce, utilities, and litigation consulting. Belen received her bachelor's degree in business economics from University of California, Irvine and received her master's degree in economics from Duke University.
   

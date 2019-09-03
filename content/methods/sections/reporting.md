@@ -2,18 +2,7 @@
 section: reporting
 ---
 <h3>Reporting the Data</h3>
-<h5>Margins of Error</h5>
-
-Every estimate that we produce comes with an associated margin of error. A margin of error provides information on how trustworthy or precise any individual estimate is. Large margins of error suggest that there was not enough data to be highly confident in the estimates we report. For estimates with large margins of error, we suggest users interpret them with caution.
-
-The uncertainty in the estimates comes from different sources:
-
-- NAEP Linking: 
-- Estimation:
-
-You can find information on the approximate margins of error of the estimates in the side panels that appear when you click on an individual school, district or county. If you want more detailed information on the uncertainty of specific estimates, we encourage you to download the data [link here] and explore the standard error estimates provided. 
-
-<h5>Suppression of Estimates</h5>
+<h5>Suppression of Estimates </h5>
 
 We do not report average performance, learning, and/or trend estimates if:
 

@@ -1,0 +1,11 @@
+---
+title: "What should I do if I think there is an error with the data for my school?"
+faqid: data-errors
+section: "data" # director, staff, or partner
+weight: 160
+---
+Please contact our SEDA support team at <a class="highlight" href="mailto:research@edopportunity.org">research@edopportunity.org</a>
+
+
+
+

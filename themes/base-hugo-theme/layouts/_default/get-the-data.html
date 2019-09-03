@@ -8,35 +8,45 @@
           </div>
          </div>
     </div>
-<div class="row data-form">
+<div class="row base-style data-form">
 
-            <div class="col-12 col-md-6 offset-md-3 mt-6 mb-12">
-                    <p>Enter your email to access the data. By doing so, you will be subscribed to our newsletter and receive notifications of data updates.</p>
-                <form id="getTheData" action="" method="post" name="get-the-data" class="validate mt-3" target="_blank">
-                    <div>
-                      <div class="hidden" style="display:none;">
-                        <label>Don’t fill this out if you're human: <input  id="botField" name="bot-field" /></label>
-                      </div>
-                        <div class="mc-field-group">
-                            <label for="email-field" class="sr-only"></label>
-                            <input id="email-field" class="form-control px-2" type="email" value="" name="email" required placeholder="{{ .Params.email }}">
-                        </div>
-                        <!-- Removing checkbox -- add users to both newsletter and data downloads groups by default
-                        <div class="mc-field-group input-group my-3 d-flex align-items-center">
-                            <input type="checkbox" value="1" name="newsletter" id="newsletter-check">
-                            <label class="form-check-label" for="newsletter-check">Subscribe to our newsletter</label>
-                        </div> -->
-                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                            <input type="text" name="b_8e16f46a586eeb4578fbfe6ba_9c55c12d21" tabindex="-1" value="">
-                        </div> -->
-                        <div class="form-footer mt-4">
-                          <i id="mcSpinner" class="fas fa-spinner fa-spin"></i>
-                          <input type="submit" value="GET THE DATA" name="subscribe" id="mc-embedded-subscribe" class="btn btn-custom px-4">
-                        </div>
-                    </div>
-                </form>
+            <div class="col-12 col-md-7 mx-auto mt-6 mb-4">
+                <h4 class="mt-md-3 mb-3 mb-lg-4">Data Use Agreement</h4>
+                <p>You agree not to use the data sets for commercial advantage, or in the course of for-profit activities. Commercial entities wishing to use this Service should contact Stanford University’s Office of Technology Licensing (info@otlmail.stanford.edu).</p>
+                <p>You agree that you will not use these data to identify or to otherwise infringe the privacy or confidentiality rights of individuals.</p>
+                <p>THE DATA SETS ARE PROVIDED “AS IS” AND STANFORD MAKES NO REPRESENTATIONS AND EXTENDS NO WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. STANFORD SHALL NOT BE LIABLE FOR ANY CLAIMS OR DAMAGES WITH RESPECT TO ANY LOSS OR OTHER CLAIM BY YOU OR ANY THIRD PARTY ON ACCOUNT OF, OR ARISING FROM THE USE OF THE DATA SETS.</p>
+                <p>You agree that this Agreement and any dispute arising under it is governed by the laws of the State of California of the United States of America, applicable to agreements negotiated, executed, and performed within California.</p>
+                <p>You agree to acknowledge the Stanford Education Data Archive as the source of these data. In publications, please cite the data as:</p>
+                <p>Sean F. Reardon, Andrew D. Ho., Benjamin R. Shear, Erin M. Fahle, Demetra Kalogrides, & Richard DiSalvo. (2017). Stanford Education Data Archive (Version 2.0). http://purl.stanford.edu/db586ns4974.</p>
+                <p>Subject to your compliance with the terms and conditions set forth in this Agreement, Stanford grants you a revocable, non-exclusive, non-transferable right to access and make use of the Data Sets.</p>
             </div>
+            <div class="col-12 col-md-7 mx-auto pt-5 mb-12" style="border-top: 1px solid #89a2b3">
+              <p class="mb-5">Enter your email to access the data. By doing so, you accept the terms of our <strong>Data Use Agreement</strong> above, and you will be subscribed to our newsletter and receive notifications of data updates.</p>
+              <form id="getTheData" action="" method="post" name="get-the-data" class="validate mt-3" target="_blank">
+                  <div>
+                    <div class="hidden" style="display:none;">
+                      <label>Don’t fill this out if you're human: <input  id="botField" name="bot-field" /></label>
+                    </div>
+                      <div class="mc-field-group">
+                          <label for="email-field" class="sr-only"></label>
+                          <input id="email-field" class="form-control px-2" type="email" value="" name="email" required placeholder="{{ .Params.email }}">
+                      </div>
+                      <!-- Removing checkbox -- add users to both newsletter and data downloads groups by default
+                      <div class="mc-field-group input-group my-3 d-flex align-items-center">
+                          <input type="checkbox" value="1" name="newsletter" id="newsletter-check">
+                          <label class="form-check-label" for="newsletter-check">Subscribe to our newsletter</label>
+                      </div> -->
+                      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                      <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                          <input type="text" name="b_8e16f46a586eeb4578fbfe6ba_9c55c12d21" tabindex="-1" value="">
+                      </div> -->
+                      <div class="form-footer mt-4">
+                        <i id="mcSpinner" class="fas fa-spinner fa-spin"></i>
+                        <input type="submit" value="GET THE DATA" name="subscribe" id="mc-embedded-subscribe" class="btn btn-custom px-4">
+                      </div>
+                  </div>
+              </form>
+            </div>  
 
     </div>
 

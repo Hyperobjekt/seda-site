@@ -31,7 +31,7 @@ anchor = "smart"
 
 [[menu.main]]
 	name = "Opportunity Explorer"
-	url = "https://eop-aug02.surge.sh/"
+	url = "/explorer"
     weight = 1
 
 [[menu.main]]

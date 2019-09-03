@@ -1,9 +1,9 @@
 <div class="accordion-section">
-    <a class="collapsed question" data-toggle="collapse" href="#{{ .faqid }}" aria-expanded="false" aria-controls="collapseExample">
-       <h5>{{ .title }}</h5><i class="fa fa-chevron-up"></i>
+    <a class="collapsed question" data-toggle="collapse" href="#{{ .Params.faqid }}" aria-expanded="false" aria-controls="collapseExample">
+       <h5>{{ .Title }}</h5><i class="fa fa-chevron-up"></i>
       
      </a>
-  <div class="answer collapse" id="{{ .faqid }}">
-    <p>{{ .blurb }}</p>
+  <div class="answer collapse" id="{{ .Params.faqid }}">
+    <p>{{ .Content }}</p>
   </div>
 </div>

@@ -1,0 +1,140 @@
+---
+section: challenges
+weight: 1
+---
+
+### Challenges Working with Proficiency Data
+
+While there is a substantial amount of data from every state available in EDFacts, there are four key challenges when using these data:
+
+<ol>
+    <li> 
+    States provide only “proficiency data”: the count of students at each of the proficiency levels 
+    (sometimes called “achievement levels” or “performance levels”). The levels represent different degrees 
+    of mastery of the subject-specific grade-level material. Levels are defined by score “thresholds”, 
+    which are set by experts in the field. Scoring above or below different thresholds determines placement 
+    into a specific proficiency level. Common levels include “below basic”, “basic”, “proficient” and “advanced”. 
+    An example is shown below.
+    <br><br>
+
+    <table class="seda-table table table-responsive">
+    <thead>
+    <tr>
+    <th style="border-left-width: 2px;">Test Score</th>
+    <th>Proficiency Level</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+    <td style="border-left-width: 2px;">0-50</td>
+    <td>Below Basic</td>
+    <td>Inadequate performance; minimal mastery</td>
+    </tr>
+
+    <tr>
+    <td style="border-left-width: 2px;" >51-75</td>
+    <td>Basic</td>
+    <td>Marginal performance; partial mastery</td>
+    </tr>
+
+    <tr>
+    <td style="border-left-width: 2px;">76-90</td>
+    <td>Proficient</td>
+    <td>Satisfactory performance; adequate mastery</td>
+    </tr>
+
+    <tr>
+    <td style="border-left-width: 2px;">91-100</td>
+    <td>Advanced</td>
+    <td>Superior performance; complete mastery</td>
+    </tr>
+    </tbody>
+    </table>
+
+    <br>
+
+    <img src="/images/methods/scale-one.svg" class="w-100" />
+
+    <br><br>
+</li>
+
+<li>
+    Most states use their own test and define “proficiency” in different ways, meaning that we cannot directly compare test results in one state to another. Proficient in one state/grade/year/subject is not comparable to proficient in another. 
+    <br><br>
+    Consider two states, State A and B that use same test, but set their own thresholds for proficiency: 
+    <br><br>
+    <h5 style="color: #000;">State A: Higher Threshold for Proficiency</h5><br>
+
+    <img src="/images/methods/scale-one.svg" class="w-100" />
+
+    <br><br>
+    <h5 style="color: #000;">State B: Lower Threshold for Proficiency</h5><br>
+
+    <img src="/images/methods/scale-two.svg" class="w-100" />
+
+    <br><br>
+
+    Imagine 500 students take the test. The results are as follows: 50 students score below 400 on the exam; 
+    100 score between 400 and 500; 200 score between 500 and 600; 50 score between 600 and 650; 
+    50 score between 650 and 700; and 50 students score above 700. If we use State A’s thresholds to assignment 
+    to categories, we would find that 150 students are proficient. However, if we use State B’s thresholds, 
+    350 students would be considered proficient. 
+    <br><br>
+    <table class="table seda-table table-responsive" style="max-width: 500px; margin: auto;">
+        <thead>
+        <tr>
+        <th style="border: none;"></th>
+        <th colspan="2">Not Proficient</th>
+        <th colspan="2">Proficient</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <td>State</td>
+        <td>Level 1</td>
+        <td>Level 2</td>
+        <td>Level 3</td>
+        <td>Level 4</td>
+        </tr>
+
+        <tr>
+        <td>A</td>
+        <td>150</td>
+        <td>200</td>
+        <td>100</td>
+        <td>50</td>
+        </tr>
+
+        <tr>
+        <td>B</td>
+        <td>50</td>
+        <td>100</td>
+        <td>250</td>
+        <td>100</td>
+        </tr>
+        </tbody>
+    </table>
+
+In other words, students in State B may appear to have higher “proficiency” rates than those in State A even if their 
+true achievement patterns are identical! The bottom line: using the proficiency data without accounting 
+for differing proficiency thresholds may lead to erroneous conclusions about the relative performance 
+of students in schools in different states.<br><br>
+This problem is more complicated than the example suggests, because states use different tests with material 
+of varying difficulty and scores reported on different scales. So, comparing their proficiency thresholds 
+directly is not possible.
+
+<br><br>
+</li>
+
+<li>
+    Even within a state, different tests are used in different grade levels. This means that, in most states, we cannot readily compare the performance of students in 4th grade in one year to that of students in 5th grade in the next year. In other words, we cannot measure average learning rates across grades.
+<br><br>
+</li>
+<li>
+States may change the tests they use over time. This may result from changes in curricular standards; for example, the introduction of the Common Core State Standards led to many states adopting different tests. These test changes make it hard to compare average performance in one year to the next. In other words, we cannot readily measure trends in average performance over time.
+<br><br>
+</li>
+</ol>

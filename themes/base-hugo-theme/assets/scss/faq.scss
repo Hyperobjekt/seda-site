@@ -1,5 +1,21 @@
 body.type-help-faq {
-    
+  p a, li a {
+    color: $seda-red;
+    color: #7086AB;
+    color: $seda-navy;
+    //font-family: $maisonneue-bold;
+  }
+  a:hover {
+    text-decoration: underline;
+  
+  }
+  .toggle-accordion:before {
+    content: "Expand All";
+  }
+  
+  .toggle-accordion.active:before {
+    content: "Collapse All";
+  }
     .hero-child {
       background: url('/images/heroes/help-faq.svg');
       background-repeat: no-repeat;
@@ -101,6 +117,7 @@ body.type-help-faq {
               font-size: 1.3rem;
               line-height: 2rem;
               letter-spacing: 0;
+              color: #fff;
               @include media-breakpoint-up(md) {
                 font-size: 1.8rem;
                 line-height: 2.5rem;
@@ -142,6 +159,7 @@ body.type-help-faq {
             font-size: 2.8rem;
             line-height: 4.2rem;
             letter-spacing: 0.03rem;
+            margin-bottom: 4rem;
         }
         }
       h5 {
@@ -156,26 +174,33 @@ body.type-help-faq {
         }
         @include media-breakpoint-up(lg) {
             font-size: 2rem;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             line-height: 3rem;
             letter-spacing: auto;
-          } 
-      }  
-      p {
-          font-size: 1.3rem;
-          line-height: 2rem;
-          @include media-breakpoint-up(md) {
-              font-size: 1.4rem;
-              line-height: 2.1rem;
           }
-          @include media-breakpoint-up(lg) {
-            font-size: 1.5rem;
-            line-height: 2.4rem;
+          @include media-breakpoint-up(xl) {
+            font-size: 2rem;
+            font-size: 1.9rem;
+            line-height: 2.7rem;
+            letter-spacing: auto;
+          }  
+      }  
+      p, li {
+        font-size: 1.3rem;
+        line-height: 2rem;
+        color: $seda-gray;
+        @include media-breakpoint-up(md) {
+            font-size: 1.4rem;
+            line-height: 2.1rem;
         }
-            @include media-breakpoint-up(xl) {
-                font-size: 1.9rem;
-                line-height: 2.8rem;
-            }
+        @include media-breakpoint-up(lg) {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: 1.7rem;
+          line-height: 2.6rem;
+      }
       }  
       .row.glossary {
         padding-top: 5.6rem;
@@ -185,7 +210,7 @@ body.type-help-faq {
         }
       }
       .row.data {
-        background-color: #F5F8FA;
+        //background-color: #F5F8FA;
         padding: 8rem 16px 4rem;
         margin-left: 0;
         margin-right: 0;
@@ -196,6 +221,9 @@ body.type-help-faq {
       .accordion-section {
         padding: 4.8rem 0;
         padding: 2.4rem 0;
+        @include media-breakpoint-up(xl) {
+          padding: 4rem 0;
+        }
         border-top: 2px solid #E9EAED;
         a.question {
             display: flex;
@@ -216,20 +244,20 @@ body.type-help-faq {
             }
             &:hover {
                 text-decoration: none;
-                color: $seda-red;
+                color: #7086AB;
                 // color: $seda-lightblue;
                 // color: #5198c7;
                 // color: #6cc1aa;
             }
         }
         .answer {
-            margin-top: 1.6rem;
+            padding-top: 1.6rem;
             }
         }
         .center-block {
             float: none !important;
         }
         
-
+       
 
 }    

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="654px" height="220px" viewBox="0 0 654 181" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Group 2 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-20.000000, -31.000000)">
+            <g id="Group-2-Copy" transform="translate(20.000000, 21.000000)">
+                <rect id="Rectangle" fill="#DDF1FF" x="11" y="32" width="315" height="27"></rect>
+                <rect id="Rectangle-Copy" fill="#9ACBED" x="326" y="32" width="105" height="27"></rect>
+                <rect id="Rectangle-Copy-2" fill="#59A9DF" x="431" y="32" width="106" height="27"></rect>
+                <rect id="Rectangle-Copy-3" fill="#1483CF" x="537" y="32" width="105" height="27"></rect>
+                <text id="200" font-family="SharpGrotesk-Medium15, Sharp Grotesk" font-size="16" font-weight="500" line-spacing="35.2" letter-spacing="0.4571429" fill="#0031A3">
+                    <tspan x="0" y="16">200</tspan>
+                </text>
+                <text id="500" font-family="SharpGrotesk-Medium15, Sharp Grotesk" font-size="16" font-weight="500" line-spacing="35.2" letter-spacing="0.4571429" fill="#0031A3">
+                    <tspan x="313" y="16">500</tspan>
+                </text>
+                <text id="600" font-family="SharpGrotesk-Medium15, Sharp Grotesk" font-size="16" font-weight="500" line-spacing="35.2" letter-spacing="0.4571429" fill="#0031A3">
+                    <tspan x="419" y="16">600</tspan>
+                </text>
+                <text id="700" font-family="SharpGrotesk-Medium15, Sharp Grotesk" font-size="16" font-weight="500" line-spacing="35.2" letter-spacing="0.4571429" fill="#0031A3">
+                    <tspan x="526" y="16">700</tspan>
+                </text>
+                <text id="800" font-family="SharpGrotesk-Medium15, Sharp Grotesk" font-size="16" font-weight="500" line-spacing="35.2" letter-spacing="0.4571429" fill="#0031A3">
+                    <tspan x="630" y="16">800</tspan>
+                </text>
+                <text id="Level-1-“Below-Basic" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22.3999996" fill="#0031A3">
+                    <tspan x="144.794" y="86">Level 1</tspan>
+                    <tspan x="118.67" y="108.4">“Below Basic”</tspan>
+                </text>
+                <text id="Did-not-meet-grade-l" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14.4" font-weight="500" line-spacing="21.6" fill="#0031A3">
+                    <tspan x="138.696" y="147">Did not meet grade-level </tspan>
+                    <tspan x="182.1552" y="168.6">expectations</tspan>
+                </text>
+                <text id="Met-grade-level-expe" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14.4" font-weight="500" line-spacing="21.6" fill="#0031A3">
+                    <tspan x="483.2272" y="147">Met grade-level</tspan>
+                    <tspan x="492.1552" y="168.6">expectations</tspan>
+                </text>
+                <text id="Level-2-“Basic”" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22.3999996" fill="#0031A3">
+                    <tspan x="352.999" y="86.4841026">Level 2</tspan>
+                    <tspan x="352.285" y="108.884102">“Basic”</tspan>
+                </text>
+                <text id="Level-3-“Proficient”" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22.3999996" fill="#0031A3">
+                    <tspan x="458.345" y="86.4841026">Level 3</tspan>
+                    <tspan x="442.287" y="108.884102">“Proficient”</tspan>
+                </text>
+                <text id="Level-4-“Advanced”" font-family="SharpGrotesk-Book20, Sharp Grotesk" font-size="14" font-weight="300" line-spacing="22.3999996" fill="#0031A3">
+                    <tspan x="565.422" y="86.4841026">Level 4</tspan>
+                    <tspan x="548.538" y="108.884102">“Advanced”</tspan>
+                </text>
+                <path d="M642,28.1435897 L642,75.3846154" id="Line-2" stroke="#0032A3" stroke-width="1.6" stroke-linecap="square"></path>
+                <path d="M326,28 L326,75.2410256" id="Line-2-Copy" stroke="#0032A3" stroke-width="1.6" stroke-linecap="square"></path>
+                <path d="M537,28.1435897 L537,75.3846154" id="Line-2-Copy-5" stroke="#0032A3" stroke-width="1.6" stroke-linecap="square"></path>
+                <path d="M431,28.1435897 L431,189.246795" id="Line-2-Copy-2" stroke="#0032A3" stroke-width="1.6" stroke-linecap="square"></path>
+                <path d="M11,28.1435897 L11,75.3846154" id="Line-2-Copy-4" stroke="#0032A3" stroke-width="1.6" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

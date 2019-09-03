@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="509px" height="456px" viewBox="0 0 509 456" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Distribution Chart</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="methods-graphics-1-v2" transform="translate(-458.000000, -850.000000)">
+            <g id="Distribution-Chart" transform="translate(459.000000, 851.000000)">
+                <path d="M0.748046875,319.705078 C64.6553321,320.103455 102.488991,317.226502 114.249023,311.074219 C146.707031,294.09375 161.178151,249.662134 176.113281,186.278066 C204.202053,67.0704878 211.161895,53 224.498047,53" id="Shape" stroke="#068451" stroke-width="2"></path>
+                <path d="M0.337890625,319.123518 C68.8134515,319.905976 109.390555,316.535925 122.0692,309.013364 C164.340543,283.932709 164.09868,265.949849 186.133691,222.923635 C232.066243,133.234097 240.114046,133.234097 252.337891,133.234097" id="Path-Copy-11" stroke="#0066FF" stroke-width="2"></path>
+                <path d="M223.453125,319.556132 C285.192441,320.053806 321.942116,317.226502 333.702148,311.074219 C366.160156,294.09375 380.631276,249.662134 395.566406,186.278066 C423.655178,67.0704878 431.161895,53 444.498047,53" id="Path-Copy-14" stroke="#068451" stroke-width="2" transform="translate(333.975586, 186.306000) scale(-1, 1) translate(-333.975586, -186.306000) "></path>
+                <path d="M251.649902,320.059865 C314.233339,322.726298 355.30518,318.491497 374.865423,307.35546 C411.369184,286.573142 418.607297,264.732567 440.593212,221.97081 C486.423422,132.832816 495.715501,133.234065 507.912109,133.234065" id="Path-Copy-12" stroke="#0066FF" stroke-width="2" transform="translate(379.781006, 227.033302) scale(-1, 1) translate(-379.781006, -227.033302) "></path>
+                <path d="M279.406087,320.832538 C350.200358,322.227924 387.215983,319.147135 401.423665,314.03125 C430.351315,303.615016 443.368365,273.644617 452.269368,228.435547 C470.627388,135.193359 470.627388,135.193359 482.265462,85.6445312 C493.903536,36.0957031 498.642578,17.8886719 507.912109,17.8886719" id="Shape" stroke="#06234E" stroke-width="2" transform="translate(393.659098, 169.528672) scale(-1, 1) translate(-393.659098, -169.528672) "></path>
+                <text id="Threshold-1-=--0.75" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" letter-spacing="0.300000012" fill="#0031A3">
+                    <tspan x="103" y="393">Threshold 1 = -0.7</tspan>
+                    <tspan x="236.64" y="393">5</tspan>
+                </text>
+                <text id="Threshold-2-=-0.05" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" letter-spacing="0.300000012" fill="#0031A3">
+                    <tspan x="181" y="453">Threshold 2 = 0.0</tspan>
+                    <tspan x="310.658" y="453">5</tspan>
+                </text>
+                <text id="Threshold-3-=-1.0" font-family="SharpGrotesk-Medium20, Sharp Grotesk" font-size="14" font-weight="500" line-spacing="22" letter-spacing="0.300000012" fill="#0031A3">
+                    <tspan x="297" y="393">Threshold 3 = 1.</tspan>
+                    <tspan x="413.996" y="393">0</tspan>
+                </text>
+                <path d="M0,327.5 L504.337891,327.5" id="Line" stroke="#8E8E8E" stroke-linecap="square"></path>
+                <text id="0" font-family="MaisonNeue-Book, Maison Neue" font-size="12" font-weight="300" line-spacing="22" fill="#8E8E8E">
+                    <tspan x="254" y="340">0</tspan>
+                </text>
+                <path d="M0.748046875,319.705078 C102.633464,319.621745 160.323568,317.693359 173.818359,313.919922 C203.170063,305.712546 215.763059,273.533289 224.664063,228.324219 C243.022082,135.082031 243.022082,135.082031 254.660156,85.5332031 C266.29823,35.984375 270.443359,17.8886719 279.712891,17.8886719" id="Path-Copy-8" stroke="#06234E" stroke-width="2"></path>
+                <path d="M174,0.493403694 L174,373.834247" id="Line-8" stroke="#64CFF2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M250,0.493166287 L250,432.287221" id="Line-8-Copy" stroke="#64CFF2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M355,0.493403694 L355,373.834247" id="Line-8-Copy-2" stroke="#64CFF2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -63,6 +63,16 @@
             {{ .Content }}
         {{ end }}
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 mx-auto">    
+        {{ range (where .Site.RegularPages "Params.section" ("raw-data-two")) }}
+            {{ .Content }}
+        {{ end }}
+    </div>
+    <!--<div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">      
+        {{/* range (where .Site.RegularPages "Params.section" ("raw-data-three")) }}
+            {{ .Content }}
+        {{ end */}}
+    </div>-->
 </div>
 <div class="row map" id="prof-threshold">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">

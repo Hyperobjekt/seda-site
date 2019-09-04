@@ -175,7 +175,7 @@ var state1 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 3';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -273,7 +273,7 @@ var state1_1 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 3';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -403,7 +403,7 @@ var state2 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 3';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+ // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -487,7 +487,7 @@ var state3 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 4';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -573,7 +573,7 @@ var state4 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 5';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -660,7 +660,7 @@ var state5 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 6';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -759,7 +759,7 @@ var state6 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 7';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -846,7 +846,7 @@ var state7 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 8';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -934,7 +934,7 @@ var state8 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 3';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -1022,7 +1022,7 @@ var state9 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 4';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -1110,7 +1110,7 @@ var state10 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 5';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -1198,7 +1198,7 @@ var state11 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 6';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -1286,7 +1286,7 @@ var state12 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 7';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -1374,7 +1374,7 @@ var state13 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 8';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -1462,7 +1462,7 @@ var state14 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -1615,7 +1615,7 @@ var state15 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -1832,7 +1832,7 @@ var state16 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -2030,7 +2030,7 @@ var state17 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -2217,7 +2217,7 @@ var state18 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 
@@ -2398,7 +2398,7 @@ var state19 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates';
-  Title['subtext'] = 'U.S. School Districts 2009-2016';
+  // Title['subtext'] = 'U.S. School Districts 2009-2016';
   // Set title and subtitle
   Title.setTitle();
 

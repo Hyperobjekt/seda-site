@@ -205,7 +205,7 @@ const noRacialDisparityMarkline = {
   data: [
     [
       {
-        name: 'no racial disparity',
+        name: 'no racial inequality',
         coord:  [0, -1], // [0, -6],
         symbol: 'none',
         lineStyle: {
@@ -230,7 +230,7 @@ const noGapMarkline = {
   animation: false,
   silent: true,
   label: {
-    show: false,
+    show: true,
     position: 'middle',
     fontFamily: 'SharpGrotesk-Medium20',
     fontWeight: '500',
@@ -268,7 +268,7 @@ const segNoGapMarkline = {
   animation: false,
   silent: true,
   label: {
-    show: false,
+    show: true,
     position: 'middle',
     fontFamily: 'SharpGrotesk-Medium20',
     fontWeight: '500',
@@ -310,7 +310,7 @@ const zeroSegGapMarkline = {
     data: [
       [
         {
-          name: '',
+          name: 'no segregation',
           coord: [0, -1],
           symbol: 'none',
           lineStyle: {
@@ -318,6 +318,13 @@ const zeroSegGapMarkline = {
             type: 'solid',
             width: 1,
           },
+          label: {
+            padding: [0, 0, 2, 30],
+            fontFamily: 'SharpGrotesk-Medium20',
+            fontWeight: '500',
+            position: 'middle',
+            color: '#052965',
+          }
         },
         {
           coord: [0, 6],
@@ -914,7 +921,7 @@ var state4 = function(scatterplot) {
       yAxis: deepmerge(baseYAxis, {
         min: -1, // -6,
         max: 6, // 3, // 0,
-        name: 'White-Black Achievement Gap\nby Grade Levels',
+        name: 'White-Black Achievement Gap (in Grade Levels)',
         nameGap: 24,
         lineHeight: 48,
         // splitNumber: 7
@@ -922,7 +929,7 @@ var state4 = function(scatterplot) {
       xAxis: deepmerge(baseXAxis, {
         min: -1, // -3,
         max: 6, // 7,
-        name: 'White-Black Socioeconomic Disparity',
+        name: 'White-Black Socioeconomic Inequality',
       }),
       series: [
         {
@@ -996,13 +1003,13 @@ var state5 = function(scatterplot) {
         position: 'right',
         min: -1, // -6,
         max: 6, // 0,
-        name: 'White-Black Achievement Gap\nby Grade Levels',
+        name: 'White-Black Achievement Gap (in Grade Levels)',
         nameGap: 24
       }),
       xAxis: deepmerge(baseXAxis, {
         min: -1, // -3,
         max: 6, // 7,
-        name: 'White-Black Socioeconomic Disparity',
+        name: 'White-Black Socioeconomic Inequality',
       }),
       series: [
         { id: 'base' },
@@ -1183,13 +1190,13 @@ var state8 = function(scatterplot) {
     yAxis: deepmerge(baseYAxis, {
       min: -1, // -6,
       max: 6, // 0,
-      name: 'White-Black Achievement Gap\nby Grade Levels',
+      name: 'White-Black Achievement Gap (in Grade Levels)',
       nameGap: 24
     }),
     xAxis: deepmerge(baseYAxis, {
       min: -1, // -3,
       max: 6, // 7,
-      name: 'White-Black Socioeconomic Disparity',
+      name: 'White-Black Socioeconomic Inequality',
     }),
     series: [
       {
@@ -1426,13 +1433,13 @@ var state9 = function(scatterplot) {
     yAxis: deepmerge(baseYAxis, {
       min: -1, // -6,
       max: 6, // 0,
-      name: 'White-Black Achievement Gap\nby Grade Levels',
+      name: 'White-Black Achievement Gap (in Grade Levels)',
       nameGap: 24
     }),
     xAxis: deepmerge(baseXAxis, {
       min: -0.3,
       max: 0.7,
-      name: 'White-Black Segregation Gap',
+      name: 'White-Black Socioeconomic Segregation',
       interval: 0.15,
       scale: false
     }),
@@ -1539,13 +1546,13 @@ var state10 = function(scatterplot) {
     yAxis: deepmerge(baseYAxis, {
       min: -1, // -6,
       max: 6, // 0,
-      name: 'White-Black Achievement Gap\nby Grade Levels',
+      name: 'White-Black Achievement Gap (in Grade Levels)',
       nameGap: 24
     }),
     xAxis: deepmerge(baseXAxis, {
       min: -0.3,
       max: 0.7,
-      name: 'White-Black Segregation Gap',
+      name: 'White-Black Socioeconomic Segregation',
       interval: 0.15,
       scale: false
     }),

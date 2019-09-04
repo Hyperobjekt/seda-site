@@ -158,13 +158,15 @@ There is almost no relationship between the two measures. Districts with high sc
 
 <img src="/images/articles/affluent-schools/state16.jpg" class=" d-md-none" />
 
-Those in the lower left show the opposite: educational opportunities are scarce both in early childhood and through the elementary and middle school years.<br class="d-sm-none d-md-block"><br class="d-sm-none d-md-block">
+
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state16" notmerge="true" %}}
 
-<br class="d-sm-none d-md-block"><br>More generally, the data tell us not only <i>where</i> there is more or less educational opportunity, but <i>when</i> opportunity is available in each place.<br><br><br>
+<br class="d-sm-none d-md-block"><br>Those in the lower left show the opposite: educational opportunities are scarce both in early childhood and through the elementary and middle school years.
+
+More generally, the data tell us not only <i>where</i> there is more or less educational opportunity, but <i>when</i> opportunity is available in each place.<br><br>
 
 {{% /state-wrapper %}}
 
@@ -172,7 +174,7 @@ Those in the lower left show the opposite: educational opportunities are scarce 
 
 {{% state-wrapper state="state17" notmerge="true" %}}
 
-<br><br class="d-sm-none d-md-block">In the bottom right, for example, districts like Anne Arundel have plentiful educational opportunities early in life but show slower learning rates after grade 3. These communities may need to focus their investments in expanding learning opportunities in the late elementary and middle school years.<br><br><br>
+<br><br class="d-sm-none d-md-block">In the bottom right, for example, districts like Anne Arundel have plentiful educational opportunities early in life but show slower learning rates after grade 3. These communities may need to focus their investments in expanding learning opportunities in the late elementary and middle school years.<br><br>
 
 
 {{% /state-wrapper %}}

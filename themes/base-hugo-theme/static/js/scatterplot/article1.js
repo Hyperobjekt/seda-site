@@ -421,6 +421,29 @@ function sortDataBySeg(data) {
   return returnArr;
 }
 
+function formatTooltip(item, data, xLabel, yLabel) {
+  // console.log(item);
+  // console.log(data);
+  let returnString = null;
+  if (!!item && !!item.value && !!item.value[3]) {
+    const itemName =
+      data &&
+      data.districts &&
+      data.districts.name &&
+      data.districts.name[item.value[3]] ?
+      data.districts.name[item.value[3]] : 'Unavailable'
+    // itemValue = item.value[3] ? item.value[3] : item.name;
+    returnString = '<span>' + itemName + '</span><br>'
+      + '<small>' + xLabel + ': ' + item.value[0]
+      + '&nbsp;&nbsp;' + yLabel + ': ' + item.value[1] + '</small>';
+  } else {
+    // console.log(item);
+    // Send back a different string for the markarea tooltip.
+    returnString = '<span>' + item.data.name + '</span><br>'
+  }
+  return returnString;
+}
+
 //
 // Fetch the additional segregation data for state 9.
 //
@@ -573,28 +596,31 @@ var state1 = function(scatterplot) {
       trigger: 'item',
       // borderColor: '#fff',
       formatter: function(item) {
-        console.log(item);
-        console.log(scatterplot.data);
-        console.log(scatterplot.getSeriesDataForIds(scatterplot.data, item.data[3]));
-        const data = scatterplot.data; // _self.data[_self.props.prefix];
-        let returnString = null;
-        if (!!item && !!item.value && !!item.value[3]) {
-          const itemName =
-            data &&
-            data.name &&
-            data.name[item.value[3]] ?
-            data.name[item.value[3]] : 'Unavailable'
-          // itemValue = item.value[3] ? item.value[3] : item.name;
-          returnString = '<span>' + itemName + '</span><br>'
-            + '<small>blah: ' + item.value[0]
-            + '&nbsp;&nbsp;&nbsp;&nbsp;blahblah: ' + item.value[1] + '</small>';
-        } else {
-          // console.log(item);
-          // Send back a different string for the markarea tooltip.
-          returnString = '<span>' + item.data.name + '</span><br>'
-        }
-        return returnString;
-      }
+        return formatTooltip(item, scatterplot.data, 'White Scores', 'Black Scores');
+      },
+    //   function(item) {
+    //     console.log(item);
+    //     console.log(scatterplot.data);
+    //     // console.log(scatterplot.getSeriesDataForIds(scatterplot.data, item.data[3]));
+    //     const data = scatterplot.data; // _self.data[_self.props.prefix];
+    //     let returnString = null;
+    //     if (!!item && !!item.value && !!item.value[3]) {
+    //       const itemName =
+    //         data &&
+    //         data.name &&
+    //         data.name[item.value[3]] ?
+    //         data.name[item.value[3]] : 'Unavailable'
+    //       // itemValue = item.value[3] ? item.value[3] : item.name;
+    //       returnString = '<span>' + itemName + '</span><br>'
+    //         + '<small>blah: ' + item.value[0]
+    //         + '&nbsp;&nbsp;&nbsp;&nbsp;blahblah: ' + item.value[1] + '</small>';
+    //     } else {
+    //       // console.log(item);
+    //       // Send back a different string for the markarea tooltip.
+    //       returnString = '<span>' + item.data.name + '</span><br>'
+    //     }
+    //     return returnString;
+    //   }
     },
     series: [
       initialMarkline,

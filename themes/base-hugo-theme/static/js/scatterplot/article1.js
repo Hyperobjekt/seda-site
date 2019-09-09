@@ -252,7 +252,7 @@ const noGapMarkline = {
           width: 1,
         },
         label: {
-          padding: 2,
+          padding: [0, 0, 2, 300],
           position: 'middle',
           color: '#052965',
         }
@@ -290,7 +290,7 @@ const segNoGapMarkline = {
           width: 1,
         },
         label: {
-          padding: 2,
+          padding: [0, 0, 2, 300],
           position: 'middle',
           color: '#052965',
         }
@@ -319,7 +319,7 @@ const zeroSegGapMarkline = {
             width: 1,
           },
           label: {
-            padding: [0, 0, 2, 30],
+            padding: [0, 0, 2, 80],
             fontFamily: 'SharpGrotesk-Medium20',
             fontWeight: '500',
             position: 'middle',

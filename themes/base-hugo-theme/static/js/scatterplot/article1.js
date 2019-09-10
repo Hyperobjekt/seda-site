@@ -967,14 +967,14 @@ var state6 = function(scatterplot) {
       name: 'White-Black Socioeconomic Inequality',
     }),
     tooltip: {
-      trigger: 'item',
+      // trigger: 'item',
       // borderColor: '#fff',
       formatter: function(item) {
         return scatterplot.formatTooltip(item, scatterplot.data, 'White-Black Socioeconomic Inequality', 'White-Black Achievement Gap');
       }
     },
     series: [
-      { id: 'base' },
+      // { id: 'base' },
       {
         type:'scatter',
         markLine: noRacialDisparityMarkline
@@ -1028,14 +1028,14 @@ var state7 = function(scatterplot) {
       subtext: Title.subtext, // '100 Largest U.S. School Districts 2009-2016'
     },
     tooltip: {
-      trigger: 'item',
+      // trigger: 'item',
       // borderColor: '#fff',
       formatter: function(item) {
         return scatterplot.formatTooltip(item, scatterplot.data, 'White-Black Socioeconomic Inequality', 'White-Black Achievement Gap');
       }
     },
     series: [
-      dataSeries,
+      // dataSeries,
       {
         type: 'scatter',
         data: top100,

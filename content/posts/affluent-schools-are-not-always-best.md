@@ -11,15 +11,15 @@ statustype: post
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
 ---
 
-{{% state-wrapper state="state2" notmerge="true" %}}
+{{% state-wrapper state="state1" notmerge="true" %}}
 
-The Chicago Public Schools are more successful than they are given credit for. In 3rd grade, where our test data begins, the average student in Chicago scores below a 2nd-grade level, as shown in the accompanying chart. 
+The Chicago Public Schools are more successful than they are given credit for. In 3rd grade, where our test data begins, the average student in Chicago scores below a 2nd-grade level, as shown in the accompanying chart.
 
 <img src="/images/articles/affluent-schools/state1.jpg" class=" d-md-none" />
 
-This figure highlights the relationship between how rich a district is and how its students perform on standardized tests in 3rd grade. The horizontal axis shows the average family socioeconomic status (SES) in the district (<a href="/help-faq/#ses-measured">see here for how we measure SES</a>), where 0 represents the SES of the average district in the U.S. More affluent districts are located to the right in the figure; poorer district to the left. 
+This figure highlights the relationship between how rich a district is and how its students perform on standardized tests in 3rd grade. The horizontal axis shows the average family socioeconomic status (SES) in the district (<a href="/help-faq/#ses-measured">see here for how we measure SES</a>), where 0 represents the SES of the average district in the U.S. More affluent districts are located to the right in the figure; poorer district to the left.
 
-In many ways the pattern shown here is not surprising: children’s scores are much higher in richer districts. For example, in relatively affluent Anne Arundel County, MD, average test scores are well above average in 3rd grade. In Chicago, by contrast, average test scores are far below average ... 
+In many ways the pattern shown here is not surprising: children’s scores are much higher in richer districts. For example, in relatively affluent Anne Arundel County, MD, average test scores are well above average in 3rd grade. In Chicago, by contrast, average test scores are far below average ...
 <br><br>
 
 {{% /state-wrapper %}}
@@ -59,11 +59,11 @@ In many ways the pattern shown here is not surprising: children’s scores are m
 
 {{% state-wrapper state="state7" notmerge="true" %}}
 
-<br><br>... and by 8th grade, Chicago students perform near the national average. They have experienced the equivalent of six years of average learning in the five years between 3rd and 8th grade. The families in Chicago’s public schools tend to be lower in socioeconomic status, and the average test scores are relatively modest, but, year after year, the schools are lifting children up at an impressive rate.      
+<br><br>... and by 8th grade, Chicago students perform near the national average. They have experienced the equivalent of six years of average learning in the five years between 3rd and 8th grade. The families in Chicago’s public schools tend to be lower in socioeconomic status, and the average test scores are relatively modest, but, year after year, the schools are lifting children up at an impressive rate.
 
 <img src="/images/articles/affluent-schools/state6.jpg" class=" d-md-none" />
 
-In Anne Arundel, the opposite is true. Although students there are more affluent than average and score above a 4th grade level in 3rd grade, they learn at a far lower rate than their Chicago peers. By 8th grade their scores are only slightly above average. 
+In Anne Arundel, the opposite is true. Although students there are more affluent than average and score above a 4th grade level in 3rd grade, they learn at a far lower rate than their Chicago peers. By 8th grade their scores are only slightly above average.
 
 It’s common to think of the average test scores in a school as a measure of school quality. After all, if students are scoring well on tests, they must be learning something, right? To understand what is wrong with this assumption, though, consider a hospital. We shouldn’t assess a hospital based on the health of its patients; rather, we’d want to know how much patient health improves as a result of their time in that hospital. Similarly, we shouldn’t evaluate a school based on the average scores of its students, but rather by how much students learn while in school. If we can measure the change in test scores as students move from one grade to the next, we gain a more accurate picture of what a school is accomplishing.<br><br>
 
@@ -72,9 +72,9 @@ It’s common to think of the average test scores in a school as a measure of sc
 
 {{% state-wrapper state="state19" notmerge="true" %}}
 
-<br class="d-sm-none d-md-block"><br class="d-sm-none d-md-block">The Opportunity Explorer provides this data — the “learning rate” — for schools, school districts, and counties across the country. The result is an unexpected story of the quality of public education in the United States. We see, for example, that students in some relatively affluent districts—like Anne Arundel County—show little learning as they progress from one grade to the next. We discover, too, that students in some poor districts start off testing far below average, but the schools appear to be doing an outstanding job, where students are catching up to and exceeding the national average. 
+<br class="d-sm-none d-md-block"><br class="d-sm-none d-md-block">The Opportunity Explorer provides this data — the “learning rate” — for schools, school districts, and counties across the country. The result is an unexpected story of the quality of public education in the United States. We see, for example, that students in some relatively affluent districts—like Anne Arundel County—show little learning as they progress from one grade to the next. We discover, too, that students in some poor districts start off testing far below average, but the schools appear to be doing an outstanding job, where students are catching up to and exceeding the national average.
 
-This figure highlights the relationship between how rich a district is and how fast its students learn on average. As before, the horizontal axis shows the average SES in the district. But here the vertical axis represents district learning rates: the higher the district is located in the figure, the faster students’ test scores improve from one grade to the next. 
+This figure highlights the relationship between how rich a district is and how fast its students learn on average. As before, the horizontal axis shows the average SES in the district. But here the vertical axis represents district learning rates: the higher the district is located in the figure, the faster students’ test scores improve from one grade to the next.
 
 <img src="/images/articles/affluent-schools/state7.jpg" class=" d-md-none" />
 
@@ -141,7 +141,7 @@ Again, the data provide us an answer.<br class="d-sm-none d-md-block"><br class=
 
 {{% state-wrapper state="state14" notmerge="true" %}}
 
-<br class="d-sm-none d-md-block"><br>This figure compares district learning rates with average test scores in 3rd grade. As before, districts higher in the figure have higher learning rates. In places on the left, students have had relatively few educational opportunities by the time they reach 3rd grade. On the right side, early educational opportunities are high.  
+<br class="d-sm-none d-md-block"><br>This figure compares district learning rates with average test scores in 3rd grade. As before, districts higher in the figure have higher learning rates. In places on the left, students have had relatively few educational opportunities by the time they reach 3rd grade. On the right side, early educational opportunities are high.
 
 
 <img src="/images/articles/affluent-schools/state14.jpg" class=" d-md-none" />
@@ -185,6 +185,6 @@ More generally, the data tell us not only <i>where</i> there is more or less edu
 
 <br><br class="d-sm-none d-md-block">In the upper left are districts, like Chicago, where educational opportunities are concentrated during the schooling years. Here children have few opportunities early on, but show substantial learning after grade 3. Children in such places may benefit from investments focused on improving early childhood opportunities.
 
-If we want to improve children’s educational outcomes, we will need to change how—and where and when—we provide educational opportunities throughout children’s lives. Some people assume that we simply need to improve schools. Others argue that the schools are fine, but we need to provide more learning opportunities in early childhood—in children’s homes and childcare centers and preschool programs. The data show that there may be no one best strategy. Rather we need targeted strategies—targeted to specific age groups in specific places—to allow all of our children to reach their full potential, regardless of where they grow up. 
+If we want to improve children’s educational outcomes, we will need to change how—and where and when—we provide educational opportunities throughout children’s lives. Some people assume that we simply need to improve schools. Others argue that the schools are fine, but we need to provide more learning opportunities in early childhood—in children’s homes and childcare centers and preschool programs. The data show that there may be no one best strategy. Rather we need targeted strategies—targeted to specific age groups in specific places—to allow all of our children to reach their full potential, regardless of where they grow up.
 
 {{% /state-wrapper %}}

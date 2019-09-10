@@ -1423,7 +1423,7 @@ var state11 = function(scatterplot) {
       scale: false
     }),
     tooltip: {
-      trigger: 'item',
+      // trigger: 'item',
       formatter: function(item) {
         return scatterplot.formatTooltip(item, scatterplot.data, 'White-Black Socioeconomic Segregation', 'White-Black Achievement Gap');
       }

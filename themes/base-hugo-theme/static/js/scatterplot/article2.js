@@ -1554,7 +1554,7 @@ var state14 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
@@ -1565,7 +1565,7 @@ var state14 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Years of Growth per Grade');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
       }
     },
     series: [
@@ -1600,11 +1600,11 @@ var state14 = function(scatterplot) {
               ],
               [
                 {
-                  name: 'Average', // x axis
+                  name: 'Average', // y axis markline
                   coord: [-4, 1],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: false,
                   },
                   lineStyle: {
                     color: '#052965',
@@ -1613,7 +1613,29 @@ var state14 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
+                  symbol: 'none'
+                },
+              ],
+              [
+                {
+                  name: 'Average', // y axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
                   symbol: 'none'
                 },
               ],
@@ -1713,7 +1735,7 @@ var state15 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
@@ -1724,7 +1746,7 @@ var state15 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Years of Growth per Grade');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
       }
     },
     series: [
@@ -1774,11 +1796,12 @@ var state15 = function(scatterplot) {
             data: [
               [
                 {
-                  name: '', // Y axis
+                  name: 'Average', // Y axis
                   coord: [0, 1.6],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: true,
+                    position: 'end'
                   },
                   lineStyle: {
                     color: '#052965',
@@ -1787,8 +1810,30 @@ var state15 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [ 0, 0.4 ],
+                  coord: [ 0, 0.45 ],
                   symbol: 'none',
+                },
+              ],
+              [
+                {
+                  name: 'Average', // y axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
+                  symbol: 'none'
                 },
               ],
               [
@@ -1806,7 +1851,7 @@ var state15 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
                   symbol: 'none'
                 },
               ]
@@ -1936,24 +1981,18 @@ var state16 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
       min: -4,
       max: 4,
       name: 'Achievement (In Grade Levels)',
-      // nameTextStyle: {
-      //   fontFamily: 'SharpGrotesk-Medium20',
-      //   color: '#FFF',
-      //   fontSize: 12,
-      //   fontWeight: 'normal'
-      // }
     },
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Years of Growth per Grade');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
       }
     },
     series: [
@@ -2038,11 +2077,13 @@ var state16 = function(scatterplot) {
             data: [
               [
                 {
-                  name: '', // Y axis
+                  name: 'Average', // Y axis
                   coord: [0, 1.6],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: true,
+                    position: 'end',
+                    padding: [0, 0, 0, 0]
                   },
                   lineStyle: {
                     color: '#052965',
@@ -2051,17 +2092,40 @@ var state16 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [ 0, 0.4 ],
+                  coord: [ 0, 0.45 ],
                   symbol: 'none',
                 },
               ],
               [
                 {
-                  name: '', // x axis
+                  name: 'Average', // x axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
+                  symbol: 'none'
+                },
+              ],
+              [
+                {
+                  name: 'Average', // x axis
                   coord: [-4, 1],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: false,
+                    position: 'end'
                   },
                   lineStyle: {
                     color: '#052965',
@@ -2070,7 +2134,7 @@ var state16 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
                   symbol: 'none'
                 },
               ]
@@ -2140,7 +2204,7 @@ var state17 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
@@ -2151,7 +2215,7 @@ var state17 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Years of Growth per Grade');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
       }
     },
     series: [
@@ -2232,11 +2296,13 @@ var state17 = function(scatterplot) {
             data: [
               [
                 {
-                  name: '', // Y axis
+                  name: 'Average', // Y axis
                   coord: [0, 1.6],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: true,
+                    position: 'end',
+                    padding: [0, 0, 0, 0]
                   },
                   lineStyle: {
                     color: '#052965',
@@ -2245,8 +2311,30 @@ var state17 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [0, 0.4],
+                  coord: [0, 0.45],
                   symbol: 'none',
+                },
+              ],
+              [
+                {
+                  name: 'Average', // x axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
+                  symbol: 'none'
                 },
               ],
               [
@@ -2264,7 +2352,7 @@ var state17 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
                   symbol: 'none'
                 },
               ]
@@ -2333,7 +2421,7 @@ var state18 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
@@ -2344,7 +2432,7 @@ var state18 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Years of Growth per Grade');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
       }
     },
     series: [
@@ -2424,11 +2512,13 @@ var state18 = function(scatterplot) {
             data: [
               [
                 {
-                  name: '', // Y axis
+                  name: 'Average', // Y axis
                   coord: [0, 1.6],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: true,
+                    position: 'end',
+                    padding: [0, 0, 0, 0]
                   },
                   lineStyle: {
                     color: '#052965',
@@ -2437,8 +2527,30 @@ var state18 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [0, 0.4],
+                  coord: [0, 0.45],
                   symbol: 'none',
+                },
+              ],
+              [
+                {
+                  name: 'Average', // x axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
+                  symbol: 'none'
                 },
               ],
               [
@@ -2456,7 +2568,7 @@ var state18 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
                   symbol: 'none'
                 },
               ]
@@ -2524,7 +2636,7 @@ var state19 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
@@ -2535,7 +2647,7 @@ var state19 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Years of Growth per Grade');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Learning Rate');
       }
     },
     series: [

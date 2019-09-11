@@ -400,7 +400,7 @@ Scatterplot.prototype.formatTooltip = function(item, data, xLabel, yLabel) {
       String(item.value[0]) +
       String(item.value[1])
     ).length;
-    const lineBreak = testLength > 34 ? '<br>' : '&nbsp;&nbsp;';
+    const lineBreak = testLength > itemName.length ? '<br>' : '&nbsp;&nbsp;';
     returnString = '<span>' + itemName + '</span><br>'
       + '<small>' + xLabel + ': ' + item.value[0] + lineBreak
       + yLabel + ': ' + item.value[1] + '</small>';

@@ -193,6 +193,9 @@ function Scatterplot(container, props) {
         },
         tooltip: {
           trigger: 'item',
+          transitionDuration: 0.6,
+          showDelay: 50,
+          hideDelay: 0,
           // borderColor: '#fff',
           formatter: function(item) {
             // console.log(item);
@@ -378,4 +381,33 @@ Scatterplot.prototype.getSeriesDataInRange = function(values, axis, range) {
   return values.filter(function(v) {
     return v[index] > range.min && v[index] < range.max;
   })
+}
+
+Scatterplot.prototype.formatTooltip = function(item, data, xLabel, yLabel) {
+  // console.log(item);
+  // console.log(data);
+  let returnString = null;
+  if (!!item && !!item.value && !!item.value[3]) {
+    const itemName =
+      data &&
+      data.districts &&
+      data.districts.name &&
+      data.districts.name[item.value[3]] ?
+      data.districts.name[item.value[3]] : 'Unavailable';
+    const testLength = (
+      xLabel +
+      yLabel +
+      String(item.value[0]) +
+      String(item.value[1])
+    ).length;
+    const lineBreak = testLength > itemName.length ? '<br>' : '&nbsp;&nbsp;';
+    returnString = '<span>' + itemName + '</span><br>'
+      + '<small>' + xLabel + ': ' + item.value[0] + lineBreak
+      + yLabel + ': ' + item.value[1] + '</small>';
+  } else {
+    // console.log(item);
+    // Send back a different string for the markarea tooltip.
+    returnString = '<span>' + item.data.name + '</span><br>'
+  }
+  return returnString;
 }

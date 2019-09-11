@@ -149,236 +149,242 @@ xhr.onerror = function (e) {
 };
 xhr.send(null);
 
-/** State 1: Show white scores on x axis and black scores on y axis */
+// /** State 1: Show white scores on x axis and black scores on y axis */
+// var state1 = function(scatterplot) {
+//   // this state is created from the base
+//   const base = scatterplot.getState('base');
+//   // Set up array of district IDs and names for building search series.
+//   if (names.length <= 0 &&
+//     scatterplot &&
+//     scatterplot.data &&
+//     scatterplot.data.districts &&
+//     scatterplot.data.districts.name) {
+//     names = scatterplot.data.districts.name;
+//     // console.log(names);
+//   }
+//   var dataSeries = [];
+//   var highlight = {};
+//   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+//     // There's a search item selected.
+//     // Add it to the highlight object.
+//     if (names[searchItemIDs[0]].length >= 1) {
+//       highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+//     }
+//     // console.log(highlight);
+//   }
+//
+//   // Update title and subtext placeholders
+//   Title['text'] = 'Average Test Scores, Grade 3';
+//   // Title['subtext'] = 'U.S. School Districts 2009-2016';
+//   // Set title and subtitle
+//   Title.setTitle();
+//
+//   const baseOverrides = {
+//     title: {
+//       show: false,
+//       text: Title.text, // 'Academic Achievement and Socioeconomic Status, Grade 3',
+//       subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
+//       textAlign: 'center',
+//       left: '50%',
+//       top: '10px',
+//     },
+//     legend: {
+//       show: true,
+//     },
+//     grid: baseGrid,
+//     yAxis: deepmerge(baseYAxis, {
+//       min: -4,
+//       max: 4,
+//       name: 'Achievement (in Grade Levels)',
+//     }),
+//     xAxis: {
+//       min: -4,
+//       max: 3,
+//       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
+//     },
+//     tooltip: {
+//       // trigger: 'item',
+//       formatter: function(item) {
+//         return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+//       }
+//     },
+//     series: [
+//       { id: 'base' },
+//       {
+//         id: 'highlighted',
+//         itemStyle: highlightedItemStyle,
+//         label: highlightedLabel(highlight),
+//         zlevel: 500,
+//       },
+//       {
+//         type:'scatter',
+//           markLine: {
+//             animation: false,
+//             silent: true,
+//             data: [
+//             [
+//               {
+//                 name: '', // x axis
+//                 coord: [-4, 0],
+//                 symbol: 'none',
+//                 lineStyle: {
+//                   // color: '#fff', // 'rgba(0,0,0,0.6)'
+//                   color: '#052965',
+//                   type: 'solid',
+//                   width: 1
+//                 }
+//               },
+//               {
+//                 coord: [3, 0],
+//                 symbol: 'none'
+//               },
+//             ]
+//           ]
+//         }
+//       },
+//     ]
+//   }
+//   return {
+//     xVar: 'all_ses',
+//     yVar: 'all_avg3',
+//     zVar: 'all_sz',
+//     highlighted: Object.keys(highlight),
+//     options: deepmerge.all([base.options, baseOverrides])
+//   }
+// }
+
+// /** State 1: Show basic chart */
+// var state1_1 = function(scatterplot) {
+//   // this state is created from the base
+//   const base = scatterplot.getState('base');
+//   // Set up array of district IDs and names for building search series.
+//   if (names.length <= 0 &&
+//     scatterplot &&
+//     scatterplot.data &&
+//     scatterplot.data.districts &&
+//     scatterplot.data.districts.name) {
+//     names = scatterplot.data.districts.name;
+//     // console.log(names);
+//   }
+//   var dataSeries = [];
+//   var highlight = {};
+//   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
+//     // There's a search item selected.
+//     // Add it to the highlight object.
+//     if (names[searchItemIDs[0]].length >= 1) {
+//       highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
+//     }
+//     // console.log(highlight);
+//   }
+//
+//   // Update title and subtext placeholders
+//   Title['text'] = 'Average Test Scores, Grade 3';
+//   // Title['subtext'] = 'U.S. School Districts 2009-2016';
+//   // Set title and subtitle
+//   Title.setTitle();
+//
+//   const baseOverrides = {
+//     title: {
+//       show: false,
+//       text: Title.text, // 'Academic Achievement and Socioeconomic Status, Grade 3',
+//       subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
+//       textAlign: 'center',
+//       left: '50%',
+//       top: '10px',
+//     },
+//     legend: {
+//       show: true,
+//     },
+//     grid: baseGrid,
+//     yAxis: deepmerge(baseYAxis, {
+//       min: -4,
+//       max: 4,
+//       name: 'Achievement (in Grade Levels)',
+//     }),
+//     xAxis: {
+//       min: -4,
+//       max: 3,
+//       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
+//     },
+//     series: [
+//       { id: 'base' },
+//       {
+//         id: 'highlighted',
+//         itemStyle: highlightedItemStyle,
+//         label: highlightedLabel(highlight),
+//         zlevel: 500,
+//       },
+//       {
+//         type:'scatter',
+//           markLine: {
+//             animation: false,
+//             silent: true,
+//             data: [
+//             [
+//               {
+//                 name: '', // upper right markline
+//                 coord: [-4, -1.75],
+//                 symbol: 'none',
+//                 lineStyle: {
+//                   color: 'rgba(255, 192, 45, 1)',
+//                   type: 'solid',
+//                   width: 2
+//                 },
+//               },
+//               {
+//                 coord: [1, 0],
+//                 symbol: 'none'
+//               },
+//             ],
+//           [
+//             {
+//               name: '', // lower left markline
+//               coord: [3, 3],
+//               symbol: 'none',
+//               lineStyle: {
+//                 color: 'rgba(255, 192, 45, 1)',
+//                 type: 'solid',
+//                 width: 2
+//               },
+//             },
+//             {
+//               coord: [-2, -2],
+//               symbol: 'none'
+//             },
+//           ],
+//           [
+//             {
+//               name: '', // x axis
+//               coord: [-4, 0],
+//               symbol: 'none',
+//               lineStyle: {
+//                 // color: '#fff', // 'rgba(0,0,0,0.6)'
+//                 color: '#052965',
+//                 type: 'solid',
+//                 width: 1
+//               }
+//             },
+//             {
+//               coord: [3, 0],
+//               symbol: 'none'
+//             },
+//           ]
+//         ]
+//       }
+//       },
+//     ]
+//   }
+//   return {
+//     xVar: 'all_ses',
+//     yVar: 'all_avg3',
+//     zVar: 'all_sz',
+//     highlighted: Object.keys(highlight),
+//     options: deepmerge.all([base.options, baseOverrides ])
+//   }
+// }
+
+/** State 1: Grade 3 Chicago + Anne Arundel  */
 var state1 = function(scatterplot) {
-  // this state is created from the base
-  const base = scatterplot.getState('base');
-  // Set up array of district IDs and names for building search series.
-  if (names.length <= 0 &&
-    scatterplot &&
-    scatterplot.data &&
-    scatterplot.data.districts &&
-    scatterplot.data.districts.name) {
-    names = scatterplot.data.districts.name;
-    // console.log(names);
-  }
-  var dataSeries = [];
-  var highlight = {};
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
-  }
-
-  // Update title and subtext placeholders
-  Title['text'] = 'Average Test Scores, Grade 3';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
-  // Set title and subtitle
-  Title.setTitle();
-
-  const baseOverrides = {
-    title: {
-      show: false,
-      text: Title.text, // 'Academic Achievement and Socioeconomic Status, Grade 3',
-      subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
-      textAlign: 'center',
-      left: '50%',
-      top: '10px',
-    },
-    legend: {
-      show: true,
-    },
-    grid: baseGrid,
-    yAxis: deepmerge(baseYAxis, {
-      min: -4,
-      max: 4,
-      name: 'Achievement (in Grade Levels)',
-    }),
-    xAxis: {
-      min: -4,
-      max: 3,
-      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
-    },
-    series: [
-      { id: 'base' },
-      {
-        id: 'highlighted',
-        itemStyle: highlightedItemStyle,
-        label: highlightedLabel(highlight),
-        zlevel: 500,
-      },
-      {
-        type:'scatter',
-          markLine: {
-            animation: false,
-            silent: true,
-            data: [
-            [
-              {
-                name: '', // x axis
-                coord: [-4, 0],
-                symbol: 'none',
-                lineStyle: {
-                  // color: '#fff', // 'rgba(0,0,0,0.6)'
-                  color: '#052965',
-                  type: 'solid',
-                  width: 1
-                }
-              },
-              {
-                coord: [3, 0],
-                symbol: 'none'
-              },
-            ]
-          ]
-        }
-      },
-    ]
-  }
-  return {
-    xVar: 'all_ses',
-    yVar: 'all_avg3',
-    zVar: 'all_sz',
-    highlighted: Object.keys(highlight),
-    options: deepmerge.all([base.options, baseOverrides])
-  }
-}
-
-/** State 1: Show basic chart */
-var state1_1 = function(scatterplot) {
-  // this state is created from the base
-  const base = scatterplot.getState('base');
-  // Set up array of district IDs and names for building search series.
-  if (names.length <= 0 &&
-    scatterplot &&
-    scatterplot.data &&
-    scatterplot.data.districts &&
-    scatterplot.data.districts.name) {
-    names = scatterplot.data.districts.name;
-    // console.log(names);
-  }
-  var dataSeries = [];
-  var highlight = {};
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
-  }
-
-  // Update title and subtext placeholders
-  Title['text'] = 'Average Test Scores, Grade 3';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
-  // Set title and subtitle
-  Title.setTitle();
-
-  const baseOverrides = {
-    title: {
-      show: false,
-      text: Title.text, // 'Academic Achievement and Socioeconomic Status, Grade 3',
-      subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
-      textAlign: 'center',
-      left: '50%',
-      top: '10px',
-    },
-    legend: {
-      show: true,
-    },
-    grid: baseGrid,
-    yAxis: deepmerge(baseYAxis, {
-      min: -4,
-      max: 4,
-      name: 'Achievement (in Grade Levels)',
-    }),
-    xAxis: {
-      min: -4,
-      max: 3,
-      name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
-    },
-    series: [
-      { id: 'base' },
-      {
-        id: 'highlighted',
-        itemStyle: highlightedItemStyle,
-        label: highlightedLabel(highlight),
-        zlevel: 500,
-      },
-      {
-        type:'scatter',
-          markLine: {
-            animation: false,
-            silent: true,
-            data: [
-            [
-              {
-                name: '', // upper right markline
-                coord: [-4, -1.75],
-                symbol: 'none',
-                lineStyle: {
-                  color: 'rgba(255, 192, 45, 1)',
-                  type: 'solid',
-                  width: 2
-                },
-              },
-              {
-                coord: [1, 0],
-                symbol: 'none'
-              },
-            ],
-          [
-            {
-              name: '', // lower left markline
-              coord: [3, 3],
-              symbol: 'none',
-              lineStyle: {
-                color: 'rgba(255, 192, 45, 1)',
-                type: 'solid',
-                width: 2
-              },
-            },
-            {
-              coord: [-2, -2],
-              symbol: 'none'
-            },
-          ],
-          [
-            {
-              name: '', // x axis
-              coord: [-4, 0],
-              symbol: 'none',
-              lineStyle: {
-                // color: '#fff', // 'rgba(0,0,0,0.6)'
-                color: '#052965',
-                type: 'solid',
-                width: 1
-              }
-            },
-            {
-              coord: [3, 0],
-              symbol: 'none'
-            },
-          ]
-        ]
-      }
-      },
-    ]
-  }
-  return {
-    xVar: 'all_ses',
-    yVar: 'all_avg3',
-    zVar: 'all_sz',
-    highlighted: Object.keys(highlight),
-    options: deepmerge.all([base.options, baseOverrides ])
-  }
-}
-
-/** State 2: Grade 3 Chicago + Anne Arundel  */
-var state2 = function(scatterplot) {
   if (names.length <= 0 &&
     scatterplot &&
     scatterplot.data &&
@@ -431,6 +437,12 @@ var state2 = function(scatterplot) {
         min: -4,
         max: 3,
         name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
+      },
+      tooltip: {
+        // trigger: 'item',
+        formatter: function(item) {
+          return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+        }
       },
       series: [
         { id: 'base' },
@@ -515,6 +527,12 @@ var state3 = function(scatterplot) {
         max: 3,
         name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
       },
+      tooltip: {
+        // trigger: 'item',
+        formatter: function(item) {
+          return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+        }
+      },
       series: [
         { id: 'base' },
         {
@@ -595,6 +613,12 @@ var state4 = function(scatterplot) {
       min: -4,
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
     },
     series: [
       { id: 'base' },
@@ -677,23 +701,17 @@ var state5 = function(scatterplot) {
       min: -4, // -0.5,
       max: 4, // 9,
       name: 'Achievement (in Grade Levels)',
-      // nameTextStyle: {
-      //   fontFamily: 'SharpGrotesk-Medium20',
-      //   color: '#FFF',
-      //   fontSize: 12,
-      //   fontWeight: 'normal'
-      // }
     },
     xAxis: {
       min: -4,
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
-      // nameTextStyle: {
-      //   fontFamily: 'SharpGrotesk-Medium20',
-      //   color: '#FFF',
-      //   fontSize: 12,
-      //   fontWeight: 'normal'
-      // }
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
     },
     series: [
       { id: 'base' },
@@ -782,6 +800,12 @@ var state6 = function(scatterplot) {
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
+    },
     series: [
       { id: 'base' },
       {
@@ -868,6 +892,12 @@ var state7 = function(scatterplot) {
       min: -4,
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
     },
     series: [
       { id: 'base' },
@@ -957,6 +987,12 @@ var state8 = function(scatterplot) {
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
+    },
     series: [
       { id: 'base' },
       {
@@ -1044,6 +1080,12 @@ var state9 = function(scatterplot) {
       min: -4,
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
     },
     series: [
       { id: 'base' },
@@ -1133,6 +1175,12 @@ var state10 = function(scatterplot) {
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
+    },
     series: [
       { id: 'base' },
       {
@@ -1220,6 +1268,12 @@ var state11 = function(scatterplot) {
       min: -4,
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
     },
     series: [
       { id: 'base' },
@@ -1309,6 +1363,12 @@ var state12 = function(scatterplot) {
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
     },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
+    },
     series: [
       { id: 'base' },
       {
@@ -1396,6 +1456,12 @@ var state13 = function(scatterplot) {
       min: -4,
       max: 3,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
+      }
     },
     series: [
       { id: 'base' },
@@ -1488,13 +1554,19 @@ var state14 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
       min: -4,
       max: 4,
       name: 'Achievement (In Grade Levels)',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
+      }
     },
     series: [
       { id: 'base' },
@@ -1528,11 +1600,11 @@ var state14 = function(scatterplot) {
               ],
               [
                 {
-                  name: 'Average', // x axis
+                  name: 'Average', // y axis markline
                   coord: [-4, 1],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: false,
                   },
                   lineStyle: {
                     color: '#052965',
@@ -1541,7 +1613,29 @@ var state14 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
+                  symbol: 'none'
+                },
+              ],
+              [
+                {
+                  name: 'Average', // y axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
                   symbol: 'none'
                 },
               ],
@@ -1641,13 +1735,19 @@ var state15 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
       min: -4,
       max: 4,
       name: 'Achievement (In Grade Levels)',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
+      }
     },
     series: [
       { id: 'base' },
@@ -1696,11 +1796,12 @@ var state15 = function(scatterplot) {
             data: [
               [
                 {
-                  name: '', // Y axis
+                  name: 'Average', // Y axis
                   coord: [0, 1.6],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: true,
+                    position: 'end'
                   },
                   lineStyle: {
                     color: '#052965',
@@ -1709,8 +1810,30 @@ var state15 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [ 0, 0.4 ],
+                  coord: [ 0, 0.45 ],
                   symbol: 'none',
+                },
+              ],
+              [
+                {
+                  name: 'Average', // y axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
+                  symbol: 'none'
                 },
               ],
               [
@@ -1728,7 +1851,7 @@ var state15 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
                   symbol: 'none'
                 },
               ]
@@ -1858,18 +1981,18 @@ var state16 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
       min: -4,
       max: 4,
       name: 'Achievement (In Grade Levels)',
-      nameTextStyle: {
-        fontFamily: 'SharpGrotesk-Medium20',
-        color: '#FFF',
-        fontSize: 12,
-        fontWeight: 'normal'
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
       }
     },
     series: [
@@ -1954,11 +2077,13 @@ var state16 = function(scatterplot) {
             data: [
               [
                 {
-                  name: '', // Y axis
+                  name: 'Average', // Y axis
                   coord: [0, 1.6],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: true,
+                    position: 'end',
+                    padding: [0, 0, 0, 0]
                   },
                   lineStyle: {
                     color: '#052965',
@@ -1967,17 +2092,40 @@ var state16 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [ 0, 0.4 ],
+                  coord: [ 0, 0.45 ],
                   symbol: 'none',
                 },
               ],
               [
                 {
-                  name: '', // x axis
+                  name: 'Average', // x axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
+                  symbol: 'none'
+                },
+              ],
+              [
+                {
+                  name: 'Average', // x axis
                   coord: [-4, 1],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: false,
+                    position: 'end'
                   },
                   lineStyle: {
                     color: '#052965',
@@ -1986,7 +2134,7 @@ var state16 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
                   symbol: 'none'
                 },
               ]
@@ -2056,13 +2204,19 @@ var state17 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
       min: -4,
       max: 4,
       name: 'Achievement (In Grade Levels)',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
+      }
     },
     series: [
       { id: 'base' },
@@ -2142,11 +2296,13 @@ var state17 = function(scatterplot) {
             data: [
               [
                 {
-                  name: '', // Y axis
+                  name: 'Average', // Y axis
                   coord: [0, 1.6],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: true,
+                    position: 'end',
+                    padding: [0, 0, 0, 0]
                   },
                   lineStyle: {
                     color: '#052965',
@@ -2155,8 +2311,30 @@ var state17 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [0, 0.4],
+                  coord: [0, 0.45],
                   symbol: 'none',
+                },
+              ],
+              [
+                {
+                  name: 'Average', // x axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
+                  symbol: 'none'
                 },
               ],
               [
@@ -2174,7 +2352,7 @@ var state17 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
                   symbol: 'none'
                 },
               ]
@@ -2243,13 +2421,19 @@ var state18 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
       min: -4,
       max: 4,
       name: 'Achievement (In Grade Levels)',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
+      }
     },
     series: [
       { id: 'base' },
@@ -2328,11 +2512,13 @@ var state18 = function(scatterplot) {
             data: [
               [
                 {
-                  name: '', // Y axis
+                  name: 'Average', // Y axis
                   coord: [0, 1.6],
                   symbol: 'none',
                   label: {
-                    show: false
+                    show: true,
+                    position: 'end',
+                    padding: [0, 0, 0, 0]
                   },
                   lineStyle: {
                     color: '#052965',
@@ -2341,8 +2527,30 @@ var state18 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [0, 0.4],
+                  coord: [0, 0.45],
                   symbol: 'none',
+                },
+              ],
+              [
+                {
+                  name: 'Average', // x axis markline
+                  coord: [4, 0.4],
+                  symbol: 'none',
+                  label: {
+                    show: true,
+                    position: 'middle',
+                    padding: [0, 0, -5, 0]
+                    // rotate: -90
+                  },
+                  lineStyle: {
+                    color: '#052965',
+                    type: 'solid',
+                    width: 0
+                  }
+                },
+                {
+                  coord: [4, 1.6],
+                  symbol: 'none'
                 },
               ],
               [
@@ -2360,7 +2568,7 @@ var state18 = function(scatterplot) {
                   }
                 },
                 {
-                  coord: [4, 1],
+                  coord: [3.75, 1],
                   symbol: 'none'
                 },
               ]
@@ -2428,13 +2636,19 @@ var state19 = function(scatterplot) {
     yAxis: {
       min: 0.4,
       max: 1.6,
-      name: 'Years of Growth per Grade',
+      name: 'Learning Rates',
       nameGap: 36
     },
     xAxis: {
       min: -4,
       max: 3.5,
       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
+    },
+    tooltip: {
+      // trigger: 'item',
+      formatter: function(item) {
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Learning Rate');
+      }
     },
     series: [
       { id: 'base' },
@@ -2523,8 +2737,8 @@ var scatterplot = new Scatterplot(rootEl);
 
 // set the states
 scatterplot.addState('state1', state1);
-scatterplot.addState('state1_1', state1_1);
-scatterplot.addState('state2', state2);
+// scatterplot.addState('state1_1', state1_1);
+// scatterplot.addState('state2', state2);
 scatterplot.addState('state3', state3);
 scatterplot.addState('state4', state4);
 scatterplot.addState('state5', state5);

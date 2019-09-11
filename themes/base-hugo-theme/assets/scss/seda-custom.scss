@@ -1312,6 +1312,43 @@ body.home {
       height: auto;
       width: 100%;
     }
+    a.readmore {
+     // text-underline-position: under;
+     padding: 0 14px 10px 0;
+     border-bottom-right-radius: 4px;
+      &:hover {
+       text-decoration: none !important;
+          /* border-bottom: 1px solid $seda-navy;
+          padding-bottom: 3px;
+          margin-bottom: -4px; */
+         
+        box-shadow: 3px 3px 4px -2px rgba(0,0,0,0.2);
+        //color: $seda-lightblue !important;
+        span {
+          //text-decoration: underline;
+          // display: block;
+          
+        }
+        .linkright {
+          background-color: #e9043a;
+        }
+      }
+    }
+    .linkright {
+      background-color: $seda-red;
+      //padding: 5px 9px;
+      border-radius: 32px;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 14px;
+        height: 14px;
+      }
+     
+    }
     .superhead {
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -1373,16 +1410,16 @@ body.home {
     &.fact-3 {
       padding: 4.8rem 0 4rem;
       h4 {
-        font-size: 1.4rem;
-        line-height: 2.1rem;
+        font-size: 1.7rem;
+        line-height: 1.5;
         // letter-spacing: .03rem;
         padding-bottom: 1.6rem;
       }
       p {
         color: #5D5D5D;
         font-family: $maisonneue-book;
-        font-size: 1.3rem;
-        line-height: 2.0rem;
+        font-size: 1.6rem;
+        line-height: 1.5;
         //padding-bottom: 4rem;
       }
       @include media-breakpoint-up(md) {
@@ -1426,7 +1463,7 @@ body.home {
         //padding-bottom: 9.6rem;
         text-align: center;
         font-family: $sharpgrotesk-med-15;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         line-height: 1.5;
         letter-spacing: .055rem;
         text-transform: uppercase;
@@ -1434,6 +1471,10 @@ body.home {
         //order: 4;
         color: #5D5D5D;
         color: #000;
+        width: 100%;
+        @include media-breakpoint-up(md) {
+          width: auto;
+        }
           &:hover {
             text-decoration: underline;
            color: $seda-dark !important;

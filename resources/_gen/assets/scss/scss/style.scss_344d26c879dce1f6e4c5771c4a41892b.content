@@ -18450,6 +18450,38 @@ body.home #main {
   width: 100%;
 }
 
+.row.fact a.readmore {
+  padding: 0 14px 10px 0;
+  border-bottom-right-radius: 4px;
+}
+
+.row.fact a.readmore:hover {
+  text-decoration: none !important;
+  /* border-bottom: 1px solid $seda-navy;
+          padding-bottom: 3px;
+          margin-bottom: -4px; */
+  box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.2);
+}
+
+.row.fact a.readmore:hover .linkright {
+  background-color: #e9043a;
+}
+
+.row.fact .linkright {
+  background-color: #ff003e;
+  border-radius: 32px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row.fact .linkright img {
+  width: 14px;
+  height: 14px;
+}
+
 .row.fact .superhead {
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -18533,16 +18565,16 @@ body.home #main {
 }
 
 .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
-  font-size: 1.4rem;
-  line-height: 2.1rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
   padding-bottom: 1.6rem;
 }
 
 .row.fact.fact-1 p, .row.fact.fact-2 p, .row.fact.fact-3 p {
   color: #5D5D5D;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
-  line-height: 2.0rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
 }
 
 @media (min-width: 768px) {
@@ -18592,13 +18624,20 @@ body.home #main {
 .row.fact.fact-1 .readmore, .row.fact.fact-2 .readmore, .row.fact.fact-3 .readmore {
   text-align: center;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   letter-spacing: .055rem;
   text-transform: uppercase;
   text-align: left;
   color: #5D5D5D;
   color: #000;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .row.fact.fact-1 .readmore, .row.fact.fact-2 .readmore, .row.fact.fact-3 .readmore {
+    width: auto;
+  }
 }
 
 .row.fact.fact-1 .readmore:hover, .row.fact.fact-2 .readmore:hover, .row.fact.fact-3 .readmore:hover {

@@ -1312,6 +1312,21 @@ body.home {
       height: auto;
       width: 100%;
     }
+    .linkright {
+      background-color: $seda-red;
+      //padding: 5px 9px;
+      border-radius: 32px;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 14px;
+        height: 14px;
+      }
+     
+    }
     .superhead {
       font-size: 1.2rem;
       text-transform: uppercase;

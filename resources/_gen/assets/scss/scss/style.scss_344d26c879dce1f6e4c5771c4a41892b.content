@@ -18450,6 +18450,21 @@ body.home #main {
   width: 100%;
 }
 
+.row.fact .linkright {
+  background-color: #ff003e;
+  border-radius: 32px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row.fact .linkright img {
+  width: 14px;
+  height: 14px;
+}
+
 .row.fact .superhead {
   font-size: 1.2rem;
   text-transform: uppercase;

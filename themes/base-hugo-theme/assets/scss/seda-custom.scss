@@ -1047,11 +1047,11 @@ body.home {
         }
       }
       svg, img {
-        
+        max-height: 256px;
         @include media-breakpoint-up(md) {
           min-height: 480px;
         }
-        max-height: 84vh;
+        
         
         @include media-breakpoint-only(xs) {
           
@@ -1071,6 +1071,7 @@ body.home {
           width: 82%;
         }
         @include media-breakpoint-up(md) {
+          max-height: 84vh;
           width: 82%;
         }
         @include media-breakpoint-up(lg) {
@@ -1367,6 +1368,11 @@ body.home {
       max-width: 100%;
       height: auto;
       width: 100%;
+    }
+    svg.svg-animated {
+      @include media-breakpoint-down(mm) {
+        display: none;
+      }
     }
     a.readmore {
      // text-underline-position: under;

@@ -18194,7 +18194,7 @@ body.home .hero .hero-child img.opaque {
 }
 
 body.home .hero .hero-child svg, body.home .hero .hero-child img {
-  max-height: 84vh;
+  max-height: 256px;
 }
 
 @media (min-width: 768px) {
@@ -18213,6 +18213,7 @@ body.home .hero .hero-child svg, body.home .hero .hero-child img {
 
 @media (min-width: 768px) {
   body.home .hero .hero-child svg, body.home .hero .hero-child img {
+    max-height: 84vh;
     width: 82%;
   }
 }
@@ -18493,6 +18494,12 @@ body.home #main {
   max-width: 100%;
   height: auto;
   width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .row.fact svg.svg-animated {
+    display: none;
+  }
 }
 
 .row.fact a.readmore {

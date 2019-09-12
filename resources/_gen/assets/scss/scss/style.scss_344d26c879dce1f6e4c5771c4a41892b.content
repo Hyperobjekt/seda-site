@@ -21665,8 +21665,16 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#avg-graphic {
-  opacity: 0;
+@media (max-width: 767.98px) {
+  #avg-graphic {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  #avg-graphic {
+    opacity: 0;
+  }
 }
 
 #avg-graphic.move {
@@ -21886,8 +21894,16 @@ body.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic {
-  opacity: 0;
+@media (max-width: 767.98px) {
+  #growth-graphic {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  #growth-graphic {
+    opacity: 0;
+  }
 }
 
 #growth-graphic.move {

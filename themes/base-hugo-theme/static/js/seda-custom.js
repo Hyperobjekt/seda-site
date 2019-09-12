@@ -23,16 +23,16 @@
 
     if (supportsSVGTransforms()) {
       // use svg animation
-      $('.svg-animated').removeClass('d-none');
-      $('.svg-static').addClass('d-none');
+      $('.svg-animated').removeClass('d-md-none');
+      $('.svg-static').addClass('d-md-none');
       //$('.svg-animated').addClass('d-none');
       //$('.svg-static').removeClass('d-none');
       console.log('Browser supports SVG transforms');
     } else {
       // static fallback
-      $('.svg-static').removeClass('d-none');
+      $('.svg-static').removeClass('d-md-none');
       $('.svg-static').addClass('opaque');
-      $('.svg-animated').addClass('d-none');
+      $('.svg-animated').addClass('d-md-none');
       console.log('Browser does not support SVG transforms');
     }
 

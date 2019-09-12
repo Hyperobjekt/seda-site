@@ -1555,7 +1555,12 @@ var state14 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Learning Rates',
-      nameGap: 36
+      nameGap: 45,
+      axisLabel: {
+        formatter: function(item) {
+          return scatterplot.getPercentDiffLabel(item);
+        }
+      }
     },
     xAxis: {
       min: -4,
@@ -1565,7 +1570,7 @@ var state14 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate', 0, 1);
       }
     },
     series: [
@@ -1736,7 +1741,12 @@ var state15 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Learning Rates',
-      nameGap: 36
+      nameGap: 45,
+      axisLabel: {
+        formatter: function(item) {
+          return scatterplot.getPercentDiffLabel(item);
+        }
+      }
     },
     xAxis: {
       min: -4,
@@ -1746,7 +1756,7 @@ var state15 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate', 0, 1);
       }
     },
     series: [
@@ -1982,7 +1992,12 @@ var state16 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Learning Rates',
-      nameGap: 36
+      nameGap: 45,
+      axisLabel: {
+        formatter: function(item) {
+          return scatterplot.getPercentDiffLabel(item);
+        }
+      }
     },
     xAxis: {
       min: -4,
@@ -1992,7 +2007,7 @@ var state16 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate', 0, 1);
       }
     },
     series: [
@@ -2205,7 +2220,12 @@ var state17 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Learning Rates',
-      nameGap: 36
+      nameGap: 45,
+      axisLabel: {
+        formatter: function(item) {
+          return scatterplot.getPercentDiffLabel(item);
+        }
+      }
     },
     xAxis: {
       min: -4,
@@ -2215,7 +2235,7 @@ var state17 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate', 0, 1);
       }
     },
     series: [
@@ -2422,7 +2442,12 @@ var state18 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Learning Rates',
-      nameGap: 36
+      nameGap: 45,
+      axisLabel: {
+        formatter: function(item) {
+          return scatterplot.getPercentDiffLabel(item);
+        }
+      }
     },
     xAxis: {
       min: -4,
@@ -2432,7 +2457,7 @@ var state18 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Achievement', 'Learning Rate', 0, 1);
       }
     },
     series: [
@@ -2637,7 +2662,12 @@ var state19 = function(scatterplot) {
       min: 0.4,
       max: 1.6,
       name: 'Learning Rates',
-      nameGap: 36
+      nameGap: 45,
+      axisLabel: {
+        formatter: function(item) {
+          return scatterplot.getPercentDiffLabel(item);
+        }
+      }
     },
     xAxis: {
       min: -4,
@@ -2647,7 +2677,7 @@ var state19 = function(scatterplot) {
     tooltip: {
       // trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Learning Rate');
+        return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Learning Rate', 0, 1);
       }
     },
     series: [

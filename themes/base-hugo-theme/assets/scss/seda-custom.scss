@@ -75,7 +75,7 @@ nav.navbar > div {
 
 // Basic fonts and text styles
 
-a {
+p a {
   text-decoration: underline;
   text-underline-position: under;
   &:hover {
@@ -1336,7 +1336,7 @@ body.home {
     }
     a.readmore {
      // text-underline-position: under;
-     padding: 0 14px 10px 0;
+     padding: 10px 14px 10px 0;
      border-bottom-right-radius: 4px;
      text-decoration: none;
       &:hover {

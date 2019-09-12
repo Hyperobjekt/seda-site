@@ -17680,8 +17680,6 @@ img.float-left {
 }
 
 .hero .hero-child .column {
-  margin-top: 9.2rem;
-  margin-bottom: 9.6rem;
   text-align: center;
   color: #ffffff;
 }
@@ -17689,6 +17687,7 @@ img.float-left {
 @media (min-width: 768px) {
   .hero .hero-child .column {
     margin-top: 13.8rem;
+    margin-bottom: 9.6rem;
   }
 }
 
@@ -17709,7 +17708,6 @@ img.float-left {
   font-size: 2.6rem;
   line-height: 2.55rem;
   letter-spacing: .013rem;
-  margin-bottom: 1.6rem;
 }
 
 @media (min-width: 768px) {
@@ -17717,6 +17715,7 @@ img.float-left {
     font-size: 2.8rem;
     line-height: 4.3rem;
     letter-spacing: .014rem;
+    margin-bottom: 1.6rem;
   }
 }
 
@@ -18195,29 +18194,12 @@ body.home .hero .hero-child img.opaque {
 }
 
 body.home .hero .hero-child svg, body.home .hero .hero-child img {
-  width: 82%;
-  min-height: 372px;
   max-height: 84vh;
 }
 
-@media (min-width: 320px) and (max-width: 373.98px) {
+@media (min-width: 768px) {
   body.home .hero .hero-child svg, body.home .hero .hero-child img {
-    position: absolute;
-    top: -13%;
-  }
-}
-
-@media (min-width: 374px) and (max-width: 575.98px) {
-  body.home .hero .hero-child svg, body.home .hero .hero-child img {
-    position: absolute;
-    top: 0%;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-  body.home .hero .hero-child svg, body.home .hero .hero-child img {
-    position: absolute;
-    top: -4%;
+    min-height: 480px;
   }
 }
 
@@ -18225,6 +18207,13 @@ body.home .hero .hero-child svg, body.home .hero .hero-child img {
   body.home .hero .hero-child svg, body.home .hero .hero-child img {
     position: absolute;
     top: 2%;
+    width: 82%;
+  }
+}
+
+@media (min-width: 768px) {
+  body.home .hero .hero-child svg, body.home .hero .hero-child img {
+    width: 82%;
   }
 }
 
@@ -18256,17 +18245,11 @@ body.home .hero .hero-child #hero-overlay {
   position: absolute;
 }
 
-@media (max-width: 767.98px) {
-  body.home .hero .hero-child #hero-overlay {
-    top: 30%;
-  }
-}
-
 body.home .hero .hero-child .column h2 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   color: #ffffff;
-  font-size: 1.7rem;
-  line-height: 2.4rem;
+  font-size: 1.9rem;
+  line-height: 1.5;
   letter-spacing: .009rem;
   /* @include media-breakpoint-up(mm) {
             font-size: 3.6rem;
@@ -18331,7 +18314,7 @@ body.home .hero .hero-child .column p {
   color: #ffffff;
   font-size: 1.3rem;
   line-height: 2.0rem;
-  margin-top: 3.2rem;
+  margin-top: 2.4rem;
   margin-bottom: 3.2rem;
   animation-delay: 3.8s;
   z-index: 2;
@@ -18355,8 +18338,8 @@ body.home .hero .hero-child .column p.hero-animate {
 
 @media (min-width: 320px) {
   body.home .hero .hero-child .column p {
-    font-size: 1.3rem;
-    line-height: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
   }
 }
 
@@ -18368,6 +18351,7 @@ body.home .hero .hero-child .column p.hero-animate {
     font-size: 1.6rem;
     line-height: 2.4rem;
     margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
   }
 }
 
@@ -18629,7 +18613,7 @@ body.home #main {
 .row.fact.fact-1 h4, .row.fact.fact-2 h4, .row.fact.fact-3 h4 {
   font-size: 1.7rem;
   line-height: 1.5;
-  padding-bottom: 1.6rem;
+  padding-bottom: 2.4rem;
 }
 
 .row.fact.fact-1 p, .row.fact.fact-2 p, .row.fact.fact-3 p {
@@ -18695,11 +18679,13 @@ body.home #main {
   color: #000;
   width: 100%;
   text-decoration: none;
+  margin-top: 0.8rem;
 }
 
 @media (min-width: 768px) {
   .row.fact.fact-1 .readmore, .row.fact.fact-2 .readmore, .row.fact.fact-3 .readmore {
     width: auto;
+    margin-top: 0;
   }
 }
 

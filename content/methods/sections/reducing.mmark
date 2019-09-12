@@ -7,7 +7,7 @@ We use <i>hierarchical linear models</i> to produce estimates of average perform
 <br><br>
 We have measures of the average test scores in up to 48 grade-year cells in each test subject for each school, district, or county. The scores are adjusted so that a value of 3 corresponds to the average achievement of 3rd graders nationally, a value of 4 corresponds to the average achievement of 4th graders nationally, and so on. For each subject, these can be represented in a table like this:
 <br><br>
-<h5>Hypothetical Average Test Scores (Grade-level Equivalents), By Grade and Year</h5>
+<h5 class="big-superhead">Hypothetical Average Test Scores (Grade-level Equivalents), By Grade and Year</h5>
 
 {.table-responsive .table .seda-table .left-2 .first-col-bold}
 | Grade | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 |
@@ -29,7 +29,7 @@ From this table, we can compute the average test score, the average learning rat
 
 To compute the average test score across grades and years, we first use the information in the table to calculate how far above or below the national average students are in each grade and year. This entails subtracting the national grade-level average, e.g., 8 in 8th grade, from the grade-year-specific score.
 <br><br><br>
-<h5>Hypothetical Average Test Scores (Grade-level Equivalents Relative to National Average), By Grade and Year</h5>
+<h5 class="big-superhead">Hypothetical Average Test Scores (Grade-level Equivalents Relative to National Average), By Grade and Year</h5>
 
 {.table-responsive .table .seda-table .left-2 .first-col-bold}
 | Grade | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 |
@@ -48,7 +48,7 @@ We then compute the average of these values. In this example, the average differ
 <h5>Computing the average learning rate</h5> 
 To compute the average learning rate, we compare students’ average scores in one grade and year to those in the next grade and year (see below). In other words, we look at grade-to-grade improvements in performance within each cohort.
 
-<h5>Hypothetical Average Test Scores (Grade-level Equivalents), By Grade and Year</h5>
+<h5 class="big-superhead">Hypothetical Average Test Scores (Grade-level Equivalents), By Grade and Year</h5>
 
 {.table-responsive .table .diag-arrow-bl .left-2 .seda-table}
 

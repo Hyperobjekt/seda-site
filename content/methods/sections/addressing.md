@@ -7,9 +7,9 @@ While these challenges are substantial, they are not insurmountable. The SEDA te
 
 Below we describe the raw data used to create SEDA and how we:
 
-1. Estimate the location of each state’s proficiency “thresholds”
-2. Place the proficiency thresholds on the same scale
-3. Estimate the mean test scores in each school, district, and county from the raw data and the threshold estimates
-4. Scale the estimates so they are measured in terms of grade levels
-5. Create estimates of average scores, learning rates, and trends in average scores.
-6. Report the data
+1. <a href="#" data-scroll-target="prof-threshold" class="scroll-to-section">Estimate the location of each state’s proficiency “thresholds”</a>
+2. <a href="#" data-scroll-target="placing-proficiency" class="scroll-to-section">Place the proficiency thresholds on the same scale</a>
+3. <a href="#" data-scroll-target="estimating-means" class="scroll-to-section">Estimate the mean test scores in each school, district, and county from the raw data and the threshold estimates</a>
+4. <a href="#" data-scroll-target="scaling-estimates" class="scroll-to-section">Scale the estimates so they are measured in terms of grade levels</a>
+5. <a href="#" data-scroll-target="reducing" class="scroll-to-section">Create estimates of average scores, learning rates, and trends in average scores.</a>
+6. <a href="#" data-scroll-target="reporting" class="scroll-to-section">Report the data</a>

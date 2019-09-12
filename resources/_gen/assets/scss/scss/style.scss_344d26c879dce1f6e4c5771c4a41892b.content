@@ -18491,7 +18491,7 @@ body.home #main {
 }
 
 .row.fact img.svg-static {
-  max-width: 100%;
+  max-width: 480px;
   height: auto;
   width: 100%;
 }
@@ -23470,7 +23470,7 @@ body.methods a:hover {
 }
 
 body.methods .subnav.small-tab-nav ul {
-  padding: 3.2rem 0;
+  padding: 3.2rem 1.6rem;
 }
 
 @media (min-width: 768px) {

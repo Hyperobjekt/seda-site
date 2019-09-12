@@ -17153,12 +17153,12 @@ nav.navbar > div {
   }
 }
 
-a {
+p a {
   text-decoration: underline;
   text-underline-position: under;
 }
 
-a:hover {
+p a:hover {
   text-decoration: none;
   text-underline-position: under;
   color: #7086AB;
@@ -18479,7 +18479,7 @@ body.home #main {
 }
 
 .row.fact a.readmore {
-  padding: 0 14px 10px 0;
+  padding: 10px 14px 10px 0;
   border-bottom-right-radius: 4px;
   text-decoration: none;
 }

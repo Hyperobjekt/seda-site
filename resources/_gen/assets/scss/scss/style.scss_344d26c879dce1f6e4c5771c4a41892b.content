@@ -18088,7 +18088,7 @@ p a {
 
 body.home .hero {
   height: 100vh;
-  min-height: 540px;
+  min-height: 720px;
   margin-top: -6.4rem;
   background: linear-gradient(to bottom, #061d56 5%, #04143c 75%);
   background-repeat: no-repeat;
@@ -18172,25 +18172,49 @@ body.home .hero .hero-child {
   transform: translateZ(0);
 }
 
-body.home .hero .hero-child img {
-  opacity: 0.54;
+@media (max-width: 767.98px) {
+  body.home .hero .hero-child img {
+    opacity: 1;
+  }
 }
 
-body.home .hero .hero-child img {
-  opacity: 0;
+@media (min-width: 768px) {
+  body.home .hero .hero-child img {
+    opacity: 0;
+  }
 }
 
 body.home .hero .hero-child img.opaque {
   opacity: 1;
 }
 
+@media (max-width: 767.98px) {
+  body.home .hero .hero-child svg.svg-animated {
+    display: none;
+  }
+}
+
 body.home .hero .hero-child svg, body.home .hero .hero-child img {
   width: 82%;
-  min-height: 480px;
+  min-height: 372px;
   max-height: 84vh;
 }
 
-@media (max-width: 767.98px) {
+@media (min-width: 320px) and (max-width: 373.98px) {
+  body.home .hero .hero-child svg, body.home .hero .hero-child img {
+    position: absolute;
+    top: -13%;
+  }
+}
+
+@media (min-width: 374px) and (max-width: 575.98px) {
+  body.home .hero .hero-child svg, body.home .hero .hero-child img {
+    position: absolute;
+    top: 0%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
   body.home .hero .hero-child svg, body.home .hero .hero-child img {
     position: absolute;
     top: -4%;
@@ -18239,7 +18263,6 @@ body.home .hero .hero-child #hero-overlay {
 }
 
 body.home .hero .hero-child .column h2 {
-  opacity: 0;
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   color: #ffffff;
   font-size: 1.7rem;
@@ -18299,6 +18322,10 @@ body.home .hero .hero-child .column h2 {
   }
 }
 
+body.home .hero .hero-child .column h2.hero-animate {
+  opacity: 0;
+}
+
 body.home .hero .hero-child .column p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   color: #ffffff;
@@ -18308,6 +18335,9 @@ body.home .hero .hero-child .column p {
   margin-bottom: 3.2rem;
   animation-delay: 3.8s;
   z-index: 2;
+}
+
+body.home .hero .hero-child .column p.hero-animate {
   opacity: 0;
 }
 
@@ -18363,8 +18393,11 @@ body.home .hero .hero-child .column a.btn {
 }
 
 body.home .hero .hero-child .column button {
-  opacity: 0;
   position: relative;
+}
+
+body.home .hero .hero-child .column button.hero-animate {
+  opacity: 0;
 }
 
 @keyframes fade-in4 {
@@ -18770,17 +18803,10 @@ body.home #main {
 .row.map-invite p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   color: #5D5D5D;
-  font-size: 1.3rem;
-  line-height: 2.0rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   margin-top: 3.2rem;
   margin-bottom: 3.2rem;
-}
-
-@media (min-width: 320px) {
-  .row.map-invite p {
-    font-size: 1.3rem;
-    line-height: 2rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -18828,7 +18854,8 @@ body.home #main {
 }
 
 .row.map-invite h5.big-superhead, .row.map-invite a.big-superhead {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   text-transform: uppercase;
   color: #04143c;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -19126,7 +19153,7 @@ body.home #main {
 .row.latest-explorations .all-explorations, .row.latest-explorations .readmore {
   text-align: center;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   letter-spacing: .055rem;
   text-transform: uppercase;
   order: 4;
@@ -19139,7 +19166,7 @@ body.home #main {
 
 @media (min-width: 768px) {
   .row.latest-explorations .all-explorations, .row.latest-explorations .readmore {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.7rem;
     letter-spacing: .064rem;
   }

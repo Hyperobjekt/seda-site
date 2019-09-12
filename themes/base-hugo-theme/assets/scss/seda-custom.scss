@@ -941,7 +941,7 @@ img {
 body.home {
   .hero {
     height: 100vh;
-    min-height: 540px;
+    min-height: 720px;
     margin-top: -6.4rem;
     background: linear-gradient(to bottom, rgba(6, 29, 86, 100%) 5%, rgba(4, 20, 60, 100%) 75%);
     background-repeat: no-repeat;
@@ -1026,19 +1026,38 @@ body.home {
       //animation: fade-in5 2s forwards;
       //animation-delay: .9s;
       img {
-        opacity: 0.54;
+        //opacity: 0.54;
       }
       img {
-        opacity: 0;
+        @include media-breakpoint-down(mm) {
+          opacity: 1;
+        }
+        @include media-breakpoint-up(md) {
+            opacity: 0;
+        }
         &.opaque {
           opacity: 1;
         }
       }
+      svg.svg-animated {
+        @include media-breakpoint-down(mm) {
+          display: none;
+        }
+      }
       svg, img {
         width: 82%;
-        min-height: 480px;
+        min-height: 372px;
         max-height: 84vh;
-        @include media-breakpoint-down(mm) {
+        
+        @include media-breakpoint-only(sm) {
+          position: absolute;
+          top: -13%;
+        }
+        @include media-breakpoint-only(smm) {
+          position: absolute;
+          top: 0%;
+        }
+        @include media-breakpoint-only(mm) {
           position: absolute;
           top: -4%;
         }
@@ -1086,9 +1105,9 @@ body.home {
 
 
       .column {
-
+        
         h2 {
-        opacity: 0;
+        //opacity: 0;
         // animation: fade-in2 1.5s forwards;
         // animation-delay: 2.8s;
           @keyframes fade-in2 {
@@ -1152,7 +1171,9 @@ body.home {
 
 
         }
-
+        h2.hero-animate {
+          opacity: 0;
+        }
         p {
           font-family: $maisonneue-book;
           color: $white;
@@ -1163,7 +1184,9 @@ body.home {
           // animation: fade-in3 1s forwards;
           animation-delay: 3.8s;
           z-index: 2;
-          opacity: 0;
+          &.hero-animate {
+            opacity: 0;
+          }
           @keyframes fade-in3 {
             0% {
               opacity: 0;
@@ -1213,7 +1236,9 @@ body.home {
         button {
           //animation: fade-in4 0.5s forwards;
           //animation-delay: 5s;
-          opacity: 0;
+          &.hero-animate {  
+            opacity: 0;
+          }
           position: relative;
 
           @keyframes fade-in4 {
@@ -1598,18 +1623,12 @@ body.home {
       font-family: $maisonneue-book;
       //color: $white;
       color: #5D5D5D;
-      font-size: 1.3rem;
-      line-height: 2.0rem;
+    
+      font-size: 1.6rem;
+      line-height: 1.5;
       margin-top: 3.2rem;
       margin-bottom: 3.2rem;
       // animation: fade-in3 1s forwards;
-    
-
-      @include media-breakpoint-up(sm) {
-        font-size: 1.3rem;
-        line-height: 2rem;
-      }
-
       @include media-breakpoint-up(md) {
         width: 90%;
         margin-left: auto;
@@ -1631,7 +1650,7 @@ body.home {
         line-height: 2.5rem;
         margin-top: 2.4rem;
       }
-    }
+    } 
     
     .superhead {
       font-size: 1.2rem;
@@ -1646,7 +1665,8 @@ body.home {
       }
     }
     h5.big-superhead, a.big-superhead {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
+      line-height: 1.5;
       text-transform: uppercase;
       color: $tertiary;
       font-family: $sharpgrotesk-med-15;
@@ -2015,7 +2035,7 @@ body.home {
       //padding-bottom: 9.6rem;
       text-align: center;
       font-family: $sharpgrotesk-med-15;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       letter-spacing: .055rem;
       text-transform: uppercase;
       order: 4;
@@ -2026,7 +2046,7 @@ body.home {
 
 
       @include media-breakpoint-up(md) {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         line-height: 1.7rem;
         letter-spacing: .064rem;
       }

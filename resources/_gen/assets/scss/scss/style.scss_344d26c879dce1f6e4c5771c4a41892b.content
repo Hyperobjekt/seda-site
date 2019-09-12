@@ -18194,7 +18194,7 @@ body.home .hero .hero-child img.opaque {
 }
 
 body.home .hero .hero-child svg, body.home .hero .hero-child img {
-  max-height: 256px;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -21215,7 +21215,7 @@ body.type-posts .hero .hero-child {
 }
 
 body.type-posts .hero .hero-child .column {
-  margin-bottom: 9.6rem;
+  display: flex;
   text-align: center;
   color: #ffffff;
 }

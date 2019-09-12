@@ -109,7 +109,8 @@ body.type-posts {
           }
           .column {
            // margin-top: 13.2rem;
-            margin-bottom: 9.6rem;
+            //margin-bottom: 9.6rem;
+            display: flex;
             text-align: center;
             color: $white;
             @include media-breakpoint-up(md) {

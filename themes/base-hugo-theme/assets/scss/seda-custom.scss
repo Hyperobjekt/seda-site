@@ -1047,7 +1047,7 @@ body.home {
         }
       }
       svg, img {
-        max-height: 256px;
+        max-width: 100%;
         @include media-breakpoint-up(md) {
           min-height: 480px;
         }

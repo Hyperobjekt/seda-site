@@ -98,12 +98,19 @@ body.type-news {
         padding-top: 6.4rem;
         padding-bottom: 6.4rem;
     }
+    a {
+      text-decoration: none;
+    }
     .readmore {
         font-family: $sharpgrotesk-med-15;
         font-size: 1.4rem;
         letter-spacing: .064rem;
         line-height: 4.4rem;
         text-transform: uppercase;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
         &:after {
             content: url('/images/icons/rightarrow.svg');
             margin-left: .8rem;

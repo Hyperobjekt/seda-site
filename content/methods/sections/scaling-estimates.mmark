@@ -34,17 +34,17 @@ To convert our estimates from the NAEP scale into grade levels, we have to first
 <tr>
 <td rowspan="2">Reading</td>
 <td>4</td>
-<td>217</td>
+<td>217.0</td>
 <td>217.8</td>
 <td>219.1</td>
-<td>218</td>
+<td>218.0</td>
 </tr>
 <tr>
 
 <td style="border-left-width: 2px;">8</td>
 <td>264.8</td>
-<td>263</td>
-<td>264</td>
+<td>263.0</td>
+<td>264.0</td>
 <td>263.9</td>
 </tr>
 </tbody></table>
@@ -75,9 +75,9 @@ We calculate the amount the test scores changed between 4th and 8th grade (Avera
 
 <tr>
 <td>Reading</td>
-<td>218</td>
+<td>218.0</td>
 <td>263.9</td>
-<td>46</td>
+<td>46.0</td>
 <td>11.49</td>
 </tr>
 </tbody>

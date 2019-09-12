@@ -23470,7 +23470,13 @@ body.methods a:hover {
 }
 
 body.methods .subnav.small-tab-nav ul {
-  padding: 3.2rem 10.4rem;
+  padding: 3.2rem 0;
+}
+
+@media (min-width: 768px) {
+  body.methods .subnav.small-tab-nav ul {
+    padding: 3.2rem 10.4rem;
+  }
 }
 
 body.methods .subnav.small-tab-nav ul li {

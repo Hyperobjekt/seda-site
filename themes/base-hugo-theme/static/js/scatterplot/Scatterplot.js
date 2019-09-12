@@ -383,7 +383,7 @@ Scatterplot.prototype.getSeriesDataInRange = function(values, axis, range) {
   })
 }
 
-Scatterplot.prototype.formatTooltip = function(item, data, xLabel, yLabel) {
+Scatterplot.prototype.formatTooltip = function(item, data, xLabel, yLabel, xPercent = 0, yPercent = 0) {
   // console.log(item);
   // console.log(data);
   let returnString = null;
@@ -400,14 +400,50 @@ Scatterplot.prototype.formatTooltip = function(item, data, xLabel, yLabel) {
       String(item.value[0]) +
       String(item.value[1])
     ).length;
+    const _x_val = xPercent ? this.getPercentDiffLabel(item.value[0]) : item.value[0];
+    const _y_val = yPercent ? this.getPercentDiffLabel(item.value[1]) : item.value[1];
     const lineBreak = testLength > itemName.length ? '<br>' : '&nbsp;&nbsp;';
     returnString = '<span>' + itemName + '</span><br>'
-      + '<small>' + xLabel + ': ' + item.value[0] + lineBreak
-      + yLabel + ': ' + item.value[1] + '</small>';
+      + '<small>' + xLabel + ': ' + _x_val + lineBreak
+      + yLabel + ': ' + _y_val + '</small>';
   } else {
     // console.log(item);
     // Send back a different string for the markarea tooltip.
     returnString = '<span>' + item.data.name + '</span><br>'
   }
   return returnString;
+}
+
+/**
+ * Returns the value rounded to the provided number of decimal
+ * places.
+ */
+Scatterplot.prototype.formatNumber = function(val, decimals = 2) {
+  if (!val && val !== 0) { return 'N/A' }
+  const factor = Math.pow(10, decimals);
+  return Math.round(val*factor)/factor;
+}
+/**
+ * Returns a percent string from the provided value
+ * @param {number} v
+ */
+Scatterplot.prototype.formatPercent = function(v, decimals = 0) {
+  if (!v && v !== 0) { return 'N/A' }
+  return this.formatNumber(v * 100, decimals)
+}
+/**
+ * Returns a percent string of how far the provided value
+ * is from the provided `from` value. (used for learning rates)
+ * @param {number} v the value to format
+ * @param {number} from the point of reference to determine what the % diff is
+ */
+Scatterplot.prototype.formatPercentDiff = function(v, from = 1, decimals = 0) {
+  if (!v && v !== 0) { return 'N/A' }
+  return this.formatPercent(v - from, decimals);
+}
+
+Scatterplot.prototype.getPercentDiffLabel = function(item) {
+  // console.log('Scatterplot.getPercentDiffLabel()');
+  // console.log(item);
+  return this.formatPercentDiff(item, 1, 0) + '%';
 }

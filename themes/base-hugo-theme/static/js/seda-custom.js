@@ -43,8 +43,8 @@
         $target.parents('.research-paper').toggleClass('abstract-visible');
     }
 
-    anime.set(['#mainland', '.plotpoints', 'body.home .hero-child h2',
-    'body.home .hero-child p', 'body.home .hero-child button'], {
+    anime.set(['#mainland', '.plotpoints', 'body.home .hero-child h2.hero-animate',
+    'body.home .hero-child p.hero-animate', 'body.home .hero-child button.hero-animate'], {
       opacity: [0]
     });
     /* anime.set(['g#grades text', 'g#ses-metric text', '#grades path#axis-line-2', '#hp-x-line path#map-x'], {
@@ -98,7 +98,7 @@
     });
 
     anime({ // Headline text
-      targets: 'body.home .hero-child h2',
+      targets: 'body.home .hero-child h2.hero-animate',
       opacity: [0, 1],
       easing: 'easeInOutSine',
       duration: 1000,
@@ -106,7 +106,7 @@
     });
 
     anime({ // Body text
-      targets: 'body.home .hero-child p',
+      targets: 'body.home .hero-child p.hero-animate',
       opacity: [0, 1],
       easing: 'easeInOutSine',
       duration: 800,
@@ -114,7 +114,7 @@
     });
 
     anime({ // Button
-      targets: 'body.home .hero-child button',
+      targets: 'body.home .hero-child button.hero-animate',
       opacity: [0, 1],
       transform: ['translate(100 0)', 'translate(0 0 )'],
       easing: 'easeInOutSine',

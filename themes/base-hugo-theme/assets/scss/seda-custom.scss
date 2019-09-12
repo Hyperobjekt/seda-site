@@ -608,12 +608,13 @@ img {
       background-position: center bottom;
     }
     .column {
-      margin-top: 9.2rem;
-      margin-bottom: 9.6rem;
+     // margin-top: 9.2rem;
+     // 
       text-align: center;
       color: $white;
       @include media-breakpoint-up(md) {
         margin-top: 13.8rem;
+        margin-bottom: 9.6rem;
       }
       @include media-breakpoint-up(lg) {
         margin-top: 16rem;
@@ -626,11 +627,12 @@ img {
         font-size: 2.6rem;
         line-height: 2.55rem;
         letter-spacing: .013rem;
-        margin-bottom: 1.6rem;
+        
         @include media-breakpoint-up(md) {
           font-size: 2.8rem;
           line-height: 4.3rem;
           letter-spacing: .014rem;
+          margin-bottom: 1.6rem;
         }
         @include media-breakpoint-up(lg) {
           font-size: 3rem;
@@ -1045,25 +1047,31 @@ body.home {
         }
       }
       svg, img {
-        width: 82%;
-        min-height: 372px;
+        
+        @include media-breakpoint-up(md) {
+          min-height: 480px;
+        }
         max-height: 84vh;
         
+        @include media-breakpoint-only(xs) {
+          
+        }
         @include media-breakpoint-only(sm) {
-          position: absolute;
-          top: -13%;
+         
         }
         @include media-breakpoint-only(smm) {
-          position: absolute;
-          top: 0%;
+         
         }
         @include media-breakpoint-only(mm) {
-          position: absolute;
-          top: -4%;
+          
         }
         @include media-breakpoint-only(md) {
           position: absolute;
           top: 2%;
+          width: 82%;
+        }
+        @include media-breakpoint-up(md) {
+          width: 82%;
         }
         @include media-breakpoint-up(lg) {
           transform: translateY(-3vh);
@@ -1099,7 +1107,7 @@ body.home {
         // margin-right: -16px;
         position: absolute;
         @include media-breakpoint-down(mm) {
-          top: 30%;
+          //top: 30%;
         }
       }
 
@@ -1128,8 +1136,8 @@ body.home {
           }
           font-family: $sharpgrotesk-med-20;
           color: $white;
-          font-size: 1.7rem;
-          line-height: 2.4rem;
+          font-size: 1.9rem;
+          line-height: 1.5;
           letter-spacing: .009rem;
           // margin-top: 65%;
 
@@ -1179,7 +1187,7 @@ body.home {
           color: $white;
           font-size: 1.3rem;
           line-height: 2.0rem;
-          margin-top: 3.2rem;
+          margin-top: 2.4rem;
           margin-bottom: 3.2rem;
           // animation: fade-in3 1s forwards;
           animation-delay: 3.8s;
@@ -1202,8 +1210,8 @@ body.home {
           }
 
           @include media-breakpoint-up(sm) {
-            font-size: 1.3rem;
-            line-height: 2rem;
+            font-size: 1.6rem;
+            line-height: 1.5;
           }
 
           @include media-breakpoint-up(md) {
@@ -1213,6 +1221,7 @@ body.home {
             font-size: 1.6rem;
             line-height: 2.4rem;
             margin-top: 3.2rem;
+            margin-bottom: 3.2rem;
           }
 
           @include media-breakpoint-up(lg) {
@@ -1461,7 +1470,7 @@ body.home {
         font-size: 1.7rem;
         line-height: 1.5;
         // letter-spacing: .03rem;
-        padding-bottom: 1.6rem;
+        padding-bottom: 2.4rem;
       }
       p {
         color: #5D5D5D;
@@ -1521,8 +1530,10 @@ body.home {
         color: #000;
         width: 100%;
         text-decoration: none;
+        margin-top: 0.8rem;
         @include media-breakpoint-up(md) {
           width: auto;
+          margin-top: 0;
         }
           &:hover {
             text-decoration: underline;

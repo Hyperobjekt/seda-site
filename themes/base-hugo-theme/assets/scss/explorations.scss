@@ -113,11 +113,13 @@ body.type-posts {
             display: flex;
             text-align: center;
             color: $white;
+            margin-top: 0;
+            margin-bottom: 0;
             @include media-breakpoint-up(md) {
-              margin-top: 15.2rem;
+              //margin-top: 15.2rem;
             }
             @include media-breakpoint-up(lg) {
-              margin-top: 16rem;
+            //  margin-top: 16rem;
             }
             h2 {
               font-family: $sharpgrotesk-med-20;

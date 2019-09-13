@@ -21218,18 +21218,8 @@ body.type-posts .hero .hero-child .column {
   display: flex;
   text-align: center;
   color: #ffffff;
-}
-
-@media (min-width: 768px) {
-  body.type-posts .hero .hero-child .column {
-    margin-top: 15.2rem;
-  }
-}
-
-@media (min-width: 992px) {
-  body.type-posts .hero .hero-child .column {
-    margin-top: 16rem;
-  }
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 body.type-posts .hero .hero-child .column h2 {

@@ -72,14 +72,14 @@ const highlightedLabel = (highlight) => {
 // }
 
 const highlightedItemStyle =  {
-  borderWidth: 0.5,
-  borderColor: '#999', // '#FFC02D',
+  borderWidth: 0.4,
+  borderColor: '#BABABA', // '#FFC02D',
   color: '#f2c02d', // '#FFFCDD',
   opacity: 1,
   shadowBlur: 2,
   shadowColor: 'rgba(0, 0, 0, 0.1)',
   shadowOffsetX: 0,
-  shadowOffsetY: 2
+  shadowOffsetY: 1
 };
 const selectedItemStyle = {
   borderWidth: 0.5,

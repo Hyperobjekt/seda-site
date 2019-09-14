@@ -34,8 +34,8 @@ const highlightedLabel = (highlight) => {
 }
 
 const highlightedItemStyle =  {
-  borderWidth: 0.5,
-  borderColor: '#999', // '#FFC02D',
+  borderWidth: 0.4,
+  borderColor: '#BABABA', // '#FFC02D',
   //color: '#32A6FF', // '#FFFCDD',
   // color: '#0b337f',
   color: '#f2c02d',
@@ -43,7 +43,7 @@ const highlightedItemStyle =  {
   shadowBlur: 1,
   shadowColor: 'rgba(0, 0, 0, 0.2)',
   shadowOffsetX: 0,
-  shadowOffsetY: 0
+  shadowOffsetY: 1
 };
 const selectedItemStyle = {
   borderWidth: 0.5,

@@ -21467,6 +21467,7 @@ body.type-posts .column-scatterplot .plot-parent .rectangle {
 
 body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input {
   background: #f5fdff;
+  background: #f5fbfd;
   background-image: url("/images/magnify.svg");
   background-repeat: no-repeat;
   background-size: 18px 18px;

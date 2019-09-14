@@ -73,18 +73,20 @@ const highlightedLabel = (highlight) => {
 
 const highlightedItemStyle =  {
   borderWidth: 0.5,
-  borderColor: '#0677CE', // '#FFC02D',
-  color: '#32A6FF', // '#FFFCDD',
-  opacity: 0.9,
-  shadowBlur: 4,
-  shadowColor: 'rgba(0, 0, 0, 0.5)',
+  borderColor: '#999', // '#FFC02D',
+  color: '#f2c02d', // '#FFFCDD',
+  opacity: 1,
+  shadowBlur: 2,
+  shadowColor: 'rgba(0, 0, 0, 0.1)',
   shadowOffsetX: 0,
   shadowOffsetY: 2
 };
 const selectedItemStyle = {
   borderWidth: 0.5,
   borderColor: '#109860', // '#7D38BB',
+  borderColor: 'rgba(0,0,0,0.3)',
   color: '#48CB95', // '#BC72FF',
+  color: 'rgba(153,226,253,0.7)',
   opacity: 1,
 };
 const initialMarkline = {

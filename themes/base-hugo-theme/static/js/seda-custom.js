@@ -434,7 +434,7 @@
       svg.parentNode.removeChild(svg);
       return result;
     }
-  
+
 
     var updateModal = {
         activeBio: null,
@@ -567,13 +567,22 @@
     });
 
     $('#toggleDrawer').on('click', function() {
-        // console.log('#toggleDrawer selected');
-        $('#drawer').addClass('show');
+      // console.log('#toggleDrawer selected');
+      $('#drawer').addClass('show');
+      $('#closeDrawer').focus();
     });
 
     $('#closeDrawer').on('click', function() {
-        console.log('#closeDrawer selected');
+        // console.log('#closeDrawer selected');
         $('#drawer').removeClass('show');
+        $('#toggleDrawer').focus();
+    });
+
+    $('#closeLoop').on('keypress', function(e) {
+      // console.log('closeloop keypress');
+      if(e.which == 13) {
+        $('#closeDrawer').focus();
+      }
     });
 
     // Add Subnav active selection highlighting
@@ -583,11 +592,11 @@
     });
 
     // Add href to URL for FAQ items
-    
+
 /**
  * Smooth Scroll
  * ---
- * 
+ *
  */
 // Get smooth scroll offset depending on window width
 function getWindowOffset() {
@@ -656,7 +665,7 @@ function getPageOffset(url) {
           $(target.attr('href')).collapse('toggle');
         }
       });
-    
+
       $('.smoothScroll').click(function () {
         smoothScroll(this);
         // Close dropdown if dropdown link
@@ -665,7 +674,7 @@ function getPageOffset(url) {
         }
       });
     });
-    
+
     /**
      * Update URL on accordion expand
      */
@@ -680,23 +689,23 @@ function getPageOffset(url) {
       });
     });
 
-    // 
+    //
 
     $(document).ready(function() {
 
       $(".toggle-accordion").on("click", function() {
         var accordionId = $(this).attr("accordion-id"),
           numPanelOpen = $(accordionId + ' .collapse.in').length;
-        
+
         $(this).toggleClass("active");
-    
+
         if (numPanelOpen == 0) {
           openAllPanels(accordionId);
         } else {
           closeAllPanels(accordionId);
         }
       })
-    
+
       openAllPanels = function(aId) {
         console.log("setAllPanelOpen");
         $(aId + ' .panel-collapse:not(".in")').collapse('show');
@@ -705,7 +714,7 @@ function getPageOffset(url) {
         console.log("setAllPanelclose");
         $(aId + ' .panel-collapse.in').collapse('hide');
       }
-         
+
     });
 
     if ($('body.home').length >= 1) {

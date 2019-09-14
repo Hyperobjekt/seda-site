@@ -1,5 +1,5 @@
-<div id="drawer" class="drawer drop-shadow-left">
-    <button id="closeDrawer" class="closebtn"></button>
+<nav id="drawer" class="drawer drop-shadow-left" aria-role="navigation">
+    <button id="closeDrawer" class="closebtn" aria-label="Close navigation drawer" tabindex="0"></button>
     <div class="navlinks">
         {{ $showActiveNav := .Site.Params.showActiveNav }}
         {{ $currentPage := . }}
@@ -13,12 +13,13 @@
         {{ end }}
         <!-- {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }} -->
         {{ $text := print .Name | safeHTML }}
-        <a class="nav-item nav-link {{ $active }}" tabindex="0" href="{{ .URL }}">
+        <a class="nav-item nav-link {{ $active }}" href="{{ .URL }}">
             {{ $text }}
         </a>
         {{ end }}
     </div>
     <div class="social">
         {{ partial "social.html" . }}
+        <a class="sr-only" id="closeLoop" aria-label="Return to close button" tabindex="0"></a>
     </div>
-</div>
+</nav>

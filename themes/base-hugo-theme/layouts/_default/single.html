@@ -3,13 +3,13 @@
 <div id="hero" class="hero row" style="">
     <div class="hero-child row" style="background-image:url('{{ .Params.hero }}');">
       <div class="column flex-column h-100 justify-content-center align-items-center col-sm-12 offset-sm-0 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-        <h2 tabindex="0">{{ .Params.displaytitle }}</h2>
+        <h2>{{ .Params.displaytitle }}</h2>
         <p class="d-block w-75 mx-auto">{{ .Params.subtitle }}</p>
       </div>
      </div>
 </div>
-<div class="row crumbs">
-    <div class="col-xs-10 offset-xs-1 col-md-10 offset-xl-1"><span class="med-blue"><a href="/">HOME</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span><a href="/discoveries">DISCOVERIES</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span></span>{{ .Title }}</div>
+<div class="row crumbs" aria-label="Breadcrumb trail" role="navigation">
+    <div class="col-xs-10 offset-xs-1 col-md-10 offset-xl-1"><span class="med-blue"><a href="/" aria-label="Breadcrumb">HOME</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span><a aria-label="Breadcrumb" href="/discoveries">DISCOVERIES</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span></span><span tabindex="0" aria-label="Breadcrumb, current location, {{ .Title }}">{{ .Title }}</span></div>
 </div>
 <div id="" class="row dyn-article">
     <div class="col-xs-10 col-md-5 col-xl-4 offset-xl-1">

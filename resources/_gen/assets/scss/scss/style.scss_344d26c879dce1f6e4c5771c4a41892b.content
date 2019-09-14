@@ -17295,7 +17295,7 @@ h5.big-superhead, a.big-superhead {
   font-size: 1.4rem;
   letter-spacing: .064rem;
   line-height: 4.4rem;
-  background-color: #ff003e;
+  background-color: #EA063D;
   color: #fff;
   text-align: center;
   white-space: nowrap;
@@ -17783,7 +17783,7 @@ p {
 }
 
 p a {
-  color: #7086AB;
+  color: #5a7095;
 }
 
 .base-style h3 {
@@ -21299,7 +21299,7 @@ body.type-posts .crumbs {
 }
 
 body.type-posts .crumbs span.med-blue, body.type-posts .crumbs a {
-  color: #7086AB;
+  color: #5a7095;
 }
 
 body.type-posts .crumbs span.crumb-carat {

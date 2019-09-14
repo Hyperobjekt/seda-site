@@ -29,7 +29,8 @@
           },
           indices: ['districts'],
           inputProps: {
-            placeholder: 'Highlight a district...'
+            placeholder: 'Highlight a district...',
+            'aria-label': 'Enter a district name to search'
           }
         },
         renderSearch: function() {

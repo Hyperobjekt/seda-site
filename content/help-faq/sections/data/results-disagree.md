@@ -11,7 +11,7 @@ States often provide school grades or other school scores as an index. These may
 
 In contrast, the test score measures we report here are based on more detailed information about students’ test scores. They are also adjusted to account for differences in tests and proficiency standards across states, years, and grades. 
 
-The measures we report here also differ slightly from other publicly available measures of school and district performance due to differences in statistical methods. We provide a comparison of SEDA and other types of measures in our <span class="highlight">LINK to SCHOOL measurement paper (not yet posted)</span>. 
+The measures we report here also differ slightly from other publicly available measures of school and district performance due to differences in statistical methods. We provide a comparison of SEDA and other types of measures in our <span class="highlight2">LINK to SCHOOL measurement paper (not yet posted)</span>. 
 
 
 

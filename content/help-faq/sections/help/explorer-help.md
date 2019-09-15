@@ -5,7 +5,7 @@ section: "help" # director, staff, or partner
 weight: 10
 ---
 
-The <a href="/explorer">Educational Opportunity Explorer</a> offers a FAQ within the Explorer itself. Press the <span class="highlight">HELP button</span> to get answers to your questions on using the Explorer and interpreting its map and charts.
+The <a href="/explorer">Educational Opportunity Explorer</a> offers a FAQ within the Explorer itself. Press the <span class="highlight2">HELP button</span> to get answers to your questions on using the Explorer and interpreting its map and charts.
 
 If your questions are not answered there, please reach out to 
 

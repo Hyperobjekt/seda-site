@@ -20464,6 +20464,11 @@ body.research .research-paper .abstract-and-meta {
 }
 
 body.research .research-paper .abstract-and-meta .abstract,
+body.research .research-paper .abstract-and-meta .meta {
+  display: none;
+}
+
+body.research .research-paper .abstract-and-meta .abstract,
 body.research .research-paper .abstract-and-meta .abstract p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
@@ -20614,6 +20619,7 @@ body.research .research-paper.abstract-visible .show-versions:after {
 }
 
 body.research .research-paper.abstract-visible .abstract-and-meta {
+  transition: opacity 2s ease-out 200ms, height 2s ease-out 1s, max-height 2s ease-out 1s;
   padding-top: 1.6rem;
   opacity: 1;
   height: auto;
@@ -20624,6 +20630,11 @@ body.research .research-paper.abstract-visible .abstract-and-meta {
   body.research .research-paper.abstract-visible .abstract-and-meta {
     padding-top: 4.6rem;
   }
+}
+
+body.research .research-paper.abstract-visible .abstract-and-meta .abstract,
+body.research .research-paper.abstract-visible .abstract-and-meta .meta {
+  display: block;
 }
 
 body.research h3 {

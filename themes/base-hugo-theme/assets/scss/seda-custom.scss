@@ -3174,6 +3174,11 @@ body.research {
       overflow: hidden;
 
       .abstract,
+      .meta {
+        display: none;
+      }
+
+      .abstract,
       .abstract p {
         font-family: $maisonneue-book;
         font-size: 1.3rem;
@@ -3292,13 +3297,18 @@ body.research {
         }
       }
       .abstract-and-meta {
-        // transition: opacity 2s ease-out 200ms, height 2s ease-out, max-height 2s ease-out;
+        transition: opacity 2s ease-out 200ms, height 2s ease-out 1s, max-height 2s ease-out 1s;
+        // display: block;
         padding-top: 1.6rem;
         opacity: 1;
         height: auto;
         max-height: 1000px;
         @include media-breakpoint-up(md) {
           padding-top: 4.6rem;
+        }
+        .abstract,
+        .meta {
+          display: block;
         }
       }
     }

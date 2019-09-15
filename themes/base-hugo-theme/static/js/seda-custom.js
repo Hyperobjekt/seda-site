@@ -37,10 +37,12 @@
     }
 
     function toggleAbstract(e) {
-        // console.log('toggleAbstract()');
-        e.preventDefault();
-        $target = $(e.target);
-        $target.parents('.research-paper').toggleClass('abstract-visible');
+      // console.log('toggleAbstract()');
+      // console.log(e.target);
+      e.preventDefault();
+      $target = $(e.target);
+      $paper = $target.parents('.research-paper');
+      $paper.toggleClass('abstract-visible');
     }
 
     anime.set(['#mainland', '.plotpoints', 'body.home .hero-child h2.hero-animate',
@@ -478,6 +480,9 @@
                 $('#prevBio').prop( "disabled", false);
                 $('#nextBio').prop( "disabled", false);
             }
+
+            // Set focus on close button
+            $('#closeModal').focus();
         }
     };
 
@@ -728,6 +733,17 @@ function getPageOffset(url) {
       }
 
     });
+
+    if ($('body.type-research').length >= 1) {
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        // console.log('tab switch');
+        // console.log(e.target);
+        var _target = $(e.target).attr("href") // activated tab
+        $(_target).find('h5');
+        $articles = $(_target).find('h5');
+        $articles[0].focus();
+      });
+    }
 
     if ($('body.home').length >= 1) {
       console.log('setting up home page animations');

@@ -17,4 +17,3 @@ Data are available for:
 The data also contain NCES identifiers, which allow the data to be linked to other databases or combined into different aggregations (e.g., school districts, counties, etc.).
 
 Below is a mock-up of the data format:
- 

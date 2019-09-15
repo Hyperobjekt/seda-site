@@ -211,7 +211,7 @@ h5.big-superhead, a.big-superhead {
   font-size: 1.4rem;
   letter-spacing: .064rem;
   line-height: 4.4rem;
-  background-color: $seda-red;
+  background-color: $seda-red-a11y; // #ff003e; // $seda-red;
   color: #fff;
   text-align: center;
   white-space: nowrap;
@@ -609,7 +609,7 @@ img {
     }
     .column {
      // margin-top: 9.2rem;
-     // 
+     //
       text-align: center;
       color: $white;
       @include media-breakpoint-up(md) {
@@ -627,7 +627,7 @@ img {
         font-size: 2.6rem;
         line-height: 2.55rem;
         letter-spacing: .013rem;
-        
+
         @include media-breakpoint-up(md) {
           font-size: 2.8rem;
           line-height: 4.3rem;
@@ -681,7 +681,7 @@ img {
     }
   }
   p a {
-    color: #7086AB;
+    color: #5a7095; // #5b75a0; // #637ba4; // #7086AB;
   }
   .base-style {
     h3 {
@@ -1051,19 +1051,19 @@ body.home {
         @include media-breakpoint-up(md) {
           min-height: 480px;
         }
-        
-        
+
+
         @include media-breakpoint-only(xs) {
-          
+
         }
         @include media-breakpoint-only(sm) {
-         
+
         }
         @include media-breakpoint-only(smm) {
-         
+
         }
         @include media-breakpoint-only(mm) {
-          
+
         }
         @include media-breakpoint-only(md) {
           position: absolute;
@@ -1114,7 +1114,7 @@ body.home {
 
 
       .column {
-        
+
         h2 {
         //opacity: 0;
         // animation: fade-in2 1.5s forwards;
@@ -1246,7 +1246,7 @@ body.home {
         button {
           //animation: fade-in4 0.5s forwards;
           //animation-delay: 5s;
-          &.hero-animate {  
+          &.hero-animate {
             opacity: 0;
           }
           position: relative;
@@ -1282,7 +1282,7 @@ body.home {
     margin-top: -42px;
   }
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.08);
-} 
+}
  #main {
     background-color: $white;
     // overflow-x: hidden;
@@ -1384,13 +1384,13 @@ body.home {
           /* border-bottom: 1px solid $seda-navy;
           padding-bottom: 3px;
           margin-bottom: -4px; */
-         
+
         box-shadow: 3px 3px 4px -2px rgba(0,0,0,0.2);
         //color: $seda-lightblue !important;
         span {
           //text-decoration: underline;
           // display: block;
-          
+
         }
         .linkright {
           background-color: #e9043a;
@@ -1410,7 +1410,7 @@ body.home {
         width: 14px;
         height: 14px;
       }
-     
+
     }
     .superhead {
       font-size: 1.2rem;
@@ -1545,8 +1545,8 @@ body.home {
             text-decoration: underline;
            color: $seda-dark !important;
           }
-  
-  
+
+
         @include media-breakpoint-up(md) {
           font-size: 1.5rem;
           line-height: 1.5;
@@ -1557,7 +1557,7 @@ body.home {
           line-height: 1.5;
           letter-spacing: .078rem;
         }
-  
+
         // span.right-arrow {
         //   background-image: url('/images/right-arrow.svg');
         // }
@@ -1635,12 +1635,12 @@ body.home {
       }
 
     }
-  
+
     p {
       font-family: $maisonneue-book;
       //color: $white;
       color: #5D5D5D;
-    
+
       font-size: 1.6rem;
       line-height: 1.5;
       margin-top: 3.2rem;
@@ -1667,8 +1667,8 @@ body.home {
         line-height: 2.5rem;
         margin-top: 2.4rem;
       }
-    } 
-    
+    }
+
     .superhead {
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -1703,7 +1703,7 @@ body.home {
         line-height: 2.1rem;
       }
       @include media-breakpoint-up(md) {
-       
+
         h4 {
           font-size: 1.6rem;
           line-height: 2.4rem;
@@ -1714,7 +1714,7 @@ body.home {
         }
       }
       @include media-breakpoint-up(lg) {
-       
+
         h4 {
           font-size: 1.6rem;
           line-height: 2.4rem;
@@ -1726,7 +1726,7 @@ body.home {
         }
       }
       @include media-breakpoint-up(xl) {
-       
+
         h4 {
           font-size: 2rem;
           line-height: 3rem;
@@ -1738,7 +1738,7 @@ body.home {
         }
       }
      &:hover {
-     
+
        color: $primary;
        color: #3157a5;
        box-shadow: 0px 0px 3px 0.5px #3157a5;
@@ -3163,7 +3163,7 @@ body.research {
         margin: 0 1.6rem .8rem 0;
       }
     }
-    
+
 
     .abstract-and-meta {
       // display: none;
@@ -3172,6 +3172,11 @@ body.research {
       opacity: 0;
       height: 0;
       overflow: hidden;
+
+      .abstract,
+      .meta {
+        display: none;
+      }
 
       .abstract,
       .abstract p {
@@ -3292,13 +3297,18 @@ body.research {
         }
       }
       .abstract-and-meta {
-        // transition: opacity 2s ease-out 200ms, height 2s ease-out, max-height 2s ease-out;
+        transition: opacity 2s ease-out 200ms, height 2s ease-out 1s, max-height 2s ease-out 1s;
+        // display: block;
         padding-top: 1.6rem;
         opacity: 1;
         height: auto;
         max-height: 1000px;
         @include media-breakpoint-up(md) {
           padding-top: 4.6rem;
+        }
+        .abstract,
+        .meta {
+          display: block;
         }
       }
     }
@@ -3678,4 +3688,3 @@ form#getTheData {
 }
 
 // @import 'article1';
-

@@ -7,11 +7,11 @@
       <div id="hero-overlay">
       <div class="column col-sm-10 col-xl-9 mx-auto d-flex flex-column align-items-center">
         <img class="svg-static mb-4" alt="Map of USA with scatterplot overlay" src="/images/static-svgs/mapplot.png" />
-        <h2 class="d-md-none" id="were_measuring">We’re measuring educational opportunity in <br class="d-none d-md-block" />every community in America.</h2>
-        <h2 class="d-sm-none d-md-flex hero-animate">We’re measuring educational opportunity in<br/>every community in America.</h2>
-        <p class="d-md-none" id="were_measuring_p">The Stanford Education Data Archive has built the first national database of academic performance and educational opportunity, allowing you to explore test scores from every public school in the nation.</p>
-        <p class="d-sm-none d-md-flex hero-animate">The Stanford Education Data Archive has built the first national database of academic performance and educational opportunity, allowing you to explore test scores from every public school in the nation.</p>
-        <button data-scroll-target="scrollTarget1" class="d-md-none btn btn-custom scroll-to-section" tabindex="0" aria-label="Go to next section" aria-describedby="were_measuring were_measuring_p">LEARN MORE</button>
+        <h2 class="d-md-none" id="were_measuring_m">We’re measuring educational opportunity in <br class="d-none d-md-block" />every community in America.</h2>
+        <h2 class="d-sm-none d-md-flex hero-animate" id="were_measuring">We’re measuring educational opportunity in<br/>every community in America.</h2>
+        <p class="d-md-none" id="were_measuring_p_m">The Stanford Education Data Archive has built the first national database of academic performance and educational opportunity, allowing you to explore test scores from every public school in the nation.</p>
+        <p class="d-sm-none d-md-flex hero-animate" id="were_measuring_p">The Stanford Education Data Archive has built the first national database of academic performance and educational opportunity, allowing you to explore test scores from every public school in the nation.</p>
+        <button data-scroll-target="scrollTarget1" class="d-md-none btn btn-custom scroll-to-section" tabindex="0" aria-label="Go to next section" aria-describedby="were_measuring_m were_measuring_p_m">LEARN MORE</button>
         <button data-scroll-target="scrollTarget1" class="d-sm-none d-md-block hero-animate btn btn-custom scroll-to-section" tabindex="0" aria-label="Go to next section" aria-describedby="were_measuring were_measuring_p">LEARN MORE</button>
       </div>
       </div>
@@ -35,16 +35,16 @@
       <div class="number-marker d-flex justify-content-center align-items-end">1</div>
     </div>
     <div class="col-12 metric-title d-flex d-md-none justify-content-center align-items-start">
-      <img class="mr-2" alt="Students stand on bar graphs, wavings" src="/images/icons/avg-scores-symbol.svg" />
+      <img class="mr-2" alt="Bar graph icon" src="/images/icons/avg-scores-symbol.svg" />
       <h4>Average Test Scores</h4>
     </div>
     <div class="order-2 order-md-1 col-xs-12 col-mm-10 offset-mm-1 col-md-5 offset-md-0 mt-4 mt-md-0">
       <div class="metric-title d-sm-none d-md-flex justify-content-start align-items-start">
-        <img class="mr-2" alt="Students stand on bar graphs, wavings" src="/images/icons/avg-scores-symbol.svg" />
+        <img class="mr-2" alt="Bar graph icon" src="/images/icons/avg-scores-symbol.svg" />
         <h4 id="avg_test_scores">Average Test Scores</h4>
       </div>
       <p id="avg_test_scores_p">The educational opportunities available in a community, both in and out of school, are reflected in children’s average test scores. They are influenced by children's opportunities to learn at home, in their neighborhoods, in childcare, preschool, and after-school programs, from peers and friends, and at school. </p>
-      <a class="readmore order-1 d-inline-block" href="/explorer/#/map/us/districts/avg/ses/all/3.5/38/-97" aria-describedby="avg_test_scores avg_test_scores_p">
+      <a class="readmore order-1 d-inline-block" href="/explorer/#/map/us/districts/avg/ses/all/3.5/38/-97" aria-label="EXPLORE AVERAGE TEST SCORES IN YOUR SCHOOL AND COMMUNITY" aria-describedby="avg_test_scores avg_test_scores_p">
         <div class="explorelink-block d-flex align-items-center justify-content-sm-center justify-content-md-start"><span>EXPLORE AVERAGE TEST SCORES
         <br class="">IN YOUR SCHOOL & COMMUNITY</span><div class="linkright order-2 ml-2"><img aria-hidden="true" src="/images/right-arrow-white.svg" /></div></div>
       </a>
@@ -62,24 +62,30 @@
 </div>-->
 
 <div class="row fact fact-2 m-0 align-items-center">
-        <div class="col-12 col-md-1 offset-md-1 d-flex justify-content-center mb-5 mb-md-0">
-                <div class="number-marker d-flex justify-content-center align-items-end">
-                        2
-                </div>
-            </div>
-            <div class="col-12 metric-title d-flex d-md-none justify-content-center align-items-start"><img class="mr-2" aria-hidden="true" src="/images/icons/growth-scores-symbol.svg" /><h4>Learning Rates</h4></div>
-    <div class="col-xs-12 col-mm-10 offset-mm-1 offset-md-0 col-md-4 col-lg-4 offset-md-0 hpgraphic order-md-3" id="growth-graphic" style="height: auto; width: 100%; display: flex; align-items:center;">
-        {{ partial "svg2" }}
-        <img class="svg-static" alt="Children climbing stairs inside bars in bar chart" src="/images/static-svgs/svg2.png" />
+  <div class="col-12 col-md-1 offset-md-1 d-flex justify-content-center mb-5 mb-md-0">
+    <div class="number-marker d-flex justify-content-center align-items-end">2</div>
+  </div>
+  <!-- displayed smaller than md -->
+  <div class="col-12 metric-title d-flex d-md-none justify-content-center align-items-start">
+    <img class="mr-2" aria-hidden="true" src="/images/icons/growth-scores-symbol.svg" />
+    <h4>Learning Rates</h4>
+  </div>
+  <!-- END displayed smaller than md -->
+  <div class="col-xs-12 col-mm-10 offset-mm-1 offset-md-0 col-md-4 col-lg-4 offset-md-0 hpgraphic order-md-3" id="growth-graphic" style="height: auto; width: 100%; display: flex; align-items:center;">
+    {{ partial "svg2" }}
+    <img class="svg-static" alt="Children climbing stairs inside bars in bar chart" src="/images/static-svgs/svg2.png" />
+  </div>
+  <div class="col-xs-12 col-mm-10 offset-mm-1 offset-md-0 col-md-5 order-md-2 mt-4 mt-md-0">
+    <!-- Display larger than sm -->
+    <div class="metric-title d-sm-none d-md-flex justify-content-start align-items-start"><img class="mr-2" aria-hidden="true" src="/images/icons/growth-scores-symbol.svg" /><h4 id="learning_rates_h">Learning Rates</h4></div>
+      <p id="learning_rates_p">Learning rates measure how much student scores improve each year while they are in school. They are a better indicator of school quality than average test scores, which are influenced by a range of experiences outside of school.</p>
+      <a class="readmore order-1 d-inline-block"
+          href="/explorer/#/map/us/districts/grd/ses/all/3.5/38/-97"><div class="explorelink-block d-flex align-items-center justify-content-sm-center justify-content-md-start"
+          aria-label="EXPLORE LEARNING RATES IN YOUR SCHOOL & COMMUNITY" aria-describedby="learning_rates_h learning_rates_p">
+        <span>EXPLORE LEARNING RATES IN <br class="">YOUR SCHOOL & COMMUNITY</span>
+        <div class="linkright order-2 ml-2"><img aria-hidden="true" src="/images/right-arrow-white.svg" /></div></div></a>
     </div>
-    <div class="col-xs-12 col-mm-10 offset-mm-1 offset-md-0 col-md-5 order-md-2 mt-4 mt-md-0">
-        <div class="metric-title d-sm-none d-md-flex justify-content-start align-items-start"><img class="mr-2" aria-hidden="true" src="/images/icons/growth-scores-symbol.svg" /><h4 id="learning_rates_h">Learning Rates</h4></div>
-        <p id="learning_rates_p">Learning rates measure how much student scores improve each year while they are in school. They are a better indicator of school quality than average test scores, which are influenced by a range of experiences outside of school.</p>
-            <a class="readmore order-1 d-inline-block"
-                href="/explorer/#/map/us/districts/grd/ses/all/3.5/38/-97"><div class="explorelink-block d-flex align-items-center justify-content-sm-center justify-content-md-start"
-                aria-describedby="learning_rates_h learning_rates_p"><span>EXPLORE LEARNING RATES IN <br class="">YOUR SCHOOL & COMMUNITY</span>
-                <div class="linkright order-2 ml-2"><img aria-hidden="true" src="/images/right-arrow-white.svg" /></div></div></a>
-    </div>
+    <!-- END display larger than sm -->
 </div>
 
 <!--<div class="row number-mark-container justify-content-center">
@@ -96,12 +102,16 @@
             </div>
             <div class="col-12 metric-title d-flex d-md-none justify-content-center align-items-start"><img class="mr-2" aria-hidden="true" src="/images/icons/trend-scores-symbol.svg" /><h4>Trend in Test Scores</h4></div>
     <div class="order-3 order-md-2 col-xs-12 col-mm-10 offset-mm-1 col-md-5 offset-md-0 mt-0">
-        <div class="metric-title d-sm-none d-md-flex justify-content-start align-items-start"><img class="mr-2" aria-hidden="true" src="/images/icons/trend-scores-symbol.svg" /><h4>Trend in Test Scores</h4></div>
-        <p>Tracking average test scores over time shows growth or decline in educational opportunity.
-            These trends reflect shifts in school quality as well changes in other family and community characteristics.</p>
-            <a class="readmore order-1 d-inline-block" href="/explorer/#/map/us/districts/coh/ses/all/3.5/38/-97"><div class="explorelink-block d-flex align-items-center justify-content-sm-center justify-content-md-start">
-                <span>EXPLORE TEST SCORE TRENDS
-                    <br class="">IN YOUR SCHOOL & COMMUNITY</span><div class="linkright order-2 ml-2"><img aria-hidden="true" src="/images/right-arrow-white.svg" /></div></div></a>
+        <div class="metric-title d-sm-none d-md-flex justify-content-start align-items-start"><img class="mr-2" aria-hidden="true" src="/images/icons/trend-scores-symbol.svg" /><h4 id="trend_desc_h">Trend in Test Scores</h4></div>
+        <p id="trend_desc_p">Tracking average test scores over time shows growth or decline in educational opportunity. These trends reflect shifts in school quality as well changes in other family and community characteristics.</p>
+          <a class="readmore order-1 d-inline-block" href="/explorer/#/map/us/districts/coh/ses/all/3.5/38/-97" aria-label="EXPLORE TEST SCORE TRENDS IN YOUR SCHOOL & COMMUNITY" aria-describedby="trend_desc_h trend_desc_p">
+            <div class="explorelink-block d-flex align-items-center justify-content-sm-center justify-content-md-start">
+              <span>EXPLORE TEST SCORE TRENDS<br class="">IN YOUR SCHOOL & COMMUNITY</span>
+              <div class="linkright order-2 ml-2">
+                <img aria-hidden="true" src="/images/right-arrow-white.svg" />
+              </div>
+            </div>
+          </a>
     </div>
     <div class="order-2 order-md-3 col-xs-12 col-mm-10 offset-mm-1 col-md-4 offset-md-0 col-lg-4 mb-4 mb-md-0 hpgraphic" id="trendgraphic" style="height: auto; width: 100%; display: flex; align-items:center;">
         {{ partial "svg3" }}
@@ -113,19 +123,16 @@
     <div class="scatterplot col-10 col-mm-8 offset-1 offset-mm-2">
         <h3 class="color-tertiary mb-3 mb-xl-4" id="ready_to_start">Ready to start exploring?</h3>
         <!--<h5 class="color-tertiary big-superhead mt-4 mt-md-5 mb-5">What would you like to explore?</h5>-->
-        <p class="mb-4 mb-xl-5" id="ready_to_start_p">View charts and maps that show how counties,
-            school districts, and individual schools score on these three metrics.
-            You can also filter by demographics, explore opportunity gaps,
-            export PDF reports, and more.
+        <p class="mb-4 mb-xl-5" id="ready_to_start_p">View charts and maps that show how counties, school districts, and individual schools score on these three metrics. You can also filter by demographics, explore opportunity gaps, export PDF reports, and more.
         </p>
-        <a class="btn btn-custom go-btn" href="/explorer" aria-describedby="ready_to_start ready_to_start_p">LET'S GO!</a>
+        <a class="btn btn-custom go-btn" href="/explorer" aria-label="View charts and maps" aria-describedby="ready_to_start ready_to_start_p">LET'S GO!</a>
     </div>
 
 
 
         <!--<button data-scroll-target="#" class="btn btn-custom scroll-to-section" tabindex="0" aria-label="Go to next section">Get started</button>-->
     <div class="scatterplot col-xs-10 offset-xs-1 col-mm-8 offset-mm-2">
-        <a href="#" data-scroll-target="scrollTarget2" class="scroll-to-section color-tertiary big-superhead mt-4 mt-md-5" tabindex="0">(Or see what we are learning)<br></a>
+        <a href="#" data-scroll-target="scrollTarget2" class="scroll-to-section color-tertiary big-superhead mt-4 mt-md-5">(Or see what we are learning)<br></a>
     </div>
 </div>
 
@@ -145,7 +152,7 @@
             </div>
     {{ end }}
     <div class="w-100 all-explorations mb-8 mb-md-10">
-        <a class="btn btn-custom2 mt-3 mt-md-0 py-2 px-4" href="{{ "/discoveries/" | absURL }}" tabindex="0" aria-label="Go to all Discoveries">See all discoveries</a>
+        <a class="btn btn-custom2 mt-3 mt-md-0 py-2 px-4" href="{{ "/discoveries/" | absURL }}" aria-label="Go to Discoveries list page">See all discoveries</a>
     </div>
 </div>
 

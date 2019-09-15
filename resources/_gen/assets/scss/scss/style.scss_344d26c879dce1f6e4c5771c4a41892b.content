@@ -23215,7 +23215,7 @@ body.methods {
             line-height: 3rem;
             letter-spacing: auto;
             padding-bottom: 1.6rem;
-          } 
+          }
       } */
 }
 
@@ -23555,7 +23555,7 @@ body.methods .center-block {
 
 body.methods pre code {
   color: #0032A3;
-  color: #ff003e;
+  color: #E3093D;
   display: block;
   font-size: 1.8rem;
   padding: 0 0 2.4rem;

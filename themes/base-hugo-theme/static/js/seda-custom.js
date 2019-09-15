@@ -502,6 +502,14 @@
         $('html, body').animate({
             scrollTop: ($target.offset().top) - 63
         }, 500);
+        if ($('body.type-help-faq') >= 1) {
+          $target.find('h3');
+          $focus[0].focus();
+        } else {
+          // console.log('not faq');
+          $($target).focus();
+        }
+
         var t = $(window).scrollTop();
         checkScroll(t);
     });
@@ -646,11 +654,15 @@ function getPageOffset(url) {
         if (target.length === 0) { target = $(path.hash); }
         // if no ID element look for an element with the name
         if (target.length === 0) { target = $('[name="' + path.hash.slice(1) + '"]'); }
+        // console.log(target);
         // scroll to the target
         if (target.length) {
           $('html,body').animate({
             scrollTop: target.offset().top - (getWindowOffset() + getPageOffset(location.pathname)) + 'px'
           }, 1000); // The number here represents the speed of the scroll in milliseconds
+          // Focus management for a11y
+          // console.log('focusing');
+          target.focus();
           if (cb) cb(target);
           return false;
         }

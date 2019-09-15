@@ -3,128 +3,128 @@
 <div id="hero" class="hero row" style="">
     <div class="hero-child row">
       <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-        <h2 tabindex="0">Methods</h2>
-        <p tabindex="0">How SEDA produced estimates of student performance that are comparable across places, grades, and years. 
+        <h2>Methods</h2>
+        <p>How SEDA produced estimates of student performance that are comparable across places, grades, and years.
             </p>
       </div>
      </div>
 </div>
 
 <div class="row subnav small-tab-nav">
-     
+
     <div class="dropdown">
-        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Select to expand jump-to menu">
             Jump to Section:
         </button>
     <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
 
                 <ul class="anchor-links dropdown-menu">
-                    <li><a data-scroll-target="background" class="scroll-to-section">Background</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="challenges" class="scroll-to-section">Challenges Working with Proficiency Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="addressing" class="scroll-to-section">SEDA Methods: Addressing the Challenges</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="raw-data" class="scroll-to-section">Raw Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="prof-threshold" class="scroll-to-section">Estimating the Location of Each State’s Proficiency Thresholds</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="placing-proficiency" class="scroll-to-section">Placing the Proficiency Thresholds on the Same Scale</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="estimating-means" class="scroll-to-section">Estimating Means from Proficiency Count Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="scaling-estimates" class="scroll-to-section">Scaling the Estimates to Grade Equivalents</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="reducing" class="scroll-to-section">Reducing to 3 Parameters: Average, Growth, and Trend</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="reporting" class="scroll-to-section">Reporting the Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="interested" class="scroll-to-section">For Interested Readers and Data File Users</a></li>
+                    <li><a data-scroll-target="background" class="scroll-to-section" tabindex="0">Background</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="challenges" class="scroll-to-section" tabindex="0">Challenges Working with Proficiency Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="addressing" class="scroll-to-section" tabindex="0">SEDA Methods: Addressing the Challenges</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="raw-data-t" class="scroll-to-section" tabindex="0">Raw Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="prof-threshold" class="scroll-to-section" tabindex="0">Estimating the Location of Each State’s Proficiency Thresholds</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="placing-proficiency" class="scroll-to-section" tabindex="0">Placing the Proficiency Thresholds on the Same Scale</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="estimating-means" class="scroll-to-section" tabindex="0">Estimating Means from Proficiency Count Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="scaling-estimates" class="scroll-to-section" tabindex="0">Scaling the Estimates to Grade Equivalents</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="reducing" class="scroll-to-section" tabindex="0">Reducing to 3 Parameters: Average, Growth, and Trend</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="reporting" class="scroll-to-section" tabindex="0">Reporting the Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="interested" class="scroll-to-section" tabindex="0">For Interested Readers and Data File Users</a></li>
                 </ul>
- 
-      
+
+
     <!--</div>-->
     </div>
- 
+
 </div>
 
 
-<div class="row glossary" id="background">
+<div class="row glossary" id="background" tabindex="0">
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
             <p>A simplified description of the SEDA methodology is described here; for more detail, see the <span class="highlight">SEDA Technical Documentation.</span></p>
         {{ range (where .Site.RegularPages "Params.section" ("background")) }}
             {{ .Content }}
-        {{ end }} 
+        {{ end }}
     </div>
 </div>
-<div class="row data" id="challenges">
+<div class="row data" id="challenges" tabindex="0">
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("challenges")) }}
             {{ .Content | markdownify }}
-        {{ end }} 
+        {{ end }}
     </div>
 </div>
-<div class="row map" id="addressing">
+<div class="row map" id="addressing" tabindex="0">
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("addressing")) }}
             {{ .Content }}
         {{ end }}
     </div>
 </div>
-<div class="row data" id="raw-data">
+<div class="row data" id="raw-data-t" tabindex="0">
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("raw-data")) }}
             {{ .Content }}
         {{ end }}
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 mx-auto">    
+    <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 mx-auto" tabindex="0">
         {{ range (where .Site.RegularPages "Params.section" ("raw-data-two")) }}
             {{ .Content }}
         {{ end }}
     </div>
-    <!--<div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">      
+    <!--<div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
         {{/* range (where .Site.RegularPages "Params.section" ("raw-data-three")) }}
             {{ .Content }}
         {{ end */}}
     </div>-->
 </div>
-<div class="row map" id="prof-threshold">
+<div class="row map" id="prof-threshold" tabindex="0">
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("prof-threshold")) }}
             {{ .Content }}
-        {{ end }} 
+        {{ end }}
     </div>
 </div>
-<div class="row data" id="placing-proficiency">
+<div class="row data" id="placing-proficiency" tabindex="0">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("placing-proficiency")) }}
             {{ .Content }}
-          {{ end }}  
+          {{ end }}
         </div>
 </div>
-<div class="row map" id="estimating-means">
+<div class="row map" id="estimating-means" tabindex="0">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("estimating-means")) }}
             {{ .Content }}
-          {{ end }}  
+          {{ end }}
         </div>
 </div>
-<div class="row data" id="scaling-estimates">
+<div class="row data" id="scaling-estimates" tabindex="0">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("scaling-estimates")) }}
             {{ .Content }}
-          {{ end }}  
+          {{ end }}
         </div>
 </div>
-<div class="row map" id="reducing">
+<div class="row map" id="reducing" tabindex="0">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("reducing")) }}
             {{ .Content }}
-          {{ end }}  
+          {{ end }}
         </div>
 </div>
-<div class="row data" id="reporting">
+<div class="row data" id="reporting" tabindex="0">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("reporting")) }}
             {{ .Content }}
-          {{ end }}  
+          {{ end }}
         </div>
 </div>
-<div class="row map" id="interested">
+<div class="row map" id="interested" tabindex="0">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("interested")) }}
             {{ .Content }}
-          {{ end }}  
+          {{ end }}
         </div>
 </div>
 

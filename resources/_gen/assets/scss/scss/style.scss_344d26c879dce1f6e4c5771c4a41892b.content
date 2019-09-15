@@ -17285,7 +17285,7 @@ h5.big-superhead, a.big-superhead {
   background-color: #fff;
 }
 
-.row.data .highlight, .row.map .highlight, .methods .highlight {
+.row.data .highlight2, .row.map .highlight2, .methods .highlight2 {
   background-color: yellow;
 }
 

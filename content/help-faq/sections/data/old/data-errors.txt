@@ -4,7 +4,7 @@ faqid: data-errors
 section: "data" # director, staff, or partner
 weight: 160
 ---
-Please contact our SEDA support team at <a class="highlight" href="mailto:research@edopportunity.org">research@edopportunity.org</a>
+Please contact our SEDA support team at <a class="highlight2" href="mailto:research@edopportunity.org">research@edopportunity.org</a>
 
 
 

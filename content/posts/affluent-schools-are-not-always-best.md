@@ -13,7 +13,10 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 {{% state-wrapper state="state1" notmerge="true" %}}
 
-The Chicago Public Schools are more successful than they are given credit for. In 3rd grade, where our test data begins, the average student in Chicago scores below a 2nd-grade level, as shown in the accompanying chart.
+<h3 class="mb-4">The Chicago Public Schools are more successful than they are given credit for.</h3>
+
+
+In 3rd grade, where our test data begins, the average student in Chicago scores below a 2nd-grade level, as shown in the accompanying chart.
 
 <img src="/images/articles/affluent-schools/state1.jpg" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District" class="d-md-none" />
 
@@ -26,7 +29,7 @@ In many ways the pattern shown here is not surprising: children’s scores are m
 
 {{% state-wrapper state="state3" notmerge="true" %}}
 
-<br class="d-sm-none d-md-block"><br class="d-sm-none d-md-block">But by fourth grade, they have moved up ...<br><br><br>
+But by fourth grade, they have moved up ...
 
 
 {{% /state-wrapper %}}
@@ -35,7 +38,7 @@ In many ways the pattern shown here is not surprising: children’s scores are m
 
 {{% state-wrapper state="state4" notmerge="true" %}}
 
-<br><br>and the same gains continue in fifth grade ...<br><br><br>
+and the same gains continue in fifth grade ...
 
 {{% /state-wrapper %}}
 
@@ -43,7 +46,7 @@ In many ways the pattern shown here is not surprising: children’s scores are m
 
 {{% state-wrapper state="state5" notmerge="true" %}}
 
-<br><br>and sixth ...<br><br><br>
+and sixth ...
 
 {{% /state-wrapper %}}
 
@@ -51,7 +54,7 @@ In many ways the pattern shown here is not surprising: children’s scores are m
 
 {{% state-wrapper state="state6" notmerge="true" %}}
 
-<br><br>and seventh ...<br><br><br>
+and seventh ...
 
 {{% /state-wrapper %}}
 
@@ -59,35 +62,35 @@ In many ways the pattern shown here is not surprising: children’s scores are m
 
 {{% state-wrapper state="state7" notmerge="true" %}}
 
-<br><br>... and by 8th grade, Chicago students perform near the national average. They have experienced the equivalent of six years of average learning in the five years between 3rd and 8th grade. The families in Chicago’s public schools tend to be lower in socioeconomic status, and the average test scores are relatively modest, but, year after year, the schools are lifting children up at an impressive rate.
+... and by 8th grade, Chicago students perform near the national average. They have experienced the equivalent of six years of average learning in the five years between 3rd and 8th grade. The families in Chicago’s public schools tend to be lower in socioeconomic status, and the average test scores are relatively modest, but, year after year, the schools are lifting children up at an impressive rate.
 
 <img src="/images/articles/affluent-schools/state6.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, adjusted for 8th grade performance" />
 
 In Anne Arundel, the opposite is true. Although students there are more affluent than average and score above a 4th grade level in 3rd grade, they learn at a far lower rate than their Chicago peers. By 8th grade their scores are only slightly above average.
 
-It’s common to think of the average test scores in a school as a measure of school quality. After all, if students are scoring well on tests, they must be learning something, right? To understand what is wrong with this assumption, though, consider a hospital. We shouldn’t assess a hospital based on the health of its patients; rather, we’d want to know how much patient health improves as a result of their time in that hospital. Similarly, we shouldn’t evaluate a school based on the average scores of its students, but rather by how much students learn while in school. If we can measure the change in test scores as students move from one grade to the next, we gain a more accurate picture of what a school is accomplishing.<br><br>
+It’s common to think of the average test scores in a school as a measure of school quality. After all, if students are scoring well on tests, they must be learning something, right? To understand what is wrong with this assumption, though, consider a hospital. We shouldn’t assess a hospital based on the health of its patients; rather, we’d want to know how much patient health improves as a result of their time in that hospital. Similarly, we shouldn’t evaluate a school based on the average scores of its students, but rather by how much students learn while in school. If we can measure the change in test scores as students move from one grade to the next, we gain a more accurate picture of what a school is accomplishing.
 
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state19" notmerge="true" %}}
 
-<br class="d-sm-none d-md-block"><br class="d-sm-none d-md-block">The Opportunity Explorer provides this data — the “learning rate” — for schools, school districts, and counties across the country. The result is an unexpected story of the quality of public education in the United States. We see, for example, that students in some relatively affluent districts—like Anne Arundel County—show little learning as they progress from one grade to the next. We discover, too, that students in some poor districts start off testing far below average, but the schools appear to be doing an outstanding job, where students are catching up to and exceeding the national average.
+>The Opportunity Explorer provides this data — the “learning rate” — for schools, school districts, and counties across the country. The result is an unexpected story of the quality of public education in the United States. We see, for example, that students in some relatively affluent districts—like Anne Arundel County—show little learning as they progress from one grade to the next. We discover, too, that students in some poor districts start off testing far below average, but the schools appear to be doing an outstanding job, where students are catching up to and exceeding the national average.
 
 This figure highlights the relationship between how rich a district is and how fast its students learn on average. As before, the horizontal axis shows the average SES in the district. But here the vertical axis represents district learning rates: the higher the district is located in the figure, the faster students’ test scores improve from one grade to the next.
 
 <img src="/images/articles/affluent-schools/state7.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level" />
 
 On average, learning rates are modestly higher in more affluent districts than in less affluent ones, but the data reveal many exceptions. Chicago boasts a learning rate 22 percent above average. But Anne Arundel County has learning rates 16 percent slower than average.
-<br><br>
+
 
 {{% /state-wrapper %}}
 
 {{% state-wrapper state="state8" notmerge="true" %}}
 
-<br class="d-sm-none d-md-block"><br class="d-sm-none d-md-block">Differences in learning rates add up. In Milwaukee, the scores of third-grade students in are similar to those in Chicago. But over time, their scores do not grow as much, so they are far behind the national average when they reach 8th grade.
+Differences in learning rates add up. In Milwaukee, the scores of third-grade students in are similar to those in Chicago. But over time, their scores do not grow as much, so they are far behind the national average when they reach 8th grade.
 
-Shown here is Grade 3 ...<br><br>
+Shown here is Grade 3 ...
 
 {{% /state-wrapper %}}
 
@@ -95,7 +98,7 @@ Shown here is Grade 3 ...<br><br>
 
 {{% state-wrapper state="state9" notmerge="true" %}}
 
-<br><br>Grade 4 ...<br><br><br>
+Grade 4 ...
 
 {{% /state-wrapper %}}
 
@@ -103,7 +106,7 @@ Shown here is Grade 3 ...<br><br>
 
 {{% state-wrapper state="state10" notmerge="true" %}}
 
-<br><br>Grade 5 ...<br><br><br>
+Grade 5 ...
 
 {{% /state-wrapper %}}
 
@@ -111,7 +114,7 @@ Shown here is Grade 3 ...<br><br>
 
 {{% state-wrapper state="state11" notmerge="true" %}}
 
-<br><br>Grade 6 ...<br><br><br>
+Grade 6 ...
 
 {{% /state-wrapper %}}
 
@@ -119,7 +122,7 @@ Shown here is Grade 3 ...<br><br>
 
 {{% state-wrapper state="state12" notmerge="true" %}}
 
-<br><br>Grade 7 ...<br><br><br>
+Grade 7 ...
 
 {{% /state-wrapper %}}
 
@@ -127,7 +130,7 @@ Shown here is Grade 3 ...<br><br>
 
 {{% state-wrapper state="state13" notmerge="true" %}}
 
-<br><br>and Grade 8.
+and Grade 8.
 
 <img src="/images/articles/affluent-schools/state13.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level, grade 8 data" />
 
@@ -141,12 +144,12 @@ Again, the data provide us an answer.<br class="d-sm-none d-md-block"><br class=
 
 {{% state-wrapper state="state14" notmerge="true" %}}
 
-<br class="d-sm-none d-md-block"><br>This figure compares district learning rates with average test scores in 3rd grade. As before, districts higher in the figure have higher learning rates. In places on the left, students have had relatively few educational opportunities by the time they reach 3rd grade. On the right side, early educational opportunities are high.
+This figure compares district learning rates with average test scores in 3rd grade. As before, districts higher in the figure have higher learning rates. In places on the left, students have had relatively few educational opportunities by the time they reach 3rd grade. On the right side, early educational opportunities are high.
 
 
 <img src="/images/articles/affluent-schools/state14.jpg" class="d-md-none" alt="Scatterplot highlighting Chicago Public School District, Anne Arundel County Public School District, and Milwaukee Public School District. x axis is achievement in grade levels, y axis is learning rates by percent difference from 1 grade level, grade 3 data" />
 
-There is almost no relationship between the two measures. Districts with high scores in grade 3 don’t necessarily have high learning rates; nor do districts with low initial scores generally have low growth rates.<br><br>
+There is almost no relationship between the two measures. Districts with high scores in grade 3 don’t necessarily have high learning rates; nor do districts with low initial scores generally have low growth rates.
 
 {{% /state-wrapper %}}
 
@@ -154,7 +157,7 @@ There is almost no relationship between the two measures. Districts with high sc
 
 {{% state-wrapper state="state15" notmerge="true" %}}
 
-<br><br class="d-sm-none d-md-block">Districts in the upper right offer students substantial educational opportunities both before 3rd grade and through the middle school years.
+Districts in the upper right offer students substantial educational opportunities both before 3rd grade and through the middle school years.
 
 <img src="/images/articles/affluent-schools/state16.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District, Anne Arundel County Public School District, and Milwaukee Public School District. x axis is achievement in grade levels, y axis is learning rates by percent difference from 1 grade level, grade 3 data. lower left quadrant highlighted" />
 
@@ -162,9 +165,9 @@ There is almost no relationship between the two measures. Districts with high sc
 
 {{% state-wrapper state="state16" notmerge="true" %}}
 
-<br class="d-sm-none d-md-block"><br>Those in the lower left show the opposite: educational opportunities are scarce both in early childhood and through the elementary and middle school years.
+Those in the lower left show the opposite: educational opportunities are scarce both in early childhood and through the elementary and middle school years.
 
-More generally, the data tell us not only <i>where</i> there is more or less educational opportunity, but <i>when</i> opportunity is available in each place.<br><br>
+More generally, the data tell us not only <i>where</i> there is more or less educational opportunity, but <i>when</i> opportunity is available in each place.
 
 {{% /state-wrapper %}}
 
@@ -180,7 +183,7 @@ More generally, the data tell us not only <i>where</i> there is more or less edu
 
 {{% state-wrapper state="state18" notmerge="true" %}}
 
-<br><br class="d-sm-none d-md-block">In the upper left are districts, like Chicago, where educational opportunities are concentrated during the schooling years. Here children have few opportunities early on, but show substantial learning after grade 3. Children in such places may benefit from investments focused on improving early childhood opportunities.
+In the upper left are districts, like Chicago, where educational opportunities are concentrated during the schooling years. Here children have few opportunities early on, but show substantial learning after grade 3. Children in such places may benefit from investments focused on improving early childhood opportunities.
 
 If we want to improve children’s educational outcomes, we will need to change how—and where and when—we provide educational opportunities throughout children’s lives. Some people assume that we simply need to improve schools. Others argue that the schools are fine, but we need to provide more learning opportunities in early childhood—in children’s homes and childcare centers and preschool programs. The data show that there may be no one best strategy. Rather we need targeted strategies—targeted to specific age groups in specific places—to allow all of our children to reach their full potential, regardless of where they grow up.
 

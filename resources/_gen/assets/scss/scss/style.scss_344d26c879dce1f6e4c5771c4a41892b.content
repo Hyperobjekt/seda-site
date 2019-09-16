@@ -21296,6 +21296,12 @@ body.type-posts .hero .hero-child .column p {
   }
 }
 
+body.type-posts h3 {
+  line-height: 1.5;
+  padding-left: 1.6rem;
+  border-left: 2px solid #04143c;
+}
+
 body.type-posts .crumbs {
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
@@ -21528,9 +21534,12 @@ body.type-posts .search-component .ais-InstantSearch__root {
 
 @media (min-width: 768px) {
   body.type-posts .state-desc-wrapper {
-    border-top: 1.5px solid #daecf3;
-    border-top: 1.5px solid #e6e6e6;
-    border-top: 1.4px solid #89a2b3;
+    /*
+        border-top: 1.5px solid #daecf3;
+        border-top: 1.5px solid #e6e6e6;
+        border-top: 1.4px solid #89a2b3;
+        */
+    padding-bottom: 70vh;
   }
 }
 

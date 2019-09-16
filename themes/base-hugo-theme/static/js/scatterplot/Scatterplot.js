@@ -124,8 +124,8 @@ function Scatterplot(container, props) {
     scatter: {
       symbol: 'circle',
       color: 'rgba(148, 228, 254, 0.8)',
-      //color: 'rgba(255, 255, 255, 0.8)',
-      //color: 'rgba(171, 217, 233, 0.8)',
+      // color: 'rgba(255, 255, 255, 0.8)',
+      // color: 'rgba(171, 217, 233, 0.8)',
       itemStyle: {
         borderWidth: 0.6,
         borderColor: 'rgba(6, 29, 86, 0.25)',

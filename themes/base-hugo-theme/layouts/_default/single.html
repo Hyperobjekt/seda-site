@@ -13,15 +13,16 @@
 </div>
 <div id="" class="row dyn-article">
     <div class="col-xs-10 col-md-5 col-xl-4 offset-xl-1">
-        {{ .Content | markdownify }}
+      <p class="sr-only">This page contains a dynamic scatterplot which will load new data as you proceed though the page. These updates will be announced in accordance to your screen reader's implementation of aria-region live.</p>
+      {{ .Content | markdownify }}
     </div>
     <div class="col-10 d-sm-none d-md-block offset-1 col-md-7 col-xl-6 offset-md-0 column-scatterplot">
       <div class="plot-parent">
-        <div class="title"></div>
-        <div class="subtitle"></div>
-        <div class="search-component" id="searchComponent" style=""></div>
+        <div id="plotTitle" class="title" aria-live="assertive" aria-label="Scatterplot title"><span class="sr-only">Scatterplot title</span></div>
+        <div id="plotSubtitle" class="subtitle" aria-live="assertive" aria-label="Scatterplot subtitle"><span class="sr-only">Scatterplot subtitle</span></div>
+        <div class="search-component" id="searchComponent" style=""  aria-controls="scatterplot"></div>
         <div class="rectangle" style="">
-          <div id="scatterplot"></div>
+          <div id="scatterplot" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data scatterplot"></div>
         </div>
       </div>
     </div>

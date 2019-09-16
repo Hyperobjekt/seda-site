@@ -21285,6 +21285,12 @@ body.type-posts .hero .hero-child .column p {
   }
 }
 
+body.type-posts h3 {
+  line-height: 1.5;
+  padding-left: 1.6rem;
+  border-left: 2px solid #04143c;
+}
+
 body.type-posts .crumbs {
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;

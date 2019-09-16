@@ -13,7 +13,10 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 {{% state-wrapper state="state1" notmerge="true" %}}
 
-The Chicago Public Schools are more successful than they are given credit for. In 3rd grade, where our test data begins, the average student in Chicago scores below a 2nd-grade level, as shown in the accompanying chart.
+<h3 class="mb-2">The Chicago Public Schools are more successful than they are given credit for.</h3>
+
+
+In 3rd grade, where our test data begins, the average student in Chicago scores below a 2nd-grade level, as shown in the accompanying chart.
 
 <img src="/images/articles/affluent-schools/state1.jpg" class=" d-md-none" />
 

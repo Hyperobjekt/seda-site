@@ -168,6 +168,11 @@ body.type-posts {
         }
   }
   
+  h3 {
+    line-height: 1.5;
+    padding-left: 1.6rem;
+    border-left: 2px solid $seda-navy;
+  }
 
   .crumbs {
     font-family: $sharpgrotesk-med-15;

@@ -13,7 +13,7 @@ We summarize the test score data in three different ways in order to highlight d
  
 + Trend in test scores: The trend in scores indicates how rapidly average test scores within a school, district, or county have changed over time. It reflects changes over time in the total set of educational opportunities (in and out of schools) available to children. For example, average scores might improve over time because the schools are improving and/or because more high-income families have moved into the community.
 
-For more information on how the average, learning rate, and trend in test scores are computed, see the [methods overview]. 
+For more information on how the average, learning rate, and trend in test scores are computed, see the <span class="highlight2">[methods overview]</span>. 
 
 
 

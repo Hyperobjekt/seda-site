@@ -14,7 +14,10 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 {{% state-wrapper state="state1" notmerge="true" %}}
 
-Racial and ethnic disparities in children’s academic performance are a stubborn feature of the American educational landscape. Though these gaps are substantially smaller than they were 40 years ago, they remain quite large: the difference in standardized test scores between White and  Black students amounts to roughly two years of schooling. The gap between White and Hispanic students is almost as large.
+<h3 class="mb-5=4">Racial and ethnic disparities in children’s academic performance are a stubborn feature of the American educational landscape.</h3>
+
+
+Though these gaps are substantially smaller than they were 40 years ago, they remain quite large: the difference in standardized test scores between White and  Black students amounts to roughly two years of schooling. The gap between White and Hispanic students is almost as large.
 
 <img src="/images/articles/racial-gaps/state1.jpg" class="d-md-none" />
 

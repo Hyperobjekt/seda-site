@@ -17295,7 +17295,7 @@ h5.big-superhead, a.big-superhead {
   font-size: 1.4rem;
   letter-spacing: .064rem;
   line-height: 4.4rem;
-  background-color: #EA063D;
+  background-color: #EC003A;
   color: #fff;
   text-align: center;
   white-space: nowrap;

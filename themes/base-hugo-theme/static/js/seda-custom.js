@@ -47,6 +47,14 @@
         }
     }
 
+    $('#openAll').on('click touchstart', function(e) {
+      e.preventDefault();
+      $panels = $('.accordion-section .collapse');
+      if ($panels.length >= 1) {
+        $panels.addClass('show');
+      }
+    });
+
     if (supportsSVGTransforms()) {
       // use svg animation
       $('.svg-animated').removeClass('d-md-none');

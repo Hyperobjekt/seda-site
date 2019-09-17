@@ -21173,6 +21173,16 @@ body.type-posts #scrollForMore {
   width: 100%;
 }
 
+body.type-posts #scrollToTop {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 @media (min-width: 320px) {
   body.type-posts {
     font-size: 1.2rem;
@@ -22734,6 +22744,28 @@ body.type-help-faq .toggle-accordion:before {
 
 body.type-help-faq .toggle-accordion.active:before {
   content: "Collapse All";
+}
+
+body.type-help-faq .open-all {
+  margin-bottom: -50px;
+}
+
+body.type-help-faq .open-all #openAll {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  margin: 20px 0 0 auto;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.055rem;
+  text-transform: uppercase;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  color: #031232;
 }
 
 body.type-help-faq .hero-child {

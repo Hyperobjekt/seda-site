@@ -54,32 +54,68 @@ body.type-posts {
     transition: visibility 0s linear 300ms, opacity 300ms;
   }
 
-  #scrollForMore,
-  #scrollToTop {
-    display: none;
-    @include media-breakpoint-up(md) {
-      display: block;
+  .scrollTabContainer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    padding: 1.6rem 0 1.6rem;
+    display: flex;
+    justify-content: center;
+    #scrollForMore,
+    #scrollToTop {
+      display: none;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+        background-color: #fff;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        text-transform: uppercase;
+        color: $tertiary;
+        font-family: $sharpgrotesk-med-15;
+        //margin-bottom: 1.6rem;
+        letter-spacing: 0.055rem;
+        padding: 1.6rem;
+        @include media-breakpoint-up(md) {
+          font-size: 1.7rem;
+          line-height: 2.5rem;
+      }
+      margin-left: auto;
+      margin-right: auto;
+      }
+  
+    #scrollForMore {
+      i {
+        width: 16px;
+        height: 16px;
+        background-image: url('/images/down-arrow-blk.svg');
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+      }
     }
-
-    margin-left: auto;
-    margin-right: auto;
   }
 
   #scrollForMore {
     text-align: center;
     position:fixed;
     bottom:0px;
-    width:100%;
+    width:200px;
   }
 
   #scrollToTop {
     background: none;
-    color: inherit;
+    //color: inherit;
     border: none;
-    padding: 0;
-    font: inherit;
+    //padding: 0;
+    //font: inherit;
     cursor: pointer;
     outline: inherit;
+    bottom: 0;
+    position: fixed;
   }
 
 

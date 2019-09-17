@@ -40,10 +40,22 @@
             // console.log(result);
             // Stop spinner spinning.
             $spinner.css({'opacity': 0});
-            // Redirect.
-            const timeout = setTimeout(function() {
-              window.location = result.redirect;
-            }, 600);
+            if (!!dataLayer) {
+              dataLayer.push({
+                'event': 'eMailSignup',
+                'eventCallback' : () => {
+                  const timeout = setTimeout(function() {
+                    window.location = result.redirect;
+                  }, 600);
+                }
+              });
+            } else {
+              console.log('dataLayer not available. Skipping analytics reporting.');
+              // Redirect.
+              const timeout = setTimeout(function() {
+                window.location = result.redirect;
+              }, 600);
+            }
           },
           error: function(result) {
             let errStr = 'Something went wrong.';
@@ -62,6 +74,14 @@
             $spinner.css({'opacity': 0});
             // Set form input to active.
             $submit.prop("disabled", false);
+            // Send to GA
+            if (!!dataLayer) {
+              dataLayer.push({
+                'event': 'eMailSignupError'
+              });
+            } else {
+              console.log('dataLayer not available. Skipping analytics reporting.');
+            }
             // What do we do if the user already exists?
           }
         });

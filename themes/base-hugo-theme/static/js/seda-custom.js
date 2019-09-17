@@ -14,6 +14,10 @@
             // $('body').addClass('scroll-top');
             $('nav').removeClass('sticky-top');
             $('.subnav').removeClass('sticky-top');
+            if ($('#scrollForMore').length >= 1) {
+              $('#scrollForMore').addClass('hide');
+              $('#scrollForMore').removeClass('show');
+            }
         } else if (y > (heroHeight - 64)) {
             // $('body').removeClass('scroll-top');
             $('nav').addClass('sticky-top');

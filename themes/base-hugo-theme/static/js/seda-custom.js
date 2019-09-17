@@ -18,6 +18,28 @@
             // $('body').removeClass('scroll-top');
             $('nav').addClass('sticky-top');
             $('.subnav').addClass('sticky-top');
+            // If on article page display the article scroll indicator.
+            if ($('#scrollToTop').length >= 1) {
+              if(y + $(window).height() == $(document).height()) {
+                console.log("bottom!");
+                $('#scrollToTop').addClass('show');
+                $('#scrollToTop').removeClass('hide');
+              } else {
+                $('#scrollToTop').addClass('hide');
+                $('#scrollToTop').removeClass('show');
+              }
+            }
+
+            if ($('#scrollForMore').length >= 1) {
+              if(y + $(window).height() >= $(document).height() - 300) {
+                console.log("yah bottom!");
+                $('#scrollForMore').addClass('hide');
+                $('#scrollForMore').removeClass('show');
+              } else {
+                $('#scrollForMore').addClass('show');
+                $('#scrollForMore').removeClass('hide');
+              }
+            }
         }
     }
 
@@ -691,6 +713,14 @@ function getPageOffset(url) {
         }
       });
     });
+
+    if ($('#scrollToTop').length >= 1) {
+      $('#scrollToTop').on('click touchstart', function(e) {
+        $('html,body').animate({
+          scrollTop: '480px'
+        }, 2000);
+      });
+    }
 
     /**
      * Update URL on accordion expand

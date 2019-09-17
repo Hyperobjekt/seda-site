@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<div id="hero" class="hero row" style="">
+<div id="hero" name="hero" class="hero row" style="">
     <div class="hero-child row" style="background-image:url('{{ .Params.hero }}');">
       <div class="column flex-column h-100 justify-content-center align-items-center col-sm-12 offset-sm-0 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
         <h2>{{ .Params.displaytitle }}</h2>
@@ -28,5 +28,7 @@
     </div>
 </div>
 
+<span id="scrollForMore" aria-hidden="true" class="show">SCROLL FOR MORE</span>
+<button id="scrollToTop" aria-hidden="true" class="hide">SCROLL TO TOP</button>
 
 {{ end }}

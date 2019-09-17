@@ -21140,6 +21140,39 @@ body.type-posts:first-child {
   margin-top: 0;
 }
 
+body.type-posts .show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
+
+body.type-posts .hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+
+body.type-posts #scrollForMore,
+body.type-posts #scrollToTop {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  body.type-posts #scrollForMore,
+  body.type-posts #scrollToTop {
+    display: block;
+  }
+}
+
+body.type-posts #scrollForMore {
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
 @media (min-width: 320px) {
   body.type-posts {
     font-size: 1.2rem;

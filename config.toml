@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Stanford Education Data Archive"
 theme = "base-hugo-theme"
-# googleAnalytics = "UA-143360439-1"
+googleAnalytics = "UA-143360439-1"
 paginate = 5
 
 [imaging]
@@ -11,7 +11,7 @@ quality = 70
 anchor = "smart"
 
 [params]
-  # google_analytics_id=""
+  loadDevAnalytics=true # turn this off when not doing dev work on analytics
   hideFooter=false
   includeBootstrapJs=true
   containerMaxWidth=1200

@@ -29,7 +29,8 @@
           },
           indices: ['districts'],
           inputProps: {
-            placeholder: 'Highlight a district...'
+            placeholder: 'Highlight a district...',
+            'aria-label': 'Enter a district name to search'
           }
         },
         renderSearch: function() {
@@ -60,9 +61,10 @@
             // console.log('update');
             var activeWrappers = $.grep(plot.wrappers, function(el) {
                 // Get top and bottom y coords of wrapper
-                plot.top = (plot.scatterplot).offset().top +462;
+                plot.top = (plot.scatterplot).offset().top + 120; // + 462;
                 var wrapperTop = $(el).offset().top; // $(el).offset().top - $(window).scrollTop();
-                var wrapperHeight = $(el).height();
+                // var wrapperHeight = $(el).height();
+                var wrapperHeight = $(el).outerHeight();
                 var wrapperBottom = Number(wrapperTop) + Number(wrapperHeight);
                 // If plot top or bottom are within
                 // add to activeWrappers.

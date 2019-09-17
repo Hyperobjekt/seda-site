@@ -18,7 +18,7 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 In 3rd grade, where our test data begins, the average student in Chicago scores below a 2nd-grade level, as shown in the accompanying chart.
 
-<img src="/images/articles/affluent-schools/state1.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state1.jpg" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District" class="d-md-none" />
 
 This figure highlights the relationship between how rich a district is and how its students perform on standardized tests in 3rd grade. The horizontal axis shows the average family socioeconomic status (SES) in the district (<a href="/help-faq/#ses-measured">see here for how we measure SES</a>), where 0 represents the SES of the average district in the U.S. More affluent districts are located to the right in the figure; poorer district to the left.
 
@@ -34,7 +34,7 @@ But by fourth grade, they have moved up ...
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state2.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state2.jpg" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, adjusted for 4th grade performance" class=" d-md-none" />
 
 {{% state-wrapper state="state4" notmerge="true" %}}
 
@@ -42,7 +42,7 @@ and the same gains continue in fifth grade ...
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state3.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state3.jpg" class="d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, adjusted for 5th grade performance" />
 
 {{% state-wrapper state="state5" notmerge="true" %}}
 
@@ -50,7 +50,7 @@ and sixth ...
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state4.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state4.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, adjusted for 6th grade performance" />
 
 {{% state-wrapper state="state6" notmerge="true" %}}
 
@@ -58,13 +58,13 @@ and seventh ...
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state5.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state5.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, adjusted for 7th grade performance" />
 
 {{% state-wrapper state="state7" notmerge="true" %}}
 
 ... and by 8th grade, Chicago students perform near the national average. They have experienced the equivalent of six years of average learning in the five years between 3rd and 8th grade. The families in Chicago’s public schools tend to be lower in socioeconomic status, and the average test scores are relatively modest, but, year after year, the schools are lifting children up at an impressive rate.
 
-<img src="/images/articles/affluent-schools/state6.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state6.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, adjusted for 8th grade performance" />
 
 In Anne Arundel, the opposite is true. Although students there are more affluent than average and score above a 4th grade level in 3rd grade, they learn at a far lower rate than their Chicago peers. By 8th grade their scores are only slightly above average.
 
@@ -79,7 +79,7 @@ It’s common to think of the average test scores in a school as a measure of sc
 
 This figure highlights the relationship between how rich a district is and how fast its students learn on average. As before, the horizontal axis shows the average SES in the district. But here the vertical axis represents district learning rates: the higher the district is located in the figure, the faster students’ test scores improve from one grade to the next.
 
-<img src="/images/articles/affluent-schools/state7.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state7.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level" />
 
 On average, learning rates are modestly higher in more affluent districts than in less affluent ones, but the data reveal many exceptions. Chicago boasts a learning rate 22 percent above average. But Anne Arundel County has learning rates 16 percent slower than average.
 
@@ -94,7 +94,7 @@ Shown here is Grade 3 ...
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state8.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state8.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level, grade 3 data" />
 
 {{% state-wrapper state="state9" notmerge="true" %}}
 
@@ -102,7 +102,7 @@ Grade 4 ...
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state9.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state9.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level, grade 4 data" />
 
 {{% state-wrapper state="state10" notmerge="true" %}}
 
@@ -110,7 +110,7 @@ Grade 5 ...
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state10.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state10.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level, grade 5 data" />
 
 {{% state-wrapper state="state11" notmerge="true" %}}
 
@@ -118,7 +118,7 @@ Grade 6 ...
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state11.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state11.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level, grade 6 data" />
 
 {{% state-wrapper state="state12" notmerge="true" %}}
 
@@ -126,13 +126,13 @@ Grade 7 ...
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state12.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state12.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level, grade 7 data" />
 
 {{% state-wrapper state="state13" notmerge="true" %}}
 
 and Grade 8.
 
-<img src="/images/articles/affluent-schools/state13.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state13.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level, grade 8 data" />
 
 Are the schools themselves the reason for this discrepancy in learning rates? It’s possible that other factors, such as family resources and the availability of afterschool programs within a given district, play some role. But even so, we have a better idea of how much students learn during their school years by looking at learning rates instead of average test scores. This brings us a step closer to understanding where public schools are most effective at providing learning opportunities. The quality of public education can vary dramatically from one school system to the next, and not in the way that average test scores suggest.
 
@@ -147,21 +147,19 @@ Again, the data provide us an answer.<br class="d-sm-none d-md-block"><br class=
 This figure compares district learning rates with average test scores in 3rd grade. As before, districts higher in the figure have higher learning rates. In places on the left, students have had relatively few educational opportunities by the time they reach 3rd grade. On the right side, early educational opportunities are high.
 
 
-<img src="/images/articles/affluent-schools/state14.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state14.jpg" class="d-md-none" alt="Scatterplot highlighting Chicago Public School District, Anne Arundel County Public School District, and Milwaukee Public School District. x axis is achievement in grade levels, y axis is learning rates by percent difference from 1 grade level, grade 3 data" />
 
 There is almost no relationship between the two measures. Districts with high scores in grade 3 don’t necessarily have high learning rates; nor do districts with low initial scores generally have low growth rates.
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state15.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state15.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District, Anne Arundel County Public School District, and Milwaukee Public School District. x axis is achievement in grade levels, y axis is learning rates by percent difference from 1 grade level, grade 3 data. upper right quadrant highlighted" />
 
 {{% state-wrapper state="state15" notmerge="true" %}}
 
 Districts in the upper right offer students substantial educational opportunities both before 3rd grade and through the middle school years.
 
-<img src="/images/articles/affluent-schools/state16.jpg" class=" d-md-none" />
-
-
+<img src="/images/articles/affluent-schools/state16.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District, Anne Arundel County Public School District, and Milwaukee Public School District. x axis is achievement in grade levels, y axis is learning rates by percent difference from 1 grade level, grade 3 data. lower left quadrant highlighted" />
 
 {{% /state-wrapper %}}
 
@@ -173,15 +171,15 @@ More generally, the data tell us not only <i>where</i> there is more or less edu
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state17.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state17.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District, Anne Arundel County Public School District, and Milwaukee Public School District. x axis is achievement in grade levels, y axis is learning rates by percent difference from 1 grade level, grade 3 data. lower right quadrant highlighted" />
 
 {{% state-wrapper state="state17" notmerge="true" %}}
 
-In the bottom right, for example, districts like Anne Arundel have plentiful educational opportunities early in life but show slower learning rates after grade 3. These communities may need to focus their investments in expanding learning opportunities in the late elementary and middle school years.
+<br><br class="d-sm-none d-md-block">In the bottom right, for example, districts like Anne Arundel have plentiful educational opportunities early in life but show slower learning rates after grade 3. These communities may need to focus their investments in expanding learning opportunities in the late elementary and middle school years.<br><br>
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/affluent-schools/state18.jpg" class=" d-md-none" />
+<img src="/images/articles/affluent-schools/state18.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District, Anne Arundel County Public School District, and Milwaukee Public School District. x axis is achievement in grade levels, y axis is learning rates by percent difference from 1 grade level, grade 3 data. upper left quadrant highlighted" />
 
 {{% state-wrapper state="state18" notmerge="true" %}}
 

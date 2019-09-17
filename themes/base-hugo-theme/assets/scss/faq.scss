@@ -7,15 +7,37 @@ body.type-help-faq {
   }
   a:hover {
     text-decoration: underline;
-  
+
   }
   .toggle-accordion:before {
     content: "Expand All";
   }
-  
+
   .toggle-accordion.active:before {
     content: "Collapse All";
   }
+
+  .open-all {
+    margin-bottom: -50px;
+    #openAll {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+      margin: 20px 0 0 auto;
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1.6rem;
+      letter-spacing: 0.055rem;
+      text-transform: uppercase;
+      font-family: $sharpgrotesk-med-15;
+      color: $seda-dark;
+    }
+  }
+
     .hero-child {
       background: url('/images/heroes/help-faq.svg');
       background-repeat: no-repeat;
@@ -66,16 +88,16 @@ body.type-help-faq {
         @include media-breakpoint-up(xl) {
           height: 480px;
         }
-        
-        
-        
+
+
+
         .hero-child {
           width: 100%;
           height: 100%;
           margin-right: 0;
           margin-left: 0;
           // background: url('/images/heroes/help-faq.svg');
-          
+
           .column {
             margin-top: 13.2rem;
             margin-bottom: 9.6rem;
@@ -183,8 +205,8 @@ body.type-help-faq {
             font-size: 1.9rem;
             line-height: 2.7rem;
             letter-spacing: auto;
-          }  
-      }  
+          }
+      }
       p, li {
         font-size: 1.3rem;
         line-height: 2rem;
@@ -201,7 +223,7 @@ body.type-help-faq {
           font-size: 1.7rem;
           line-height: 2.6rem;
       }
-      }  
+      }
       .row.glossary {
         padding-top: 5.6rem;
         @include media-breakpoint-up(md) {
@@ -216,7 +238,7 @@ body.type-help-faq {
         margin-right: 0;
       }
       .row.map {
-        padding: 8rem 0 4rem;  
+        padding: 8rem 0 4rem;
       }
       .accordion-section {
         padding: 4.8rem 0;
@@ -241,7 +263,7 @@ body.type-help-faq {
                     @include media-breakpoint-up(md) {
                         font-size: 1.8rem;
                     }
-                }   
+                }
             }
             &:hover {
                 text-decoration: none;
@@ -258,7 +280,7 @@ body.type-help-faq {
         .center-block {
             float: none !important;
         }
-        
-       
 
-}    
+
+
+}

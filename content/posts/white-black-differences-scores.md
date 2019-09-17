@@ -19,14 +19,14 @@ status: (3-10-19) Hero image and content / scatterplot areas are for placement o
 
 Though these gaps are substantially smaller than they were 40 years ago, they remain quite large: the difference in standardized test scores between White and  Black students amounts to roughly two years of schooling. The gap between White and Hispanic students is almost as large.
 
-<img src="/images/articles/racial-gaps/state1.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state1.jpg" class="d-md-none" alt="Scatterplot displaying USA school district standardized test scores, x axis is white student scores, y axis is black student scores" />
 
 The first figure compares the average performance of Black and White students. Each circle is a school district, and the size of the circle is proportional to the number of Black and White children enrolled in the school district. Districts that lie on the diagonal line have no White/Black disparity in test scores, and the farther a district sits away from the diagonal line, the greater the gap in that district. <br><br>
 
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/racial-gaps/state2.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state2.jpg" class="d-md-none" alt="Scatterplot displaying USA school district standardized test scores, x axis is white student scores, y axis is black student scores, Walton County School District is highlighted" />
 
 {{% state-wrapper state="state2" notmerge="false" %}}
 
@@ -35,7 +35,7 @@ The first figure compares the average performance of Black and White students. E
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/racial-gaps/state3.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state3.jpg" class="d-md-none" alt="Scatterplot displaying USA school district standardized test scores, x axis is white student scores, y axis is black student scores, the largest 100 school districts are highlighted" />
 
 {{% state-wrapper state="state3" notmerge="false" %}}
 
@@ -57,7 +57,7 @@ This is where fine-grained data can be so helpful. There are some 13,000 public 
 
 <br class="d-sm-none d-md-block"><br class="d-sm-none d-md-block">The data show enormous variation in the size of opportunity gaps. Consider 3 school districts in the Atlanta metropolitan area.
 
-<img src="/images/articles/racial-gaps/state4.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state4.jpg" class="d-md-none" alt="Scatterplot displaying USA school district standardized test scores, x axis is white student scores, y axis is black student scores, the largest 100 school districts are highlighted, as well as Clayton County School District, Gwinnet County School District, and Atlanta City School District" />
 
 In Clayton Co., just south of Atlanta, the gap is small, but that’s because both White and Black students score well below average. Both groups experience quite low levels of educational opportunity.
 
@@ -70,7 +70,7 @@ Why are the opportunity gaps larger in some districts than in others? One factor
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/racial-gaps/state5.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state5.jpg" class="d-md-none" alt="Scatterplot displaying USA school district standardized test scores, x axis is white/black socioecnonmic disparity, y axis is white/black achievement gap" />
 
 {{% state-wrapper state="state5" notmerge="true" %}}
 
@@ -79,7 +79,7 @@ Why are the opportunity gaps larger in some districts than in others? One factor
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/racial-gaps/state6.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state6.jpg" class="d-md-none" alt="Scatterplot displaying USA school district standardized test scores, x axis is white/black socioecnonmic disparity, y axis is white/black achievement gap, Clayton County, Atlanta City, and Gwinnet School Districts highlighted" />
 
 {{% state-wrapper state="state6" notmerge="" %}}
 
@@ -87,7 +87,7 @@ Why are the opportunity gaps larger in some districts than in others? One factor
 
 {{% /state-wrapper %}}
 
-<img src="/images/articles/racial-gaps/state7.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state7.jpg" class="d-md-none" alt="Scatterplot displaying USA school district standardized test scores, x axis is white/black socioecnonmic disparity, y axis is white/black achievement gap, 100 largest districts highlighted"  />
 
 
 {{% state-wrapper state="state7" notmerge="" %}}
@@ -102,7 +102,7 @@ Why are the opportunity gaps larger in some districts than in others? One factor
 <br/>
 <br/>
 Even in places with no racial disparities in socioeconomic status, we notice a large gap in achievement between white and black students on average. This gap is typically about 1 grade level. -->
-<img src="/images/articles/racial-gaps/state8.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state8.jpg" class="d-md-none" alt="Scatterplot displaying USA school district standardized test scores, x axis is white/black socioecnonmic disparity, y axis is white/black achievement gap, Gwinnet County, Newton County, and Walton County districts highlighted" />
 
 
 {{% state-wrapper state="state9" %}}
@@ -128,7 +128,7 @@ We're probably going to have to figure out axis labels along the way.
 <br class="d-sm-none d-md-block"><br class="d-sm-none d-md-block">
 So what other factors contribute to unequal opportunity? Our research suggests that the most important predictor of achievement gaps is school segregation. This is readily evident in the data.
 
-<img src="/images/articles/racial-gaps/state9.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state9.jpg" class="d-md-none" alt="Scatterplot displaying white black achievement gaps by differences in average family socioeconomic resources, x-axis is white/black segregation gap, y-axis is white/black achievement gap by grade levels" />
 
 In this figure, the horizontal axis indicates the degree to which Black students are concentrated in different, higher-poverty, schools than White students in the same district. A value of 0 means that White and Black students attend schools with equal poverty rates. Districts located to the right in the figure are the most highly segregated, where Black students are concentrated in higher poverty schools and White students in lower poverty schools. The pattern is clear: more segregated districts generally have larger achievement gaps than less segregated ones. Atlanta is twice as segregated as Gwinnett County and has an achievement gap more than twice as large. Clayton County, where White and Black students are not segregated, has the smallest achievement gap.<br><br>
 
@@ -140,7 +140,7 @@ In this figure, the horizontal axis indicates the degree to which Black students
 Evanston, IL: id# 1714460<br>
 Berkeley, CA: id# 604740
 </b> -->
-<img src="/images/articles/racial-gaps/state10.jpg" class="d-md-none" />
+<img src="/images/articles/racial-gaps/state10.jpg" class="d-md-none" alt="Scatterplot displaying white black achievement gaps by differences in average family socioeconomic resources, x-axis is white/black segregation gap, y-axis is white/black achievement gap by grade levels, Berkeley, California and Evanston, Illinois are highlighted" />
 
 
 {{% state-wrapper state="state11" notmerge="true" %}}

@@ -481,6 +481,7 @@ var state1 = function(scatterplot) {
 
   Title['text'] = 'White and Black Student Scores';
   //Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = '';
   Title.setTitle();
 
   const baseOverrides = {
@@ -490,6 +491,10 @@ var state1 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min:-3,
@@ -567,6 +572,10 @@ var state2 = function(scatterplot) {
       left: '50%',
       top: '10px',
     },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
+    },
     yAxis: {
       min:-3,
       max:3,
@@ -633,6 +642,10 @@ var state3 = function(scatterplot) {
   const baseOverrides = {
     title: {
       subtext: Title.subtext, // '100 Largest U.S. School Districts 2009-2016'
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min:-3,
@@ -701,7 +714,7 @@ var state4 = function(scatterplot) {
   state4counter ++;
   // Plot title and subtitle
   Title['text'] = 'White and Black Student Scores';
-  //Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = '';
   Title.setTitle();
   const baseOverrides = {
     title: {
@@ -711,6 +724,10 @@ var state4 = function(scatterplot) {
       left: '50%',
       top: '10px',
       show: false
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: baseGrid,
     yAxis: deepmerge(baseYAxis, {
@@ -844,7 +861,7 @@ var state5 = function(scatterplot) {
   }
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
-  // Title['subtext'] = 'US School Districts 2009-2016';
+  Title['subtext'] = '';
   Title.setTitle();
   const baseOverrides = {
     title: {
@@ -854,6 +871,10 @@ var state5 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: {
       top: 10,
@@ -935,7 +956,7 @@ var state6 = function(scatterplot) {
   }
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
-  // Title['subtext'] = 'US School Districts 2009-2016';
+  Title['subtext'] = '';
   Title.setTitle();
   const baseOverrides = {
     title: {
@@ -945,6 +966,10 @@ var state6 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: {
       top: 10,
@@ -1022,12 +1047,16 @@ var state7 = function(scatterplot) {
   }
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
-  // Title['subtext'] = '100 Largest Districts';
+  Title['subtext'] = '100 Largest U.S. School Districts 2009-2016';
   Title.setTitle();
   const baseOverrides = {
     title: {
       show: false,
       subtext: Title.subtext, // '100 Largest U.S. School Districts 2009-2016'
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     tooltip: {
       // trigger: 'item',
@@ -1086,12 +1115,16 @@ var state8 = function(scatterplot) {
   }
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
-  // Title['subtext'] = 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016';
+  Title['subtext'] = 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016';
   Title.setTitle();
   const baseOverrides = {
     title: {
       show: false,
       subtext: Title.subtext, // 'Districts with Lowest Socioeconomic Racial Disparity 2009-2016'
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     tooltip: {
       trigger: 'item',
@@ -1154,7 +1187,7 @@ var state9 = function(scatterplot) {
   }
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
-  //Title['subtext'] = 'US School Districts 2009-2016';
+  Title['subtext'] = '';
   Title.setTitle();
   const baseOverrides = {
     title: {
@@ -1165,6 +1198,10 @@ var state9 = function(scatterplot) {
       left: '50%',
       top: '10px',
       show: false,
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: {
       top: 10,
@@ -1249,7 +1286,7 @@ var state10 = function(scatterplot) {
   }
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Segregation';
-  //Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
+  Title['subtext'] = '';
   Title.setTitle();
 
   const baseOverrides = {
@@ -1260,6 +1297,10 @@ var state10 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     legend: {
       show: true,
@@ -1364,7 +1405,7 @@ var state11 = function(scatterplot) {
   }
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Segregation';
-  //Title['subtext'] = 'Most and Least Segregated Out of\n100 Largest US School Districts 2009-2016';
+  Title['subtext'] = '';
   Title.setTitle();
 
   const baseOverrides = {
@@ -1375,6 +1416,10 @@ var state11 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     legend: {
       show: true,

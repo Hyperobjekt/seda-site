@@ -1,12 +1,12 @@
 {{ define "breadcrumb" }}
   {{ with .Parent }}
     {{ template "breadcrumb" . }}
-    <a href="{{ .URL }}" tabindex="0">{{ if .IsHome }}Home{{ else }}{{.Title}}{{ end }}</a> <span class="sep"> - </span>
+    <a href="{{ .URL }}" aria-label="Breadcrumb">{{ if .IsHome }}Home{{ else }}{{.Title}}{{ end }}</a> <span class="sep"> - </span>
   {{ end }}
 {{ end }}
 {{ if not .IsHome }}
-  <div class="breadcrumb">
+  <div class="breadcrumb" tabindex="0">
     {{ template "breadcrumb" . }}
-    <span class="current-page" tabindex="0"> {{.Title}} </span>
+    <span class="current-page" aria-label="Breadcrumb" > {{.Title}} </span>
   </div>
 {{ end }}

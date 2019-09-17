@@ -3,38 +3,46 @@
 <div id="hero" class="hero row" style="">
     <div class="hero-child row">
       <div class="column col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
-        <h2 tabindex="0">Help & FAQ</h2>
-        <p tabindex="0">Learn about the data, and how to use our interactive visualizations.</p>
+        <h2>Help & FAQ</h2>
+        <p>Learn about the data, and how to use our interactive visualizations.</p>
       </div>
      </div>
 </div>
 
 <div class="row subnav d-md-none small-tab-nav">
-     
+
         <div class="dropdown">
-            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
                 Jump to Section:
             </button>
     <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
       <ul class="anchor-links dropdown-menu">
         <!--<li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>-->
-        <li><a data-scroll-target="data" class="scroll-to-section active ">Understanding the Data</a></li>
-        <li><a data-scroll-target="map" class="scroll-to-section">Using the Explorer</a></li>
+        <li><a tabindex="0" data-scroll-target="data" class="scroll-to-section active ">Understanding the Data</a></li>
+        <li><a tabindex="0" data-scroll-target="map" class="scroll-to-section">Using the Explorer</a></li>
     </ul>
     <!--</div>-->
   </div>
- 
+
 </div>
 
 <div class="row subnav d-sm-none d-md-block large-tab-nav">
-   
+
       <ul class="anchor-links col-md-8 mx-auto d-md-flex justify-content-around">
-        <li >Jump to Section:</li>
+        <li tabindex="0">Jump to Section:</li>
         <!--<li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>-->
-        <li><a data-scroll-target="data" class="scroll-to-section">Understanding the Data</a></li>
-        <li><a data-scroll-target="map" class="scroll-to-section">Using the Explorer</a></li>
+        <li><a tabindex="0" aria-label="Skip to Understanding the Data FAQ" data-scroll-target="data" class="scroll-to-section">Understanding the Data</a></li>
+        <li><a tabindex="0" aria-label="Skip to Using the Explorer FAQ" data-scroll-target="map" class="scroll-to-section">Using the Explorer</a></li>
       </ul>
     </div>
+
+<div class="row open-all">
+  <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+    <button id="openAll" aria-label="Open all accordion panels">OPEN ALL
+      <i class="fa fa-chevron-down"></i>
+    </button>
+  </div>
+</div>
 
 {{ range (where .Site.RegularPages "Params.section" ("glossary")) }}
 <div class="row glossary" id="glossary">
@@ -42,11 +50,11 @@
         <h3 tabindex="0">{{ .Params.glossary }}</h3>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        
+
         <div class="accordion">
-           
+
                 {{ partial "faqs" . }}
-      
+
         </div> <!-- close accordion -->
     </div>
 </div>
@@ -56,7 +64,7 @@
         <h3 tabindex="0">Understanding the Data</h3>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        
+
         <div class="accordion">
             {{ range (where .Site.RegularPages "Params.section" ("data")) }}
                 {{ partial "faqs" . }}
@@ -66,10 +74,10 @@
 </div>
 <div class="row map alt-bg mx-0 px-2" id="map">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <h3 tabindex="0">Using the Opportunity Explorer</h3> 
+        <h3 tabindex="0">Using the Opportunity Explorer</h3>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-       
+
         <div class="accordion">
             {{ range (where .Site.RegularPages "Params.section" ("help")) }}
                 {{ partial "faqs" . }}
@@ -78,7 +86,7 @@
     </div>
 </div>
 
-<a href="javascript:void(0)" class="d-none toggle-accordion active" accordion-id="#accordion"></a>
+<!-- <a href="javascript:void(0)" class="d-none toggle-accordion active" accordion-id="#accordion"></a> -->
 
 
 {{ partial "subscribe.html" .}}

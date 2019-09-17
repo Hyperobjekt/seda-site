@@ -37,6 +37,10 @@ function Scatterplot(container, props) {
       itemWidth: 15,
       color: ['#5ab1ef', '#e0ffff']
     },
+    aria: {
+      show: true,
+      description: 'Scatterplot of student test scores'
+    },
     toolbox: {
       iconStyle: {
         normal: {

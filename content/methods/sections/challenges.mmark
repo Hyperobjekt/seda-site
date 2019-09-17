@@ -8,11 +8,11 @@ weight: 1
 While there is a substantial amount of data from every state available in ED<i>Facts</i>, there are four key challenges when using these data:
 
 <ol>
-    <li> 
-    1.	States provide only “proficiency data”: the count of students at each of the proficiency levels (sometimes called “achievement levels” or “performance levels”). 
-    The levels represent different degrees of mastery of the subject-specific grade-level material. 
-    Levels are defined by score “thresholds”, which are set by experts in the field. 
-    Scoring above or below different thresholds determines placement into a specific proficiency level. 
+    <li>
+    1.	States provide only “proficiency data”: the count of students at each of the proficiency levels (sometimes called “achievement levels” or “performance levels”).
+    The levels represent different degrees of mastery of the subject-specific grade-level material.
+    Levels are defined by score “thresholds”, which are set by experts in the field.
+    Scoring above or below different thresholds determines placement into a specific proficiency level.
     Common levels include “below basic”, “basic”, “proficient” and “advanced." An example is shown below.
     <br><br>
 
@@ -54,32 +54,32 @@ While there is a substantial amount of data from every state available in ED<i>F
 
     <br>
 
-    <img src="/images/methods/scale-one-v2.svg" class="w-100" />
+    <img src="/images/methods/scale-one-v2.svg" class="w-100" alt="Scale of test scores relative to grade level expectations, proficiency cutoff at 600" />
 
     <br><br>
 </li>
 
 <li>
-    2.	Most states use their own test and define “proficiency” in different ways, meaning that we cannot directly compare test results in one state to another. Proficient in one state/grade/year/subject is not comparable to proficient in another. 
+    2.	Most states use their own test and define “proficiency” in different ways, meaning that we cannot directly compare test results in one state to another. Proficient in one state/grade/year/subject is not comparable to proficient in another.
     <br><br>
     Consider two states, State A and B that use same test, which is scored on a scale from 200 to 800 points. Each state sets their own thresholds for proficiency at different scores.
     <br><br>
     <h5 style="color: #000;">State A: Higher Threshold for Proficiency</h5><br>
 
-    <img src="/images/methods/scale-one-v2.svg" class="w-100" />
+    <img src="/images/methods/scale-one-v2.svg" class="w-100" alt="Scale of test scores relative to grade level expectations, proficiency cutoff at 600" />
 
     <br><br>
     <h5 style="color: #000;">State B: Lower Threshold for Proficiency</h5><br>
 
-    <img src="/images/methods/scale-two-v2.svg" class="w-100" />
+    <img src="/images/methods/scale-two-v2.svg" class="w-100" alt="Scale of test scores relative to grade level expectations, proficiency cutoff at 500" />
 
     <br><br>
 
-    Imagine 500 students take the test. The results are as follows: 50 students score below 400 on the exam; 
-    100 score between 400 and 500; 200 score between 500 and 600; 50 score between 600 and 650; 
-    50 score between 650 and 700; and 50 students score above 700. 
-    If we use State A’s thresholds to assignment to categories, we would find that 150 students are proficient. 
-    However, if we use State B’s thresholds, 350 students would be considered proficient.  
+    Imagine 500 students take the test. The results are as follows: 50 students score below 400 on the exam;
+    100 score between 400 and 500; 200 score between 500 and 600; 50 score between 600 and 650;
+    50 score between 650 and 700; and 50 students score above 700.
+    If we use State A’s thresholds to assignment to categories, we would find that 150 students are proficient.
+    However, if we use State B’s thresholds, 350 students would be considered proficient.
     <br><br>
     <table class="table seda-table table-responsive" style="max-width: 500px; margin: auto;">
         <thead>
@@ -117,11 +117,11 @@ While there is a substantial amount of data from every state available in ED<i>F
         </tbody>
     </table>
 
-In practice, this means that students in State B may appear to have higher “proficiency” rates than those in State A even if 
-their true achievement patterns are identical! Using the proficiency data without accounting for differing 
-proficiency thresholds may lead to erroneous conclusions about the relative performance of students in 
+In practice, this means that students in State B may appear to have higher “proficiency” rates than those in State A even if
+their true achievement patterns are identical! Using the proficiency data without accounting for differing
+proficiency thresholds may lead to erroneous conclusions about the relative performance of students in
 schools in different states.<br><br>
-This problem is more complicated than the example suggests, because most states use different tests with material of varying difficulty and scores reported on different scales. 
+This problem is more complicated than the example suggests, because most states use different tests with material of varying difficulty and scores reported on different scales.
 Therefore, we cannot compare proficiency, nor can we compare students' test scores between states.
 
 <br><br>

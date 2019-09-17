@@ -14,12 +14,46 @@
             // $('body').addClass('scroll-top');
             $('nav').removeClass('sticky-top');
             $('.subnav').removeClass('sticky-top');
+            if ($('#scrollForMore').length >= 1) {
+              $('#scrollForMore').addClass('hide');
+              $('#scrollForMore').removeClass('show');
+            }
         } else if (y > (heroHeight - 64)) {
             // $('body').removeClass('scroll-top');
             $('nav').addClass('sticky-top');
             $('.subnav').addClass('sticky-top');
+            // If on article page display the article scroll indicator.
+            if ($('#scrollToTop').length >= 1) {
+              if(y + $(window).height() == $(document).height()) {
+                console.log("bottom!");
+                $('#scrollToTop').addClass('show');
+                $('#scrollToTop').removeClass('hide');
+              } else {
+                $('#scrollToTop').addClass('hide');
+                $('#scrollToTop').removeClass('show');
+              }
+            }
+
+            if ($('#scrollForMore').length >= 1) {
+              if(y + $(window).height() >= $(document).height() - 300) {
+                console.log("yah bottom!");
+                $('#scrollForMore').addClass('hide');
+                $('#scrollForMore').removeClass('show');
+              } else {
+                $('#scrollForMore').addClass('show');
+                $('#scrollForMore').removeClass('hide');
+              }
+            }
         }
     }
+
+    $('#openAll').on('click touchstart', function(e) {
+      e.preventDefault();
+      $panels = $('.accordion-section .collapse');
+      if ($panels.length >= 1) {
+        $panels.addClass('show');
+      }
+    });
 
     if (supportsSVGTransforms()) {
       // use svg animation
@@ -37,10 +71,12 @@
     }
 
     function toggleAbstract(e) {
-        // console.log('toggleAbstract()');
-        e.preventDefault();
-        $target = $(e.target);
-        $target.parents('.research-paper').toggleClass('abstract-visible');
+      // console.log('toggleAbstract()');
+      // console.log(e.target);
+      e.preventDefault();
+      $target = $(e.target);
+      $paper = $target.parents('.research-paper');
+      $paper.toggleClass('abstract-visible');
     }
 
     anime.set(['#mainland', '.plotpoints', 'body.home .hero-child h2.hero-animate',
@@ -434,7 +470,7 @@
       svg.parentNode.removeChild(svg);
       return result;
     }
-  
+
 
     var updateModal = {
         activeBio: null,
@@ -478,6 +514,9 @@
                 $('#prevBio').prop( "disabled", false);
                 $('#nextBio').prop( "disabled", false);
             }
+
+            // Set focus on close button
+            $('#closeModal').focus();
         }
     };
 
@@ -502,6 +541,14 @@
         $('html, body').animate({
             scrollTop: ($target.offset().top) - 63
         }, 500);
+        if ($('body.type-help-faq') >= 1) {
+          $target.find('h3');
+          $focus[0].focus();
+        } else {
+          // console.log('not faq');
+          $($target).focus();
+        }
+
         var t = $(window).scrollTop();
         checkScroll(t);
     });
@@ -567,13 +614,22 @@
     });
 
     $('#toggleDrawer').on('click', function() {
-        // console.log('#toggleDrawer selected');
-        $('#drawer').addClass('show');
+      // console.log('#toggleDrawer selected');
+      $('#drawer').addClass('show');
+      $('#closeDrawer').focus();
     });
 
     $('#closeDrawer').on('click', function() {
-        console.log('#closeDrawer selected');
+        // console.log('#closeDrawer selected');
         $('#drawer').removeClass('show');
+        $('#toggleDrawer').focus();
+    });
+
+    $('#closeLoop').on('keypress', function(e) {
+      // console.log('closeloop keypress');
+      if(e.which == 13) {
+        $('#closeDrawer').focus();
+      }
     });
 
     // Add Subnav active selection highlighting
@@ -583,11 +639,11 @@
     });
 
     // Add href to URL for FAQ items
-    
+
 /**
  * Smooth Scroll
  * ---
- * 
+ *
  */
 // Get smooth scroll offset depending on window width
 function getWindowOffset() {
@@ -637,11 +693,15 @@ function getPageOffset(url) {
         if (target.length === 0) { target = $(path.hash); }
         // if no ID element look for an element with the name
         if (target.length === 0) { target = $('[name="' + path.hash.slice(1) + '"]'); }
+        // console.log(target);
         // scroll to the target
         if (target.length) {
           $('html,body').animate({
             scrollTop: target.offset().top - (getWindowOffset() + getPageOffset(location.pathname)) + 'px'
           }, 1000); // The number here represents the speed of the scroll in milliseconds
+          // Focus management for a11y
+          // console.log('focusing');
+          target.focus();
           if (cb) cb(target);
           return false;
         }
@@ -656,7 +716,7 @@ function getPageOffset(url) {
           $(target.attr('href')).collapse('toggle');
         }
       });
-    
+
       $('.smoothScroll').click(function () {
         smoothScroll(this);
         // Close dropdown if dropdown link
@@ -665,7 +725,15 @@ function getPageOffset(url) {
         }
       });
     });
-    
+
+    if ($('#scrollToTop').length >= 1) {
+      $('#scrollToTop').on('click touchstart', function(e) {
+        $('html,body').animate({
+          scrollTop: '480px'
+        }, 2000);
+      });
+    }
+
     /**
      * Update URL on accordion expand
      */
@@ -680,23 +748,23 @@ function getPageOffset(url) {
       });
     });
 
-    // 
+    //
 
     $(document).ready(function() {
 
       $(".toggle-accordion").on("click", function() {
         var accordionId = $(this).attr("accordion-id"),
           numPanelOpen = $(accordionId + ' .collapse.in').length;
-        
+
         $(this).toggleClass("active");
-    
+
         if (numPanelOpen == 0) {
           openAllPanels(accordionId);
         } else {
           closeAllPanels(accordionId);
         }
       })
-    
+
       openAllPanels = function(aId) {
         console.log("setAllPanelOpen");
         $(aId + ' .panel-collapse:not(".in")').collapse('show');
@@ -705,8 +773,19 @@ function getPageOffset(url) {
         console.log("setAllPanelclose");
         $(aId + ' .panel-collapse.in').collapse('hide');
       }
-         
+
     });
+
+    if ($('body.type-research').length >= 1) {
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        // console.log('tab switch');
+        // console.log(e.target);
+        var _target = $(e.target).attr("href") // activated tab
+        $(_target).find('h5');
+        $articles = $(_target).find('h5');
+        $articles[0].focus();
+      });
+    }
 
     if ($('body.home').length >= 1) {
       console.log('setting up home page animations');

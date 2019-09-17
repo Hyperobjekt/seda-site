@@ -3,9 +3,9 @@
     {{ with $.Site.GetPage "page" "uploads/_index.md" }}
         {{ with .Resources.GetMatch $img }}
               {{$imgcrop := .Fill "118x112 Center" */}}
-          
-             <img class="img-thumbnail" src="{{ .Params.image }}" width="108px" height="72px" alt="" tabindex="0"></a>
-       
+
+             <img class="img-thumbnail" src="{{ .Params.image }}" width="108px" height="72px" alt="" tabindex="0">
+
               {{/* end }}
     {{ end */}}
     <div class="card-body">

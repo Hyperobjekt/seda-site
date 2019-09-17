@@ -17295,7 +17295,7 @@ h5.big-superhead, a.big-superhead {
   font-size: 1.4rem;
   letter-spacing: .064rem;
   line-height: 4.4rem;
-  background-color: #ff003e;
+  background-color: #EC003A;
   color: #fff;
   text-align: center;
   white-space: nowrap;
@@ -17783,7 +17783,7 @@ p {
 }
 
 p a {
-  color: #7086AB;
+  color: #5a7095;
 }
 
 .base-style h3 {
@@ -20464,6 +20464,11 @@ body.research .research-paper .abstract-and-meta {
 }
 
 body.research .research-paper .abstract-and-meta .abstract,
+body.research .research-paper .abstract-and-meta .meta {
+  display: none;
+}
+
+body.research .research-paper .abstract-and-meta .abstract,
 body.research .research-paper .abstract-and-meta .abstract p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
@@ -20614,6 +20619,7 @@ body.research .research-paper.abstract-visible .show-versions:after {
 }
 
 body.research .research-paper.abstract-visible .abstract-and-meta {
+  transition: opacity 2s ease-out 200ms, height 2s ease-out 1s, max-height 2s ease-out 1s;
   padding-top: 1.6rem;
   opacity: 1;
   height: auto;
@@ -20624,6 +20630,11 @@ body.research .research-paper.abstract-visible .abstract-and-meta {
   body.research .research-paper.abstract-visible .abstract-and-meta {
     padding-top: 4.6rem;
   }
+}
+
+body.research .research-paper.abstract-visible .abstract-and-meta .abstract,
+body.research .research-paper.abstract-visible .abstract-and-meta .meta {
+  display: block;
 }
 
 body.research h3 {
@@ -21129,6 +21140,85 @@ body.type-posts:first-child {
   margin-top: 0;
 }
 
+body.type-posts .show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
+
+body.type-posts .hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+
+body.type-posts .scrollTabContainer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  padding: 1.6rem 0 1.6rem;
+  display: flex;
+  justify-content: center;
+}
+
+body.type-posts .scrollTabContainer #scrollForMore,
+body.type-posts .scrollTabContainer #scrollToTop {
+  display: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #fff;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #04143c;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  letter-spacing: 0.055rem;
+  padding: 1.6rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  body.type-posts .scrollTabContainer #scrollForMore,
+  body.type-posts .scrollTabContainer #scrollToTop {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  body.type-posts .scrollTabContainer #scrollForMore,
+  body.type-posts .scrollTabContainer #scrollToTop {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+  }
+}
+
+body.type-posts .scrollTabContainer #scrollForMore i {
+  width: 16px;
+  height: 16px;
+  background-image: url("/images/down-arrow-blk.svg");
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+body.type-posts #scrollForMore {
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  width: 200px;
+}
+
+body.type-posts #scrollToTop {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  bottom: 0;
+  position: fixed;
+}
+
 @media (min-width: 320px) {
   body.type-posts {
     font-size: 1.2rem;
@@ -21285,6 +21375,12 @@ body.type-posts .hero .hero-child .column p {
   }
 }
 
+body.type-posts h3 {
+  line-height: 1.5;
+  padding-left: 1.6rem;
+  border-left: 2px solid #04143c;
+}
+
 body.type-posts .crumbs {
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
@@ -21299,7 +21395,7 @@ body.type-posts .crumbs {
 }
 
 body.type-posts .crumbs span.med-blue, body.type-posts .crumbs a {
-  color: #7086AB;
+  color: #5a7095;
 }
 
 body.type-posts .crumbs span.crumb-carat {
@@ -21517,9 +21613,12 @@ body.type-posts .search-component .ais-InstantSearch__root {
 
 @media (min-width: 768px) {
   body.type-posts .state-desc-wrapper {
-    border-top: 1.5px solid #daecf3;
-    border-top: 1.5px solid #e6e6e6;
-    border-top: 1.4px solid #89a2b3;
+    /*
+        border-top: 1.5px solid #daecf3;
+        border-top: 1.5px solid #e6e6e6;
+        border-top: 1.4px solid #89a2b3;
+        */
+    padding-bottom: 70vh;
   }
 }
 
@@ -22683,6 +22782,28 @@ body.type-help-faq .toggle-accordion.active:before {
   content: "Collapse All";
 }
 
+body.type-help-faq .open-all {
+  margin-bottom: -50px;
+}
+
+body.type-help-faq .open-all #openAll {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  margin: 20px 0 0 auto;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.055rem;
+  text-transform: uppercase;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  color: #031232;
+}
+
 body.type-help-faq .hero-child {
   background: url("/images/heroes/help-faq.svg");
   background-repeat: no-repeat;
@@ -23215,7 +23336,7 @@ body.methods {
             line-height: 3rem;
             letter-spacing: auto;
             padding-bottom: 1.6rem;
-          } 
+          }
       } */
 }
 
@@ -23555,7 +23676,7 @@ body.methods .center-block {
 
 body.methods pre code {
   color: #0032A3;
-  color: #ff003e;
+  color: #E3093D;
   display: block;
   font-size: 1.8rem;
   padding: 0 0 2.4rem;

@@ -149,240 +149,6 @@ xhr.onerror = function (e) {
 };
 xhr.send(null);
 
-// /** State 1: Show white scores on x axis and black scores on y axis */
-// var state1 = function(scatterplot) {
-//   // this state is created from the base
-//   const base = scatterplot.getState('base');
-//   // Set up array of district IDs and names for building search series.
-//   if (names.length <= 0 &&
-//     scatterplot &&
-//     scatterplot.data &&
-//     scatterplot.data.districts &&
-//     scatterplot.data.districts.name) {
-//     names = scatterplot.data.districts.name;
-//     // console.log(names);
-//   }
-//   var dataSeries = [];
-//   var highlight = {};
-//   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-//     // There's a search item selected.
-//     // Add it to the highlight object.
-//     if (names[searchItemIDs[0]].length >= 1) {
-//       highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-//     }
-//     // console.log(highlight);
-//   }
-//
-//   // Update title and subtext placeholders
-//   Title['text'] = 'Average Test Scores, Grade 3';
-//   // Title['subtext'] = 'U.S. School Districts 2009-2016';
-//   // Set title and subtitle
-//   Title.setTitle();
-//
-//   const baseOverrides = {
-//     title: {
-//       show: false,
-//       text: Title.text, // 'Academic Achievement and Socioeconomic Status, Grade 3',
-//       subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
-//       textAlign: 'center',
-//       left: '50%',
-//       top: '10px',
-//     },
-//     legend: {
-//       show: true,
-//     },
-//     grid: baseGrid,
-//     yAxis: deepmerge(baseYAxis, {
-//       min: -4,
-//       max: 4,
-//       name: 'Achievement (in Grade Levels)',
-//     }),
-//     xAxis: {
-//       min: -4,
-//       max: 3,
-//       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
-//     },
-//     tooltip: {
-//       // trigger: 'item',
-//       formatter: function(item) {
-//         return scatterplot.formatTooltip(item, scatterplot.data, 'Socioeconomic Status', 'Achievement');
-//       }
-//     },
-//     series: [
-//       { id: 'base' },
-//       {
-//         id: 'highlighted',
-//         itemStyle: highlightedItemStyle,
-//         label: highlightedLabel(highlight),
-//         zlevel: 500,
-//       },
-//       {
-//         type:'scatter',
-//           markLine: {
-//             animation: false,
-//             silent: true,
-//             data: [
-//             [
-//               {
-//                 name: '', // x axis
-//                 coord: [-4, 0],
-//                 symbol: 'none',
-//                 lineStyle: {
-//                   // color: '#fff', // 'rgba(0,0,0,0.6)'
-//                   color: '#052965',
-//                   type: 'solid',
-//                   width: 1
-//                 }
-//               },
-//               {
-//                 coord: [3, 0],
-//                 symbol: 'none'
-//               },
-//             ]
-//           ]
-//         }
-//       },
-//     ]
-//   }
-//   return {
-//     xVar: 'all_ses',
-//     yVar: 'all_avg3',
-//     zVar: 'all_sz',
-//     highlighted: Object.keys(highlight),
-//     options: deepmerge.all([base.options, baseOverrides])
-//   }
-// }
-
-// /** State 1: Show basic chart */
-// var state1_1 = function(scatterplot) {
-//   // this state is created from the base
-//   const base = scatterplot.getState('base');
-//   // Set up array of district IDs and names for building search series.
-//   if (names.length <= 0 &&
-//     scatterplot &&
-//     scatterplot.data &&
-//     scatterplot.data.districts &&
-//     scatterplot.data.districts.name) {
-//     names = scatterplot.data.districts.name;
-//     // console.log(names);
-//   }
-//   var dataSeries = [];
-//   var highlight = {};
-//   if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-//     // There's a search item selected.
-//     // Add it to the highlight object.
-//     if (names[searchItemIDs[0]].length >= 1) {
-//       highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-//     }
-//     // console.log(highlight);
-//   }
-//
-//   // Update title and subtext placeholders
-//   Title['text'] = 'Average Test Scores, Grade 3';
-//   // Title['subtext'] = 'U.S. School Districts 2009-2016';
-//   // Set title and subtitle
-//   Title.setTitle();
-//
-//   const baseOverrides = {
-//     title: {
-//       show: false,
-//       text: Title.text, // 'Academic Achievement and Socioeconomic Status, Grade 3',
-//       subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
-//       textAlign: 'center',
-//       left: '50%',
-//       top: '10px',
-//     },
-//     legend: {
-//       show: true,
-//     },
-//     grid: baseGrid,
-//     yAxis: deepmerge(baseYAxis, {
-//       min: -4,
-//       max: 4,
-//       name: 'Achievement (in Grade Levels)',
-//     }),
-//     xAxis: {
-//       min: -4,
-//       max: 3,
-//       name: '◀  POORER                    Socioeconomic Status                    RICHER  ▶',
-//     },
-//     series: [
-//       { id: 'base' },
-//       {
-//         id: 'highlighted',
-//         itemStyle: highlightedItemStyle,
-//         label: highlightedLabel(highlight),
-//         zlevel: 500,
-//       },
-//       {
-//         type:'scatter',
-//           markLine: {
-//             animation: false,
-//             silent: true,
-//             data: [
-//             [
-//               {
-//                 name: '', // upper right markline
-//                 coord: [-4, -1.75],
-//                 symbol: 'none',
-//                 lineStyle: {
-//                   color: 'rgba(255, 192, 45, 1)',
-//                   type: 'solid',
-//                   width: 2
-//                 },
-//               },
-//               {
-//                 coord: [1, 0],
-//                 symbol: 'none'
-//               },
-//             ],
-//           [
-//             {
-//               name: '', // lower left markline
-//               coord: [3, 3],
-//               symbol: 'none',
-//               lineStyle: {
-//                 color: 'rgba(255, 192, 45, 1)',
-//                 type: 'solid',
-//                 width: 2
-//               },
-//             },
-//             {
-//               coord: [-2, -2],
-//               symbol: 'none'
-//             },
-//           ],
-//           [
-//             {
-//               name: '', // x axis
-//               coord: [-4, 0],
-//               symbol: 'none',
-//               lineStyle: {
-//                 // color: '#fff', // 'rgba(0,0,0,0.6)'
-//                 color: '#052965',
-//                 type: 'solid',
-//                 width: 1
-//               }
-//             },
-//             {
-//               coord: [3, 0],
-//               symbol: 'none'
-//             },
-//           ]
-//         ]
-//       }
-//       },
-//     ]
-//   }
-//   return {
-//     xVar: 'all_ses',
-//     yVar: 'all_avg3',
-//     zVar: 'all_sz',
-//     highlighted: Object.keys(highlight),
-//     options: deepmerge.all([base.options, baseOverrides ])
-//   }
-// }
-
 /** State 1: Grade 3 Chicago + Anne Arundel  */
 var state1 = function(scatterplot) {
   if (names.length <= 0 &&
@@ -409,7 +175,7 @@ var state1 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 3';
- // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -427,6 +193,10 @@ var state1 = function(scatterplot) {
         textAlign: 'center',
         left: '50%',
         top: '10px',
+      },
+      aria: {
+        show: true,
+        description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
       },
       yAxis: {
         min: -4, // -0.5,
@@ -499,7 +269,7 @@ var state3 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 4';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -516,6 +286,10 @@ var state3 = function(scatterplot) {
         textAlign: 'center',
         left: '50%',
         top: '10px',
+      },
+      aria: {
+        show: true,
+        description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
       },
       yAxis: {
         min: -4,
@@ -591,7 +365,7 @@ var state4 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 5';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -603,6 +377,10 @@ var state4 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4, // -0.5,
@@ -684,7 +462,7 @@ var state5 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 6';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -696,6 +474,10 @@ var state5 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4, // -0.5,
@@ -777,7 +559,7 @@ var state6 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 7';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -789,6 +571,10 @@ var state6 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4, // -0.5,
@@ -870,7 +656,7 @@ var state7 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 8';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -882,6 +668,10 @@ var state7 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4,
@@ -964,7 +754,7 @@ var state8 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 3';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -976,6 +766,10 @@ var state8 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4, // -0.5,
@@ -1058,7 +852,7 @@ var state9 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 4';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -1070,6 +864,10 @@ var state9 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4, // -0.5,
@@ -1152,7 +950,7 @@ var state10 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 5';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -1164,6 +962,10 @@ var state10 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4,
@@ -1246,7 +1048,7 @@ var state11 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 6';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -1258,6 +1060,10 @@ var state11 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4, // -0.5,
@@ -1340,7 +1146,7 @@ var state12 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 7';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -1352,6 +1158,10 @@ var state12 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4,
@@ -1434,7 +1244,7 @@ var state13 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Average Test Scores, Grade 8';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -1446,6 +1256,10 @@ var state13 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     yAxis: {
       min: -4,
@@ -1528,7 +1342,7 @@ var state14 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -1540,6 +1354,10 @@ var state14 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: {
       top: 10,
@@ -1714,7 +1532,7 @@ var state15 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -1726,6 +1544,10 @@ var state15 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: {
       top: 10,
@@ -1965,7 +1787,7 @@ var state16 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -1977,6 +1799,10 @@ var state16 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: {
       top: 10,
@@ -2193,7 +2019,7 @@ var state17 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -2205,6 +2031,10 @@ var state17 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: {
       top: 10,
@@ -2415,7 +2245,7 @@ var state18 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates and 3rd Grade Achievement';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -2427,6 +2257,10 @@ var state18 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: {
       top: 10,
@@ -2631,7 +2465,7 @@ var state19 = function(scatterplot) {
 
   // Update title and subtext placeholders
   Title['text'] = 'Learning Rates';
-  // Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['subtext'] = ''; // U.S. School Districts 2009-2016
   // Set title and subtitle
   Title.setTitle();
 
@@ -2647,6 +2481,10 @@ var state19 = function(scatterplot) {
       textAlign: 'center',
       left: '50%',
       top: '10px',
+    },
+    aria: {
+      show: true,
+      description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid: {
       top: 10,

@@ -40,7 +40,7 @@
             // console.log(result);
             // Stop spinner spinning.
             $spinner.css({'opacity': 0});
-            if (!!dataLayer) {
+            if (!!dataLayer && (dataLayer.length >= 3)) {
               dataLayer.push({
                 'event': 'eMailSignup',
                 'eventCallback' : () => {
@@ -75,7 +75,7 @@
             // Set form input to active.
             $submit.prop("disabled", false);
             // Send to GA
-            if (!!dataLayer) {
+            if (!!dataLayer && (dataLayer.length >= 3)) {
               dataLayer.push({
                 'event': 'eMailSignupError'
               });

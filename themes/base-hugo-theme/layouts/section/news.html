@@ -10,14 +10,14 @@
 </div>
 
 {{ range sort .Site.Data.news "date" "desc" }}
-<div class="row news-item" id="">
-  <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-    <p>{{ dateFormat "January 2, 2006" .date }}</p>
-    <h4><a href="{{ .link }}" target="_blank">{{ .headline }}</a></h4>
-    <p class="excerpt">{{ .excerpt | safeHTML }}</p>
-    <span><a class="readmore" href="{{ .link }}" target="_blank">Read more at {{ .outlet }}</a></span>
+  <div class="row news-item" id="">
+    <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
+      <p>{{ dateFormat "January 2, 2006" .date }}</p>
+      <h4><a href="{{ .link }}" target="_blank" data-outlet="{{.outlet}}" class="gta-event-articleSelected">{{ .headline }}</a></h4>
+      <p class="excerpt">{{ .excerpt | safeHTML }}</p>
+      <span><a class="readmore gta-event-articleSelected" href="{{ .link }}" target="_blank">Read more at {{ .outlet }}</a></span>
+    </div>
   </div>
-</div>
 {{ end }}
 
 

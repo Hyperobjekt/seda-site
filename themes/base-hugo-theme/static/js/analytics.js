@@ -11,7 +11,7 @@
   analytics.init = () => {
     console.log('analytics.init');
 
-    // Listens for call to action clicks
+    // Event: CTAClick
     $('.gta-event-CTAClick').on('click touchstart', (e) => {
       console.log('.gta-event-CTAClick');
       e.preventDefault();
@@ -20,7 +20,6 @@
       // console.log($target);
       const _obj = {
         'event' : 'CTAClick',
-        'CTASource': window.location.href ? window.location.href : 'Unavailable',
         'CTADestination': encodeURI($target),
         'eventCallback' : () => {
             window.open($target);
@@ -29,21 +28,20 @@
       analytics.push(_obj);
     });
 
-    // bioExpanded
+    // Event: bioExpanded
     $('.gta-event-bioExpanded').on('click touchstart', (e) => {
       console.log('.gta-event-bioExpanded');
       $target = $(e.currentTarget);
       // console.log($target);
-      $bioName = $target.closest('.launch-people-bio').find('.name').text();
+      // $bioName = $target.closest('.launch-people-bio').find('.name').text();
       // console.log($bioName);
       const _obj = {
-        'event' : 'bioExpanded',
-        'bio': $bioName ? $bioName : 'Unavailable'
+        'event' : 'bioExpanded'
       }
       analytics.push(_obj);
     });
 
-    // eMailSignup
+    // Event: eMailSignup
     $('.gta-event-eMailSignup').on('click touchstart', (e) => {
       console.log('.gta-event-eMailSignup');
       e.preventDefault();
@@ -60,7 +58,7 @@
       analytics.push(_obj);
     });
 
-    // postSelected
+    // Event: postSelected
     $('.gta-event-postSelected').on('click touchstart', (e) => {
       console.log('.gta-event-postSelected');
       e.preventDefault();
@@ -75,7 +73,8 @@
       analytics.push(_obj);
     });
 
-    // showAbstractandVersion , paperCategory, paperName
+    // Event: showAbstractandVersion
+    // Reports: paperCategory, paperName
     $('.gta-event-showAbstractandVersion').on('click touchstart', (e) => {
       console.log('.gta-event-showAbstractandVersion');
       $target = $(e.currentTarget);
@@ -98,7 +97,8 @@
       analytics.push(_obj);
     });
 
-    // categorySelected
+    // Event: categorySelected
+    // Reports: paperCategory
     $('.gta-event-categorySelected').on('click touchstart', (e) => {
       console.log('.gta-event-categorySelected');
       $target = $(e.currentTarget);
@@ -110,45 +110,79 @@
       }
       analytics.push(_obj);
     });
-    // paperDownloadbyVersion   paperVersion, paperName
+    // Event: paperDownloadbyVersion
+    // Reports: paperVersion, paperName
     $('.gta-event-paperDownloadbyVersion').on('click touchstart', (e) => {
       console.log('.gta-event-paperDownloadbyVersion');
       // e.preventDefault();
       $target = $(e.currentTarget);
-      $paperName = null;
+      let $paperName = null;
       $paperName = $(e.currentTarget).closest('.research-paper').find('.info h5').text();
-      $file = $target.attr('href');
+      // console.log($paperName);
+      const $paperVersion = $target.attr('data-date');
+      // console.log($paperVersion);
       const _obj = {
-        'event' : 'postSelected',
-        'discoverySelection': encodeURI($target),
+        'event': 'paperDownloadbyVersion',
+        'paperVersion': $paperVersion,
+        'paperName': $paperName
+      }
+      analytics.push(_obj);
+    });
+    // Event: paperDownloadLatest
+    // Reports: paperVersion, paperName
+    $('.gta-event-paperDownloadLatest').on('click touchstart', (e) => {
+      console.log('.gta-event-paperDownloadLatest');
+      $target = $(e.currentTarget);
+      const $paperName = $target.closest('.research-paper').find('.info h5').text();
+      const $paperVersion = $target.attr('data-date');
+      const _obj = {
+        'event': 'paperDownloadLatest',
+        'paperVersion': $paperVersion,
+        'paperName': $paperName
+      }
+      analytics.push(_obj);
+    });
+    // Event: articleSelected
+    // Reports: newsArticleName, newsArticlePublication
+    $('.gta-event-articleSelected').on('click touchstart', (e) => {
+      console.log('.gta-event-articleSelected');
+      e.preventDefault();
+      $target = $(e.currentTarget).attr('href');
+      $titleNode = $(e.currentTarget).closest('.row.news-item').find('h4 a');
+      $newsArticleName = $titleNode.text();
+      // console.log($newsArticleName);
+      $newsArticlePublication = $titleNode.attr('data-outlet');
+      // console.log($newsArticlePublication);
+      const _obj = {
+        'event': 'articleSelected',
+        'newsArticleName': $newsArticleName,
+        'newsArticlePublication': $newsArticlePublication,
         'eventCallback' : () => {
             window.open($target);
         }
       }
       analytics.push(_obj);
     });
-    // paperDownloadLatest      paperVersion, paperName
-    $('.gta-event-paperDownloadLatest').on('click touchstart', (e) => {
-      console.log('.gta-event-paperDownloadLatest');
-      // e.preventDefault();
+    // Event: faqTopicExpanded
+    // Reports: faqTopicExpansion
+    $('.gta-event-faqTopicExpanded').on('click touchstart', (e) => {
+      console.log('.gta-event-faqTopicExpanded');
       $target = $(e.currentTarget);
-      let $paperName = null;
-      $paperName = $(e.currentTarget).closest('.research-paper').find('.info h5').text();
-      // console.log($paperName);
-      let $file = $target.attr('href');
-      $file = $file.replace('.pdf', '');
-      const $paperVersion = $file.slice($file.indexOf('v', $file) + 1, $file.length + 1);
-      // console.log($paperVersion);
+      const $topic = $(e.currentTarget).find('h5').text();
       const _obj = {
-        'event' : 'paperDownloadLatest',
-        'paperVersion': $paperVersion,
-        'paperName': $paperName
+        'event' : 'faqTopicExpanded',
+        'faqTopicExpansion': $topic
       }
       analytics.push(_obj);
     });
-    // articleSelected          newsArticleName, newsArticlePublication
-    // faqTopicExpanded         faqTopicExpansion
-    // districtHighlighted      highlightedDistrict
+    // error page
+    if ($('body.type-404').length >= 1) {
+      const _obj = {
+        'event' : 'error',
+        'errorMessage': '404'
+      }
+      analytics.push(_obj);
+    }
   }
   if (!!dataLayer) {
     const timeout = setTimeout(function() {

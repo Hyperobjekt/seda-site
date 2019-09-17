@@ -28,10 +28,10 @@
         <div class="controls flex-parent">
             {{ range first 1 $sortedVersions }}
                 {{ if isset . "link" }}
-                    <a href="{{ .link | relURL }}" class="btn btn-custom download-paper" target="_blank" aria-label="Download Latest Version of {{ $title }}">Download Latest Version</a>
-                    <a id="" class="show-versions" tabindex="0">Show Abstract & All Versions</a>
+                    <a href="{{ .link | relURL }}" class="btn btn-custom download-paper gta-event-paperDownloadLatest" target="_blank" aria-label="Download Latest Version of {{ $title }}" data-date="{{ .date }}" download>Download Latest Version</a>
+                    <a id="" class="show-versions gta-event-showAbstractandVersion" tabindex="0">Show Abstract & All Versions</a>
                 {{ else }}
-                    <a id="" class="show-versions" tabindex="0">Show Abstract</a>
+                    <a id="" class="show-versions gta-event-showAbstractandVersion" tabindex="0">Show Abstract</a>
                 {{ end }}
             {{ end }}
         </div>
@@ -45,7 +45,7 @@
                 <hr>
                 {{range $sortedVersions }}
                 {{ if isset . "link" }}
-                    <a href="{{ .link | relURL }}" target="_blank" class="version-link" aria-label="Download version from {{ .date }}" tabindex="0">
+                    <a href="{{ .link | relURL }}" target="_blank" class="version-link gta-event-paperDownloadbyVersion" aria-label="Download version from {{ .date }} download" tabindex="0" data-date="{{ .date }}" download>
                         <span class="date">{{ .date }}</span>
                         <span class="label">Download now</span>
                     </a>

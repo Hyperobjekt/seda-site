@@ -5,8 +5,16 @@
 {{ end }}
 <script src="{{ "js/anime.min.js" | absURL }}"></script>
 <script src="{{ "js/seda-custom.js" | absURL }}"></script>
-{{ template "_internal/google_analytics_async.html" . }}
 
+{{ if .Site.IsServer }}
+  {{ if eq .Site.Params.loadDevAnalytics true }}
+    {{ template "_internal/google_analytics_async.html" }}
+    <script  src="{{ "js/analytics.js"  | absURL }}"></script>
+  {{ end }}
+{{ else }}
+  {{ template "_internal/google_analytics_async.html" }}
+  <script  src="{{ "js/analytics.js"  | absURL }}"></script>
+{{ end }}
 
 {{ if eq .Page.Type "posts" }}
     {{ partial "scatterplot-scripts.html" . }}

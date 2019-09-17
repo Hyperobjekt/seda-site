@@ -70,7 +70,7 @@ const highlightedLabel = (highlight) => {
 //     },
 //   };
 // }
-
+// Orange bubbles
 const highlightedItemStyle =  {
   borderWidth: 0.4,
   borderColor: '#BABABA', // '#FFC02D',
@@ -81,11 +81,12 @@ const highlightedItemStyle =  {
   shadowOffsetX: 0,
   shadowOffsetY: 1
 };
+// Blue bubbles
 const selectedItemStyle = {
   borderWidth: 0.4,
   borderColor: 'rgba(89, 151, 203, 0.8)', // '#7D38BB',
   color: '#48CB95', // '#BC72FF',
-  color: 'rgba(175, 218, 233, 0.77)',
+  color: 'rgba(177, 222, 238, 0.8)',
   opacity: 1,
 };
 const initialMarkline = {

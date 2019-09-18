@@ -4,7 +4,7 @@ faqid: what-are-educational-opportunities
 section: "data" # director, staff, or partner
 weight: 15
 ---
-A child’s educational opportunities include all experiences that contribute to her learning the skills assessed on standardized tests. These include opportunities both in early childhood and during the schooling years, and include experiences in their homes, in their neighborhoods, in their childcare and preschool programs, with their peers, and in their schools.
+Educational opportunities include all experiences that help a child learn the skills assessed on standardized tests. These include opportunities both in early childhood and during the schooling years, and experiences in homes, in neighborhoods, in child-care and preschool programs, with peers, and in schools. 
  
 For more information see the <span class="highlight2">explainer article</span>.
 

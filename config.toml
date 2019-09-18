@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "The Educational Opportunity Project"
+title = "The Educational Opportunity Project at Stanford University"
 theme = "base-hugo-theme"
 googleAnalytics = "UA-143360439-1"
 paginate = 5

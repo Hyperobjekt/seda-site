@@ -86,7 +86,7 @@ body.type-posts {
       margin-left: auto;
       margin-right: auto;
       }
-  
+
     #scrollForMore {
       i {
         width: 16px;
@@ -376,7 +376,7 @@ body.type-posts {
 
       .title {
         font-size: 1.8rem; // 2.4rem;
-        line-height: 2.7rem; // 2.8rem;
+        line-height: 1.9rem; // 2.8rem;
         letter-spacing: 0.018rem;
         // width: 70%;
         margin: 0 auto;
@@ -385,10 +385,11 @@ body.type-posts {
       .subtitle {
         font-family: $maisonneue-med;
         font-size: 1.4rem; // 1.8rem;
-        line-height: 2.1rem;
+        line-height: 32px;
+        min-height: 32px;
         letter-spacing: 0.014rem;
-        padding-top: 0.8rem;
-        padding-bottom: 1rem;
+        padding-top: 0; // 0.8rem;
+        padding-bottom: 0; // 1rem;
         width: 60%;
         margin: 0 auto;
       }
@@ -460,7 +461,7 @@ body.type-posts {
   }
 
   .search-component .ais-InstantSearch__root {
-    padding: 1rem 0;
+    padding: 0.5rem 0 1rem 0;
   }
 
 
@@ -476,6 +477,7 @@ body.type-posts {
         border-top: 1.4px solid #89a2b3;
         */
         padding-bottom: 70vh;
+        margin-bottom: 10px;
       }
     }
     .state-desc-wrapper:nth-of-type(1) {

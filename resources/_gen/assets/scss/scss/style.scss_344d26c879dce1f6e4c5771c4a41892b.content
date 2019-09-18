@@ -18032,6 +18032,10 @@ p a {
   cursor: pointer;
 }
 
+.subnav ul li a:hover {
+  text-decoration: none;
+}
+
 .nav-tabs {
   border-bottom: none;
 }
@@ -21534,7 +21538,7 @@ body.type-posts .column-scatterplot .plot-parent .subtitle {
 
 body.type-posts .column-scatterplot .plot-parent .title {
   font-size: 1.8rem;
-  line-height: 2.7rem;
+  line-height: 1.9rem;
   letter-spacing: 0.018rem;
   margin: 0 auto;
 }
@@ -21542,10 +21546,11 @@ body.type-posts .column-scatterplot .plot-parent .title {
 body.type-posts .column-scatterplot .plot-parent .subtitle {
   font-family: "MaisonNeue-Medium", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
-  line-height: 2.1rem;
+  line-height: 32px;
+  min-height: 32px;
   letter-spacing: 0.014rem;
-  padding-top: 0.8rem;
-  padding-bottom: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
   width: 60%;
   margin: 0 auto;
 }
@@ -21608,7 +21613,7 @@ body.type-posts .react-autosuggest__suggestions-container .react-autosuggest__su
 }
 
 body.type-posts .search-component .ais-InstantSearch__root {
-  padding: 1rem 0;
+  padding: 0.5rem 0 1rem 0;
 }
 
 @media (min-width: 768px) {
@@ -21619,6 +21624,7 @@ body.type-posts .search-component .ais-InstantSearch__root {
         border-top: 1.4px solid #89a2b3;
         */
     padding-bottom: 70vh;
+    margin-bottom: 10px;
   }
 }
 

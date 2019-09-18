@@ -54,7 +54,7 @@
       e.preventDefault();
       const $target = $(e.currentTarget);
       const openPanels = ($target.attr('data-do-open-panels') === "true");
-      console.log('openPanels = ' + openPanels);
+      // console.log('openPanels = ' + openPanels);
       $panels = $('.accordion-section .collapse');
       if ($panels.length >= 1) {
         if (openPanels) {
@@ -77,13 +77,13 @@
       $('.svg-static').addClass('d-md-none');
       //$('.svg-animated').addClass('d-none');
       //$('.svg-static').removeClass('d-none');
-      console.log('Browser supports SVG transforms');
+      // console.log('Browser supports SVG transforms');
     } else {
       // static fallback
       $('.svg-static').removeClass('d-md-none');
       $('.svg-static').addClass('opaque');
       $('.svg-animated').addClass('d-md-none');
-      console.log('Browser does not support SVG transforms');
+      // console.log('Browser does not support SVG transforms');
     }
 
     function toggleAbstract(e) {

@@ -18,8 +18,9 @@ body.type-help-faq {
   }
 
   .open-all {
-    margin-bottom: -50px;
+    // margin-bottom: -22rem;
     #openAll {
+      // padding-top: 50px;
       background: none;
       color: inherit;
       border: none;
@@ -35,8 +36,38 @@ body.type-help-faq {
       text-transform: uppercase;
       font-family: $sharpgrotesk-med-15;
       color: $seda-dark;
+      margin-right: -120px;
+      &.icon-up::after,
+      &.icon-down::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f007";
+      }
+      &.icon-up::after {
+       content: "\f077";
+       padding-left: 3px;
+      }
+      &.icon-down::after {
+       content: "\f078";
+       padding-left: 3px;
+      }
+    }
+    height: 0px;
+    display: block;
+    width: 100%;
+    &.sticky-top {
+      position: sticky;
+      top: 140px;
+      right: 20%;
     }
   }
+
+  .icon::before {
+    display: none;
+  }
+
+
+
 
     .hero-child {
       background: url('/images/heroes/help-faq.svg');
@@ -233,7 +264,8 @@ body.type-help-faq {
       }
       .row.data {
         //background-color: #F5F8FA;
-        padding: 8rem 16px 4rem;
+        padding: 4rem 16px 4rem;
+        // margin-top: 20rem;
         margin-left: 0;
         margin-right: 0;
       }

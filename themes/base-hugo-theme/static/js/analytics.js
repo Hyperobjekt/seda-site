@@ -4,7 +4,7 @@
 (function($) {
   // console.log('Loading Analytics listeners');
   const analytics = {};
-  analytics.push = (data, callback) => {
+  analytics.push = (data) => {
     console.log('analytics.push');
     dataLayer.push(data);
   }
@@ -190,8 +190,8 @@
       if ($navItem.length <= 0) {
         $navItem = $target.find('span, h1')[0].text().trim();
       }
-      console.log($navType);
-      console.log($navItem);
+      // console.log($navType);
+      // console.log($navItem);
       const _obj = {
         'event' : 'navClick',
         'navType': $navType,
@@ -224,7 +224,6 @@
         console.log('The GTM dataLayer cannot be found... Skipping analytics listeners.');
       }
     }, 600);
-    //
   } else {
     console.log('Error! The GTM dataLayer cannot be found... Skipping analytics listeners.');
   }

@@ -17,7 +17,7 @@
           algoliaKey: 'bae9e4604dbd263cc47c48bfb30dd5dc',
           onSuggestionSelected: function(hit) {
             // console.log('hit');
-            console.log(hit);
+            // console.log(hit);
             searchItemIDs[0] = hit['id'];
             // console.log(searchItemIDs);
             scatterplot.loadState(plot.activeState);
@@ -26,7 +26,7 @@
             if (!!dataLayer && (dataLayer.length >= 3)) {
               dataLayer.push({
                 'event': 'districtHighlighted',
-                'highlightedDistrict': hit['id'] + ', ' + hit['name'] + ', ' + hit['state_name']
+                'highlightedDistrict': hit['name']
               });
             } else {
               console.log('dataLayer not available. Skipping analytics reporting for highlighted item select.');

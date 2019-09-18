@@ -7,7 +7,7 @@
         <div class="navlinks col-xl-8 offset-xl-1 col-md-10 col-sm-12 p-xl-0">
             {{ range .Site.Menus.main }}
                 {{ $text := print .Name | safeHTML }}
-                <a class="" tabindex="0" href="{{ .URL | relURL }}">
+                <a class="gta-event-navClick" tabindex="0" href="{{ .URL | relURL }}">
                     {{ $text }}
                 </a>
             {{ end }}
@@ -23,7 +23,7 @@
     <!-- </div>
     <div class="row copy p-0 m-0"> -->
         <div class="siteby col-xs-12 col-md-6 col-xl-5 offset-xl-1 p-xl-0" tabindex="0">
-            Site by <a href="https://www.hyperobjekt.com/" target="_blank" aria-haspopup="true">Hyperobjekt</a>
+            Site by <a class="gta-event-navClick" href="https://www.hyperobjekt.com/" target="_blank" aria-haspopup="true">Hyperobjekt</a>
         </div>
         <div class="institution col-xs-12 col-md-6 col-xl-5 p-xl-0" tabindex="0">
             <img alt="Stanford logo" src="{{ "/images/stanford_wordmark.png" | relURL }}">

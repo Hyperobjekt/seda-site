@@ -1,29 +1,29 @@
 {{ if .Site.Data.social.facebook_link }}
-  <a class="social-icon" href="{{ .Site.Data.social.facebook_link }}" target="_blank" aria-haspopup="true" aria-label="Go to Facebook">
+  <a class="social-icon gta-event-navClick" href="{{ .Site.Data.social.facebook_link }}" target="_blank" aria-haspopup="true" aria-label="Go to Facebook">
       <i aria-hidden="true" class="fab fa-facebook-f"></i>
       <span class="sr-only">Go to Facebook</span>
   </a>
 {{ end }}
 {{ if .Site.Data.social.twitter_via }}
-  <a class="social-icon" href="https://www.twitter.com/{{ strings.TrimPrefix "@" .Site.Data.social.twitter_via }}" target="_blank" tabindex="0" aria-label="Go to Twitter" aria-haspopup="true">
+  <a class="social-icon gta-event-navClick" href="https://www.twitter.com/{{ strings.TrimPrefix "@" .Site.Data.social.twitter_via }}" target="_blank" tabindex="0" aria-label="Go to Twitter" aria-haspopup="true">
       <i aria-hidden="true" class="fab fa-twitter"></i>
       <span class="sr-only">Go to Twitter</span>
   </a>
 {{ end }}
 {{ if .Site.Data.social.linkedin_link }}
-  <a class="social-icon" href="{{ .Site.Data.social.linkedin_link }}"  target="_blank" aria-label="Go to LinkedIn" aria-haspopup="true">
+  <a class="social-icon gta-event-navClick" href="{{ .Site.Data.social.linkedin_link }}"  target="_blank" aria-label="Go to LinkedIn" aria-haspopup="true">
       <i aria-hidden="true" class="fab fa-linkedin-in"></i>
       <span class="sr-only">Go to LinkedIn</span>
   </a>
 {{ end }}
 {{ if .Site.Data.social.instagram_link }}
-  <a class="social-icon" href="{{ .Site.Data.social.instagram_link }}"  target="_blank" aria-label="Go to Instagram" aria-haspopup="true">
+  <a class="social-icon gta-event-navClick" href="{{ .Site.Data.social.instagram_link }}"  target="_blank" aria-label="Go to Instagram" aria-haspopup="true">
     <i aria-hidden="true" class="fab fa-instagram" target="_blank" ></i>
     <span class="sr-only">Go to Instagram</span>
   </a>
 {{ end }}
 {{ if .Site.Data.social.youtube_link }}
-  <a class="social-icon" href="{{ .Site.Data.social.youtube_link }}"  target="_blank" aria-label="Go to YouTube" tabindex="0" aria-haspopup="true">
+  <a class="social-icon gta-event-navClick" href="{{ .Site.Data.social.youtube_link }}"  target="_blank" aria-label="Go to YouTube" tabindex="0" aria-haspopup="true">
       <i aria-hidden="true" class="fab fa-youtube"></i>
       <span class="sr-only">Go to YouTube</span>
   </a>

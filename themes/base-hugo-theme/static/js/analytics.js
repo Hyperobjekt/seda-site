@@ -2,7 +2,7 @@
  * Analytics listeners
  */
 (function($) {
-  console.log('Loading Analytics listeners');
+  // console.log('Loading Analytics listeners');
   const analytics = {};
   analytics.push = (data, callback) => {
     console.log('analytics.push');
@@ -22,7 +22,7 @@
         'event' : 'CTAClick',
         'CTADestination': encodeURI($target),
         'eventCallback' : () => {
-            window.open($target);
+            window.location.href = $target;
         }
       }
       analytics.push(_obj);
@@ -33,8 +33,6 @@
       console.log('.gta-event-bioExpanded');
       $target = $(e.currentTarget);
       // console.log($target);
-      // $bioName = $target.closest('.launch-people-bio').find('.name').text();
-      // console.log($bioName);
       const _obj = {
         'event' : 'bioExpanded'
       }
@@ -42,18 +40,10 @@
     });
 
     // Event: eMailSignup
-    $('.gta-event-eMailSignup').on('click touchstart', (e) => {
-      console.log('.gta-event-eMailSignup');
-      e.preventDefault();
-      // console.log(e.currentTarget);
-      $target = $(e.currentTarget);
-      $form = $target.closest('form');
-      // console.log($target);
+    $('.gta-event-eMailSignupAttempt').on('click touchstart', (e) => {
+      console.log('.gta-event-eMailSignupAttempt');
       const _obj = {
-        'event' : 'eMailSignup',
-        'eventCallback' : () => {
-            $form.submit();
-        }
+        'event' : 'eMailSignupAttempt'
       }
       analytics.push(_obj);
     });
@@ -67,7 +57,7 @@
         'event' : 'postSelected',
         'discoverySelection': encodeURI($target),
         'eventCallback' : () => {
-            window.open($target);
+            window.location.href = $target;
         }
       }
       analytics.push(_obj);
@@ -110,6 +100,7 @@
       }
       analytics.push(_obj);
     });
+
     // Event: paperDownloadbyVersion
     // Reports: paperVersion, paperName
     $('.gta-event-paperDownloadbyVersion').on('click touchstart', (e) => {
@@ -128,6 +119,7 @@
       }
       analytics.push(_obj);
     });
+
     // Event: paperDownloadLatest
     // Reports: paperVersion, paperName
     $('.gta-event-paperDownloadLatest').on('click touchstart', (e) => {
@@ -142,6 +134,7 @@
       }
       analytics.push(_obj);
     });
+
     // Event: articleSelected
     // Reports: newsArticleName, newsArticlePublication
     $('.gta-event-articleSelected').on('click touchstart', (e) => {
@@ -158,11 +151,12 @@
         'newsArticleName': $newsArticleName,
         'newsArticlePublication': $newsArticlePublication,
         'eventCallback' : () => {
-            window.open($target);
+            window.location.href = $target;
         }
       }
       analytics.push(_obj);
     });
+
     // Event: faqTopicExpanded
     // Reports: faqTopicExpansion
     $('.gta-event-faqTopicExpanded').on('click touchstart', (e) => {
@@ -175,14 +169,52 @@
       }
       analytics.push(_obj);
     });
-    // error page
-    if ($('body.type-404').length >= 1) {
+
+    // Event: navClick
+    // Reports: navType, navItem
+    $('.gta-event-navClick').on('click touchstart', (e) => {
+      console.log('.gta-event-navClick');
+      e.preventDefault();
+      $target = $(e.currentTarget);
+      let $navType = null;
+      if ($target.closest('#drawer').length >= 1) {
+        $navType = 'main';
+      }
+      if ($target.closest('footer').length >= 1) {
+        $navType = 'footer';
+      }
+      let $navItem = $target.text().trim();
+      if ($navItem.length <= 0) {
+        $navItem = $target.attr('href');
+      }
+      if ($navItem.length <= 0) {
+        $navItem = $target.find('span, h1')[0].text().trim();
+      }
+      console.log($navType);
+      console.log($navItem);
       const _obj = {
-        'event' : 'error',
-        'errorMessage': '404'
+        'event' : 'navClick',
+        'navType': $navType,
+        'navItem': $navItem,
+        'eventCallback' : () => {
+          // console.log('request successful');
+          window.location.href = $target.attr('href');
+        }
       }
       analytics.push(_obj);
-    }
+    });
+
+    // Basic JS error listener
+    window.addEventListener('error', function(error) {
+      console.log('window listener for error');
+      const _obj = {
+        'event' : 'error',
+        'errorMessage': 'Error originating from ' + error.filename +
+                        ' at line ' + error.lineno + ', column ' + error.colno +
+                        ':\n' + error.message
+      }
+      analytics.push(_obj);
+    });
   }
   if (!!dataLayer) {
     const timeout = setTimeout(function() {

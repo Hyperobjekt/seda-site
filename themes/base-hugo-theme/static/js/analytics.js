@@ -22,7 +22,7 @@
         'event' : 'CTAClick',
         'CTADestination': encodeURI($target),
         'eventCallback' : () => {
-            window.open($target);
+            window.location.href = $target;
         }
       }
       analytics.push(_obj);
@@ -67,7 +67,7 @@
         'event' : 'postSelected',
         'discoverySelection': encodeURI($target),
         'eventCallback' : () => {
-            window.open($target);
+            window.location.href = $target;
         }
       }
       analytics.push(_obj);
@@ -158,7 +158,7 @@
         'newsArticleName': $newsArticleName,
         'newsArticlePublication': $newsArticlePublication,
         'eventCallback' : () => {
-            window.open($target);
+            window.location.href = $target;
         }
       }
       analytics.push(_obj);

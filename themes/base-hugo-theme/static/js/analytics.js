@@ -217,13 +217,15 @@
     });
   }
   if (!!dataLayer) {
+    console.log('dataLayer found');
+    const _waitTime = $('body.type-posts').length >= 1 ? 1200 : 600;
     const timeout = setTimeout(function() {
       if (dataLayer.length >= 3) {
         analytics.init();
       } else {
         console.log('The GTM dataLayer cannot be found... Skipping analytics listeners.');
       }
-    }, 600);
+    }, _waitTime);
   } else {
     console.log('Error! The GTM dataLayer cannot be found... Skipping analytics listeners.');
   }

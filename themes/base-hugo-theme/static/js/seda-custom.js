@@ -554,15 +554,17 @@
         // console.log(target_id);
         $target = $('#' + target_id);
         // console.log($target);
-        $('html, body').animate({
-            scrollTop: ($target.offset().top) - 63
-        }, 500);
-        if ($('body.type-help-faq') >= 1) {
-          $target.find('h3');
-          $focus[0].focus();
-        } else {
-          // console.log('not faq');
-          $($target).focus();
+        if ($target.length >= 1) {
+          $('html, body').animate({
+              scrollTop: ($target.offset().top) - 63
+          }, 500);
+          if ($('body.type-help-faq') >= 1) {
+            $target.find('h3');
+            $focus[0].focus();
+          } else {
+            // console.log('not faq');
+            $($target).focus();
+          }
         }
 
         var t = $(window).scrollTop();

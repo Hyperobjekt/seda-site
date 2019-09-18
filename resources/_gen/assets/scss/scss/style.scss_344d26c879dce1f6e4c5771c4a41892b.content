@@ -18032,6 +18032,10 @@ p a {
   cursor: pointer;
 }
 
+.subnav ul li a:hover {
+  text-decoration: none;
+}
+
 .nav-tabs {
   border-bottom: none;
 }

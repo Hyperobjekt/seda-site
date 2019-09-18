@@ -866,6 +866,9 @@ img {
       }
       a {
         cursor: pointer;
+        &:hover {
+          text-decoration: none;
+        }
         &.highlight {
           @include media-breakpoint-up(md) {
           //  border-bottom: 4px solid #04143C;

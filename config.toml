@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Stanford Education Data Archive"
+title = "The Educational Opportunity Project"
 theme = "base-hugo-theme"
 googleAnalytics = "UA-143360439-1"
 paginate = 5

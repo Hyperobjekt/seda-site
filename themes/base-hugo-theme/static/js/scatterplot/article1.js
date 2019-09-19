@@ -433,7 +433,7 @@ xhr.onload = function (e) {
   if (xhr.readyState === 4) {
     if (xhr.status === 200) {
       // console.log(xhr.responseText);
-      console.log('Seg data request finished.');
+      // console.log('Seg data request finished.');
       // console.log(this.responseText);
       var csvResponse = this.responseText;
       var json = Papa.parse(csvResponse);

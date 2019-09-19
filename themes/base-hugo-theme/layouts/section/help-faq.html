@@ -17,7 +17,7 @@
             </button>
     <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
       <ul class="anchor-links dropdown-menu">
-        <li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
+        <li><a tabindex="0" data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
         <li><a tabindex="0" data-scroll-target="data" class="scroll-to-section active ">Understanding the Data</a></li>
         <li><a tabindex="0" data-scroll-target="map" class="scroll-to-section">Using the Explorer</a></li>
     </ul>
@@ -30,7 +30,7 @@
 
       <ul class="anchor-links col-md-8 mx-auto d-md-flex justify-content-around">
         <li tabindex="0">Jump to Section:</li>
-        <li><a data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
+        <li><a tabindex="0" aria-label="Skip to Glossary" data-scroll-target="glossary" class="scroll-to-section">Glossary</a></li>
         <li><a tabindex="0" aria-label="Skip to Understanding the Data FAQ" data-scroll-target="data" class="scroll-to-section">Understanding the Data</a></li>
         <li><a tabindex="0" aria-label="Skip to Using the Explorer FAQ" data-scroll-target="map" class="scroll-to-section">Using the Explorer</a></li>
       </ul>
@@ -49,21 +49,21 @@
   </div>
 </div>
 
-{{ range (where .Site.RegularPages "Params.section" ("glossary")) }}
+
 <div class="row glossary" id="glossary">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
-        <h3 tabindex="0">{{ .Params.glossary }}</h3>
+        <h3 tabindex="0">Glossary</h3>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
 
         <div class="accordion">
-
+            {{ range (where .Site.RegularPages "Params.section" ("glossary")) }}
                 {{ partial "faqs" . }}
-
+            {{ end }}
         </div> <!-- close accordion -->
     </div>
 </div>
-{{ end }}
+
 <div class="row data" id="data">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
         <h3 tabindex="0">Understanding the Data</h3>

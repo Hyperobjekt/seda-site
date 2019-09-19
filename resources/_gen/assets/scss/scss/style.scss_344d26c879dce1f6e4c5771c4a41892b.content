@@ -23109,6 +23109,12 @@ body.type-help-faq .row.data {
   margin-right: 0;
 }
 
+@media (min-width: 1280px) {
+  body.type-help-faq .row.data {
+    padding: 7.2rem 16px 4rem;
+  }
+}
+
 body.type-help-faq .row.map {
   padding: 8rem 0 4rem;
 }

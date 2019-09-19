@@ -17153,15 +17153,14 @@ nav.navbar > div {
   }
 }
 
-p a {
+p a, ol li a {
   text-decoration: underline;
   text-underline-position: under;
 }
 
-p a:hover {
-  text-decoration: none;
-  text-underline-position: under;
-  color: #7086AB;
+p a:hover, ol li a:hover {
+  text-decoration: none !important;
+  color: #7086AB !important;
 }
 
 h1 {

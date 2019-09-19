@@ -1,9 +1,9 @@
 ---
 section: addressing
 ---
-### SEDA Methods: Addressing the Challenges
+### SEDA methods: Addressing the challenges
 
-While these challenges are substantial, they are not insurmountable. The SEDA team has developed methods of addressed these challenges in order to produce estimates of students’ average test scores, average learning rates across grades, and trends over time in each school, district, and county in the U.S. All of these estimates are comparable across states, grades, and years. 
+While these challenges are substantial, they are not insurmountable. The SEDA team has developed methods to address these challenges in order to produce estimates of students’ average test scores, average learning rates across grades, and trends over time in each school, district, and county in the U.S. All of these estimates are comparable across states, grades, and years. 
 
 Below we describe the raw data used to create SEDA and how we:
 

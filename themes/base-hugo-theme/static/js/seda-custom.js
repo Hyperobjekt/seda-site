@@ -14,6 +14,8 @@
             // $('body').addClass('scroll-top');
             $('nav').removeClass('sticky-top');
             $('.subnav').removeClass('sticky-top');
+            $('.row.open-all').removeClass('sticky-top');
+            // $('.open-all').removeClass('sticky-top');
             if ($('#scrollForMore').length >= 1) {
               $('#scrollForMore').addClass('hide');
               $('#scrollForMore').removeClass('show');
@@ -22,6 +24,7 @@
             // $('body').removeClass('scroll-top');
             $('nav').addClass('sticky-top');
             $('.subnav').addClass('sticky-top');
+            $('.row.open-all').addClass('sticky-top');
             // If on article page display the article scroll indicator.
             if ($('#scrollToTop').length >= 1) {
               if(y + $(window).height() == $(document).height()) {
@@ -47,11 +50,24 @@
         }
     }
 
-    $('#openAll').on('click touchstart', function(e) {
+    $('#openAll, #openAllSR').on('click touchstart', function(e) {
       e.preventDefault();
+      const $target = $(e.currentTarget);
+      const openPanels = ($target.attr('data-do-open-panels') === "true");
+      // console.log('openPanels = ' + openPanels);
       $panels = $('.accordion-section .collapse');
       if ($panels.length >= 1) {
-        $panels.addClass('show');
+        if (openPanels) {
+          $panels.addClass('show');
+          $('#openAll, #openAllSR').text('CLOSE ALL').attr('data-do-open-panels', 'false');
+          $('#openAllSR').attr('aria-label', 'Close all accordion panels');
+          $('#openAll').removeClass('icon-down').addClass('icon-up');
+        } else {
+          $panels.removeClass('show');
+          $('#openAll, #openAllSR').text('OPEN ALL').attr('data-do-open-panels', 'true');
+          $('#openAllSR').attr('aria-label', 'Open all accordion panels');
+          $('#openAll').removeClass('icon-up').addClass('icon-down');
+        }
       }
     });
 
@@ -61,13 +77,13 @@
       $('.svg-static').addClass('d-md-none');
       //$('.svg-animated').addClass('d-none');
       //$('.svg-static').removeClass('d-none');
-      console.log('Browser supports SVG transforms');
+      // console.log('Browser supports SVG transforms');
     } else {
       // static fallback
       $('.svg-static').removeClass('d-md-none');
       $('.svg-static').addClass('opaque');
       $('.svg-animated').addClass('d-md-none');
-      console.log('Browser does not support SVG transforms');
+      // console.log('Browser does not support SVG transforms');
     }
 
     function toggleAbstract(e) {
@@ -538,15 +554,17 @@
         // console.log(target_id);
         $target = $('#' + target_id);
         // console.log($target);
-        $('html, body').animate({
-            scrollTop: ($target.offset().top) - 63
-        }, 500);
-        if ($('body.type-help-faq') >= 1) {
-          $target.find('h3');
-          $focus[0].focus();
-        } else {
-          // console.log('not faq');
-          $($target).focus();
+        if ($target.length >= 1) {
+          $('html, body').animate({
+              scrollTop: ($target.offset().top) - 63
+          }, 500);
+          if ($('body.type-help-faq') >= 1) {
+            $target.find('h3');
+            $focus[0].focus();
+          } else {
+            // console.log('not faq');
+            $($target).focus();
+          }
         }
 
         var t = $(window).scrollTop();

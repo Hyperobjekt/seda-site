@@ -5,11 +5,11 @@
   // console.log('Loading Analytics listeners');
   const analytics = {};
   analytics.push = (data) => {
-    console.log('analytics.push');
+    // console.log('analytics.push');
     dataLayer.push(data);
   }
   analytics.init = () => {
-    console.log('analytics.init');
+    // console.log('analytics.init');
 
     // Event: CTAClick
     $('.gta-event-CTAClick').on('click touchstart', (e) => {
@@ -217,7 +217,7 @@
     });
   }
   if (!!dataLayer) {
-    console.log('dataLayer found');
+    // console.log('dataLayer found');
     const waitTime = ($('body.type-posts').length) >= 1 ? 1200 : 600;
     const timeout = setTimeout(function() {
       if (dataLayer.length >= 3) {

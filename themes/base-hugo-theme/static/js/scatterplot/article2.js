@@ -32,22 +32,22 @@ const highlightedLabel = (highlight) => {
     },
   };
 }
-
+//Orange bubbles
 const highlightedItemStyle =  {
-  borderWidth: 0.5,
-  borderColor: '#0677CE', // '#FFC02D',
-  color: '#32A6FF', // '#FFFCDD',
-  // color: '#0b337f',
-  opacity: 0.9,
-  shadowBlur: 4,
-  shadowColor: 'rgba(0, 0, 0, 0.5)',
+  borderWidth: 0.4,
+  borderColor: 'rgba(156,109,0,0.8)', // '#FFC02D',
+  color: 'rgba(255, 178, 0, 0.77)', // '#FFFCDD',
+  opacity: 1,
+  shadowBlur: 2,
+  shadowColor: 'rgba(0, 0, 0, 0.1)',
   shadowOffsetX: 0,
-  shadowOffsetY: 2
+  shadowOffsetY: 1
 };
 const selectedItemStyle = {
-  borderWidth: 0.5,
-  borderColor: '#109860', // '#7D38BB',
+  borderWidth: 0.4,
+  borderColor: 'rgba(89, 151, 203, 0.8)', // '#7D38BB',
   color: '#48CB95', // '#BC72FF',
+  color: 'rgba(177, 222, 238, 0.8)',
   opacity: 1,
 };
 const baseGrid = {
@@ -128,7 +128,7 @@ xhr.onload = function (e) {
   if (xhr.readyState === 4) {
     if (xhr.status === 200) {
       // console.log(xhr.responseText);
-      console.log('Seg data request finished.');
+      // console.log('Seg data request finished.');
       // console.log(this.responseText);
       var csvResponse = this.responseText;
       var json = Papa.parse(csvResponse);

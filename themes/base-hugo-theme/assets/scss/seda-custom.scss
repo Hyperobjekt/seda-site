@@ -75,13 +75,12 @@ nav.navbar > div {
 
 // Basic fonts and text styles
 
-p a {
+p a, ol li a {
   text-decoration: underline;
   text-underline-position: under;
   &:hover {
-    text-decoration: none;
-    text-underline-position: under;
-    color: #7086AB;
+    text-decoration: none !important;
+    color: #7086AB !important;
   }
 }
 h1 {

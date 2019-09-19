@@ -1,7 +1,7 @@
 ---
 section: reporting
 ---
-<h3>Reporting the Data</h3>
+<h3>Reporting the data</h3>
 <h5>Suppression of Estimates </h5>
 
 We do not report average performance, learning, and/or trend estimates if:
@@ -9,3 +9,5 @@ We do not report average performance, learning, and/or trend estimates if:
 - Fewer than 95% of students in the school, district or county were tested. 
 - More than 40% of students in the school, district or county took alternative assessments.
 - If the estimates are too imprecise to be informative.
+
+For more details, see Step 10 of the <span class="highlight2">Technical Documentation</span>.

@@ -27,8 +27,9 @@
                     <li><a data-scroll-target="placing-proficiency" class="scroll-to-section" tabindex="0">Placing the Proficiency Thresholds on the Same Scale</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
                     <li><a data-scroll-target="estimating-means" class="scroll-to-section" tabindex="0">Estimating Means from Proficiency Count Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
                     <li><a data-scroll-target="scaling-estimates" class="scroll-to-section" tabindex="0">Scaling the Estimates to Grade Equivalents</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
-                    <li><a data-scroll-target="reducing" class="scroll-to-section" tabindex="0">Reducing to 3 Parameters: Average, Growth, and Trend</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="reducing" class="scroll-to-section" tabindex="0">The Three Parameters: Average, Growth, and Trend</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
                     <li><a data-scroll-target="reporting" class="scroll-to-section" tabindex="0">Reporting the Data</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
+                    <li><a data-scroll-target="data-accuracy" class="scroll-to-section" tabindex="0">Data Accuracy</a><span class="d-sm-none d-md-inline">&nbsp; | &nbsp;</span></li>
                     <li><a data-scroll-target="interested" class="scroll-to-section" tabindex="0">For Interested Readers and Data File Users</a></li>
                 </ul>
 
@@ -120,7 +121,14 @@
           {{ end }}
         </div>
 </div>
-<div class="row map" id="interested" tabindex="0">
+<div class="row map" id="data-accuracy" tabindex="0">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
+        {{ range (where .Site.RegularPages "Params.section" ("data-accuracy")) }}
+            {{ .Content }}
+          {{ end }}
+        </div>
+</div>
+<div class="row data" id="interested" tabindex="0">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xl-7 mx-auto">
         {{ range (where .Site.RegularPages "Params.section" ("interested")) }}
             {{ .Content }}

@@ -10,7 +10,7 @@
     </div>
 
 <div class="row">
-    <div class="col-12 col-md-6 offset-md-1 my-6">
+    <div class="col-12 col-md-6 offset-md-3 my-6">
         <p>
                 The Stanford Education Data Archive (SEDA) includes a number of publicly available data files, the technical documentation and data codebooks, listed on the following page. Data files are available in Stata (v13) and .csv formats.
         </p>
@@ -46,8 +46,11 @@
                         <li class="nav-item switch-tab">
                             <a href="#version2" aria-controls="profile" role="tab" data-toggle="tab">Version 2.0</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a href="#version2-1" aria-controls="profile" role="tab" data-toggle="tab">Version 2.1</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="#version3" aria-controls="profile" role="tab" data-toggle="tab">Version 3.0</a>
                         </li>
                 </ul>
                 <!--</div>-->
@@ -68,7 +71,10 @@
             <a class="switch-tab" href="#version2" aria-controls="profile" role="tab" data-toggle="tab">Version 2.0</a>
         </li>
         <li class="nav-item ">
-            <a class="switch-tab active" href="#version2-1" aria-controls="profile" role="tab" data-toggle="tab">Version 2.1</a>
+            <a class="switch-tab" href="#version2-1" aria-controls="profile" role="tab" data-toggle="tab">Version 2.1</a>
+        </li>
+        <li class="nav-item ">
+            <a class="switch-tab active" href="#version3" aria-controls="profile" role="tab" data-toggle="tab">Version 3.0</a>
         </li>
     </ul>
 </div>    
@@ -80,6 +86,7 @@
         {{ partial "version1-1" }}
         {{ partial "version2" }}
         {{ partial "version2-1" }}
+        {{ partial "version3" }}
 
     </div> <!-- end tab content --> 
   

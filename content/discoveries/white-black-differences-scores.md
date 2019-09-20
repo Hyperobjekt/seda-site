@@ -7,8 +7,10 @@ date: "2019-01-12"
 hero: "/images/heroes/gaps-discovery-hero.svg"
 image: "/images/articles/scores-gap.png"
 scatterplotID: "article1" # used to name the JS file with the necessary states and prop attributes
-statustype: post
+statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
+aliases:
+  - "/posts/white-black-differences-scores/"
 ---
 
 
@@ -45,7 +47,7 @@ The first figure compares the average performance of Black and White students. E
 
 It is common to assume that these gaps have a straightforward explanation: White students tend to live in wealthier communities, where schools often have more resources and are presumed to be better. The data, though, do not support this argument. In general, gaps in academic performance are quite large when children enter school in kindergarten, a pattern we can’t blame on schools. Moreover, the gaps grow relatively little while children are in school, which is not what we’d expect if schools were primarily responsible.
 
-One reason schools are blamed is a common, but fundamental, error in interpreting test score data. Low average test scores do not mean that schools are at fault. (See our Discovery article, <a href="posts/affluent-schools-are-not-always-best/">"Affluent Schools Are Not Always the Best Schools"</a> to understand how school effectiveness can be measured.) Think about how students’ academic skills and capacities develop. A child’s early experiences—at home, in child care and preschool, in their neighborhoods, and with their peers—provide opportunities to develop socioemotional and academic capacities. Average test scores of students reflect all of these experiences, and so it is better to think of them as a measure of the total set of educational opportunities children have had. Gaps in average test scores, therefore, represent <i>gaps in educational opportunity</i>.
+One reason schools are blamed is a common, but fundamental, error in interpreting test score data. Low average test scores do not mean that schools are at fault. (See our Discovery article, <a href="/discoveries/affluent-schools-are-not-always-best/">"Affluent Schools Are Not Always the Best Schools"</a> to understand how school effectiveness can be measured.) Think about how students’ academic skills and capacities develop. A child’s early experiences—at home, in child care and preschool, in their neighborhoods, and with their peers—provide opportunities to develop socioemotional and academic capacities. Average test scores of students reflect all of these experiences, and so it is better to think of them as a measure of the total set of educational opportunities children have had. Gaps in average test scores, therefore, represent <i>gaps in educational opportunity</i>.
 
 The figure makes clear that Black students have fewer educational opportunities than White students in almost every American school district. What, then, can we do to equalize educational opportunity?
 

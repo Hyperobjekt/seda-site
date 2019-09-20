@@ -21095,67 +21095,67 @@ form#getTheData .form-footer .fa-cog {
   transition: opacity 200ms ease-in;
 }
 
-body.type-posts.what-explains-white-black-differences-in-average-test-scores .hero .hero-child {
+body.kind-page.type-discoveries.what-explains-white-black-differences-in-average-test-scores .hero .hero-child {
   background-size: 92%;
   background-position: center 70%;
 }
 
 @media (min-width: 768px) {
-  body.type-posts.what-explains-white-black-differences-in-average-test-scores .hero .hero-child {
+  body.kind-page.type-discoveries.what-explains-white-black-differences-in-average-test-scores .hero .hero-child {
     background-size: 80%;
     background-position: bottom center;
   }
 }
 
 @media (min-width: 1280px) {
-  body.type-posts.what-explains-white-black-differences-in-average-test-scores .hero .hero-child {
+  body.kind-page.type-discoveries.what-explains-white-black-differences-in-average-test-scores .hero .hero-child {
     background-size: 88%;
     background-position: bottom center;
   }
 }
 
-body.type-posts.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
+body.kind-page.type-discoveries.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
   background-size: 92%;
   background-position: center 70%;
 }
 
 @media (min-width: 768px) {
-  body.type-posts.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
+  body.kind-page.type-discoveries.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
     background-size: 78%;
     background-position: center center;
   }
 }
 
 @media (min-width: 1280px) {
-  body.type-posts.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
+  body.kind-page.type-discoveries.affluent-schools-are-not-always-the-best-schools .hero .hero-child {
     background-size: 78%;
     background-position: center center;
   }
 }
 
-body.type-posts {
+body.kind-page.type-discoveries {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
 }
 
-body.type-posts:first-child {
+body.kind-page.type-discoveries:first-child {
   margin-top: 0;
 }
 
-body.type-posts .show {
+body.kind-page.type-discoveries .show {
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 300ms;
 }
 
-body.type-posts .hide {
+body.kind-page.type-discoveries .hide {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
-body.type-posts .scrollTabContainer {
+body.kind-page.type-discoveries .scrollTabContainer {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -21165,8 +21165,8 @@ body.type-posts .scrollTabContainer {
   justify-content: center;
 }
 
-body.type-posts .scrollTabContainer #scrollForMore,
-body.type-posts .scrollTabContainer #scrollToTop {
+body.kind-page.type-discoveries .scrollTabContainer #scrollForMore,
+body.kind-page.type-discoveries .scrollTabContainer #scrollToTop {
   display: none;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -21183,21 +21183,21 @@ body.type-posts .scrollTabContainer #scrollToTop {
 }
 
 @media (min-width: 768px) {
-  body.type-posts .scrollTabContainer #scrollForMore,
-  body.type-posts .scrollTabContainer #scrollToTop {
+  body.kind-page.type-discoveries .scrollTabContainer #scrollForMore,
+  body.kind-page.type-discoveries .scrollTabContainer #scrollToTop {
     display: block;
   }
 }
 
 @media (min-width: 768px) {
-  body.type-posts .scrollTabContainer #scrollForMore,
-  body.type-posts .scrollTabContainer #scrollToTop {
+  body.kind-page.type-discoveries .scrollTabContainer #scrollForMore,
+  body.kind-page.type-discoveries .scrollTabContainer #scrollToTop {
     font-size: 1.7rem;
     line-height: 2.5rem;
   }
 }
 
-body.type-posts .scrollTabContainer #scrollForMore i {
+body.kind-page.type-discoveries .scrollTabContainer #scrollForMore i {
   width: 16px;
   height: 16px;
   background-image: url("/images/down-arrow-blk.svg");
@@ -21206,14 +21206,14 @@ body.type-posts .scrollTabContainer #scrollForMore i {
   background-position: center bottom;
 }
 
-body.type-posts #scrollForMore {
+body.kind-page.type-discoveries #scrollForMore {
   text-align: center;
   position: fixed;
   bottom: 0px;
   width: 200px;
 }
 
-body.type-posts #scrollToTop {
+body.kind-page.type-discoveries #scrollToTop {
   background: none;
   border: none;
   cursor: pointer;
@@ -21223,14 +21223,14 @@ body.type-posts #scrollToTop {
 }
 
 @media (min-width: 320px) {
-  body.type-posts {
+  body.kind-page.type-discoveries {
     font-size: 1.2rem;
     line-height: 2rem;
   }
 }
 
 @media (min-width: 768px) {
-  body.type-posts {
+  body.kind-page.type-discoveries {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.3rem;
@@ -21239,20 +21239,20 @@ body.type-posts #scrollToTop {
 }
 
 @media (min-width: 992px) {
-  body.type-posts {
+  body.kind-page.type-discoveries {
     font-size: 1.5rem;
     line-height: 2.2rem;
   }
 }
 
 @media (min-width: 1280px) {
-  body.type-posts {
+  body.kind-page.type-discoveries {
     font-size: 1.5rem;
     line-height: 2.2rem;
   }
 }
 
-body.type-posts .hero {
+body.kind-page.type-discoveries .hero {
   background: linear-gradient(to bottom, #042965 5%, #041d55 75%);
   background-blend-mode: soft-light;
   background-repeat: no-repeat;
@@ -21265,24 +21265,24 @@ body.type-posts .hero {
 }
 
 @media (min-width: 768px) {
-  body.type-posts .hero {
+  body.kind-page.type-discoveries .hero {
     height: 360px;
   }
 }
 
 @media (min-width: 992px) {
-  body.type-posts .hero {
+  body.kind-page.type-discoveries .hero {
     height: 432px;
   }
 }
 
 @media (min-width: 1280px) {
-  body.type-posts .hero {
+  body.kind-page.type-discoveries .hero {
     height: 480px;
   }
 }
 
-body.type-posts .hero .hero-child {
+body.kind-page.type-discoveries .hero .hero-child {
   width: 100%;
   height: 100%;
   margin-right: 0;
@@ -21294,20 +21294,20 @@ body.type-posts .hero .hero-child {
 }
 
 @media (min-width: 768px) {
-  body.type-posts .hero .hero-child {
+  body.kind-page.type-discoveries .hero .hero-child {
     background-size: 100%;
     background-position: bottom center;
   }
 }
 
 @media (min-width: 1280px) {
-  body.type-posts .hero .hero-child {
+  body.kind-page.type-discoveries .hero .hero-child {
     background-size: 100%;
     background-position: bottom center;
   }
 }
 
-body.type-posts .hero .hero-child .column {
+body.kind-page.type-discoveries .hero .hero-child .column {
   display: flex;
   text-align: center;
   color: #ffffff;
@@ -21315,7 +21315,7 @@ body.type-posts .hero .hero-child .column {
   margin-bottom: 0;
 }
 
-body.type-posts .hero .hero-child .column h2 {
+body.kind-page.type-discoveries .hero .hero-child .column h2 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 2.6rem;
   line-height: 3.8rem;
@@ -21324,7 +21324,7 @@ body.type-posts .hero .hero-child .column h2 {
 }
 
 @media (min-width: 768px) {
-  body.type-posts .hero .hero-child .column h2 {
+  body.kind-page.type-discoveries .hero .hero-child .column h2 {
     font-size: 2.8rem;
     line-height: 4.3rem;
     letter-spacing: .014rem;
@@ -21332,7 +21332,7 @@ body.type-posts .hero .hero-child .column h2 {
 }
 
 @media (min-width: 992px) {
-  body.type-posts .hero .hero-child .column h2 {
+  body.kind-page.type-discoveries .hero .hero-child .column h2 {
     font-size: 3rem;
     line-height: 4.5rem;
     letter-spacing: .018rem;
@@ -21340,14 +21340,14 @@ body.type-posts .hero .hero-child .column h2 {
 }
 
 @media (min-width: 1280px) {
-  body.type-posts .hero .hero-child .column h2 {
+  body.kind-page.type-discoveries .hero .hero-child .column h2 {
     font-size: 3.2rem;
     line-height: 4.8rem;
     letter-spacing: .018rem;
   }
 }
 
-body.type-posts .hero .hero-child .column p {
+body.kind-page.type-discoveries .hero .hero-child .column p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2rem;
@@ -21355,7 +21355,7 @@ body.type-posts .hero .hero-child .column p {
 }
 
 @media (min-width: 768px) {
-  body.type-posts .hero .hero-child .column p {
+  body.kind-page.type-discoveries .hero .hero-child .column p {
     font-size: 1.8rem;
     line-height: 2.5rem;
     letter-spacing: auto;
@@ -21363,7 +21363,7 @@ body.type-posts .hero .hero-child .column p {
 }
 
 @media (min-width: 992px) {
-  body.type-posts .hero .hero-child .column p {
+  body.kind-page.type-discoveries .hero .hero-child .column p {
     font-size: 1.8rem;
     line-height: 2.5rem;
     letter-spacing: auto;
@@ -21371,20 +21371,20 @@ body.type-posts .hero .hero-child .column p {
 }
 
 @media (min-width: 1280px) {
-  body.type-posts .hero .hero-child .column p {
+  body.kind-page.type-discoveries .hero .hero-child .column p {
     font-size: 2rem;
     line-height: 3rem;
     letter-spacing: auto;
   }
 }
 
-body.type-posts h3 {
+body.kind-page.type-discoveries h3 {
   line-height: 1.5;
   padding-left: 1.6rem;
   border-left: 2px solid #04143c;
 }
 
-body.type-posts .crumbs {
+body.kind-page.type-discoveries .crumbs {
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
   letter-spacing: .055rem;
@@ -21397,94 +21397,94 @@ body.type-posts .crumbs {
   margin-bottom: -1.6rem;
 }
 
-body.type-posts .crumbs span.med-blue, body.type-posts .crumbs a {
+body.kind-page.type-discoveries .crumbs span.med-blue, body.kind-page.type-discoveries .crumbs a {
   color: #5a7095;
 }
 
-body.type-posts .crumbs span.crumb-carat {
+body.kind-page.type-discoveries .crumbs span.crumb-carat {
   padding: 0 1.6rem;
 }
 
-body.type-posts .crumbs a:hover {
+body.kind-page.type-discoveries .crumbs a:hover {
   text-decoration: underline;
   color: #031232;
 }
 
-body.type-posts .crumbs:disabled {
+body.kind-page.type-discoveries .crumbs:disabled {
   opacity: .5;
 }
 
-body.type-posts .crumbs:disabled:before {
+body.kind-page.type-discoveries .crumbs:disabled:before {
   opacity: .5;
 }
 
-body.type-posts .crumbs:disabled:after {
+body.kind-page.type-discoveries .crumbs:disabled:after {
   opacity: .5;
 }
 
-body.type-posts .crumbs:disabled:hover {
+body.kind-page.type-discoveries .crumbs:disabled:hover {
   opacity: .5;
   color: #979797;
   text-decoration: none;
 }
 
-body.type-posts .dyn-article {
+body.kind-page.type-discoveries .dyn-article {
   margin-top: 5.6rem;
   margin-bottom: 8rem;
 }
 
 @media (min-width: 768px) {
-  body.type-posts .dyn-article {
+  body.kind-page.type-discoveries .dyn-article {
     margin-top: 8rem;
     margin-bottom: 8rem;
   }
 }
 
 @media (max-width: 767.98px) {
-  body.type-posts .dyn-article img {
+  body.kind-page.type-discoveries .dyn-article img {
     margin-left: -24px;
     width: calc(100% + 48px);
   }
 }
 
-body.type-posts .dyn-article .state-desc-wrapper:first-child {
+body.kind-page.type-discoveries .dyn-article .state-desc-wrapper:first-child {
   margin-top: 0;
 }
 
 @media (min-width: 768px) {
-  body.type-posts .dyn-article .state-desc-wrapper {
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper {
     width: 94%;
   }
 }
 
-body.type-posts .dyn-article .state-desc-wrapper p,
-body.type-posts .dyn-article .state-desc-wrapper ul,
-body.type-posts .dyn-article .state-desc-wrapper li {
+body.kind-page.type-discoveries .dyn-article .state-desc-wrapper p,
+body.kind-page.type-discoveries .dyn-article .state-desc-wrapper ul,
+body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2.0rem;
   margin-top: 3.2rem;
 }
 
-body.type-posts .dyn-article .state-desc-wrapper p:first-child,
-body.type-posts .dyn-article .state-desc-wrapper ul:first-child,
-body.type-posts .dyn-article .state-desc-wrapper li:first-child {
+body.kind-page.type-discoveries .dyn-article .state-desc-wrapper p:first-child,
+body.kind-page.type-discoveries .dyn-article .state-desc-wrapper ul:first-child,
+body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li:first-child {
   margin-top: 0;
 }
 
 @media (min-width: 320px) {
-  body.type-posts .dyn-article .state-desc-wrapper p,
-  body.type-posts .dyn-article .state-desc-wrapper ul,
-  body.type-posts .dyn-article .state-desc-wrapper li {
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper p,
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper ul,
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li {
     font-size: 1.2rem;
     line-height: 2rem;
   }
 }
 
 @media (min-width: 768px) {
-  body.type-posts .dyn-article .state-desc-wrapper p,
-  body.type-posts .dyn-article .state-desc-wrapper ul,
-  body.type-posts .dyn-article .state-desc-wrapper li {
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper p,
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper ul,
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.3rem;
@@ -21494,9 +21494,9 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
 }
 
 @media (min-width: 992px) {
-  body.type-posts .dyn-article .state-desc-wrapper p,
-  body.type-posts .dyn-article .state-desc-wrapper ul,
-  body.type-posts .dyn-article .state-desc-wrapper li {
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper p,
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper ul,
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li {
     font-size: 1.5rem;
     line-height: 2.2rem;
     margin-top: 3.2rem;
@@ -21504,20 +21504,20 @@ body.type-posts .dyn-article .state-desc-wrapper li:first-child {
 }
 
 @media (min-width: 1280px) {
-  body.type-posts .dyn-article .state-desc-wrapper p,
-  body.type-posts .dyn-article .state-desc-wrapper ul,
-  body.type-posts .dyn-article .state-desc-wrapper li {
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper p,
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper ul,
+  body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li {
     font-size: 1.5rem;
     line-height: 2.2rem;
     margin-top: 3.2rem;
   }
 }
 
-body.type-posts .column-scatterplot {
+body.kind-page.type-discoveries .column-scatterplot {
   min-height: 100%;
 }
 
-body.type-posts .column-scatterplot .plot-parent {
+body.kind-page.type-discoveries .column-scatterplot .plot-parent {
   position: sticky;
   position: -webkit-sticky;
   top: 84px;
@@ -21528,21 +21528,21 @@ body.type-posts .column-scatterplot .plot-parent {
   margin-bottom: 200px;
 }
 
-body.type-posts .column-scatterplot .plot-parent .title,
-body.type-posts .column-scatterplot .plot-parent .subtitle {
+body.kind-page.type-discoveries .column-scatterplot .plot-parent .title,
+body.kind-page.type-discoveries .column-scatterplot .plot-parent .subtitle {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   color: #031232;
   text-align: center;
 }
 
-body.type-posts .column-scatterplot .plot-parent .title {
+body.kind-page.type-discoveries .column-scatterplot .plot-parent .title {
   font-size: 1.8rem;
   line-height: 1.9rem;
   letter-spacing: 0.018rem;
   margin: 0 auto;
 }
 
-body.type-posts .column-scatterplot .plot-parent .subtitle {
+body.kind-page.type-discoveries .column-scatterplot .plot-parent .subtitle {
   font-family: "MaisonNeue-Medium", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
   line-height: 32px;
@@ -21554,7 +21554,7 @@ body.type-posts .column-scatterplot .plot-parent .subtitle {
   margin: 0 auto;
 }
 
-body.type-posts .column-scatterplot .plot-parent .rectangle {
+body.kind-page.type-discoveries .column-scatterplot .plot-parent .rectangle {
   border: none;
   position: sticky;
   position: -webkit-sticky;
@@ -21565,7 +21565,7 @@ body.type-posts .column-scatterplot .plot-parent .rectangle {
   width: 100%;
 }
 
-body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input {
+body.kind-page.type-discoveries .react-autosuggest__input-wrapper input.react-autosuggest__input {
   background: #f5fdff;
   background: #f5fbfd;
   background-image: url("/images/magnify.svg");
@@ -21580,16 +21580,16 @@ body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input
   font-size: 1.4rem;
 }
 
-body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input::placeholder, body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input::-webkit-input-placeholder {
+body.kind-page.type-discoveries .react-autosuggest__input-wrapper input.react-autosuggest__input::placeholder, body.kind-page.type-discoveries .react-autosuggest__input-wrapper input.react-autosuggest__input::-webkit-input-placeholder {
   color: #173b64;
   line-height: 1.6rem;
 }
 
-body.type-posts .react-autosuggest__input-wrapper input.react-autosuggest__input.react-autosuggest__input--open {
+body.kind-page.type-discoveries .react-autosuggest__input-wrapper input.react-autosuggest__input.react-autosuggest__input--open {
   border: 0;
 }
 
-body.type-posts .react-autosuggest__input-wrapper .react-autosuggest__clear {
+body.kind-page.type-discoveries .react-autosuggest__input-wrapper .react-autosuggest__clear {
   top: 7.5px;
   color: transparent;
   background-color: transparent;
@@ -21598,41 +21598,41 @@ body.type-posts .react-autosuggest__input-wrapper .react-autosuggest__clear {
   background-position: center 40%;
 }
 
-body.type-posts .react-autosuggest__suggestions-container {
+body.kind-page.type-discoveries .react-autosuggest__suggestions-container {
   border: 1px solid #5d76a0;
 }
 
-body.type-posts .react-autosuggest__suggestions-container .react-autosuggest__suggestion:hover {
+body.kind-page.type-discoveries .react-autosuggest__suggestions-container .react-autosuggest__suggestion:hover {
   background-color: #f5fdff;
 }
 
-body.type-posts .react-autosuggest__suggestions-container .react-autosuggest__suggestion {
+body.kind-page.type-discoveries .react-autosuggest__suggestions-container .react-autosuggest__suggestion {
   color: #173b64;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.4rem;
 }
 
-body.type-posts .search-component .ais-InstantSearch__root {
+body.kind-page.type-discoveries .search-component .ais-InstantSearch__root {
   padding: 0.5rem 0 1rem 0;
 }
 
 @media (min-width: 768px) {
-  body.type-posts .state-desc-wrapper {
+  body.kind-page.type-discoveries .state-desc-wrapper {
     /*
-        border-top: 1.5px solid #daecf3;
-        border-top: 1.5px solid #e6e6e6;
-        border-top: 1.4px solid #89a2b3;
-        */
+      border-top: 1.5px solid #daecf3;
+      border-top: 1.5px solid #e6e6e6;
+      border-top: 1.4px solid #89a2b3;
+      */
     padding-bottom: 70vh;
     margin-bottom: 10px;
   }
 }
 
-body.type-posts .state-desc-wrapper:nth-of-type(1) {
+body.kind-page.type-discoveries .state-desc-wrapper:nth-of-type(1) {
   border: none;
 }
 
-body.type-discoveries .hero {
+body.kind-section.type-discoveries .hero {
   background: linear-gradient(to bottom, #042965 5%, #041d55 75%);
   background-blend-mode: soft-light;
   background-repeat: no-repeat;
@@ -21645,24 +21645,24 @@ body.type-discoveries .hero {
 }
 
 @media (min-width: 768px) {
-  body.type-discoveries .hero {
+  body.kind-section.type-discoveries .hero {
     height: 360px;
   }
 }
 
 @media (min-width: 992px) {
-  body.type-discoveries .hero {
+  body.kind-section.type-discoveries .hero {
     height: 432px;
   }
 }
 
 @media (min-width: 1280px) {
-  body.type-discoveries .hero {
+  body.kind-section.type-discoveries .hero {
     height: 480px;
   }
 }
 
-body.type-discoveries .hero .hero-child {
+body.kind-section.type-discoveries .hero .hero-child {
   width: 100%;
   height: 100%;
   margin-right: 0;
@@ -21674,20 +21674,20 @@ body.type-discoveries .hero .hero-child {
 }
 
 @media (min-width: 768px) {
-  body.type-discoveries .hero .hero-child {
+  body.kind-section.type-discoveries .hero .hero-child {
     background-size: 88%;
     background-position: center;
   }
 }
 
 @media (min-width: 1280px) {
-  body.type-discoveries .hero .hero-child {
+  body.kind-section.type-discoveries .hero .hero-child {
     background-size: 76%;
     background-position: center;
   }
 }
 
-body.type-discoveries .hero .hero-child .column {
+body.kind-section.type-discoveries .hero .hero-child .column {
   margin-top: 13.2rem;
   margin-bottom: 9.6rem;
   text-align: center;
@@ -21695,18 +21695,18 @@ body.type-discoveries .hero .hero-child .column {
 }
 
 @media (min-width: 768px) {
-  body.type-discoveries .hero .hero-child .column {
+  body.kind-section.type-discoveries .hero .hero-child .column {
     margin-top: 15.2rem;
   }
 }
 
 @media (min-width: 992px) {
-  body.type-discoveries .hero .hero-child .column {
+  body.kind-section.type-discoveries .hero .hero-child .column {
     margin-top: 16rem;
   }
 }
 
-body.type-discoveries .hero .hero-child .column h2 {
+body.kind-section.type-discoveries .hero .hero-child .column h2 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 2.6rem;
   line-height: 2.55rem;
@@ -21715,7 +21715,7 @@ body.type-discoveries .hero .hero-child .column h2 {
 }
 
 @media (min-width: 768px) {
-  body.type-discoveries .hero .hero-child .column h2 {
+  body.kind-section.type-discoveries .hero .hero-child .column h2 {
     font-size: 2.8rem;
     line-height: 4.3rem;
     letter-spacing: .014rem;
@@ -21723,7 +21723,7 @@ body.type-discoveries .hero .hero-child .column h2 {
 }
 
 @media (min-width: 992px) {
-  body.type-discoveries .hero .hero-child .column h2 {
+  body.kind-section.type-discoveries .hero .hero-child .column h2 {
     font-size: 3rem;
     line-height: 4.5rem;
     letter-spacing: .018rem;
@@ -21731,14 +21731,14 @@ body.type-discoveries .hero .hero-child .column h2 {
 }
 
 @media (min-width: 1280px) {
-  body.type-discoveries .hero .hero-child .column h2 {
+  body.kind-section.type-discoveries .hero .hero-child .column h2 {
     font-size: 3.6rem;
     line-height: 5.4rem;
     letter-spacing: .018rem;
   }
 }
 
-body.type-discoveries .hero .hero-child .column p {
+body.kind-section.type-discoveries .hero .hero-child .column p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.3rem;
   line-height: 2rem;
@@ -21746,7 +21746,7 @@ body.type-discoveries .hero .hero-child .column p {
 }
 
 @media (min-width: 768px) {
-  body.type-discoveries .hero .hero-child .column p {
+  body.kind-section.type-discoveries .hero .hero-child .column p {
     font-size: 1.8rem;
     line-height: 2.5rem;
     letter-spacing: auto;
@@ -21754,7 +21754,7 @@ body.type-discoveries .hero .hero-child .column p {
 }
 
 @media (min-width: 992px) {
-  body.type-discoveries .hero .hero-child .column p {
+  body.kind-section.type-discoveries .hero .hero-child .column p {
     font-size: 1.8rem;
     line-height: 2.5rem;
     letter-spacing: auto;
@@ -21762,7 +21762,7 @@ body.type-discoveries .hero .hero-child .column p {
 }
 
 @media (min-width: 1280px) {
-  body.type-discoveries .hero .hero-child .column p {
+  body.kind-section.type-discoveries .hero .hero-child .column p {
     font-size: 2.3rem;
     line-height: 3.45rem;
     letter-spacing: auto;

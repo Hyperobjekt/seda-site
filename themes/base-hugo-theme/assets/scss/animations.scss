@@ -463,7 +463,7 @@ svg g#map-plot {
             // School 1 Stairs
             $stepSpeed: .5s;
             $stepDelay: 1s;
-            g#Kid-1 {
+            g#Kid-1-2 {
                 animation: kidStep1 $stepSpeed forwards;
                 animation-delay: $stepDelay;
                 transform: translate(21.041030px, 102px);
@@ -575,7 +575,7 @@ svg g#map-plot {
 
             // School 2 Stairs
 
-            g#Kid-2 {
+            g#Kid-2-2 {
                 animation: kidStep2 $stepSpeed forwards;
                 animation-delay: $stepDelay;
                 transform: translate(34px, 102px);
@@ -686,7 +686,7 @@ svg g#map-plot {
             }
             // School 3 Stairs
 
-            g#Kid-3 {
+            g#Kid-3-2 {
                 animation: kidStep3 $stepSpeed forwards;
                 animation-delay: $stepDelay;
                 transform: translate(27px, 102px);

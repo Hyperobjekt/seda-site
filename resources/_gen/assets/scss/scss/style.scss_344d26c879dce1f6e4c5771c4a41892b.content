@@ -22235,7 +22235,7 @@ body.kind-section.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Kid-1 {
+#growth-graphic.move svg g#Kid-1-2 {
   animation: kidStep1 0.5s forwards;
   animation-delay: 1s;
   transform: translate(21.04103px, 102px);
@@ -22355,7 +22355,7 @@ body.kind-section.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Kid-2 {
+#growth-graphic.move svg g#Kid-2-2 {
   animation: kidStep2 0.5s forwards;
   animation-delay: 1s;
   transform: translate(34px, 102px);
@@ -22475,7 +22475,7 @@ body.kind-section.type-discoveries .hero .hero-child .column p {
   }
 }
 
-#growth-graphic.move svg g#Kid-3 {
+#growth-graphic.move svg g#Kid-3-2 {
   animation: kidStep3 0.5s forwards;
   animation-delay: 1s;
   transform: translate(27px, 102px);

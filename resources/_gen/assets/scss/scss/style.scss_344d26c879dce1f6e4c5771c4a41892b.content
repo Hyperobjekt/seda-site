@@ -23822,4 +23822,39 @@ body.methods pre code {
   font-weight: 700;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  #avg-graphic,
+  #growth-graphic,
+  #trendgraphic {
+    opacity: 1 !important;
+  }
+  #avg-graphic svg,
+  #growth-graphic svg,
+  #trendgraphic svg {
+    opacity: 0 !important;
+    display: none;
+  }
+  #avg-graphic img,
+  #growth-graphic img,
+  #trendgraphic img {
+    opacity: 1 !important;
+  }
+  #growth-graphic.move,
+  #avg-graphic.move,
+  #trendgraphic.move {
+    transition: none !important;
+  }
+  #growth-graphic img.svg-static.d-md-none,
+  #avg-graphic img.svg-static.d-md-none,
+  #trendgraphic img.svg-static.d-md-none {
+    display: block !important;
+  }
+  .hero-animate {
+    opacity: 1 !important;
+  }
+  #hero .svg-animated {
+    opacity: 1 !important;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

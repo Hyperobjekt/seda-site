@@ -7,8 +7,10 @@ date: "2019-02-12"
 hero: "/images/heroes/learning-rates-hero.svg"
 image: "/images/articles/affluent-schools-sm.png"
 scatterplotID: "article2" # used to name the JS file with the necessary states and prop attributes
-statustype: post
+statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
+aliases:
+  - "/posts/affluent-schools-are-not-always-best/"
 ---
 
 {{% state-wrapper state="state1" notmerge="true" %}}
@@ -24,7 +26,7 @@ In 3rd grade, where our test-score data begin, the average student in Chicago sc
 This figure highlights the relationship between how rich a district is and how its students perform on standardized tests in 3rd grade. The horizontal axis shows the average family socioeconomic status (SES) in the district (<a href="/help-faq/#ses-measured">see here for how we measure SES</a>), where 0 represents the SES of the average district in the United States. More affluent districts are located to the right in the figure; poorer districts to the left.
 
 
-In many ways the pattern shown here is not surprising: children’s scores are much higher in richer districts. For example, in relatively affluent Anne Arundel County, Maryland, average test scores are well above average in 3rd grade. In Chicago, by contrast, scores are far below average … 
+In many ways the pattern shown here is not surprising: children’s scores are much higher in richer districts. For example, in relatively affluent Anne Arundel County, Maryland, average test scores are well above average in 3rd grade. In Chicago, by contrast, scores are far below average …
 <br><br>
 
 {{% /state-wrapper %}}
@@ -71,7 +73,7 @@ grade. The families in Chicago’s public schools tend to be lower in socioecono
 
 In Anne Arundel, the opposite is true. Although students there are more affluent than average and score above a 4th-grade level in 3rd grade, they learn at a far lower rate than their Chicago peers. By 8th grade their scores are only slightly above average.
 
-It’s common to think of average test scores as a measure of school quality. After all, if students are scoring well on tests, they must be learning something, right? 
+It’s common to think of average test scores as a measure of school quality. After all, if students are scoring well on tests, they must be learning something, right?
 
 To understand what is wrong with this assumption, consider a hospital. We shouldn’t assess a hospital based on the health of its patients; rather, we should ask how much a patient’s health improves as a result of his or her time in that hospital. Similarly, we shouldn’t evaluate a school based on the average scores of its students, but rather by how much students learn while in school. If we can measure the change in test scores as students move from one grade to the next, we gain a more accurate picture of what a school is accomplishing.
 
@@ -79,13 +81,13 @@ To understand what is wrong with this assumption, consider a hospital. We should
 
 {{% state-wrapper state="state19" notmerge="true" %}}
 
-The Opportunity Explorer provides this data—the “learning rate”—for schools, school districts, and counties across the country. The result is an unexpected story of the quality of public education in the United States. We see, for example, that students in some relatively affluent districts—like Anne Arundel County—show less progress as they move from one grade to the next. We discover, too, that students in some poor districts start off testing far below average, but that the schools appear to be doing an outstanding job, where students are catching up to and exceeding the national average. 
+The Opportunity Explorer provides this data—the “learning rate”—for schools, school districts, and counties across the country. The result is an unexpected story of the quality of public education in the United States. We see, for example, that students in some relatively affluent districts—like Anne Arundel County—show less progress as they move from one grade to the next. We discover, too, that students in some poor districts start off testing far below average, but that the schools appear to be doing an outstanding job, where students are catching up to and exceeding the national average.
 
 This figure highlights the relationship between how rich a district is and how fast its students learn on average. As before, the horizontal axis shows the average SES in the district. But here the vertical axis represents district learning rates: the higher the district is located in the figure, the faster test scores improve from one grade to the next.
 
 <img src="/images/articles/affluent-schools/state7.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level" />
 
-On average, learning rates are modestly higher in more affluent districts than in less affluent ones, but the data reveal many exceptions. Chicago boasts a learning rate 22 percent above average, while Anne Arundel County has learning rates 16 percent slower than average. 
+On average, learning rates are modestly higher in more affluent districts than in less affluent ones, but the data reveal many exceptions. Chicago boasts a learning rate 22 percent above average, while Anne Arundel County has learning rates 16 percent slower than average.
 
 {{% /state-wrapper %}}
 
@@ -133,7 +135,7 @@ And 7th ...
 
 {{% state-wrapper state="state13" notmerge="true" %}}
 
-And 8th grade. 
+And 8th grade.
 
 <img src="/images/articles/affluent-schools/state13.jpg" class=" d-md-none" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District, x axis is socioeconomic status, y axis is learning rates by percent difference from 1 grade level, grade 8 data" />
 

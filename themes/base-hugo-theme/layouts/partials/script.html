@@ -16,7 +16,7 @@
   <script  src="{{ "js/analytics.js"  | absURL }}"></script>
 {{ end }}
 
-{{ if eq .Page.Type "posts" }}
+{{ if (and ( eq .Page.Type "discoveries" ) ( eq .Page.Kind "page" )) }}
     {{ partial "scatterplot-scripts.html" . }}
 {{ end }}
 

@@ -140,14 +140,14 @@
     <div class="w-100 heading mt-7 mt-md-9">
         <h3 class="">Latest Discoveries</h3>
     </div>
-    {{ range $index, $element := first 2 (where .Site.Pages ".Params.statustype" "post") }}
-        {{ if (eq $index 0) }}
+    {{ range $index, $element := first 2 (where .Site.Pages ".Params.statustype" "discovery") }}
+      {{ if (eq $index 0) }}
             <div class="card-container col-xs-12 col-md-6 offset-md-0">
         {{ else }}
             <div class="card-container col-xs-12 col-md-6">
         {{ end }}
 
-                {{ partial "explorations-card-home.html" .}}
+            {{ partial "explorations-card-home.html" .}}
 
             </div>
     {{ end }}

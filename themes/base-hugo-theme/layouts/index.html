@@ -46,7 +46,7 @@
       <p id="avg_test_scores_p">The educational opportunities available in a community, both in and out of school, are reflected in children’s average test scores. They are influenced by children's opportunities to learn at home, in their neighborhoods, in childcare, preschool, and after-school programs, from peers and friends, and at school. </p>
       <a class="readmore order-1 d-inline-block gta-event-CTAClick" href="/explorer/#/map/us/districts/avg/ses/all/3.5/38/-97" aria-label="EXPLORE AVERAGE TEST SCORES IN YOUR SCHOOL AND COMMUNITY" aria-describedby="avg_test_scores avg_test_scores_p">
         <div class="explorelink-block d-flex align-items-center justify-content-sm-center justify-content-md-start"><span>EXPLORE AVERAGE TEST SCORES
-        <br class="">IN YOUR SCHOOL & COMMUNITY</span><div class="linkright order-2 ml-2"><img aria-hidden="true" src="/images/right-arrow-white.svg" /></div></div>
+        <br class="">IN YOUR SCHOOL & COMMUNITY</span><div class="linkright order-2"><img aria-hidden="true" src="/images/right-arrow-white.svg" /></div></div>
       </a>
     </div>
     <div class="order-1 order-md-2 col-xs-12 col-mm-10 col-md-4 col-lg-4 justify-content-sm-center justify-content-md-start hpgraphic" id="avg-graphic" style="height: 100%; width: 100%; background-color: #fff; display: flex; align-items: center;">
@@ -83,7 +83,7 @@
           href="/explorer/#/map/us/districts/grd/ses/all/3.5/38/-97"><div class="explorelink-block d-flex align-items-center justify-content-sm-center justify-content-md-start"
           aria-label="EXPLORE LEARNING RATES IN YOUR SCHOOL & COMMUNITY" aria-describedby="learning_rates_h learning_rates_p">
         <span>EXPLORE LEARNING RATES IN <br class="">YOUR SCHOOL & COMMUNITY</span>
-        <div class="linkright order-2 ml-2"><img aria-hidden="true" src="/images/right-arrow-white.svg" /></div></div></a>
+        <div class="linkright order-2"><img aria-hidden="true" src="/images/right-arrow-white.svg" /></div></div></a>
     </div>
     <!-- END display larger than sm -->
 </div>
@@ -107,7 +107,7 @@
           <a class="readmore order-1 d-inline-block gta-event-CTAClick" href="/explorer/#/map/us/districts/coh/ses/all/3.5/38/-97" aria-label="EXPLORE TEST SCORE TRENDS IN YOUR SCHOOL & COMMUNITY" aria-describedby="trend_desc_h trend_desc_p">
             <div class="explorelink-block d-flex align-items-center justify-content-sm-center justify-content-md-start">
               <span>EXPLORE TEST SCORE TRENDS<br class="">IN YOUR SCHOOL & COMMUNITY</span>
-              <div class="linkright order-2 ml-2">
+              <div class="linkright order-2">
                 <img aria-hidden="true" src="/images/right-arrow-white.svg" />
               </div>
             </div>
@@ -140,14 +140,14 @@
     <div class="w-100 heading mt-7 mt-md-9">
         <h3 class="">Latest Discoveries</h3>
     </div>
-    {{ range $index, $element := first 2 (where .Site.Pages ".Params.statustype" "post") }}
-        {{ if (eq $index 0) }}
+    {{ range $index, $element := first 2 (where .Site.Pages ".Params.statustype" "discovery") }}
+      {{ if (eq $index 0) }}
             <div class="card-container col-xs-12 col-md-6 offset-md-0">
         {{ else }}
             <div class="card-container col-xs-12 col-md-6">
         {{ end }}
 
-                {{ partial "explorations-card-home.html" .}}
+            {{ partial "explorations-card-home.html" .}}
 
             </div>
     {{ end }}

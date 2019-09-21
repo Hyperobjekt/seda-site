@@ -202,6 +202,14 @@ h5.big-superhead, a.big-superhead {
   background-color: yellow;
 }
 
+span.help-button-style {
+  background-color: $seda-red-a11y;
+  font-family: $sharpgrotesk-med-15;
+  font-size: 1.4rem;
+  padding: 5px 10px 3px;
+  color: white;
+}
+
 
 // Custom button style
 .btn-custom {

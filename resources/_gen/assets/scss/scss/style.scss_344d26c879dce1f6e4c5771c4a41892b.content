@@ -17288,6 +17288,14 @@ h5.big-superhead, a.big-superhead {
   background-color: yellow;
 }
 
+span.help-button-style {
+  background-color: #EC003A;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  font-size: 1.4rem;
+  padding: 5px 10px 3px;
+  color: white;
+}
+
 .btn-custom {
   display: inline-block;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -18516,11 +18524,6 @@ body.home #main {
   /* border-bottom: 1px solid $seda-navy;
           padding-bottom: 3px;
           margin-bottom: -4px; */
-  box-shadow: 3px 3px 4px -2px rgba(0, 0, 0, 0.2);
-}
-
-.row.fact a.readmore:hover .linkright {
-  background-color: #e9043a;
 }
 
 .row.fact .linkright {
@@ -18699,9 +18702,17 @@ body.home #main {
   }
 }
 
+.row.fact.fact-1 .readmore .linkright, .row.fact.fact-2 .readmore .linkright, .row.fact.fact-3 .readmore .linkright {
+  margin-left: 14px;
+  transition: margin-left 200ms ease-in-out 20ms;
+}
+
 .row.fact.fact-1 .readmore:hover, .row.fact.fact-2 .readmore:hover, .row.fact.fact-3 .readmore:hover {
   text-decoration: underline;
-  color: #031232 !important;
+}
+
+.row.fact.fact-1 .readmore:hover .linkright, .row.fact.fact-2 .readmore:hover .linkright, .row.fact.fact-3 .readmore:hover .linkright {
+  margin-left: 20px;
 }
 
 @media (min-width: 768px) {
@@ -23820,6 +23831,41 @@ body.methods pre code {
 
 .seda-table.first-col-bold tr td:nth-child(1) {
   font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #avg-graphic,
+  #growth-graphic,
+  #trendgraphic {
+    opacity: 1 !important;
+  }
+  #avg-graphic svg,
+  #growth-graphic svg,
+  #trendgraphic svg {
+    opacity: 0 !important;
+    display: none;
+  }
+  #avg-graphic img,
+  #growth-graphic img,
+  #trendgraphic img {
+    opacity: 1 !important;
+  }
+  #growth-graphic.move,
+  #avg-graphic.move,
+  #trendgraphic.move {
+    transition: none !important;
+  }
+  #growth-graphic img.svg-static.d-md-none,
+  #avg-graphic img.svg-static.d-md-none,
+  #trendgraphic img.svg-static.d-md-none {
+    display: block !important;
+  }
+  .hero-animate {
+    opacity: 1 !important;
+  }
+  #hero .svg-animated {
+    opacity: 1 !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

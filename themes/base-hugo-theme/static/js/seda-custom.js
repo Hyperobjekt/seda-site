@@ -370,7 +370,7 @@
       });
       //Scores Text
       trendStep9 = anime({
-          targets: ['text#Scores'],
+          targets: ['text#Scores-3'],
           opacity: 1,
           easing: 'linear',
           duration: 250,

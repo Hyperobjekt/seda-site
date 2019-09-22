@@ -7,4 +7,4 @@ The next step of our process is to estimate the mean test score in each school a
 
 To get estimates for each county (in a given subject, grade, and year) we take a weighted average of all the estimates from the districts that belong to that county. The weighted average accounts for the number of students served in each district, allowing estimates from large districts in a county to contribute more than small districts.
 
-For more information, see Steps 5 and 6 in the <span class="highlight2">Technical Documentation</span>; Reardon, Shear, et al. (2017); and Shear and Reardon (2019).
+For more information, see Steps 5 and 6 in the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">technical documentation</a>; Reardon, Shear, et al. (2017); and Shear and Reardon (2019).

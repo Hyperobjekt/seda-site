@@ -306,8 +306,8 @@ body.kind-page.type-discoveries {
     }
     img {
       @include media-breakpoint-down(mm) {
-        margin-left: -24px;
-        width: calc(100% + 48px);
+        margin-left: -16px;
+        width: calc(100% + 32px);
         padding: 2.4rem 0;
       }
     }

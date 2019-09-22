@@ -1964,14 +1964,14 @@ body.home {
         //order: 3;
       }
       .card {
-        padding: 2.4rem;
+        padding: 2.4rem 0.8rem;
         //margin-bottom: 1.6rem;
         margin-top: 1.6rem;
         background-color: transparent;
         border: none;
 
         @include media-breakpoint-up(md) {
-
+          padding: 2.4rem;
         }
 
         @include media-breakpoint-up(lg) {

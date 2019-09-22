@@ -80,8 +80,8 @@ body.kind-section.type-discoveries {
             }
             p {
               font-family: $maisonneue-book;
-              font-size: 1.3rem;
-              line-height: 2rem;
+              font-size: $sm-p-size;
+              line-height: 1.5;
               letter-spacing: 0;
               @include media-breakpoint-up(md) {
                 font-size: 1.8rem;

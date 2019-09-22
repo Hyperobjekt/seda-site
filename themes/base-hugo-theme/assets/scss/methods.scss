@@ -126,8 +126,8 @@ body.methods {
             letter-spacing: 0.03rem;
         }
         @include media-breakpoint-up(xl) {
-            font-size: 2.8rem;
-            line-height: 4.2rem;
+            font-size: $xl-h4-size;
+            line-height: 1.5;
             letter-spacing: 0.03rem;
         }
         }
@@ -143,12 +143,18 @@ body.methods {
             // letter-spacing: 0.024rem;
         }
         @include media-breakpoint-up(lg) {
-            font-size: 2rem;
-            font-size: 1.6rem;
+         
+            font-size: 1.7rem;
             line-height: 3rem;
             letter-spacing: auto;
             padding-bottom: 1.6rem;
           }
+          @include media-breakpoint-up(xl) {
+           
+            font-size: 1.8rem;
+            line-height: 1.5;
+            
+          }  
       }
 
       /* h6 {

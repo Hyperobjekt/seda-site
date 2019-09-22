@@ -13,5 +13,5 @@ For each school district or county, we use data from the Census Bureau’s <a hr
 - Percentage of households headed by single mothers
 - Employment rate for adults age 25–64.
 
-The composite SES measure is standardized so that a value of 0 represents the SES of the average school district in the U.S. Approximately two-thirds of districts have SES values between -1 and +1, and approximately 95% have SES values between -2 and +2. In some places we cannot calculate a reliable measure of socioeconomic status, because the ACS samples are too small; in these cases, no value for SES is reported. For more detailed information, please see the <span class="highlight2">Technical Documentation</a>. 
+The composite SES measure is standardized so that a value of 0 represents the SES of the average school district in the U.S. Approximately two-thirds of districts have SES values between -1 and +1, and approximately 95% have SES values between -2 and +2. In some places we cannot calculate a reliable measure of socioeconomic status, because the ACS samples are too small; in these cases, no value for SES is reported. For more detailed information, please see the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">technical documentation</a>. 
 

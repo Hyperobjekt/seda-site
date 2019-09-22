@@ -5,7 +5,7 @@ section: raw-data
 
 The data used to develop SEDA come from the ED<i>Facts</i> Restricted-Use Files, provided to our team via a data-use agreement with NCES.
 
-ED<i>Facts</i> provides counts of students scoring in proficiency levels for nearly every school in the U.S. For details on missing data, see the <span class="highlight2">SEDA Technical Documentation</span>.
+ED<i>Facts</i> provides counts of students scoring in proficiency levels for nearly every school in the U.S. For details on missing data, see the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">SEDA Technical Documentation</a>.
 
 Data are available for:
 

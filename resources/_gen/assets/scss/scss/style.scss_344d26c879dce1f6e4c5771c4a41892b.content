@@ -19066,10 +19066,16 @@ body.home #main {
 }
 
 .row.latest-explorations .card-container .card {
-  padding: 2.4rem;
+  padding: 2.4rem 0.8rem;
   margin-top: 1.6rem;
   background-color: transparent;
   border: none;
+}
+
+@media (min-width: 768px) {
+  .row.latest-explorations .card-container .card {
+    padding: 2.4rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -21508,8 +21514,8 @@ body.kind-page.type-discoveries .dyn-article {
 
 @media (max-width: 767.98px) {
   body.kind-page.type-discoveries .dyn-article img {
-    margin-left: -24px;
-    width: calc(100% + 48px);
+    margin-left: -16px;
+    width: calc(100% + 32px);
     padding: 2.4rem 0;
   }
 }

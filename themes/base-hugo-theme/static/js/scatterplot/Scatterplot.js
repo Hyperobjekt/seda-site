@@ -351,7 +351,7 @@ function Scatterplot(container, props) {
   //   this.render();
   // };
 
-  (void 0).setProps = function (props) {
+  this.setProps = function (props) {
     this.props = _objectSpread({}, this.props, {}, props);
     this.render();
   };

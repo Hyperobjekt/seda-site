@@ -69,7 +69,7 @@ body.type-news {
             }
             p {
               font-family: $maisonneue-book;
-              font-size: 1.3rem;
+              font-size: $sm-p-size;
               line-height: 2rem;
               letter-spacing: 0;
               @include media-breakpoint-up(md) {
@@ -87,8 +87,8 @@ body.type-news {
         }
       }
 .row.news-item {
-    padding-top: 4.8rem;
-    padding-bottom: 4.8rem;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
     border-bottom: 2px solid #EEEFF1;
     // margin-left: -16px;
     // margin-right: -16px;
@@ -103,9 +103,9 @@ body.type-news {
     }
     .readmore {
         font-family: $sharpgrotesk-med-15;
-        font-size: 1.4rem;
+        font-size: $sm-caps-size;
         letter-spacing: .064rem;
-        line-height: 4.4rem;
+        line-height: 1.5;
         text-transform: uppercase;
         text-decoration: none;
         &:hover {
@@ -115,24 +115,34 @@ body.type-news {
             content: url('/images/icons/rightarrow.svg');
             margin-left: .8rem;
         }
+        @include media-breakpoint-up(xl) {
+          font-size: $xl-caps-size;
+        }
     }
     h4 {
+        font-size: $sm-h4-size;
+        line-height: 1.5;
         margin-bottom: 0rem;
         @include media-breakpoint-up(md) {
-            line-height: 2.75rem;
+            line-height: 1.5;
             font-size: 1.85rem;
             letter-spacing: 0.024rem;
         }
         @include media-breakpoint-up(lg) {
-            line-height: 3.4rem;
-            font-size: 2.3rem;
+            line-height: 1.5;
+            font-size: 2rem;
             letter-spacing: 0.03rem;
         }
+        @include media-breakpoint-up(xl) {
+          line-height: 1.5;
+          font-size: 2.3rem;
+          letter-spacing: 0.03rem;
+      }
     }
     p {
         font-family: $maisonneue-book;
-            font-size: 1.3rem;
-            line-height: 2rem;
+            font-size: $sm-p-size;
+            line-height: 1.5;
             letter-spacing: 0;
             margin-top: 1.8rem;
             margin-bottom: 1rem;
@@ -142,7 +152,7 @@ body.type-news {
               margin-top: 2rem;
               margin-bottom: 1rem;
               font-size: 1.6rem;
-              line-height: 2.5rem;
+              line-height: 1.5;
               letter-spacing: 0;
             }
 
@@ -152,9 +162,13 @@ body.type-news {
               // line-height: 3.4rem;
               // letter-spacing: .012rem;
             }
+            @include media-breakpoint-up(xl) {
+              font-size: $xl-p-size;
+              line-height: 1.5;
+            }
         &.excerpt {
-            margin-bottom: 0.8rem;
-            margin-top: 1.6rem;
+            margin-bottom: 1.6rem;
+            margin-top: 2.4rem;
         }    
     }
 }

@@ -202,6 +202,14 @@ h5.big-superhead, a.big-superhead {
   background-color: yellow;
 }
 
+span.help-button-style {
+  background-color: $seda-red-a11y;
+  font-family: $sharpgrotesk-med-15;
+  font-size: 1.4rem;
+  padding: 5px 10px 3px;
+  color: white;
+}
+
 
 // Custom button style
 .btn-custom {
@@ -624,7 +632,7 @@ img {
       h2 {
         font-family: $sharpgrotesk-med-20;
         font-size: 2.6rem;
-        line-height: 2.55rem;
+        line-height: 1.4;
         letter-spacing: .013rem;
 
         @include media-breakpoint-up(md) {
@@ -646,8 +654,8 @@ img {
       }
       p {
         font-family: $maisonneue-book;
-        font-size: 1.3rem;
-        line-height: 2rem;
+        font-size: $sm-p-size;
+        line-height: 1.5;
         letter-spacing: 0;
         @include media-breakpoint-up(md) {
           font-size: 1.8rem;
@@ -671,9 +679,9 @@ img {
 
 // General typography
   p {
-    margin-bottom: 1.6rem;
+    margin-bottom: 2.4rem;
     @include media-breakpoint-up(md) {
-      margin-bottom: 1.6rem;
+      margin-bottom: 2.4rem;
     }
     @include media-breakpoint-up(xl) {
       margin-bottom: 2.4rem;
@@ -793,8 +801,8 @@ img {
 
     .dropdown-toggle {
       width: 100%;
-      font-size: 1.2rem;
-        line-height: 1.4rem;
+      font-size: 1.5rem;
+        line-height: 1.5;
         letter-spacing: 0.055rem;
         text-transform: uppercase;
         font-family: $sharpgrotesk-med-15;
@@ -802,7 +810,7 @@ img {
         height: 4.7rem;
         background-color: #fff;
         @include media-breakpoint-up(md) {
-          font-size: 1.4rem;
+          font-size: 1.5rem;
         }
         @include media-breakpoint-up(lg) {
           font-size: 1.6rem;
@@ -812,7 +820,7 @@ img {
       border: none;
       width: 100%;
       text-align: center;
-      padding: 3.2rem 0 0;
+      padding: 3.2rem 0 2.4rem;
       z-index: 2;
       height: auto;
       @include media-breakpoint-up(md) {
@@ -828,6 +836,8 @@ img {
         display: block;
         margin-bottom: 1.6rem;
         margin-bottom: 0.8rem;
+        font-size: 1.5rem;
+        line-height: 1.5;
         @include media-breakpoint-up(md) {
           margin-bottom: 0.8rem;
         }
@@ -939,6 +949,20 @@ img {
   box-shadow: -2px 0px 5px rgba(0,0,0,.20);
 }
 
+// position static homepage hero image
+.home .hero {
+  position:relative;
+  .svg-static {
+    position:absolute;
+    top:0;left:0;right:0;bottom:0;
+    margin:auto;
+    margin-bottom: auto!important;
+    opacity:0.5!important;
+  }
+  h2, p {
+    position: relative;
+  }
+}
 
 
 // Hero
@@ -1976,11 +2000,11 @@ body.home {
 
           .card-title {
             font-family: $sharpgrotesk-med-20;
-            font-size: 1.6rem;
-            line-height: 2.4rem;
+            font-size: $sm-h4-size;
+            line-height: 1.5;
             letter-spacing: .009rem;
-            margin-top: 1.8rem;
-            // margin-bottom: 2rem;
+            margin-top: 2.4rem;
+            margin-bottom: 1.6rem;
 
             @include media-breakpoint-up(md) {
               font-size: 1.6rem;
@@ -2009,7 +2033,7 @@ body.home {
           .card-subtitle {
             display: block;
             font-family: $maisonneue-book;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             line-height: 2.1rem;
             letter-spacing: 0;
             margin-top: 1.6rem;
@@ -2031,8 +2055,8 @@ body.home {
 
           .card-text {
             font-family: $maisonneue-book;
-            font-size: 1.3rem;
-            line-height: 2rem;
+            font-size: $sm-p-size;
+            line-height: 1.5;
             letter-spacing: 0;
             margin-top: 1.8rem;
             margin-bottom: 2rem;
@@ -2102,7 +2126,6 @@ body.home {
 
 
 
-
 // About page
 body.about {
   .hero {
@@ -2132,6 +2155,7 @@ body.about {
       // background-size: 2200px 478px;
       // background-position: -400px 10%;
     }
+
     .hero-child {
       width: 100%;
       height: 100%;
@@ -2192,8 +2216,8 @@ body.about {
         }
         p {
           font-family: $maisonneue-book;
-          font-size: 1.3rem;
-          line-height: 2rem;
+          font-size: 1.6rem;
+          line-height: 1.5;
           letter-spacing: 0;
           @include media-breakpoint-up(md) {
             font-size: 1.8rem;
@@ -2230,7 +2254,7 @@ body.about {
       h3 {
         color: $seda-dark;
         font-family: $sharpgrotesk-med-15;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         letter-spacing: .055rem;
         text-transform: uppercase;
         margin-bottom: 1.6rem;
@@ -2248,10 +2272,10 @@ body.about {
       h4 {
         color: $seda-dark;
         font-family: $sharpgrotesk-med-20;
-        font-size: 1.4rem;
-        line-height: 2.1rem;
+        font-size: 1.7rem;
+        line-height: 1.5;
         letter-spacing: auto;
-        margin-bottom: 1.6rem;
+        margin-bottom: 2.4rem;
         @include media-breakpoint-up(md) {
           font-size: 1.85rem;
           line-height: 2.7rem;
@@ -2270,12 +2294,12 @@ body.about {
       p {
         color: $seda-gray;
         font-family: $maisonneue-book;
-        font-size: 1.3rem;
-        line-height: 2.0rem;
+        font-size: 1.6rem;
+        line-height: 1.5;
         letter-spacing: 0;
         @include media-breakpoint-up(md) {
-          font-size: 1.4rem;
-          line-height: 2.1rem;
+          font-size: 1.6rem;
+          line-height: 1.5;
         }
         @include media-breakpoint-up(lg) {
           font-size: 1.6rem;
@@ -2295,7 +2319,7 @@ body.about {
       color: $white;
       text-align: center;
       padding-top: 4.8rem;
-      padding-bottom: 4.8rem;
+      padding-bottom: 3.2rem;
       @include media-breakpoint-up(md) {
         padding-top: 8rem;
         padding-bottom: 8rem;
@@ -2306,8 +2330,8 @@ body.about {
       }
       p {
         font-family: $sharpgrotesk-med-20;
-        font-size: 1.4rem;
-        line-height: 2.1rem;
+        font-size: 1.7rem;
+        line-height: 1.5;
         letter-spacing: .002rem;
         @include media-breakpoint-up(md) {
           font-size: 1.85rem;
@@ -2420,12 +2444,12 @@ body.about {
       h3 {
         color: $seda-dark;
         font-family: $sharpgrotesk-med-15;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         letter-spacing: .055rem;
         text-transform: uppercase;
         margin-bottom: 3.6rem;
         @include media-breakpoint-up(md) {
-          font-size: 1.4rem;
+          font-size: 1.6rem;
           line-height: 1.7rem;
           letter-spacing: .064rem;
         }
@@ -2493,28 +2517,28 @@ body.about {
       .name {
         color: $seda-dark;
         font-family: $sharpgrotesk-med-20;
-        font-size: 1.44rem;
-        line-height: 2.592rem;
+        font-size: 1.7rem;
+        line-height: 1.5;
         letter-spacing: 0;
         margin-top: 1.6rem;
         margin-bottom: .4rem;
         @include media-breakpoint-up(md) {
-          margin-top: 1.6rem;
+          margin-top: 1.7rem;
           margin-bottom: .4rem;
           font-size: 1.8rem;
-          line-height: 3.24rem;
+          line-height: 1.5;
           letter-spacing: 0;
         }
       }
       .title {
         color: $seda-gray;
         font-family: $maisonneue-book;
-        font-size: 1.2rem;
-        line-height: 1.8rem;
+        font-size: 1.5rem;
+        line-height: 1.5;
         letter-spacing: 0;
         @include media-breakpoint-up(md) {
-          font-size: 1.4rem;
-          line-height: 2.1rem;
+          font-size: 1.5rem;
+          line-height: 2.1.5;
           letter-spacing: 0;
         }
       }
@@ -2535,8 +2559,8 @@ body.about {
       blockquote {
         color: $seda-dark;
         font-family: $sharpgrotesk-med-20;
-        font-size: 1.4rem;
-        line-height: 2.1rem;
+        font-size: 1.7rem;
+        line-height: 1.5;
         letter-spacing: .002rem;
         margin-top: 4.8rem;
         margin-bottom: 4.8rem;
@@ -2563,14 +2587,14 @@ body.about {
       h3 {
         color: $seda-dark;
         font-family: $sharpgrotesk-med-15;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         // line-height: 2.1rem;
         letter-spacing: .055rem;
         margin-top: 4.8rem;
         text-transform: uppercase;
         text-align: center;
         @include media-breakpoint-up(md) {
-          font-size: 1.4rem;
+          font-size: 1.6rem;
           line-height: 1.7rem;
           letter-spacing: .064rem;
         }
@@ -2583,8 +2607,8 @@ body.about {
       p {
         color: $seda-dark;
         font-family: $sharpgrotesk-med-20;
-        font-size: 1.4rem;
-        line-height: 2.1rem;
+        font-size: 1.7rem;
+        line-height: 1.5;
         margin-top: 3.2rem;
         margin-bottom: 4.8rem;
         text-align: center;
@@ -2619,9 +2643,10 @@ body.about {
       padding-bottom: 8rem;
       p {
         color: $seda-gray;
+        font-size: 1.6rem;
         @include media-breakpoint-up(md) {
-          font-size: 1.4rem;
-          line-height: 2.1rem;
+          font-size: 1.6rem;
+          line-height: 1.5;
         }
         @include media-breakpoint-up(lg) {
           font-size: 1.6rem;
@@ -2734,18 +2759,18 @@ body.about {
         }
         #modalTitle {
           font-family: $maisonneue-book;
-          font-size: 1.2rem;
-          line-height: 1.8rem;
+          font-size: 1.5rem;
+          line-height: 1.5;
           letter-spacing: 0;
           color: $seda-gray;
         }
       }
       #modalBio {
         font-family: $maisonneue-book;
-        font-size: 1.3rem;
-        line-height: 2.0rem;
+        font-size: $sm-p-size;
+        line-height: 1.5;
         letter-spacing: 0;
-        color: rgba(151, 151, 151, 100%);
+        color: $seda-gray;
         margin-bottom: 3.2rem;
       }
     }
@@ -2758,11 +2783,11 @@ body.about {
         .modal-meta {
           #modalName {
             font-size: 1.85rem;
-            line-height: 2.7rem;
+            line-height: 1.5;
           }
           #modalTitle {
-            font-size: 1.4rem;
-            line-height: 2.1rem;
+            font-size: 1.6rem;
+            line-height: 1.5;
           }
         }
         #modalBio {
@@ -2918,8 +2943,8 @@ body.research {
         }
         p {
           font-family: $maisonneue-book;
-          font-size: 1.3rem;
-          line-height: 2rem;
+          font-size: 1.6rem;
+          line-height: 1.5;
           letter-spacing: 0;
           @include media-breakpoint-up(md) {
             font-size: 1.8rem;
@@ -3038,12 +3063,21 @@ body.research {
 
   .research-paper {
     // box-shadow: 0px 2px 6px rgba(0, 0, 0, .2);
-    padding: 3.2rem;
+    padding: 3.2rem 0;
+    @include media-breakpoint-up(md) {
+      padding: 3.2rem;
+    }
     margin-bottom: 0rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     @include media-breakpoint-up(md) {
+      padding: 4.8rem;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      margin-bottom: 0;
+    }
+    @include media-breakpoint-up(lg) {
       padding: 6.4rem;
       flex-wrap: nowrap;
       justify-content: flex-start;
@@ -3079,8 +3113,8 @@ body.research {
 
     h5 {
       font-family: $sharpgrotesk-med-20;
-      font-size: 1.4rem;
-      line-height: 2.1rem;
+      font-size: 1.7rem;
+      line-height: 1.5;
       letter-spacing: .007rem;
       margin-top: 3.2rem;
       @include media-breakpoint-up(md) {
@@ -3106,8 +3140,8 @@ body.research {
 
     .authors {
       font-family: $maisonneue-book;
-      font-size: 1.4rem;
-      line-height: 2.1rem;
+      font-size: 1.6rem;
+      line-height: 1.5;
       letter-spacing: 0;
       color: $seda-dark;
       margin-bottom: 2.6rem;
@@ -3129,8 +3163,8 @@ body.research {
       }
       .show-versions {
         font-family: $sharpgrotesk-med-15;
-        font-size: 1.2rem;
-        line-height: 1.4rem;
+        font-size: $sm-caps-size;
+        line-height: 1.5;
         letter-spacing: .055rem;
         text-transform: uppercase;
         padding: 3.2rem 1.6rem 2.4rem;
@@ -3190,8 +3224,8 @@ body.research {
       .abstract,
       .abstract p {
         font-family: $maisonneue-book;
-        font-size: 1.3rem;
-        line-height: 2rem;
+        font-size: $sm-p-size;
+        line-height: 1.5;
         color: $seda-gray;
         @include media-breakpoint-up(md) {
           font-size: 1.4rem;

@@ -84,8 +84,8 @@ body.methods {
             }
             p {
               font-family: $maisonneue-book;
-              font-size: 1.3rem;
-              line-height: 2rem;
+              font-size: 1.6rem;
+              line-height: 1.5;
               letter-spacing: 0;
               @include media-breakpoint-up(md) {
                 font-size: 1.8rem;
@@ -126,14 +126,14 @@ body.methods {
             letter-spacing: 0.03rem;
         }
         @include media-breakpoint-up(xl) {
-            font-size: 2.8rem;
-            line-height: 4.2rem;
+            font-size: $xl-h4-size;
+            line-height: 1.5;
             letter-spacing: 0.03rem;
         }
         }
       h5 {
-            font-size: 1.4rem;
-            line-height: 2.1rem;
+            font-size: 1.6rem;
+            line-height: 1.5;
             letter-spacing: 0.007rem;
             margin-bottom: 0;
             padding-bottom: 0.8rem;
@@ -143,12 +143,18 @@ body.methods {
             // letter-spacing: 0.024rem;
         }
         @include media-breakpoint-up(lg) {
-            font-size: 2rem;
-            font-size: 1.6rem;
+         
+            font-size: 1.7rem;
             line-height: 3rem;
             letter-spacing: auto;
             padding-bottom: 1.6rem;
           }
+          @include media-breakpoint-up(xl) {
+           
+            font-size: 1.8rem;
+            line-height: 1.5;
+            
+          }  
       }
 
       /* h6 {
@@ -172,12 +178,12 @@ body.methods {
       } */
 
       p, li {
-          font-size: 1.3rem;
-          line-height: 2rem;
+          font-size: 1.6rem;
+          line-height: 1.5;
           color: $seda-gray;
           @include media-breakpoint-up(md) {
-              font-size: 1.4rem;
-              line-height: 2.1rem;
+              font-size: 1.6rem;
+              line-height: 1.5;
           }
           @include media-breakpoint-up(lg) {
             font-size: 1.6rem;
@@ -277,9 +283,9 @@ body.methods {
             color: #0032A3;
             color: $seda-red-a11y-text;
             display: block;
-            @include media-breakpoint-up(md) {
-                font-size: 1.4rem;
-                padding: 00 0.8rem;
+            @include media-breakpoint-up(sm) {
+                font-size: 1.6rem;
+                padding: 0 0 0.8rem;
             }
             @include media-breakpoint-up(md) {
                 font-size: 1.6rem;

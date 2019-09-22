@@ -1,4 +1,5 @@
 (function($) {
+    var prefersReducedMotion = !!window.matchMedia("(prefers-reduced-motion)").matches
     var jQuery = $.noConflict(false);
     var $ = jQuery;
     function checkScroll(y) {
@@ -69,7 +70,7 @@
       }
     });
 
-    if (supportsSVGTransforms()) {
+    if (supportsSVGTransforms() && !prefersReducedMotion) {
       // use svg animation
       $('.svg-animated').removeClass('d-md-none');
       $('.svg-static').addClass('d-md-none');
@@ -370,7 +371,7 @@
       });
       //Scores Text
       trendStep9 = anime({
-          targets: ['text#Scores'],
+          targets: ['text#Scores-3'],
           opacity: 1,
           easing: 'linear',
           duration: 250,
@@ -811,8 +812,7 @@ function getPageOffset(url) {
       })
       setElPositions();
       // Set up svg animations (one-time)
-      var reducedMotion = window.matchMedia("(prefers-reduced-motion)");
-      if (!reducedMotion.matches) {
+      if (!prefersReducedMotion) {
         // console.log('Reduced motion not enabled.');
         setupAnime();
         setupAnime2();
@@ -829,7 +829,7 @@ function getPageOffset(url) {
           $(window).off("scroll", svgScrollEvt);
           clearInterval(svgScrollInt);
         } else {
-          if (userScrolled && !reducedMotion.matches) {
+          if (userScrolled && !prefersReducedMotion) {
             checkHomepageAnimations();
             userScrolled = false;
           }

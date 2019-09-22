@@ -1,0 +1,14 @@
+categories: ["technical"] # uses-seda, technical, related
+authors: ["Erin M. Fahle", "Benjamin R. Shear", "Demetra Kalogrides", "Sean F. Reardon",
+"Belen Chavez", "Andrew D. Ho",]
+title: "Stanford Education Data Archive Technical Documentation"
+image: "/images/papers/logo3.svg" # will be cropped to center square & rounded
+versions:
+  - date: "2019-09"
+    order: 0
+    link: "/papers/SEDA_documentation_v30_DRAFT09212019.pdf"   
+abstract: |
+  The Stanford Education Data Archive (SEDA) is part of the Educational Opportunity Project at Stanford University (https:\\edopportunity.org), an initiative aimed at harnessing data to help scholars, policymakers, educators, and parents learn how to improve educational opportunities for all children. SEDA includes a range of detailed data on educational conditions, contexts, and outcomes in schools, school districts, counties, commuting zones, and metropolitan statistical areas across the United States. Available measures differ by aggregation; see Sections I.A. and I.B. for a complete list of files and data.
+  
+  By making the data files available to the public, we hope that anyone who is interested can obtain detailed information about U.S. schools, communities, and student success. We hope that researchers will use these data to generate evidence about what policies and contexts are most effective at increasing educational opportunity, and that such evidence will inform educational policy and practices.
+

@@ -6,7 +6,7 @@
   {{ if .Page.Params.description }}
     {{ $.Scratch.Set "socialDescription" .Page.Params.description }}
   {{ else }}
-    {{ $.Scratch.Set "socialDescription" .Site.Data.social_description }}
+    {{ $.Scratch.Set "socialDescription" .Site.Data.social.social_description }}
   {{ end }}
 
   <!-- Fetch an image for metadata -->
@@ -36,20 +36,20 @@
   <!-- Facebook metadata -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ .Title }}" />
+  <meta property="og:title" content="The Educational Opportunity Project at Stanford" />
   <meta property="og:description" content="{{ $.Scratch.Get "socialDescription" }}" />
   <meta property="og:url" content="{{ "/" | absURL }}" />
   <meta property="og:site_name" content="{{ .Site.Title }}" />
-  <meta property="og:image" content="{{ $.Scratch.Get "socialImage" }}" />
-  <meta property="og:image:secure_url" content="{{ $.Scratch.Get "socialImage" }}" />
+  <meta property="og:image" content="/images/social/SEDA-social-image-01.png}" />
+  <meta property="og:image:secure_url" content="https://edopportunity.org/images/social/SEDA-social-image-01.png" />
   <!-- Twitter metadata -->
   <meta name="twitter:card" content="summary_large_image" />
   {{ if .Site.Data.social.twitter_via }}
     <meta name="twitter:site" content="{{ strings.TrimPrefix "@" .Site.Data.social.twitter_via }}" />
   {{ end }}
-  <meta name="twitter:title" content="{{ .Title }}" />
+  <meta name="twitter:title" content="The Educational Opportunity Project at Stanford" />
   <meta name="twitter:description" content="{{ $.Scratch.Get "socialDescription" }}" />
-  <meta name="twitter:image" content="https://staging.edopportunity.org/images/social/SEDA-social-image-01.png" />
+  <meta name="twitter:image" content="https://edopportunity.org/images/social/SEDA-social-image-01.png" />
 
   {{ .Hugo.Generator }}
   <!-- Original bootstrap stylesheet -->

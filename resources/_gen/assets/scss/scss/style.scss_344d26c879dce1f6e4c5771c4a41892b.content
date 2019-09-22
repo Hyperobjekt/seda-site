@@ -17713,7 +17713,7 @@ img.float-left {
 .hero .hero-child .column h2 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 2.6rem;
-  line-height: 2.55rem;
+  line-height: 1.4;
   letter-spacing: .013rem;
 }
 
@@ -17745,7 +17745,7 @@ img.float-left {
 .hero .hero-child .column p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.6rem;
-  line-height: 2rem;
+  line-height: 1.5;
   letter-spacing: 0;
 }
 
@@ -19997,18 +19997,18 @@ body.about .modal .modal-bio .modal-meta #modalName {
 
 body.about .modal .modal-bio .modal-meta #modalTitle {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.2rem;
-  line-height: 1.8rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: 0;
   color: #545454;
 }
 
 body.about .modal .modal-bio #modalBio {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
-  line-height: 2.0rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   letter-spacing: 0;
-  color: #979797;
+  color: #545454;
   margin-bottom: 3.2rem;
 }
 
@@ -20018,11 +20018,11 @@ body.about .modal .modal-bio #modalBio {
   }
   body.about .modal .modal-bio .modal-meta #modalName {
     font-size: 1.85rem;
-    line-height: 2.7rem;
+    line-height: 1.5;
   }
   body.about .modal .modal-bio .modal-meta #modalTitle {
-    font-size: 1.4rem;
-    line-height: 2.1rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
   }
   body.about .modal .modal-bio #modalBio {
     font-size: 1.6rem;
@@ -20336,6 +20336,15 @@ body.research .research-paper {
 }
 
 @media (min-width: 768px) {
+  body.research .research-paper {
+    padding: 4.8rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
   body.research .research-paper {
     padding: 6.4rem;
     flex-wrap: nowrap;
@@ -21210,14 +21219,13 @@ body.kind-page.type-discoveries .scrollTabContainer #scrollToTop {
   display: none;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #fff;
   font-size: 1.6rem;
   line-height: 1.5;
   text-transform: uppercase;
   color: #04143c;
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   letter-spacing: 0.055rem;
-  padding: 1.6rem;
+  padding: 1.6rem 0 1.6rem 1.6rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -21225,7 +21233,24 @@ body.kind-page.type-discoveries .scrollTabContainer #scrollToTop {
 @media (min-width: 768px) {
   body.kind-page.type-discoveries .scrollTabContainer #scrollForMore,
   body.kind-page.type-discoveries .scrollTabContainer #scrollToTop {
+    background-color: #fff;
     display: block;
+    width: 32%;
+    left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  body.kind-page.type-discoveries .scrollTabContainer #scrollForMore,
+  body.kind-page.type-discoveries .scrollTabContainer #scrollToTop {
+    width: 38%;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.kind-page.type-discoveries .scrollTabContainer #scrollForMore,
+  body.kind-page.type-discoveries .scrollTabContainer #scrollToTop {
+    width: 45%;
   }
 }
 
@@ -21486,6 +21511,11 @@ body.kind-page.type-discoveries .dyn-article {
     margin-left: -24px;
     width: calc(100% + 48px);
   }
+}
+
+body.kind-page.type-discoveries .dyn-article .state-desc-wrapper {
+  font-size: 1.6rem;
+  line-height: 1.5;
 }
 
 body.kind-page.type-discoveries .dyn-article .state-desc-wrapper:first-child {
@@ -23352,7 +23382,7 @@ body.type-news .row.news-item .readmore {
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   font-size: 1.5rem;
   letter-spacing: .064rem;
-  line-height: 4.4rem;
+  line-height: 1.5;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -23366,6 +23396,12 @@ body.type-news .row.news-item .readmore:after {
   margin-left: .8rem;
 }
 
+@media (min-width: 1280px) {
+  body.type-news .row.news-item .readmore {
+    font-size: 1.7rem;
+  }
+}
+
 body.type-news .row.news-item h4 {
   font-size: 1.7rem;
   line-height: 1.5;
@@ -23374,16 +23410,24 @@ body.type-news .row.news-item h4 {
 
 @media (min-width: 768px) {
   body.type-news .row.news-item h4 {
-    line-height: 2.75rem;
-    font-size: 1.5;
+    line-height: 1.5;
+    font-size: 1.85rem;
     letter-spacing: 0.024rem;
   }
 }
 
 @media (min-width: 992px) {
   body.type-news .row.news-item h4 {
-    line-height: 3.4rem;
-    font-size: 1.5;
+    line-height: 1.5;
+    font-size: 2rem;
+    letter-spacing: 0.03rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-news .row.news-item h4 {
+    line-height: 1.5;
+    font-size: 2.3rem;
     letter-spacing: 0.03rem;
   }
 }
@@ -23403,8 +23447,15 @@ body.type-news .row.news-item p {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-size: 1.6rem;
-    line-height: 2.5rem;
+    line-height: 1.5;
     letter-spacing: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.type-news .row.news-item p {
+    font-size: 1.7rem;
+    line-height: 1.5;
   }
 }
 
@@ -23601,8 +23652,8 @@ body.methods h3 {
 
 @media (min-width: 1280px) {
   body.methods h3 {
-    font-size: 2.8rem;
-    line-height: 4.2rem;
+    font-size: 2.3rem;
+    line-height: 1.5;
     letter-spacing: 0.03rem;
   }
 }
@@ -23624,11 +23675,17 @@ body.methods h5 {
 
 @media (min-width: 992px) {
   body.methods h5 {
-    font-size: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     line-height: 3rem;
     letter-spacing: auto;
     padding-bottom: 1.6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.methods h5 {
+    font-size: 1.8rem;
+    line-height: 1.5;
   }
 }
 

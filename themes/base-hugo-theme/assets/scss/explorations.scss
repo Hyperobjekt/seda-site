@@ -56,6 +56,7 @@ body.kind-page.type-discoveries {
 
   .scrollTabContainer {
     width: 100%;
+    
     position: fixed;
     bottom: 0;
     height: 40px;
@@ -68,9 +69,18 @@ body.kind-page.type-discoveries {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       @include media-breakpoint-up(md) {
+        background-color: #fff;
         display: block;
+        width: 32%;
+        left: 0;
       }
-      background-color: #fff;
+      @include media-breakpoint-up(lg) {
+        width: 38%;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 45%;
+      }
+      //background-color: #fff;
       font-size: 1.6rem;
       line-height: 1.5;
       text-transform: uppercase;
@@ -78,7 +88,7 @@ body.kind-page.type-discoveries {
       font-family: $sharpgrotesk-med-15;
       //margin-bottom: 1.6rem;
       letter-spacing: 0.055rem;
-      padding: 1.6rem;
+      padding: 1.6rem 0 1.6rem 1.6rem;
       @include media-breakpoint-up(md) {
         font-size: 1.7rem;
         line-height: 2.5rem;
@@ -301,8 +311,8 @@ body.kind-page.type-discoveries {
       }
     }
     .state-desc-wrapper {
-      // margin-top: 12rem;
-      // margin-bottom: 12rem;
+      font-size: $sm-p-size;
+      line-height: 1.5;
       &:first-child {
         margin-top: 0;
       }

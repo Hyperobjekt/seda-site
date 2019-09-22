@@ -50,7 +50,7 @@
             {{ range .Site.Data.research }}
             {{ if in .categories "uses-seda" }}
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-9 col-xl-9 mx-auto">
+                <div class="col-xs-12 col-sm-12 col-md-9 col-xl-9 mx-auto px-0">
                     {{ partial "paper" . }}
                 </div>
             </div>
@@ -67,7 +67,7 @@
             {{ range .Site.Data.research }}
             {{ if in .categories "technical" }}
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-9 col-xl-9 mx-auto">
+                <div class="col-xs-12 col-sm-12 col-md-9 col-xl-9 mx-auto px-0">
                     {{ partial "paper" . }}
                 </div>
             </div>
@@ -83,7 +83,7 @@
             {{ range .Site.Data.research }}
             {{ if in .categories "related" }}
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-9 col-xl-9 mx-auto">
+                <div class="col-xs-12 col-sm-12 col-md-9 col-xl-9 mx-auto px-0">
                     {{ partial "paper" . }}
                 </div>
             </div>

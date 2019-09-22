@@ -308,6 +308,7 @@ body.kind-page.type-discoveries {
       @include media-breakpoint-down(mm) {
         margin-left: -24px;
         width: calc(100% + 48px);
+        padding: 2.4rem 0;
       }
     }
     .state-desc-wrapper {

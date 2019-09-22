@@ -18098,23 +18098,23 @@ p a {
   box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-.home .hero {
-  position: relative;
-}
-
-.home .hero .svg-static {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  margin-bottom: auto !important;
-  opacity: 0.5 !important;
-}
-
-.home .hero h2, .home .hero p {
-  position: relative;
+@media (min-width: 768px) {
+  .home .hero {
+    position: relative;
+  }
+  .home .hero .svg-static {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-bottom: auto !important;
+    opacity: 0.5 !important;
+  }
+  .home .hero h2, .home .hero p {
+    position: relative;
+  }
 }
 
 body.home .hero {
@@ -21510,6 +21510,7 @@ body.kind-page.type-discoveries .dyn-article {
   body.kind-page.type-discoveries .dyn-article img {
     margin-left: -24px;
     width: calc(100% + 48px);
+    padding: 2.4rem 0;
   }
 }
 

@@ -654,7 +654,7 @@ img {
       }
       p {
         font-family: $maisonneue-book;
-        font-size: 1.3rem;
+        font-size: $sm-p-size;
         line-height: 2rem;
         letter-spacing: 0;
         @include media-breakpoint-up(md) {
@@ -2000,11 +2000,11 @@ body.home {
 
           .card-title {
             font-family: $sharpgrotesk-med-20;
-            font-size: 1.6rem;
-            line-height: 2.4rem;
+            font-size: $sm-h4-size;
+            line-height: 1.5;
             letter-spacing: .009rem;
-            margin-top: 1.8rem;
-            // margin-bottom: 2rem;
+            margin-top: 2.4rem;
+            margin-bottom: 1.6rem;
 
             @include media-breakpoint-up(md) {
               font-size: 1.6rem;
@@ -2033,7 +2033,7 @@ body.home {
           .card-subtitle {
             display: block;
             font-family: $maisonneue-book;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             line-height: 2.1rem;
             letter-spacing: 0;
             margin-top: 1.6rem;
@@ -2055,8 +2055,8 @@ body.home {
 
           .card-text {
             font-family: $maisonneue-book;
-            font-size: 1.3rem;
-            line-height: 2rem;
+            font-size: $sm-p-size;
+            line-height: 1.5;
             letter-spacing: 0;
             margin-top: 1.8rem;
             margin-bottom: 2rem;
@@ -2943,8 +2943,8 @@ body.research {
         }
         p {
           font-family: $maisonneue-book;
-          font-size: 1.3rem;
-          line-height: 2rem;
+          font-size: 1.6rem;
+          line-height: 1.5;
           letter-spacing: 0;
           @include media-breakpoint-up(md) {
             font-size: 1.8rem;
@@ -3063,7 +3063,10 @@ body.research {
 
   .research-paper {
     // box-shadow: 0px 2px 6px rgba(0, 0, 0, .2);
-    padding: 3.2rem;
+    padding: 3.2rem 0;
+    @include media-breakpoint-up(md) {
+      padding: 3.2rem;
+    }
     margin-bottom: 0rem;
     display: flex;
     flex-wrap: wrap;
@@ -3104,8 +3107,8 @@ body.research {
 
     h5 {
       font-family: $sharpgrotesk-med-20;
-      font-size: 1.4rem;
-      line-height: 2.1rem;
+      font-size: 1.7rem;
+      line-height: 1.5;
       letter-spacing: .007rem;
       margin-top: 3.2rem;
       @include media-breakpoint-up(md) {
@@ -3131,8 +3134,8 @@ body.research {
 
     .authors {
       font-family: $maisonneue-book;
-      font-size: 1.4rem;
-      line-height: 2.1rem;
+      font-size: 1.6rem;
+      line-height: 1.5;
       letter-spacing: 0;
       color: $seda-dark;
       margin-bottom: 2.6rem;
@@ -3154,8 +3157,8 @@ body.research {
       }
       .show-versions {
         font-family: $sharpgrotesk-med-15;
-        font-size: 1.2rem;
-        line-height: 1.4rem;
+        font-size: $sm-caps-size;
+        line-height: 1.5;
         letter-spacing: .055rem;
         text-transform: uppercase;
         padding: 3.2rem 1.6rem 2.4rem;
@@ -3215,8 +3218,8 @@ body.research {
       .abstract,
       .abstract p {
         font-family: $maisonneue-book;
-        font-size: 1.3rem;
-        line-height: 2rem;
+        font-size: $sm-p-size;
+        line-height: 1.5;
         color: $seda-gray;
         @include media-breakpoint-up(md) {
           font-size: 1.4rem;

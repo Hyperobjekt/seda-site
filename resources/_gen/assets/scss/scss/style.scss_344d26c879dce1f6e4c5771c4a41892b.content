@@ -17744,7 +17744,7 @@ img.float-left {
 
 .hero .hero-child .column p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   line-height: 2rem;
   letter-spacing: 0;
 }
@@ -19103,10 +19103,11 @@ body.home #main {
 
 .row.latest-explorations .card-container .card .card-body .card-title {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
   letter-spacing: .009rem;
-  margin-top: 1.8rem;
+  margin-top: 2.4rem;
+  margin-bottom: 1.6rem;
 }
 
 @media (min-width: 768px) {
@@ -19143,7 +19144,7 @@ body.home #main {
 .row.latest-explorations .card-container .card .card-body .card-subtitle {
   display: block;
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 2.1rem;
   letter-spacing: 0;
   margin-top: 1.6rem;
@@ -19160,8 +19161,8 @@ body.home #main {
 
 .row.latest-explorations .card-container .card .card-body .card-text {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   letter-spacing: 0;
   margin-top: 1.8rem;
   margin-bottom: 2rem;
@@ -20203,8 +20204,8 @@ body.research .hero .hero-child .column h2 {
 
 body.research .hero .hero-child .column p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   letter-spacing: 0;
 }
 
@@ -20321,11 +20322,17 @@ body.research .tab-content hr:last-child {
 }
 
 body.research .research-paper {
-  padding: 3.2rem;
+  padding: 3.2rem 0;
   margin-bottom: 0rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media (min-width: 768px) {
+  body.research .research-paper {
+    padding: 3.2rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -20375,8 +20382,8 @@ body.research .research-paper .info {
 
 body.research .research-paper h5 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.4rem;
-  line-height: 2.1rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
   letter-spacing: .007rem;
   margin-top: 3.2rem;
 }
@@ -20407,8 +20414,8 @@ body.research .research-paper h5 {
 
 body.research .research-paper .authors {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.4rem;
-  line-height: 2.1rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   letter-spacing: 0;
   color: #031232;
   margin-bottom: 2.6rem;
@@ -20439,8 +20446,8 @@ body.research .research-paper .controls .download-paper {
 
 body.research .research-paper .controls .show-versions {
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: .055rem;
   text-transform: uppercase;
   padding: 3.2rem 1.6rem 2.4rem;
@@ -20507,8 +20514,8 @@ body.research .research-paper .abstract-and-meta .meta {
 body.research .research-paper .abstract-and-meta .abstract,
 body.research .research-paper .abstract-and-meta .abstract p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   color: #545454;
 }
 
@@ -21419,7 +21426,8 @@ body.kind-page.type-discoveries h3 {
 
 body.kind-page.type-discoveries .crumbs {
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
   letter-spacing: .055rem;
   text-transform: uppercase;
   border: 0;
@@ -21494,8 +21502,8 @@ body.kind-page.type-discoveries .dyn-article .state-desc-wrapper p,
 body.kind-page.type-discoveries .dyn-article .state-desc-wrapper ul,
 body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
-  line-height: 2.0rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   margin-top: 3.2rem;
 }
 
@@ -21509,8 +21517,8 @@ body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li:first-child 
   body.kind-page.type-discoveries .dyn-article .state-desc-wrapper p,
   body.kind-page.type-discoveries .dyn-article .state-desc-wrapper ul,
   body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li {
-    font-size: 1.2rem;
-    line-height: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
   }
 }
 
@@ -21520,8 +21528,8 @@ body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li:first-child 
   body.kind-page.type-discoveries .dyn-article .state-desc-wrapper li {
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.3rem;
-    line-height: 2.1rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
     margin-top: 3.2rem;
   }
 }
@@ -21554,11 +21562,22 @@ body.kind-page.type-discoveries .column-scatterplot .plot-parent {
   position: sticky;
   position: -webkit-sticky;
   top: 84px;
-  padding: 0 2rem;
   height: 360px;
   min-width: 300px;
   width: 100%;
   margin-bottom: 200px;
+}
+
+@media (min-width: 768px) {
+  body.kind-page.type-discoveries .column-scatterplot .plot-parent {
+    padding: 0 0;
+  }
+}
+
+@media (min-width: 992px) {
+  body.kind-page.type-discoveries .column-scatterplot .plot-parent {
+    padding: 0 2rem;
+  }
 }
 
 body.kind-page.type-discoveries .column-scatterplot .plot-parent .title,
@@ -21773,8 +21792,8 @@ body.kind-section.type-discoveries .hero .hero-child .column h2 {
 
 body.kind-section.type-discoveries .hero .hero-child .column p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   letter-spacing: 0;
 }
 
@@ -23002,8 +23021,8 @@ body.type-help-faq .hero .hero-child .column h2 {
 
 body.type-help-faq .hero .hero-child .column p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   letter-spacing: 0;
   color: #fff;
 }
@@ -23291,7 +23310,7 @@ body.type-news .hero .hero-child .column h2 {
 
 body.type-news .hero .hero-child .column p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   line-height: 2rem;
   letter-spacing: 0;
 }
@@ -23313,8 +23332,8 @@ body.type-news .hero .hero-child .column p {
 }
 
 body.type-news .row.news-item {
-  padding-top: 4.8rem;
-  padding-bottom: 4.8rem;
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
   border-bottom: 2px solid #EEEFF1;
 }
 
@@ -23331,7 +23350,7 @@ body.type-news .row.news-item a {
 
 body.type-news .row.news-item .readmore {
   font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   letter-spacing: .064rem;
   line-height: 4.4rem;
   text-transform: uppercase;
@@ -23348,13 +23367,15 @@ body.type-news .row.news-item .readmore:after {
 }
 
 body.type-news .row.news-item h4 {
+  font-size: 1.7rem;
+  line-height: 1.5;
   margin-bottom: 0rem;
 }
 
 @media (min-width: 768px) {
   body.type-news .row.news-item h4 {
     line-height: 2.75rem;
-    font-size: 1.85rem;
+    font-size: 1.5;
     letter-spacing: 0.024rem;
   }
 }
@@ -23362,15 +23383,15 @@ body.type-news .row.news-item h4 {
 @media (min-width: 992px) {
   body.type-news .row.news-item h4 {
     line-height: 3.4rem;
-    font-size: 2.3rem;
+    font-size: 1.5;
     letter-spacing: 0.03rem;
   }
 }
 
 body.type-news .row.news-item p {
   font-family: "MaisonNeue-Book", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
   letter-spacing: 0;
   margin-top: 1.8rem;
   margin-bottom: 1rem;
@@ -23388,8 +23409,8 @@ body.type-news .row.news-item p {
 }
 
 body.type-news .row.news-item p.excerpt {
-  margin-bottom: 0.8rem;
-  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  margin-top: 2.4rem;
 }
 
 body.methods {

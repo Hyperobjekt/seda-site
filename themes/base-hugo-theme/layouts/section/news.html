@@ -10,7 +10,7 @@
 </div>
 
 {{ range sort .Site.Data.news "date" "desc" }}
-  <div class="row news-item" id="">
+  <div class="row news-item mx-1" id="">
     <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">
       <p>{{ dateFormat "January 2, 2006" .date }}</p>
       <h4><a href="{{ .link }}" target="_blank" data-outlet="{{.outlet}}" class="gta-event-articleSelected">{{ .headline }}</a></h4>

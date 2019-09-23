@@ -950,17 +950,19 @@ img {
 }
 
 // position static homepage hero image
-.home .hero {
-  position:relative;
-  .svg-static {
-    position:absolute;
-    top:0;left:0;right:0;bottom:0;
-    margin:auto;
-    margin-bottom: auto!important;
-    opacity:0.5!important;
-  }
-  h2, p {
-    position: relative;
+@media(min-width: 768px) {
+  .home .hero {
+    position:relative;
+    .svg-static {
+      position:absolute;
+      top:0;left:0;right:0;bottom:0;
+      margin:auto;
+      margin-bottom: auto!important;
+      opacity:0.5!important;
+    }
+    h2, p {
+      position: relative;
+    }
   }
 }
 
@@ -1073,8 +1075,9 @@ body.home {
         }
       }
       svg, img {
-        max-width: 100%;
+        max-width: 66%;
         @include media-breakpoint-up(md) {
+          max-width: 100%;
           min-height: 480px;
         }
 
@@ -1962,14 +1965,14 @@ body.home {
         //order: 3;
       }
       .card {
-        padding: 2.4rem;
+        padding: 2.4rem 0.8rem;
         //margin-bottom: 1.6rem;
         margin-top: 1.6rem;
         background-color: transparent;
         border: none;
 
         @include media-breakpoint-up(md) {
-
+          padding: 2.4rem;
         }
 
         @include media-breakpoint-up(lg) {
@@ -2475,19 +2478,26 @@ body.about {
       img {
         border-radius: 62px;
       }
+      &:hover {
+        .pic {
+          transition: background 200ms ease-in-out;
+        }
+      }
       .pic {
         width: 124px;
         height: 124px;
         background-position: center;
-        background-size: 124px 124px;
+        background-size: 124px 124px !important;
         border-radius: 62px;
         margin-left: auto;
         margin-right: auto;
         position: relative;
+        background-position: 0 0;
+        transition: background 200ms ease-in-out;
         @include media-breakpoint-up(mm) {
           width: 150px;
           height: 150px;
-          background-size: 150px 150px;
+          background-size: 150px 150px !important;
           border-radius: 75px;
         }
         button {

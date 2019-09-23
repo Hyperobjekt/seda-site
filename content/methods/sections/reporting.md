@@ -10,4 +10,4 @@ We do not report average performance, learning, and/or trend estimates if:
 - More than 40% of students in the school, district or county took alternative assessments.
 - If the estimates are too imprecise to be informative.
 
-For more details, see Step 10 of the <span class="highlight2">Technical Documentation</span>.
+For more details, see Step 10 of the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">technical documentation</a>.

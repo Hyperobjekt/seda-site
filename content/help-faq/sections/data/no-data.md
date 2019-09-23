@@ -14,7 +14,7 @@ There are several reasons that SEDA may not contain data for a school, district,
 - We identified data errors that would result in inaccurate estimates.
 
 
-For more details, please see our <span class="highlight2">Technical Documentation</span>.
+For more details, please see our <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">technical documentation</a>.
 
 
 

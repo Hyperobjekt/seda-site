@@ -1,6 +1,6 @@
 ---
 title: "FRPL"
-faqid: ecd-definition
+faqid: frpl-definition
 section: "glossary" 
 weight: 230
 ---

@@ -3,6 +3,7 @@ role: "staff" # director, staff, or partner
 title: "" # maybe different from role; is displayed
 image: "/uploads/rrogers-full.jpg" # will be cropped to center square & rounded
 thumb: "/uploads/rrogers-sm.jpg"
+thumbbw: "/uploads/rrogers-sm-bw.jpg"
 current: true # true or false (for former)
 weight: 158
 blurb: >
@@ -10,4 +11,3 @@ blurb: >
   <br /><br />
   <ul><li>MBA, Stanford Graduate School of Business</li>
   <li>BS, United States Military Academy</li></ul>
-  

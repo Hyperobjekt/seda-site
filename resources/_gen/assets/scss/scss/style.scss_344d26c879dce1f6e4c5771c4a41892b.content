@@ -22860,10 +22860,23 @@ input[type=checkbox]:focus {
   outline: 0;
 }
 
-body.type-help-faq p a, body.type-help-faq li a {
+body.type-help-faq p a,
+body.type-help-faq li a,
+body.type-help-faq .accordion-section span.scroll-to-section {
   color: #ff003e;
   color: #7086AB;
   color: #04143c;
+}
+
+body.type-help-faq .accordion-section span.scroll-to-section {
+  text-decoration: underline;
+  text-underline-position: under;
+  cursor: pointer;
+}
+
+body.type-help-faq .accordion-section span.scroll-to-section:hover {
+  text-decoration: none;
+  color: #7086AB;
 }
 
 body.type-help-faq a:hover {

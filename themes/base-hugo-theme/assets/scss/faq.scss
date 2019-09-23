@@ -1,9 +1,20 @@
 body.type-help-faq {
-  p a, li a {
+  p a,
+  li a,
+  .accordion-section span.scroll-to-section {
     color: $seda-red;
     color: #7086AB;
     color: $seda-navy;
     //font-family: $maisonneue-bold;
+  }
+  .accordion-section span.scroll-to-section {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+    &:hover {
+      text-decoration: none;
+      color: #7086AB;
+    }
   }
   a:hover {
     text-decoration: underline;

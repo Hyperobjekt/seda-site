@@ -19682,22 +19682,28 @@ body.about .row.people-current img, body.about .row.people-former img {
   border-radius: 62px;
 }
 
+body.about .row.people-current:hover .pic, body.about .row.people-former:hover .pic {
+  transition: background 200ms ease-in-out;
+}
+
 body.about .row.people-current .pic, body.about .row.people-former .pic {
   width: 124px;
   height: 124px;
   background-position: center;
-  background-size: 124px 124px;
+  background-size: 124px 124px !important;
   border-radius: 62px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  background-position: 0 0;
+  transition: background 200ms ease-in-out;
 }
 
 @media (min-width: 576px) {
   body.about .row.people-current .pic, body.about .row.people-former .pic {
     width: 150px;
     height: 150px;
-    background-size: 150px 150px;
+    background-size: 150px 150px !important;
     border-radius: 75px;
   }
 }
@@ -22860,10 +22866,23 @@ input[type=checkbox]:focus {
   outline: 0;
 }
 
-body.type-help-faq p a, body.type-help-faq li a {
+body.type-help-faq p a,
+body.type-help-faq li a,
+body.type-help-faq .accordion-section span.scroll-to-section {
   color: #ff003e;
   color: #7086AB;
   color: #04143c;
+}
+
+body.type-help-faq .accordion-section span.scroll-to-section {
+  text-decoration: underline;
+  text-underline-position: under;
+  cursor: pointer;
+}
+
+body.type-help-faq .accordion-section span.scroll-to-section:hover {
+  text-decoration: none;
+  color: #7086AB;
 }
 
 body.type-help-faq a:hover {

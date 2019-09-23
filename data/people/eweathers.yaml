@@ -3,6 +3,7 @@ role: "collaborator" # director, staff, or partner
 title: "Assistant Professor, Pennsylvania State University" # maybe different from role; is displayed
 image: "/uploads/eweathers-full.jpg" # will be cropped to center square & rounded
 thumb: "/uploads/eweathers-sm.jpg"
+thumbbw: "/uploads/eweathers-sm-bw.jpg"
 current: true # true or false (for former)
 weight: 70
 blurb: >

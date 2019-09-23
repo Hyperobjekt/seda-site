@@ -3,6 +3,7 @@ role: "student" # director, staff, or partner
 title: "" # maybe different from role; is displayed
 image: "/uploads/ctownleyflores-full.jpg" # will be cropped to center square & rounded
 thumb: "/uploads/ctownleyflores-sm.jpg"
+thumbbw: "/uploads/ctownleyflores-sm-bw.jpg"
 current: true # true or false (for former)
 weight: 120
 blurb: >

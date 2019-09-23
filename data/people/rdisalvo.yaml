@@ -3,6 +3,7 @@ role: "former" # director, staff, or partner
 title: "Research Data Analyst" # maybe different from role; is displayed
 image: "/uploads/rdisalvo-full.jpg" # will be cropped to center square & rounded
 thumb: "/uploads/rdisalvo-sm.jpg"
+thumbbw: "/uploads/rdisalvo-sm-bw.jpg"
 current: true # true or false (for former)
 weight: 160
 blurb: >

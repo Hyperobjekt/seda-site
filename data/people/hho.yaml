@@ -3,6 +3,7 @@ role: "former" # director, staff, or partner
 title: "Web Developer" # maybe different from role; is displayed
 image: "/uploads/hho-full.jpg" # will be cropped to center square & rounded
 thumb: "/uploads/hho-sm.jpg"
+thumbbw: "/uploads/hho-sm-bw.jpg"
 current: true # true or false (for former)
 weight: 162
 blurb: >

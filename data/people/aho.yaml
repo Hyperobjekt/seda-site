@@ -3,6 +3,7 @@ role: "leadership" # director, staff, or partner
 title: "Professor of Education, Harvard University" # maybe different from role; is displayed
 image: "/uploads/aho-full.jpg" # will be cropped to center square & rounded
 thumb: "/uploads/aho-sm.jpg"
+thumbbw: "/uploads/aho-sm-bw.jpg"
 current: true # true or false (for former)
 weight: 10
 blurb: >

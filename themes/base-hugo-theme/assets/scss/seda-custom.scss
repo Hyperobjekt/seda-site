@@ -963,7 +963,7 @@ img {
     h2, p {
       position: relative;
     }
-  }  
+  }
 }
 
 
@@ -2478,19 +2478,26 @@ body.about {
       img {
         border-radius: 62px;
       }
+      &:hover {
+        .pic {
+          transition: background 200ms ease-in-out;
+        }
+      }
       .pic {
         width: 124px;
         height: 124px;
         background-position: center;
-        background-size: 124px 124px;
+        background-size: 124px 124px !important;
         border-radius: 62px;
         margin-left: auto;
         margin-right: auto;
         position: relative;
+        background-position: 0 0;
+        transition: background 200ms ease-in-out;
         @include media-breakpoint-up(mm) {
           width: 150px;
           height: 150px;
-          background-size: 150px 150px;
+          background-size: 150px 150px !important;
           border-radius: 75px;
         }
         button {

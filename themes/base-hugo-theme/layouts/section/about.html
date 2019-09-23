@@ -57,16 +57,9 @@
           #{{$cleanName}}-{{$cleanTitle}}.column-people .pic {
             background: url('{{ .thumb }}');
             background: url('{{ .thumbbw }}');
-            background-size: 150px 150px;
-            background-position: 0 0;
-            transition: background 200ms ease-in-out;
-            -webkit-backface-visibility: hidden;
           }
           #{{$cleanName}}-{{$cleanTitle}}.column-people .pic:hover {
             background: url('{{ .thumb }}');
-            background-size: 150px 150px;
-            background-position: 0 0;
-            -webkit-backface-visibility: hidden;
           }
           /* Force loading to avoid flicker. */
           #{{$cleanName}}-{{$cleanTitle}}.column-people .pic .load-bg {
@@ -108,27 +101,13 @@
         {{ $cleanName := replace (urlize .name) "." "" }}
         {{ $cleanTitle := replace (urlize .title) "." "" }}
         <div id="{{$cleanName}}-{{$cleanTitle}}" class="column-people p-2 col-xs-12 col-md-4 col-lg-3 launch-people-bio">
-          {{/*
-            {{ $img := strings.TrimPrefix "/uploads/" .image }}
-            {{ $name := .name }}
-            {{ with $.Site.GetPage "page" "uploads/_index.md" }}
-            {{ with .Resources.GetMatch $img }}
-            {{$imgFill := .Fill "272x272 Center"}}
-            */}}
             <style>
               #{{$cleanName}}-{{$cleanTitle}}.column-people .pic {
                 background: url('{{ .thumb }}');
                 background: url('{{ .thumbbw }}');
-                background-size: 150px 150px;
-                background-position: 0 0;
-                transition: background 200ms ease-in-out;
-                -webkit-backface-visibility: hidden;
               }
               #{{$cleanName}}-{{$cleanTitle}}.column-people .pic:hover {
                 background: url('{{ .thumb }}');
-                background-size: 150px 150px;
-                background-position: 0 0;
-                -webkit-backface-visibility: hidden;
               }
               /* Force loading to avoid flicker. */
               #{{$cleanName}}-{{$cleanTitle}}.column-people .pic .load-bg {
@@ -178,16 +157,9 @@
                   #{{$cleanName}}-{{$cleanTitle}}.column-people .pic {
                     background: url('{{ .thumb }}');
                     background: url('{{ .thumbbw }}');
-                    background-size: 150px 150px;
-                    background-position: 0 0;
-                    transition: background 200ms ease-in-out;
-                    -webkit-backface-visibility: hidden;
                   }
                   #{{$cleanName}}-{{$cleanTitle}}.column-people .pic:hover {
                     background: url('{{ .thumb }}');
-                    background-size: 150px 150px;
-                    background-position: 0 0;
-                    -webkit-backface-visibility: hidden;
                   }
                   /* Force loading to avoid flicker. */
                   #{{$cleanName}}-{{$cleanTitle}}.column-people .pic .load-bg {
@@ -233,16 +205,9 @@
                       #{{$cleanName}}-{{$cleanTitle}}.column-people .pic {
                         background: url('{{ .thumb }}');
                         background: url('{{ .thumbbw }}');
-                        background-size: 150px 150px;
-                        background-position: 0 0;
-                        transition: background 200ms ease-in-out;
-                        -webkit-backface-visibility: hidden;
                       }
                       #{{$cleanName}}-{{$cleanTitle}}.column-people .pic:hover {
                         background: url('{{ .thumb }}');
-                        background-size: 150px 150px;
-                        background-position: 0 0;
-                        -webkit-backface-visibility: hidden;
                       }
                       /* Force loading to avoid flicker. */
                       #{{$cleanName}}-{{$cleanTitle}}.column-people .pic .load-bg {
@@ -287,16 +252,9 @@
           #{{$cleanName}}-{{$cleanTitle}}.column-people .pic {
             background: url('{{ .thumb }}');
             background: url('{{ .thumbbw }}');
-            background-size: 150px 150px;
-            background-position: 0 0;
-            transition: background 200ms ease-in-out;
-            -webkit-backface-visibility: hidden;
           }
           #{{$cleanName}}-{{$cleanTitle}}.column-people .pic:hover {
             background: url('{{ .thumb }}');
-            background-size: 150px 150px;
-            background-position: 0 0;
-            -webkit-backface-visibility: hidden;
           }
           /* Force loading to avoid flicker. */
           #{{$cleanName}}-{{$cleanTitle}}.column-people .pic .load-bg {

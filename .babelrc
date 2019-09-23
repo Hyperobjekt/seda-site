@@ -1,0 +1,12 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env", {
+        "targets": {
+          "browsers": ["> 5%", "last 2 versions", "safari >= 7", "ie >= 11"],
+        }
+      }
+    ]
+  ],
+  "plugins": ["@babel/plugin-transform-object-assign"]
+}

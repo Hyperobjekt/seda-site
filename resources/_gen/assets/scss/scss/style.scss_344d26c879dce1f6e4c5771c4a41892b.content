@@ -18226,11 +18226,12 @@ body.home .hero .hero-child img.opaque {
 }
 
 body.home .hero .hero-child svg, body.home .hero .hero-child img {
-  max-width: 100%;
+  max-width: 66%;
 }
 
 @media (min-width: 768px) {
   body.home .hero .hero-child svg, body.home .hero .hero-child img {
+    max-width: 100%;
     min-height: 480px;
   }
 }

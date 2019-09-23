@@ -3,6 +3,7 @@ role: "former" # director, staff, or partner
 title: "" # maybe different from role; is displayed
 image: "/uploads/strejo-full.jpg" # will be cropped to center square & rounded
 thumb: "/uploads/strejo-sm.jpg"
+thumbbw: "/uploads/strejo-sm-bw.jpg"
 current: true # true or false (for former)
 weight: 165
 blurb: >

@@ -16,7 +16,7 @@ body.about {
     .column-people {
          .pic {
             background-size: contain;
-            // background-blend-mode: color;
+            background-blend-mode: color;
             // &:after {
             //   content: "";
             //   display: block;
@@ -47,17 +47,17 @@ body.about {
             // transition: background-blend-mode .3s ease;
 
             // This works for Edge, but not IE11
-            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-            filter: grayscale(100%);
-            -webkit-filter: grayscale(100%);
-            -moz-filter: grayscale(100%);
-            -ms-filter: grayscale(100%);
-            -o-filter: grayscale(100%);
+            // filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+            // filter: grayscale(100%);
+            // -webkit-filter: grayscale(100%);
+            // -moz-filter: grayscale(100%);
+            // -ms-filter: grayscale(100%);
+            // -o-filter: grayscale(100%);
 
             // filter: gray; /* IE 6-9 */
-            button {
-              filter: none;
-            }
+            // button {
+            //   filter: none;
+            // }
         }
         // .pic:before {
         //     display: block;
@@ -68,17 +68,17 @@ body.about {
     }
     .column-people:hover {
         .pic {
-            filter: none;
+            // filter: none;
 
 
-            &:after {
-              // background: transparent;
-              filter: none;
-            }
+            // &:after {
+            //   // background: transparent;
+            //   filter: none;
+            // }
 
         }
         .pic button {
-            filter: none;
+            // filter: none;
             transition: background-color .3s ease;
             background-color: $seda-red !important;
         }

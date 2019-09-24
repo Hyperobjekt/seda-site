@@ -1,5 +1,8 @@
 /* use strict */
 
+const _plot = {};
+_plot.searchItemIDs = [];
+
 (function($) {
 
     const plot = {
@@ -18,8 +21,10 @@
           onSuggestionSelected: function(hit) {
             // console.log('hit');
             // console.log(hit);
-            searchItemIDs[0] = hit['id'];
-            // console.log(searchItemIDs);
+            if (_plot && _plot.searchItemIDs) {
+              _plot.searchItemIDs[0] = hit;
+            }
+            // console.log(_plot.searchItemIDs);
             scatterplot.loadState(plot.activeState);
             // GA Event submission
             const $highlightedDistrict = '';

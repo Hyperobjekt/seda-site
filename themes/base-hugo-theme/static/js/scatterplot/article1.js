@@ -8,8 +8,6 @@ const jQ = jQuery;
 
 // Placeholders for segregation series operations
 let segData = [];
-let searchItemIDs = [];
-let names = [];
 let Title = {};
 Title['text'] = '';
 Title['subtext'] = '';
@@ -45,31 +43,6 @@ const highlightedLabel = (highlight) => {
     },
   };
 }
-// const state9HighlightedLabel = (highlight) => {
-//   // console.log('highlightedLabel');
-//   activeHighlight = highlight;
-//   console.log(activeHighlight);
-//   return {
-//     show: true,
-//     position: 'top',
-//     backgroundColor: 'transparent', // '#0090FF', // '#FFFCCF',
-//     borderColor: 'transparent', // '#7D38BB',
-//     borderWidth: 0,
-//     fontSize: 12,
-//     fontWeight: 500,
-//     fontFamily: 'SharpGrotesk-Medium20', // 'MaisonNeue-Medium',
-//     lineHeight: 12,
-//     padding: [8, 8],
-//     borderRadius: 3,
-//     opacity: 1,
-//     color: '#031232', // '#fff', // '#052965',
-//     formatter: function(item) {
-//       // console.log(item);
-//       // console.log(activeHighlight);
-//       return activeHighlight[item.value[3]]
-//     },
-//   };
-// }
 // Orange bubbles
 const highlightedItemStyle =  {
   borderWidth: 0.4,
@@ -393,6 +366,13 @@ function getLargestIds(objData, num) {
   }).slice(0, num);
 }
 
+function setSearchHighlight(highlight, hit) {
+  // console.log('setSearchHighlight()');
+  highlight[hit.id] = hit.name + ', ' + hit.state_name;
+  // console.log(highlight);
+  return highlight;
+}
+
 /**
  * Sort provided array by segregation stats
  * @param Array data
@@ -457,26 +437,13 @@ xhr.send(null);
 /** State 1: Show white scores on x axis and black scores on y axis */
 var state1 = function(scatterplot) {
   // this state is created from the base
-  // Set up array of district IDs and names for building search series.
-  if (Object.keys(names).length <= 0 &&
-    scatterplot &&
-    scatterplot.data &&
-    scatterplot.data.districts &&
-    scatterplot.data.districts.name) {
-    names = scatterplot.data.districts.name;
-    // console.log(names);
-  }
-
   var base = scatterplot.getState('base');
   var dataSeries = [];
   var highlight = {};
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   Title['text'] = 'White and Black Student Scores';
@@ -537,27 +504,15 @@ var state1 = function(scatterplot) {
 /** State 2: Show white scores on x axis and black scores on y axis */
 var state2 = function(scatterplot) {
   // this state is created from the base
-  // Set up array of district IDs and names for building search series.
-  if (Object.keys(names).length <= 0 &&
-    scatterplot &&
-    scatterplot.data &&
-    scatterplot.data.districts &&
-    scatterplot.data.districts.name) {
-    names = scatterplot.data.districts.name;
-    // console.log(names);
-  }
 
   var base = scatterplot.getState('base');
   var dataSeries = [];
   var highlight = {};
   highlight['1201980'] = 'Walton County School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   Title['text'] = 'White and Black Student Scores';
@@ -627,14 +582,12 @@ var state3 = function(scatterplot) {
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   state3top100 = top100;
   var highlight = {};
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Plot title and subtitle
   Title['text'] = 'White and Black Student Scores';
   Title['subtext'] = '100 Largest Districts';
@@ -692,17 +645,12 @@ var state4 = function(scatterplot) {
   highlight['1301230'] = 'Clayton County School District';
   highlight['1302550'] = 'Gwinnet County School District';
   highlight['1300120'] = 'Atlanta City School District';
-  //highlight['1201980'] = 'Walton County';
-  // console.log(highlight);
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
-  // console.log(highlight);
+
   var base = scatterplot.getState('base');
   // var base = scatterplot.getState('state1');
   var dataSeries = scatterplot.getDataSeries();
@@ -851,14 +799,12 @@ var state5 = function(scatterplot) {
   const base = scatterplot.getState('base');
   var dataSeries = scatterplot.getDataSeries();
   var highlight = {};
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
   Title['subtext'] = '';
@@ -941,19 +887,15 @@ var state6 = function(scatterplot) {
   var dataSeries = scatterplot.getDataSeries();
   var base = scatterplot.getState('state5');
   var highlight = {};
-    //highlight['1302220'] = 'Forsyth County';
-    highlight['1301230'] = 'Clayton County';
-    highlight['1302550'] = 'Gwinnet County';
-    highlight['1300120'] = 'Atlanta City';
-    //highlight['1201980'] = 'Walton County';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  highlight['1301230'] = 'Clayton County';
+  highlight['1302550'] = 'Gwinnet County';
+  highlight['1300120'] = 'Atlanta City';
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
   Title['subtext'] = '';
@@ -1037,14 +979,12 @@ var state7 = function(scatterplot) {
   dataSeries['itemStyle'] = Object.assign(dataSeries['itemStyle'], { opacity: 0.5 })
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   var highlight = {};
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
   Title['subtext'] = '100 Largest U.S. School Districts 2009-2016';
@@ -1105,13 +1045,10 @@ var state8 = function(scatterplot) {
   };
   var nearZero = scatterplot.getSeriesDataInRange(dataSeries.data, 'x', range);
   var highlight = {};
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
@@ -1177,14 +1114,12 @@ var state9 = function(scatterplot) {
   highlight['1303930'] = 'Newton County';
   highlight['1302550'] = 'Gwinnet County School District';
   highlight['1201980'] = 'Walton County';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Affluence Gaps';
   Title['subtext'] = '';
@@ -1276,14 +1211,12 @@ var state10 = function(scatterplot) {
   highlight['1300120'] = 'Atlanta City School District';
   // highlight['1303930'] = 'Newton County School District';
   highlight['1302550'] = 'Gwinnett County School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Segregation';
   Title['subtext'] = '';
@@ -1387,7 +1320,13 @@ var state11 = function(scatterplot) {
   // const base = scatterplot.getState('state8');
   const base = scatterplot.getState('base');
   // Build series most seg to highlight
-  var dataSeries = state9dataSeries; // scatterplot.getDataSeries();
+  var dataSeries = null;
+  if (!!state9dataSeries) {
+    dataSeries = state9dataSeries;
+  } else {
+    dataSeries = scatterplot.getDataSeries();
+  }
+  // var dataSeries = state9dataSeries; // scatterplot.getDataSeries();
   var top100 = scatterplot.getSeriesDataBySize(dataSeries.data, 100)
   var segSortedTop100 = sortDataBySeg(top100);
   var leastSegregatedSeries = sliceLeast(segSortedTop100, 10);
@@ -1395,14 +1334,12 @@ var state11 = function(scatterplot) {
   var highlight = {};
   highlight['0604740'] = 'Berkeley, CA';
   highlight['1714460'] = 'Evanston, IL';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]] && names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Plot title and subtitle
   Title['text'] = 'Achievement Gaps and Segregation';
   Title['subtext'] = '';

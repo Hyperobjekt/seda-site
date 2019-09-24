@@ -3,7 +3,7 @@ section: prof-threshold
 ---
 ### Estimating the location of each state’s proficiency thresholds
 
-We use a statistical technique called heteroskedastic ordered probit modeling (HETOP) to estimate the location of the thresholds that define the proficiency categories within each state, subject, grade, and year. We estimate the model using all the counts of students in each school **district** within a state-subject-grade-year. 
+We use a statistical technique called heteroskedastic ordered probit (HETOP) modeling to estimate the location of the thresholds that define the proficiency categories within each state, subject, grade, and year. We estimate the model using all the counts of students in each school **district** within a state-subject-grade-year. 
 
 A rough approximation of this method follows. We assume the distribution of test scores in each school district is bell-shaped. For each state, grade, year, and subject, we then find the set of test-score thresholds that meet two conditions: 1) they would most closely produce the reported proportions of students in each proficiency category; and 2) they represent a test-score scale in which the average student in the state-grade-year-subject has a score of 0 and the standard deviation of scores is 1.  <br><br>
 

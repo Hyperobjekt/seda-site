@@ -18239,39 +18239,9 @@ body.home .hero .hero-child {
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   body.home .hero .hero-child {
-    display: run-in;
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
     height: auto;
-  }
-}
-
-@media all and (-ms-high-contrast: none) and (min-width: 320px), (-ms-high-contrast: active) and (min-width: 320px) {
-  body.home .hero .hero-child {
-    margin-left: -200px;
-  }
-}
-
-@media all and (-ms-high-contrast: none) and (min-width: 576px), (-ms-high-contrast: active) and (min-width: 576px) {
-  body.home .hero .hero-child {
-    margin-left: -200px;
-  }
-}
-
-@media all and (-ms-high-contrast: none) and (min-width: 768px), (-ms-high-contrast: active) and (min-width: 768px) {
-  body.home .hero .hero-child {
-    margin-left: -200px;
-  }
-}
-
-@media all and (-ms-high-contrast: none) and (min-width: 992px), (-ms-high-contrast: active) and (min-width: 992px) {
-  body.home .hero .hero-child {
-    margin-left: -300px;
-  }
-}
-
-@media all and (-ms-high-contrast: none) and (min-width: 1280px), (-ms-high-contrast: active) and (min-width: 1280px) {
-  body.home .hero .hero-child {
-    margin-left: -400px;
   }
 }
 
@@ -18305,6 +18275,13 @@ body.home .hero .hero-child svg, body.home .hero .hero-child img {
   body.home .hero .hero-child svg, body.home .hero .hero-child img {
     max-width: 100%;
     min-height: 480px;
+  }
+}
+
+@media all and (-ms-high-contrast: none) and (max-width: 991.98px), (-ms-high-contrast: active) and (max-width: 991.98px) {
+  body.home .hero .hero-child svg, body.home .hero .hero-child img {
+    max-width: 66%;
+    min-height: auto;
   }
 }
 
@@ -18351,6 +18328,20 @@ body.home .hero .hero-child #hero-overlay {
   position: absolute;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body.home .hero .hero-child #hero-overlay {
+    top: 1px;
+    left: 1px;
+    width: 100%;
+  }
+}
+
+@media all and (-ms-high-contrast: none) and (max-width: 991.98px), (-ms-high-contrast: active) and (max-width: 991.98px) {
+  body.home .hero .hero-child .column {
+    margin-top: 0;
+  }
+}
+
 body.home .hero .hero-child .column h2 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   color: #ffffff;
@@ -18363,6 +18354,12 @@ body.home .hero .hero-child .column h2 {
             letter-spacing: .018rem;
             margin-top: 55%;
           } */
+}
+
+@media all and (-ms-high-contrast: none) and (max-width: 991.98px), (-ms-high-contrast: active) and (max-width: 991.98px) {
+  body.home .hero .hero-child .column h2 {
+    margin-top: 20%;
+  }
 }
 
 @keyframes fade-in2 {

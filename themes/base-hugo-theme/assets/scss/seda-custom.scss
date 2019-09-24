@@ -1076,32 +1076,13 @@ body.home {
       -webkit-transform: translateZ(0) scale(1.0, 1.0);
       transform: translateZ(0);
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        display: run-in;
+        // display: block;
         // margin-left: auto;
         // margin-right: auto;
-        max-width: 90%;
+        width: 100%;
+        max-width: 100%;
         // margin-top: 14rem;
         height: auto;
-
-        @include media-breakpoint-up(sm) {
-          margin-left: -200px;
-        }
-
-        @include media-breakpoint-up(mm) {
-          margin-left: -200px;
-        }
-
-        @include media-breakpoint-up(md) {
-          margin-left: -200px;
-        }
-
-        @include media-breakpoint-up(lg) {
-          margin-left: -300px;
-        }
-
-        @include media-breakpoint-up(xl) {
-          margin-left: -400px;
-        }
       }
       // font-smoothing: antialiased !important;
       //opacity: 0;
@@ -1131,6 +1112,12 @@ body.home {
         @include media-breakpoint-up(md) {
           max-width: 100%;
           min-height: 480px;
+        }
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          @include media-breakpoint-down(md) {
+            max-width: 66%;
+            min-height: auto;
+          }
         }
 
 
@@ -1191,15 +1178,31 @@ body.home {
         @include media-breakpoint-down(mm) {
           //top: 30%;
         }
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          top: 1px;
+          left: 1px;
+          width: 100%;
+        }
       }
 
 
       .column {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          @include media-breakpoint-down(md) {
+            margin-top: 0;
+          }
+        }
 
         h2 {
         //opacity: 0;
         // animation: fade-in2 1.5s forwards;
         // animation-delay: 2.8s;
+        //
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          @include media-breakpoint-down(md) {
+            margin-top: 20%;
+          }
+        }
           @keyframes fade-in2 {
             0% {
               opacity: 0;

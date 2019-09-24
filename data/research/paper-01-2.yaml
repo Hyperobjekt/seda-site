@@ -1,10 +1,10 @@
 categories: ["uses-seda"] # uses-seda, technical, related
-authors: ["Heewon Jang", "Sean F. Reardon"]
-title: "States as Sites of Educational (In)Equality: State Contexts and the Socioeconomic Achievement Gradient"
-image: "/images/papers/states-as-sites.jpg" # will be cropped to center square & rounded
+authors: ["Benjamin R. Shear", "Sean F. Reardon"]
+title: "Using Pooled Heteroskedastic Ordered Probit Models to Improve Small-Sample Estimates of Latent Test Score Distributions"
+image: "/images/papers/hetop-shear.jpg" # will be cropped to center square & rounded
 versions:
   - date: "2019-09"
     order: 0
-    link: "/papers/jang reardon aera open 2019.pdf"
+    link: "/papers/wp19-05-v092019.pdf"
 abstract: |
-  Socioeconomic achievement gaps have long been a central focus of educational research. However, not much is known about how (and why) between-district gaps vary among states, even though states are a primary organizational level in the decen- tralized education system in the United States. Using data from the Stanford Education Data Archive (SEDA), this study describes state-level socioeconomic achievement gradients and the growth of these gradients from Grades 3 to 8. We also examine state-level correlates of the gradients and their growth, including school system funding equity, preschool enrollment patterns, the distribution of teachers, income inequality, and segregation. We find that socioeconomic gradients and their growth rates vary considerably among states, and that between-district income segregation is positively associated with the socioeconomic achievement gradient.
+  This paper describes a method for pooling grouped, ordered-categorical data across multiple waves to improve small-sample heteroskedastic ordered probit (HETOP) estimates of latent distributional parameters. We illustrate the method with aggregate proficiency data reporting the number of students in schools or districts scoring in each of a small number of ordered “proficiency” levels. HETOP models can be used to estimate means and standard deviations of the underlying (latent) test score distributions, but may yield biased or very imprecise estimates when group sample sizes are small. A simulation study demonstrates that pooled HETOP models can reduce the bias and sampling error of standard deviation estimates when group sample sizes are small. An analysis of real test score data suggests the pooled models are likely to improve estimates in applied contexts.

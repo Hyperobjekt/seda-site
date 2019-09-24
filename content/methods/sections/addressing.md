@@ -13,3 +13,4 @@ Below we describe the raw data used to create SEDA and how we:
 4. <a href="#" data-scroll-target="scaling-estimates" class="scroll-to-section">Scale the estimates so they are measured in terms of grade levels</a>
 5. <a href="#" data-scroll-target="reducing" class="scroll-to-section">Create estimates of average scores, learning rates, and trends in average scores.</a>
 6. <a href="#" data-scroll-target="reporting" class="scroll-to-section">Report the data</a>
+7. <a href="#" data-scroll-target="data-accuracy" class="scroll-to-section">Ensure Data Accuracy</a>

@@ -17225,6 +17225,17 @@ h5.big-superhead, a.big-superhead {
   padding-left: 0;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  nav.navbar.sticky-top {
+    position: fixed;
+    top: 0;
+    z-index: 1020;
+    display: block;
+    width: 100%;
+    padding-top: 12px;
+  }
+}
+
 @supports (position: sticky) or (position: -webkit-sticky) {
   .sticky-top {
     position: -webkit-sticky;
@@ -17404,6 +17415,22 @@ nav.navbar-light {
   }
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  nav.navbar-light {
+    /* IE10+ CSS styles go here */
+  }
+  nav.navbar-light .flex-parent {
+    display: run-in;
+  }
+  nav.navbar-light .flex-parent .navbar-brand {
+    flex: 1 0 300px;
+  }
+  nav.navbar-light .flex-parent .drawer-toggle {
+    flex: 0 0 40px;
+    float: right;
+  }
+}
+
 nav.navbar-light .navbar-brand {
   padding-top: 1.6rem;
   padding-bottom: 1.6rem;
@@ -17547,7 +17574,7 @@ nav.navbar-light .drawer-toggle .navbar-toggler-icon {
 }
 
 .drawer .closebtn {
-  background-image: url(/images/close.svg);
+  background-image: url("/images/close.svg");
   background-repeat: no-repeat;
   height: 41px;
   width: 30px;
@@ -17557,6 +17584,18 @@ nav.navbar-light .drawer-toggle .navbar-toggler-icon {
   margin-left: 50px;
   border: 0;
   background-color: transparent;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .drawer .closebtn {
+    background-image: url("/images/close.png");
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  .drawer .closebtn {
+    background-image: url("/images/close.png");
+  }
 }
 
 .drawer .navlinks {
@@ -18133,6 +18172,12 @@ body.home .hero {
   justify-content: center;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body.home .hero {
+    justify-content: space-around;
+  }
+}
+
 body.home .hero .hero-child:before {
   content: ' ';
   display: block;
@@ -18204,6 +18249,14 @@ body.home .hero .hero-child {
   transform: translateZ(0);
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body.home .hero .hero-child {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 @media (max-width: 767.98px) {
   body.home .hero .hero-child img {
     opacity: 1;
@@ -18234,6 +18287,13 @@ body.home .hero .hero-child svg, body.home .hero .hero-child img {
   body.home .hero .hero-child svg, body.home .hero .hero-child img {
     max-width: 100%;
     min-height: 480px;
+  }
+}
+
+@media all and (-ms-high-contrast: none) and (max-width: 991.98px), (-ms-high-contrast: active) and (max-width: 991.98px) {
+  body.home .hero .hero-child svg, body.home .hero .hero-child img {
+    max-width: 66%;
+    min-height: auto;
   }
 }
 
@@ -18280,6 +18340,20 @@ body.home .hero .hero-child #hero-overlay {
   position: absolute;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body.home .hero .hero-child #hero-overlay {
+    top: 1px;
+    left: 1px;
+    width: 100%;
+  }
+}
+
+@media all and (-ms-high-contrast: none) and (max-width: 991.98px), (-ms-high-contrast: active) and (max-width: 991.98px) {
+  body.home .hero .hero-child .column {
+    margin-top: 0;
+  }
+}
+
 body.home .hero .hero-child .column h2 {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
   color: #ffffff;
@@ -18292,6 +18366,12 @@ body.home .hero .hero-child .column h2 {
             letter-spacing: .018rem;
             margin-top: 55%;
           } */
+}
+
+@media all and (-ms-high-contrast: none) and (max-width: 991.98px), (-ms-high-contrast: active) and (max-width: 991.98px) {
+  body.home .hero .hero-child .column h2 {
+    margin-top: 20%;
+  }
 }
 
 @keyframes fade-in2 {
@@ -21625,6 +21705,14 @@ body.kind-page.type-discoveries .column-scatterplot .plot-parent {
   }
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body.kind-page.type-discoveries .column-scatterplot .plot-parent.sticky-top {
+    position: fixed;
+    width: 660px;
+    height: 360px;
+  }
+}
+
 body.kind-page.type-discoveries .column-scatterplot .plot-parent .title,
 body.kind-page.type-discoveries .column-scatterplot .plot-parent .subtitle {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -21660,6 +21748,13 @@ body.kind-page.type-discoveries .column-scatterplot .plot-parent .rectangle {
   padding: 2rem;
   height: 330px;
   width: 100%;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body.kind-page.type-discoveries .column-scatterplot .plot-parent .rectangle {
+    position: relative;
+    top: 0px;
+  }
 }
 
 body.kind-page.type-discoveries .react-autosuggest__input-wrapper input.react-autosuggest__input {
@@ -22775,11 +22870,6 @@ body.kind-section.type-discoveries .hero .hero-child .column p {
 body.about .column-people .pic {
   background-size: contain;
   background-blend-mode: color;
-}
-
-body.about .column-people:hover .pic {
-  background-blend-mode: color-burn;
-  transition: background-blend-mode .3s ease;
 }
 
 body.about .column-people:hover .pic button {

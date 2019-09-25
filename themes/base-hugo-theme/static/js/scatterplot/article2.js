@@ -8,7 +8,7 @@ const jQ = jQuery;
 
 const axisBlue = '#547892';
 let activeHighlight = {};
-const highlightedLabel = (highlight) => {
+const highlightedLabel = function (highlight) {
   // console.log('highlightedLabel');
   activeHighlight = highlight;
   return {

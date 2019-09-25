@@ -1,25 +1,25 @@
-<script src="{{ "js/jquery.min.js" | absURL }}"></script>
+<!-- <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.js?flags=gated%2Calways&features=es5%2Ces6%2Ces7%2Ces2015%2Ces2016%2Ces2017%2Ces2018"></script> -->
+<script src="{{ "js/lib/jquery.min.js" | absURL }}"></script>
 {{ if eq .Site.Params.includeBootstrapJs true }}
     <!-- <script src="{{ "js/jquery-3.3.1.slim.min.js" | absURL }}"></script> -->
-    <script src="{{ "js/bootstrap.bundle.min.js" | absURL }}"></script>
+    <script src="{{ "js/lib/bootstrap.bundle.min.js" | absURL }}"></script>
 {{ end }}
-<script src="{{ "js/anime.min.js" | absURL }}"></script>
-<script src="{{ "js/seda-custom.js" | absURL }}"></script>
+<script src="{{ "js/lib/anime.min.js" | absURL }}"></script>
+<script src="{{ "js/babel/seda-custom.js" | absURL }}"></script>
 
 {{ if .Site.IsServer }}
   {{ if eq .Site.Params.loadDevAnalytics true }}
     {{ template "_internal/google_analytics_async.html" }}
-    <script  src="{{ "js/analytics.js"  | absURL }}"></script>
+    <script  src="{{ "js/babel/analytics.js"  | absURL }}"></script>
   {{ end }}
 {{ else }}
   {{ template "_internal/google_analytics_async.html" }}
-  <script  src="{{ "js/analytics.js"  | absURL }}"></script>
+  <script  src="{{ "js/babel/analytics.js"  | absURL }}"></script>
 {{ end }}
 
 {{ if (and ( eq .Page.Type "discoveries" ) ( eq .Page.Kind "page" )) }}
     {{ partial "scatterplot-scripts.html" . }}
 {{ end }}
-
 {{ if eq .Page.Name "Get the Data" }}
   {{ partial "subscribe-scripts.html" . }}
 {{ end }}

@@ -31,3 +31,13 @@ To build:
 ```
 npm run lambda-build
 ```
+
+## Transpile JavaScipt:
+
+Babel transpiling is setup to run as an npm process. External libraries go in `.themes/base-hugo-theme/static/js/lib`. Our JavaScript files go in `.themes/base-hugo-theme/static/js/src`. Babel transpiles them into `.themes/base-hugo-theme/static/js/babel`.
+
+To start the watcher:
+
+```
+npm run babel
+```

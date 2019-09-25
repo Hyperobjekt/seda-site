@@ -452,7 +452,7 @@ nav.navbar-light {
   background-color: $white;
   overflow-x: hidden;
   padding-top: 60px;
-  transition: 0.5s;
+  transition: margin-right 0.35s linear 0s;
   margin-right: -320px;
   text-align: center;
 
@@ -467,6 +467,7 @@ nav.navbar-light {
 
   &.show {
     margin-right: 0;
+    transition: margin-right 0.35s linear 0s !important;
   }
 
   .closebtn {

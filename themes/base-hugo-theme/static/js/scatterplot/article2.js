@@ -5,7 +5,6 @@
 
 // Set local placeholder for jQuery
 const jQ = jQuery;
-
 const axisBlue = '#547892';
 let activeHighlight = {};
 const highlightedLabel = function (highlight) {
@@ -86,10 +85,6 @@ const baseXAxis = {
   zlevel: 102,
 };
 
-// Placeholders for segregation series operations
-// let segData = [];
-let searchItemIDs = [];
-let names = [];
 let allGrdData = [];
 let Title = {};
 Title['text'] = '';
@@ -116,6 +111,13 @@ function sliceLeast(arr, size) {
  */
 function sliceMost(arr, size) {
   return arr.slice((arr.length - 1) - (size-1), (arr.length - 1))
+}
+
+function setSearchHighlight(highlight, hit) {
+  // console.log('setSearchHighlight()');
+  highlight[hit.id] = hit.name + ', ' + hit.state_name;
+  // console.log(highlight);
+  return highlight;
 }
 
 //
@@ -151,26 +153,15 @@ xhr.send(null);
 
 /** State 1: Grade 3 Chicago + Anne Arundel  */
 var state1 = function(scatterplot) {
-  if (names.length <= 0 &&
-    scatterplot &&
-    scatterplot.data &&
-    scatterplot.data.districts &&
-    scatterplot.data.districts.name) {
-    names = scatterplot.data.districts.name;
-    // console.log(names);
-  }
   // state 2 is based on state 1
   var base = scatterplot.getState('base');
   var highlight = {};
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -258,13 +249,10 @@ var state3 = function(scatterplot) {
   var highlight = {};
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -354,13 +342,10 @@ var state4 = function(scatterplot) {
   var highlight = {};
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -451,13 +436,10 @@ var state5 = function(scatterplot) {
   var highlight = {};
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -548,13 +530,10 @@ var state6 = function(scatterplot) {
   var highlight = {};
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -645,13 +624,10 @@ var state7 = function(scatterplot) {
   var highlight = {};
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -743,13 +719,10 @@ var state8 = function(scatterplot) {
   highlight['5509600'] = 'Milwaukee School District';
   highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -841,13 +814,10 @@ var state9 = function(scatterplot) {
   highlight['5509600'] = 'Milwaukee School District';
   highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -939,13 +909,10 @@ var state10 = function(scatterplot) {
   highlight['5509600'] = 'Milwaukee School District';
   highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -1037,13 +1004,10 @@ var state11 = function(scatterplot) {
   highlight['5509600'] = 'Milwaukee School District';
   highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -1135,13 +1099,10 @@ var state12 = function(scatterplot) {
   highlight['5509600'] = 'Milwaukee School District';
   highlight['1709930'] = 'Chicago Public School District';
   // highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -1232,14 +1193,10 @@ var state13 = function(scatterplot) {
   var highlight = {};
   highlight['5509600'] = 'Milwaukee School District';
   highlight['1709930'] = 'Chicago Public School District';
-  // highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -1331,13 +1288,10 @@ var state14 = function(scatterplot) {
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   highlight['5509600'] = 'Milwaukee School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders
@@ -1520,14 +1474,12 @@ var state15 = function(scatterplot) {
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   highlight['5509600'] = 'Milwaukee School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
   // Update title and subtext placeholders
@@ -1773,14 +1725,12 @@ var state16 = function(scatterplot) {
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   highlight['5509600'] = 'Milwaukee School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
   // var quadrant = getQuadrantSeries(4, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
@@ -2005,14 +1955,12 @@ var state17 = function(scatterplot) {
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   highlight['5509600'] = 'Milwaukee School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
   // var quadrant = getQuadrantSeries(3, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
@@ -2231,14 +2179,12 @@ var state18 = function(scatterplot) {
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
   highlight['5509600'] = 'Milwaukee School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
+
   // Build the series of elements for quadrant highlight.
   var dataSeries = scatterplot.getDataSeries();
   // var quadrant = getQuadrantSeries(1, 3, 1, Object.entries(scatterplot.data['districts']['all_avg3']), allGrdData);
@@ -2454,13 +2400,10 @@ var state19 = function(scatterplot) {
   var highlight = {};
   highlight['2400060'] = 'Anne Arundel County Public Schools';
   highlight['1709930'] = 'Chicago Public School District';
-  if (searchItemIDs.length >= 1 && Object.keys(names).length >= 0) {
-    // There's a search item selected.
-    // Add it to the highlight object.
-    if (names[searchItemIDs[0]].length >= 1) {
-      highlight[searchItemIDs[0]] = names[searchItemIDs[0]];
-    }
-    // console.log(highlight);
+  if (_plot &&
+    _plot.searchItemIDs &&
+    _plot.searchItemIDs.length >= 1) {
+      highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
   // Update title and subtext placeholders

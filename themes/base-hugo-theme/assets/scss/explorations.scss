@@ -56,7 +56,7 @@ body.kind-page.type-discoveries {
 
   .scrollTabContainer {
     width: 100%;
-    
+
     position: fixed;
     bottom: 0;
     height: 40px;
@@ -383,6 +383,14 @@ body.kind-page.type-discoveries {
       width:100%;
       margin-bottom: 200px;
 
+      &.sticky-top {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          position: fixed;
+          width: 660px;
+          height: 360px;
+        }
+      }
+
       .title,
       .subtitle {
         font-family: $sharpgrotesk-med-20; // $maisonneue-book;
@@ -420,6 +428,10 @@ body.kind-page.type-discoveries {
         padding: 2rem;
         height: 330px;
         width:100%;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          position: relative;
+          top: 0px;
+        }
       }
 
       .search-component {

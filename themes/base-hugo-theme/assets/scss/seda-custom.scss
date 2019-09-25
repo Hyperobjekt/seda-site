@@ -141,7 +141,16 @@ h5.big-superhead, a.big-superhead {
 
 //
 // General custom elements
-//
+nav.navbar.sticky-top {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    position: fixed;
+    top: 0;
+    z-index: $zindex-sticky;
+    display: block;
+    width: 100%;
+    padding-top: 12px;
+  }
+}
 // Sticky top fix for safari
 .sticky-top {
   @supports (position: sticky) or (position: -webkit-sticky) {

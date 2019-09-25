@@ -17225,6 +17225,17 @@ h5.big-superhead, a.big-superhead {
   padding-left: 0;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  nav.navbar.sticky-top {
+    position: fixed;
+    top: 0;
+    z-index: 1020;
+    display: block;
+    width: 100%;
+    padding-top: 12px;
+  }
+}
+
 @supports (position: sticky) or (position: -webkit-sticky) {
   .sticky-top {
     position: -webkit-sticky;

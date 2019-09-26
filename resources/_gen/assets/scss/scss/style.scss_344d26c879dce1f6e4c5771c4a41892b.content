@@ -17225,6 +17225,17 @@ h5.big-superhead, a.big-superhead {
   padding-left: 0;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  nav.navbar.sticky-top {
+    position: fixed;
+    top: 0;
+    z-index: 1020;
+    display: block;
+    width: 100%;
+    padding-top: 12px;
+  }
+}
+
 @supports (position: sticky) or (position: -webkit-sticky) {
   .sticky-top {
     position: -webkit-sticky;
@@ -17545,7 +17556,7 @@ nav.navbar-light .drawer-toggle .navbar-toggler-icon {
   background-color: #ffffff;
   overflow-x: hidden;
   padding-top: 60px;
-  transition: 0.5s;
+  transition: margin-right 0.35s linear 0s;
   margin-right: -320px;
   text-align: center;
 }
@@ -17559,6 +17570,7 @@ nav.navbar-light .drawer-toggle .navbar-toggler-icon {
 
 .drawer.show {
   margin-right: 0;
+  transition: margin-right 0.35s linear 0s !important;
 }
 
 .drawer .closebtn {
@@ -21693,6 +21705,14 @@ body.kind-page.type-discoveries .column-scatterplot .plot-parent {
   }
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body.kind-page.type-discoveries .column-scatterplot .plot-parent.sticky-top {
+    position: fixed;
+    width: 660px;
+    height: 360px;
+  }
+}
+
 body.kind-page.type-discoveries .column-scatterplot .plot-parent .title,
 body.kind-page.type-discoveries .column-scatterplot .plot-parent .subtitle {
   font-family: "SharpGrotesk-Medium20", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -21728,6 +21748,13 @@ body.kind-page.type-discoveries .column-scatterplot .plot-parent .rectangle {
   padding: 2rem;
   height: 330px;
   width: 100%;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body.kind-page.type-discoveries .column-scatterplot .plot-parent .rectangle {
+    position: relative;
+    top: 0px;
+  }
 }
 
 body.kind-page.type-discoveries .react-autosuggest__input-wrapper input.react-autosuggest__input {

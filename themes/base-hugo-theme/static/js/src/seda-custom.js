@@ -14,6 +14,7 @@
             $('nav').removeClass('sticky-top');
             $('.subnav').removeClass('sticky-top');
             $('.row.open-all').removeClass('sticky-top');
+            $('.column-scatterplot .plot-parent').removeClass('sticky-top');
             // $('.open-all').removeClass('sticky-top');
             if ($('#scrollForMore').length >= 1) {
               $('#scrollForMore').addClass('hide');
@@ -46,6 +47,11 @@
                 $('#scrollForMore').removeClass('hide');
               }
             }
+        }
+        if (y <= (heroHeight)) {
+          $('.column-scatterplot .plot-parent').removeClass('sticky-top');
+        } else if (y > (heroHeight)) {
+          $('.column-scatterplot .plot-parent').addClass('sticky-top');
         }
     }
 

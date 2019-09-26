@@ -293,7 +293,8 @@ function Scatterplot(container, props) {
   /**
    * Load a state for the scatterplot
    */
-  this.loadState = function(stateName, options = {}) {
+  this.loadState = function(stateName, options) {
+    options = options || {};
     // this.component.echart.setOption(this.getState(stateName), options)
     const newState = this.getState(stateName);
     if (options.hasOwnProperty('notMerge')) {
@@ -323,7 +324,7 @@ function Scatterplot(container, props) {
   this.getDataSeries = function() {
     var options = this.component.getOption();
     if (options.series && options.series.length) {
-      return options.series.find(s => s.id === 'base')
+      return options.series.find(function(s) { return s.id === 'base' })
     }
     return null;
   }
@@ -332,10 +333,10 @@ function Scatterplot(container, props) {
    * Set an object of props for the react component
    */
   this.setProps = function(props) {
-    this.props = {
-      ...this.props,
-      ...props
-    }
+    this.props = Object.assign(
+      this.props,
+      props
+    )
     this.render();
   }
 
@@ -375,9 +376,9 @@ Scatterplot.prototype.getSeriesDataBySize = function(values, num) {
 Scatterplot.prototype.getSeriesDataForIds = function(values, ids) {
   return ids
     .map(function(id) {
-      return values.find(v => v[3] === id);
+      return values.find(function(v) { return v[3] === id });
     })
-    .filter(v => v);
+    .filter(function(v) { return v });
 }
 
 /** Returns an array of values that fall within the range on the provided axis */
@@ -389,7 +390,9 @@ Scatterplot.prototype.getSeriesDataInRange = function(values, axis, range) {
   })
 }
 
-Scatterplot.prototype.formatTooltip = function(item, data, xLabel, yLabel, xPercent = 0, yPercent = 0) {
+Scatterplot.prototype.formatTooltip = function(item, data, xLabel, yLabel, xPercent, yPercent) {
+  xPercent = xPercent || 0;
+  yPercent = yPercent || 0;
   // console.log(item);
   // console.log(data);
   let returnString = null;
@@ -424,7 +427,8 @@ Scatterplot.prototype.formatTooltip = function(item, data, xLabel, yLabel, xPerc
  * Returns the value rounded to the provided number of decimal
  * places.
  */
-Scatterplot.prototype.formatNumber = function(val, decimals = 2) {
+Scatterplot.prototype.formatNumber = function(val, decimals) {
+  decimals = decimals || 2
   if (!val && val !== 0) { return 'N/A' }
   const factor = Math.pow(10, decimals);
   return Math.round(val*factor)/factor;
@@ -433,7 +437,8 @@ Scatterplot.prototype.formatNumber = function(val, decimals = 2) {
  * Returns a percent string from the provided value
  * @param {number} v
  */
-Scatterplot.prototype.formatPercent = function(v, decimals = 0) {
+Scatterplot.prototype.formatPercent = function(v, decimals) {
+  decimals = decimals || 0
   if (!v && v !== 0) { return 'N/A' }
   return this.formatNumber(v * 100, decimals)
 }
@@ -443,7 +448,9 @@ Scatterplot.prototype.formatPercent = function(v, decimals = 0) {
  * @param {number} v the value to format
  * @param {number} from the point of reference to determine what the % diff is
  */
-Scatterplot.prototype.formatPercentDiff = function(v, from = 1, decimals = 0) {
+Scatterplot.prototype.formatPercentDiff = function(v, from, decimals) {
+  decimals = decimals || 0
+  from = from || 1;
   if (!v && v !== 0) { return 'N/A' }
   return this.formatPercent(v - from, decimals);
 }

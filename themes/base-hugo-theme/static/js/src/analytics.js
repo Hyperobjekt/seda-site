@@ -4,15 +4,15 @@
 (function($) {
   // console.log('Loading Analytics listeners');
   const analytics = {};
-  analytics.push = (data) => {
+  analytics.push = function (data) {
     // console.log('analytics.push');
     dataLayer.push(data);
   }
-  analytics.init = () => {
+  analytics.init = function () {
     // console.log('analytics.init');
 
     // Event: CTAClick
-    $('.gta-event-CTAClick').on('click touchstart', (e) => {
+    $('.gta-event-CTAClick').on('click touchstart', function (e) {
       console.log('.gta-event-CTAClick');
       e.preventDefault();
       // console.log(e.currentTarget);
@@ -21,7 +21,7 @@
       const _obj = {
         'event' : 'CTAClick',
         'CTADestination': encodeURI($target),
-        'eventCallback' : function() {
+        'eventCallback' : () => {
             window.location.href = $target;
         }
       }
@@ -29,7 +29,7 @@
     });
 
     // Event: bioExpanded
-    $('.gta-event-bioExpanded').on('click touchstart', (e) => {
+    $('.gta-event-bioExpanded').on('click touchstart', function (e) {
       console.log('.gta-event-bioExpanded');
       const $target = $(e.currentTarget);
       // console.log($target);
@@ -40,7 +40,7 @@
     });
 
     // Event: eMailSignup
-    $('.gta-event-eMailSignupAttempt').on('click touchstart', (e) => {
+    $('.gta-event-eMailSignupAttempt').on('click touchstart', function (e) {
       console.log('.gta-event-eMailSignupAttempt');
       const _obj = {
         'event' : 'eMailSignupAttempt'
@@ -49,7 +49,7 @@
     });
 
     // Event: postSelected
-    $('.gta-event-postSelected').on('click touchstart', (e) => {
+    $('.gta-event-postSelected').on('click touchstart', function (e) {
       console.log('.gta-event-postSelected');
       e.preventDefault();
       const $target = $(e.currentTarget).attr('href');
@@ -65,7 +65,7 @@
 
     // Event: showAbstractandVersion
     // Reports: paperCategory, paperName
-    $('.gta-event-showAbstractandVersion').on('click touchstart', (e) => {
+    $('.gta-event-showAbstractandVersion').on('click touchstart', function (e) {
       console.log('.gta-event-showAbstractandVersion');
       const $target = $(e.currentTarget);
       const $paperCategory = null;
@@ -89,7 +89,7 @@
 
     // Event: categorySelected
     // Reports: paperCategory
-    $('.gta-event-categorySelected').on('click touchstart', (e) => {
+    $('.gta-event-categorySelected').on('click touchstart', function (e) {
       console.log('.gta-event-categorySelected');
       const $target = $(e.currentTarget);
       const $paperCategory = $target.text();
@@ -103,7 +103,7 @@
 
     // Event: paperDownloadbyVersion
     // Reports: paperVersion, paperName
-    $('.gta-event-paperDownloadbyVersion').on('click touchstart', (e) => {
+    $('.gta-event-paperDownloadbyVersion').on('click touchstart', function (e) {
       console.log('.gta-event-paperDownloadbyVersion');
       // e.preventDefault();
       const $target = $(e.currentTarget);
@@ -122,7 +122,7 @@
 
     // Event: paperDownloadLatest
     // Reports: paperVersion, paperName
-    $('.gta-event-paperDownloadLatest').on('click touchstart', (e) => {
+    $('.gta-event-paperDownloadLatest').on('click touchstart', function (e) {
       console.log('.gta-event-paperDownloadLatest');
       const $target = $(e.currentTarget);
       const $paperName = $target.closest('.research-paper').find('.info h5').text();

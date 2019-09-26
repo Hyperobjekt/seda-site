@@ -21,8 +21,7 @@
       const _obj = {
         'event' : 'CTAClick',
         'CTADestination': encodeURI($target),
-        'eventCallback' : function () {
-        'eventCallback' : function() {
+        'eventCallback' : () => {
             window.location.href = $target;
         }
       }

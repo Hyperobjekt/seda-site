@@ -77,7 +77,7 @@ nav.navbar > div {
 
 p a, ol li a {
   text-decoration: underline;
-  text-underline-position: under;
+  // text-underline-position: under;
   &:hover {
     text-decoration: none;
     color: #7086AB !important;
@@ -235,7 +235,7 @@ span.help-button-style {
   width: 176px;
   height: 48px;
   border: none;
-  border-radius: 0;
+  //border-radius: 0;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
@@ -1414,7 +1414,7 @@ body.home {
       font-size: 1.6rem;
       line-height: 2.4rem;
       letter-spacing: .028rem;
-
+     
       @include media-breakpoint-up(md) {
         font-size: 1.85rem;
         line-height: 2.7rem;
@@ -1426,6 +1426,7 @@ body.home {
         line-height: 3rem;
         letter-spacing: .025rem;
         font-family: SharpGrotesk-Medium20;
+        white-space: nowrap;
       }
 
       @include media-breakpoint-up(xl) {
@@ -1945,7 +1946,7 @@ body.home {
         &:hover {
           text-decoration: underline;
           color: #627799;
-          text-underline-position: under;
+          // text-underline-position: under;
           // color: $seda-dark;
         }
       }
@@ -2069,7 +2070,7 @@ body.home {
             &.readmore:hover {
               color: #627799;
               text-decoration: underline;
-              text-underline-position: under;
+              // text-underline-position: under;
             }
           }
 
@@ -3271,7 +3272,7 @@ body.research {
         cursor: pointer;
         &:hover {
           color: #627799;
-          text-underline-position: under;
+          // text-underline-position: under;
         }
         @include media-breakpoint-up(md) {
           font-size: 1.4rem;
@@ -3374,7 +3375,7 @@ body.research {
           display: block;
           &:hover {
             color: #627799;
-            text-underline-position: under;
+            // text-underline-position: under;
           }
 
           @include media-breakpoint-up(md) {

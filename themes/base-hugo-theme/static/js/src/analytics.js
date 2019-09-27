@@ -8,6 +8,13 @@
     // console.log('analytics.push');
     dataLayer.push(data);
   }
+  analytics.navigate = (target, blank) => {
+    if (blank) {
+      window.open(target, '_blank');
+    } else {
+      window.location.href = target;
+    }
+  }
   analytics.init = function () {
     // console.log('analytics.init');
 
@@ -17,12 +24,13 @@
       e.preventDefault();
       // console.log(e.currentTarget);
       const $target = $(e.currentTarget).attr('href');
+      const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
       // console.log($target);
       const _obj = {
         'event' : 'CTAClick',
         'CTADestination': encodeURI($target),
         'eventCallback' : () => {
-            window.location.href = $target;
+            analytics.navigate($target, $targetBlank);
         }
       }
       analytics.push(_obj);
@@ -145,13 +153,15 @@
       const $newsArticleName = $titleNode.text();
       // console.log($newsArticleName);
       const $newsArticlePublication = $titleNode.attr('data-outlet');
+      const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
+      // console.log($targetBlank);
       // console.log($newsArticlePublication);
       const _obj = {
         'event': 'articleSelected',
         'newsArticleName': $newsArticleName,
         'newsArticlePublication': $newsArticlePublication,
         'eventCallback' : function() {
-            window.location.href = $target;
+            analytics.navigate($target, $targetBlank);
         }
       }
       analytics.push(_obj);
@@ -176,6 +186,8 @@
       console.log('.gta-event-navClick');
       e.preventDefault();
       const $target = $(e.currentTarget);
+      const $href = $target.attr('href');
+      const $targetBlank = ($target.attr('target') === '_blank');
       let $navType = null;
       if ($target.closest('#drawer').length >= 1) {
         $navType = 'main';
@@ -198,7 +210,7 @@
         'navItem': $navItem,
         'eventCallback' : function() {
           // console.log('request successful');
-          window.location.href = $target.attr('href');
+          analytics.navigate($href, $targetBlank);
         }
       }
       analytics.push(_obj);

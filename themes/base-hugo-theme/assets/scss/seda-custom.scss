@@ -3271,6 +3271,7 @@ body.research {
         cursor: pointer;
         &:hover {
           color: #627799;
+          text-underline-position: under;
         }
         @include media-breakpoint-up(md) {
           font-size: 1.4rem;
@@ -3372,7 +3373,8 @@ body.research {
           width: 100%;
           display: block;
           &:hover {
-            color: $seda-dark;
+            color: #627799;
+            text-underline-position: under;
           }
 
           @include media-breakpoint-up(md) {

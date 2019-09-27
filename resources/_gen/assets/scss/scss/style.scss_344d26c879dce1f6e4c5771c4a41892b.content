@@ -21716,6 +21716,7 @@ body.kind-page.type-discoveries .column-scatterplot .plot-parent {
   min-width: 300px;
   width: 100%;
   margin-bottom: 200px;
+  z-index: auto;
 }
 
 @media (min-width: 768px) {

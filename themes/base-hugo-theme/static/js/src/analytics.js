@@ -20,7 +20,7 @@
 
     // Event: CTAClick
     $('.gta-event-CTAClick').on('click touchstart', function (e) {
-      console.log('.gta-event-CTAClick');
+      // console.log('.gta-event-CTAClick');
       e.preventDefault();
       // console.log(e.currentTarget);
       const $target = $(e.currentTarget).attr('href');
@@ -38,7 +38,7 @@
 
     // Event: bioExpanded
     $('.gta-event-bioExpanded').on('click touchstart', function (e) {
-      console.log('.gta-event-bioExpanded');
+      // console.log('.gta-event-bioExpanded');
       const $target = $(e.currentTarget);
       // console.log($target);
       const _obj = {
@@ -49,7 +49,7 @@
 
     // Event: eMailSignup
     $('.gta-event-eMailSignupAttempt').on('click touchstart', function (e) {
-      console.log('.gta-event-eMailSignupAttempt');
+      // console.log('.gta-event-eMailSignupAttempt');
       const _obj = {
         'event' : 'eMailSignupAttempt'
       }
@@ -58,7 +58,7 @@
 
     // Event: postSelected
     $('.gta-event-postSelected').on('click touchstart', function (e) {
-      console.log('.gta-event-postSelected');
+      // console.log('.gta-event-postSelected');
       e.preventDefault();
       const $target = $(e.currentTarget).attr('href');
       const _obj = {
@@ -74,7 +74,7 @@
     // Event: showAbstractandVersion
     // Reports: paperCategory, paperName
     $('.gta-event-showAbstractandVersion').on('click touchstart', function (e) {
-      console.log('.gta-event-showAbstractandVersion');
+      // console.log('.gta-event-showAbstractandVersion');
       const $target = $(e.currentTarget);
       const $paperCategory = null;
       if ($('.row.subnav.small-tab-nav').is(':visible')) {
@@ -98,7 +98,7 @@
     // Event: categorySelected
     // Reports: paperCategory
     $('.gta-event-categorySelected').on('click touchstart', function (e) {
-      console.log('.gta-event-categorySelected');
+      // console.log('.gta-event-categorySelected');
       const $target = $(e.currentTarget);
       const $paperCategory = $target.text();
       // console.log($paperCategory);
@@ -112,7 +112,7 @@
     // Event: paperDownloadbyVersion
     // Reports: paperVersion, paperName
     $('.gta-event-paperDownloadbyVersion').on('click touchstart', function (e) {
-      console.log('.gta-event-paperDownloadbyVersion');
+      // console.log('.gta-event-paperDownloadbyVersion');
       // e.preventDefault();
       const $target = $(e.currentTarget);
       let $paperName = null;
@@ -131,7 +131,7 @@
     // Event: paperDownloadLatest
     // Reports: paperVersion, paperName
     $('.gta-event-paperDownloadLatest').on('click touchstart', function (e) {
-      console.log('.gta-event-paperDownloadLatest');
+      // console.log('.gta-event-paperDownloadLatest');
       const $target = $(e.currentTarget);
       const $paperName = $target.closest('.research-paper').find('.info h5').text();
       const $paperVersion = $target.attr('data-date');
@@ -146,7 +146,7 @@
     // Event: articleSelected
     // Reports: newsArticleName, newsArticlePublication
     $('.gta-event-articleSelected').on('click touchstart', function(e) {
-      console.log('.gta-event-articleSelected');
+      // console.log('.gta-event-articleSelected');
       e.preventDefault();
       const $target = $(e.currentTarget).attr('href');
       const $titleNode = $(e.currentTarget).closest('.row.news-item').find('h4 a');
@@ -170,7 +170,7 @@
     // Event: faqTopicExpanded
     // Reports: faqTopicExpansion
     $('.gta-event-faqTopicExpanded').on('click touchstart', function(e) {
-      console.log('.gta-event-faqTopicExpanded');
+      // console.log('.gta-event-faqTopicExpanded');
       const $target = $(e.currentTarget);
       const $topic = $(e.currentTarget).find('h5').text();
       const _obj = {
@@ -183,7 +183,7 @@
     // Event: navClick
     // Reports: navType, navItem
     $('.gta-event-navClick').on('click touchstart', function(e) {
-      console.log('.gta-event-navClick');
+      // console.log('.gta-event-navClick');
       e.preventDefault();
       const $target = $(e.currentTarget);
       const $href = $target.attr('href');
@@ -218,7 +218,7 @@
 
     // Basic JS error listener
     window.addEventListener('error', function(error) {
-      console.log('window listener for error');
+      // console.log('Error detected in browser window. Sending GA report.');
       const _obj = {
         'event' : 'error',
         'errorMessage': 'Error originating from ' + error.filename +

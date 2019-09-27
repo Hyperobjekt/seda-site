@@ -382,6 +382,7 @@ body.kind-page.type-discoveries {
       min-width: 300px;
       width:100%;
       margin-bottom: 200px;
+      z-index: auto;
 
       &.sticky-top {
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

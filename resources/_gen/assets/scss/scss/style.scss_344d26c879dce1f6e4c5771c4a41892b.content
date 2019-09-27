@@ -19106,6 +19106,8 @@ body.home #main {
 
 .row.map-invite .scatterplot a.big-superhead:hover {
   text-decoration: underline;
+  color: #627799;
+  text-underline-position: under;
 }
 
 .row.latest-explorations {
@@ -20581,6 +20583,7 @@ body.research .research-paper .controls .show-versions {
 
 body.research .research-paper .controls .show-versions:hover {
   color: #627799;
+  text-underline-position: under;
 }
 
 @media (min-width: 768px) {
@@ -20708,7 +20711,8 @@ body.research .research-paper .abstract-and-meta .meta .version-link {
 }
 
 body.research .research-paper .abstract-and-meta .meta .version-link:hover {
-  color: #031232;
+  color: #627799;
+  text-underline-position: under;
 }
 
 @media (min-width: 768px) {

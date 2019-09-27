@@ -17572,7 +17572,8 @@ nav.navbar-light .drawer-toggle .navbar-toggler-icon {
 }
 
 .drawer .closebtn {
-  background-image: url("/images/close.svg");
+  background-image: url("/images/close-outline.png");
+  background-size: 100%;
   background-repeat: no-repeat;
   height: 41px;
   width: 30px;

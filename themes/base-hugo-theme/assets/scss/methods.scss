@@ -204,6 +204,10 @@ body.methods {
         color: #7086AB;
         color: $seda-navy;
         //font-family: $maisonneue-bold;
+        &:hover {
+          text-decoration: underline;
+          color: #627799;
+        }
       }
       a:hover {
         text-decoration: underline;

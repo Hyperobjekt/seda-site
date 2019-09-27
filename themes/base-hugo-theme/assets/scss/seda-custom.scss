@@ -79,7 +79,7 @@ p a, ol li a {
   text-decoration: underline;
   text-underline-position: under;
   &:hover {
-    text-decoration: none !important;
+    text-decoration: none;
     color: #7086AB !important;
   }
 }
@@ -2061,8 +2061,13 @@ body.home {
           padding: 0;
           a {
             text-decoration: none;
+            &:hover {
+              color: #627799;
+            }
             &.readmore:hover {
+              color: #627799;
               text-decoration: underline;
+              text-underline-position: under;
             }
           }
 
@@ -2159,7 +2164,7 @@ body.home {
       order: 4;
         &:hover {
           text-decoration: underline;
-          color: $seda-dark !important;
+          // color: $seda-dark !important;
         }
 
 
@@ -2188,6 +2193,23 @@ body.home {
       background-position: bottom;
       top: 2px;
       position: relative;
+      &:hover {
+        background-image: url('/images/right-arrow-grayblue.svg');
+      }
+    }
+    .readmore:hover {
+      &:after {
+        content: "";
+        background-image: url('/images/right-arrow-grayblue.svg');
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        top: 2px;
+        position: relative;
+        
+      }
     }
   }
 }
@@ -3245,6 +3267,9 @@ body.research {
         padding: 3.2rem 1.6rem 2.4rem;
         display: block;
         cursor: pointer;
+        &:hover {
+          color: #627799;
+        }
         @include media-breakpoint-up(md) {
           font-size: 1.4rem;
           line-height: 1.4rem;

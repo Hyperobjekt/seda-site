@@ -17159,7 +17159,7 @@ p a, ol li a {
 }
 
 p a:hover, ol li a:hover {
-  text-decoration: none !important;
+  text-decoration: none;
   color: #7086AB !important;
 }
 
@@ -19185,8 +19185,14 @@ body.home #main {
   text-decoration: none;
 }
 
+.row.latest-explorations .card-container .card .card-body a:hover {
+  color: #627799;
+}
+
 .row.latest-explorations .card-container .card .card-body a.readmore:hover {
+  color: #627799;
   text-decoration: underline;
+  text-underline-position: under;
 }
 
 .row.latest-explorations .card-container .card .card-body .card-title {
@@ -19278,7 +19284,6 @@ body.home #main {
 
 .row.latest-explorations .all-explorations:hover, .row.latest-explorations .readmore:hover {
   text-decoration: underline;
-  color: #031232 !important;
 }
 
 @media (min-width: 768px) {
@@ -19300,6 +19305,22 @@ body.home #main {
 .row.latest-explorations .readmore:after {
   content: "";
   background-image: url("/images/right-arrow.svg");
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  top: 2px;
+  position: relative;
+}
+
+.row.latest-explorations .readmore:after:hover {
+  background-image: url("/images/right-arrow-grayblue.svg");
+}
+
+.row.latest-explorations .readmore:hover:after {
+  content: "";
+  background-image: url("/images/right-arrow-grayblue.svg");
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -20556,6 +20577,10 @@ body.research .research-paper .controls .show-versions {
   padding: 3.2rem 1.6rem 2.4rem;
   display: block;
   cursor: pointer;
+}
+
+body.research .research-paper .controls .show-versions:hover {
+  color: #627799;
 }
 
 @media (min-width: 768px) {
@@ -23844,6 +23869,11 @@ body.methods p a, body.methods li a {
   color: #ff003e;
   color: #7086AB;
   color: #04143c;
+}
+
+body.methods p a:hover, body.methods li a:hover {
+  text-decoration: underline;
+  color: #627799;
 }
 
 body.methods a:hover {

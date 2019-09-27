@@ -2,7 +2,6 @@ User-agent: *
 Disallow: /categories/
 Disallow: /tags/
 Disallow: /uploads/
-Disallow: /get-the-data/seda-archive-downloads/
 Disallow: /methods/sections/
 Disallow: /help-faq/sections/
 Disallow: /animationtest/

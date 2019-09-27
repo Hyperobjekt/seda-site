@@ -1,6 +1,9 @@
 <head>
   <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
   <meta charset="utf-8">
+  {{ if (eq .Page.Params.layout "nopath") }}
+    <meta http-equiv="refresh" content="0; url=/404/" />
+  {{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Fetch description for metadata -->

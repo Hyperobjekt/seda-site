@@ -495,7 +495,8 @@ nav.navbar-light {
   }
 
   .closebtn {
-    background-image: url('/images/close-outline.svg');
+    background-image: url('/images/close-outline.png');
+    background-size: 100%;
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       background-image: url('/images/close.png');
     }

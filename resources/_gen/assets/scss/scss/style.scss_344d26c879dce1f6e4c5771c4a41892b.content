@@ -17155,7 +17155,6 @@ nav.navbar > div {
 
 p a, ol li a {
   text-decoration: underline;
-  text-underline-position: under;
 }
 
 p a:hover, ol li a:hover {
@@ -17321,7 +17320,6 @@ span.help-button-style {
   width: 176px;
   height: 48px;
   border: none;
-  border-radius: 0;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
@@ -18578,6 +18576,7 @@ body.home #main {
     line-height: 3rem;
     letter-spacing: .025rem;
     font-family: SharpGrotesk-Medium20;
+    white-space: nowrap;
   }
 }
 
@@ -19107,7 +19106,6 @@ body.home #main {
 .row.map-invite .scatterplot a.big-superhead:hover {
   text-decoration: underline;
   color: #627799;
-  text-underline-position: under;
 }
 
 .row.latest-explorations {
@@ -19194,7 +19192,6 @@ body.home #main {
 .row.latest-explorations .card-container .card .card-body a.readmore:hover {
   color: #627799;
   text-decoration: underline;
-  text-underline-position: under;
 }
 
 .row.latest-explorations .card-container .card .card-body .card-title {
@@ -20583,7 +20580,6 @@ body.research .research-paper .controls .show-versions {
 
 body.research .research-paper .controls .show-versions:hover {
   color: #627799;
-  text-underline-position: under;
 }
 
 @media (min-width: 768px) {
@@ -20712,7 +20708,6 @@ body.research .research-paper .abstract-and-meta .meta .version-link {
 
 body.research .research-paper .abstract-and-meta .meta .version-link:hover {
   color: #627799;
-  text-underline-position: under;
 }
 
 @media (min-width: 768px) {

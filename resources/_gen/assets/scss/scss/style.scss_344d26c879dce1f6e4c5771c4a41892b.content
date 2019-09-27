@@ -19106,6 +19106,8 @@ body.home #main {
 
 .row.map-invite .scatterplot a.big-superhead:hover {
   text-decoration: underline;
+  color: #627799;
+  text-underline-position: under;
 }
 
 .row.latest-explorations {

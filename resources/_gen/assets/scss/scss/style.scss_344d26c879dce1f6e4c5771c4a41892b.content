@@ -18753,6 +18753,12 @@ body.home #main {
   }
 }
 
+@media (min-width: 768px) {
+  .row.fact.fact-1, .row.fact.fact-2, .row.fact.fact-3 {
+    padding: 4.8rem 0 4rem;
+  }
+}
+
 @media (min-width: 992px) {
   .row.fact.fact-1, .row.fact.fact-2, .row.fact.fact-3 {
     padding: 5.6rem 0;
@@ -24027,9 +24033,16 @@ body.methods pre code {
 .diag-arrow-bl tr td:after {
   content: url("/images/icons/diag-arrow-bl.svg");
   margin-left: -11px;
-  top: -25px;
+  top: -19px;
+  right: -21px;
   position: relative;
-  right: -26px;
+}
+
+@media (min-width: 768px) {
+  .diag-arrow-bl tr td:after {
+    top: -25px;
+    right: -26px;
+  }
 }
 
 .seda-table {
@@ -24066,8 +24079,14 @@ body.methods pre code {
 
 .seda-table td, .seda-table th {
   border: 2px solid #64CFF2;
-  padding: 1.6rem;
+  padding: 0.8rem;
   color: #0032A3;
+}
+
+@media (min-width: 768px) {
+  .seda-table td, .seda-table th {
+    padding: 1.6rem;
+  }
 }
 
 .seda-table td:nth-child(1), .seda-table th:nth-child(1) {

@@ -3,7 +3,7 @@ title: "Affluent Schools Are Not Always the Best Schools"
 displaytitle: "Affluent Schools Are Not Always the Best Schools"
 subtitle: "Learning Rates Reveal How Schools Contribute to Educational Opportunity"
 author: "Sean F. Reardon"
-date: "2019-02-12"
+date: "2019-09-24"
 hero: "/images/heroes/learning-rates-hero.svg"
 image: "/images/articles/affluent-schools-sm.png"
 scatterplotID: "article2" # used to name the JS file with the necessary states and prop attributes

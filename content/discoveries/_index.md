@@ -1,6 +1,6 @@
 ---
 title: "Discoveries"
-date: "2019-02-24"
+date: "2019-09-23"
 aliases:
   - "/posts/"
 ---

@@ -17153,12 +17153,11 @@ nav.navbar > div {
   }
 }
 
-p a, ol li a {
+p a, ol li a, table a {
   text-decoration: underline;
 }
 
-p a:hover, ol li a:hover {
-  text-decoration: none;
+p a:hover, ol li a:hover, table a:hover {
   color: #7086AB !important;
 }
 
@@ -17202,7 +17201,7 @@ h3 {
   }
 }
 
-h5.big-superhead, a.big-superhead {
+h5.big-superhead, a.big-superhead, .big-superhead {
   font-size: 1.2rem;
   text-transform: uppercase;
   color: #04143c;
@@ -17213,7 +17212,7 @@ h5.big-superhead, a.big-superhead {
 }
 
 @media (min-width: 768px) {
-  h5.big-superhead, a.big-superhead {
+  h5.big-superhead, a.big-superhead, .big-superhead {
     font-size: 1.7rem;
     line-height: 2.5rem;
   }
@@ -17383,6 +17382,10 @@ input.form-control {
 td {
   border: 1px solid #999;
   padding: 1.6rem;
+}
+
+.seda-archive-download td {
+  padding: 1.2rem;
 }
 
 tr:nth-child(even) {
@@ -18750,6 +18753,12 @@ body.home #main {
   .row.fact.fact-1 p, .row.fact.fact-2 p, .row.fact.fact-3 p {
     font-size: 1.4rem;
     line-height: 2.1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .row.fact.fact-1, .row.fact.fact-2, .row.fact.fact-3 {
+    padding: 4.8rem 0 4rem;
   }
 }
 
@@ -24027,9 +24036,16 @@ body.methods pre code {
 .diag-arrow-bl tr td:after {
   content: url("/images/icons/diag-arrow-bl.svg");
   margin-left: -11px;
-  top: -25px;
+  top: -19px;
+  right: -21px;
   position: relative;
-  right: -26px;
+}
+
+@media (min-width: 768px) {
+  .diag-arrow-bl tr td:after {
+    top: -25px;
+    right: -26px;
+  }
 }
 
 .seda-table {
@@ -24066,8 +24082,14 @@ body.methods pre code {
 
 .seda-table td, .seda-table th {
   border: 2px solid #64CFF2;
-  padding: 1.6rem;
+  padding: 0.8rem;
   color: #0032A3;
+}
+
+@media (min-width: 768px) {
+  .seda-table td, .seda-table th {
+    padding: 1.6rem;
+  }
 }
 
 .seda-table td:nth-child(1), .seda-table th:nth-child(1) {
@@ -24144,9 +24166,11 @@ body.contact-us .hero-child {
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center bottom;
+  background-size: contain;
+  background-position: center;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   body.contact-us .hero-child {
     background-size: 40%;
     background-position: center bottom;

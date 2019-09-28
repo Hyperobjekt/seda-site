@@ -3,6 +3,7 @@ title: "Are the test-score measures (average scores, learning rates, and trends)
 faqid: data-adjustments
 section: "data" # director, staff, or partner
 weight: 120
+private: true
 ---
 No. The measures of average test scores, average learning rates, and average test-score trends are based solely on test-score data. 
 

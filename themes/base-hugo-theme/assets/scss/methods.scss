@@ -338,12 +338,14 @@ body.methods {
                 }
             td:after {
                 content: url('/images/icons/diag-arrow-bl.svg');
-                //margin-left: 8px;
                 margin-left: -11px;
-                top: -25px;
+                top: -19px;
+                right: -21px;
+                @include media-breakpoint-up(md) {
+                  top: -25px;
+                  right: -26px;
+                }
                 position: relative;
-                right: -26px;
-
             }
         }
 
@@ -378,7 +380,10 @@ body.methods {
         }
         td, th {
             border: 2px solid #64CFF2;
-            padding: 1.6rem;
+            padding: 0.8rem;
+            @include media-breakpoint-up(md) {
+              padding: 1.6rem;
+            }
             color: #0032A3;
         }
         td:nth-child(1), th:nth-child(1) {

@@ -1,5 +1,6 @@
 ---
 section: addressing
+private: true
 ---
 ### SEDA methods: Addressing the challenges
 

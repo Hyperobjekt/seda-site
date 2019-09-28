@@ -1,6 +1,7 @@
 ---
 section: challenges-three
 weight: 3
+private: true
 ---
 In this example, State B looks more “proficient” than State A because 300 of their students score proficient compared to 100 students in State A. But, their achievement was identical! The bottom line: If you only use the proficiency data without accounting for where they thresholds for proficiency are places, you could end up with the wrong conclusion about which state performed better.
 

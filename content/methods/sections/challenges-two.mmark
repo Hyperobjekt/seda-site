@@ -1,6 +1,7 @@
 ---
 section: challenges-two
 weight: 2
+private: true
 ---
 
 <table class="table seda-table table-responsive" style="max-width: 480px;">

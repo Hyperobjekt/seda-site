@@ -3,6 +3,7 @@ title: "What schools are included in the data?"
 faqid: what-schools-included
 section: "data" # director, staff, or partner
 weight: 60
+private: true
 ---
 All public schools—both traditional and charter schools—that serve students in any grade from 3 through 8 are included in the data. 
 

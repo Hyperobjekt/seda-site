@@ -3,6 +3,7 @@ title: "How is socioeconomic status measured?"
 faqid: ses-measured
 section: "data" # director, staff, or partner
 weight: 130
+private: true
 ---
 
 For each school district or county, we use data from the Census Bureau’s <a href="https://www.census.gov/programs-surveys/acs" target="_blank">American Community Survey (ACS)</a> to create estimates of the average socioeconomic status (SES) of families. Every year, the ACS surveys families in each community in the U.S. We use six community characteristics reported in the surveys from 2007 through 2016 to construct a composite measure of SES in each community:

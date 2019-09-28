@@ -3,7 +3,7 @@ title: "What Explains White-Black Differences in Average Test Scores" # for the 
 displaytitle: "What Explains White-Black Differences in Average Test Scores?" # for what shows on the page
 subtitle: "Using fine-grained data to understand a stubborn problem"
 author: "Sean F. Reardon"
-date: "2019-01-12"
+date: "2019-09-24"
 hero: "/images/heroes/gaps-discovery-hero.svg"
 image: "/images/articles/scores-gap.png"
 scatterplotID: "article1" # used to name the JS file with the necessary states and prop attributes

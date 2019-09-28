@@ -1,5 +1,6 @@
 ---
 section: data-accuracy
+private: true
 ---
 <h3>Data accuracy</h3>
 

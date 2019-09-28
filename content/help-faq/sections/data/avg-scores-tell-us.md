@@ -3,6 +3,7 @@ title: "What do average test scores tell us?"
 faqid: avg-scores-tell-us
 section: "data" # director, staff, or partner
 weight: 20
+private: true
 ---
 To understand the role of educational opportunities in shaping average test-score patterns, it is necessary to distinguish between individual scores and average scores in a given school, district, or county.  
 

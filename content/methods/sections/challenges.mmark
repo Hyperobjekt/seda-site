@@ -1,6 +1,7 @@
 ---
 section: challenges
 weight: 1
+private: true
 ---
 
 ### Challenges Working with Proficiency Data

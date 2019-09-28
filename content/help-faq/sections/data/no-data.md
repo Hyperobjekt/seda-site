@@ -3,6 +3,7 @@ title: "Why are there no data for my school or district?"
 faqid: no-data
 section: "data" # director, staff, or partner
 weight: 150
+private: true
 ---
 There are several reasons that SEDA may not contain data for a school, district, or county: 
 

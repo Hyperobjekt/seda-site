@@ -1,5 +1,6 @@
 ---
 section: reporting
+private: true
 ---
 <h3>Reporting the data</h3>
 <h5>Suppression of Estimates </h5>

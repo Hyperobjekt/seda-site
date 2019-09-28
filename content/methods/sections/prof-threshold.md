@@ -1,5 +1,6 @@
 ---
 section: prof-threshold
+private: true
 ---
 ### Estimating the location of each state’s proficiency thresholds
 

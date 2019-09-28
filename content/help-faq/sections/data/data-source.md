@@ -3,6 +3,7 @@ title: "Where do the test score data come from? What years, grades, and subjects
 faqid: data-source
 section: "data"
 weight: 10
+private: true
 ---
 The data are based on the standardized accountability tests in math and English Language Arts (ELA) administered annually by each state to all public-school students in grades 3–8 from 2008–09 through 2015–16. In these years, 3rd through 8th graders in U.S. public schools took roughly 350 million standardized math and ELA tests. Their scores—provided to us in aggregated form by the U.S. Department of Education—are the basis of the data reported here. 
 

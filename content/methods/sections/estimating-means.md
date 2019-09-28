@@ -1,5 +1,6 @@
 ---
 section: estimating-means
+private: true
 ---
 <h3>Estimating the mean from proficiency count data</h3>
 

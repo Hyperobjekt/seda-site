@@ -1,5 +1,6 @@
 ---
 section: raw-data-two
+private: true
 ---
 
 <table class="table table-responsive seda-table mx-auto" style="max-width: 90%;">

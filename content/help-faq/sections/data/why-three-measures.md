@@ -3,6 +3,7 @@ title: "Why are there three different summaries of test scores (average scores, 
 faqid: why-three-measures
 section: "data" # director, staff, or partner
 weight: 40
+private: true
 ---
 
 The three scores tell different stories. 

@@ -1,5 +1,6 @@
 ---
 section: reducing
+private: true
 ---
 <h3>The three parameters: Average test scores, learning rates, and trends in test scores</h3>
 

@@ -17153,12 +17153,11 @@ nav.navbar > div {
   }
 }
 
-p a, ol li a {
+p a, ol li a, table a {
   text-decoration: underline;
 }
 
-p a:hover, ol li a:hover {
-  text-decoration: none;
+p a:hover, ol li a:hover, table a:hover {
   color: #7086AB !important;
 }
 
@@ -17202,7 +17201,7 @@ h3 {
   }
 }
 
-h5.big-superhead, a.big-superhead {
+h5.big-superhead, a.big-superhead, .big-superhead {
   font-size: 1.2rem;
   text-transform: uppercase;
   color: #04143c;
@@ -17213,7 +17212,7 @@ h5.big-superhead, a.big-superhead {
 }
 
 @media (min-width: 768px) {
-  h5.big-superhead, a.big-superhead {
+  h5.big-superhead, a.big-superhead, .big-superhead {
     font-size: 1.7rem;
     line-height: 2.5rem;
   }
@@ -17383,6 +17382,10 @@ input.form-control {
 td {
   border: 1px solid #999;
   padding: 1.6rem;
+}
+
+.seda-archive-download td {
+  padding: 1.2rem;
 }
 
 tr:nth-child(even) {
@@ -24163,9 +24166,11 @@ body.contact-us .hero-child {
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center bottom;
+  background-size: contain;
+  background-position: center;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   body.contact-us .hero-child {
     background-size: 40%;
     background-position: center bottom;

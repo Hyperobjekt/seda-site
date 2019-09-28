@@ -6,7 +6,9 @@ body.contact-us {
       background-repeat: no-repeat;
       background-size: 80%;
       background-position: center bottom;
-      @include media-breakpoint-up(mm) {
+      background-size: contain;
+      background-position: center;
+      @include media-breakpoint-up(lg) {
         background-size: 40%;
         background-position: center bottom;
       }

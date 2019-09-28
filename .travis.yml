@@ -10,8 +10,8 @@ install:
   - sudo dpkg -i hugo*.deb
 
 script:
-  - if [ "$TRAVIS_BRANCH" = "production" ]; then export HUGO_BASEURL=https://edopportunity.org/; fi
-  - if [ "$TRAVIS_BRANCH" = "staging" ]; then export HUGO_BASEURL=https://staging.edopportunity.org/; fi
+  - if [ "$TRAVIS_BRANCH" = "production" ]; then export HUGO_BASEURL=https://edopportunity.org/ && cp src/robots.production.txt themes/base-hugo-theme/static/robots.txt; fi
+  - if [ "$TRAVIS_BRANCH" = "staging" ]; then export HUGO_BASEURL=https://staging.edopportunity.org/ && cp src/robots.staging.txt themes/base-hugo-theme/static/robots.txt; fi
   - hugo version # prints the Hugo version, just in case.
   - hugo # build the website
 

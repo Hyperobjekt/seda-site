@@ -18,11 +18,12 @@ anchor = "smart"
   containerMaxWidth=1200
   showActiveNav=true
   paginage=5
-  localFunctionsPath = "http://localhost:9000"
+  # localFunctionsPath = "http://localhost:9000"
+  localFunctionsPath = "https://pd8ga2dl61.execute-api.us-east-2.amazonaws.com/prod/"
   # Update this path when the site goes live
-  # productionFunctionsPath = "https://mailchimp-subscr--eop-staging.netlify.com/.netlify/functions"
-  productionFunctionsPath = "https://eop-staging.netlify.com/.netlify/functions"
   # productionFunctionsPath = "/.netlify/functions"
+  productionFunctionsPath = "https://pd8ga2dl61.execute-api.us-east-2.amazonaws.com/prod/"
+
 
 # main menu
 

@@ -24,7 +24,7 @@
         // Make ajax call.
         $.ajax({
           method: "POST",
-          url: subscribePath + "/subscribe-users/",
+          url: subscribePath, //  + "/subscribe-users/",
           dataType: 'json',
           timeout: 4000,
           headers: {

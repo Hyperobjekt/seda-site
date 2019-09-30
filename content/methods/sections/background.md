@@ -1,5 +1,6 @@
 ---
 section: background
+private: true
 ---
 <h3>Background</h3>
 

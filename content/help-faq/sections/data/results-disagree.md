@@ -3,6 +3,7 @@ title: "Why are the data here different from the results reported by my state?"
 faqid: results-disagree
 section: "data" # director, staff, or partner
 weight: 140
+private: true
 ---
 SEDA results may differ from publicly reported state test scores. 
 

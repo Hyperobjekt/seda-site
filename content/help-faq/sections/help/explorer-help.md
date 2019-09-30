@@ -3,6 +3,7 @@ title: "How can I get help using the Educational Opportunity Explorer?"
 faqid: explorer-help
 section: "help" # director, staff, or partner
 weight: 10
+private: true
 ---
 
 The <a href="/explorer">Educational Opportunity Explorer</a> offers a FAQ within the Explorer itself. Press the <span class="help-button-style" style="margin-right: 5px;">HELP</span> button to get answers to your questions on using the Explorer and interpreting its map and charts.

@@ -1,6 +1,7 @@
 ---
 section: challenges
 weight: 1
+private: true
 ---
 
 ### Challenges Working with Proficiency Data
@@ -86,7 +87,7 @@ While there is a substantial amount of data from every state available in ED<i>F
         <tr>
         <th style="border: none;"></th>
         <th colspan="2">Not Proficient</th>
-        <th colspan="2" style="background-color: #f2ffff;">Proficient</th>
+        <th colspan="2" style="background-color: #eff8ff;">Proficient</th>
         </tr>
         </thead>
 
@@ -95,24 +96,24 @@ While there is a substantial amount of data from every state available in ED<i>F
         <td>State</td>
         <td>Level 1</td>
         <td>Level 2</td>
-        <td style="background-color: #f2ffff;">Level 3</td>
-        <td style="background-color: #f2ffff;">Level 4</td>
+        <td style="background-color: #eff8ff;">Level 3</td>
+        <td style="background-color: #eff8ff;">Level 4</td>
         </tr>
 
         <tr>
         <td>A</td>
         <td>150</td>
         <td>200</td>
-        <td style="background-color: #e8ffff;">100</td>
-        <td style="background-color: #e8ffff;">50</td>
+        <td style="background-color: #e2f2fd;">100</td>
+        <td style="background-color: #e2f2fd;">50</td>
         </tr>
 
         <tr>
         <td>B</td>
         <td>50</td>
         <td>100</td>
-        <td style="background-color: #f2ffff;">250</td>
-        <td style="background-color: #f2ffff;">100</td>
+        <td style="background-color: #eff8ff;">250</td>
+        <td style="background-color: #eff8ff;">100</td>
         </tr>
         </tbody>
     </table>

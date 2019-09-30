@@ -3,6 +3,7 @@ title: "How are average test scores, average learning rates, and average test sc
 faqid: how-measures-computed
 section: "data" # director, staff, or partner
 weight: 45
+private: true
 ---
 
 

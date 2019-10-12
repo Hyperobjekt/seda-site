@@ -1,0 +1,12 @@
+name: "Marissa Thompson"
+role: "student" # director, staff, or partner
+title: "" # maybe different from role; is displayed
+image: "/uploads/mthompson-full.jpg" # will be cropped to center square & rounded
+thumb: "/uploads/mthompson-sm.jpg"
+thumbbw: "/uploads/mthompson-sm-bw.jpg"
+current: true # true or false (for former)
+weight: 115
+blurb: >
+  Marissa Thompson is a doctoral candidate in the Higher Education and Sociology of Education programs at the Stanford Graduate School of Education. She holds an M.A. in Sociology from Stanford University and a B.S.E. in Chemical and Biomolecular Engineering from the University of Pennsylvania. She is also an Institute of Education Sciences (IES) fellow and a recipient of the Stanford Graduate Fellowship (SGF) in Science and Engineering. Her research focuses on racial and socioeconomic inequality in education, with a particular emphasis on postsecondary access and outcomes.
+
+

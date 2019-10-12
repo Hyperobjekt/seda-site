@@ -41,7 +41,7 @@ $seda-new-better-sasha-plot-navy: rgba(5, 41, 101, 100%);
 $seda-new-better-different-sasha-plot-navy: rgba(23, 59, 100, 100%);
 $seda-new-better-different-different-sasha-plot-navy: rgba(93, 118, 160, 100%);
 $seda-new-better-sasha-plot-gray: rgba(216, 216, 216, 100%);
-$seda-hover: #7086AB;
+$seda-hover: #7086AB; 
 
 $white: #ffffff;
 $black: #000000;
@@ -56,7 +56,7 @@ $tertiary: #04143c;
 // Links
 $link-color: $seda-navy; // $primary;
 $link-decoration: none;
-$link-hover-color: $seda-lightblue; // $aqua; // lighten($primary, 20%);
+$link-hover-color: $seda-hover; // $aqua; // lighten($primary, 20%);
 $link-hover-decoration: underline;
 
 // Buttons

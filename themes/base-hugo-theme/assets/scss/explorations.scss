@@ -259,6 +259,18 @@ body.kind-page.type-discoveries {
     padding-left: 1.6rem;
     border-left: 2px solid $seda-navy;
   }
+  .drop-cap {
+    font-size: 5.2rem;
+    @include media-breakpoint-up(lg) {
+      font-size: 4.7rem;
+    }
+    font-family: 'MaisonNeue-Bold', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+    line-height: .8;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 5px;
+    margin-top: 6px;
+  }
   .crumbs {
     font-family: $sharpgrotesk-med-15;
     font-size: $sm-caps-size;

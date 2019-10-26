@@ -15,7 +15,7 @@ aliases:
 
 {{% state-wrapper state="state1" notmerge="true" %}}
 
-<span class="first-3" style="font-family: 'MaisonNeue-Bold', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;font-size: 4.7rem;line-height: .8;text-transform: uppercase;float: left;margin-right: 5px;margin-top: 6px;">T</span>he Chicago Public Schools are more successful than they are given credit for. In 3rd grade, where our test-score data begin, the average student in Chicago scores below a 2nd-grade level, as shown in the accompanying chart.
+<span class="drop-cap">T</span>he Chicago Public Schools are more successful than they are given credit for. In 3rd grade, where our test-score data begin, the average student in Chicago scores below a 2nd-grade level, as shown in the accompanying chart.
 
 <img src="/images/articles/affluent-schools/state1.jpg" alt="Scatterplot highlighting Chicago Public School District and Anne Arundel County Public School District" class="d-md-none" />
 

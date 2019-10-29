@@ -3,16 +3,12 @@ body.type-media-map {
   .hero {
     height: 6.4rem;
   }
-
   .center-page-wrapper {
     width: 100%;
     display: block;
     padding-left: 16px;
     padding-right: 16px;
   }
-
-  /* -- media-map.scss -- */
-
   .media-map {
       padding-bottom: 4rem;
       .bordered-header {
@@ -25,7 +21,6 @@ body.type-media-map {
           }
       }
   }
-
   .center-content-post {
     max-width: 1200px;
     line-height: 32px;
@@ -33,7 +28,6 @@ body.type-media-map {
     width: 100%;
     margin: auto;
   }
-
   // Table
   table.page-stats {
     th {
@@ -65,7 +59,6 @@ body.type-media-map {
       font-weight: 400;
     }
   }
-
   @media (min-width: 768px) {
     .center-page-wrapper {
       padding: 0 24px;

@@ -23619,7 +23619,6 @@ body.type-news .row.news-item p.excerpt {
 
 body.type-media-map {
   font-size: 16px;
-  /* -- media-map.scss -- */
 }
 
 body.type-media-map .hero {

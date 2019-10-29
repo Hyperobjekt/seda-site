@@ -23649,7 +23649,7 @@ body.type-media-map .media-map .bordered-header {
 }
 
 body.type-media-map .center-content-post {
-  max-width: 720px;
+  max-width: 1200px;
   line-height: 32px;
   padding-top: 5.5rem;
   width: 100%;
@@ -23659,6 +23659,7 @@ body.type-media-map .center-content-post {
 body.type-media-map table.page-stats th {
   font-family: Akkurat-Bold, sans-serif;
   padding-bottom: 1.6rem;
+  font-size: 18px;
 }
 
 body.type-media-map table.page-stats td, body.type-media-map table.page-stats th {
@@ -23676,6 +23677,10 @@ body.type-media-map table.page-stats td {
 
 body.type-media-map table.page-stats td.table-text {
   color: #212529;
+}
+
+body.type-media-map table.page-stats a, body.type-media-map table.page-stats a:hover {
+  color: #258BDA;
 }
 
 body.type-media-map table#national-media-table {

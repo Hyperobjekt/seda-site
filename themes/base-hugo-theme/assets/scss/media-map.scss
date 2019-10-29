@@ -13,7 +13,6 @@ body.type-media-map {
 
   /* -- media-map.scss -- */
 
-
   .media-map {
       padding-bottom: 4rem;
       .bordered-header {
@@ -28,18 +27,19 @@ body.type-media-map {
   }
 
   .center-content-post {
-    max-width: 720px;
+    max-width: 1200px;
     line-height: 32px;
     padding-top: 5.5rem;
     width: 100%;
     margin: auto;
   }
-  // Table
 
+  // Table
   table.page-stats {
     th {
       font-family: Akkurat-Bold, sans-serif;
       padding-bottom: 1.6rem;
+      font-size: 18px;
     }
     td, th {
       padding: 1.6rem;
@@ -49,15 +49,13 @@ body.type-media-map {
       background-color: #f4f7f9;
     }
     td {
-      // font-family: $numberFontStack;
       font-weight: 500;
-      // color: $color2;
     }
     td.table-text {
       color: #212529;
     }
     a, a:hover {
-      // color: $color1;
+      color: #258BDA;
     }
   }
   table#national-media-table {

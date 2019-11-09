@@ -8,11 +8,15 @@
   <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-4 page-list media-map">
     <h2 class="bordered-header blue">Media Coverage</h2>
     <p></p>
-    <p><i class="fa fa-chevron-up"></i>&nbsp;&nbsp;<span class="ak-bold">Map:</span> <span id="numLocalStories"></span> stories in local outlets &nbsp;|&nbsp; <i class="fa fa-chevron-down"></i>&nbsp;&nbsp;<span class="ak-bold">Table:</span> <span id="numNationalStories"></span> stories in national outlets &nbsp;|&nbsp; Updated: <span id="lastUpdated"></span></p>
+    <p>
+      <i class="fa fa-chevron-up"></i>&nbsp;&nbsp;<span class="ak-bold">Map:</span> <span id="numLocalStories"></span> stories in local outlets<span id="numLMSReferrals"></span> &nbsp;|&nbsp; <i class="fa fa-chevron-down"></i>&nbsp;&nbsp;<span class="ak-bold">Table:</span> <span id="numNationalStories"></span> stories in national outlets &nbsp;|&nbsp; Updated: <span id="lastUpdated"></span>
+    </p>
     <table id="national-media-table" class="page-stats table-responsive"></table>
   </div>
 </div>
 <script src="/js/babel/media-table.js?{{ now.Unix }}"></script>
+<!-- make js edits in "/src/media-table.js", then transpile changes into "/babel/media-table.js" -->
+<!-- <script src="/js/src/media-table.js?{{ now.Unix }}"></script> -->
 
 {{ partial "subscribe.html" .}}
 {{ end }}

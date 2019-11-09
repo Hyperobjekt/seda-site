@@ -1,4 +1,15 @@
 body.type-media-map {
+  background-color: #fff !important;
+  nav.navbar-light {
+   // background-color: #fff !important;
+    .navbar-brand {
+    //  background-image: url("/images/logo-ext2.svg");
+      background-repeat: no-repeat;
+      &.sticky-top {
+      //  background-color: #fff;
+      }
+    }
+  }
   font-size: 16px;
   .hero {
     height: 6.4rem;
@@ -12,9 +23,10 @@ body.type-media-map {
   .media-map {
       padding-bottom: 4rem;
       .bordered-header {
-          margin-bottom: 3.2rem;
+          //margin-bottom: 3.2rem;
       }
       div[data-pym-auto-initialized] {
+        height: 700px;
           @media (max-height: 600px) {
               max-height: 70vh;
               overflow: auto;
@@ -28,6 +40,12 @@ body.type-media-map {
     width: 100%;
     margin: auto;
   }
+
+  h2 {
+    font-size: 2.3rem;
+  }
+
+
   // Table
   table.page-stats {
     th {
@@ -50,13 +68,14 @@ body.type-media-map {
     }
     a, a:hover {
       color: #258BDA;
+      text-decoration: none;
     }
   }
   table#national-media-table {
     height: 800px;
     td {
-      font-family: Akkurat-Regular, sans-serif;
-      font-weight: 400;
+      //font-family: Akkurat-Regular, sans-serif;
+      // font-weight: 400;
     }
   }
   @media (min-width: 768px) {

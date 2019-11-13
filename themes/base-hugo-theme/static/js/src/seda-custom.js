@@ -54,6 +54,9 @@
           $('.column-scatterplot .plot-parent').addClass('sticky-top');
         }
     }
+   
+
+   
 
     $('#openAll, #openAllSR').on('click touchstart', function(e) {
       e.preventDefault();

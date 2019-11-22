@@ -1,19 +1,13 @@
-categories: ["uses-seda"] # uses-seda, technical, related
-authors: ["Sean F. Reardon", "Demetra Kalogrides", "Ken Shores"]
-title: "The Geography of Racial/Ethnic Test Score Gaps"
-image: "/images/papers/geography-racial-test-scores.jpg" # will be cropped to center square & rounded
+categories: ["technical"] # uses-seda, technical, related
+authors: ["Sean F. Reardon", "John P. Papay", "Tara Kilbride", "Katharine O. Strunk", "Joshua Cowen", "Lily An", "Kate Donohue"]
+title: "Can Repeated Aggregate Cross-Sectional Data Be Used to Measure Average Student Learning Rates? A Validation Study of Learning Rate Measures in the Stanford Education Data Archive"
+image: "/images/papers/measure-learning-rates.jpg" # will be cropped to center square & rounded
 versions:
-  - date: "2018-03"
+  - date: "2019-11"
     order: 0
-    link: "/papers/wp16-10-v201803.pdf"
-  - date: "2017-12"
+    link: "/papers/wp19-08-v201911.pdf"
+  - date: "2019-11"
+    desc: Non-technical summary
     order: 1
-    link: "/papers/wp16-10-v201712.pdf"
-  - date: "2017-01"
-    order: 2
-    link: "/papers/wp16-10-v201701.pdf"
-  - date: "2016-04"
-    order: 3
-    link: "/papers/wp16-10-v201604.pdf"
-abstract: |
-  We estimate racial/ethnic achievement gaps in several hundred metropolitan areas and several thousand school districts in the United States using the results of roughly 200 million standardized math and reading tests administered to public school students from 2009-2013. We show that achievement gaps vary substantially, ranging from nearly 0 in some places to larger than 1.2 standard deviations in others. Economic, demographic, segregation and schooling characteristics explain roughly three-quarters of the geographic variation in these gaps. The strongest correlates of achievement gaps are local racial/ethnic differences in parental income, local average parental education levels, and patterns of racial/ethnic segregation, consistent with a theoretical model in which family socioeconomic factors affect educational opportunity partly though residential and school segregation patterns.
+    link: "/papers/learning_rate_validation_nontechnical_summary.pdf"  
+abstract: "In this paper we compare two approaches to measuring the average rate at which students learn in a given school or district. One type of measure—longitudinal growth measures—relies on student-level longitudinal data. A second type—cohort growth measures—relies only on repeated aggregated, cross-sectional data. Because student-level data is often not readily available, cohort growth measures are sometimes the only type available. The estimated school and district learning rates reported in the Stanford Education Data Archive (SEDA), for example, are cohort growth measures based on aggregated data. Understanding how much researchers and policymakers can rely on these cohort growth estimates requires one to know how well, and under what conditions, the estimates obtained from this approach align with those based on longitudinal data. In this report we address these questions."

@@ -46,7 +46,7 @@
                 {{range $sortedVersions }}
                 {{ if isset . "link" }}
                     <a href="{{ .link | relURL }}" target="_blank" class="version-link gta-event-paperDownloadbyVersion" aria-label="Download version from {{ .date }} download" tabindex="0" data-date="{{ .date }}" download>
-                        <span class="date">{{ .date }}</span>
+                        <span class="date">{{ .date }}&nbsp;{{ .desc }}</span>
                         <span class="label">Download now</span>
                     </a>
                     {{ end }}

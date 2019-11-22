@@ -1,6 +1,7 @@
 categories: ["technical"] # uses-seda, technical, related
 authors: ["Sean F. Reardon", "John P. Papay", "Tara Kilbride", "Katharine O. Strunk", "Joshua Cowen", "Lily An", "Kate Donohue"]
 title: "Can Repeated Aggregate Cross-Sectional Data Be Used to Measure Average Student Learning Rates? A Validation Study of Learning Rate Measures in the Stanford Education Data Archive"
+nontechlink: "/papers/learning_rate_validation_nontechnical_summary.pdf" 
 image: "/images/papers/measure-learning-rates.jpg" # will be cropped to center square & rounded
 versions:
   - date: "2019-11"

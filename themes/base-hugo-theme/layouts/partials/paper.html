@@ -23,6 +23,11 @@
                 {{ end }}
             {{ end }}
         </div>
+        {{ if .nontechlink }}
+        <div class="authors">
+            <span class="author"><a href="{{ .nontechlink }}" target="_blank" style="text-decoration: underline">Non-technical summary</a></span> 
+        </div>
+        {{ end }}
         {{ $sortedVersions := sort .versions "date" "desc" }}
         {{ $title := .title}}
         <div class="controls flex-parent">

@@ -11,6 +11,7 @@ collections:
   #HOMEPAGE
   - label: News Items 
     name: newsitems
+    identifier_field: headline
     folder: "data/news/"
     #filter: {field: "is_index", value: false}
     preview_path: news/

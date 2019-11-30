@@ -291,7 +291,7 @@
   }
   if (!!dataLayer) {
     // console.log('dataLayer found');
-    const waitTime = ($('body.type-posts').length) >= 1 ? 2000 : 1400;
+    const waitTime = ($('body.type-discoveries').length) >= 1 ? 3000 : 1600;
     const timeout = setTimeout(function() {
       if (dataLayer.length >= 3) {
         analytics.init();

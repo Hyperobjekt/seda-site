@@ -8,6 +8,8 @@
 
 {{ if .Site.IsServer }}
   {{ if eq .Site.Params.loadDevAnalytics true }}
+    <!-- Load GA script to track scroll depth -->
+    <script  src="{{ "js/lib/scrollDepth.js"  | absURL }}"></script>
     {{ template "_internal/google_analytics_async.html" }}
     <script  src="{{ "js/babel/analytics.js"  | absURL }}"></script>
   {{ end }}
@@ -28,3 +30,4 @@
 //   console.log(_t_);
 // }, 4000);
 </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

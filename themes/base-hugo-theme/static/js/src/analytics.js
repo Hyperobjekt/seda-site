@@ -22,13 +22,15 @@
     $('.gta-event-CTAClick').on('click touchstart', function (e) {
       // console.log('.gta-event-CTAClick');
       e.preventDefault();
-      // console.log(e.currentTarget);
       const $target = $(e.currentTarget).attr('href');
       const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
-      // console.log($target);
+      const $targetPrompt = $(e.currentTarget).attr('aria-label') ?
+        $(e.currentTarget).attr('aria-label') :
+        $(e.currentTarget).find('span').html();
       const _obj = {
         'event' : 'CTAClick',
         'CTADestination': encodeURI($target),
+        'CTAPrompt': $targetPrompt,
         'eventCallback' : () => {
             analytics.navigate($target, $targetBlank);
         }
@@ -151,11 +153,8 @@
       const $target = $(e.currentTarget).attr('href');
       const $titleNode = $(e.currentTarget).closest('.row.news-item').find('h4 a');
       const $newsArticleName = $titleNode.text();
-      // console.log($newsArticleName);
       const $newsArticlePublication = $titleNode.attr('data-outlet');
       const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
-      // console.log($targetBlank);
-      // console.log($newsArticlePublication);
       const _obj = {
         'event': 'articleSelected',
         'newsArticleName': $newsArticleName,
@@ -173,9 +172,71 @@
       // console.log('.gta-event-faqTopicExpanded');
       const $target = $(e.currentTarget);
       const $topic = $(e.currentTarget).find('h5').text();
+      // console.log('$topic is ', $topic);
       const _obj = {
         'event' : 'faqTopicExpanded',
-        'faqTopicExpansion': $topic
+        'faqTopExpansion': $topic
+      }
+      analytics.push(_obj);
+    });
+
+    /**
+     * Manual callback handler, discoveries article scroll depth
+     * false == no scroll to track from previous page
+     */
+    var callbackData = bamPercentPageViewed.callback();
+    if (callbackData !== false) {
+      // console.group('Callback');
+      // console.log(callbackData);
+      // console.groupEnd();
+      // If the data is from a discoveries page, then send.
+      if (callbackData.documentLocation.indexOf('discoveries') > -1) {
+        console.log('Discoveries page. Pushing to GA.');
+        const _obj = {
+          'event': 'discoveryScrollDepthSave',
+          'discoveryScrollDepth': callbackData.scrollPercent,
+          'discoveryScrollDepthLocation': callbackData.documentLocation
+        }
+        analytics.push(_obj);
+      } else {
+        // console.log('Scroll data is not for a discoveries page.');
+      }
+		}
+
+    /**
+    * Init the bamPercentPageViewed plugin
+    */
+    (function() {
+      var o=onload, n=function() {
+        bamPercentPageViewed.init({
+          trackDelay : '2000',
+          percentInterval : '10'
+        });
+      }
+      if (typeof o!='function'){onload=n} else { onload=function(){ n();o();}}
+    })(window);
+
+    // Event: SEDA data download
+    // Reports: <a> tags w/in flagged tables only
+    $('.gta-event-dataDownload a').on('click touchstart', function(e) {
+      // console.log('Data download link selected.');
+      const $target = $(e.currentTarget);
+      const $href = $target.attr('href');
+      const $heading = $target.closest('table').find('th').length === 1 ?
+        $target.closest('table').find('th').text() :
+        'Not available';
+      const $version = $target.closest('.tab-pane.active').attr('id') ?
+        String($target.
+          closest('.tab-pane.active')
+          .attr('id'))
+          .replace('version', '')
+          .replace('-', '.') :
+        'Not available';
+      const _obj = {
+        'event' : 'dataDownloaded',
+        'dataFile': $href,
+        'dataHeading': $heading,
+        'dataVersion': $version
       }
       analytics.push(_obj);
     });
@@ -230,7 +291,7 @@
   }
   if (!!dataLayer) {
     // console.log('dataLayer found');
-    const waitTime = ($('body.type-posts').length) >= 1 ? 1200 : 600;
+    const waitTime = ($('body.type-discoveries').length) >= 1 ? 3000 : 1600;
     const timeout = setTimeout(function() {
       if (dataLayer.length >= 3) {
         analytics.init();

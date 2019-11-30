@@ -14,6 +14,8 @@
     <script  src="{{ "js/babel/analytics.js"  | absURL }}"></script>
   {{ end }}
 {{ else }}
+  <!-- Load GA script to track scroll depth -->
+  <script  src="{{ "js/lib/scrollDepth.js"  | absURL }}"></script>
   {{ template "_internal/google_analytics_async.html" }}
   <script  src="{{ "js/babel/analytics.js"  | absURL }}"></script>
 {{ end }}

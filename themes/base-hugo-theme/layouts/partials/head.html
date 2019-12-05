@@ -14,24 +14,14 @@
   {{ end }}
 
   <!-- Fetch an image for metadata -->
-  {{ if .Page.Params.image }}
+  {{ if .Page.Params.social_image }}
     <!-- First try for page image -->
-    {{ $img := strings.TrimPrefix "/uploads/" .Page.Params.image }}
-    {{ with $.Site.GetPage "page" "uploads/_index.md" }}
-      {{ with .Resources.GetMatch $img }}
-        {{$img400 := .Fill "400x Center"}}
-        {{ $.Scratch.Set "socialImage" $img400.Permalink }}
-      {{ end }}
-    {{ end }}
+        {{ $.Scratch.Set "socialImage" .Page.Params.social_image }}
   {{ else }}
     <!-- Otherwise use the default social image -->
-    {{ $img := strings.TrimPrefix "/uploads/" .Site.Data.social.social_image }}
-    {{ with $.Site.GetPage "page" "uploads/_index.md" }}
-      {{ with .Resources.GetMatch $img }}
-        {{$img400 := .Fill "400x Center"}}
-        {{ $.Scratch.Set "socialImage" $img400.Permalink }}
-      {{ end }}
-    {{ end }}
+  
+        {{ $.Scratch.Set "socialImage" .Site.Data.social.social_image }}
+  
   {{ end }}
 
   <!-- General metadata -->
@@ -44,8 +34,8 @@
   <meta property="og:description" content="{{ $.Scratch.Get "socialDescription" }}" />
   <meta property="og:url" content="{{ "/" | absURL }}" />
   <meta property="og:site_name" content="{{ .Site.Title }}" />
-  <meta property="og:image" content="/images/social/seda-social-image-08.png" />
-  <meta property="og:image:secure_url" content="https://edopportunity.org/images/social/seda-social-image-08.png" />
+  <meta property="og:image" content="{{ $.Scratch.Get "socialImage" }}" />
+  <meta property="og:image:secure_url" content="https://edopportunity.org{{ $.Scratch.Get "socialImage" }}" />
   <!-- Twitter metadata -->
   <meta name="twitter:card" content="summary_large_image" />
   {{ if .Site.Data.social.twitter_via }}
@@ -53,7 +43,7 @@
   {{ end }}
   <meta name="twitter:title" content="The Educational Opportunity Project at Stanford | {{ .Title }}" />
   <meta name="twitter:description" content="{{ $.Scratch.Get "socialDescription" }}" />
-  <meta name="twitter:image" content="https://edopportunity.org/images/social/seda-social-image-08.png" />
+  <meta name="twitter:image" content="https://edopportunity.org{{ $.Scratch.Get "socialImage" }}" />
 
   {{ .Hugo.Generator }}
   <!-- Original bootstrap stylesheet -->

@@ -7,6 +7,7 @@ date: "2019-09-24"
 description: What explains racial and ethnic disparities in children’s academic performance? We use fine-grained data to understand a stubborn problem.
 hero: "/images/heroes/gaps-discovery-hero.svg"
 image: "/images/articles/scores-gap.png"
+social_image: "/images/social/race-differences-student-scores-social.png"
 scatterplotID: "article1" # used to name the JS file with the necessary states and prop attributes
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.

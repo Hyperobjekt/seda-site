@@ -43,7 +43,14 @@
   {{ end }}
   <meta name="twitter:title" content="The Educational Opportunity Project at Stanford | {{ .Title }}" />
   <meta name="twitter:description" content="{{ $.Scratch.Get "socialDescription" }}" />
-  <meta name="twitter:image" content="https://edopportunity.org{{ $.Scratch.Get "socialImage" }}" />
+  <meta name="twitter:image" content="https://edopportunity.org/images/social/seda-social-image-08.png" />
+  <style>
+    @media (min-width: 768px) {
+      .d-md-none {
+          display: none !important;
+      }
+    }
+  </style>
 
   {{ .Hugo.Generator }}
   <!-- Original bootstrap stylesheet -->

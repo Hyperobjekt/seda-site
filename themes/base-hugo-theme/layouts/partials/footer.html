@@ -5,6 +5,7 @@
     <!-- <div class="row p-xl-0 m-xl-0"> -->
       <div class="row p-xl-0 m-xl-0">
         <div class="navlinks col-xl-8 offset-xl-1 col-md-10 col-sm-12 p-xl-0">
+            {{/* $currentPage := . */}}
             {{ range .Site.Menus.main }}
                 {{ $text := print .Name | safeHTML }}
                 <a class="gta-event-navClick" tabindex="0" href="{{ .URL | relURL }}">

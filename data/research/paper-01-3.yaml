@@ -3,11 +3,14 @@ authors: ["Gerard Torrats-Espinosa"]
 title: "Crime and Inequality in Academic Achievement Across School Districts in the United States"
 image: "/images/papers/crime-inequality.jpg" # will be cropped to center square & rounded
 versions:
-  - date: "2018-09"
+  - date: "2020-01"
     order: 0
+    link: "https://link.springer.com/article/10.1007/s13524-019-00850-x" 
+  - date: "2018-09"
+    order: 1
     link: "/papers/torrats-espinosa-seda-crime.pdf"
   - date: "2019-07"
-    order: 1
+    order: 2
     link: "/papers/torrats-espinosa-seda-crime_0.pdf"
 abstract: |
   This study investigates the effect of violent crime on school district-level achievement in English Language Arts (ELA) and Mathematics. The research design exploits geographic variation in achievement and crime across 337 school districts and temporal variation across

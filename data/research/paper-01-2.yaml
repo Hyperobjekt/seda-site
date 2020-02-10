@@ -1,0 +1,22 @@
+categories: ["uses-seda"] # uses-seda, technical, related
+authors: ["Francis A. Pearman", "F. Chris Curran", "Benjamin Fisher", "Joseph Gardella"]
+title: "Are Achievement Gaps Related to Discipline Gaps? Evidence From National Data"
+image: "/images/papers/achievement-discipline-gaps.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "2019-10"
+    order: 0
+    link: "https://journals.sagepub.com/doi/full/10.1177/2332858419875440" 
+abstract: |
+  There is growing interest in the relation between the racial achievement gap and the racial discipline gap. 
+  However, few studies have examined this relation at the national level. This study combines data from the Stanford 
+  Education Data Archive and the Civil Rights Data Collection and employs a district fixed effects analysis to examine 
+  whether and the extent to which racial discipline gaps are related to racial achievement gaps in Grades 3 through 8 
+  in districts across the United States. In bivariate models, we find evidence that districts with larger racial 
+  discipline gaps have larger racial achievement gaps (and vice versa). Though other district-level differences 
+  account for the positive association between the Hispanic-White discipline gap and the Hispanic-White achievement 
+  gap, we find robust evidence that the positive association between the Black-White discipline gap and the Black-White 
+  achievement gap persists after controlling for a multitude of confounding factors. We also find evidence that the 
+  mechanisms connecting achievement to disciplinary outcomes are more salient for Black than White students.
+
+
+

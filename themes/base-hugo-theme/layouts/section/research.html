@@ -92,7 +92,19 @@
 
     </div>
 </div>
-
+<div id="submit-papers" class="form-iframe-container">
+    <iframe id="papersframe" src="https://feat-papersform--eop-staging.netlify.com/papersform/"></iframe>
+</div>
+<script>
+    // Selecting the iframe element
+    var container = document.getElementById("submit-papers");
+    var iframe = document.getElementById("papersframe");
+    
+    // Adjusting the iframe height onload event
+    iframe.onload = function(){
+        container.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+</script>
 {{ partial "subscribe.html" . }}
 
 {{ end }}

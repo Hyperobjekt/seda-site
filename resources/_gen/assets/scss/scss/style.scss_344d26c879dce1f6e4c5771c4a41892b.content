@@ -24574,6 +24574,8 @@ body.contact-us .subnav.small-tab-nav ul li {
 
 .form-iframe-container {
   background-color: #f5f8fa;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
   height: 1300px;
   position: relative;
 }

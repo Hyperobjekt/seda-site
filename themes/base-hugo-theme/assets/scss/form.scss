@@ -1,6 +1,8 @@
 .form-iframe-container {
     //overflow: hidden;
     background-color: $seda-paleblue;
+    -webkit-overflow-scrolling:touch; 
+    overflow:auto;
     // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
     height: 1300px;
     @include media-breakpoint-up(md) {

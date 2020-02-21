@@ -17278,6 +17278,14 @@ h5.big-superhead, a.big-superhead, .big-superhead {
   color: #103698;
 }
 
+.colorlightblue {
+  color: #ddeaf3 !important;
+}
+
+.colorbuttonblue {
+  color: #1c3d91 !important;
+}
+
 .color-tertiary {
   color: #04143c;
 }
@@ -20404,7 +20412,7 @@ body.research .large-tab-nav a {
   }
 }
 
-body.research .large-tab-nav span.papersbutton {
+body.research .large-tab-nav a span.papersbutton {
   background-color: #eff8ff;
   border: solid #eff8ff;
   border-top-width: 8px;
@@ -20413,42 +20421,46 @@ body.research .large-tab-nav span.papersbutton {
   border-right-width: 16px;
 }
 
-body.research .large-tab-nav span.papersbutton:hover {
+body.research .large-tab-nav a span.papersbutton:hover {
   border-color: #e7f1f9;
   background-color: #e7f1f9;
   transition: .3s;
 }
 
-body.research .large-tab-nav.point-down:hover {
-  border-bottom: none;
-  padding-bottom: 19px;
-}
-
-body.research .large-tab-nav.point-down:hover:after {
+body.research .large-tab-nav a.point-down:after {
   opacity: 0;
   background-color: #eff8ff;
   border: .4rem solid #eff8ff;
   display: inline;
   content: "↓";
   position: absolute;
-  margin-left: -.4rem;
   font-size: 1.9rem;
-  margin-top: -4px;
-  animation: appear .3s forwards;
+  transform: translateX(-6px);
+  background-color: #eff8ff;
+  border: .8rem solid #e7f1f9;
+  margin-top: -.8rem;
+  margin-left: -1.2rem;
+  transition: .3s;
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateX(-6px);
-    background-color: #eff8ff;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
+@media (min-width: 992px) {
+  body.research .large-tab-nav a.point-down:after {
+    margin-top: -.4rem;
+    margin-left: -.4rem;
     border: .4rem solid #e7f1f9;
-    background-color: #e7f1f9;
   }
+}
+
+body.research .large-tab-nav a.point-down:hover {
+  border-bottom: none;
+  padding-bottom: 19px;
+}
+
+body.research .large-tab-nav a.point-down:hover:after {
+  opacity: 1;
+  transform: translateX(0px);
+  background-color: #e7f1f9;
+  transition: .2s;
 }
 
 body.research .nav-link {

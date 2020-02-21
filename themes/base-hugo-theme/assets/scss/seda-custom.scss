@@ -195,6 +195,12 @@ nav.navbar.sticky-top {
   color: #103698;
   //font-style: italic;
 }
+.colorlightblue {
+  color: $seda-lightblue !important;
+}
+.colorbuttonblue {
+  color: $seda-buttonblue !important;
+}
 .color-tertiary {
   color: #04143c;
 }
@@ -3122,54 +3128,53 @@ body.research {
           margin-top: 12px;
         }
       }
-    }
-    span.papersbutton {
-      background-color: #eff8ff;
-      border: solid #eff8ff;
-      border-top-width: 8px;
-      border-bottom-width: 8px;
-      border-left-width: 16px;
-      border-right-width: 16px;
-      &:hover {
-        border-color: #e7f1f9;
-        background-color: #e7f1f9;
-        transition: .3s;
-        //color: $seda-navy;
-       
-      }
-    }
-    &.point-down:hover {
-      border-bottom: none;
-      padding-bottom: 19px;
-
-      &:after {
-        opacity: 0;
+      span.papersbutton {
         background-color: #eff8ff;
-        border: .4rem solid #eff8ff;
-        display: inline;
-        content: "↓";
-        position: absolute;
-        margin-left: -.4rem;
-        font-size: 1.9rem;
-        margin-top: -4px;
-        //color: $seda-navy;
-        animation: appear .3s forwards;
-       
-        @keyframes appear {
-          0% {
-          opacity: 0;
+        border: solid #eff8ff;
+        border-top-width: 8px;
+        border-bottom-width: 8px;
+        border-left-width: 16px;
+        border-right-width: 16px;
+        &:hover {
+          border-color: #e7f1f9;
+          background-color: #e7f1f9;
+          transition: .3s;
+          //color: $seda-navy;
+         
+        }
+      }
+      &.point-down:after {
+        opacity: 0;
+          background-color: #eff8ff;
+          border: .4rem solid #eff8ff;
+          display: inline;
+          content: "↓";
+          position: absolute;
+          
+          font-size: 1.9rem;
+          
           transform: translateX(-6px);
           background-color: #eff8ff;
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0px);
+          border: .8rem solid #e7f1f9;
+          margin-top: -.8rem;
+          margin-left: -1.2rem;
+          @include media-breakpoint-up(lg) {
+            margin-top: -.4rem;
+            margin-left: -.4rem;
             border: .4rem solid #e7f1f9;
-            background-color: #e7f1f9;
           }
-    
-        } 
+          transition: .3s;
+      }
+      &.point-down:hover {
+        border-bottom: none;
+        padding-bottom: 19px;
 
+        &:after {
+          opacity: 1;
+          transform: translateX(0px);
+          background-color: #e7f1f9;
+          transition: .2s;
+        }
       }
     }
   }

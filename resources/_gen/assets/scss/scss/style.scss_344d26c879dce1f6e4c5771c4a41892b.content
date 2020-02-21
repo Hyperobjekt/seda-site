@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .btn.btn-custom2 {
   background-color: #ffffff;
   color: #04143c;
@@ -17277,6 +17278,14 @@ h5.big-superhead, a.big-superhead, .big-superhead {
   color: #103698;
 }
 
+.colorlightblue {
+  color: #ddeaf3 !important;
+}
+
+.colorbuttonblue {
+  color: #1c3d91 !important;
+}
+
 .color-tertiary {
   color: #04143c;
 }
@@ -20401,6 +20410,57 @@ body.research .large-tab-nav a {
     padding-bottom: 16px;
     margin-top: 12px;
   }
+}
+
+body.research .large-tab-nav a span.papersbutton {
+  background-color: #eff8ff;
+  border: solid #eff8ff;
+  border-top-width: 8px;
+  border-bottom-width: 8px;
+  border-left-width: 16px;
+  border-right-width: 16px;
+}
+
+body.research .large-tab-nav a span.papersbutton:hover {
+  border-color: #e7f1f9;
+  background-color: #e7f1f9;
+  transition: .3s;
+}
+
+body.research .large-tab-nav a.point-down:after {
+  opacity: 0;
+  background-color: #eff8ff;
+  border: .4rem solid #eff8ff;
+  display: inline;
+  content: "↓";
+  position: absolute;
+  font-size: 1.9rem;
+  transform: translateX(-6px);
+  background-color: #eff8ff;
+  border: .8rem solid #e7f1f9;
+  margin-top: -.8rem;
+  margin-left: -1.2rem;
+  transition: .3s;
+}
+
+@media (min-width: 992px) {
+  body.research .large-tab-nav a.point-down:after {
+    margin-top: -.4rem;
+    margin-left: -.4rem;
+    border: .4rem solid #e7f1f9;
+  }
+}
+
+body.research .large-tab-nav a.point-down:hover {
+  border-bottom: none;
+  padding-bottom: 19px;
+}
+
+body.research .large-tab-nav a.point-down:hover:after {
+  opacity: 1;
+  transform: translateX(0px);
+  background-color: #e7f1f9;
+  transition: .2s;
 }
 
 body.research .nav-link {
@@ -24513,11 +24573,31 @@ body.contact-us .subnav.small-tab-nav ul li {
 }
 
 .form-iframe-container {
-  overflow: hidden;
+  background-color: #f5f8fa;
+  height: 1200px;
   position: relative;
 }
 
+@media (min-width: 768px) {
+  .form-iframe-container {
+    height: 1260px;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-iframe-container {
+    height: 1300px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .form-iframe-container {
+    height: 1430px;
+  }
+}
+
 .form-iframe-container iframe {
+  background-color: #f5f8fa;
   border: 0;
   height: 100%;
   left: 0;

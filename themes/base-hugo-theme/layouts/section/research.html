@@ -12,35 +12,41 @@
 
 <div class="row subnav d-md-none small-tab-nav">
 
-    <div class="dropdown">
-        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Skip-to by category" tabindex="0">
-            Select Category:
-        </button>
-        <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
-        <ul class="anchor-links dropdown-menu">
-            <li><a class="active gta-event-categorySelected" data-toggle="tab" href="#using" aria-label="Skip to Papers using SEDA Data">Papers using SEDA Data</a></li>
-            <li><a class="gta-event-categorySelected" data-toggle="tab" href="#technical" aria-label="Skip to Technical and Methodological">Technical and Methodological</a></li>
-            <li><a class="gta-event-categorySelected" data-toggle="tab" href="#related" aria-label="Skip to Related Papers">Related Papers</a></li>
-        </ul>
-        <!--</div>-->
+        <div class="dropdown">
+            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Skip-to by category" tabindex="0">
+                Select Category:
+            </button>
+            <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+            <ul class="anchor-links dropdown-menu">
+                <li><a class="active gta-event-categorySelected" data-toggle="tab" href="#using" aria-label="Skip to Papers using SEDA Data">Papers using SEDA Data</a></li>
+                <li><a class="gta-event-categorySelected" data-toggle="tab" href="#technical" aria-label="Skip to Technical and Methodological">Technical/Methodological</a></li>
+                <li><a class="gta-event-categorySelected" data-toggle="tab" href="#related" aria-label="Skip to Related Papers">Related Papers</a></li>
+                <li class="nav-item">
+                        <a data-scroll-target="submit-papers" class="colorbuttonblue scroll-to-section" id="submit-link" role="link" aria-controls="submit papers" aria-selected="false" aria-label="Submit Papers">Submit Papers</a>
+                </li>
+            </ul>
+            <!--</div>-->
+        </div>
+    
     </div>
-
-</div>
-
-<div class="row subnav large-tab-nav">
-    <ul class="nav nav-tabs col-lg-9 col-xl-8 mx-auto d-md-flex" id="researchTabs" role="tablist">
-        <li class="nav-item only-larger-screens" aria-label="Skip-to by category" tabindex="0">Select Category:</li>
-        <li class="nav-item">
-            <a class="nav-link active switch-tab gta-event-categorySelected" id="using-tab" data-toggle="tab" href="#using" role="tab" aria-controls="using" aria-selected="true" aria-label="Skip to Papers using SEDA Data">Papers using SEDA Data</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link switch-tab gta-event-categorySelected" id="technical-tab" data-toggle="tab" href="#technical" role="tab" aria-controls="technical" aria-selected="false" aria-label="Skip to Technical and Methodological">Technical and Methodological</a>
-        </li>
-        <li class="nav-item switch-tab">
-            <a class="nav-link gta-event-categorySelected" id="related-tab" data-toggle="tab" href="#related" role="tab" aria-controls="related" aria-selected="false" aria-label="Skip to Related Papers">Related Papers</a>
-        </li>
-    </ul>
-</div>
+    
+    <div class="row subnav large-tab-nav">
+        <ul class="nav nav-tabs col-lg-10 col-xl-8 mx-auto d-md-flex" id="researchTabs" role="tablist">
+            <li class="nav-item only-larger-screens" aria-label="Skip-to by category" tabindex="0">Select Category:</li>
+            <li class="nav-item">
+                <a class="nav-link active switch-tab gta-event-categorySelected" id="using-tab" data-toggle="tab" href="#using" role="tab" aria-controls="using" aria-selected="true" aria-label="Skip to Papers using SEDA Data">Papers using SEDA Data</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link switch-tab gta-event-categorySelected" id="technical-tab" data-toggle="tab" href="#technical" role="tab" aria-controls="technical" aria-selected="false" aria-label="Skip to Technical and Methodological">Technical/Methodological</a>
+            </li>
+            <li class="nav-item switch-tab">
+                <a class="nav-link gta-event-categorySelected" id="related-tab" data-toggle="tab" href="#related" role="tab" aria-controls="related" aria-selected="false" aria-label="Skip to Related Papers">Related Papers</a>
+            </li>
+            <li class="nav-item">
+                    <a data-scroll-target="submit-papers" class="nav-link point-down colorbuttonblue scroll-to-section" id="submit-link" role="link" aria-controls="submit papers" aria-selected="false" aria-label="Submit Papers"><span class="papersbutton">Submit Papers</span></Submit></a>
+            </li>
+        </ul>
+    </div>
 <div class="tab-content" id="researchTabContent">
     <div class="tab-pane fade show active" id="using" role="tabpanel" aria-labelledby="using-tab" tabindex="0">
         <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-xl-7 mx-auto">

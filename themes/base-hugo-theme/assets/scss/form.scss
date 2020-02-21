@@ -1,12 +1,23 @@
 .form-iframe-container {
-    overflow: hidden;
+    //overflow: hidden;
+    background-color: $seda-paleblue;
     // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
-    //padding-top: 56.25%;
+    height: 1200px;
+    @include media-breakpoint-up(md) {
+        height: 1260px;
+    }
+    @include media-breakpoint-up(lg) {
+        height: 1300px;
+    }
+    @include media-breakpoint-up(xl) {
+        height: 1430px;
+    }
     //height: 1220px;
     position: relative;
   }
    
   .form-iframe-container iframe {
+     background-color: $seda-paleblue;
      border: 0;
      height: 100%;
      left: 0;

@@ -1,0 +1,110 @@
+.form-iframe-container {
+    //overflow: hidden;
+    background-color: $seda-paleblue;
+    -webkit-overflow-scrolling:touch; 
+    overflow:auto;
+    // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
+    height: 1360px;
+    @include media-breakpoint-up(md) {
+        height: 1360px;
+    }
+    @include media-breakpoint-up(lg) {
+        height: 1420px;
+    }
+    @include media-breakpoint-up(xl) {
+        height: 1550px;
+    }
+    //height: 1220px;
+    position: relative;
+  }
+   
+  .form-iframe-container iframe {
+     background-color: $seda-paleblue;
+     border: 0;
+     height: 100%;
+     left: 0;
+     position: absolute;
+     top: 0;
+     width: 100%;
+  }
+
+.form.papersform {
+    background-color: $seda-paleblue;
+    textarea {
+        border-color: #dedede;
+        &#url {
+            max-height: 56px;
+        }
+        &#publication {
+            max-height: 56px;
+        }
+        &#abstract {
+            @include media-breakpoint-up(sm) {
+                min-height: 168px;
+            }
+        }
+    }
+    textarea::placeholder, input::placeholder {
+        @include media-breakpoint-up(xl) {
+            font-size: 1.6rem;
+        }
+    }
+    h3 {
+        margin-bottom: 2.4rem;
+        color: #031232;
+        font-size: 1.7rem;
+        line-height: 2.8rem;
+        letter-spacing: 0.009rem;
+        @include media-breakpoint-up(md) {
+          font-size: 1.85rem;
+          line-height: 2.75rem;
+          letter-spacing: 0.024rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 2.3rem;
+          line-height: 3.4rem;
+          letter-spacing: 0.03rem;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: 2.8rem;
+          line-height: 4.2rem;
+          letter-spacing: 0.03rem;
+        }
+      }
+      h5 {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        letter-spacing: 0.007rem;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          text-align: left;
+          // letter-spacing: 0.024rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 2rem;
+          line-height: 3rem;
+          letter-spacing: auto;
+        }
+      }
+      p {
+        font-size: 1.3rem;
+        line-height: 2rem;
+        @include media-breakpoint-up(md) {
+          font-size: 1.4rem;
+          line-height: 2.1rem;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: 1.9rem;
+          line-height: 2.8rem;
+        }
+      }
+}
+.lighter {
+    color: #4c4c4c;
+}

@@ -3085,6 +3085,14 @@ body.research {
   .subnav ul.nav-tabs {
     //border-bottom: 0;
   }
+  @include media-breakpoint-down(md) {
+    .nav {
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
+  }
   .large-tab-nav {
     display: none;
   }
@@ -3192,6 +3200,7 @@ body.research {
         color: $seda-dark;
       }
     }
+    
     @include media-breakpoint-up(md) {
       .dropdown-toggle {
         height: 5.5rem;

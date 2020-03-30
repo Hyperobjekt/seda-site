@@ -20366,6 +20366,15 @@ body.research .hero .hero-child .column p {
   }
 }
 
+@media (max-width: 991.98px) {
+  body.research .nav {
+    display: none;
+  }
+  body.research .nav.show {
+    display: block;
+  }
+}
+
 body.research .large-tab-nav {
   display: none;
 }
@@ -20475,6 +20484,12 @@ body.research .small-tab-nav a:hover {
   color: #031232;
 }
 
+@media (min-width: 768px) {
+  body.research .small-tab-nav .dropdown-toggle {
+    height: 5.5rem;
+  }
+}
+
 body.research .tab-content {
   margin-top: 3.2rem;
 }
@@ -20499,6 +20514,9 @@ body.research .tab-content hr:last-child {
   }
   body.research .large-tab-nav {
     display: block;
+  }
+  body.research .large-tab-nav .nav-tabs .nav-item.select-category {
+    margin-bottom: 0px;
   }
   body.research .large-tab-nav ul {
     border-bottom: none;

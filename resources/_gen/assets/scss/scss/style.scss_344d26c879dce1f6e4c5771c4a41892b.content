@@ -20475,6 +20475,12 @@ body.research .small-tab-nav a:hover {
   color: #031232;
 }
 
+@media (min-width: 768px) {
+  body.research .small-tab-nav .dropdown-toggle {
+    height: 5.5rem;
+  }
+}
+
 body.research .tab-content {
   margin-top: 3.2rem;
 }

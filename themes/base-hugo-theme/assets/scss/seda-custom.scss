@@ -3192,6 +3192,11 @@ body.research {
         color: $seda-dark;
       }
     }
+    @include media-breakpoint-up(md) {
+      .dropdown-toggle {
+        height: 5.5rem;
+      }
+    }
   }
   .tab-content {
     margin-top: 3.2rem;

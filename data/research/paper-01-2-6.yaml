@@ -1,0 +1,25 @@
+categories: ["other-papers"] # uses-seda, technical, related
+authors: ["Nicole L. Hair","Anja Gruber","Carly Urban"]
+title: "Personal Belief Exemptions for SchoolEntry Vaccinations, Vaccination Rates, and
+Academic Achievement"
+image: "/images/papers/c-urban.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "2020-02"
+    order: 0
+    link: "/papers/dp12978.pdf" 
+abstract: |
+  Nonmedical exemptions from school-entry vaccine mandates are receiving increased policy
+  and public health scrutiny. This paper examines how expanding the availability of exemptions
+  influences vaccination rates in early childhood and academic achievement in middle school. We
+  leverage 2003 legislation that granted personal belief exemptions (PBE) in Texas and Arkansas,
+  two states that previously allowed exemptions only for medical or religious regions. We find that
+  PBE decreased vaccination coverage among black and low-income preschoolers by 16.1% and
+  8.3%, respectively. Furthermore, we find that those cohorts affected by the policy change in
+  early childhood performed less well on standardized tests of academic achievement in middle
+  school. Estimated effects on mathematics and English Language Arts test scores were largest
+  for black students, especially those residing in economically disadvantaged counties
+
+
+
+
+

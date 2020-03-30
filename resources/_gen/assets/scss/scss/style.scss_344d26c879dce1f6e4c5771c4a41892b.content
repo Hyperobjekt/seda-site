@@ -20366,6 +20366,15 @@ body.research .hero .hero-child .column p {
   }
 }
 
+@media (max-width: 991.98px) {
+  body.research .nav {
+    display: none;
+  }
+  body.research .nav.show {
+    display: block;
+  }
+}
+
 body.research .large-tab-nav {
   display: none;
 }

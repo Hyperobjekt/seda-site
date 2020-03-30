@@ -20515,6 +20515,9 @@ body.research .tab-content hr:last-child {
   body.research .large-tab-nav {
     display: block;
   }
+  body.research .large-tab-nav .nav-tabs .nav-item.select-category {
+    margin-bottom: 0px;
+  }
   body.research .large-tab-nav ul {
     border-bottom: none;
   }

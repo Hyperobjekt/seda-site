@@ -3227,6 +3227,9 @@ body.research {
     .large-tab-nav {
       display: block;
       // border-bottom: 1px solid #E9EAED;
+      .nav-tabs .nav-item.select-category {
+        margin-bottom: 0px;
+      }
       ul {
         border-bottom: none;
       }

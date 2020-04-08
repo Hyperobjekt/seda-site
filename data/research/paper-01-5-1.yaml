@@ -1,14 +1,13 @@
 categories: ["technical"] # uses-seda, technical, related
-authors: ["Sean F. Reardon", "John P. Papay", "Tara Kilbride", "Katharine O. Strunk", "Joshua Cowen", "Lily An", "Kate Donohue"]
-title: "Can Repeated Aggregate Cross-Sectional Data Be Used to Measure Average Student Learning Rates? A Validation Study of Learning Rate Measures in the Stanford Education Data Archive"
-nontechlink: "/papers/learning_rate_validation_nontechnical_summary.pdf" 
-image: "/images/papers/measure-learning-rates.jpg" # will be cropped to center square & rounded
+authors: ["Benjamin R. Shear", "Sean F. Reardon"]
+title: "Using Pooled Heteroskedastic Ordered Probit Models to Improve Small-Sample Estimates of Latent Test Score Distributions"
+image: "/images/papers/hetop-shear.jpg" # will be cropped to center square & rounded
 versions:
-  - date: "2019-11"
+  - date: "2020-04"
     order: 0
-    link: "/papers/wp19-08-v201911.pdf"
-  - date: "2019-11"
-    desc: Non-technical summary
+    link: "/papers/wp19-05-v042020.pdf"
+  - date: "2019-09"
     order: 1
-    link: "/papers/learning_rate_validation_nontechnical_summary.pdf"  
-abstract: "In this paper we compare two approaches to measuring the average rate at which students learn in a given school or district. One type of measure—longitudinal growth measures—relies on student-level longitudinal data. A second type—cohort growth measures—relies only on repeated aggregated, cross-sectional data. Because student-level data is often not readily available, cohort growth measures are sometimes the only type available. The estimated school and district learning rates reported in the Stanford Education Data Archive (SEDA), for example, are cohort growth measures based on aggregated data. Understanding how much researchers and policymakers can rely on these cohort growth estimates requires one to know how well, and under what conditions, the estimates obtained from this approach align with those based on longitudinal data. In this report we address these questions."
+    link: "/papers/wp19-05-v092019.pdf"
+abstract: |
+  This paper describes a method for pooling grouped, ordered-categorical data across multiple waves to improve small-sample heteroskedastic ordered probit (HETOP) estimates of latent distributional parameters. We illustrate the method with aggregate proficiency data reporting the number of students in schools or districts scoring in each of a small number of ordered “proficiency” levels. HETOP models can be used to estimate means and standard deviations of the underlying (latent) test score distributions, but may yield biased or very imprecise estimates when group sample sizes are small. A simulation study demonstrates that pooled HETOP models can reduce the bias and sampling error of standard deviation estimates when group sample sizes are small. An analysis of real test score data suggests the pooled models are likely to improve estimates in applied contexts.

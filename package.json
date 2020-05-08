@@ -21,12 +21,16 @@
   },
   "homepage": "https://github.com/Hyperobjekt/seda-site#readme",
   "dependencies": {
+    "acorn": "^7.1.1",
     "autoprefixer": "^9.7.6",
     "core-js": "^2.6.9",
     "debug": "^4.1.1",
+    "kind-of": "^6.0.3",
     "mailchimp-api-v3": "^1.13.1",
+    "minimist": "^1.2.5",
     "netlify-lambda": "^1.6.3",
     "nodemon": "^1.19.2",
+    "serialize-javascript": "^3.0.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
@@ -36,7 +40,7 @@
     "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/preset-env": "^7.6.0",
     "babel-preset-minify": "^0.5.1",
-    "postcss-cli": "^6.1.3",
+    "postcss-cli": "^7.1.1",
     "requirejs": "^2.3.6"
   }
 }

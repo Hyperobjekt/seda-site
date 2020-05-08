@@ -3912,6 +3912,9 @@ form#getTheData {
       opacity: 0;
       transition: opacity 200ms ease-in;
     }
+    .fa-spinner {
+      pointer-events: none;
+    }
   }
 }
 

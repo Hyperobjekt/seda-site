@@ -116,16 +116,10 @@ Even in places with no racial disparities in socioeconomic status, we notice a l
 {{% /state-wrapper %}}
 
 <!-- <b>NOTE FOR THIS SECTION ON SEGREGATION: Instead of state 9, Figure needs to be revised to show this graph:
-
 <img src="/images/gap explorer.png" class="mw-100" />
-
 Walton County School District, Clayton County School District, Atlanta City School District, Newton County School District, and Gwinnet County School District should be highlighted on a chart of districts where x axis=Gap in Segregation, y axis=white/black gap in average test scores.
-
 (To see this in chart the Explorer, select white / black gap for districts, view the chart, then click "show secondary chart." It's the chart on the right.)
-
-We're probably going to have to figure out axis labels along the way.
-
--->
+We're probably going to have to figure out axis labels along the way. -->
 
 {{% state-wrapper state="state10" notmerge="true" %}}
 
@@ -139,11 +133,9 @@ In this figure, the horizontal axis indicates the degree to which Black students
 
 {{% /state-wrapper %}}
 
-<!-- <b>NOTE FOR THIS SECTION: Instead of State 10, we need to repeat the last chart but instead highlight
-
+<!-- NOTE FOR THIS SECTION: Instead of State 10, we need to repeat the last chart but instead highlight
 Evanston, IL: id# 1714460<br>
-Berkeley, CA: id# 604740
-</b> -->
+Berkeley, CA: id# 604740 -->
 <img src="/images/articles/racial-gaps/state10.jpg" class="d-md-none" alt="Scatterplot displaying white black achievement gaps by differences in average family socioeconomic resources, x-axis is white/black segregation gap, y-axis is white/black achievement gap by grade levels, Berkeley, California and Evanston, Illinois are highlighted" />
 
 

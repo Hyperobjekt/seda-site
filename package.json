@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Hyperobjekt/seda-site#readme",
   "dependencies": {
+    "autoprefixer": "^9.7.6",
     "core-js": "^2.6.9",
     "debug": "^4.1.1",
     "mailchimp-api-v3": "^1.13.1",

@@ -6,6 +6,9 @@ googleAnalytics = "UA-143360439-1"
 paginate = 5
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [imaging]
 resampleFilter = "box"
 quality = 70

@@ -12,6 +12,8 @@ install:
 script:
   - if [ "$TRAVIS_BRANCH" = "production" ]; then export HUGO_BASEURL=https://edopportunity.org/ && cp src/robots.production.txt themes/base-hugo-theme/static/robots.txt; fi
   - if [ "$TRAVIS_BRANCH" = "staging" ]; then export HUGO_BASEURL=https://staging.edopportunity.org/ && cp src/robots.staging.txt themes/base-hugo-theme/static/robots.txt; fi
+  - npm install
+  - npm list # checking npm packages
   - hugo version # prints the Hugo version, just in case.
   - hugo # build the website
 
@@ -51,4 +53,4 @@ deploy:
 
 env:
   global:
-    - HUGO_RELEASE=0.56.3
+    - HUGO_RELEASE=0.69.2

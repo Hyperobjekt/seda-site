@@ -27,7 +27,7 @@ We have three thresholds:
 
 As an example, let’s convert Threshold 1 onto the NAEP scale. First, we multiply by 40. Then, we add 200:
 
-    (-0.75 x 40.0) + 200 = 170
+(-0.75 x 40.0) + 200 = 170
 
 This yields a new “linked” Threshold 1 of 170. The table below shows all three linked thresholds.
 

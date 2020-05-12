@@ -1,9 +1,19 @@
-<script src="{{ "js/lib/jquery.min.js" | absURL }}"></script>
-{{ if eq .Site.Params.includeBootstrapJs true }}
-    <!-- <script src="{{ "js/jquery-3.3.1.slim.min.js" | absURL }}"></script> -->
-    <script src="{{ "js/lib/bootstrap.bundle.min.js" | absURL }}"></script>
+{{ $jquery := resources.Get "js/lib/jquery.min.js" }}
+{{ $anime := resources.Get "js/lib/anime.min.js" }}
+{{ if eq .Site.Params.includeBootstrapJs true }} }}
+  {{ $bootstrap := resources.Get "js/lib/bootstrap.bundle.min.js" }}
+  {{ $js := slice $jquery $bootstrap $anime | resources.Concat "js/bundle.js" }}
+{{ else }}
+  {{ $js := slice $jquery $anime | resources.Concat "js/bundle.js" }}
 {{ end }}
-<script src="{{ "js/lib/anime.min.js" | absURL }}"></script>
+<script src="{{ "js/bundle.js" | relURL }}"></script>
+
+<!-- <script src="{{ "js/lib/jquery.min.js" | absURL }}"></script> -->
+{{/* {{ if eq .Site.Params.includeBootstrapJs true }} */}}
+    <!-- <script src="{{ "js/jquery-3.3.1.slim.min.js" | absURL }}"></script> -->
+    <!-- <script src="{{ "js/lib/bootstrap.bundle.min.js" | absURL }}"></script> -->
+{{/* {{ end }} */}}
+<!-- <script src="{{ "js/lib/anime.min.js" | absURL }}"></script> -->
 <script src="{{ "js/babel/seda-custom.js" | absURL }}"></script>
 
 {{ if .Site.IsServer }}

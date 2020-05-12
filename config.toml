@@ -5,6 +5,7 @@ theme = "base-hugo-theme"
 googleAnalytics = "UA-143360439-1"
 paginate = 5
 disableKinds = ["taxonomy", "taxonomyTerm"]
+assetDir = "themes/base-hugo-theme/static"
 
 [markup.goldmark.renderer]
 unsafe = true

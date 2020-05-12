@@ -1,6 +1,7 @@
 (function($) {
   var jQuery = $.noConflict(false);
   var $ = jQuery;
+  var hasAnalytics = window.ga && window.ga.create
   /**
    * Calls a lambda function which subscribes the user
    * to mailchimp lists.
@@ -40,11 +41,11 @@
             // console.log(result);
             // Stop spinner spinning.
             $spinner.css({'opacity': 0});
-            if (!!dataLayer && (dataLayer.length >= 3)) {
+            if (!!dataLayer && (dataLayer.length >= 3) && hasAnalytics) {
               dataLayer.push({
                 'event': 'eMailSignup',
-                'eventCallback' : () => {
-                  const timeout = setTimeout(function() {
+                'eventCallback': function() {
+                  setTimeout(function() {
                     window.location = result.redirect;
                   }, 600);
                 }
@@ -52,7 +53,7 @@
             } else {
               console.log('dataLayer not available. Skipping analytics reporting.');
               // Redirect.
-              const timeout = setTimeout(function() {
+              setTimeout(function() {
                 window.location = result.redirect;
               }, 600);
             }

@@ -3,17 +3,31 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js'></script>
 <!-- <script src='https://unpkg.com/react-seda-scatterplot@1.3.2/umd/react-seda-scatterplot.min.js'></script> -->
-<script  src="{{ "js/lib/react-seda-scatterplot.min.js" | absURL }}"></script>
+<script  src="{{ "js/lib/react-seda-scatterplot.min.js" | relURL }}"></script>
 <script src='https://unpkg.com/deepmerge@2.2.1/dist/umd.js'></script>
 <script src='https://unpkg.com/papaparse@4.6.3/papaparse.min.js'></script>
 <script src='https://unpkg.com/react-seda-search@1.0.10/umd/react-seda-search.min.js'></script>
-<script  src="{{ "js/babel/scatterplot/Scatterplot.js" | absURL }}"></script>
 
-<!-- Load article states -->
-{{ $a := "js/babel/scatterplot/" }}
+{{/* Build path for specific article, to load article states */}}
+{{ $a := "js/src/scatterplot/" }}
 {{ $b := .Params.scatterplotID }}
 {{ $c := ".js" }}
-{{ $articlePath := (print $a $b $c)}}
-<script  src="{{ $articlePath  | absURL }}"></script>
-<!-- Load script to manage scrolling -->
-<script  src="{{ "js/babel/scatterplot/plot.js"  | absURL }}"></script>
+{{ $article := (print $a $b $c)}}
+{{/* Load differently processed scripts depending upon local or production */}}
+{{ if .Site.IsServer }}
+  {{/* Site is served, local dev, don't minify */}}
+  {{ $opts := dict "noComments" false "minified" false }}
+  {{ $scatterplot := resources.Get "js/src/scatterplot/Scatterplot.js" | babel $opts }}
+  {{ $plot := resources.Get "js/src/scatterplot/plot.js" | babel $opts }}
+  {{ $article := resources.Get $article | babel $opts }}
+  {{ $scatterplotjs := slice $scatterplot $article $plot | resources.Concat "js/scatterplot.js" | fingerprint }}
+  <script src="{{ $scatterplotjs.Permalink }}"></script>
+{{ else }}
+  {{/* Site is not local, minify and remove comments. */}}
+  {{ $opts := dict "noComments" true "minified" true }}
+  {{ $scatterplot := resources.Get "js/src/scatterplot/Scatterplot.js" | babel $opts }}
+  {{ $plot := resources.Get "js/src/scatterplot/plot.js" | babel $opts }}
+  {{ $article := resources.Get $article | babel $opts }}
+  {{ $scatterplotjs := slice $scatterplot $article $plot | resources.Concat "js/scatterplot.min.js" | fingerprint }}
+  <script src="{{ $scatterplotjs.Permalink }}"></script>
+{{ end }}

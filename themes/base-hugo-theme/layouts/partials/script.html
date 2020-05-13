@@ -35,10 +35,12 @@
 {{ if eq .Page.Name "Get the Data" }}
   {{ partial "subscribe-scripts.html" . }}
 {{ end }}
+{{/*
 <script>
 // Used for testing GA reporting of JS errors.
-// const timeout = setTimeout(function() {
-//   console.log(_t_);
-// }, 4000);
+const timeout = setTimeout(function() {
+  console.log(_t_);
+}, 4000);
 </script>
+*/}}
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

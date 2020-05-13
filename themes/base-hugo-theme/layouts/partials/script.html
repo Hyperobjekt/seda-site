@@ -23,7 +23,7 @@
   {{ $opts := dict "noComments" true "minified" true }}
   {{ $custom := resources.Get "js/src/seda-custom.js" | babel $opts }}
   {{ $analytics := resources.Get "js/src/analytics.js" | babel $opts }}
-  {{ $scrollDepth := resources.Get "lib/scrollDepth.js" }}
+  {{ $scrollDepth := resources.Get "js/lib/scrollDepth.js" }}
   {{ template "_internal/google_analytics_async.html" }}
   {{ $localjs := slice $scrollDepth $analytics $custom | resources.Concat "js/local.min.js" | fingerprint }}
   <script src="{{ $localjs.Permalink }}"></script>

@@ -9,14 +9,16 @@
   {{ $custom := resources.Get "js/src/seda-custom.js" | babel $opts }}
   {{ $analytics := resources.Get "js/src/analytics.js" | babel $opts }}
   {{ $scrollDepth := resources.Get "js/lib/scrollDepth.js" }}
+  {{ $localslice := slice $scrollDepth $analytics $custom }}
   <!-- If site is being served (ostensibly dev) don't compress and minify -->
   {{ if eq .Site.Params.loadDevAnalytics true }}
     <!-- Load GA script to track scroll depth -->
-    {{ $localjs := slice $scrollDepth $analytics $custom | resources.Concat "js/local.js" | fingerprint }}
+    {{ $localjs := $localslice | resources.Concat "js/local.js" | fingerprint }}
     {{ template "_internal/google_analytics_async.html" }}
     <script src="{{ $localjs.Permalink }}"></script>
   {{ else }}
-    {{ $localjs := slice $custom | resources.Concat "js/local.js" | fingerprint }}
+    {{ $localslice := slice $custom }}
+    {{ $localjs := $localslice | resources.Concat "js/local.js" | fingerprint }}
     <script src="{{ $localjs.Permalink }}"></script>
   {{ end }}
 {{ else }}
@@ -25,7 +27,8 @@
   {{ $analytics := resources.Get "js/src/analytics.js" | babel $opts }}
   {{ $scrollDepth := resources.Get "js/lib/scrollDepth.js" }}
   {{ template "_internal/google_analytics_async.html" }}
-  {{ $localjs := slice $scrollDepth $analytics $custom | resources.Concat "js/local.min.js" | fingerprint }}
+  {{ $localslice := slice $scrollDepth $analytics $custom }}
+  {{ $localjs := $localslice | resources.Concat "js/local.min.js" | fingerprint }}
   <script src="{{ $localjs.Permalink }}"></script>
 {{ end }}
 
@@ -34,6 +37,9 @@
 {{ end }}
 {{ if eq .Page.Name "Get the Data" }}
   {{ partial "subscribe-scripts.html" . }}
+{{ end }}
+{{ if (and ( eq .Page.Type "media-map" ) ( eq .Page.Kind "section" )) }}
+  {{ partial "media-map.html" . }}
 {{ end }}
 {{/*
 <script>

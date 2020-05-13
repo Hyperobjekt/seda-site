@@ -1,0 +1,13 @@
+{{ if .Site.IsServer }}
+  {{/* Site is served, local dev, don't minify */}}
+  {{ $opts := dict "noComments" false "minified" false }}
+  {{ $mediaMap := resources.Get "js/src/media-table.js" | babel $opts }}
+  {{ $mapjs := slice $mediaMap | resources.Concat "js/map.js" | fingerprint }}
+  <script src="{{ $mapjs.Permalink }}"></script>
+{{ else }}
+  {{/* Site is not local, minify and remove comments. */}}
+  {{ $opts := dict "noComments" true "minified" true }}
+  {{ $mediaMap := resources.Get "js/src/media-table.js" | babel $opts }}
+  {{ $mapjs := slice $mediaMap | resources.Concat "js/map.min.js" | fingerprint }}
+  <script src="{{ $mapjs.Permalink }}"></script>
+{{ end }}

@@ -87,12 +87,17 @@ Now, we can use these numbers to rescale the SEDA estimates that are on the NAEP
 <h5>Example</h5>
 
 A score of 250 in 4th-grade math becomes:
-	(250 – 239.2)/10.52 + 4 = 5.02.
+
+<pre>
+  <code>(250 – 239.2)/10.52 + 4 = 5.02.</code>
+</pre>
 
 In other words, these students score at a 5th-grade level, or approximately one grade level ahead of the national average (the reference group) in math.
 
 A score of 200 in 3rd-grade reading becomes:
-	(200 – 218.0)/11.49 + 4 = 2.44.
+
+<pre>
+  <code>(200 – 218.0)/11.49 + 4 = 2.44.</code>
+</pre>
 
 In other words, these students score approximately half a grade level behind the national average for 3rd graders in reading.
-

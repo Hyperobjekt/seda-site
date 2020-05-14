@@ -10,6 +10,18 @@ assetDir = "themes/base-hugo-theme/assets"
 [markup.goldmark.renderer]
 unsafe = true
 
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "arduino"
+    tabWidth = 4
+
 [imaging]
 resampleFilter = "box"
 quality = 70

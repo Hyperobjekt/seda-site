@@ -120,10 +120,7 @@ Imagine 500 students take the test. The results are as follows: 50 students scor
 
 In practice, this means that students in State B may appear to have higher “proficiency” rates than those in State A—even if their true achievement patterns are identical! Using the proficiency data without accounting for differing proficiency thresholds may lead to erroneous conclusions about the relative performance of students in different states.<br><br>
 This problem is more complicated than the example suggests, because most states use different tests with material of varying difficulty and scores reported on different scales. Therefore, we cannot compare proficiency, nor can we compare students’ test scores between states.
-
-<br><br>
 </li>
-
 <li>
 Even within a state, different tests are used in different grade levels. This means that we cannot readily compare the performance of students in 4th grade in one year to that of students in 5th grade in the next year. Therefore, we cannot measure average learning rates across grades.
 <br><br>

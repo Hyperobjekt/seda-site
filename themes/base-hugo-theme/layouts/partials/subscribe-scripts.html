@@ -1,12 +1,16 @@
 {{ if .Site.IsServer }}
-  <!-- If site is being served (ostensibly dev) provide local path -->
-  <script>
-    var subscribePath = {{ .Site.Params.localFunctionsPath }};
-  </script>
+  {{/* Site is served, local dev, don't minify */}}
+  <script>var subscribePath = {{ .Site.Params.localFunctionsPath }};</script>
+  {{ $opts := dict "noComments" false "minified" false }}
+  {{ $subscribe := resources.Get "js/src/subscribe-users.js" | babel $opts }}
+  {{ $subscribejs := slice $subscribe | resources.Concat "js/subscribe.js" | fingerprint }}
+  <script src="{{ $subscribejs.Permalink }}"></script>
 {{ else }}
-  <!-- If site is production, different path to fetch tweets -->
-  <script>
-    var subscribePath = {{ .Site.Params.productionFunctionsPath }};
-  </script>
+  {{/* Site is not local, minify and remove comments. */}}
+  <script>var subscribePath = {{ .Site.Params.productionFunctionsPath }};</script>
+  {{ $opts := dict "noComments" true "minified" true }}
+  {{ $subscribe := resources.Get "js/src/subscribe-users.js" | babel $opts }}
+  {{ $subscribejs := slice $subscribe | resources.Concat "js/subscribe.min.js" | fingerprint }}
+  <script src="{{ $subscribejs.Permalink }}"></script>
 {{ end }}
-<script  src="{{ "js/babel/subscribe-users.js" | absURL }}"></script>
+<!-- <script  src="{{ "js/src/subscribe-users.js" | absURL }}"></script> -->

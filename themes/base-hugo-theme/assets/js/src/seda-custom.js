@@ -805,8 +805,10 @@ function getPageOffset(url) {
     if ($('body.type-research').length >= 1) {
       $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         // console.log('tab switch');
+        // console.log(e.target);
         var _target = $(e.target).attr("href") // activated tab
-        var $articles = $(_target).find('h5');
+        $(_target).find('h5');
+        $articles = $(_target).find('h5');
         $articles[0].focus();
       });
     }

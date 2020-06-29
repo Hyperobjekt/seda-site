@@ -27,7 +27,7 @@ We have three thresholds:
 
 As an example, let’s convert Threshold 1 onto the NAEP scale. First, we multiply by 40. Then, we add 200:
 
-(-0.75 x 40.0) + 200 = 170
+<pre><code>(-0.75 x 40.0) + 200 = 170</code></pre>
 
 This yields a new “linked” Threshold 1 of 170. The table below shows all three linked thresholds.
 
@@ -64,4 +64,3 @@ This yields a new “linked” Threshold 1 of 170. The table below shows all thr
 We repeat this step for every state in every subject, grade, and year. The end result is a set of thresholds for every state, subject, grade, and year that are all on the same scale, the NAEP scale. 
 <br><br>
 For more information, see Step 3 of the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">Technical Documentation</a> and Reardon, Kalogrides & Ho (Forthcoming)</span>.
-

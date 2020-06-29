@@ -1,0 +1,23 @@
+categories: ["other-papers"] # uses-seda, technical, related
+authors: ["David M. Houston","Michael B. Henderson","Paul E. Peterson","Martin R. West"]
+title: "Status, Growth, and Perceptions of School Quality"
+image: "/images/papers/status-growth-perceptions.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "2020-06"
+    order: 0
+    link: "/papers/ai20-238_1.pdf" 
+abstract: |
+  States and districts are increasingly incorporating measures of achievement growth into their
+  school accountability systems, but there is little research on how these changes affect the public’s
+  perceptions of school quality. We conduct a nationally representative online survey experiment to
+  identify the effects of providing participants with information about their local school districts’
+  average achievement status and/or average achievement growth. In the control group, participants
+  who live in higher status districts tend to grade their local schools more favorably. The provision of
+  status information does not fundamentally alter this relationship. The provision of growth
+  information, however, reshapes Americans’ views about educational performance. Once informed,
+  participants’ evaluations of their local public schools better reflect the variation in district growth.
+
+
+
+
+

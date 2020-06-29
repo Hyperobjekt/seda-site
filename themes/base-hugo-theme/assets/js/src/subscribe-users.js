@@ -7,7 +7,7 @@
    * to mailchimp lists.
    */
   if ($('form#getTheData').length >= 1) {
-    console.log('Testing subscribe-users.js at ' + subscribePath);
+    console.log('Loading subscribe-users.js from ' + subscribePath);
     const $submit = $('#mc-embedded-subscribe');
     $('#mc-embedded-subscribe').on('click', function(e) {
       // console.log('Submit clicked.');

@@ -18,7 +18,7 @@
   analytics.init = function () {
     // console.log('analytics.init');
 
-    // Event: CTAClick home page
+    // Event: CTAClick
     $('.gta-event-CTAClick').on('click touchstart', function (e) {
       // console.log('.gta-event-CTAClick');
       e.preventDefault();
@@ -29,26 +29,6 @@
         $(e.currentTarget).find('span').html();
       const _obj = {
         'event' : 'CTAClick',
-        'CTADestination': encodeURI($target),
-        'CTAPrompt': $targetPrompt,
-        'eventCallback' : () => {
-            analytics.navigate($target, $targetBlank);
-        }
-      }
-      analytics.push(_obj);
-    });
-
-    // Event: CTAClick discoveries page
-    $('.gta-event-DiscoveriesCTAClick').on('click touchstart', function (e) {
-      // console.log('.gta-event-DiscoveriesCTAClick');
-      e.preventDefault();
-      const $target = $(e.currentTarget).attr('href');
-      const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
-      const $targetPrompt = $(e.currentTarget).attr('aria-label') ?
-        $(e.currentTarget).attr('aria-label') :
-        $(e.currentTarget).text();
-      const _obj = {
-        'event' : 'DiscoveriesCTAClick',
         'CTADestination': encodeURI($target),
         'CTAPrompt': $targetPrompt,
         'eventCallback' : () => {
@@ -98,11 +78,7 @@
     $('.gta-event-showAbstractandVersion').on('click touchstart', function (e) {
       // console.log('.gta-event-showAbstractandVersion');
       const $target = $(e.currentTarget);
-      let $paperCategory = null;
-      const $abstractVisible = $target.closest('.research-paper').hasClass('abstract-visible');
-      if (!$abstractVisible) {
-        return;
-      }
+      const $paperCategory = null;
       if ($('.row.subnav.small-tab-nav').is(':visible')) {
         // console.log('Mobile view');
         $paperCategory = $('.row.subnav.small-tab-nav').find('ul.anchor-links li a.active').text();

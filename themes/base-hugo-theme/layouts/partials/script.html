@@ -1,23 +1,35 @@
-<script src="{{ "js/lib/jquery.min.js" | absURL }}"></script>
-{{ if eq .Site.Params.includeBootstrapJs true }}
-    <!-- <script src="{{ "js/jquery-3.3.1.slim.min.js" | absURL }}"></script> -->
-    <script src="{{ "js/lib/bootstrap.bundle.min.js" | absURL }}"></script>
-{{ end }}
-<script src="{{ "js/lib/anime.min.js" | absURL }}"></script>
-<script src="{{ "js/babel/seda-custom.js" | absURL }}"></script>
+{{ $jquery := resources.Get "js/lib/jquery.min.js" }}
+{{ $anime := resources.Get "js/lib/anime.min.js" }}
+{{ $bootstrap := resources.Get "js/lib/bootstrap.bundle.min.js" }}
+{{ $js := slice $jquery $bootstrap $anime | resources.Concat "js/bundle.min.js" | fingerprint }}
+<script src="{{ $js.Permalink }}"></script>
 
 {{ if .Site.IsServer }}
+  {{ $opts := dict "noComments" false "minified" false }}
+  {{ $custom := resources.Get "js/src/seda-custom.js" | babel $opts }}
+  {{ $analytics := resources.Get "js/src/analytics.js" | babel $opts }}
+  {{ $scrollDepth := resources.Get "js/lib/scrollDepth.js" }}
+  {{ $localslice := slice $scrollDepth $analytics $custom }}
+  <!-- If site is being served (ostensibly dev) don't compress and minify -->
   {{ if eq .Site.Params.loadDevAnalytics true }}
     <!-- Load GA script to track scroll depth -->
-    <script  src="{{ "js/lib/scrollDepth.js"  | absURL }}"></script>
+    {{ $localjs := $localslice | resources.Concat "js/local.js" | fingerprint }}
     {{ template "_internal/google_analytics_async.html" }}
-    <script  src="{{ "js/babel/analytics.js"  | absURL }}"></script>
+    <script src="{{ $localjs.Permalink }}"></script>
+  {{ else }}
+    {{ $localslice := slice $custom }}
+    {{ $localjs := $localslice | resources.Concat "js/local.js" | fingerprint }}
+    <script src="{{ $localjs.Permalink }}"></script>
   {{ end }}
 {{ else }}
-  <!-- Load GA script to track scroll depth -->
-  <script  src="{{ "js/lib/scrollDepth.js"  | absURL }}"></script>
+  {{ $opts := dict "noComments" true "minified" true }}
+  {{ $custom := resources.Get "js/src/seda-custom.js" | babel $opts }}
+  {{ $analytics := resources.Get "js/src/analytics.js" | babel $opts }}
+  {{ $scrollDepth := resources.Get "js/lib/scrollDepth.js" }}
   {{ template "_internal/google_analytics_async.html" }}
-  <script  src="{{ "js/babel/analytics.js"  | absURL }}"></script>
+  {{ $localslice := slice $scrollDepth $analytics $custom }}
+  {{ $localjs := $localslice | resources.Concat "js/local.min.js" | fingerprint }}
+  <script src="{{ $localjs.Permalink }}"></script>
 {{ end }}
 
 {{ if (and ( eq .Page.Type "discoveries" ) ( eq .Page.Kind "page" )) }}
@@ -26,10 +38,15 @@
 {{ if eq .Page.Name "Get the Data" }}
   {{ partial "subscribe-scripts.html" . }}
 {{ end }}
+{{ if (and ( eq .Page.Type "media-map" ) ( eq .Page.Kind "section" )) }}
+  {{ partial "media-map.html" . }}
+{{ end }}
+{{/*
 <script>
 // Used for testing GA reporting of JS errors.
-// const timeout = setTimeout(function() {
-//   console.log(_t_);
-// }, 4000);
+const timeout = setTimeout(function() {
+  console.log(_t_);
+}, 4000);
 </script>
+*/}}
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

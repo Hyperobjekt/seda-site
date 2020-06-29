@@ -34,10 +34,4 @@ npm run lambda-build
 
 ## Transpile JavaScipt:
 
-Babel transpiling is setup to run as an npm process. External libraries go in `.themes/base-hugo-theme/static/js/lib`. Our JavaScript files go in `.themes/base-hugo-theme/static/js/src`. Babel transpiles them into `.themes/base-hugo-theme/static/js/babel`.
-
-To start the watcher:
-
-```
-npm run babel
-```
+This site now uses the default Hugo Babel transpiling pipe. Scripts go in `/themes/base-hugo-theme/assets/js`. See `/themes/base-hugo-theme/layouts/partials/scripts.html` for the script minifiaction and concatenation technique. That file also demonstrates how unique pages utilize additional partials to load additional scripts.

@@ -53,7 +53,8 @@ function createMediaTable(oneLastUpdated, oneRowCount, lastUpdated, rows, totalL
  * Loading Google Sheets national media table, set up map embed
  */
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
+  $ = jQuery;
   var SHEET_BASE =  'https://spreadsheets.google.com/feeds/list/1vDvjR4Tgj9NnbLZwmSyJKDrEAE4gAHf0NUCjp2i7D90/';
   var SHEET_END = '/public/values?alt=json';
   var SHEET_1_URL = SHEET_BASE + '1' + SHEET_END;

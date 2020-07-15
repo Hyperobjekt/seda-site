@@ -1,0 +1,15 @@
+categories: ["other-papers"] # uses-seda, technical, related
+authors: ["Emily Morton"]
+title: "Effects of Four-Day School Weeks on School Finance and Achievement: Evidence from Oklahoma"
+image: "/images/papers/4-day-weeks.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "2020-07"
+    order: 0
+    link: "/papers/Preprint071420.docx" 
+abstract: |
+  Motivated by potential financial savings, four-day school weeks have proliferated across the United States in recent years, reaching public schools in 25 states as of 2018. The consequences of the four-day school week for students, schools, and communities are largely unknown. This paper uses district-level panel data from Oklahoma and a difference-in-differences research design to examine the causal effect of the four-day schedule on school district finance and academic achievement. Results indicate that four-day weeks decrease districts’ federal revenues and their non-instructional and support services expenditures. Decreases are concentrated specifically in operations and maintenance, food services, and transportation expenditures and amount to approximately 2.03% of the average four-day district’s budget. I find no detectable effect of the four-day week on academic achievement.
+
+
+
+
+

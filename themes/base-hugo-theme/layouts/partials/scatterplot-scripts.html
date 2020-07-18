@@ -22,7 +22,6 @@
   {{ $opts := dict "noComments" true "minified" true }}
   {{ $reactlib := resources.Get "js/lib/react-seda-scatterplot.min.js" }}
   {{ $scatterplot := resources.Get "js/src/scatterplot/Scatterplot.js" | babel $opts }}
-  {{ $plot := resources.Get "js/src/scatterplot/plot.js" | babel $opts }}
   {{ $scatterplotjs := slice $reactlib $scatterplot | resources.Concat "js/scatterplot.min.js" | fingerprint }}
   <script src="{{ $scatterplotjs.Permalink }}"></script>
 {{ end }}

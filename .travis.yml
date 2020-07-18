@@ -53,4 +53,4 @@ deploy:
 
 env:
   global:
-    - HUGO_RELEASE=0.70.0
+    - HUGO_RELEASE=0.73.0

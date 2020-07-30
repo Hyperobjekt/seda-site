@@ -1,0 +1,16 @@
+categories: ["other-papers"] # uses-seda, technical, related
+authors: ["Rajeev Darolia, John Tyler"]
+title: "The opioid crisis and community-level spillovers onto children’s education"
+image: "/images/papers/test-scores-and-drug-related-mortality.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "2020-04"
+    order: 0
+    link: "https://www.brookings.edu/research/the-opioid-crisis-and-community-level-spillovers-onto-childrens-education/" 
+abstract: |
+  The opioid epidemic is now widely recognized as one of the most important public health issues of our time. Using SEDA education data and county level drug-related mortality rates we consider the links between the opioid epidemic and educational outcomes, a relationship that has not yet been explored at scale. The collateral consequences associated with the opioid epidemic—addicted family members, parents lost to opioid overdose, diverted community resources, the fraying of neighborhood social connections, etc.—have the potential to negatively impact the educational outcomes of children. This may especially be the case for children who grow up in communities hardest hit by the epidemic such as the Appalachian belt, impoverished rural communities, and the industrial Midwest. In this report we find strong negative conditional correlations between drug-related mortality rates and the test scores of 3rd and 8th graders, and some evidence that these correlations are stronger in more rural counties.
+
+
+
+
+
+

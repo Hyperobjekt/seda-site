@@ -32,7 +32,7 @@
     "minimist": "^1.2.5",
     "netlify-lambda": "^1.6.3",
     "nodemon": "^1.19.2",
-    "serialize-javascript": "^3.0.0",
+    "serialize-javascript": "^3.1.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {

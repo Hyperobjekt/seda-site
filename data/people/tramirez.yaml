@@ -1,0 +1,10 @@
+name: "Thalia Ramirez"
+role: "staff" # director, staff, or partner
+title: "Operations Manager" # maybe different from role; is displayed
+image: "/uploads/tramirez-full.jpg" # will be cropped to center square & rounded
+thumb: "/uploads/tramirez-sm.jpg"
+thumbbw: "/uploads/tramirez-sm-bw.jpg"
+current: true # true or false (for former)
+weight: 157
+blurb: >
+  Thalia Ramirez is the Educational Opportunity Project (EOP)'s Operations Manager. She oversees day-to-day operations, provides administrative support, and helps manage the EOP’s projects. In her previous role, Thalia worked within the areas of communications, fundraising, and event planning as a Nonprofit Management Fellow at the Phillips Brooks House Association (PBHA) at Harvard University. She is passionate about promoting educational equity and racial justice, and has a background in directing afterschool and summer programming for K-12th grade students in Boston, MA. Thalia received her BA in Neuroscience, with a minor in Teaching and Learning Studies, from Wellesley College.

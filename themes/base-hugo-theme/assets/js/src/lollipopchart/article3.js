@@ -1,3 +1,4 @@
+document.getElementById('scatterplot').style="height: 400px"
 var myChart = echarts.init(document.getElementById('scatterplot'));
 // specify chart configuration item and data
 var option = {

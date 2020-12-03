@@ -50,7 +50,14 @@
 <script src="{{ $articlejsmin.Permalink }}"></script>
 {{ end }}
 
-{{ $opts := dict "noComments" false "minified" false }}
-{{ $plot := resources.Get "js/src/scatterplot/plot.js" | babel $opts }}
-{{ $plotjs := slice $plot | resources.Concat "js/plot.min.js" | fingerprint }}
-<script src="{{ $plotjs.Permalink }}"></script>
+{{ if (eq .Params.scatterplotID "article3" )}}
+  {{ $opts := dict "noComments" false "minified" false }}
+  {{ $plot := resources.Get "js/src/lollipopchart/plot.js" | babel $opts }}
+  {{ $plotjs := slice $plot | resources.Concat "js/plot.min.js" | fingerprint }}
+  <script src="{{ $plotjs.Permalink }}"></script>
+{{else}}
+  {{ $opts := dict "noComments" false "minified" false }}
+  {{ $plot := resources.Get "js/src/scatterplot/plot.js" | babel $opts }}
+  {{ $plotjs := slice $plot | resources.Concat "js/plot.min.js" | fingerprint }}
+  <script src="{{ $plotjs.Permalink }}"></script>
+{{end}}

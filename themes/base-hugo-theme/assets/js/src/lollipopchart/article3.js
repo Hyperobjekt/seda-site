@@ -1,22 +1,20 @@
 var myChart = echarts.init(document.getElementById('scatterplot'));
-console.log(document.getElementById('scatterplot'))
 // specify chart configuration item and data
 var option = {
-    title: {
-        text: 'ECharts entry example'
-    },
-    tooltip: {},
-    legend: {
-        data:['Sales']
-    },
     xAxis: {
-        data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     },
-    yAxis: {},
+    yAxis: {
+        type: 'value'
+    },
     series: [{
-        name: 'Sales',
+        data: [120, 200, 150, 80, 70, 110, 130],
         type: 'bar',
-        data: [5, 20, 36, 10, 10, 20]
+        showBackground: true,
+        backgroundStyle: {
+            color: 'rgba(220, 220, 220, 0.8)'
+        }
     }]
 };
 

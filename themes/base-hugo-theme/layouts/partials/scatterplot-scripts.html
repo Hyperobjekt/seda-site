@@ -8,7 +8,6 @@
 <script src='https://unpkg.com/papaparse@4.6.3/papaparse.min.js'></script>
 <script src='https://unpkg.com/react-seda-search@1.0.10/umd/react-seda-search.min.js'></script>
 
-
 {{/* Load differently processed scripts depending upon local or production */}}
 {{ if .Site.IsServer }}
   {{/* Site is served, local dev, don't minify */}}
@@ -39,6 +38,15 @@
 {{ $a := "js/src/scatterplot/article2.js" }}
 {{ $articlejs := resources.Get $a | babel $opts }}
 {{ $articlejsmin := slice $articlejs | resources.Concat "js/article2.min.js" | fingerprint }}
+<script src="{{ $articlejsmin.Permalink }}"></script>
+{{ end }}
+
+{{ if (eq .Params.scatterplotID "article3" )}}
+{{ $opts := dict "noComments" false "minified" false }}
+{{ $a := "js/src/lollipopchart/article3.js" }}
+{{ $articlejs := resources.Get $a | babel $opts }}
+{{ $articlejsmin := slice $articlejs | resources.Concat "js/article3.min.js" | fingerprint }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0/echarts-en.common.min.js"></script>
 <script src="{{ $articlejsmin.Permalink }}"></script>
 {{ end }}
 

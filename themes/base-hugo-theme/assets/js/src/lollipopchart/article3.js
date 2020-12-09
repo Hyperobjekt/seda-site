@@ -9,7 +9,7 @@ const mockData = [{"id":1,"district":"Hawaii Dept of Ed","ses":0.46,"tenYrGapChg
 const districts = mockData.map(x => x.district);
 const ses = mockData.map(x => x.ses);
 const tenYrGap = mockData.map(x => x.tenYrGapChg);
-jQ('.column-scatterplot .title').html('Test');
+jQ('.column-scatterplot .title').html('Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2019)');
 var option = {
     tooltip: {
         trigger: 'axis',
@@ -18,7 +18,7 @@ var option = {
         }
     },
     grid: {
-        top: 50,
+        top: 0,
         bottom: 50,
         left: 150
     },
@@ -29,6 +29,9 @@ var option = {
         type: 'value',
         position: 'bottom',
         name: '10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2019)',
+        nameTextStyle: {
+            fontFamily: 'MaisonNeue-Medium',
+        },
         nameLocation: 'middle',
         nameGap: 20,
     },
@@ -39,6 +42,7 @@ var option = {
         splitLine: {show: false},
         splitNumber: 40,
         axisLabel: {interval: 0},
+        name: '◀    HIGHER Socioeconomic Inequality LOWER    ▶',
         nameLocation: 'middle',
         nameRotate: 90,
         nameGap: -10,
@@ -46,7 +50,6 @@ var option = {
             fontFamily: 'MaisonNeue-Medium',
         },
         zlevel: 101,
-        name: '◀    HIGHER Socioeconomic Inequality LOWER    ▶',
         data: districts
     },
     series: [

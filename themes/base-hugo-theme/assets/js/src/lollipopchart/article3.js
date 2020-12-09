@@ -16,15 +16,13 @@ var option = {
         axisPointer: {
             type: 'shadow'
         },
-        formatter: function (params, ticket, callback) {
-            return `${mockData[params[0].dataIndex].district}<br />
+        formatter: (params) => `${mockData[params[0].dataIndex].district}<br />
                     SES Inequality: ${mockData[params[0].dataIndex].ses}<br />
                     Change in Gap (2009-2019): ${mockData[params[0].dataIndex].tenYrGapChg}<br />
-                    ${mockData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${mockData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${mockData[params[0].dataIndex].yrGapDbl}` }`
-        }
+                    ${mockData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${mockData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${mockData[params[0].dataIndex].yrGapDbl}`}`
     },
     grid: {
-        top: 0,
+        top: 2,
         bottom: 50,
         left: 110,
     },
@@ -37,7 +35,7 @@ var option = {
         name: '10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2019)',
         nameTextStyle: {
             fontFamily: 'MaisonNeue-Medium',
-            fontSize: 10,
+            fontSize: 11,
         },
         nameLocation: 'middle',
         nameGap: 30,
@@ -73,8 +71,10 @@ var option = {
                 opacity: 1,
                 color: 'black'
             },
+            symbolSize: 6,
             data: tenYrGap,
-            zlevel: 102
+            zlevel: 102,
+            silent: true
         },
         {
             type: 'scatter',
@@ -82,8 +82,10 @@ var option = {
                 opacity: 1,
                 color: 'gray'
             },
+            symbolSize: 6,
             data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            zlevel: 101
+            zlevel: 101,
+            silent: true
         }
     ]
 };

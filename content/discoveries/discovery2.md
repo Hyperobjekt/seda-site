@@ -1,16 +1,16 @@
 ---
-title: "Test"
-displaytitle: "Test"
-subtitle: "Learning Rates Reveal How Schools Contribute to Educational Opportunity"
+title: "Discovery 2 Title"
+displaytitle: "Discovery 2 Display Title"
+subtitle: "Discovery 2 Subtitle"
 author: "Sean F. Reardon"
-date: "2019-09-24"
+date: "2020-01-01"
 hero: "/images/heroes/learning-rates-hero.svg"
 image: "/images/articles/affluent-schools-sm.png"
 scatterplotID: "article3" # used to name the JS file with the necessary states and prop attributes
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
 aliases:
-  - "/posts/test/"
+  - "/posts/discovery2/"
 ---
 
 <span class="drop-cap">I</span>n nearly all U.S. communities, white families are more affluent than Black families. In some places, these socioeconomic inequalities are growing (e.g., in Houston), while in others they are shrinking (e.g., in Gwinnett). Inequalities in academic scores move with socioeconomic inequality, so when socioeconomic inequality grows, academic achievement gaps also tend to grow.

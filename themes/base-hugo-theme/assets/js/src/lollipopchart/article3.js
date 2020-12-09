@@ -30,7 +30,7 @@ var option = {
         position: 'bottom',
         name: '10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2019)',
         nameLocation: 'middle',
-        nameGap: 10,
+        nameGap: 20,
     },
     yAxis: {
         type: 'category',

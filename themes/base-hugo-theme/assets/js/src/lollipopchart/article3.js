@@ -15,12 +15,18 @@ var option = {
         trigger: 'axis',
         axisPointer: {
             type: 'shadow'
+        },
+        formatter: function (params, ticket, callback) {
+            return `${mockData[params[0].dataIndex].district}<br />
+                    SES Inequality: ${mockData[params[0].dataIndex].ses}<br />
+                    Change in Gap (2009-2019): ${mockData[params[0].dataIndex].tenYrGapChg}<br />
+                    ${mockData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${mockData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${mockData[params[0].dataIndex].yrGapDbl}` }`
         }
     },
     grid: {
         top: 0,
         bottom: 50,
-        left: 150
+        left: 110,
     },
     xAxis: {
         axisLine: {show: false},
@@ -31,9 +37,10 @@ var option = {
         name: '10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2019)',
         nameTextStyle: {
             fontFamily: 'MaisonNeue-Medium',
+            fontSize: 10,
         },
         nameLocation: 'middle',
-        nameGap: 20,
+        nameGap: 30,
     },
     yAxis: {
         type: 'category',
@@ -41,8 +48,8 @@ var option = {
         axisTick: {show: false, alignWithLabel: true},
         splitLine: {show: false},
         splitNumber: 40,
-        axisLabel: {interval: 0},
-        name: '◀    HIGHER Socioeconomic Inequality LOWER    ▶',
+        axisLabel: {interval: 0, fontSize: 9},
+        name: '◀ HIGHER               Socioeconomic Inequality               LOWER ▶',
         nameLocation: 'middle',
         nameRotate: 90,
         nameGap: -10,

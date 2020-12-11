@@ -120,7 +120,6 @@ var option = {
         axisTick: {show: false, alignWithLabel: true},
         splitLine: {show: false},
         splitNumber: 40,
-        axisLabel: {interval: 0, fontSize: 9},
         inverse: true,
         offset: 30,
         name: '◀ HIGHER               Socioeconomic Inequality               LOWER ▶',
@@ -128,6 +127,13 @@ var option = {
         nameRotate: 90,
         nameGap: -10,
         nameTextStyle: {
+            fontFamily: 'MaisonNeue-Medium',
+        },
+        axisLabel: {
+            interval: 0, 
+            fontSize: 9,
+            inside: false,
+            textVerticalAlign: 'middle',
             fontFamily: 'MaisonNeue-Medium',
         },
         zlevel: 101,
@@ -158,7 +164,7 @@ var option = {
                 color: 'black'
             },
             data: tenYrGap,
-            symbolSize: 7,
+            symbolSize: 6,
             zlevel: 102,
             silent: true
         },
@@ -168,7 +174,7 @@ var option = {
                 opacity: 1,
                 color: 'gray'
             },
-            symbolSize: 7,
+            symbolSize: 6,
             data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
             zlevel: 101,
             silent: true

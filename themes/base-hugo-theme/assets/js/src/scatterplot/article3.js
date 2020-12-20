@@ -16,6 +16,7 @@ Title['setTitle'] = function() {
   jQ('.column-scatterplot .title').html(Title.text);
   jQ('.column-scatterplot .subtitle').html(Title.subtext);
 }
+jQ('.search-component').style("display: none");
 
 const axisBlue = '#547892';
 let activeHighlight = {};
@@ -62,6 +63,18 @@ const selectedItemStyle = {
   color: 'rgba(177, 222, 238, 0.8)',
   opacity: 1,
 };
+
+const func = (x) => {
+    return .755673484389962*x+.0021285827076154;
+}
+
+const generateData = () => {
+    let data = [];
+    for (let i = -200; i <= 200; i += 0.1) {
+        data.push([i, func(i)]);
+    }
+    return data;
+}
 const initialMarkline = {
   type:'scatter',
   markLine: {
@@ -415,7 +428,7 @@ var state1 = function(scatterplot) {
       highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
-  Title['text'] = 'White and Black Student Scores';
+  Title['text'] = 'Districts with Increasing Segregation Have Increasing White-Black Gaps';
   //Title['subtext'] = 'U.S. School Districts 2009-2016';
   Title['subtext'] = '';
   Title.setTitle();
@@ -434,12 +447,16 @@ var state1 = function(scatterplot) {
       show: true,
       description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
+    grid :{
+        left: 15
+    },
     yAxis: {
       min:-.015,
       max:.015,
       position: 'left',
-      name: '◀  DECREASING   Gap   INCREASING  ▶',
-      nameTextStyle: {},
+      name: '◀  DECREASING       Gap       INCREASING  ▶',
+      nameGap: 45,
+    splitLine:{show:true},
     },
     xAxis: {
       min: -.01,
@@ -459,7 +476,13 @@ var state1 = function(scatterplot) {
         itemStyle: highlightedItemStyle,
         label: highlightedLabel(highlight),
         zlevel: 500,
-      }
+      },
+      {
+        type: 'line',
+        showSymbol: false,
+        clip: true,
+        data: generateData()
+        }
     ]
   }
   // Set title and subtitle

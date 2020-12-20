@@ -42,6 +42,14 @@
 <script src="{{ $articlejsmin.Permalink }}"></script>
 {{ end }}
 
+{{ if (eq .Params.scatterplotID "article3" )}}
+{{ $opts := dict "noComments" false "minified" false }}
+{{ $a := "js/src/scatterplot/article3.js" }}
+{{ $articlejs := resources.Get $a | babel $opts }}
+{{ $articlejsmin := slice $articlejs | resources.Concat "js/article3.min.js" | fingerprint }}
+<script src="{{ $articlejsmin.Permalink }}"></script>
+{{ end }}
+
 {{ $opts := dict "noComments" false "minified" false }}
 {{ $plot := resources.Get "js/src/scatterplot/plot.js" | babel $opts }}
 {{ $plotjs := slice $plot | resources.Concat "js/plot.min.js" | fingerprint }}

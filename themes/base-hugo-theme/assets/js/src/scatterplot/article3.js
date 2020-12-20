@@ -5,6 +5,7 @@
  */
 
 const jQ = jQuery;
+jQ('.search-component').css('display', 'none');
 
 // Placeholders for segregation series operations
 let segData = [];
@@ -16,7 +17,6 @@ Title['setTitle'] = function() {
   jQ('.column-scatterplot .title').html(Title.text);
   jQ('.column-scatterplot .subtitle').html(Title.subtext);
 }
-jQ('.search-component').style("display: none");
 
 const axisBlue = '#547892';
 let activeHighlight = {};

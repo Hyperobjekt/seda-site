@@ -448,20 +448,22 @@ var state1 = function(scatterplot) {
       description: Title.text + (Title['subtext'].length >= 1 ? ', ' + Title['subtext'] : '' ),
     },
     grid :{
-        left: 15
+        top: 15,
+        left: 20
     },
     yAxis: {
-      min:-.015,
-      max:.015,
-      position: 'left',
-      name: '◀  DECREASING       Gap       INCREASING  ▶',
-      nameGap: 45,
-    splitLine:{show:true},
+        min:-.015,
+        max:.015,
+        position: 'left',
+        name: '◀  Decreasing Gap       Increasing Gap  ▶',
+        splitLine:{show:true},
+        axisLabel: {rotate: 90}
     },
     xAxis: {
       min: -.01,
       max: .01,
-      name: '◀  DECREASING                    Segregation                    INCREASING  ▶',
+      name: '◀  Decreasing Segregation          Increasing Segregation  ▶',
+      axisTick: {interval: 'auto'}
     },
     tooltip: {
       trigger: 'item',

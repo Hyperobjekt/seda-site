@@ -162,10 +162,11 @@ var state1 = function(scatterplot) {
   Title.setTitle();
 
   const baseOverrides = {
+    notMerge: false,
     prefix:'',
     metaVars:{},
     title: {
-      text: Title.text, // 'White and Black Students\' Average Performance',
+      text: 'Title.text', // 'White and Black Students\' Average Performance',
       subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
       textAlign: 'center',
       left: '50%',
@@ -194,13 +195,52 @@ var state1 = function(scatterplot) {
         position: 'left',
         name: '◀  Decreasing Gap       Increasing Gap  ▶',
         splitLine:{show:true},
-        axisLabel: {rotate: 90}
+        axisTick: {show: true},
+        axisLabel: {
+          rotate: 90,
+          formatter: function(value, index) {
+            if (value < 0) {
+                return value.toString()[0] + value.toString().slice(2)
+            } else if (value > 0) {
+                return value.toString().slice(1)
+            }else{
+                return value
+            }
+          },
+        },
+        axisLine:{
+          show: true,
+          onZero: false,
+          lineStyle:{
+            color: '#757575',
+          }
+        },
     },
     xAxis: {
-      min: -.01,
-      max: .01,
+      min: -.015,
+      max: .015,
       name: '◀  Decreasing Segregation          Increasing Segregation  ▶',
-      axisTick: {interval: 'auto'}
+      axisLabel:{
+        interval: 0,
+        formatter: function(value, index) {
+          if (value < 0) {
+              return value.toString()[0] + value.toString().slice(2)
+          } else if (value > 0) {
+              return value.toString().slice(1)
+          }else{
+              return value
+          }
+        },
+      },
+      axisTick: {show: true, interval: 0},
+      axisLine:{
+        show: true,
+        onZero: false,
+        lineStyle:{
+          color: '#757575',
+        }
+      },
+      position: 'bottom'
     },
     tooltip: {
       trigger: 'item',
@@ -209,6 +249,13 @@ var state1 = function(scatterplot) {
       }
     },
     series: [
+      { 
+        id: 'base',
+        itemStyle: {
+          borderWidth: 1,
+          borderColor: '#2173C3',
+        },
+       },
       {
         type: 'line',
         showSymbol: false,
@@ -218,19 +265,7 @@ var state1 = function(scatterplot) {
     ]
   }
 
-  const themeOverrides = {
-    scatter: {
-      symbol: 'circle',
-      color: null,
-      itemStyle: {
-        borderWidth: 1,
-        borderColor: '#2173C3',
-        borderType: 'solid',
-        opacity: 1,
-        borderOpacity: 1,
-      }
-    },
-  }
+  
 
   // Set title and subtitle
   jQ('.column-scatterplot .title').text(Title.text);
@@ -241,7 +276,6 @@ var state1 = function(scatterplot) {
     yVar: 'wb_ses',
     highlighted: Object.keys(highlight),
     options: deepmerge.all([ base.options, baseOverrides ]), //  baseOverrides
-    theme: deepmerge.all([ base.theme, themeOverrides ]) //  themeOverrides
   }
 }
 

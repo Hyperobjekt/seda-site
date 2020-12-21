@@ -209,7 +209,7 @@ function Scatterplot(container, props) {
           //color: 'rgba(171, 217, 233, 0.8)',
           color: 'rgba(202,235,190, 0.77)',
           itemStyle: {
-            borderWidth: 100,
+            borderWidth: 0.25,
             borderColor: 'rgba(106, 145, 185, 0.8)',
             borderType: 'solid',
             opacity: 1,

@@ -75,279 +75,7 @@ const generateData = () => {
     }
     return data;
 }
-const initialMarkline = {
-  type:'scatter',
-  markLine: {
-    animation: false,
-    silent: true,
-    label: {
-      show: true,
-      position: 'middle',
-      fontFamily: 'SharpGrotesk-Medium20',
-      fontWeight: '500',
-      fontSize: 11.52,
-      padding: 4,
-      color: 'rgba(5, 41, 101, 100%)',
-      formatter: function(value) {
-        return value.name
-      }
-    },
-    data: [
-      [
-        {
-          name: '', // Y axis
-          coord: [0, -3],
-          symbol: 'none',
-          lineStyle: {
-            color: '#547892',
-            type: 'solid',
-            width: 0.5,
-          }
-        },
-        {
-          coord: [ 0,  3],
-          symbol: 'none',
-        },
-      ],
-      [
-        {
-          name: '', // x axis
-          coord: [-3, 0],
-          symbol: 'none',
-          lineStyle: {
-            color: '#547892',
-            type: 'solid',
-            width: 0.5,
-          }
-        },
-        {
-          coord: [3, 0],
-          symbol: 'none'
-        },
-      ],
-    [
-      {
-        name: 'white scores = black scores',
-        coord: [-2.5, -2.5],
-        symbol: 'none',
-        lineStyle: {
-          color: 'rgba(5, 41, 101, 100%)',
-          type: 'solid',
-          width: 1,
-        }
-      },
-      { coord: [ 3,  3], symbol: 'none' },
-    ],
-  ]
-  }
-};
-const baseGrid = {
-  top: 10,
-  bottom: 26,
-  left: 10,
-  right: 26,
-  zlevel: 100,
-  height: 'auto',// 280,
-  width: 'auto', // 'auto',
-  containLabel: true
-};
-const baseYAxis = {
-  position: 'right',
-  splitLine: {
-    show: false,
-  },
-  nameGap: 26,
-  nameTextStyle: {
-    fontFamily: 'SharpGrotesk-Medium20',
-    color: axisBlue,
-    fontWeight: 'normal',
-    fontSize: 11
-  },
-  zlevel: 101,
-};
-const baseXAxis = {
-  nameGap: 26,
-  nameTextStyle: {
-    fontFamily: 'SharpGrotesk-Medium20',
-    color: axisBlue,
-    fontSize: 11,
-    fontWeight: 'normal',
-    verticalAlign: 'bottom'
-  },
-  zlevel: 102,
-};
-const noRacialDisparityMarkline = {
-  animation: false,
-  silent: true,
-  label: {
-    show: true,
-    position: 'middle',
-    fontFamily: 'SharpGrotesk-Medium20',
-    fontWeight: '500',
-    fontSize: 11.52,
-    padding: 4,
-    formatter: function(value) {
-      return value.name
-    }
-  },
-  data: [
-    [
-      {
-        name: 'no racial inequality',
-        coord:  [0, -1], // [0, -6],
-        symbol: 'none',
-        lineStyle: {
-          color: '#052965',
-          type: 'solid',
-          width: 1,
-        },
-        label: {
-          padding: 4,
-          position: 'middle',
-          color: '#052965',
-        }
-      },
-      {
-        coord:  [0, 6], // [ 0, 0],
-        symbol: 'none'
-      },
-    ]
-  ]
-};
-const noGapMarkline = {
-  animation: false,
-  silent: true,
-  label: {
-    show: true,
-    position: 'middle',
-    fontFamily: 'SharpGrotesk-Medium20',
-    fontWeight: '500',
-    fontSize: 11.52,
-    padding: 2,
-    formatter: function(value) {
-      return value.name
-    }
-  },
-  data: [
-    [
-      {
-        name: 'no achievement gap',
-        coord:  [-1, 0],
-        symbol: 'none',
-        lineStyle: {
-          color: '#052965',
-          type: 'solid',
-          width: 1,
-        },
-        label: {
-          padding: [0, 0, 2, 300],
-          position: 'middle',
-          color: '#052965',
-        }
-      },
-      {
-        coord:  [6, 0], // [ 0, 0],
-        symbol: 'none'
-      },
-    ]
-  ]
-};
-const segNoGapMarkline = {
-  animation: false,
-  silent: true,
-  label: {
-    show: true,
-    position: 'middle',
-    fontFamily: 'SharpGrotesk-Medium20',
-    fontWeight: '500',
-    fontSize: 11.52,
-    padding: 2,
-    formatter: function(value) {
-      return value.name
-    }
-  },
-  data: [
-    [
-      {
-        name: 'no achievement gap',
-        coord:  [-0.3, 0],
-        symbol: 'none',
-        lineStyle: {
-          color: '#052965',
-          type: 'solid',
-          width: 1,
-        },
-        label: {
-          padding: [0, 0, 2, 300],
-          position: 'middle',
-          color: '#052965',
-        }
-      },
-      {
-        coord:  [0.7, 0], // [ 0, 0],
-        symbol: 'none'
-      },
-    ]
-  ]
-};
-const zeroSegGapMarkline = {
-  type:'scatter',
-  markLine: {
-    animation: false,
-    silent: true,
-    data: [
-      [
-        {
-          name: 'no segregation',
-          coord: [0, -1],
-          symbol: 'none',
-          lineStyle: {
-            color: '#052965',
-            type: 'solid',
-            width: 1,
-          },
-          label: {
-            padding: [0, 0, 2, 80],
-            fontFamily: 'SharpGrotesk-Medium20',
-            fontWeight: '500',
-            position: 'middle',
-            color: '#052965',
-          }
-        },
-        {
-          coord: [0, 6],
-          symbol: 'none'
-        },
-      ]
-    ]
-  }
-};
 
-const segMarkline = {
-  type:'scatter',
-  markLine: {
-    animation: false,
-    silent: true,
-    data: [
-      [
-        {
-          name: '',
-          coord: [6, 2.5],
-          symbol: 'none',
-          lineStyle: {
-            color: '#052965',
-            type: 'solid',
-            width: 1,
-          },
-        },
-        {
-          coord: [-1, 2.25],
-          symbol: 'none'
-        },
-      ]
-    ]
-  }
-};
 
 /**
  * Slice array according from beginning according to provided size.
@@ -451,6 +179,15 @@ var state1 = function(scatterplot) {
         top: 15,
         left: 20
     },
+    visualMap: [{
+      show: false,
+      min: -0.015,
+      max: 0.015,
+      inRange: {
+        color: ['#1570CD', '#2173C3'],
+        opacity:[.17, 1]
+      }
+    }],
     yAxis: {
         min:-.015,
         max:.015,
@@ -472,21 +209,29 @@ var state1 = function(scatterplot) {
       }
     },
     series: [
-      initialMarkline,
-      {
-        id: 'highlighted',
-        itemStyle: highlightedItemStyle,
-        label: highlightedLabel(highlight),
-        zlevel: 500,
-      },
       {
         type: 'line',
         showSymbol: false,
         clip: true,
         data: generateData()
-        }
+      },
     ]
   }
+
+  const themeOverrides = {
+    scatter: {
+      symbol: 'circle',
+      color: null,
+      itemStyle: {
+        borderWidth: 1,
+        borderColor: '#2173C3',
+        borderType: 'solid',
+        opacity: 1,
+        borderOpacity: 1,
+      }
+    },
+  }
+
   // Set title and subtitle
   jQ('.column-scatterplot .title').text(Title.text);
   jQ('.column-scatterplot .subtitle').text(Title.subtext);
@@ -495,7 +240,8 @@ var state1 = function(scatterplot) {
     xVar: 'wb_seg',
     yVar: 'wb_ses',
     highlighted: Object.keys(highlight),
-    options: deepmerge.all([ base.options, baseOverrides ]) //  baseOverrides
+    options: deepmerge.all([ base.options, baseOverrides ]), //  baseOverrides
+    theme: deepmerge.all([ base.theme, themeOverrides ]) //  themeOverrides
   }
 }
 

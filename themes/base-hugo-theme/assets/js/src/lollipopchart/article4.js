@@ -3,6 +3,9 @@ document.getElementById('rectangle').style="height: calc(100vh - 130px) !importa
 
 const jQ = jQuery;
 
+jQ('.column-scatterplot').removeClass('d-sm-none')
+jQ('.column-scatterplot').addClass('offset-sm-0')
+
 var myChart = echarts.init(document.getElementById('scatterplot'));
 
 window.onresize = myChart.resize

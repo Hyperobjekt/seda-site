@@ -16,7 +16,7 @@
       <p class="sr-only">This page contains a dynamic scatterplot which will load new data as you proceed though the page. These updates will be announced in accordance to your screen reader's implementation of aria-region live.</p>
       {{ .Content | markdownify }}
     </div>
-    <div class="col-10 d-sm-none d-md-block offset-1 col-md-8 col-lg-7 col-xl-6 offset-md-0 pl-md-0 pl-lg-2 column-scatterplot">
+    <div id ="column-scatterplot" class="col-10 d-sm-none d-md-block offset-1 col-md-8 col-lg-7 col-xl-6 offset-md-0 pl-md-0 pl-lg-2 column-scatterplot">
       <div class="plot-parent">
         <div id="plotTitle" class="title" aria-live="assertive" aria-label="Scatterplot title"><span class="sr-only">Scatterplot title</span></div>
         <div id="plotSubtitle" class="subtitle" aria-live="assertive" aria-label="Scatterplot subtitle"><span class="sr-only">Scatterplot subtitle</span></div>

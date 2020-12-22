@@ -6,6 +6,8 @@
 
 const jQ = jQuery;
 jQ('.search-component').css('display', 'none');
+jQ('.column-scatterplot').removeClass('d-sm-none')
+jQ('.column-scatterplot').addClass('offset-sm-0')
 
 // Placeholders for segregation series operations
 let segData = [];
@@ -193,7 +195,7 @@ var state1 = function(scatterplot) {
         min:-.015,
         max:.015,
         position: 'left',
-        name: '◀  Decreasing Gap       Increasing Gap  ▶',
+        name: '◀ Decreasing        Gap        Increasing ▶',
         splitLine:{show:true},
         axisTick: {show: true},
         axisLabel: {
@@ -219,10 +221,10 @@ var state1 = function(scatterplot) {
     xAxis: {
       min: -.015,
       max: .015,
-      name: '◀  Decreasing Segregation          Increasing Segregation  ▶',
+      name: '◀ Decreasing        Segregation        Increasing ▶',
       axisLabel:{
         interval: 0,
-        formatter: function(value, index) {
+        formatter: function(value) {
           if (value < 0) {
               return value.toString()[0] + value.toString().slice(2)
           } else if (value > 0) {
@@ -232,7 +234,7 @@ var state1 = function(scatterplot) {
           }
         },
       },
-      axisTick: {show: true, interval: 0},
+      axisTick: {show: true},
       axisLine:{
         show: true,
         onZero: false,

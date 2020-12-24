@@ -6,6 +6,7 @@
 
 const jQ = jQuery;
 jQ('.search-component').css('display', 'none');
+jQ('.scroll-tab-container').addClass('d-none');
 jQ('.column-scatterplot').removeClass('d-sm-none')
 jQ('.column-scatterplot').addClass('offset-sm-0')
 
@@ -66,18 +67,13 @@ const selectedItemStyle = {
   opacity: 1,
 };
 
-const func = (x) => {
-    return .755673484389962*x+.0021285827076154;
-}
-
-const generateData = () => {
+const generateDataTrend = () => {
     let data = [];
-    for (let i = -200; i <= 200; i += 0.1) {
-        data.push([i, func(i)]);
+    for (let i = -.01; i <= .008; i += .001) {
+        data.push([i, (.755673484389962*i+.0021285827076154)]);
     }
     return data;
 }
-
 
 /**
  * Slice array according from beginning according to provided size.
@@ -192,38 +188,15 @@ var state1 = function(scatterplot) {
       }
     }],
     yAxis: {
-        min:-.015,
-        max:.015,
-        position: 'left',
-        name: '◀ Decreasing        Gap        Increasing ▶',
-        splitLine:{show:true},
-        axisTick: {show: true},
-        axisLabel: {
-          rotate: 90,
-          formatter: function(value, index) {
-            if (value < 0) {
-                return value.toString()[0] + value.toString().slice(2)
-            } else if (value > 0) {
-                return value.toString().slice(1)
-            }else{
-                return value
-            }
-          },
-        },
-        axisLine:{
-          show: true,
-          onZero: false,
-          lineStyle:{
-            color: '#757575',
-          }
-        },
-    },
-    xAxis: {
-      min: -.015,
-      max: .015,
-      name: '◀ Decreasing        Segregation        Increasing ▶',
-      axisLabel:{
-        interval: 0,
+      min:-.015,
+      max:.015,
+      position: 'left',
+      name: '◀ Decreasing        Gap        Increasing ▶',
+      splitLine:{show:true},
+      axisTick: {show: true},
+      axisLabel: {
+        rotate: 90,
+        showMinLabel: false,
         formatter: function(value) {
           if (value < 0) {
               return value.toString()[0] + value.toString().slice(2)
@@ -234,6 +207,24 @@ var state1 = function(scatterplot) {
           }
         },
       },
+      axisLine:{
+        show: true,
+        onZero: false,
+        lineStyle:{
+          color: '#757575',
+        }
+      },
+      zlevel: 103,
+    },
+    xAxis: {
+      type: 'value',
+      interval: .015,
+      min: -0.015,
+      max: 0.015,
+      name: '◀ Decreasing        Segregation        Increasing ▶',
+      splitLine:{
+        show: true,
+      },
       axisTick: {show: true},
       axisLine:{
         show: true,
@@ -242,7 +233,18 @@ var state1 = function(scatterplot) {
           color: '#757575',
         }
       },
-      position: 'bottom'
+      axisLabel:{
+        formatter: function(value) {
+          if (value < 0) {
+              return value.toString()[0] + value.toString().slice(2)
+          } else if (value > 0) {
+              return value.toString().slice(1)
+          }else{
+              return value
+          }
+        },
+      },
+      position: 'bottom',
     },
     tooltip: {
       trigger: 'item',
@@ -257,12 +259,14 @@ var state1 = function(scatterplot) {
           borderWidth: 1,
           borderColor: '#2173C3',
         },
+        zlevel: 104
        },
       {
         type: 'line',
         showSymbol: false,
         clip: true,
-        data: generateData()
+        data: generateDataTrend(),
+        zlevel: 104
       },
     ]
   }

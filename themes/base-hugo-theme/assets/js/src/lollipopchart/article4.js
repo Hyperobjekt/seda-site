@@ -1,14 +1,18 @@
 document.getElementById('scatterplot').style="height: 100%"
-document.getElementById('rectangle').style="height: calc(100vh - 130px) !important; width: 50vw" // height 100vh - 161px
+document.getElementById('rectangle').style="height: calc(100vh - 130px) !important;" // height 100vh - 161px
 
 const jQ = jQuery;
 
-jQ('.column-scatterplot').removeClass('d-sm-none')
-jQ('.column-scatterplot').addClass('offset-sm-0')
+jQ('.column-scatterplot').removeClass('d-sm-none');
+jQ('.column-scatterplot').addClass('offset-sm-0');
+jQ('.column-scatterplot').removeClass('col-10');
+jQ('.column-scatterplot').addClass('col-12');
+jQ('.column-scatterplot').removeClass('col-xl-6');
+jQ('.column-scatterplot').addClass('col-xl-7');
 
 var myChart = echarts.init(document.getElementById('scatterplot'));
 
-window.onresize = myChart.resize
+window.onresize = myChart.resize;
 
 var colorPalette = [
     '#2ec7c9', '#b6a2de', '#5ab1ef', '#ffb980', '#d87a80',
@@ -96,7 +100,7 @@ var option = {
         axisTick: {show: false, alignWithLabel: true},
         type: 'value',
         position: 'bottom',
-        name: '10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2019)',
+        name: '10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2019)',
         nameTextStyle: {
             fontFamily: 'MaisonNeue-Medium',
             fontSize: 12,
@@ -124,7 +128,7 @@ var option = {
         splitLine: {show: false},
         splitNumber: 40,
         inverse: true,
-        offset: 30,
+        offset: 35,
         name: '◀ HIGHER               Socioeconomic Inequality               LOWER ▶',
         nameLocation: 'middle',
         nameRotate: 90,

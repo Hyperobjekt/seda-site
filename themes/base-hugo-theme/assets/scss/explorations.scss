@@ -418,6 +418,9 @@ body.kind-page.type-discoveries {
         letter-spacing: 0.018rem;
         // width: 70%;
         margin: 0 auto;
+        @media (max-width: 768px) {
+          font-size: 1.3rem;
+        }
       }
 
       .subtitle {
@@ -429,6 +432,13 @@ body.kind-page.type-discoveries {
         padding-top: 0; // 0.8rem;
         padding-bottom: 0; // 1rem;
         width: 60%;
+        margin: 0 auto;
+      }
+
+      .directions {
+        font-family: $maisonneue-med;
+        font-size: 1rem;
+        letter-spacing: 0.014rem;
         margin: 0 auto;
       }
 

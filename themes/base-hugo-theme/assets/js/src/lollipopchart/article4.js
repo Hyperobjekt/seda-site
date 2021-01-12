@@ -1,8 +1,11 @@
 document.getElementById('scatterplot').style="height: 100%"
-document.getElementById('rectangle').style="height: calc(100vh - 130px) !important;" // height 100vh - 161px
+document.getElementById('rectangle').style="height: 100%"
+document.getElementById('plot-parent').style="min-height: 440px; height: 100%; max-height: calc(100vh - 150px); margin-bottom: 0px"
 
 const jQ = jQuery;
 
+jQ('.column-scatterplot .title').html('Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2018)');
+jQ('.column-scatterplot .directions').html('</br>Tap in the chart below to see district names and more data.')
 jQ('.column-scatterplot').removeClass('d-sm-none');
 jQ('.column-scatterplot').addClass('offset-sm-0');
 jQ('.column-scatterplot').removeClass('col-10');
@@ -11,8 +14,6 @@ jQ('.column-scatterplot').removeClass('col-xl-6');
 jQ('.column-scatterplot').addClass('col-xl-7');
 
 var myChart = echarts.init(document.getElementById('scatterplot'));
-
-window.onresize = myChart.resize;
 
 var colorPalette = [
     '#2ec7c9', '#b6a2de', '#5ab1ef', '#ffb980', '#d87a80',
@@ -29,8 +30,7 @@ const tenYrGap = mockData.map(x => x.tenYrGapChg);
 const tenYrGapNeg = mockData.map(x => x.tenYrGapChg < 0 ? x.tenYrGapChg : 0);
 const tenYrGapPos = mockData.map(x => x.tenYrGapChg >= 0 ? x.tenYrGapChg : 0);
 
-jQ('.column-scatterplot .title').html('Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2019)');
-var option = {
+var baseOption = {
     title: {
         textStyle: {
           fontWeight: 'normal',
@@ -100,7 +100,7 @@ var option = {
         axisTick: {show: false, alignWithLabel: true},
         type: 'value',
         position: 'bottom',
-        name: '10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2019)',
+        name: '10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2018)',
         nameTextStyle: {
             fontFamily: 'MaisonNeue-Medium',
             fontSize: 12,
@@ -137,6 +137,7 @@ var option = {
             fontFamily: 'MaisonNeue-Medium',
         },
         axisLabel: {
+            show: true,
             interval: 0, 
             fontSize: 9,
             inside: false,
@@ -189,8 +190,29 @@ var option = {
     ]
 };
 
+function modifyOption(option) {
+    var newOption = deepmerge.all([ {}, option]);
+    // remove plot labels if on mobile
+    if ( window.innerWidth <= 768) {
+        newOption.yAxis.axisLabel.show = false;
+        newOption.yAxis.nameGap = -20
+    }
+    return newOption
+}
+
+function modifyOptionAndRender (option) {
+    var renderOption = modifyOption(baseOption)
+    myChart.setOption(renderOption)
+}
+
 // use configuration item and data specified to show chart
-myChart.setOption(option);
+modifyOptionAndRender(baseOption)
+
+window.onresize = function() {
+    var renderOption = modifyOption(baseOption)
+    this.myChart.setOption(renderOption)
+    this.myChart.resize()
+}
 
 // add search bar
 // var rootEl = document.getElementById('searchComponent');

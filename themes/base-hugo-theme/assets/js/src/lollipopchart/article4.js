@@ -57,6 +57,7 @@ var baseOption = {
         Change in Gap (2009-2019): ${mockData[params[0].dataIndex].tenYrGapChg}<br />
         ${mockData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${mockData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${mockData[params[0].dataIndex].yrGapDbl}`}`,
         backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
+        confine: true,
         extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',
         padding: [6, 10],
         textStyle: {
@@ -196,6 +197,7 @@ function modifyOption(option) {
     if ( window.innerWidth <= 768) {
         newOption.yAxis.axisLabel.show = false;
         newOption.yAxis.nameGap = -20
+        newOption.tooltip.textStyle.fontSize = 10
     }
     return newOption
 }

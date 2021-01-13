@@ -49,7 +49,7 @@ function modifyOptionAndRender (chart, option) {
 const getDataAndRender = async () => {
     d3.csv("/data/mockData.csv").then(function(data) {
         const mockData = data.map(el => {
-            return {id: el['Id'], district: el['District'], ses:el['SES Inequality (SD Units)'], tenYrGapChg: el['10-year Change in Gap'], percentGapChg: el['Percentage Change in Gap (2009-2018)'], yrGapClose: el['Year Gap Will Close Given Current Trend'], yrGapDbl: el['Year Gap Will Double Given Current Trend']};
+            return {id: el['Id'], district: el['District'], ses:el['SES Inequality (SD Units)'], tenYrGapChg: el['10-year Change in Gap'], percentGapChg: el['Percentage Change in Gap (2009-2018)'], yrGapClose: el['Year Gap Will Close Given Current Trend'], yrGapDbl: el['Year Gap Will Double Given Current Trend'], state: el['State']};
         })
         const districts = mockData.map(x => x.district);
         const tenYrGap = mockData.map(x => x.tenYrGapChg);
@@ -62,7 +62,7 @@ const getDataAndRender = async () => {
             },
             tooltip: {
                 formatter: (params) => 
-                `${mockData[params[0].dataIndex].district}<br />
+                `${mockData[params[0].dataIndex].district}, ${mockData[params[0].dataIndex].state}<br />
                 SES Inequality: ${mockData[params[0].dataIndex].ses}<br />
                 Change in Gap (2009-2019): ${mockData[params[0].dataIndex].tenYrGapChg}<br />
                 ${mockData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${mockData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${mockData[params[0].dataIndex].yrGapDbl}`}`,

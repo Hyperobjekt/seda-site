@@ -58,7 +58,7 @@ const getDataAndRender = async () => {
         var baseOption = {
             aria: {
                 show: true,
-                description: 'Scatterplot of student test scores'
+                description: 'Lollipop chart of the white-black achievement gap vs socieconomic inequality in the 40 largest school districts'
             },
             tooltip: {
                 formatter: (params) => 

@@ -16,7 +16,6 @@ jQ('.column-plot .directions').html('</br>Tap in the chart below to see district
 // jQ('.column-lollipop').addClass('col-xl-7');
 
 //init chart
-var myChart = echarts.init(document.getElementById('lollipop'));
 
 var colorPalette = [
     '#2ec7c9', '#b6a2de', '#5ab1ef', '#ffb980', '#d87a80',
@@ -36,15 +35,9 @@ function modifyOption(option) {
     return newOption
 }
 
-function modifyOptionAndRender (option) {
+function modifyOptionAndRender (chart, option) {
     var renderOption = modifyOption(option)
-    myChart.setOption(renderOption)
-
-    window.onresize = function() {
-        var renderOption = modifyOption(baseOption)
-        this.myChart.setOption(renderOption)
-        this.myChart.resize()
-    }
+    chart.setOption(renderOption)
 }
 
 const getDataAndRender = async () => {
@@ -107,6 +100,9 @@ const getDataAndRender = async () => {
                 containLabel: true
             },
             xAxis: {
+                interval: .25,
+                min: -0.5,
+                max: 1.5,
                 axisLine: {show: false},
                 splitLine: {show: false},
                 axisTick: {show: false, alignWithLabel: true},
@@ -125,13 +121,6 @@ const getDataAndRender = async () => {
                     fontFamily: 'MaisonNeue-Medium',
                     fontSize: 12,
                 },
-                // rich: {
-                //     a: {
-                //         fontFamily: 'MaisonNeue-Medium',
-                //         fontSize: 10,
-                //         width: '60%'
-                //     },
-                // }
             },
             yAxis: {
                 type: 'category',
@@ -202,12 +191,14 @@ const getDataAndRender = async () => {
             ]
         };
 
-        modifyOptionAndRender(baseOption)
+        var myChart = echarts.init(document.getElementById('lollipop'));
+
+        modifyOptionAndRender(myChart, baseOption)
 
         window.onresize = function() {
             var renderOption = modifyOption(baseOption)
-            this.myChart.setOption(renderOption)
-            this.myChart.resize()
+            myChart.setOption(renderOption)
+            myChart.resize()
         }
     })
 }

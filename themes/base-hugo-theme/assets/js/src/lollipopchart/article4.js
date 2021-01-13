@@ -2,21 +2,21 @@ const jQ = jQuery;
 
 // re-style elements specific to this article
 
-document.getElementById('scatterplot').style="height: 100%"
-document.getElementById('rectangle').style="height: 100%"
-document.getElementById('plot-parent').style="min-height: 440px; height: 100%; max-height: calc(100vh - 150px); margin-bottom: 0px"
+//document.getElementById('lollipop').style="height: 100%"
+// document.getElementById('rectangle').style="height: 100%"
+// document.getElementById('plot-parent').style="min-height: 440px; height: 100%; max-height: calc(100vh - 150px); margin-bottom: 0px"
 
-jQ('.column-scatterplot .title').html('Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2018, 40 Largest U.S. Districts');
-jQ('.column-scatterplot .directions').html('</br>Tap in the chart below to see district names and more data.')
-jQ('.column-scatterplot').removeClass('d-sm-none');
-jQ('.column-scatterplot').addClass('offset-sm-0');
-jQ('.column-scatterplot').removeClass('col-10');
-jQ('.column-scatterplot').addClass('col-12');
-jQ('.column-scatterplot').removeClass('col-xl-6');
-jQ('.column-scatterplot').addClass('col-xl-7');
+jQ('.column-plot .title').html('Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2018, 40 Largest U.S. Districts)');
+jQ('.column-plot .directions').html('</br>Tap in the chart below to see district names and more data.')
+// jQ('.column-lollipop').removeClass('d-sm-none');
+// jQ('.column-lollipop').addClass('offset-sm-0');
+// jQ('.column-lollipop').removeClass('col-10');
+// jQ('.column-lollipop').addClass('col-12');
+// jQ('.column-lollipop').removeClass('col-xl-6');
+// jQ('.column-lollipop').addClass('col-xl-7');
 
 //init chart
-var myChart = echarts.init(document.getElementById('scatterplot'));
+var myChart = echarts.init(document.getElementById('lollipop'));
 
 var colorPalette = [
     '#2ec7c9', '#b6a2de', '#5ab1ef', '#ffb980', '#d87a80',
@@ -57,21 +57,6 @@ const getDataAndRender = async () => {
         const tenYrGapNeg = mockData.map(x => x.tenYrGapChg < 0 ? x.tenYrGapChg : 0);
         const tenYrGapPos = mockData.map(x => x.tenYrGapChg >= 0 ? x.tenYrGapChg : 0);
         var baseOption = {
-            title: {
-                textStyle: {
-                  fontWeight: 'normal',
-                  color: '#fff',
-                  fontFamily: 'SharpGrotesk-Medium20',
-                  textAlign: 'center'
-                },
-                subtextStyle: {
-                  fontWeight: 'normal',
-                  color: '#fff',
-                  fontFamily: 'MaisonNeue-Medium',
-                  textAlign: 'center'
-                },
-                textAlign: 'center'
-            },
             aria: {
                 show: true,
                 description: 'Scatterplot of student test scores'
@@ -227,14 +212,8 @@ const getDataAndRender = async () => {
     })
 }
 
-
-
-
-
 // use configuration item and data specified to show chart
 getDataAndRender()
-
-
 
 // add search bar
 // var rootEl = document.getElementById('searchComponent');

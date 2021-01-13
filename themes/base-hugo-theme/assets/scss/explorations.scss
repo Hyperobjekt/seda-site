@@ -374,7 +374,7 @@ body.kind-page.type-discoveries {
     }
   }
 
-  .column-scatterplot {
+  .column-plot {
     // height: 100vh; // 100%;
     min-height: 100%;
 
@@ -382,6 +382,9 @@ body.kind-page.type-discoveries {
       position: sticky;
       position: -webkit-sticky;
       top: 84px;
+      min-height: 440px; height: 100%; 
+      max-height: calc(100vh - 150px); 
+      margin-bottom: 0px;
       // background: #042965;
       @include media-breakpoint-up(md) {
         padding: 0 0;
@@ -418,9 +421,6 @@ body.kind-page.type-discoveries {
         letter-spacing: 0.018rem;
         // width: 70%;
         margin: 0 auto;
-        @media (max-width: 768px) {
-          font-size: 1.3rem;
-        }
       }
 
       .subtitle {
@@ -454,6 +454,95 @@ body.kind-page.type-discoveries {
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
           position: relative;
           top: 0px;
+        }
+      }
+
+      .search-component {
+        // position: sticky;
+        // position: -webkit-sticky;
+        // top: 560px;
+      }
+    }
+
+    .plot-parent-lollipop {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 84px;
+      min-height: 440px; height: 100%; 
+      max-height: calc(100vh - 150px); 
+      margin-bottom: 0px;
+      // background: #042965;
+      @include media-breakpoint-up(md) {
+        padding: 0 0;
+      }
+      @include media-breakpoint-up(lg) {
+        padding: 0 2rem;
+      }
+      height: 100%;
+      // border: 10px solid #042965;
+      min-width: 300px;
+      width:100%;
+      margin-bottom: 200px;
+      z-index: auto;
+
+      &.sticky-top {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          position: fixed;
+          width: 660px;
+          height: 360px;
+        }
+      }
+
+      .title,
+      .subtitle {
+        font-family: $sharpgrotesk-med-20; // $maisonneue-book;
+        color: $seda-dark;
+        text-align: center;
+        // text-transform: uppercase;
+      }
+
+      .title {
+        font-size: 1.8rem; // 2.4rem;
+        line-height: 1.9rem; // 2.8rem;
+        letter-spacing: 0.018rem;
+        // width: 70%;
+        margin: 0 auto;
+      }
+
+      .subtitle {
+        font-family: $maisonneue-med;
+        font-size: 1.4rem; // 1.8rem;
+        line-height: 32px;
+        min-height: 32px;
+        letter-spacing: 0.014rem;
+        padding-top: 0; // 0.8rem;
+        padding-bottom: 0; // 1rem;
+        width: 60%;
+        margin: 0 auto;
+      }
+
+      .directions {
+        font-family: $maisonneue-med;
+        font-size: 1rem;
+        letter-spacing: 0.014rem;
+        margin: 0 auto;
+      }
+
+      .rectangle {
+        border: none;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 202px;
+        background: transparent;
+        padding: 2rem;
+        height: 100%;
+        width:100%;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          position: relative;
+          top: 0px;
+        }
+        .lollipop {
+          height: 100%;
         }
       }
 

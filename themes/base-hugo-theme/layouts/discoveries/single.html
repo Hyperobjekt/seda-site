@@ -16,7 +16,18 @@
       <p class="sr-only">This page contains a dynamic scatterplot which will load new data as you proceed though the page. These updates will be announced in accordance to your screen reader's implementation of aria-region live.</p>
       {{ .Content | markdownify }}
     </div>
-    <div id="column-scatterplot" class="col-10 d-sm-none d-md-block offset-1 col-md-8 col-lg-7 col-xl-6 offset-md-0 pl-md-0 pl-lg-2 column-scatterplot">
+    {{ if (eq .Params.scatterplotID "article4" ) }}
+    <div id="column-lollipop" class="col-12 offset-sm-0 d-md-block offset-1 col-md-8 col-lg-7 col-xl-7 offset-md-0 pl-md-0 pl-lg-2 column-plot">
+      <div id="plot-parent" class="plot-parent-lollipop">
+        <div id="plotTitle" class="title" aria-live="assertive" aria-label="Lollipop chart title"><span class="sr-only">Lollipop chart title</span></div>
+        <div id="plotDirections" class="directions text-center d-md-none" aria-live="assertive" aria-label="Lollipop chart directions"><span class="sr-only">Lollipop chart directions</span></div>
+        <div id="rectangle" class="rectangle">
+          <div id="lollipop" class="lollipop" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data lollipop chart"></div>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div id="column-scatterplot" class="col-10 d-sm-none d-md-block offset-1 col-md-8 col-lg-7 col-xl-6 offset-md-0 pl-md-0 pl-lg-2 column-plot">
       <div id="plot-parent" class="plot-parent" style="">
         <div id="plotTitle" class="title" aria-live="assertive" aria-label="Scatterplot title"><span class="sr-only">Scatterplot title</span></div>
         <div id="plotDirections" class="directions text-center d-md-none" aria-live="assertive" aria-label="Scatterplot directions"><span class="sr-only">Scatterplot directions</span></div>
@@ -27,6 +38,7 @@
         </div>
       </div>
     </div>
+    {{end}}
 </div>
 <div style="" class='scroll-tab-container col-xs-10 col-md-5 col-xl-4 offset-xl-1'>
 <span id="scrollForMore" aria-hidden="true" class="hide">SCROLL FOR MORE

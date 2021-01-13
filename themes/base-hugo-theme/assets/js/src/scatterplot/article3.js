@@ -274,8 +274,8 @@ var state1 = function(scatterplot) {
   
 
   // Set title and subtitle
-  jQ('.column-scatterplot .title').text(Title.text);
-  jQ('.column-scatterplot .subtitle').text(Title.subtext);
+  jQ('.column-plot .title').text(Title.text);
+  jQ('.column-plot .subtitle').text(Title.subtext);
   return {
     endpoint: '/data/',
     xVar: 'wb_seg',

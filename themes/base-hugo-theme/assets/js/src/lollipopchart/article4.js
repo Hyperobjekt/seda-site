@@ -32,6 +32,12 @@ function modifyOption(option) {
         newOption.yAxis.nameGap = -20
         newOption.tooltip.textStyle.fontSize = 10
     }
+    // reformat xaxis label for different sizes
+    if ( document.getElementById('lollipop').clientWidth < 604 ) {
+        newOption.xAxis.name = '◀ SHRINKING                 Gaps                 WIDENING ▶\n10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2018)'
+        newOption.xAxis.nameGap = 23;
+        newOption.grid.bottom = 43;
+    }
     return newOption
 }
 
@@ -108,13 +114,13 @@ const getDataAndRender = async () => {
                 axisTick: {show: false, alignWithLabel: true},
                 type: 'value',
                 position: 'bottom',
-                name: '10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2018)',
+                name: '◀ GAPS SHRINKING                            GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)',
                 nameTextStyle: {
                     fontFamily: 'MaisonNeue-Medium',
-                    fontSize: 12,
+                    fontSize: 13,
                 },
                 nameLocation: 'middle',
-                nameGap: 30,
+                nameGap: 25,
                 axisLabel: {
                     inside: false,
                     textVerticalAlign: 'middle',
@@ -130,7 +136,7 @@ const getDataAndRender = async () => {
                 splitNumber: 40,
                 inverse: true,
                 offset: 35,
-                name: '◀ HIGHER               Socioeconomic Inequality               LOWER ▶',
+                name: '◀ HIGHER             Socioeconomic Inequality             LOWER ▶',
                 nameLocation: 'middle',
                 nameRotate: 90,
                 nameGap: -10,

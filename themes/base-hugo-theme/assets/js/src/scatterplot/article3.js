@@ -154,8 +154,7 @@ var state1 = function(scatterplot) {
       highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
-  Title['text'] = 'Districts with Increasing Segregation Have Increasing White-Black Gaps';
-  //Title['subtext'] = 'U.S. School Districts 2009-2016';
+  Title['text'] = 'Districts with Increasing Segregation Have Increasing White-Black Gaps (2009-2018)';
   Title['subtext'] = '';
   Title.setTitle();
 

@@ -382,9 +382,6 @@ body.kind-page.type-discoveries {
       position: sticky;
       position: -webkit-sticky;
       top: 84px;
-      min-height: 440px; height: 100%; 
-      max-height: calc(100vh - 150px); 
-      margin-bottom: 0px;
       // background: #042965;
       @include media-breakpoint-up(md) {
         padding: 0 0;

@@ -299,7 +299,7 @@ var state1 = function(scatterplot) {
       interval: .001,
       min: -0.016,
       max: 0.015,
-      name: '     ◀ Decreasing        Segregation        Increasing ▶',
+      name: '     ◀ Decreasing              Segregation              Increasing ▶',
       splitLine:{
         show: false,
       },

@@ -48,13 +48,18 @@ function modifyOptionAndRender (chart, option) {
 
 const getDataAndRender = async () => {
     d3.csv("/data/mockData.csv").then(function(data) {
-        const mockData = data.map(el => {
+        const plotData = data.map(el => {
             return {id: el['Id'], district: el['District'], ses:el['SES Inequality (SD Units)'], tenYrGapChg: el['10-year Change in Gap'], percentGapChg: el['Percentage Change in Gap (2009-2018)'], yrGapClose: el['Year Gap Will Close Given Current Trend'], yrGapDbl: el['Year Gap Will Double Given Current Trend'], state: el['State']};
         })
-        const districts = mockData.map(x => x.district);
-        const tenYrGap = mockData.map(x => x.tenYrGapChg);
-        const tenYrGapNeg = mockData.map(x => x.tenYrGapChg < 0 ? x.tenYrGapChg : 0);
-        const tenYrGapPos = mockData.map(x => x.tenYrGapChg >= 0 ? x.tenYrGapChg : 0);
+        const zeroes = []
+        // create array of zeroes of data length
+        plotData.forEach(el => {
+            zeroes.push(0);
+        });
+        const districts = plotData.map(x => x.district);
+        const tenYrGap = plotData.map(x => x.tenYrGapChg);
+        const tenYrGapNeg = plotData.map(x => x.tenYrGapChg < 0 ? x.tenYrGapChg : null);
+        const tenYrGapPos = plotData.map(x => x.tenYrGapChg >= 0 ? x.tenYrGapChg : null);
         var baseOption = {
             aria: {
                 show: true,
@@ -62,10 +67,14 @@ const getDataAndRender = async () => {
             },
             tooltip: {
                 formatter: (params) => 
-                `${mockData[params[0].dataIndex].district}, ${mockData[params[0].dataIndex].state}<br />
-                SES Inequality: ${mockData[params[0].dataIndex].ses}<br />
-                Change in Gap (2009-2019): ${mockData[params[0].dataIndex].tenYrGapChg}<br />
-                ${mockData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${mockData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${mockData[params[0].dataIndex].yrGapDbl}`}`,
+                `${plotData[params[0].dataIndex].district}, ${plotData[params[0].dataIndex].state}<br />
+                <small>SES Inequality: ${plotData[params[0].dataIndex].ses}<br />
+                Change in Gap (2009-2019): ${plotData[params[0].dataIndex].tenYrGapChg}<br />
+                ${plotData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${plotData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${plotData[params[0].dataIndex].yrGapDbl}`}</small>`,
+                // `<div style="padding-top:6px; padding-bottom:6px; font-size: 16px">${plotData[params[0].dataIndex].district}, ${plotData[params[0].dataIndex].state}</div>
+                // <span style="font-family: MaisonNeue-Medium">SES Inequality:</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].ses}</span><br />
+                // <span style="font-family: MaisonNeue-Medium">Change in Gap (2009-2019):</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].tenYrGapChg}</span><br />
+                // ${plotData[params[0].dataIndex].yrGapClose ? `<span style="font-family: MaisonNeue-Medium">Year 2009 Gap Will Close, at Current Trend:</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].yrGapClose}</span>` : `<span style="font-family: MaisonNeue-Medium">Year 2009 Gap Will Double, at Current Trend:</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].yrGapDbl}</span>`}`,
                 backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
                 confine: true,
                 extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',
@@ -74,15 +83,6 @@ const getDataAndRender = async () => {
                     color: '#fff', // '#dc69aa',
                     fontWeight: '500',
                     fontFamily: 'SharpGrotesk-Medium20',
-                    rich: {
-                        span: {
-                            fontFamily: 'SharpGrotesk-Medium20',
-                        },
-                        small: {
-                            fontFamily: 'MaisonNeue-Medium',
-                            fontSize: 6
-                        },
-                    }
                 },
                 trigger: 'axis',
                 axisPointer: {
@@ -114,10 +114,11 @@ const getDataAndRender = async () => {
                 axisTick: {show: false, alignWithLabel: true},
                 type: 'value',
                 position: 'bottom',
-                name: '◀ GAPS SHRINKING                            GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)',
+                name: '◀ GAPS SHRINKING                    GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)',
                 nameTextStyle: {
                     fontFamily: 'MaisonNeue-Medium',
                     fontSize: 13,
+                    color: '#757575'
                 },
                 nameLocation: 'middle',
                 nameGap: 25,
@@ -126,6 +127,7 @@ const getDataAndRender = async () => {
                     textVerticalAlign: 'middle',
                     fontFamily: 'MaisonNeue-Medium',
                     fontSize: 12,
+                    color: '#757575'
                 },
             },
             yAxis: {
@@ -142,6 +144,12 @@ const getDataAndRender = async () => {
                 nameGap: -10,
                 nameTextStyle: {
                     fontFamily: 'MaisonNeue-Medium',
+                    color: '#757575',
+                    rich: {
+                        span: {
+                            fontFamily: 'SharpGrotesk-Medium15',
+                        }
+                    }
                 },
                 axisLabel: {
                     show: true,
@@ -150,6 +158,7 @@ const getDataAndRender = async () => {
                     inside: false,
                     textVerticalAlign: 'middle',
                     fontFamily: 'MaisonNeue-Medium',
+                    color: '#757575'
                 },
                 zlevel: 101,
                 data: districts
@@ -159,16 +168,44 @@ const getDataAndRender = async () => {
                     name: 'Test1',
                     type: 'bar',
                     stack: 'Test2',
-                    barWidth: 1,
-                    color: 'blue',
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(
+                            1, 0, 0, 0,
+                            [
+                                {offset: 0, color: '#fff'},
+                                {offset: 1, color: '#2D9C6F'}
+                            ]
+                        )
+                    },
+                    barWidth: 4,
                     data: tenYrGapNeg,
                     cursor: 'default'
+                },
+                {
+                    type: 'scatter',
+                    itemStyle:{
+                        opacity: 1,
+                        color: '#1A6D4B'
+                    },
+                    data: tenYrGapNeg,
+                    symbolSize: 6,
+                    zlevel: 102,
+                    silent: true
                 },
                 {
                     name: 'Test1',
                     type: 'bar',
                     stack: 'Test2',
-                    barWidth: 1,
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 1, 0,
+                            [
+                                {offset: 0, color: '#fff'},
+                                {offset: 1, color: '#4388CC'}
+                            ]
+                        )
+                    },
+                    barWidth: 4,
                     data: tenYrGapPos,
                     cursor: 'default'
                 },
@@ -176,21 +213,22 @@ const getDataAndRender = async () => {
                     type: 'scatter',
                     itemStyle:{
                         opacity: 1,
-                        color: 'black'
+                        color: '#1A4C7E'
                     },
-                    data: tenYrGap,
+                    data: tenYrGapPos,
                     symbolSize: 6,
                     zlevel: 102,
                     silent: true
                 },
+                
                 {
                     type: 'scatter',
                     itemStyle:{
                         opacity: 1,
-                        color: 'gray'
+                        color: '#93C5E2'
                     },
                     symbolSize: 6,
-                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    data: zeroes,
                     zlevel: 101,
                     silent: true
                 }
@@ -211,59 +249,3 @@ const getDataAndRender = async () => {
 
 // use configuration item and data specified to show chart
 getDataAndRender()
-
-// add search bar
-// var rootEl = document.getElementById('searchComponent');
-// const searchProps = { // Props passed in to init the search input(s)
-//     algoliaId: 'QPJ12WSVR4',
-//     algoliaKey: 'bae9e4604dbd263cc47c48bfb30dd5dc',
-//     onSuggestionSelected: function(hit) {
-//       // console.log('hit');
-//       // console.log(hit);
-//       if (_plot && _plot.searchItemIDs) {
-//         _plot.searchItemIDs[0] = hit;
-//       }
-//       // console.log(_plot.searchItemIDs);
-//       scatterplot.loadState(plot.activeState);
-//       // GA Event submission
-//       const $highlightedDistrict = '';
-//       if (!!dataLayer && (dataLayer.length >= 3)) {
-//         dataLayer.push({
-//           'event': 'districtHighlighted',
-//           'highlightedDistrict': hit['name']
-//         });
-//       } else {
-//         console.log('dataLayer not available. Skipping analytics reporting for highlighted item select.');
-//       }
-//     },
-//     onSelectedClear: function(e) {
-//       // console.log(e);
-//       // Clear search item array
-//       searchItemIDs = [];
-//       // Reload state
-//       scatterplot.loadState(plot.activeState);
-//     },
-//     indices: ['districts'],
-//     inputProps: {
-//       placeholder: 'Highlight a district...',
-//       'aria-label': 'Enter a district name to search'
-//     }
-//   }
-
-// var searchInit = function(props, container) {
-//     var _self = this;
-
-//     // add reference to the component to props
-//     var refProps = Object.assign(props, {
-//         ref: function(ref) { _self.component = ref; }
-//     });
-
-//     var render = function(props) {
-//         ReactDOM.render(
-//         React.createElement(SedaSearch, props, null),
-//         container
-//         );
-//     }
-//     render(refProps);
-// }
-// var searchBar = searchInit(searchProps, rootEl);

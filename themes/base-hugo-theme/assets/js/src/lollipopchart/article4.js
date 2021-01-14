@@ -138,18 +138,14 @@ const getDataAndRender = async () => {
                 splitNumber: 40,
                 inverse: true,
                 offset: 35,
-                name: '◀ HIGHER             Socioeconomic Inequality             LOWER ▶',
+                name: '◀ HIGHER          Socioeconomic Inequality          LOWER ▶',
                 nameLocation: 'middle',
                 nameRotate: 90,
                 nameGap: -10,
                 nameTextStyle: {
                     fontFamily: 'MaisonNeue-Medium',
                     color: '#757575',
-                    rich: {
-                        span: {
-                            fontFamily: 'SharpGrotesk-Medium15',
-                        }
-                    }
+                    fontSize: 13,
                 },
                 axisLabel: {
                     show: true,

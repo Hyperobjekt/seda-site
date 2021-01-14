@@ -256,9 +256,13 @@ var state1 = function(scatterplot) {
       show: false,
       min: -0.015,
       max: 0.015,
+      left: '96%',
+      bottom: '12%',
+      itemHeight: '280px',
+      itemWidth: '10px',
+      text: ['Above Grade Level', 'Below Grade Level'],
       inRange: {
         color: ['#174B80','#fff', '#136E4A'],
-        //opacity:[1, .17, 1]
       }
     }],
     yAxis: {

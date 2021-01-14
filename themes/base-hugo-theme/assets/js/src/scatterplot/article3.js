@@ -257,8 +257,8 @@ var state1 = function(scatterplot) {
       min: -0.015,
       max: 0.015,
       inRange: {
-        color: ['#1570CD', '#2173C3'],
-        opacity:[.17, 1]
+        color: ['#174B80','#fff', '#136E4A'],
+        //opacity:[1, .17, 1]
       }
     }],
     yAxis: {
@@ -350,6 +350,9 @@ var state1 = function(scatterplot) {
         type: 'line',
         showSymbol: false,
         clip: true,
+        lineStyle: {
+          color: '#3A7BBA',
+        },
         data: generateData('bestfit'),
         zlevel: 104
       },

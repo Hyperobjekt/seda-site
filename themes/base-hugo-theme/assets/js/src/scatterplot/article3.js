@@ -7,8 +7,6 @@
 const jQ = jQuery;
 jQ('.search-component').css('display', 'none');
 jQ('.scroll-tab-container').addClass('d-none');
-jQ('.column-scatterplot').removeClass('d-sm-none')
-jQ('.column-scatterplot').addClass('offset-sm-0')
 
 // Placeholders for segregation series operations
 let segData = [];
@@ -67,12 +65,89 @@ const selectedItemStyle = {
   opacity: 1,
 };
 
-const generateDataTrend = () => {
+const initialMarkline = {
+  type: 'scatter',
+  zlevel: 1,
+  animation: false,
+  markLine: {
+      silent: true,
+      label: {
+          show: true,
+          position: 'middle',
+          fontFamily: 'SharpGrotesk-Medium20',
+          fontWeight: '500',
+          fontSize: 11.52,
+          padding: 4,
+          color: 'rgba(5, 41, 101, 100%)',
+      },
+      //xaxis markline
+      data: [
+          [
+            {
+              coord: [-.016, 0],
+              symbol: 'none',
+              lineStyle: {
+                color: 'rgba(5, 41, 101, 100%)',
+                type: 'solid',
+                width: 1,
+              },
+            },
+            { coord: [.015, 0], symbol: 'none' },
+          ],
+          //xaxis label (necessary to add label at beginning of markline)
+          [
+            {
+              name: 'no change',
+              coord: [-.015, 0],
+              symbol: 'none',
+              lineStyle: {
+                color: 'rgba(5, 41, 101, 0%)',
+                type: 'solid',
+                width: 1,
+              },
+            },
+            { coord: [-.01, 0], symbol: 'none' },
+          ],
+          //yaxis markline
+          [
+            {
+              coord: [0, -.015],
+              symbol: 'none',
+              lineStyle: {
+                color: 'rgba(5, 41, 101, 100%)',
+                type: 'solid',
+                width: 1,
+              },
+            },
+            { coord: [0, .015], symbol: 'none' },
+          ],
+          //yaxis label (necessary to add label at beginning of markline)
+          [
+            {
+              name: 'no change',
+              coord: [0, -.015],
+              symbol: 'none',
+              lineStyle: {
+                color: 'rgba(5, 41, 101, 0%)',
+                type: 'solid',
+                width: 1,
+              },
+            },
+            { coord: [0, -.005], symbol: 'none' },
+          ],
+      ]
+  }
+};
+
+// function for generating certain lines
+const generateData = (trend) => {
+  if(trend === 'bestfit') {
     let data = [];
     for (let i = -.01; i <= .008; i += .001) {
         data.push([i, (.755673484389962*i+.0021285827076154)]);
     }
     return data;
+  }
 }
 
 /**
@@ -187,21 +262,25 @@ var state1 = function(scatterplot) {
       }
     }],
     yAxis: {
-      min:-.015,
+      min: -0.015,
       max:.015,
       position: 'left',
       name: '◀ Decreasing        Gap        Increasing ▶',
       splitLine:{show:true},
-      axisTick: {show: true},
+      axisTick: {
+        show: false,
+      },
       axisLabel: {
         rotate: 90,
-        showMinLabel: false,
+        //showMinLabel: false,
+        showMaxLabel: true,
         formatter: function(value) {
+          // remove leading 0's
           if (value < 0) {
               return value.toString()[0] + value.toString().slice(2)
           } else if (value > 0) {
               return value.toString().slice(1)
-          }else{
+          } else {
               return value
           }
         },
@@ -217,14 +296,14 @@ var state1 = function(scatterplot) {
     },
     xAxis: {
       type: 'value',
-      interval: .015,
-      min: -0.015,
+      interval: .001,
+      min: -0.016,
       max: 0.015,
-      name: '◀ Decreasing        Segregation        Increasing ▶',
+      name: '     ◀ Decreasing        Segregation        Increasing ▶',
       splitLine:{
-        show: true,
+        show: false,
       },
-      axisTick: {show: true},
+      axisTick: {show: false},
       axisLine:{
         show: true,
         onZero: false,
@@ -233,12 +312,16 @@ var state1 = function(scatterplot) {
         }
       },
       axisLabel:{
+        showMaxLabel: true,
+        //rotate: 90,
+        //showMinLabel: false,
         formatter: function(value) {
-          if (value < 0) {
+          // remove leading 0's
+          if (value === -0.015) {
               return value.toString()[0] + value.toString().slice(2)
-          } else if (value > 0) {
+          } else if (value === 0.015) {
               return value.toString().slice(1)
-          }else{
+          } else if (value === 0) {
               return value
           }
         },
@@ -252,6 +335,7 @@ var state1 = function(scatterplot) {
       }
     },
     series: [
+      initialMarkline,
       { 
         id: 'base',
         itemStyle: {
@@ -261,10 +345,12 @@ var state1 = function(scatterplot) {
         zlevel: 104
        },
       {
+        id: 'bestfit',
+        animation: false,
         type: 'line',
         showSymbol: false,
         clip: true,
-        data: generateDataTrend(),
+        data: generateData('bestfit'),
         zlevel: 104
       },
     ]

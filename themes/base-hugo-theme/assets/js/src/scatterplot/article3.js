@@ -336,7 +336,7 @@ var state1 = function(scatterplot) {
     tooltip: {
       trigger: 'item',
       formatter: function(item) {
-        // return scatterplot.formatTooltip(item, scatterplot.data, 'White Student Scores', 'Black Student Scores');
+        console.log(item)
       }
     },
     series: [
@@ -373,6 +373,7 @@ var state1 = function(scatterplot) {
     endpoint: '/data/',
     xVar: 'wb_seg',
     yVar: 'wb_gap',
+    //zVar: 'district_info',
     highlighted: Object.keys(highlight),
     options: deepmerge.all([ base.options, baseOverrides ]), //  baseOverrides
   }

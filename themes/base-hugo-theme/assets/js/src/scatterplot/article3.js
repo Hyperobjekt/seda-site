@@ -261,7 +261,7 @@ var state1 = function(scatterplot) {
       itemHeight: '280px',
       itemWidth: '10px',
       inRange: {
-        color: ['#174B80','rgba(255,255,255,0.17)', '#136E4A'],
+        color: ['#174B80','rgba(255,255,255,1)', '#136E4A'],
       },
     }],
     yAxis: {
@@ -346,7 +346,6 @@ var state1 = function(scatterplot) {
         itemStyle: {
           borderWidth: 1,
           borderColor: '#2173C3',
-          //opacity: 0.8,
         },
         zlevel: 104
        },
@@ -373,7 +372,7 @@ var state1 = function(scatterplot) {
   return {
     endpoint: '/data/',
     xVar: 'wb_seg',
-    yVar: 'wb_ses',
+    yVar: 'wb_gap',
     highlighted: Object.keys(highlight),
     options: deepmerge.all([ base.options, baseOverrides ]), //  baseOverrides
   }

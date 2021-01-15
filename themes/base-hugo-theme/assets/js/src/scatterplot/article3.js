@@ -5,8 +5,6 @@
  */
 
 const jQ = jQuery;
-jQ('.search-component').css('display', 'none');
-jQ('.scroll-tab-container').addClass('d-none');
 
 // Placeholders for segregation series operations
 let segData = [];
@@ -20,50 +18,6 @@ Title['setTitle'] = function() {
 }
 
 const axisBlue = '#547892';
-let activeHighlight = {};
-const highlightedLabel = (highlight) => {
-  // console.log('highlightedLabel');
-  activeHighlight = highlight;
-  return {
-    show: true,
-    position: 'top',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // '#FFFCCF',
-    borderColor: '#7D38BB',
-    borderWidth: 0,
-    fontSize: 12,
-    fontWeight: 500,
-    fontFamily: 'SharpGrotesk-Medium20', // 'MaisonNeue-Medium',
-    lineHeight: 12,
-    padding: [5, 5],
-    borderRadius: 3,
-    opacity: 1,
-    color: 'rgba(25, 25, 25, 0.91)', // '#052965',
-    formatter: function(item) {
-      // console.log(item);
-      // console.log(activeHighlight);
-      return activeHighlight[item.value[3]]
-    },
-  };
-}
-// Orange bubbles
-const highlightedItemStyle =  {
-  borderWidth: 0.4,
-  borderColor: '#BABABA', // '#FFC02D',
-  color: 'rgba(255, 178, 0, 0.77)', // '#FFFCDD',
-  opacity: 1,
-  shadowBlur: 2,
-  shadowColor: 'rgba(0, 0, 0, 0.1)',
-  shadowOffsetX: 0,
-  shadowOffsetY: 1
-};
-// Blue bubbles
-const selectedItemStyle = {
-  borderWidth: 0.4,
-  borderColor: 'rgba(89, 151, 203, 0.8)', // '#7D38BB',
-  color: '#48CB95', // '#BC72FF',
-  color: 'rgba(177, 222, 238, 0.8)',
-  opacity: 1,
-};
 
 const initialMarkline = {
   type: 'scatter',

@@ -31,13 +31,21 @@
 
     {{ else if (eq .Params.scatterplotID "article3" ) }}
 
-    <div id="column-scatterplot" class="col-10 col-sm-12 offset-sm-0 d-md-block offset-1 col-md-8 col-lg-7 col-xl-6 offset-md-0 pl-md-0 pl-lg-2 column-plot">
+    <div id="column-scatterplot" class="col-10 col-sm-12 col-md-8 col-lg-7 col-xl-6 offset-1 offset-sm-0 offset-md-0 d-md-block pl-md-0 pl-lg-2 column-plot">
       <div id="plot-parent" class="plot-parent" style="">
         <div id="plotTitle" class="title" aria-live="assertive" aria-label="Scatterplot title"><span class="sr-only">Scatterplot title</span></div>
         <div id="plotDirections" class="directions text-center d-md-none" aria-live="assertive" aria-label="Scatterplot directions"><span class="sr-only">Scatterplot directions</span></div>
         <div id="rectangle" class="rectangle" style="">
-          <div id="scatterplot" style="" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data scatterplot"></div>
-        </div>
+          <div id="scatterplot" style="width: 100%" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data scatterplot"></div>
+            <!-- <span class="legend-label-top" style="">Above Grade Level ▶</span> -->
+            <div class="d-inline-block plot-legend" style="">
+              <div class="legend-label">
+                <div class="label top">Gap Increasing ▶</div>
+                <div class="label bot">◀ Gap Decreasing</div>
+              </div>
+              <div class="legend"></div>
+            </div>
+
       </div>
     </div>
 

@@ -47,7 +47,7 @@ function modifyOptionAndRender (chart, option) {
 }
 
 const getDataAndRender = async () => {
-    d3.csv("/data/mockData.csv").then(function(data) {
+    d3.csv("/data/discovery2Data.csv").then(function(data) {
         const plotData = data.map(el => {
             return {id: el['Id'], district: el['District'], ses:el['SES Inequality (SD Units)'], tenYrGapChg: el['10-year Change in Gap'], percentGapChg: el['Percentage Change in Gap (2009-2018)'], yrGapClose: el['Year Gap Will Close Given Current Trend'], yrGapDbl: el['Year Gap Will Double Given Current Trend'], state: el['State']};
         })

@@ -106,7 +106,7 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [-.01, 0], symbol: 'none' },
+            { coord: [-.009, 0], symbol: 'none' },
           ],
           //yaxis markline
           [
@@ -260,10 +260,9 @@ var state1 = function(scatterplot) {
       bottom: '12%',
       itemHeight: '280px',
       itemWidth: '10px',
-      text: ['Above Grade Level', 'Below Grade Level'],
       inRange: {
-        color: ['#174B80','#fff', '#136E4A'],
-      }
+        color: ['#174B80','rgba(255,255,255,0.17)', '#136E4A'],
+      },
     }],
     yAxis: {
       min: -0.015,
@@ -301,8 +300,10 @@ var state1 = function(scatterplot) {
     xAxis: {
       type: 'value',
       interval: .001,
+      // start at .016 to allow .015 to show without the y and x axis min vals overlapping
       min: -0.016,
       max: 0.015,
+      // extra white space to center label on 0
       name: '     ◀ Decreasing              Segregation              Increasing ▶',
       splitLine:{
         show: false,
@@ -335,7 +336,7 @@ var state1 = function(scatterplot) {
     tooltip: {
       trigger: 'item',
       formatter: function(item) {
-        return scatterplot.formatTooltip(item, scatterplot.data, 'White Student Scores', 'Black Student Scores');
+        // return scatterplot.formatTooltip(item, scatterplot.data, 'White Student Scores', 'Black Student Scores');
       }
     },
     series: [
@@ -345,6 +346,7 @@ var state1 = function(scatterplot) {
         itemStyle: {
           borderWidth: 1,
           borderColor: '#2173C3',
+          //opacity: 0.8,
         },
         zlevel: 104
        },

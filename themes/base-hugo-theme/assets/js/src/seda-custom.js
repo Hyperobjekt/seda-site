@@ -651,6 +651,10 @@
         $('#toggleDrawer').focus();
     });
 
+    $('#closeBanner').on('click', function() {
+      $('#banner').hide();
+  });
+
     $('#closeLoop').on('keypress', function(e) {
       // console.log('closeloop keypress');
       if(e.which == 13) {

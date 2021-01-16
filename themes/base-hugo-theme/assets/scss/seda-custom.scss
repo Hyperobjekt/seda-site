@@ -3918,4 +3918,20 @@ form#getTheData {
   }
 }
 
+#banner {
+  p {
+    font-size: 16px;
+  
+    @include media-breakpoint-down(md) {
+      font-size: 11px;
+    }
+  }
+
+  > div {
+    @include media-breakpoint-down(md) {
+      right: 10px !important;
+    }
+  }
+}
+
 // @import 'article1';

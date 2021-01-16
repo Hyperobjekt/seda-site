@@ -54,6 +54,11 @@ anchor = "smart"
     weight = 1
 
 [[menu.main]]
+	name = "What's New in 4.0"
+	url = "/whats-new"
+    weight = 1
+
+[[menu.main]]
   name = "Discoveries"
   url = "/discoveries/"
     weight = 2

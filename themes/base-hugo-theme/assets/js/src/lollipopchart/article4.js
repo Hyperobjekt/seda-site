@@ -1,19 +1,7 @@
 const jQ = jQuery;
 
-// re-style elements specific to this article
-
-//document.getElementById('lollipop').style="height: 100%"
-// document.getElementById('rectangle').style="height: 100%"
-// document.getElementById('plot-parent').style="min-height: 440px; height: 100%; max-height: calc(100vh - 150px); margin-bottom: 0px"
-
 jQ('.column-plot .title').html('Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2018, 40 Largest U.S. Districts)');
 jQ('.column-plot .directions').html('</br>Tap in the chart below to see district names and more data.')
-// jQ('.column-lollipop').removeClass('d-sm-none');
-// jQ('.column-lollipop').addClass('offset-sm-0');
-// jQ('.column-lollipop').removeClass('col-10');
-// jQ('.column-lollipop').addClass('col-12');
-// jQ('.column-lollipop').removeClass('col-xl-6');
-// jQ('.column-lollipop').addClass('col-xl-7');
 
 //init chart
 
@@ -34,7 +22,7 @@ function modifyOption(option) {
     }
     // reformat xaxis label for different sizes
     if ( document.getElementById('lollipop').clientWidth < 604 ) {
-        newOption.xAxis.name = '◀ SHRINKING                 Gaps                 WIDENING ▶\n10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2018)'
+        newOption.xAxis.name = '◀ GAPS SHRINKING               GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2018)'
         newOption.xAxis.nameGap = 23;
         newOption.grid.bottom = 43;
     }
@@ -57,7 +45,6 @@ const getDataAndRender = async () => {
             zeroes.push(0);
         });
         const districts = plotData.map(x => x.district);
-        const tenYrGap = plotData.map(x => x.tenYrGapChg);
         const tenYrGapNeg = plotData.map(x => x.tenYrGapChg < 0 ? x.tenYrGapChg : null);
         const tenYrGapPos = plotData.map(x => x.tenYrGapChg >= 0 ? x.tenYrGapChg : null);
         var baseOption = {
@@ -69,11 +56,11 @@ const getDataAndRender = async () => {
                 formatter: (params) => 
                 `${plotData[params[0].dataIndex].district}, ${plotData[params[0].dataIndex].state}<br />
                 <small>SES Inequality: ${plotData[params[0].dataIndex].ses}<br />
-                Change in Gap (2009-2019): ${plotData[params[0].dataIndex].tenYrGapChg}<br />
+                Change in Gap (2009-2018): ${plotData[params[0].dataIndex].tenYrGapChg}<br />
                 ${plotData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${plotData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${plotData[params[0].dataIndex].yrGapDbl}`}</small>`,
                 // `<div style="padding-top:6px; padding-bottom:6px; font-size: 16px">${plotData[params[0].dataIndex].district}, ${plotData[params[0].dataIndex].state}</div>
                 // <span style="font-family: MaisonNeue-Medium">SES Inequality:</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].ses}</span><br />
-                // <span style="font-family: MaisonNeue-Medium">Change in Gap (2009-2019):</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].tenYrGapChg}</span><br />
+                // <span style="font-family: MaisonNeue-Medium">Change in Gap (2009-2018):</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].tenYrGapChg}</span><br />
                 // ${plotData[params[0].dataIndex].yrGapClose ? `<span style="font-family: MaisonNeue-Medium">Year 2009 Gap Will Close, at Current Trend:</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].yrGapClose}</span>` : `<span style="font-family: MaisonNeue-Medium">Year 2009 Gap Will Double, at Current Trend:</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].yrGapDbl}</span>`}`,
                 backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
                 confine: true,
@@ -103,7 +90,7 @@ const getDataAndRender = async () => {
                 bottom: 32,
                 left: 35,
                 right: 32,
-                containLabel: true
+                containLabel: true,
             },
             xAxis: {
                 interval: .25,

@@ -55,7 +55,7 @@ const initialMarkline = {
               coord: [-.015, 0],
               symbol: 'none',
               lineStyle: {
-                color: 'rgba(5, 41, 101, 0%)',
+                color: 'rgba(0,0,0,0)',
                 type: 'solid',
                 width: 1,
               },
@@ -82,7 +82,7 @@ const initialMarkline = {
               coord: [0, -.015],
               symbol: 'none',
               lineStyle: {
-                color: 'rgba(5, 41, 101, 0%)',
+                color: 'rgba(0,0,0,0)',
                 type: 'solid',
                 width: 1,
               },

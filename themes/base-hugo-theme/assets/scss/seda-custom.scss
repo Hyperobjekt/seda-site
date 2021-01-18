@@ -718,6 +718,18 @@ img {
       }
     }
   }
+
+  &--data-table {
+    position: relative;
+  
+    svg {
+      position: absolute;
+      width: auto;
+      height: 100%;
+      top: 0;
+      right: 0;
+    }
+  }
 }
 
 // General typography
@@ -1718,6 +1730,27 @@ body.home {
     background-size: 220%;
     background-repeat: no-repeat;
     background-position: center 8%;
+
+    &.map-invite-4 {
+      background: white;
+
+      .scatterplot {
+        background-image: url('/images/map-invite-4.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      h3 {
+        color: white;
+      }
+
+      .btn {
+        width: 215px;
+      }
+    }
+
     @include media-breakpoint-up(md) {
       background-size: cover;
       background-repeat: no-repeat;

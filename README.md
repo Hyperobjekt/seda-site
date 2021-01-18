@@ -35,3 +35,7 @@ npm run lambda-build
 ## Transpile JavaScipt:
 
 This site now uses the default Hugo Babel transpiling pipe. Scripts go in `/themes/base-hugo-theme/assets/js`. See `/themes/base-hugo-theme/layouts/partials/scripts.html` for the script minifiaction and concatenation technique. That file also demonstrates how unique pages utilize additional partials to load additional scripts.
+
+## Add Mock Data
+
+If an endpoint is not yet available, mockData can be added to the directory `/themes/base-hugo-theme/static/data`. Point request to `/data/yourFileName.type`

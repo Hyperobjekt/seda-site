@@ -4,8 +4,8 @@ displaytitle: "Racial Socioeconomic Inequality Predicts Growing Racial Academic 
 subtitle: ""
 author: "Sean F. Reardon"
 date: "2020-01-01"
-hero: "/images/heroes/learning-rates-hero.svg"
-image: "/images/articles/affluent-schools-sm.png"
+hero: "/images/heroes/ses-inequality-hero.svg"
+image: "/images/articles/ses-inequality.png"
 scatterplotID: "article4" # used to name the JS file with the necessary states and prop attributes
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.

@@ -1,7 +1,9 @@
 /**
- * scatterplot states for article one,
- * Patterns of Racial/Ethnic Opportunity Gaps
- * - article storyboard: https://docs.google.com/document/d/1adz0CwXI8WKok8ePVQEcSmlRQwRIjKaKvd8Am6OFfhY/edit
+ * scatterplot states for article three,
+ * Increasing school segregation leads to greater racial academic inequality
+ * - article storyboard: https://docs.google.com/document/d/1LVE15Vd7_D8PsDYp_0BtPvJ8mf-IJ_WUQc0-R4TObZs/
+ * 
+ * data lives in themes/base-hugo-theme/static/data/districts and /meta
  */
 
 const jQ = jQuery;
@@ -335,7 +337,6 @@ var state1 = function(scatterplot) {
     endpoint: '/data/',
     xVar: 'wb_seg',
     yVar: 'wb_gap',
-    //zVar: 'district_info',
     highlighted: Object.keys(highlight),
     options: deepmerge.all([ base.options, baseOverrides ]), //  baseOverrides
   }

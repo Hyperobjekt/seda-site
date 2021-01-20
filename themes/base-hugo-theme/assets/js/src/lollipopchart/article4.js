@@ -1,3 +1,11 @@
+/*
+lollipop chart for article4:
+Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2018, 40 Largest U.S. Districts)
+article storyboard: https://docs.google.com/document/d/1LVE15Vd7_D8PsDYp_0BtPvJ8mf-IJ_WUQc0-R4TObZs/
+
+data lives in themes/base-hugo-theme/static/data/discovery2Data.csv
+*/
+
 const jQ = jQuery;
 
 jQ('.column-plot .title').html('Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2018, 40 Largest U.S. Districts)');
@@ -58,10 +66,6 @@ const getDataAndRender = async () => {
                 <small>SES Inequality: ${plotData[params[0].dataIndex].ses}<br />
                 Change in Gap (2009-2018): ${plotData[params[0].dataIndex].tenYrGapChg}<br />
                 ${plotData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${plotData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${plotData[params[0].dataIndex].yrGapDbl}`}</small>`,
-                // `<div style="padding-top:6px; padding-bottom:6px; font-size: 16px">${plotData[params[0].dataIndex].district}, ${plotData[params[0].dataIndex].state}</div>
-                // <span style="font-family: MaisonNeue-Medium">SES Inequality:</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].ses}</span><br />
-                // <span style="font-family: MaisonNeue-Medium">Change in Gap (2009-2018):</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].tenYrGapChg}</span><br />
-                // ${plotData[params[0].dataIndex].yrGapClose ? `<span style="font-family: MaisonNeue-Medium">Year 2009 Gap Will Close, at Current Trend:</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].yrGapClose}</span>` : `<span style="font-family: MaisonNeue-Medium">Year 2009 Gap Will Double, at Current Trend:</span> <span style="font-size: 16px; font-family: SharpGrotesk-Medium15">${plotData[params[0].dataIndex].yrGapDbl}</span>`}`,
                 backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
                 confine: true,
                 extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',

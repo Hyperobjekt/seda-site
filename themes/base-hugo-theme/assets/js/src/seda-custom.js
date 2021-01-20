@@ -39,7 +39,6 @@
 
             if ($('#scrollForMore').length >= 1) {
               if(y + $(window).height() >= $(document).height() - 300) {
-                console.log("yah bottom!");
                 $('#scrollForMore').addClass('hide');
                 $('#scrollForMore').removeClass('show');
               } else {

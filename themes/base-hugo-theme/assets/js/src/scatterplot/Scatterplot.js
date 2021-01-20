@@ -340,7 +340,6 @@ function Scatterplot(container, props) {
    */
   this.render = function() {
     // render the component
-    console.log(this.props)
     ReactDOM.render(
       // React.createElement(sedaScatterplot, this.props, null),
       // container

@@ -10,7 +10,7 @@ scatterplotID: "article4" # used to name the JS file with the necessary states a
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
 aliases:
-  - "/posts/discovery2/"
+  - "/posts/racial-inequality-predicts-academic-inequality/"
 ---
 
 <span class="drop-cap">S</span>ocioeconomic inequalities exacerbate academic inequalities, so when socioeconomic inequality is higher, academic achievement gaps also tend to grow. For example, consider socioeconomic inequality for Black and White families in the same school district. In nearly all U.S. communities, White families are more affluent than Black families. In some places, these socioeconomic inequalities are high (e.g., in Houston and Chicago), while in others, they are low (e.g., in Hawaii).

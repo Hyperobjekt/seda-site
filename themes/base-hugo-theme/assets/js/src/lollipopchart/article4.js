@@ -88,7 +88,7 @@ const getDataAndRender = async () => {
             grid: {
                 top: 10,
                 bottom: 32,
-                left: 35,
+                left: 48,
                 right: 32,
                 containLabel: true,
             },

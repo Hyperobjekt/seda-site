@@ -222,13 +222,17 @@ var state1 = function(scatterplot) {
       min: -0.015,
       max:.015,
       position: 'left',
-      name: '◀ Decreasing        Gap        Increasing ▶',
+      name: '◀ Decreasing             Gap             Increasing ▶',
+      nameTextStyle: {
+        fontFamily: 'MaisonNeue-Medium',
+      },
       splitLine:{show:true},
       axisTick: {
         show: false,
       },
       axisLabel: {
         rotate: 90,
+        fontFamily: 'MaisonNeue-Medium',
         //showMinLabel: false,
         showMaxLabel: true,
         formatter: function(value) {
@@ -259,6 +263,9 @@ var state1 = function(scatterplot) {
       max: 0.015,
       // extra white space to center label on 0
       name: '     ◀ Decreasing              Segregation              Increasing ▶',
+      nameTextStyle: {
+        fontFamily: 'MaisonNeue-Medium',
+      },
       splitLine:{
         show: false,
       },
@@ -272,6 +279,7 @@ var state1 = function(scatterplot) {
       },
       axisLabel:{
         showMaxLabel: true,
+        fontFamily: 'Arial',
         //rotate: 90,
         //showMinLabel: false,
         formatter: function(value) {

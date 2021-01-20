@@ -5,8 +5,8 @@ subtitle: "Trend data corroborates existing evidence showing that segregation le
 author: "Sean F. Reardon"
 date: "2020-01-21"
 description:
-hero: "/images/heroes/gaps-discovery-hero.svg"
-image: "/images/articles/scores-gap.png"
+hero: "/images/heroes/school-segregation-hero.svg"
+image: "/images/articles/increasing-segregation-sm.png"
 social_image: "/images/social/race-differences-student-scores-social.png"
 scatterplotID: "article3" # used to name the JS file with the necessary states and prop attributes
 statustype: discovery

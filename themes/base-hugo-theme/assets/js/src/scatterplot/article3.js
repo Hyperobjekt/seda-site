@@ -281,7 +281,7 @@ var state1 = function(scatterplot) {
       },
       axisLabel:{
         showMaxLabel: true,
-        fontFamily: 'Arial',
+        fontFamily: 'MaisonNeue-Medium',
         //rotate: 90,
         //showMinLabel: false,
         formatter: function(value) {

@@ -30,9 +30,9 @@ function modifyOption(option) {
     }
     // reformat xaxis label for different sizes
     if ( document.getElementById('lollipop').clientWidth < 604 ) {
-        newOption.xAxis.name = '◀ GAPS SHRINKING               GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2018)'
+        newOption.xAxis.name = '{a|◀ GAPS SHRINKING                          GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2018)}'
         newOption.xAxis.nameGap = 23;
-        newOption.grid.bottom = 43;
+        newOption.grid.bottom = 77;
     }
     return newOption
 }
@@ -91,7 +91,7 @@ const getDataAndRender = async () => {
             },
             grid: {
                 top: 10,
-                bottom: 32,
+                bottom: 60,
                 left: 48,
                 right: 32,
                 containLabel: true,
@@ -105,11 +105,16 @@ const getDataAndRender = async () => {
                 axisTick: {show: false, alignWithLabel: true},
                 type: 'value',
                 position: 'bottom',
-                name: '◀ GAPS SHRINKING                    GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)',
+                name: '{a|◀ GAPS SHRINKING                               GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)}',
                 nameTextStyle: {
-                    fontFamily: 'MaisonNeue-Medium',
-                    fontSize: 13,
-                    color: '#757575'
+                    rich: {
+                        a: {
+                            lineHeight: 15,
+                            fontFamily: 'MaisonNeue-Medium',
+                            fontSize: 13,
+                            color: '#757575',
+                        },
+                    }
                 },
                 nameLocation: 'middle',
                 nameGap: 25,
@@ -132,7 +137,7 @@ const getDataAndRender = async () => {
                 name: '◀ HIGHER          Socioeconomic Inequality          LOWER ▶',
                 nameLocation: 'middle',
                 nameRotate: 90,
-                nameGap: -10,
+                nameGap: -20,
                 nameTextStyle: {
                     fontFamily: 'MaisonNeue-Medium',
                     color: '#757575',

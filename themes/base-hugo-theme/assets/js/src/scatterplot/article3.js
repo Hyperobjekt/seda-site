@@ -263,8 +263,7 @@ var state1 = function(scatterplot) {
       // start at .016 to allow .015 to show without the y and x axis min vals overlapping
       min: -0.016,
       max: 0.015,
-      // extra white space to center label on 0
-      name: '     ◀ Decreasing              Segregation              Increasing ▶',
+      name: '◀ Decreasing              Segregation              Increasing ▶',
       nameTextStyle: {
         fontFamily: 'MaisonNeue-Medium',
       },

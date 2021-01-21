@@ -1,29 +1,30 @@
 {{ define "main" }}
 
 <div id="hero" name="hero" class="hero row" style="">
-    <div class="hero-child row" style="background-image:url('{{ .Params.hero }}');">
-      <div class="column flex-column h-100 justify-content-center align-items-center col-sm-12 offset-sm-0 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
-        <h2>{{ .Params.displaytitle }}</h2>
-        <p class="d-block w-75 mx-auto">{{ .Params.subtitle }}</p>
-      </div>
-     </div>
+  <div class="hero-child row" style="background-image:url('{{ .Params.hero }}');">
+    <div class="column flex-column h-100 justify-content-center align-items-center col-sm-12 offset-sm-0 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+      <h2>{{ .Params.displaytitle }}</h2>
+      <p class="d-block w-75 mx-auto">{{ .Params.subtitle }}</p>
+    </div>
+  </div>
 </div>
 <div class="row crumbs" aria-label="Breadcrumb trail" role="navigation">
-    <div class="col-xs-10 offset-xs-1 col-md-10 offset-xl-1"><span class="med-blue"><a href="/" aria-label="Breadcrumb">HOME</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span><a aria-label="Breadcrumb" href="/discoveries">DISCOVERIES</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span></span><span tabindex="0" aria-label="Breadcrumb, current location, {{ .Title }}">{{ .Title }}</span></div>
+  <div class="col-xs-10 offset-xs-1 col-md-10 offset-xl-1"><span class="med-blue"><a href="/" aria-label="Breadcrumb">HOME</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span><a aria-label="Breadcrumb" href="/discoveries">DISCOVERIES</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span></span><span tabindex="0" aria-label="Breadcrumb, current location, {{ .Title }}">{{ .Title }}</span></div>
 </div>
 <p class="sr-only">This page contains a dynamic scatterplot which will load new data as you proceed though the page. These updates will be announced in accordance to your screen reader's implementation of aria-region live.</p>
 <div id="" class="row mx-1 dyn-article">
-    <div class="col-xs-10 col-md-4 col-lg-5 col-xl-4 offset-xl-1 copy-well">
-      {{ .Content | markdownify }}
-    </div>
-    {{ partial "plot-column.html" . }}
+  <div class="col-xs-10 col-md-4 col-lg-5 col-xl-4 offset-xl-1 copy-well">
+    {{ .Content | markdownify }}
+  </div>
+  {{ partial "plot-column.html" . }}
+</div>
 <div style="" class='scroll-tab-container col-xs-10 col-md-5 col-xl-4 offset-xl-1'>
-<span id="scrollForMore" aria-hidden="true" class="hide">SCROLL FOR MORE
-  <i class=""></i>
-</span>
-<button id="scrollToTop" aria-hidden="true" class="hide">BACK TO TOP
-  <i class="fa fa-chevron-up"></i>
-</button>
+    <span id="scrollForMore" aria-hidden="true" class="hide">SCROLL FOR MORE
+      <i class=""></i>
+    </span>
+    <button id="scrollToTop" aria-hidden="true" class="hide">BACK TO TOP
+      <i class="fa fa-chevron-up"></i>
+    </button>
 </div>
 
 {{ end }}

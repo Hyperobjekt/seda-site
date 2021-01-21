@@ -146,7 +146,7 @@ const getDataAndRender = async () => {
                 axisLabel: {
                     show: true,
                     interval: 0, 
-                    fontSize: 9,
+                    fontSize: 8,
                     inside: false,
                     textVerticalAlign: 'middle',
                     fontFamily: 'MaisonNeue-Medium',

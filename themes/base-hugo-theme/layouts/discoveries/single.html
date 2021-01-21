@@ -11,23 +11,13 @@
 <div class="row crumbs" aria-label="Breadcrumb trail" role="navigation">
     <div class="col-xs-10 offset-xs-1 col-md-10 offset-xl-1"><span class="med-blue"><a href="/" aria-label="Breadcrumb">HOME</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span><a aria-label="Breadcrumb" href="/discoveries">DISCOVERIES</a><span class="crumb-carat"><i class="fas fa-angle-right"></i></span></span><span tabindex="0" aria-label="Breadcrumb, current location, {{ .Title }}">{{ .Title }}</span></div>
 </div>
+<p class="sr-only">This page contains a dynamic scatterplot which will load new data as you proceed though the page. These updates will be announced in accordance to your screen reader's implementation of aria-region live.</p>
 <div id="" class="row mx-1 dyn-article">
-    <div class="col-xs-10 col-md-4 col-lg-5 col-xl-4 offset-xl-1">
-      <p class="sr-only">This page contains a dynamic scatterplot which will load new data as you proceed though the page. These updates will be announced in accordance to your screen reader's implementation of aria-region live.</p>
+    <div class="col-xs-10 col-md-4 col-lg-5 col-xl-4 offset-xl-1 copy-well">
       {{ .Content | markdownify }}
     </div>
-    <div class="col-10 d-sm-none d-md-block offset-1 col-md-8 col-lg-7 col-xl-6 offset-md-0 pl-md-0 pl-lg-2 column-scatterplot">
-      <div class="plot-parent">
-        <div id="plotTitle" class="title" aria-live="assertive" aria-label="Scatterplot title"><span class="sr-only">Scatterplot title</span></div>
-        <div id="plotSubtitle" class="subtitle" aria-live="assertive" aria-label="Scatterplot subtitle"><span class="sr-only">Scatterplot subtitle</span></div>
-        <div class="search-component" id="searchComponent" style=""  aria-controls="scatterplot"></div>
-        <div class="rectangle" style="">
-          <div id="scatterplot" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data scatterplot"></div>
-        </div>
-      </div>
-    </div>
-</div>
-<div class='scrollTabContainer col-xs-10 col-md-5 col-xl-4 offset-xl-1'>
+    {{ partial "plot-column.html" . }}
+<div style="" class='scroll-tab-container col-xs-10 col-md-5 col-xl-4 offset-xl-1'>
 <span id="scrollForMore" aria-hidden="true" class="hide">SCROLL FOR MORE
   <i class=""></i>
 </span>

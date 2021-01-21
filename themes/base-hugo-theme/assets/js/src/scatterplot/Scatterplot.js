@@ -16,130 +16,6 @@ function Scatterplot(container, props) {
 
   var axisBlue = '#547892';
 
-  var theme = {
-    color: colorPalette,
-    title: {
-      textStyle: {
-        fontWeight: 'normal',
-        color: '#fff',
-        fontFamily: 'SharpGrotesk-Medium20',
-        textAlign: 'center'
-      },
-      subtextStyle: {
-        fontWeight: 'normal',
-        color: '#fff',
-        fontFamily: 'MaisonNeue-Medium',
-        textAlign: 'center'
-      },
-      textAlign: 'center'
-    },
-    visualMap: {
-      itemWidth: 15,
-      color: ['#5ab1ef', '#e0ffff']
-    },
-    aria: {
-      show: true,
-      description: 'Scatterplot of student test scores'
-    },
-    toolbox: {
-      iconStyle: {
-        normal: {
-          borderColor: colorPalette[0]
-        }
-      }
-    },
-    tooltip: {
-      backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
-      extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',
-      padding: [6, 10],
-      textStyle: {
-        color: '#fff', // '#dc69aa',
-        fontWeight: '500',
-        fontFamily: 'SharpGrotesk-Medium20',
-        rich: {
-          span: {
-            fontFamily: 'SharpGrotesk-Medium20',
-          },
-          small: {
-            fontFamily: 'MaisonNeue-Medium',
-            fontSize: 6
-          },
-        }
-      },
-      axisPointer: {
-        type: 'line',
-        lineStyle: {
-          color: '#008acd'
-        },
-        crossStyle: {
-          color: '#008acd'
-        },
-        shadowStyle: {
-          color: 'rgba(200,200,200,0.2)'
-        }
-      }
-    },
-    grid: {
-      top: 10,
-      bottom: 32,
-      left: 10,
-      right: 32,
-      // width: 'auto',
-      // height: 'auto',
-      containLabel: true
-    },
-    valueAxis: {
-      axisLine: {
-        lineStyle: {
-          color: '#fff' // '#008acd'
-        }
-      },
-      splitArea: {
-        show: false,
-      },
-      splitLine: {
-        show: false,
-      },
-      nameTextStyle: { // Styles for x and y axis labels
-        color: '#fff',
-        fontSize: 12,
-        fontWeight: 'normal',
-        fontFamily: 'SharpGrotesk-Medium20' // 'MaisonNeue-Medium'
-      },
-      nameLocation: 'middle',
-      nameGap: 32,
-      axisLabel: { // Styles for grid numbers
-        inside: false,
-        textVerticalAlign: 'middle',
-        color: axisBlue, // '#fff',
-        fontFamily: 'MaisonNeue-Medium',
-        fontSize: 12,
-      }
-    },
-    line: {
-      smooth: true,
-      symbol: 'emptyCircle',
-      symbolSize: 3
-    },
-    scatter: {
-      symbol: 'circle',
-      //color: 'rgba(148, 228, 254, 0.8)',
-      //color: 'rgba(255, 255, 255, 0.8)',
-      //color: 'rgba(171, 217, 233, 0.8)',
-      color: 'rgba(202,235,190, 0.77)',
-      itemStyle: {
-        borderWidth: 0.25,
-        borderColor: 'rgba(106, 145, 185, 0.8)',
-        borderType: 'solid',
-        opacity: 1
-        // borderOpacity: 0,
-      }
-    },
-    graph: {
-      color: colorPalette
-    }
-  };
-
   this.states = {
     // default state shared by all scatterplots
     // https://ecomfe.github.io/echarts-doc/public/en/option.html
@@ -224,6 +100,125 @@ function Scatterplot(container, props) {
             return returnString;
           }
         },
+      },
+      theme: {
+        color: colorPalette,
+        title: {
+          textStyle: {
+            fontWeight: 'normal',
+            color: '#fff',
+            fontFamily: 'SharpGrotesk-Medium20',
+            textAlign: 'center'
+          },
+          subtextStyle: {
+            fontWeight: 'normal',
+            color: '#fff',
+            fontFamily: 'MaisonNeue-Medium',
+            textAlign: 'center'
+          },
+          textAlign: 'center'
+        },
+        aria: {
+          show: true,
+          description: 'Scatterplot of student test scores'
+        },
+        toolbox: {
+          iconStyle: {
+            normal: {
+              borderColor: colorPalette[0]
+            }
+          }
+        },
+        tooltip: {
+          backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
+          extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',
+          padding: [6, 10],
+          textStyle: {
+            color: '#fff', // '#dc69aa',
+            fontWeight: '500',
+            fontFamily: 'SharpGrotesk-Medium20',
+            rich: {
+              span: {
+                fontFamily: 'SharpGrotesk-Medium20',
+              },
+              small: {
+                fontFamily: 'MaisonNeue-Medium',
+                fontSize: 6
+              },
+            }
+          },
+          axisPointer: {
+            type: 'line',
+            lineStyle: {
+              color: '#008acd'
+            },
+            crossStyle: {
+              color: '#008acd'
+            },
+            shadowStyle: {
+              color: 'rgba(200,200,200,0.2)'
+            }
+          }
+        },
+        grid: {
+          top: 10,
+          bottom: 32,
+          left: 10,
+          right: 32,
+          // width: 'auto',
+          // height: 'auto',
+          containLabel: true
+        },
+        valueAxis: {
+          axisLine: {
+            lineStyle: {
+              color: '#fff' // '#008acd'
+            }
+          },
+          splitArea: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          nameTextStyle: { // Styles for x and y axis labels
+            color: '#fff',
+            fontSize: 12,
+            fontWeight: 'normal',
+            fontFamily: 'SharpGrotesk-Medium20' // 'MaisonNeue-Medium'
+          },
+          nameLocation: 'middle',
+          nameGap: 32,
+          axisLabel: { // Styles for grid numbers
+            inside: false,
+            textVerticalAlign: 'middle',
+            color: axisBlue, // '#fff',
+            fontFamily: 'MaisonNeue-Medium',
+            fontSize: 12,
+          }
+        },
+        line: {
+          smooth: true,
+          symbol: 'emptyCircle',
+          symbolSize: 3
+        },
+        scatter: {
+          symbol: 'circle',
+          //color: 'rgba(148, 228, 254, 0.8)',
+          //color: 'rgba(255, 255, 255, 0.8)',
+          //color: 'rgba(171, 217, 233, 0.8)',
+          color: 'rgba(202,235,190, 0.77)',
+          itemStyle: {
+            borderWidth: 0.25,
+            borderColor: 'rgba(106, 145, 185, 0.8)',
+            borderType: 'solid',
+            opacity: 1,
+            // borderOpacity: 0,
+          }
+        },
+        graph: {
+          color: colorPalette
+        }
       }
     }
   }
@@ -234,6 +229,7 @@ function Scatterplot(container, props) {
     {
       prefix: 'districts',
       options: this.states.base.options,
+      theme: this.states.base.theme,
       endpoint: 'https://d2fypeb6f974r1.cloudfront.net/dev/scatterplot/',
       metaVars: {
         'counties': ['id', 'name', 'lat', 'lon', 'all_sz' ],
@@ -255,7 +251,6 @@ function Scatterplot(container, props) {
         _self.data = Object.assign((_self.data || {}), newData)
         _self.setProps({data:_self.data})
       },
-      theme: theme
     }
   );
 

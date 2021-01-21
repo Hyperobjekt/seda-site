@@ -28,7 +28,7 @@
             // If on article page display the article scroll indicator.
             if ($('#scrollToTop').length >= 1) {
               if(y + $(window).height() == $(document).height()) {
-                console.log("bottom!");
+                // console.log("bottom!");
                 $('#scrollToTop').addClass('show');
                 $('#scrollToTop').removeClass('hide');
               } else {
@@ -39,7 +39,6 @@
 
             if ($('#scrollForMore').length >= 1) {
               if(y + $(window).height() >= $(document).height() - 300) {
-                console.log("yah bottom!");
                 $('#scrollForMore').addClass('hide');
                 $('#scrollForMore').removeClass('show');
               } else {
@@ -54,9 +53,9 @@
           $('.column-scatterplot .plot-parent').addClass('sticky-top');
         }
     }
-   
 
-   
+
+
 
     $('#openAll, #openAllSR').on('click touchstart', function(e) {
       e.preventDefault();

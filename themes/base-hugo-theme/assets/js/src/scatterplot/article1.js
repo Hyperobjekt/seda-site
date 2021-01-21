@@ -13,8 +13,8 @@ Title['text'] = '';
 Title['subtext'] = '';
 Title['setTitle'] = function() {
   // Set title and subtitle
-  jQ('.column-scatterplot .title').html(Title.text);
-  jQ('.column-scatterplot .subtitle').html(Title.subtext);
+  jQ('.column-plot .title').html(Title.text);
+  jQ('.column-plot .subtitle').html(Title.subtext);
 }
 
 const axisBlue = '#547892';

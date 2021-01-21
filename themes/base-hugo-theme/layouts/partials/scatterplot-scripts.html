@@ -8,7 +8,6 @@
 <script src='https://unpkg.com/papaparse@4.6.3/papaparse.min.js'></script>
 <script src='https://unpkg.com/react-seda-search@1.0.10/umd/react-seda-search.min.js'></script>
 
-
 {{/* Load differently processed scripts depending upon local or production */}}
 {{ if .Site.IsServer }}
   {{/* Site is served, local dev, don't minify */}}
@@ -42,7 +41,29 @@
 <script src="{{ $articlejsmin.Permalink }}"></script>
 {{ end }}
 
+{{ if (eq .Params.scatterplotID "article3" )}}
 {{ $opts := dict "noComments" false "minified" false }}
-{{ $plot := resources.Get "js/src/scatterplot/plot.js" | babel $opts }}
-{{ $plotjs := slice $plot | resources.Concat "js/plot.min.js" | fingerprint }}
-<script src="{{ $plotjs.Permalink }}"></script>
+{{ $a := "js/src/scatterplot/article3.js" }}
+{{ $articlejs := resources.Get $a | babel $opts }}
+{{ $articlejsmin := slice $articlejs | resources.Concat "js/article3.min.js" | fingerprint }}
+<script src="{{ $articlejsmin.Permalink }}"></script>
+{{ end }}
+
+{{ if (eq .Params.scatterplotID "article4" )}}
+{{ $opts := dict "noComments" false "minified" false }}
+{{ $a := "js/src/lollipopchart/article4.js" }}
+{{ $articlejs := resources.Get $a | babel $opts }}
+{{ $articlejsmin := slice $articlejs | resources.Concat "js/article4.min.js" | fingerprint }}
+<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
+<script src="https://unpkg.com/regenerator-runtime@0.12.1/runtime.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0/echarts-en.common.min.js"></script>
+<script src="{{ $articlejsmin.Permalink }}"></script>
+{{ end }}
+
+{{ if not (eq .Params.scatterplotID "article4" )}}
+  {{ $opts := dict "noComments" false "minified" false }}
+  {{ $plot := resources.Get "js/src/scatterplot/plot.js" | babel $opts }}
+  {{ $plotjs := slice $plot | resources.Concat "js/plot.min.js" | fingerprint }}
+  <script src="{{ $plotjs.Permalink }}"></script>
+{{end}}

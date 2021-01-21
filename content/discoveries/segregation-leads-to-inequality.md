@@ -1,7 +1,7 @@
 ---
-title: "Increasing school segregation leads to greater racial academic inequality" # for the body class -- can't use a ?
-displaytitle: "Increasing school segregation leads to greater racial academic inequality" # for what shows on the page
-subtitle: "Trend data corroborates existing evidence showing that segregation leads to unequal learning"
+title: "Increasing School Segregation Leads to Greater Racial Academic Inequality" # for the body class -- can't use a ?
+displaytitle: "Increasing School Segregation Leads to Greater Racial Academic Inequality" # for what shows on the page
+subtitle: "Trend Data Corroborates Existing Evidence Showing That Segregation Leads to Unequal Learning"
 author: "Sean F. Reardon"
 date: "2020-01-21"
 description:

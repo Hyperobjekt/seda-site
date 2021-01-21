@@ -17,14 +17,18 @@
         <div id="plotTitle" class="title" aria-live="assertive" aria-label="Scatterplot title"><span class="sr-only">Scatterplot title</span></div>
         <div id="plotDirections" class="directions text-center d-md-none" aria-live="assertive" aria-label="Scatterplot directions"><span class="sr-only">Scatterplot directions</span></div>
         <div id="rectangle" class="rectangle" style="">
-          <div id="scatterplot" style="width: 100%" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data scatterplot"></div>
+
           <div class="d-inline-block plot-legend" style="">
             <div class="legend-label">
-              <div class="label top">Gap Increasing ▶</div>
-              <div class="label bot">◀ Gap Decreasing</div>
+              <div class="label top">Increasing ▶</div>
+              <div class="label middle">Gap</div>
+              <div class="label bot">◀ Decreasing</div>
             </div>
             <div class="legend"></div>
           </div>
+          
+          <div id="scatterplot" style="width: 100%" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data scatterplot"></div>
+          
         </div>
       </div>
     </div>

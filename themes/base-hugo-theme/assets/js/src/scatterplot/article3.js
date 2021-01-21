@@ -217,14 +217,14 @@ var state1 = function(scatterplot) {
       itemHeight: '280px',
       itemWidth: '10px',
       inRange: {
-        color: ['#174B80','rgba(255,255,255,1)', '#136E4A'],
+        color: ['#136E4A' , 'rgba(255,255,255,1)' , '#174B80'],
       },
     }],
     yAxis: {
       min: -0.015,
       max:.015,
       position: 'left',
-      name: '◀ Decreasing             Gap             Increasing ▶',
+      // name: '◀ Decreasing             Gap             Increasing ▶',
       nameTextStyle: {
         fontFamily: 'MaisonNeue-Medium',
       },

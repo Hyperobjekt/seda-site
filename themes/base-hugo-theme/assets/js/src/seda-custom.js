@@ -54,8 +54,9 @@
         }
     }
 
-
-
+    if(localStorage.getItem('seda-close-banner')) {
+      $('#banner').hide();
+    }
 
     $('#openAll, #openAllSR').on('click touchstart', function(e) {
       e.preventDefault();
@@ -648,6 +649,11 @@
         // console.log('#closeDrawer selected');
         $('#drawer').removeClass('show');
         $('#toggleDrawer').focus();
+    });
+
+    $('#closeBanner').on('click', function() {
+      $('#banner').hide();
+      localStorage.setItem('seda-close-banner', true);
     });
 
     $('#closeLoop').on('keypress', function(e) {

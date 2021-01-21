@@ -2,7 +2,7 @@
  * scatterplot states for article three,
  * Increasing school segregation leads to greater racial academic inequality
  * - article storyboard: https://docs.google.com/document/d/1LVE15Vd7_D8PsDYp_0BtPvJ8mf-IJ_WUQc0-R4TObZs/
- * 
+ *
  * data lives in themes/base-hugo-theme/static/data/districts and /meta
  */
 
@@ -300,12 +300,12 @@ var state1 = function(scatterplot) {
     tooltip: {
       trigger: 'item',
       formatter: function(item) {
-        console.log(item)
+        // console.log(item)
       }
     },
     series: [
       initialMarkline,
-      { 
+      {
         id: 'base',
         itemStyle: {
           borderWidth: 1,
@@ -328,7 +328,7 @@ var state1 = function(scatterplot) {
     ]
   }
 
-  
+
 
   // Set title and subtitle
   jQ('.column-plot .title').text(Title.text);

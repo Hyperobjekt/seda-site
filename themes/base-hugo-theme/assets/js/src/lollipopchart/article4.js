@@ -55,6 +55,11 @@ const getDataAndRender = async () => {
         const districts = plotData.map(x => x.district);
         const tenYrGapNeg = plotData.map(x => x.tenYrGapChg < 0 ? x.tenYrGapChg : null);
         const tenYrGapPos = plotData.map(x => x.tenYrGapChg >= 0 ? x.tenYrGapChg : null);
+        const date = new Date()
+        const datesCloseDouble = plotData.map(x => {
+            const yrRaw = x.yrGapClose ? x.yrGapClose : x.yrGapDbl;
+            return yrRaw - date.getFullYear() > 100 ? '100+ years' : yrRaw;
+        })
         var baseOption = {
             aria: {
                 show: true,
@@ -65,7 +70,7 @@ const getDataAndRender = async () => {
                 `${plotData[params[0].dataIndex].district}, ${plotData[params[0].dataIndex].state}<br />
                 <small>SES Inequality: ${plotData[params[0].dataIndex].ses}<br />
                 Change in Gap (2009-2018): ${plotData[params[0].dataIndex].tenYrGapChg}<br />
-                ${plotData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${plotData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${plotData[params[0].dataIndex].yrGapDbl}`}</small>`,
+                ${plotData[params[0].dataIndex].percentGapChg <= 0 ? `Year 2009 Gap Will Close, at Current Trend: ${datesCloseDouble[params[0].dataIndex]}` : `Year 2009 Gap Will Double, at Current Trend: ${datesCloseDouble[params[0].dataIndex]}`}</small>`,
                 backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
                 confine: true,
                 extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',

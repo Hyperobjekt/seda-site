@@ -1,0 +1,12 @@
+{{ if not ( or (eq .Params.scatterplotID "article4" ) (eq .Params.scatterplotID "article3" )) }}
+
+    <div style="" class='scroll-tab-container col-xs-10 col-md-5 col-xl-4 offset-xl-1'>
+        <span id="scrollForMore" aria-hidden="true" class="hide">SCROLL FOR MORE
+        <i class=""></i>
+        </span>
+        <button id="scrollToTop" aria-hidden="true" class="hide">BACK TO TOP
+        <i class="fa fa-chevron-up"></i>
+        </button>
+    </div>
+
+{{ end }}

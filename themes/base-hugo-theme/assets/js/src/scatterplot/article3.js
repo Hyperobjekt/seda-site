@@ -16,19 +16,18 @@ Title['text'] = '';
 Title['subtext'] = '';
 Title['setTitle'] = function() {
   // Set title and subtitle
-  jQ('.column-scatterplot .title').html(Title.text);
-  jQ('.column-scatterplot .subtitle').html(Title.subtext);
+  jQ('.column-plot .title').html(Title.text);
+  jQ('.column-plot .subtitle').html(Title.subtext);
 }
 yAxis['increasing'] ='';
 yAxis['decreasing'] ='';
 yAxis['var'] = ''
 yAxis['setAxis'] = function() {
-  // Set title and subtitle
-  jQ('.column-scatterplot .top').html(Title.increasing);
-  jQ('.column-scatterplot .middle').html(Title.var);
-  jQ('.column-scatterplot .bot').html(Title.decreasing);
+  // Set axis properties
+  jQ('.top').html(yAxis.increasing);
+  jQ('.middle').html(yAxis.var);
+  jQ('.bot').html(yAxis.decreasing);
 }
-
 
 const axisBlue = '#547892';
 
@@ -326,7 +325,8 @@ var state1 = function(scatterplot) {
           borderWidth: 1,
           borderColor: '#2173C3',
         },
-        zlevel: 104
+        zlevel: 104,
+        silent: true,
        },
       {
         id: 'bestfit',

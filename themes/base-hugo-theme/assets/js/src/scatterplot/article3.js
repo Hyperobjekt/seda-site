@@ -11,6 +11,7 @@ const jQ = jQuery;
 // Placeholders for segregation series operations
 let segData = [];
 let Title = {};
+let yAxis = {};
 Title['text'] = '';
 Title['subtext'] = '';
 Title['setTitle'] = function() {
@@ -18,6 +19,16 @@ Title['setTitle'] = function() {
   jQ('.column-scatterplot .title').html(Title.text);
   jQ('.column-scatterplot .subtitle').html(Title.subtext);
 }
+yAxis['increasing'] ='';
+yAxis['decreasing'] ='';
+yAxis['var'] = ''
+yAxis['setAxis'] = function() {
+  // Set title and subtitle
+  jQ('.column-scatterplot .top').html(Title.increasing);
+  jQ('.column-scatterplot .middle').html(Title.var);
+  jQ('.column-scatterplot .bot').html(Title.decreasing);
+}
+
 
 const axisBlue = '#547892';
 
@@ -188,6 +199,11 @@ var state1 = function(scatterplot) {
   Title['text'] = 'Districts with Increasing Segregation Have Increasing White-Black Achievement Gaps (2009-2018)';
   Title['subtext'] = '';
   Title.setTitle();
+
+  yAxis['increasing'] = 'Increasing ▶'
+  yAxis['decreasing'] = '◀ Decreasing'
+  yAxis['var'] = 'Gap'
+  yAxis.setAxis();
 
   const baseOverrides = {
     notMerge: false,

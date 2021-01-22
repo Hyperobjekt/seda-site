@@ -494,22 +494,26 @@ body.kind-page.type-discoveries {
           left: 100%;
           bottom: 45px;
           .label {
+            transform: rotate(-90deg);
             position: absolute;
             font-size: 13px;
             font-family: 'MaisonNeue-Medium';
             color: #547892;
-            transform: rotate(-90deg);
-            width: 102px;
-            left: -43px;
-          }
-          .top {
-            bottom: 231px;
-          }
-          .middle {
-            bottom: 164px;
-          }
-          .bot {
-            bottom: 40px;
+            left: -130px;
+            width: 270px;
+            bottom: 123px;
+            text-align: center;
+            .top {
+              float: right;
+              text-align: right;
+            }
+            .middle {
+              text-align: center;
+            }
+            .bot {
+              float: left;
+              text-align: left;
+            }
           }
         }
         .legend {

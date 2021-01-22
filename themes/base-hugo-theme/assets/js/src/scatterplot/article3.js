@@ -19,14 +19,14 @@ Title['setTitle'] = function() {
   jQ('.column-plot .title').html(Title.text);
   jQ('.column-plot .subtitle').html(Title.subtext);
 }
-yAxis['increasing'] ='';
-yAxis['decreasing'] ='';
-yAxis['var'] = ''
+yAxis['up'] ='';
+yAxis['down'] ='';
+yAxis['name'] = ''
 yAxis['setAxis'] = function() {
   // Set axis properties
-  jQ('.top').html(yAxis.increasing);
-  jQ('.middle').html(yAxis.var);
-  jQ('.bot').html(yAxis.decreasing);
+  jQ('.axis__up').html(yAxis.up);
+  jQ('.axis__name').html(yAxis.name);
+  jQ('.axis__down').html(yAxis.down);
 }
 
 const axisBlue = '#547892';
@@ -199,9 +199,9 @@ var state1 = function(scatterplot) {
   Title['subtext'] = '';
   Title.setTitle();
 
-  yAxis['increasing'] = 'Increasing ▶'
-  yAxis['decreasing'] = '◀ Decreasing'
-  yAxis['var'] = 'Gap'
+  yAxis.up = 'Increasing ▶'
+  yAxis.down = '◀ Decreasing'
+  yAxis.name = 'Gap'
   yAxis.setAxis();
 
   const baseOverrides = {
@@ -342,11 +342,6 @@ var state1 = function(scatterplot) {
     ]
   }
 
-
-
-  // Set title and subtitle
-  jQ('.column-plot .title').text(Title.text);
-  jQ('.column-plot .subtitle').text(Title.subtext);
   return {
     endpoint: '/data/',
     xVar: 'wb_seg',

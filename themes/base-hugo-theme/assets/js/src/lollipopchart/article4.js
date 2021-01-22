@@ -28,12 +28,6 @@ function modifyOption(option) {
         newOption.yAxis.nameGap = -20
         newOption.tooltip.textStyle.fontSize = 10
     }
-    // reformat xaxis label for different sizes
-    if ( document.getElementById('lollipop').clientWidth < 604 ) {
-        newOption.xAxis.name = '{a|◀ GAPS SHRINKING                          GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2018)}'
-        newOption.xAxis.nameGap = 23;
-        newOption.grid.bottom = 77;
-    }
     return newOption
 }
 
@@ -105,19 +99,6 @@ const getDataAndRender = async () => {
                 axisTick: {show: false, alignWithLabel: true},
                 type: 'value',
                 position: 'bottom',
-                name: '{a|◀ GAPS SHRINKING                               GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)}',
-                nameTextStyle: {
-                    rich: {
-                        a: {
-                            lineHeight: 15,
-                            fontFamily: 'MaisonNeue-Medium',
-                            fontSize: 13,
-                            color: '#757575',
-                        },
-                    }
-                },
-                nameLocation: 'middle',
-                nameGap: 25,
                 axisLabel: {
                     inside: false,
                     textVerticalAlign: 'middle',
@@ -146,7 +127,7 @@ const getDataAndRender = async () => {
                 axisLabel: {
                     show: true,
                     interval: 0, 
-                    fontSize: 9,
+                    fontSize: 8,
                     inside: false,
                     textVerticalAlign: 'middle',
                     fontFamily: 'MaisonNeue-Medium',

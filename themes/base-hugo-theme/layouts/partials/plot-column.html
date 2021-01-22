@@ -5,7 +5,17 @@
         <div id="plotTitle" class="title" aria-live="assertive" aria-label="Lollipop chart title"><span class="sr-only">Lollipop chart title</span></div>
         <div id="plotDirections" class="directions text-center d-md-none" aria-live="assertive" aria-label="Lollipop chart directions"><span class="sr-only">Lollipop chart directions</span></div>
         <div id="rectangle" class="rectangle">
+
           <div id="lollipop" class="lollipop" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data lollipop chart"></div>
+          
+          <div class="axis">
+            <div class="axis__x4">
+              <span class="axis__down">◀ Gap Decreasing</span>
+              <span class="axis__up">Gap Increasing ▶</span></br>
+              <span class="axis__name axis--small-font">10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -18,15 +28,13 @@
         <div id="plotDirections" class="directions text-center d-md-none" aria-live="assertive" aria-label="Scatterplot directions"><span class="sr-only">Scatterplot directions</span></div>
         <div id="rectangle" class="rectangle" style="">
 
-          <div class="d-inline-block plot-legend" style="">
-            <div class="legend-label">
-              <div class="label">
-                <span id="bot" class="bot"></span>
-                <span id="middle" class="middle"></span>
-                <span id="top" class="top"></span>
-              </div>
+          <div class="axis">
+            <div class="axis__y3">
+              <span class="axis__down"></span>
+              <span class="axis__name"></span>
+              <span class="axis__up"></span>
+              <div class="axis__legend"></div>
             </div>
-            <div class="legend"></div>
           </div>
           
           <div id="scatterplot" style="width: 100%" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data scatterplot"></div>

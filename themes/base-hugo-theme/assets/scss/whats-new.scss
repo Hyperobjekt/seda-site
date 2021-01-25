@@ -4,8 +4,45 @@
         max-width: 1440px; 
         margin: 0 auto;
     }
-
     .bg-accent {
         background-color: #F5F8FA;
+    }
+    #page-content {
+        p, li {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            color: $seda-gray;
+            @include media-breakpoint-up(md) {
+                font-size: 1.6rem;
+                line-height: 1.5;
+            }
+            @include media-breakpoint-up(lg) {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+            @include media-breakpoint-up(xl) {
+                font-size: 1.7rem;
+                line-height: 2.5rem;
+            }
+        }
+        p, ul {
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 2.4rem;
+        }
+        }
+        p a, li a {
+        color: $seda-red;
+        color: #7086AB;
+        color: $seda-navy;
+        //font-family: $maisonneue-bold;
+        &:hover {
+            text-decoration: underline;
+            color: #627799;
+        }
+        }
+        a:hover {
+        text-decoration: underline;
+
+        }
     }
 }

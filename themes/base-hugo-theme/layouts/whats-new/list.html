@@ -4,96 +4,92 @@
   {{ partial "data-table" }}
   <div class="hero-child row align-items-center">
     <div class="column col-sm-10 offset-sm-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4 col-xl-6 offset-xl-3">
-      <h2>What's new in version 4.0</h2>
-      <p>Explore more, updated data at your fingertips.</p>
+      <h2>What's new</h2>
+      <p>Explore more, updated data at your fingertips in our latest release.</p>
     </div>
   </div>
 </div>
-<div class="py-5 py-md-10 px-4 px-md-0 bg-accent">
-  <div class="container-xxl">
-    <h3 class="mb-3 offet-0 offset-md-1">New features in the data</h3>
-    <div class="d-flex flex-column-reverse flex-md-row align-items-start" >
-      <div class="col col-md-5 px-0 pr-md-7 pr-lg-14 offset-md-1">
-        <p>Version 4.0 of SEDA is updated with better estimates and cleaner data. New features allow you to access:</p>
-        <ul>
-          <li>New crosswalk with stable school, district, and county IDs.</li> 
-          <li>Data for 2016-2017 and 2017-2018 school years.</li>
-          <li>Data for more Native American students.</li>
-          <li>Estimates for <a class="text-muted" href="https://www.bie.edu/">Bureau of Indian Education (BIE) schools.</a></li>
-          <li>Math scores for Puerto Rico.</li>
-          <li>Insights and learning: Click here to see our <a class="text-muted" href="/discoveries/">latest discoveries.</a></li>
-        </ul>
-        <div class="w-100 all-explorations mt-5 d-flex justify-content-center justify-content-md-start">
-          <a class="btn btn-sm btn-outline-dark py-2 px-4 gta-event-CTAClick" href="{{ "/get-the-data/" | absURL }}" aria-label="Get the data">GET THE DATA</a>
+<div id="page-content">
+  <div class="py-5 py-md-10 px-4 px-md-0 bg-accent">
+    <div class="container-xxl">
+      <h3 class="mb-3 offet-0 offset-md-1">New features in the data</h3>
+      <div class="d-flex flex-column-reverse flex-md-row align-items-start" >
+        <div class="col col-md-5 px-0 pr-md-7 pr-lg-14 offset-md-1">
+          <p>Version 4.0 of SEDA is updated with better estimates and cleaner data. New features allow you to access:</p>
+          <ul class="pl-2">
+            <li>New crosswalk with stable school, district, and county IDs.</li> 
+            <li>Data for 2016-2017 and 2017-2018 school years.</li>
+            <li>Data for more Native American students.</li>
+            <li>Estimates for <a href="https://www.bie.edu/">Bureau of Indian Education (BIE) schools.</a></li>
+            <li>Math scores for Puerto Rico.</li>
+            <li>Insights and learning: Click here to see our <a  href="/discoveries/">latest discoveries.</a></li>
+          </ul>
+          <div class="w-100 all-explorations mt-5 d-flex justify-content-center justify-content-md-start">
+            <a class="btn btn-custom2 py-2 px-4 gta-event-CTAClick" href="{{ "/get-the-data/" | absURL }}" aria-label="Get the data">GET THE DATA</a>
+          </div>
         </div>
+        <img class="col col-md-5 px-0 mb-4 mb-md-0" src="/images/new-layout.png" />
       </div>
-      <img class="col col-md-5 px-0 mb-4 mb-md-0" src="/images/new-layout.png" />
     </div>
   </div>
-</div>
-<div class="py-5 py-md-9 px-4 px-md-0">
-  <div class="container-xxl">
-    <h3 class="mb-4 mb-md-9 col col-md-4 mx-auto text-center">New features in the Educational Opportunity Explorer</h3>
-    <div class="d-flex flex-column-reverse flex-md-row align-items-start align-items-lg-center" >
-      <div class="col col-md-5 px-0 pr-md-7 pr-lg-14 offset-md-1">
-        <h5 class="mb-4 col col-md-8 px-0">Refine your view of the data with new filtering options</h5>
-        <p>Use filter controls within the Explorer to see places within your chosen ranges for a given metric, such as Average Test Scores or Socioeconomic Status. You can also filter by type of district (rural, town, suburban, or urban) or school (charter, magnet, and more).</p>
-        <ul>
-          <li>Filter estimates by: 
-            <ul>
-              <li>School, district, and county size </li>
-              <li>Average test score range</li>
-              <li>Learning rate range</li>
-              <li>Trend in test score range</li>
-              <li>Socioeconomic status range</li>
-              <li>Percent (%) qualifying for free or reduced priced lunch (FRPL) range</li>
-            </ul>
-          </li>
-          <li>Select all schools in a particular district: 
-            <ul>
-              <li>For example: <a class="text-muted" href="https://embargoed.edopportunity.org/#/map/none/districts/avg/ses/i/12/40.71/-73.79/">Click here</a> to see estimates for all schools in New York City Public Schools.</li>
-            </ul>
-          </li>
-          <li>Select schools by characteristic: 
-            <ul>
-              <li>Area: rural, town, suburban, and urban schools.</li>
-              <li>School type: public, charter, and magnet schools.</li>
-              <li>School age group: middle, elementary, and combined.</li>
-            </ul>
-          </li>
-        </ul>
+  <div class="py-5 py-md-9 px-4 px-md-0">
+    <div class="container-xxl">
+      <h3 class="mb-4 mb-md-9 col col-md-4 mx-auto text-center">New features in the Educational Opportunity Explorer</h3>
+      <div class="d-flex flex-column-reverse flex-md-row align-items-start" >
+        <div class="col col-md-5 px-0 pr-md-7 pr-xl-14 offset-md-1">
+          <h5 class="mb-4 col col-md-8 px-0">Refine your view of the data with new filtering options</h5>
+          <p class="mb-2">In our new Explorer interface, you can:</p>
+          <ul class="mb-0 pl-2">
+            <li>Filter estimates by 
+              <ul class="pb-2 pb-lg-0">
+                <li>School, district, and county size </li>
+                <li>Ranges within key metrics: average test scores, learning rates, and trend in test scores</li>
+                <li>Socioeconomic status and percent qualifying for free or reduced priced lunch (FRPL) ranges</li>
+              </ul>
+            </li>
+            <li class="pb-2">Select all schools in a particular district. For example, <a class="" href="https://edopportunity.org/explorer/#/map/none/districts/avg/ses/i/12/40.71/-73.79/">click here</a> to see estimates for all schools in New York City Public Schools.</li>
+            </li>
+            <li>Select schools by characteristic
+              <ul class="mb-0 pl-2">
+                <li>Area: rural, town, suburban, and urban schools.</li>
+                <li>School type: public, charter, and magnet schools.</li>
+                <li>School age group: middle, elementary, and combined.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <img class="col col-md-5 px-0 mb-4 mb-md-0" src="/images/new-layout.png" />
       </div>
-      <img class="col col-md-5 px-0 mb-4 mb-md-0" src="/images/new-layout.png" />
     </div>
   </div>
-</div>
-<div class="py-5 py-md-9 px-4 px-md-0 bg-accent">
-  <div class="container-xxl">
-    <h3 class="col col-lg-3 mb-2 mx-auto text-center">View and compare locations in new ways</h3>
-    <p class="mb-4 px-0 col col-md-4 mx-auto text-center">We’ve refined the location data panel to provide a clearer view of statistics at a glance, and clicking any variable in the panel now updates the map and charts.  You can also compare several locations’ data together in a revised table display.</p>
-    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center" >
-      <img class="col col-md-4 px-0 mb-4 mb-md-0 mr-0 mr-md-8" src="/images/new-layout.png" />
-      <img class="col col-md-4 px-0 mb-4 mb-md-0" src="/images/new-layout.png" />
-    </div>
-  </div>
-</div>
-<div class="py-5 py-md-9 px-4 px-md-0">
-  <div class="container-xxl">
-    <div class="d-flex flex-column-reverse flex-md-row align-items-center" >
-      <div class="col col-md-5 px-0 pr-md-7 pr-lg-14 offset-md-1">
-        <h5 class="mb-4 col col-md-8 px-0">State-level views, margins of error, & more</h5>
-        <p>Among the many other new features in the Explorer, we’ve added states to the list of geographies you can explore, margins of error for each place’s data, and even more powerful and intuitive controls—all within a completely redesigned interface.</p>
+  <div class="py-5 py-md-9 px-4 px-md-0 bg-accent">
+    <div class="container-xxl">
+      <h3 class="col col-lg-3 mb-2 mx-auto text-center">View and compare locations in new ways</h3>
+      <p class="mb-5 px-0 col col-md-4 mx-auto text-center">We’ve refined the location data panel to provide a clearer view of statistics at a glance (and have added U.S. states as new location types to explore).  You can also compare several locations’ data together in a revised table display.</p>
+      <div class="d-flex flex-column flex-md-row justify-content-center align-items-center" >
+        <img class="col col-md-4 px-0 mb-4 mb-md-0 mr-0 mr-md-8" src="/images/new-layout.png" />
+        <img class="col col-md-4 px-0 mb-4 mb-md-0" src="/images/new-layout.png" />
       </div>
-      <img class="col col-md-5 px-0 mb-4 mb-md-0" src="/images/new-layout.png" />
     </div>
   </div>
-</div>
-<div class="row map-invite map-invite-4 m-0 px-4 py-6 py-lg-9 py-xl-10">
-  <div class="scatterplot col-12 col-mm-8 px-0 py-8 px-md-10 py-md-10 offset-mm-2">
-      <h3 class="color-tertiary mb-3 mb-xl-4" id="ready_to_start">Ready to start exploring?</h3>
-      <a class="btn btn-custom go-btn gta-event-CTAClick" href="/explorer/" aria-label="View charts and maps" aria-describedby="ready_to_start ready_to_start_p">Click here to access SEDA 4.0</a>
+  <div class="py-5 py-md-9 px-4 px-md-0 d-none">
+    <div class="container-xxl">
+      <div class="d-flex flex-column-reverse flex-md-row align-items-center" >
+        <div class="col col-md-5 px-0 pr-md-7 pr-lg-14 offset-md-1">
+          <h5 class="mb-4 col col-md-8 px-0">State-level views, margins of error, & more</h5>
+          <p>Among the many other new features in the Explorer, we’ve added states to the list of geographies you can explore, margins of error for each place’s data, and even more powerful and intuitive controls—all within a completely redesigned interface.</p>
+        </div>
+        <img class="col col-md-5 px-0 mb-4 mb-md-0" src="/images/new-layout.png" />
+      </div>
+    </div>
   </div>
-</div>
+  <div class="row map-invite map-invite-4 m-0 px-4 py-6 py-lg-9 py-xl-10">
+    <div class="scatterplot col-12 col-mm-8 px-0 py-8 px-md-10 py-md-10 offset-mm-2">
+        <h3 class="color-tertiary mb-3 mb-xl-4" id="ready_to_start">Ready to start exploring?</h3>
+        <a class="btn btn-custom go-btn gta-event-CTAClick" href="/explorer/" aria-label="View charts and maps" aria-describedby="ready_to_start ready_to_start_p">Click here to access SEDA 4.0</a>
+    </div>
+  </div>
+</div>  
 
 {{ partial "subscribe.html" .}}
 

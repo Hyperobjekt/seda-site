@@ -292,6 +292,11 @@ span.help-button-style {
 
 a.btn.btn-custom2 {
   text-decoration: none;
+  font-family: "SharpGrotesk-Medium15", "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 
 input.form-control {
@@ -1732,7 +1737,7 @@ body.home {
     background-position: center 8%;
 
     &.map-invite-4 {
-      background: #F5F8FA;
+      background: #fff;
 
       .scatterplot {
         background-image: url('/images/map-invite-4.jpg');

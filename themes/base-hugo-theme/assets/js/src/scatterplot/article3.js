@@ -9,9 +9,12 @@
 const jQ = jQuery;
 
 // Placeholders for segregation series operations
+
 let segData = [];
 let Title = {};
 let yAxis = {};
+let xAxis = {};
+
 Title['text'] = '';
 Title['subtext'] = '';
 Title['setTitle'] = function() {
@@ -21,12 +24,21 @@ Title['setTitle'] = function() {
 }
 yAxis['up'] ='';
 yAxis['down'] ='';
-yAxis['name'] = ''
+yAxis['name'] = '';
 yAxis['setAxis'] = function() {
   // Set axis properties
-  jQ('.axis__up').html(yAxis.up);
-  jQ('.axis__name').html(yAxis.name);
-  jQ('.axis__down').html(yAxis.down);
+  jQ('.axis__y-label .axis__up').html(yAxis.up);
+  jQ('.axis__y-label .axis__name').html(yAxis.name);
+  jQ('.axis__y-label .axis__down').html(yAxis.down);
+}
+xAxis['up'] ='';
+xAxis['down'] ='';
+xAxis['name'] = '';
+xAxis['setAxis'] = function() {
+  // Set axis properties
+  jQ('.axis__x-label .axis__up').html(xAxis.up);
+  jQ('.axis__x-label .axis__name').html(xAxis.name);
+  jQ('.axis__x-label .axis__down').html(xAxis.down);
 }
 
 const axisBlue = '#547892';
@@ -44,13 +56,13 @@ const initialMarkline = {
           fontWeight: '500',
           fontSize: 11.52,
           padding: 4,
-          color: 'rgba(5, 41, 101, 100%)',
+          color: 'rgba(84, 120, 146, 60%)',
       },
       //xaxis markline
       data: [
           [
             {
-              coord: [-.016, 0],
+              coord: [-.015, 0],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(5, 41, 101, 100%)',
@@ -72,7 +84,7 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [-.009, 0], symbol: 'none' },
+            { coord: [-.006, 0], symbol: 'none' },
           ],
           //yaxis markline
           [
@@ -199,10 +211,15 @@ var state1 = function(scatterplot) {
   Title['subtext'] = '';
   Title.setTitle();
 
-  yAxis.up = 'Increasing ▶'
-  yAxis.down = '◀ Decreasing'
+  yAxis.up = 'Increasing ▼'
+  yAxis.down = '▲ Decreasing'
   yAxis.name = 'Gap'
   yAxis.setAxis();
+
+  xAxis.up = 'Increasing ▶'
+  xAxis.down = '◀ Decreasing'
+  xAxis.name = 'Segregation'
+  xAxis.setAxis();
 
   const baseOverrides = {
     notMerge: false,
@@ -221,7 +238,7 @@ var state1 = function(scatterplot) {
     },
     grid :{
         top: 15,
-        left: 20
+        left: 42,
     },
     visualMap: [{
       show: false,
@@ -239,7 +256,6 @@ var state1 = function(scatterplot) {
       min: -0.015,
       max:.015,
       position: 'left',
-      // name: '◀ Decreasing             Gap             Increasing ▶',
       nameTextStyle: {
         fontFamily: 'MaisonNeue-Medium',
       },
@@ -250,6 +266,7 @@ var state1 = function(scatterplot) {
       axisLabel: {
         rotate: 90,
         fontFamily: 'MaisonNeue-Medium',
+        fontSize: 13,
         //showMinLabel: false,
         showMaxLabel: true,
         formatter: function(value) {
@@ -273,15 +290,11 @@ var state1 = function(scatterplot) {
       zlevel: 103,
     },
     xAxis: {
-      type: 'value',
-      interval: .001,
+      // type: 'value',
+      // interval: .001,
       // start at .016 to allow .015 to show without the y and x axis min vals overlapping
-      min: -0.016,
+      min: -0.015,
       max: 0.015,
-      name: '◀ Decreasing              Segregation              Increasing ▶',
-      nameTextStyle: {
-        fontFamily: 'MaisonNeue-Medium',
-      },
       splitLine:{
         show: false,
       },
@@ -294,19 +307,19 @@ var state1 = function(scatterplot) {
         }
       },
       axisLabel:{
-        showMaxLabel: true,
-        fontFamily: 'MaisonNeue-Medium',
+        //showMaxLabel: true,
+        //fontFamily: 'MaisonNeue-Medium',
         //rotate: 90,
         //showMinLabel: false,
         formatter: function(value) {
           // remove leading 0's
-          if (value === -0.015) {
-              return value.toString()[0] + value.toString().slice(2)
-          } else if (value === 0.015) {
-              return value.toString().slice(1)
-          } else if (value === 0) {
-              return value
-          }
+          // if (value === -0.015) {
+          //     return value.toString()[0] + value.toString().slice(2)
+          // } else if (value === 0.015) {
+          //     return value.toString().slice(1)
+          // } else if (value === 0) {
+          //     return value
+          // }
         },
       },
       position: 'bottom',

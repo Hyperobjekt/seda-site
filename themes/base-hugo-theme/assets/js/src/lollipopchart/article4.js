@@ -11,6 +11,14 @@ const jQ = jQuery;
 jQ('.column-plot .title').html('Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2018, 40 Largest U.S. Districts)');
 jQ('.column-plot .directions').html('</br>Tap in the chart below to see district names and more data.')
 
+jQ('.axis__y-label .axis__down').html('▲ LOWER');
+jQ('.axis__y-label .axis__name').html('Socioeconomic Inequality');
+jQ('.axis__y-label .axis__up').html('HIGHER ▼');
+
+jQ('.axis__x-label .axis__down').html('◀ Gap Decreasing');
+jQ('.axis__x-label .axis__name').html('10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)');
+jQ('.axis__x-label .axis__up').html('Gap Increasing ▶');
+
 //init chart
 
 var colorPalette = [
@@ -24,8 +32,8 @@ function modifyOption(option) {
     var newOption = deepmerge.all([ {}, option]);
     // remove plot labels if on mobile
     if ( window.innerWidth <= 768) {
+        newOption.grid.left = 7
         newOption.yAxis.axisLabel.show = false;
-        newOption.yAxis.nameGap = -20
         newOption.tooltip.textStyle.fontSize = 10
     }
     return newOption
@@ -85,7 +93,7 @@ const getDataAndRender = async () => {
             },
             grid: {
                 top: 10,
-                bottom: 60,
+                bottom: 0,
                 left: 48,
                 right: 32,
                 containLabel: true,
@@ -115,15 +123,6 @@ const getDataAndRender = async () => {
                 splitNumber: 40,
                 inverse: true,
                 offset: 35,
-                name: '◀ HIGHER          Socioeconomic Inequality          LOWER ▶',
-                nameLocation: 'middle',
-                nameRotate: 90,
-                nameGap: -20,
-                nameTextStyle: {
-                    fontFamily: 'MaisonNeue-Medium',
-                    color: '#757575',
-                    fontSize: 13,
-                },
                 axisLabel: {
                     show: true,
                     interval: 0, 

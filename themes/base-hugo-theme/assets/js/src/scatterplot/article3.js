@@ -139,7 +139,7 @@ var state1 = function(scatterplot) {
       highlight = setSearchHighlight(highlight, _plot.searchItemIDs[0]);
   }
 
-  Title['text'] = 'Districts with Increasing Segregation Have Increasing White-Black Achievement Gaps (2009-2018)';
+  Title['text'] = 'Ten Years of Data from Thousands of School Districts Reveal Clear Links Between Trends in Segregation and White-Black Achievement Gaps';
   Title['subtext'] = '';
   Title.setTitle();
 

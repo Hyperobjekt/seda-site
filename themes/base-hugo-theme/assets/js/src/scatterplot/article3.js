@@ -171,7 +171,7 @@ var state1 = function(scatterplot) {
     grid :{
         top: 15,
         left: 42,
-        bottom: 19,
+        bottom: 0,
     },
     visualMap: [{
       show: false,
@@ -197,20 +197,7 @@ var state1 = function(scatterplot) {
         show: false,
       },
       axisLabel: {
-        rotate: 90,
-        fontFamily: 'MaisonNeue-Medium',
-        fontSize: 13,
-        showMaxLabel: true,
-        formatter: function(value) {
-          // remove leading 0's
-          if (value < 0) {
-              return value.toString()[0] + value.toString().slice(2)
-          } else if (value > 0) {
-              return value.toString().slice(1)
-          } else {
-              return value
-          }
-        },
+        show: false,
       },
       axisLine:{
         show: true,

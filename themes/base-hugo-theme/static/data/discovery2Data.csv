@@ -1,4 +1,4 @@
-Id,District,SES Inequality (SD Units),10-year Change in Gap,Percentage Change in Gap (2009-2018),Year Gap Will Close Given Current Trend,Year Gap Will Double Given Current Trend,Estimated 2009 Gap
+Id,District,State,SES Inequality (SD Units),9-year Change in Gap,Percentage Change in Gap (2009-2018),Year Gap Will Close Given Current Trend,Year Gap Will Double Given Current Trend,Estimated 2009 Gap
 1,Hawaii Dept of Ed,HI,0.46,-0.33,-22.2,2050,,1.49
 2,Prince William County,VA,1.05,-0.01,-0.7,over 100 years,,1.85
 3,Prince George's County,MD,1.07,-0.33,-14.7,2070,,2.24
@@ -13,7 +13,7 @@ Id,District,SES Inequality (SD Units),10-year Change in Gap,Percentage Change in
 12,Detroit,MI,1.88,0.34,860,2008,2010,0.04
 13,Montgomery County,MD,1.9,-0.27,-8.3,over 100 years,,3.26
 14,Broward County,FL,1.95,-0.03,-1.4,over 100 years,,2.4
-15,"Jefferson County, CO",CO,1.96,-0.51,-18.7,2057,,2.72
+15,Jefferson County,CO,1.96,-0.51,-18.7,2057,,2.72
 16,Clark County,NV,2.03,0.92,39.5,,2032,2.32
 17,Polk,FL,2.14,0.11,6.4,,over 100 years,1.79
 18,Orange County,FL,2.21,-0.09,-3.7,over 100 years,,2.58
@@ -31,7 +31,7 @@ Id,District,SES Inequality (SD Units),10-year Change in Gap,Percentage Change in
 30,New York City,NY,2.69,0.36,15.4,,2067,2.33
 31,Dekalb County,GA,2.7,0.38,9.7,,2102,3.88
 32,Denver,CO,2.8,0.19,4.9,,over 100 years,3.94
-33,"Jefferson County, KY",KY,2.93,0.84,42.9,,2030,1.95
+33,Jefferson County,KY,2.93,0.84,42.9,,2030,1.95
 34,Fort Worth,TX,2.98,0.31,11.3,,2088,2.76
 35,Philadelphia,PA,3,0.91,50.2,,2027,1.82
 36,Austin ISD,TX,3.08,0.58,17.3,,2061,3.36

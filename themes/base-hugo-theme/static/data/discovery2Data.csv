@@ -1,41 +1,42 @@
-Id,District,State,SES Inequality (SD Units),10-year Change in Gap,Percentage Change in Gap (2009-2018),Year Gap Will Close Given Current Trend,Year Gap Will Double Given Current Trend
-1,Hawaii Dept of Ed,HI,0.46,-0.34,-23.1,2052,
-2,Prince William County,VA,1.05,0,-0.2,7273,
-3,Prince George's County,MD,1.07,-0.33,-14.5,2078,
-4,Northside ISD,TX,1.11,0.45,30.4,,2042
-5,Alpine,UT,1.15,0.04,1.7,,2598
-6,Baltimore County,MD,1.36,0.46,23.2,,2052
-7,Gwinnett County,GA,1.4,0,0,48437,
-8,Cypress-Fairbanks,TX,1.49,0.25,11.8,,2094
-9,Cobb County,GA,1.61,0.34,13.9,,2081
-10,Fairfax County,VA,1.63,0.31,14.5,,2078
-11,Albuquerque,NM,1.75,0.36,16.2,,2071
-12,Montgomery County,MD,1.9,-0.29,-9,2120,
-13,Broward County,FL,1.95,-0.05,-1.9,2542,
-14,"Jefferson County",CO,1.96,-0.36,-13.5,2083,
-15,Clark County,NV,2.03,0.96,41.2,,2033
-16,Polk County,FL,2.14,0.15,8.7,,2124
-17,Orange County,FL,2.21,-0.14,-5.2,2200,
-18,Lee County,FL,2.31,-0.03,-1.2,2835,
-19,Duval County,FL,2.32,-0.08,-3.5,2292,
-20,Wake County,NC,2.41,-0.17,-4.8,2216,
-21,San Diego Unified,CA,2.44,1.13,42.9,,2032
-22,Pinellas County,FL,2.45,-0.28,-9.4,2116,
-23,Palm Beach County,FL,2.45,-0.12,-4.2,2248,
-24,Hillsborough County,FL,2.46,-0.19,-7.2,2148,
-25,Fulton County,GA,2.52,0.61,18.2,,2064
-26,Charlotte-Mecklenberg,NC,2.54,-0.04,-1.2,2819,
-27,Long Beach Unified,CA,2.55,0.57,20.7,,2057
-28,Los Angeles Unified,CA,2.55,0.19,6,,2176
-29,Davidson County,TN,2.57,0.41,20.3,,2058
-30,New York City,NY,2.69,0.52,22.5,,2053
-31,Dekalb County,GA,2.7,0.43,10.9,,2100
-32,Denver,CO,2.8,0.16,4,,2260
-33,"Jefferson County",KY,2.93,0.91,46.5,,2031
-34,Fort Worth,TX,2.98,0.57,21.1,,2056
-35,Philadelphia,PA,3,0.86,46.8,,2030
-36,Austin ISD,TX,3.08,0.68,20.5,,2058
-37,Baltimore City,MD,3.11,1.22,70.4,,2023
-38,Dade County,FL,3.12,0.07,2.5,,2410
-39,Houston ISD,TX,3.49,1.09,36.8,,2036
-40,City of Chicago,IL,4.12,0.59,19.3,,2061
+Id,District,SES Inequality (SD Units),10-year Change in Gap,Percentage Change in Gap (2009-2018),Year Gap Will Close Given Current Trend,Year Gap Will Double Given Current Trend
+1,"Hawaii Dept of Ed, HI",HI,0.46,-0.34,-23.1,2052,
+2,"Prince William County, VA",VA,1.05,0,-0.2,7273,
+3,"Prince George's County, MD",1.07,-0.33,-14.5,2078,
+4,"Northside ISD, TX",1.11,0.45,30.4,,2042
+5,"Alpine, UT",1.15,0.04,1.7,,2598
+6,"Baltimore County, MD",1.36,0.46,23.2,,2052
+7,"Gwinnett County, GA",1.4,0,0,48437,
+8,"Cypress-Fairbanks, TX",1.49,0.25,11.8,,2094
+9,"Cobb County, GA",1.61,0.34,13.9,,2081
+10,"Fairfax County, VA",1.63,0.31,14.5,,2078
+11,"Albuquerque, NM",1.75,0.36,16.2,,2071
+12,"Montgomery County, MD",1.9,-0.29,-9,2120,
+13,"Broward County, FL",1.95,-0.05,-1.9,2542,
+14,"Jefferson County, CO",1.96,-0.36,-13.5,2083,
+15,"Clark County, NV",2.03,0.96,41.2,,2033
+16,"Polk County, FL",2.14,0.15,8.7,,2124
+17,"Orange County, FL",2.21,-0.14,-5.2,2200,
+18,"Lee County, FL",2.31,-0.03,-1.2,2835,
+19,"Duval County, FL",2.32,-0.08,-3.5,2292,
+20,"Wake County, NC",2.41,-0.17,-4.8,2216,
+21,"San Diego Unified, CA",2.44,1.13,42.9,,2032
+22,"Pinellas County, FL",2.45,-0.28,-9.4,2116,
+23,"Palm Beach County, FL",2.45,-0.12,-4.2,2248,
+24,"Hillsborough County, FL",2.46,-0.19,-7.2,2148,
+25,"Fulton County, GA",2.52,0.61,18.2,,2064
+26,"Charlotte-Mecklenberg, NC",2.54,-0.04,-1.2,2819,
+27,"Long Beach Unified, CA",2.55,0.57,20.7,,2057
+28,"Los Angeles Unified, CA",2.55,0.19,6,,2176
+29,"Davidson County, TN",2.57,0.41,20.3,,2058
+30,"New York City, NY",2.69,0.52,22.5,,2053
+31,"Dekalb County, GA",2.7,0.43,10.9,,2100
+32,"Denver, CO",2.8,0.16,4,,2260
+33,"Jefferson County, KY",2.93,0.91,46.5,,2031
+34,"Fort Worth, TX",2.98,0.57,21.1,,2056
+35,"Philadelphia, PA",3,0.86,46.8,,2030
+36,"Austin ISD, TX",3.08,0.68,20.5,,2058
+37,"Baltimore City, MD",3.11,1.22,70.4,,2023
+38,"Dade County, FL",3.12,0.07,2.5,,2410
+39,"Houston ISD, TX",3.49,1.09,36.8,,2036
+40,"City of Chicago, IL",4.12,0.59,19.3,,2061
+"

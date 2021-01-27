@@ -1,6 +1,6 @@
 <div class="accordion-section">
     <a class="collapsed question gta-event-faqTopicExpanded" data-toggle="collapse" href="#{{ .Params.faqid }}" aria-expanded="false" aria-controls="collapseExample" aria-label="{{ .Title }}, Accordion content, select link to open">
-       <h5 id="scroll_to_{{ .Params.faqid }}">{{ .Title }}</h5><i class="fa fa-chevron-up"></i>
+       <h5 id="scroll_to_{{ .Params.faqid }}">{{ .Title | markdownify}}</h5><i class="fa fa-chevron-up"></i>
 
      </a>
   <div class="answer collapse" id="{{ .Params.faqid }}">

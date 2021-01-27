@@ -9,14 +9,36 @@
 const jQ = jQuery;
 
 // Placeholders for segregation series operations
+
 let segData = [];
 let Title = {};
+let yAxis = {};
+let xAxis = {};
+
 Title['text'] = '';
 Title['subtext'] = '';
 Title['setTitle'] = function() {
   // Set title and subtitle
-  jQ('.column-scatterplot .title').html(Title.text);
-  jQ('.column-scatterplot .subtitle').html(Title.subtext);
+  jQ('.column-plot .title').html(Title.text);
+  jQ('.column-plot .subtitle').html(Title.subtext);
+}
+yAxis['up'] ='';
+yAxis['down'] ='';
+yAxis['name'] = '';
+yAxis['setAxis'] = function() {
+  // Set axis properties
+  jQ('.axis__y-label .axis__up').html(yAxis.up);
+  jQ('.axis__y-label .axis__name').html(yAxis.name);
+  jQ('.axis__y-label .axis__down').html(yAxis.down);
+}
+xAxis['up'] ='';
+xAxis['down'] ='';
+xAxis['name'] = '';
+xAxis['setAxis'] = function() {
+  // Set axis properties
+  jQ('.axis__x-label .axis__up').html(xAxis.up);
+  jQ('.axis__x-label .axis__name').html(xAxis.name);
+  jQ('.axis__x-label .axis__down').html(xAxis.down);
 }
 
 const axisBlue = '#547892';
@@ -34,13 +56,13 @@ const initialMarkline = {
           fontWeight: '500',
           fontSize: 11.52,
           padding: 4,
-          color: 'rgba(5, 41, 101, 100%)',
+          color: 'rgba(84, 120, 146, 60%)',
       },
       //xaxis markline
       data: [
           [
             {
-              coord: [-.016, 0],
+              coord: [-.015, 0],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(5, 41, 101, 100%)',
@@ -62,7 +84,7 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [-.009, 0], symbol: 'none' },
+            { coord: [-.006, 0], symbol: 'none' },
           ],
           //yaxis markline
           [
@@ -106,74 +128,6 @@ const generateData = (trend) => {
   }
 }
 
-/**
- * Slice array according from beginning according to provided size.
- * @param Array arr
- * @param Number size
- */
-function sliceLeast(arr, size) {
-  return arr.slice(0, size - 1)
-}
-
-/**
- * Slice array from end according to provided size.
- * @param Array arr
- * @param Number size
- */
-function sliceMost(arr, size) {
-  return arr.slice((arr.length - 1) - (size-1), (arr.length - 1))
-}
-
-/**
- * Pulls the largest IDs from an object containing id: value pairs
- * @param {object} objData id: value pairs, (eg. { "010001": 4.5, "010002", 10, ...})
- * @param {number} num number of ids to return (e.g. 1)
- * @returns {array} array of ids with the largest values (e.g. [ "010002" ])
- */
-function getLargestIds(objData, num) {
-  return Object.keys(objData).sort(function(a, b) {
-    return objData[b] - objData[a];
-  }).slice(0, num);
-}
-
-function setSearchHighlight(highlight, hit) {
-  // console.log('setSearchHighlight()');
-  highlight[hit.id] = hit.name + ', ' + hit.state_name;
-  // console.log(highlight);
-  return highlight;
-}
-
-/**
- * Sort provided array by segregation stats
- * @param Array data
- * @returns Array returnArr
- */
-function sortDataBySeg(data) {
-  // console.log('sortDataBySeg()');
-  // console.log(data);
-  // Loop through the data.
-  // Locate row using ID.
-  // Add seg stat to each row.
-  data.forEach(function(el) {
-    var index = segData.findIndex(row => row[0] === el[3]);
-    // console.log('have an index, it is ' + index);
-    el[4] = segData[index][1];
-    // console.log(el)
-  });
-  // Sort by seg stat
-  const returnArr = data.sort(function(a, b) {
-    if ( a[4] < b[4] )
-        return -1;
-    if ( a[4] > b[4] )
-        return 1;
-    return 0;
-  });
-  // console.log('Logging segSortedTop100.');
-  // console.log(returnArr);
-  return returnArr;
-}
-
-/** State 1: Show white scores on x axis and black scores on y axis */
 var state1 = function(scatterplot) {
   // this state is created from the base
   var base = scatterplot.getState('base');
@@ -189,13 +143,23 @@ var state1 = function(scatterplot) {
   Title['subtext'] = '';
   Title.setTitle();
 
+  yAxis.up = 'Increasing ▼'
+  yAxis.down = '▲ Decreasing'
+  yAxis.name = 'Gap'
+  yAxis.setAxis();
+
+  xAxis.up = 'Increasing ▶'
+  xAxis.down = '◀ Decreasing'
+  xAxis.name = 'Segregation'
+  xAxis.setAxis();
+
   const baseOverrides = {
     notMerge: false,
     prefix:'',
     metaVars:{},
     title: {
-      text: 'Title.text', // 'White and Black Students\' Average Performance',
-      subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
+      text: 'Title.text', // 'districts with increasing segregation have increasing white-black achievement gaps (2009-2018)',
+      subtext: Title.subtext, // 
       textAlign: 'center',
       left: '50%',
       top: '10px',
@@ -206,7 +170,8 @@ var state1 = function(scatterplot) {
     },
     grid :{
         top: 15,
-        left: 20
+        left: 42,
+        bottom: 19,
     },
     visualMap: [{
       show: false,
@@ -217,14 +182,13 @@ var state1 = function(scatterplot) {
       itemHeight: '280px',
       itemWidth: '10px',
       inRange: {
-        color: ['#174B80','rgba(255,255,255,1)', '#136E4A'],
+        color: ['#136E4A' , 'rgba(255,255,255,1)' , '#174B80'],
       },
     }],
     yAxis: {
       min: -0.015,
       max:.015,
       position: 'left',
-      name: '◀ Decreasing             Gap             Increasing ▶',
       nameTextStyle: {
         fontFamily: 'MaisonNeue-Medium',
       },
@@ -235,7 +199,7 @@ var state1 = function(scatterplot) {
       axisLabel: {
         rotate: 90,
         fontFamily: 'MaisonNeue-Medium',
-        //showMinLabel: false,
+        fontSize: 13,
         showMaxLabel: true,
         formatter: function(value) {
           // remove leading 0's
@@ -258,15 +222,8 @@ var state1 = function(scatterplot) {
       zlevel: 103,
     },
     xAxis: {
-      type: 'value',
-      interval: .001,
-      // start at .016 to allow .015 to show without the y and x axis min vals overlapping
-      min: -0.016,
+      min: -0.015,
       max: 0.015,
-      name: '◀ Decreasing              Segregation              Increasing ▶',
-      nameTextStyle: {
-        fontFamily: 'MaisonNeue-Medium',
-      },
       splitLine:{
         show: false,
       },
@@ -278,28 +235,12 @@ var state1 = function(scatterplot) {
           color: '#757575',
         }
       },
-      axisLabel:{
-        showMaxLabel: true,
-        fontFamily: 'MaisonNeue-Medium',
-        //rotate: 90,
-        //showMinLabel: false,
-        formatter: function(value) {
-          // remove leading 0's
-          if (value === -0.015) {
-              return value.toString()[0] + value.toString().slice(2)
-          } else if (value === 0.015) {
-              return value.toString().slice(1)
-          } else if (value === 0) {
-              return value
-          }
-        },
-      },
+      axisLabel: {show: false},
       position: 'bottom',
     },
     tooltip: {
       trigger: 'item',
       formatter: function(item) {
-        // console.log(item)
       }
     },
     series: [
@@ -310,7 +251,8 @@ var state1 = function(scatterplot) {
           borderWidth: 1,
           borderColor: '#2173C3',
         },
-        zlevel: 104
+        zlevel: 104,
+        silent: true,
        },
       {
         id: 'bestfit',
@@ -327,11 +269,6 @@ var state1 = function(scatterplot) {
     ]
   }
 
-
-
-  // Set title and subtitle
-  jQ('.column-plot .title').text(Title.text);
-  jQ('.column-plot .subtitle').text(Title.subtext);
   return {
     endpoint: '/data/',
     xVar: 'wb_seg',

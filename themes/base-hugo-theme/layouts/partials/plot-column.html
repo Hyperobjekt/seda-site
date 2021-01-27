@@ -1,11 +1,37 @@
 {{ if (eq .Params.scatterplotID "article4" ) }}
 
     <div id="column-lollipop" class="col-12 offset-sm-0 d-md-block offset-1 col-md-8 col-lg-7 col-xl-7 offset-md-0 pl-md-0 pl-lg-2 column-plot">
-      <div id="plot-parent" class="plot-parentLollipop">
+      <div id="plot-parent" class="plot-parentBig">
         <div id="plotTitle" class="title" aria-live="assertive" aria-label="Lollipop chart title"><span class="sr-only">Lollipop chart title</span></div>
         <div id="plotDirections" class="directions text-center d-md-none" aria-live="assertive" aria-label="Lollipop chart directions"><span class="sr-only">Lollipop chart directions</span></div>
         <div id="rectangle" class="rectangle">
-          <div id="lollipop" class="lollipop" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data lollipop chart"></div>
+
+          <div class="flex-container-col">
+
+            <div class="flex-container-row">
+
+                <div class="axis axis--y axis--4 axis--y4">
+                  <div class="axis__y-label">
+                    <span class="axis__down"></span>
+                    <span class="axis__name"></span>
+                    <span class="axis__up"></span>
+                  </div>
+                </div>
+
+              <div id="lollipop" class="plot" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data lollipop chart"></div>
+              
+            </div>
+
+            <div class="axis axis--x axis--4 axis--x4">
+              <div class="axis__x-label">
+                <span class="axis__down"></span>
+                <span class="axis__up"></span></br>
+                <span class="axis__name axis--small-font"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -13,18 +39,38 @@
 {{ else if (eq .Params.scatterplotID "article3" ) }}
 
     <div id="column-scatterplot" class="col-10 col-sm-12 col-md-8 col-lg-7 col-xl-6 offset-1 offset-sm-0 offset-md-0 d-md-block pl-md-0 pl-lg-2 column-plot">
-      <div id="plot-parent" class="plot-parent" style="">
+      <div id="plot-parent" class="plot-parentBig">
         <div id="plotTitle" class="title" aria-live="assertive" aria-label="Scatterplot title"><span class="sr-only">Scatterplot title</span></div>
         <div id="plotDirections" class="directions text-center d-md-none" aria-live="assertive" aria-label="Scatterplot directions"><span class="sr-only">Scatterplot directions</span></div>
-        <div id="rectangle" class="rectangle" style="">
-          <div id="scatterplot" style="width: 100%" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data scatterplot"></div>
-          <div class="d-inline-block plot-legend" style="">
-            <div class="legend-label">
-              <div class="label top">Gap Increasing ▶</div>
-              <div class="label bot">◀ Gap Decreasing</div>
+        <div id="rectangle" class="rectangle">
+
+          <div class="flex-container-col">
+
+            <div class="flex-container-row">
+
+              <div class="axis axis--y axis--3 axis--y3">
+                <div class="axis__y-label">
+                  <span class="axis__down"></span>
+                  <span class="axis__name"></span>
+                  <span class="axis__up"></span>
+                </div>
+                <div class="axis__legend"></div>
+              </div>
+
+              <div id="scatterplot" class="plot" aria-live="assertive" aria-relevant="all" aria-label="Dynamic test data scatterplot"></div>
+
             </div>
-            <div class="legend"></div>
+
+            <div class="axis axis--x axis--3 axis--x3">
+              <div class="axis__x-label">
+                <span class="axis__down"></span>
+                <span class="axis__name"></span>
+                <span class="axis__up"></span>
+              </div>
+            </div>
+
           </div>
+
         </div>
       </div>
     </div>

@@ -11,6 +11,14 @@ const jQ = jQuery;
 jQ('.column-plot .title').html('Places with Higher White-Black Socioeconomic Inequality Also Had Faster-Growing Academic Gaps (2009-2018, 40 Largest U.S. Districts)');
 jQ('.column-plot .directions').html('</br>Tap in the chart below to see district names and more data.')
 
+jQ('.axis__y-label .axis__down').html('▲ LOWER');
+jQ('.axis__y-label .axis__name').html('Socioeconomic Inequality');
+jQ('.axis__y-label .axis__up').html('HIGHER ▼');
+
+jQ('.axis__x-label .axis__down').html('◀ Gap Decreasing');
+jQ('.axis__x-label .axis__name').html('10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)');
+jQ('.axis__x-label .axis__up').html('Gap Increasing ▶');
+
 //init chart
 
 var colorPalette = [
@@ -24,15 +32,9 @@ function modifyOption(option) {
     var newOption = deepmerge.all([ {}, option]);
     // remove plot labels if on mobile
     if ( window.innerWidth <= 768) {
+        newOption.grid.left = 7
         newOption.yAxis.axisLabel.show = false;
-        newOption.yAxis.nameGap = -20
         newOption.tooltip.textStyle.fontSize = 10
-    }
-    // reformat xaxis label for different sizes
-    if ( document.getElementById('lollipop').clientWidth < 604 ) {
-        newOption.xAxis.name = '{a|◀ GAPS SHRINKING                          GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap\nin Grade-Level Units (2009-2018)}'
-        newOption.xAxis.nameGap = 23;
-        newOption.grid.bottom = 77;
     }
     return newOption
 }
@@ -55,6 +57,11 @@ const getDataAndRender = async () => {
         const districts = plotData.map(x => x.district);
         const tenYrGapNeg = plotData.map(x => x.tenYrGapChg < 0 ? x.tenYrGapChg : null);
         const tenYrGapPos = plotData.map(x => x.tenYrGapChg >= 0 ? x.tenYrGapChg : null);
+        const date = new Date()
+        const datesCloseDouble = plotData.map(x => {
+            const yrRaw = x.yrGapClose ? x.yrGapClose : x.yrGapDbl;
+            return yrRaw - date.getFullYear() > 100 ? '100+ years' : yrRaw;
+        })
         var baseOption = {
             aria: {
                 show: true,
@@ -62,10 +69,10 @@ const getDataAndRender = async () => {
             },
             tooltip: {
                 formatter: (params) => 
-                `${plotData[params[0].dataIndex].district}, ${plotData[params[0].dataIndex].state}<br />
+                `${plotData[params[0].dataIndex].district}<br />
                 <small>SES Inequality: ${plotData[params[0].dataIndex].ses}<br />
                 Change in Gap (2009-2018): ${plotData[params[0].dataIndex].tenYrGapChg}<br />
-                ${plotData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${plotData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${plotData[params[0].dataIndex].yrGapDbl}`}</small>`,
+                ${plotData[params[0].dataIndex].percentGapChg <= 0 ? `Year 2009 Gap Will Close, at Current Trend: ${datesCloseDouble[params[0].dataIndex]}` : `Year 2009 Gap Will Double, at Current Trend: ${datesCloseDouble[params[0].dataIndex]}`}</small>`,
                 backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
                 confine: true,
                 extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',
@@ -91,7 +98,7 @@ const getDataAndRender = async () => {
             },
             grid: {
                 top: 10,
-                bottom: 60,
+                bottom: 0,
                 left: 48,
                 right: 32,
                 containLabel: true,
@@ -105,19 +112,6 @@ const getDataAndRender = async () => {
                 axisTick: {show: false, alignWithLabel: true},
                 type: 'value',
                 position: 'bottom',
-                name: '{a|◀ GAPS SHRINKING                               GAPS WIDENING ▶\n10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)}',
-                nameTextStyle: {
-                    rich: {
-                        a: {
-                            lineHeight: 15,
-                            fontFamily: 'MaisonNeue-Medium',
-                            fontSize: 13,
-                            color: '#757575',
-                        },
-                    }
-                },
-                nameLocation: 'middle',
-                nameGap: 25,
                 axisLabel: {
                     inside: false,
                     textVerticalAlign: 'middle',
@@ -134,19 +128,10 @@ const getDataAndRender = async () => {
                 splitNumber: 40,
                 inverse: true,
                 offset: 35,
-                name: '◀ HIGHER          Socioeconomic Inequality          LOWER ▶',
-                nameLocation: 'middle',
-                nameRotate: 90,
-                nameGap: -20,
-                nameTextStyle: {
-                    fontFamily: 'MaisonNeue-Medium',
-                    color: '#757575',
-                    fontSize: 13,
-                },
                 axisLabel: {
                     show: true,
                     interval: 0, 
-                    fontSize: 9,
+                    fontSize: 8,
                     inside: false,
                     textVerticalAlign: 'middle',
                     fontFamily: 'MaisonNeue-Medium',

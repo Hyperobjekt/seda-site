@@ -441,7 +441,7 @@ body.kind-page.type-discoveries {
 
       .title {
         font-size: 1.8rem; // 2.4rem;
-        line-height: 1.9rem; // 2.8rem;
+        line-height: 1.5; // 2.8rem;
         letter-spacing: 0.018rem;
         // width: 70%;
         margin: 0 auto;
@@ -480,42 +480,7 @@ body.kind-page.type-discoveries {
           top: 0px;
         }
       }
-
-      .plot-legend {
-        position: absolute;
-        height: calc(100% - 60px);
-        width: 30px;
-        left: 100%;
-        bottom: 45px;
-        .legend-label {
-          display: inline-block;
-          height: 100%;
-          width: 15px;
-          left: 100%;
-          bottom: 45px;
-          .label {
-            position: absolute;
-            font-size: 9px;
-            color: #547892;
-            transform: rotate(-90deg);
-            width: 102px;
-            left: -43px;
-          }
-          .top {
-            bottom: 237px;
-          }
-          .bot {
-            bottom: 40px;
-          }
-        }
-        .legend {
-          display: inline-block;
-          background: linear-gradient(#136E4A,#fff,#174B80);
-          height: 100%;
-          width: 10px;
-        }
-      }
-
+      
       .search-component {
         // position: sticky;
         // position: -webkit-sticky;
@@ -523,21 +488,23 @@ body.kind-page.type-discoveries {
       }
     }
 
-    .plot-parentLollipop {
+    .plot-parentBig {
       position: sticky;
       position: -webkit-sticky;
+      display: flex;
+      flex-direction: column;
       top: 84px;
-      min-height: 440px; 
-      height: 100%; 
+      min-height: 440px;
+      height: 100%; 	
       max-height: 100%;
       min-width: 300px;
       width:100%;
       z-index: auto;
-      margin-bottom: 20px;
+      padding-bottom: 20px;
 
       @include media-breakpoint-up(md) {
         padding: 0 0;
-        max-height: calc(100vh - 150px);
+        max-height: calc(100vh - 100px); 
       }
       @include media-breakpoint-up(lg) {
         padding: 0 2rem;
@@ -556,6 +523,7 @@ body.kind-page.type-discoveries {
         font-family: $sharpgrotesk-med-20; // $maisonneue-book;
         color: $seda-dark;
         text-align: center;
+        height: auto;
         // text-transform: uppercase;
       }
 
@@ -584,24 +552,27 @@ body.kind-page.type-discoveries {
         font-size: 1rem;
         letter-spacing: 0.014rem;
         margin: 0 auto;
+        height: auto;
       }
 
       .rectangle {
+        flex-grow: 1;
         border: none;
         position: sticky;
         position: -webkit-sticky;
-        top: 202px;
         background: transparent;
         padding: 0rem;
-        height: 100%;
-        min-height: 470px;
         width:100%;
+        height:0px;
+        min-height: 360px;
+
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
           position: relative;
           top: 0px;
         }
-        .lollipop {
-          height: 100%;
+        .plot {
+          width: 0px;
+          flex-grow: 1;
         }
       }
 
@@ -611,6 +582,134 @@ body.kind-page.type-discoveries {
         // top: 560px;
       }
     }
+  }
+
+  .flex-container-col{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-container-row{
+    height: 0px;
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+  }
+  .axis {
+    font-size: 13px;
+    font-family: 'MaisonNeue-Medium';
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+    display: block;
+  }
+  .axis--y {
+    display: inline;
+    width: 40px;
+  }
+  .axis--x {
+    height: 40px;
+  }
+  .axis--3{
+    color: #547892;
+  }
+  .axis--4 {
+    color: #757575;
+  }
+  .axis--y3 {
+    margin-top: 15px;
+    height: calc(100% - 31px);
+  }
+  .axis--y4 {
+    margin-top: 8px;
+    height: calc(100% - 27px);
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-up(md) {
+      margin-top: 0px;
+      top: 10px;
+      left: 109px;
+      height: calc(100% - 44px);
+      position: absolute;
+      display: block;
+    }
+  }
+  .axis--x3{
+    width: calc(100% - 87px);
+    margin-left: 63px;
+    margin-bottom: -12px;
+  }
+  .axis--x4 {
+    width: calc(100% - 64px);
+    margin-left: 40px;
+    @include media-breakpoint-up(md) {
+      width: calc(100% - 169px);
+      margin-left: 146px;
+    }
+  }
+  .axis__y-label {
+    flex-grow: 1;
+    transform: rotate(-180deg);
+    writing-mode: vertical-rl;
+    height: 100%;
+    width: 20px;
+    display: inline-block;
+    position: inherit;
+  }
+  .axis__x-label {
+    height: 40px;
+    width: 100%;
+  }
+ 
+  .axis__x4 {
+    color: #757575;
+    width: calc(100% - 57px);
+    height: 40px;
+    line-height: 1.5;
+    margin-left: 13px;
+    @include media-breakpoint-up(md) {
+      width: calc(100% - 154px);
+      margin-left: 108px;
+    }
+  }
+  .axis__y3 {
+    color: #547892;
+    line-height: 1.5;
+    width: 40px;
+    height: calc(100% - 48px);
+    margin-top: 15px;
+  }
+  .axis__labels {
+    display: inline-block;
+  }
+  .axis__labels--y{
+    transform: rotate(-180deg);
+    writing-mode: vertical-rl;
+    right: calc(100% + 15px);
+    bottom: 0px;
+    height: 100%;
+  }
+  .axis__up {
+    float: right;
+    text-align: right;
+  }
+  .axis__name {
+    text-align: center;
+  }
+  .axis__down {
+    float: left;
+    text-align: left;
+  }
+  .axis__legend {
+    display: inline-block;
+    background: linear-gradient(#174B80 , #fff , #136E4A);
+    height: 100%;
+    width: 10px;
+  }
+  .axis--small-font {
+    font-size: 12px;
   }
 
   .react-autosuggest__input-wrapper {

@@ -62,7 +62,7 @@ const getDataAndRender = async () => {
             },
             tooltip: {
                 formatter: (params) => 
-                `${plotData[params[0].dataIndex].district}, ${plotData[params[0].dataIndex].state}<br />
+                `${plotData[params[0].dataIndex].district}<br />
                 <small>SES Inequality: ${plotData[params[0].dataIndex].ses}<br />
                 Change in Gap (2009-2018): ${plotData[params[0].dataIndex].tenYrGapChg}<br />
                 ${plotData[params[0].dataIndex].yrGapClose ? `Year 2009 Gap Will Close, at Current Trend: ${plotData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${plotData[params[0].dataIndex].yrGapDbl}`}</small>`,

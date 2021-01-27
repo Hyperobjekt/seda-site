@@ -846,4 +846,13 @@ function getPageOffset(url) {
       }, 50);
     }
   });
+
+  if(localStorage.getItem('seda-close-banner')) {
+    $('#banner').hide();
+  }
+
+  $('#closeBanner').on('click', function() {
+    $('#banner').hide();
+    localStorage.setItem('seda-close-banner', true);
+  });
 })(jQuery);

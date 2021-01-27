@@ -128,74 +128,6 @@ const generateData = (trend) => {
   }
 }
 
-/**
- * Slice array according from beginning according to provided size.
- * @param Array arr
- * @param Number size
- */
-function sliceLeast(arr, size) {
-  return arr.slice(0, size - 1)
-}
-
-/**
- * Slice array from end according to provided size.
- * @param Array arr
- * @param Number size
- */
-function sliceMost(arr, size) {
-  return arr.slice((arr.length - 1) - (size-1), (arr.length - 1))
-}
-
-/**
- * Pulls the largest IDs from an object containing id: value pairs
- * @param {object} objData id: value pairs, (eg. { "010001": 4.5, "010002", 10, ...})
- * @param {number} num number of ids to return (e.g. 1)
- * @returns {array} array of ids with the largest values (e.g. [ "010002" ])
- */
-function getLargestIds(objData, num) {
-  return Object.keys(objData).sort(function(a, b) {
-    return objData[b] - objData[a];
-  }).slice(0, num);
-}
-
-function setSearchHighlight(highlight, hit) {
-  // console.log('setSearchHighlight()');
-  highlight[hit.id] = hit.name + ', ' + hit.state_name;
-  // console.log(highlight);
-  return highlight;
-}
-
-/**
- * Sort provided array by segregation stats
- * @param Array data
- * @returns Array returnArr
- */
-function sortDataBySeg(data) {
-  // console.log('sortDataBySeg()');
-  // console.log(data);
-  // Loop through the data.
-  // Locate row using ID.
-  // Add seg stat to each row.
-  data.forEach(function(el) {
-    var index = segData.findIndex(row => row[0] === el[3]);
-    // console.log('have an index, it is ' + index);
-    el[4] = segData[index][1];
-    // console.log(el)
-  });
-  // Sort by seg stat
-  const returnArr = data.sort(function(a, b) {
-    if ( a[4] < b[4] )
-        return -1;
-    if ( a[4] > b[4] )
-        return 1;
-    return 0;
-  });
-  // console.log('Logging segSortedTop100.');
-  // console.log(returnArr);
-  return returnArr;
-}
-
-/** State 1: Show white scores on x axis and black scores on y axis */
 var state1 = function(scatterplot) {
   // this state is created from the base
   var base = scatterplot.getState('base');
@@ -226,8 +158,8 @@ var state1 = function(scatterplot) {
     prefix:'',
     metaVars:{},
     title: {
-      text: 'Title.text', // 'White and Black Students\' Average Performance',
-      subtext: Title.subtext, // 'U.S. School Districts 2009-2016',
+      text: 'Title.text', // 'districts with increasing segregation have increasing white-black achievement gaps (2009-2018)',
+      subtext: Title.subtext, // 
       textAlign: 'center',
       left: '50%',
       top: '10px',
@@ -239,7 +171,7 @@ var state1 = function(scatterplot) {
     grid :{
         top: 15,
         left: 42,
-        bottom: 2,
+        bottom: 19,
     },
     visualMap: [{
       show: false,
@@ -268,7 +200,6 @@ var state1 = function(scatterplot) {
         rotate: 90,
         fontFamily: 'MaisonNeue-Medium',
         fontSize: 13,
-        //showMinLabel: false,
         showMaxLabel: true,
         formatter: function(value) {
           // remove leading 0's
@@ -291,9 +222,6 @@ var state1 = function(scatterplot) {
       zlevel: 103,
     },
     xAxis: {
-      // type: 'value',
-      // interval: .001,
-      // start at .016 to allow .015 to show without the y and x axis min vals overlapping
       min: -0.015,
       max: 0.015,
       splitLine:{
@@ -307,28 +235,12 @@ var state1 = function(scatterplot) {
           color: '#757575',
         }
       },
-      axisLabel:{
-        //showMaxLabel: true,
-        //fontFamily: 'MaisonNeue-Medium',
-        //rotate: 90,
-        //showMinLabel: false,
-        formatter: function(value) {
-          // remove leading 0's
-          // if (value === -0.015) {
-          //     return value.toString()[0] + value.toString().slice(2)
-          // } else if (value === 0.015) {
-          //     return value.toString().slice(1)
-          // } else if (value === 0) {
-          //     return value
-          // }
-        },
-      },
+      axisLabel: {show: false},
       position: 'bottom',
     },
     tooltip: {
       trigger: 'item',
       formatter: function(item) {
-        // console.log(item)
       }
     },
     series: [

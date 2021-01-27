@@ -239,6 +239,7 @@ var state1 = function(scatterplot) {
     grid :{
         top: 15,
         left: 42,
+        bottom: 2,
     },
     visualMap: [{
       show: false,

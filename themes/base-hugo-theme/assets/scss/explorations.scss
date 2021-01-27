@@ -594,6 +594,7 @@ body.kind-page.type-discoveries {
     width: 100%;
     display: flex;
     flex-grow: 1;
+    position: relative;
   }
   .axis {
     font-size: 13px;
@@ -619,16 +620,20 @@ body.kind-page.type-discoveries {
   }
   .axis--y3 {
     margin-top: 15px;
-    height: calc(100% - 19px);
+    height: calc(100% - 23px);
   }
   .axis--y4 {
-    margin-top: 6px;
-    height: calc(100% + 299px);
+    margin-top: 8px;
+    height: calc(100% - 27px);
+    display: flex;
+    flex-direction: column;
     @include media-breakpoint-up(md) {
-      top: 2px;
-      left: 96px;
-      height: calc(100% + 9px);
+      margin-top: 0px;
+      top: 10px;
+      left: 109px;
+      height: calc(100% - 44px);
       position: absolute;
+      display: block;
     }
   }
   .axis--x3{
@@ -640,15 +645,18 @@ body.kind-page.type-discoveries {
     width: calc(100% - 64px);
     margin-left: 40px;
     @include media-breakpoint-up(md) {
-      width: calc(100% - 152px);
-      margin-left: 130px;
+      width: calc(100% - 169px);
+      margin-left: 146px;
     }
   }
   .axis__y-label {
+    flex-grow: 1;
     transform: rotate(-180deg);
     writing-mode: vertical-rl;
     height: 100%;
+    width: 20px;
     display: inline-block;
+    position: inherit;
   }
   .axis__x-label {
     height: 40px;

@@ -1,5 +1,5 @@
 ---
-title: "What are educational opportunities?"
+title: "What are 'educational opportunities'?"
 faqid: what-are-educational-opportunities
 section: "data" # director, staff, or partner
 weight: 15

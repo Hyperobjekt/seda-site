@@ -339,6 +339,7 @@ var state1 = function(scatterplot) {
           borderColor: '#2173C3',
         },
         zlevel: 104,
+        silent: true,
        },
       {
         id: 'bestfit',

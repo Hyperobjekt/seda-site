@@ -8,6 +8,9 @@
         background-color: #F5F8FA;
     }
     #page-content {
+        h5 {
+            line-height: 1.5;
+        }
         p, li {
             font-size: 1.6rem;
             line-height: 1.5;
@@ -35,14 +38,11 @@
         color: #7086AB;
         color: $seda-navy;
         //font-family: $maisonneue-bold;
+        text-decoration: underline;
         &:hover {
             text-decoration: underline;
             color: #627799;
         }
-        }
-        a:hover {
-        text-decoration: underline;
-
         }
     }
 }

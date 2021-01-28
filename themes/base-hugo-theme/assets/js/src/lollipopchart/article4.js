@@ -74,7 +74,7 @@ const getDataAndRender = async () => {
                 Gap in 2009: ${plotData[params[0].dataIndex].ohNineGap}</br>
                 Gap in 2018: ${roundToNearest(parseFloat(plotData[params[0].dataIndex].ohNineGap) + parseFloat(plotData[params[0].dataIndex].nineYrGapChg), 2)}</br>
                 Change in Gap (2009-2018): ${plotData[params[0].dataIndex].nineYrGapChg}<br />
-                ${plotData[params[0].dataIndex].percentGapChg <= 0 ? `Year 2009 Gap Will Close, at Current Trend: ${plotData[params[0].dataIndex].yrGapClose}` : `Year 2009 Gap Will Double, at Current Trend: ${plotData[params[0].dataIndex].yrGapDbl}`}</small>`,
+                ${plotData[params[0].dataIndex].percentGapChg <= 0 ? `At Current Trend, 2009 Gap Will Close in: ${plotData[params[0].dataIndex].yrGapClose}` : `At Current Trend, 2009 Gap Will Double in: ${plotData[params[0].dataIndex].yrGapDbl}`}</small>`,
                 backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
                 confine: true,
                 extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',

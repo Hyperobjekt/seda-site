@@ -554,6 +554,31 @@
     var t = $(window).scrollTop();
     checkScroll(t);
 
+    $('.scroll-to-sub-section').on('click', function(e) {
+      e.preventDefault();
+      const target_id = $(e.currentTarget).attr('data-scroll-target');
+      var target = $('a[href="#' + target_id + '"].collapsed');
+        // If link is an accordion, toggle it
+        console.log(target);
+        if (target.hasClass('collapsed')) {
+          target.collapse('toggle');
+          $(target.attr('href')).collapse('toggle');
+        }
+        if (target.length === 0) { target = $(`#${target_id}`); }
+        // if no ID element look for an element with the name
+        if (target.length === 0) { target = $('[name="' + `#${target_id}`.slice(1) + '"]'); }
+        // scroll to the target
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top - (getWindowOffset() + getPageOffset(location.pathname)) + 'px'
+          }, 1000); // The number here represents the speed of the scroll in milliseconds
+          // Focus management for a11y
+          // console.log('focusing');
+          target.focus();
+          window.history.pushState("object or string", "Title", `/help-faq/#${target_id}`);
+        }
+  });
+
     // Smooth scroll down on button click
     $('.scroll-to-section').on('click', function(e) {
         console.log('click');
@@ -719,7 +744,10 @@ function getPageOffset(url) {
         path.hash.length
       ) {
         // check for accordion link
+        console.log(path.hash)
         var target = $('[href="' + path.hash + '"].collapsed');
+        console.log(target)
+
         // if no accordion link look for an element with the ID
         if (target.length === 0) { target = $(path.hash); }
         // if no ID element look for an element with the name
@@ -742,6 +770,7 @@ function getPageOffset(url) {
       // Run smoothscroll on page load
       smoothScroll(window.location, function (target) {
         // If link is an accordion, toggle it
+        console.log(target);
         if (target.hasClass('collapsed')) {
           target.collapse('toggle');
           $(target.attr('href')).collapse('toggle');

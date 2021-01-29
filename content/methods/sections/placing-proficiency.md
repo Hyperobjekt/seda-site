@@ -8,9 +8,10 @@ As discussed above, we cannot compare proficiency thresholds across places, grad
 
 Luckily, we can use the National Assessment of Educational Progress (NAEP), a test taken in every state, to place the thresholds on the same scale. This step facilitates comparisons across states, grades, and years.
 
-A random sample of students in every state takes the NAEP assessment in Grades 4 and 8 in math and ELA in odd years (e.g., 2009, 2011, 2013, 2015, and 2017). From NAEP, then, we know the relative performance of states on the NAEP assessment. In the grades and years when NAEP assessments were not administered to students, we average the scores in the grades and years just before and just after to obtain estimates for untested grades, subjects, and years. 
+A random sample of students in every state takes the NAEP assessment in Grades 4 and 8 in math and RLA in odd years (e.g., 2009, 2011, 2013, 2015, 2017, and 2019). From NAEP, then, we know the relative performance of states on the NAEP assessment. In the grades and years when NAEP assessments were not administered to students, we average the scores in the grades and years just before and just after to obtain estimates for untested grades, subjects, and years. 
 
 We use the states’ NAEP results in each grade, year, and subject to rescale the thresholds to the NAEP scale. For each subject, grade, and year, we multiply the thresholds by the state’s NAEP standard deviation and add the state’s NAEP average score.
+
 <br><br>
 <h5>Example: State A, Grade 4 reading in 2014–15</h5>
 
@@ -63,4 +64,4 @@ This yields a new “linked” Threshold 1 of 170. The table below shows all thr
 
 We repeat this step for every state in every subject, grade, and year. The end result is a set of thresholds for every state, subject, grade, and year that are all on the same scale, the NAEP scale. 
 <br><br>
-For more information, see Step 3 of the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">Technical Documentation</a> and Reardon, Kalogrides & Ho (Forthcoming)</span>.
+For more information, see Step 3 of the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">Technical Documentation</a> and Reardon, Kalogrides & Ho (2019).

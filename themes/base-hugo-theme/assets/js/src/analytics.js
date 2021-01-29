@@ -1,6 +1,7 @@
 /**
  * Analytics listeners
  */
+console.log('analytics file loaded');
 (function($) {
   // console.log('Loading Analytics listeners');
   const analytics = {};
@@ -20,20 +21,22 @@
 
     // Event: CTAClick
     $('.gta-event-CTAClick').on('click touchstart', function (e) {
-      // console.log('.gta-event-CTAClick');
-      e.preventDefault();
+      console.log('.gta-event-CTAClick');
+      // console.log(e)
+      // e.preventDefault();
       const $target = $(e.currentTarget).attr('href');
-      const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
+      // const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
       const $targetPrompt = $(e.currentTarget).attr('aria-label') ?
         $(e.currentTarget).attr('aria-label') :
         $(e.currentTarget).find('span').html();
       const _obj = {
+        'transport': 'beacon',
         'event' : 'CTAClick',
         'CTADestination': encodeURI($target),
         'CTAPrompt': $targetPrompt,
-        'eventCallback' : () => {
-            analytics.navigate($target, $targetBlank);
-        }
+        // 'eventCallback' : () => {
+        //     analytics.navigate($target, $targetBlank);
+        // }
       }
       analytics.push(_obj);
     });
@@ -60,15 +63,16 @@
 
     // Event: postSelected
     $('.gta-event-postSelected').on('click touchstart', function (e) {
-      // console.log('.gta-event-postSelected');
-      e.preventDefault();
+      console.log('.gta-event-postSelected');
+      // e.preventDefault();
       const $target = $(e.currentTarget).attr('href');
       const _obj = {
+        'transport': 'beacon',
         'event' : 'postSelected',
         'discoverySelection': encodeURI($target),
-        'eventCallback' : function() {
-            window.location.href = $target;
-        }
+        // 'eventCallback' : function() {
+        //     window.location.href = $target;
+        // }
       }
       analytics.push(_obj);
     });
@@ -245,10 +249,10 @@
     // Reports: navType, navItem
     $('.gta-event-navClick').on('click touchstart', function(e) {
       // console.log('.gta-event-navClick');
-      e.preventDefault();
+      // e.preventDefault();
       const $target = $(e.currentTarget);
       const $href = $target.attr('href');
-      const $targetBlank = ($target.attr('target') === '_blank');
+      // const $targetBlank = ($target.attr('target') === '_blank');
       let $navType = null;
       if ($target.closest('#drawer').length >= 1) {
         $navType = 'main';
@@ -266,13 +270,14 @@
       // console.log($navType);
       // console.log($navItem);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'navClick',
         'navType': $navType,
         'navItem': $navItem,
-        'eventCallback' : function() {
-          // console.log('request successful');
-          analytics.navigate($href, $targetBlank);
-        }
+        // 'eventCallback' : function() {
+        //   // console.log('request successful');
+        //   analytics.navigate($href, $targetBlank);
+        // }
       }
       analytics.push(_obj);
     });

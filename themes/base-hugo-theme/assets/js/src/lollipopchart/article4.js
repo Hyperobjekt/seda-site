@@ -16,7 +16,7 @@ jQ('.axis__y-label .axis__name').html('Socioeconomic Inequality');
 jQ('.axis__y-label .axis__up').html('HIGHER ▼');
 
 jQ('.axis__x-label .axis__down').html('◀ Gap Decreasing');
-jQ('.axis__x-label .axis__name').html('10-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)');
+jQ('.axis__x-label .axis__name').html('9-Year Change in White-Black Achievement Gap in Grade-Level Units (2009-2018)');
 jQ('.axis__x-label .axis__up').html('Gap Increasing ▶');
 
 //init chart
@@ -44,24 +44,24 @@ function modifyOptionAndRender (chart, option) {
     chart.setOption(renderOption)
 }
 
+function roundToNearest(num, numOfDecPlaces) {
+    return Math.round(num * (10 ** numOfDecPlaces)) / (10 ** numOfDecPlaces)
+}
+
 const getDataAndRender = async () => {
     d3.csv("/data/discovery2Data.csv").then(function(data) {
         const plotData = data.map(el => {
-            return {id: el['Id'], district: el['District'], ses:el['SES Inequality (SD Units)'], tenYrGapChg: el['10-year Change in Gap'], percentGapChg: el['Percentage Change in Gap (2009-2018)'], yrGapClose: el['Year Gap Will Close Given Current Trend'], yrGapDbl: el['Year Gap Will Double Given Current Trend'], state: el['State']};
+            return {id: el['Id'], district: el['District'], ses:el['SES Inequality (SD Units)'], nineYrGapChg: el['9-year Change in Gap'], percentGapChg: el['Percentage Change in Gap (2009-2018)'], yrGapClose: el['Year Gap Will Close Given Current Trend'], yrGapDbl: el['Year Gap Will Double Given Current Trend'], state: el['State'], ohNineGap: el['Estimated 2009 Gap']};
         })
         const zeroes = []
         // create array of zeroes of data length
         plotData.forEach(el => {
             zeroes.push(0);
         });
-        const districts = plotData.map(x => x.district);
-        const tenYrGapNeg = plotData.map(x => x.tenYrGapChg < 0 ? x.tenYrGapChg : null);
-        const tenYrGapPos = plotData.map(x => x.tenYrGapChg >= 0 ? x.tenYrGapChg : null);
-        const date = new Date()
-        const datesCloseDouble = plotData.map(x => {
-            const yrRaw = x.yrGapClose ? x.yrGapClose : x.yrGapDbl;
-            return yrRaw - date.getFullYear() > 100 ? '100+ years' : yrRaw;
-        })
+        const districts = plotData.map(x => `${x.district}, ${x.state}`);
+        const nineYrGapNeg = plotData.map(x => x.nineYrGapChg < 0 ? x.nineYrGapChg : null);
+        const nineYrGapPos = plotData.map(x => x.nineYrGapChg >= 0 ? x.nineYrGapChg : null);
+        const eighteenGap = plotData.map(x => x.nineYrGapChg + x.ohNineGap);
         var baseOption = {
             aria: {
                 show: true,
@@ -71,8 +71,10 @@ const getDataAndRender = async () => {
                 formatter: (params) => 
                 `${plotData[params[0].dataIndex].district}<br />
                 <small>SES Inequality: ${plotData[params[0].dataIndex].ses}<br />
-                Change in Gap (2009-2018): ${plotData[params[0].dataIndex].tenYrGapChg}<br />
-                ${plotData[params[0].dataIndex].percentGapChg <= 0 ? `Year 2009 Gap Will Close, at Current Trend: ${datesCloseDouble[params[0].dataIndex]}` : `Year 2009 Gap Will Double, at Current Trend: ${datesCloseDouble[params[0].dataIndex]}`}</small>`,
+                Gap in 2009: ${plotData[params[0].dataIndex].ohNineGap}</br>
+                Gap in 2018: ${roundToNearest(parseFloat(plotData[params[0].dataIndex].ohNineGap) + parseFloat(plotData[params[0].dataIndex].nineYrGapChg), 2)}</br>
+                Change in Gap (2009-2018): ${plotData[params[0].dataIndex].nineYrGapChg}<br />
+                ${plotData[params[0].dataIndex].percentGapChg <= 0 ? `At Current Trend, 2009 Gap Will Close in: ${plotData[params[0].dataIndex].yrGapClose}` : `At Current Trend, 2009 Gap Will Double in: ${plotData[params[0].dataIndex].yrGapDbl}`}</small>`,
                 backgroundColor: '#031232', // 'rgba(3, 18, 50, 80%)',
                 confine: true,
                 extraCssText: 'box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)',
@@ -155,7 +157,7 @@ const getDataAndRender = async () => {
                         )
                     },
                     barWidth: 4,
-                    data: tenYrGapNeg,
+                    data: nineYrGapNeg,
                     cursor: 'default'
                 },
                 {
@@ -164,7 +166,7 @@ const getDataAndRender = async () => {
                         opacity: 1,
                         color: '#1A6D4B'
                     },
-                    data: tenYrGapNeg,
+                    data: nineYrGapNeg,
                     symbolSize: 6,
                     zlevel: 102,
                     silent: true
@@ -183,7 +185,7 @@ const getDataAndRender = async () => {
                         )
                     },
                     barWidth: 4,
-                    data: tenYrGapPos,
+                    data: nineYrGapPos,
                     cursor: 'default'
                 },
                 {
@@ -192,7 +194,7 @@ const getDataAndRender = async () => {
                         opacity: 1,
                         color: '#1A4C7E'
                     },
-                    data: tenYrGapPos,
+                    data: nineYrGapPos,
                     symbolSize: 6,
                     zlevel: 102,
                     silent: true

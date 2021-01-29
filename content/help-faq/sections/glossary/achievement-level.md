@@ -1,5 +1,5 @@
 ---
-title: "Achievement level (or proficiency level or proficiency category) "
+title: "Achievement Level (or Proficiency Level or Proficiency Category) "
 faqid: achievement-level-definition
 section: "glossary" 
 weight: 150

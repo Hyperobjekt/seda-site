@@ -13,7 +13,7 @@
         {{ end }}
         <!-- {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }} -->
         {{ $text := print .Name | safeHTML }}
-        <a class="nav-item nav-link {{ $active }} gta-event-navClick" href="{{ .URL }}">
+        <a class="nav-item nav-link {{ $active }} gta-event-navClick {{ .Identifier }}" href="{{ .URL }}">
             {{ $text }}
         </a>
         {{ end }}

@@ -559,7 +559,7 @@
       const target_id = $(e.currentTarget).attr('data-scroll-target');
       var target = $('a[href="#' + target_id + '"].collapsed');
         // If link is an accordion, toggle it
-        console.log(target);
+        // console.log(target);
         if (target.hasClass('collapsed')) {
           target.collapse('toggle');
           $(target.attr('href')).collapse('toggle');
@@ -581,7 +581,7 @@
 
     // Smooth scroll down on button click
     $('.scroll-to-section').on('click', function(e) {
-        console.log('click');
+        // console.log('click');
         e.preventDefault();
         var target_id = $(e.currentTarget).attr('data-scroll-target');
         // console.log(target_id);
@@ -744,9 +744,9 @@ function getPageOffset(url) {
         path.hash.length
       ) {
         // check for accordion link
-        console.log(path.hash)
+        // console.log(path.hash)
         var target = $('[href="' + path.hash + '"].collapsed');
-        console.log(target)
+        // console.log(target)
 
         // if no accordion link look for an element with the ID
         if (target.length === 0) { target = $(path.hash); }
@@ -770,7 +770,7 @@ function getPageOffset(url) {
       // Run smoothscroll on page load
       smoothScroll(window.location, function (target) {
         // If link is an accordion, toggle it
-        console.log(target);
+        // console.log(target);
         if (target.hasClass('collapsed')) {
           target.collapse('toggle');
           $(target.attr('href')).collapse('toggle');
@@ -826,11 +826,11 @@ function getPageOffset(url) {
       })
 
       const openAllPanels = function(aId) {
-        console.log("setAllPanelOpen");
+        // console.log("setAllPanelOpen");
         $(aId + ' .panel-collapse:not(".in")').collapse('show');
       }
       const closeAllPanels = function(aId) {
-        console.log("setAllPanelclose");
+        // console.log("setAllPanelclose");
         $(aId + ' .panel-collapse.in').collapse('hide');
       }
 

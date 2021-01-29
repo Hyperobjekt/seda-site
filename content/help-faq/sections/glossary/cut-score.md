@@ -1,5 +1,5 @@
 ---
-title: "Cut score/threshold"
+title: "Cut Score/Threshold"
 faqid: cut-score-definition
 section: "glossary" 
 weight: 160

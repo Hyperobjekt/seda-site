@@ -620,7 +620,7 @@ body.kind-page.type-discoveries {
   }
   .axis--y3 {
     margin-top: 15px;
-    height: calc(100% - 31px);
+    height: calc(100% - 15px);
   }
   .axis--y4 {
     margin-top: 8px;
@@ -629,9 +629,9 @@ body.kind-page.type-discoveries {
     flex-direction: column;
     @include media-breakpoint-up(md) {
       margin-top: 0px;
-      top: 10px;
-      left: 109px;
-      height: calc(100% - 44px);
+      top: 9px;
+      left: 100px;
+      height: calc(100% - 38px);
       position: absolute;
       display: block;
     }

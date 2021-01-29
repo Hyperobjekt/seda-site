@@ -1,5 +1,5 @@
 ---
-title: "Achievement test"
+title: "Achievement Test"
 faqid: achievement-test-definition
 section: "glossary" 
 weight: 130

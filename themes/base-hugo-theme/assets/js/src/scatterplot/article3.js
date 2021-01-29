@@ -89,7 +89,7 @@ const initialMarkline = {
           //yaxis markline
           [
             {
-              coord: [0, -.015],
+              coord: [0, 0],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(5, 41, 101, 100%)',
@@ -97,13 +97,13 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [0, .015], symbol: 'none' },
+            { coord: [0, .02], symbol: 'none' },
           ],
           //yaxis label (necessary to add label at beginning of markline)
           [
             {
               name: 'no change',
-              coord: [0, -.015],
+              coord: [0, 0],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(0,0,0,0)',
@@ -111,18 +111,18 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [0, -.005], symbol: 'none' },
+            { coord: [0, .005], symbol: 'none' },
           ],
       ]
   }
 };
 
-// function for generating certain lines
+// function for generating best fit
 const generateData = (trend) => {
   if(trend === 'bestfit') {
     let data = [];
     for (let i = -.01; i <= .008; i += .001) {
-        data.push([i, (.755673484389962*i+.0021285827076154)]);
+        data.push([i, (.8307370433507294*i+.0120772529654189)]);
     }
     return data;
   }
@@ -171,12 +171,12 @@ var state1 = function(scatterplot) {
     grid :{
         top: 15,
         left: 42,
-        bottom: 19,
+        bottom: 0,
     },
     visualMap: [{
       show: false,
-      min: -0.015,
-      max: 0.015,
+      min: 0,
+      max: 0.02,
       left: '96%',
       bottom: '12%',
       itemHeight: '280px',
@@ -186,8 +186,8 @@ var state1 = function(scatterplot) {
       },
     }],
     yAxis: {
-      min: -0.015,
-      max:.015,
+      min: 0,
+      max:.02,
       position: 'left',
       nameTextStyle: {
         fontFamily: 'MaisonNeue-Medium',
@@ -197,20 +197,7 @@ var state1 = function(scatterplot) {
         show: false,
       },
       axisLabel: {
-        rotate: 90,
-        fontFamily: 'MaisonNeue-Medium',
-        fontSize: 13,
-        showMaxLabel: true,
-        formatter: function(value) {
-          // remove leading 0's
-          if (value < 0) {
-              return value.toString()[0] + value.toString().slice(2)
-          } else if (value > 0) {
-              return value.toString().slice(1)
-          } else {
-              return value
-          }
-        },
+        show: false,
       },
       axisLine:{
         show: true,

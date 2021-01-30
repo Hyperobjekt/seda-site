@@ -29,7 +29,7 @@ body.kind-page.type-discoveries.affluent-schools-are-not-always-the-best-schools
   }
 }
 
-body.kind-page.type-discoveries.increasing-school-segregation-leads-to-greater-racial-academic-inequality .hero .hero-child {
+body.kind-page.type-discoveries.increasing-school-segregation-widens-white-black-achievement-gaps .hero .hero-child {
   background-size: 80%;
   background-position: center 95%;
   @include media-breakpoint-up(md) {
@@ -50,8 +50,8 @@ body.kind-page.type-discoveries.racial-socioeconomic-inequality-predicts-growing
     background-position: 40% 40%;
   }
   @include media-breakpoint-up(xl) {
-    background-size: 72%;
-    background-position: 28% 40%;
+    background-size: 66%;
+    background-position: 63% 40%;
   }
 }
 
@@ -585,7 +585,7 @@ body.kind-page.type-discoveries {
   }
 
   .flex-container-col{
-    height:100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
   }

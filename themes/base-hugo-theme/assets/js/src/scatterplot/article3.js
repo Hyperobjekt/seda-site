@@ -190,7 +190,7 @@ var state1 = function(scatterplot) {
       itemHeight: '280px',
       itemWidth: '10px',
       inRange: {
-        color: ['#136E4A' , 'rgba(255,255,255,1)' , '#174B80'],
+        color: ['#219366' , 'rgba(255,255,255,1)' , '#397ec3'],
       },
     }],
     yAxis: {

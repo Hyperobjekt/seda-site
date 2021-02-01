@@ -1,6 +1,7 @@
 /**
  * Analytics listeners
  */
+console.log('analytics file loaded');
 (function($) {
   // console.log('Loading Analytics listeners');
   const analytics = {};
@@ -21,19 +22,15 @@
     // Event: CTAClick
     $('.gta-event-CTAClick').on('click touchstart', function (e) {
       // console.log('.gta-event-CTAClick');
-      e.preventDefault();
       const $target = $(e.currentTarget).attr('href');
-      const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
       const $targetPrompt = $(e.currentTarget).attr('aria-label') ?
         $(e.currentTarget).attr('aria-label') :
         $(e.currentTarget).find('span').html();
       const _obj = {
+        'transport': 'beacon',
         'event' : 'CTAClick',
         'CTADestination': encodeURI($target),
         'CTAPrompt': $targetPrompt,
-        'eventCallback' : () => {
-            analytics.navigate($target, $targetBlank);
-        }
       }
       analytics.push(_obj);
     });
@@ -42,8 +39,8 @@
     $('.gta-event-bioExpanded').on('click touchstart', function (e) {
       // console.log('.gta-event-bioExpanded');
       const $target = $(e.currentTarget);
-      // console.log($target);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'bioExpanded'
       }
       analytics.push(_obj);
@@ -53,6 +50,7 @@
     $('.gta-event-eMailSignupAttempt').on('click touchstart', function (e) {
       // console.log('.gta-event-eMailSignupAttempt');
       const _obj = {
+        'transport': 'beacon',
         'event' : 'eMailSignupAttempt'
       }
       analytics.push(_obj);
@@ -61,14 +59,11 @@
     // Event: postSelected
     $('.gta-event-postSelected').on('click touchstart', function (e) {
       // console.log('.gta-event-postSelected');
-      e.preventDefault();
       const $target = $(e.currentTarget).attr('href');
       const _obj = {
+        'transport': 'beacon',
         'event' : 'postSelected',
         'discoverySelection': encodeURI($target),
-        'eventCallback' : function() {
-            window.location.href = $target;
-        }
       }
       analytics.push(_obj);
     });
@@ -85,11 +80,10 @@
       } else {
         $paperCategory = $('.row.subnav.large-tab-nav').find('#researchTabs li a.active').text();
       }
-      // console.log('$paperCategory: ' + $paperCategory);
       let $paperName = null;
       $paperName = $(e.currentTarget).closest('.research-paper').find('.info h5').text();
-      // console.log($paperName);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'showAbstractandVersion',
         'paperCategory': $paperCategory ? $paperCategory : 'Unavailable',
         'paperName': $paperName ? $paperName : 'Unavailable'
@@ -103,8 +97,8 @@
       // console.log('.gta-event-categorySelected');
       const $target = $(e.currentTarget);
       const $paperCategory = $target.text();
-      // console.log($paperCategory);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'categorySelected',
         'paperCategory': $paperCategory ? $paperCategory : 'Unavailable'
       }
@@ -115,14 +109,12 @@
     // Reports: paperVersion, paperName
     $('.gta-event-paperDownloadbyVersion').on('click touchstart', function (e) {
       // console.log('.gta-event-paperDownloadbyVersion');
-      // e.preventDefault();
       const $target = $(e.currentTarget);
       let $paperName = null;
       $paperName = $(e.currentTarget).closest('.research-paper').find('.info h5').text();
-      // console.log($paperName);
       const $paperVersion = $target.attr('data-date');
-      // console.log($paperVersion);
       const _obj = {
+        'transport': 'beacon',
         'event': 'paperDownloadbyVersion',
         'paperVersion': $paperVersion,
         'paperName': $paperName
@@ -138,6 +130,7 @@
       const $paperName = $target.closest('.research-paper').find('.info h5').text();
       const $paperVersion = $target.attr('data-date');
       const _obj = {
+        'transport': 'beacon',
         'event': 'paperDownloadLatest',
         'paperVersion': $paperVersion,
         'paperName': $paperName
@@ -156,6 +149,7 @@
       const $newsArticlePublication = $titleNode.attr('data-outlet');
       const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
       const _obj = {
+        'transport': 'beacon',
         'event': 'articleSelected',
         'newsArticleName': $newsArticleName,
         'newsArticlePublication': $newsArticlePublication,
@@ -172,8 +166,8 @@
       // console.log('.gta-event-faqTopicExpanded');
       const $target = $(e.currentTarget);
       const $topic = $(e.currentTarget).find('h5').text();
-      // console.log('$topic is ', $topic);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'faqTopicExpanded',
         'faqTopExpansion': $topic
       }
@@ -191,8 +185,9 @@
       // console.groupEnd();
       // If the data is from a discoveries page, then send.
       if (callbackData.documentLocation.indexOf('discoveries') > -1) {
-        console.log('Discoveries page. Pushing to GA.');
+        // console.log('Discoveries page. Pushing to GA.');
         const _obj = {
+          'transport': 'beacon',
           'event': 'discoveryScrollDepthSave',
           'discoveryScrollDepth': callbackData.scrollPercent,
           'discoveryScrollDepthLocation': callbackData.documentLocation
@@ -233,6 +228,7 @@
           .replace('-', '.') :
         'Not available';
       const _obj = {
+        'transport': 'beacon',
         'event' : 'dataDownloaded',
         'dataFile': $href,
         'dataHeading': $heading,
@@ -245,10 +241,9 @@
     // Reports: navType, navItem
     $('.gta-event-navClick').on('click touchstart', function(e) {
       // console.log('.gta-event-navClick');
-      e.preventDefault();
       const $target = $(e.currentTarget);
       const $href = $target.attr('href');
-      const $targetBlank = ($target.attr('target') === '_blank');
+      // const $targetBlank = ($target.attr('target') === '_blank');
       let $navType = null;
       if ($target.closest('#drawer').length >= 1) {
         $navType = 'main';
@@ -263,16 +258,11 @@
       if ($navItem.length <= 0) {
         $navItem = $target.find('span, h1')[0].text().trim();
       }
-      // console.log($navType);
-      // console.log($navItem);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'navClick',
         'navType': $navType,
         'navItem': $navItem,
-        'eventCallback' : function() {
-          // console.log('request successful');
-          analytics.navigate($href, $targetBlank);
-        }
       }
       analytics.push(_obj);
     });

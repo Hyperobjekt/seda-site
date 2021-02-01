@@ -310,15 +310,14 @@ body.methods {
             td:nth-child(1) {
                 font-weight: 700;
             }
-            td:nth-child(1):after, td:nth-child(9):after {
+            td:nth-child(1):after, td:nth-child(11):after {
                 content: none;
-
                 }
             td:after {
                 content: url('/images/icons/rt-arrow-bl.svg');
-                margin-left: -18px;
-                position: relative;
-                right: -26px;
+                margin-left: 0px;
+                position: absolute;
+                right: -9px;
             }
         }
     }
@@ -338,14 +337,10 @@ body.methods {
                 }
             td:after {
                 content: url('/images/icons/diag-arrow-bl.svg');
-                margin-left: -11px;
-                top: -19px;
-                right: -21px;
-                @include media-breakpoint-up(md) {
-                  top: -25px;
-                  right: -26px;
-                }
-                position: relative;
+                margin-left: 0px;
+                top: -9.5px;
+                right: -9.5px;
+                position: absolute;
             }
         }
 
@@ -385,6 +380,7 @@ body.methods {
               padding: 1.6rem;
             }
             color: #0032A3;
+            position: relative;
         }
         td:nth-child(1), th:nth-child(1) {
             border-left: 4px solid #64CFF2;

@@ -43,7 +43,14 @@ xAxis['setAxis'] = function() {
 
 const axisBlue = '#547892';
 
-const initialMarkline = {
+const axisVals = {yaxis: [-.005, .015], xaxis: [-.015, .015]}
+axisVals.mapRange = Math.abs(axisVals.yaxis[0]) > Math.abs(axisVals.yaxis[1]) ? [axisVals.yaxis[0], -axisVals.yaxis[0]] : [-axisVals.yaxis[1], axisVals.yaxis[1]]
+// calculate scale of legend and set height
+jQ('.axis__legend').css('height', `calc(100% / ${
+  (axisVals.yaxis[1] - axisVals.yaxis[0]) / (axisVals.mapRange[1] - axisVals.mapRange[0])
+})`);
+
+const axisMarkline = {
   type: 'scatter',
   zlevel: 1,
   animation: false,
@@ -56,13 +63,13 @@ const initialMarkline = {
           fontWeight: '500',
           fontSize: 11.52,
           padding: 4,
-          color: 'rgba(84, 120, 146, 60%)',
+          color: 'rgba(84, 120, 146, 80%)',
       },
-      //xaxis markline
+      //horizontal markline
       data: [
           [
             {
-              coord: [-.015, 0],
+              coord: [axisVals.xaxis[0], 0],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(5, 41, 101, 100%)',
@@ -70,13 +77,13 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [.015, 0], symbol: 'none' },
+            { coord: [axisVals.xaxis[1], 0], symbol: 'none' },
           ],
-          //xaxis label (necessary to add label at beginning of markline)
+          //horizontal label (necessary to add label at beginning of markline)
           [
             {
               name: 'no change',
-              coord: [-.015, 0],
+              coord: [axisVals.xaxis[0], 0],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(0,0,0,0)',
@@ -84,12 +91,12 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [-.006, 0], symbol: 'none' },
+            { coord: [axisVals.xaxis[0] + .007, 0], symbol: 'none' },
           ],
-          //yaxis markline
+          //vertical markline
           [
             {
-              coord: [0, 0],
+              coord: [0, axisVals.yaxis[0]],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(5, 41, 101, 100%)',
@@ -97,13 +104,13 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [0, .02], symbol: 'none' },
+            { coord: [0, axisVals.xaxis[1]], symbol: 'none' },
           ],
-          //yaxis label (necessary to add label at beginning of markline)
+          //vertical label (necessary to add label at beginning of markline)
           [
             {
               name: 'no change',
-              coord: [0, 0],
+              coord: [0, -0.0008],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(0,0,0,0)',
@@ -122,7 +129,7 @@ const generateData = (trend) => {
   if(trend === 'bestfit') {
     let data = [];
     for (let i = -.01; i <= .008; i += .001) {
-        data.push([i, (.8307370433507294*i+.0120772529654189)]);
+        data.push([i, (.8393335538672176*i+.0082388767046503)]);
     }
     return data;
   }
@@ -171,23 +178,24 @@ var state1 = function(scatterplot) {
     grid :{
         top: 15,
         left: 42,
-        bottom: 0,
+        bottom: 1,
     },
     visualMap: [{
       show: false,
-      min: 0,
-      max: 0.02,
+      min: axisVals.mapRange[0],
+      max: axisVals.mapRange[1],
+      range: [axisVals.yaxis[0], axisVals.yaxis[1]],
       left: '96%',
       bottom: '12%',
       itemHeight: '280px',
       itemWidth: '10px',
       inRange: {
-        color: ['#136E4A' , 'rgba(255,255,255,1)' , '#174B80'],
+        color: ['#219366' , 'rgba(255,255,255,1)' , '#397ec3'],
       },
     }],
     yAxis: {
-      min: 0,
-      max:.02,
+      min: axisVals.yaxis[0],
+      max: axisVals.xaxis[1],
       position: 'left',
       nameTextStyle: {
         fontFamily: 'MaisonNeue-Medium',
@@ -209,8 +217,8 @@ var state1 = function(scatterplot) {
       zlevel: 103,
     },
     xAxis: {
-      min: -0.015,
-      max: 0.015,
+      min: axisVals.xaxis[0],
+      max: axisVals.xaxis[1],
       splitLine:{
         show: false,
       },
@@ -231,7 +239,7 @@ var state1 = function(scatterplot) {
       }
     },
     series: [
-      initialMarkline,
+      axisMarkline,
       {
         id: 'base',
         itemStyle: {

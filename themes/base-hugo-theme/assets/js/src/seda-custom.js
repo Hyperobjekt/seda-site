@@ -890,63 +890,149 @@ function getPageOffset(url) {
   var whatsNewImage2Animated = false;
   var whatsNewImage3Animated = false;
   var whatsNewImage4Animated = false;
+  var whatsNewText4Animated =  false;
   //var setUpAnime3 = null;
   //var whatsNewAnimate = null;
+  var initText1 = null;
   var initImg1 = null;
+  var initText2 = null;
   var initImg2 = null;
+  var initText3 = null;
+  var initText4 = null;
   var initImg3 = null;
   var initImg4 = null;
+  var duration = 900;
+  var easing = 'easeInOutSine';
+  //var translate = '[50, 1]',
 
-  function setUpWN1() {
-      anime.set(['#whats-new-img1', '#whats-new-img2', '#whats-new-img3', '#whats-new-img4' ], {
+  function HeroFadein() {
+    anime.set(['#hero svg', '#hero h2', '#hero p', '.whats-new-text1', '#whats-new-img1'], {
       opacity: [0]
-    }); 
-    initImg1 = anime({
+    });
+    anime({
+      targets: ['#hero svg'],
+      opacity: [0, 1],
+      duration: duration,
+      delay: 0,
+      //autoplay: false,
+      easing: easing,
+    });
+    anime({
+      targets: ['#hero h2'],
+      opacity: [0, 1],
+      duration: duration,
+      delay: 0,
+      //autoplay: false,
+      easing: easing,
+    });
+    anime({
+      targets: ['#hero p'],
+      opacity: [0, 1],
+      duration: duration,
+      delay: 0,
+      //autoplay: false,
+      easing: easing,
+    });
+    anime({
+      targets: ['.whats-new-text1'],
+      opacity: [0, 1],
+      duration: duration,
+      delay: 1200,
+      //autoplay: false,
+      easing: easing,
+    });
+    anime({
       targets: ['#whats-new-img1'],
       opacity: [0, 1],
-      duration: 10000,
-      delay: 0,
-      autoplay: false
+      translateX: [-50, 1],
+      duration: duration,
+      delay: 1200,
+      // autoplay: false,
+      easing: easing,
     });
+  };
+
+  function setUpWN1() {
+      anime.set(['.whats-new-text2', '#whats-new-img2', '.whats-new-text3', '#whats-new-img3', '#whats-new-img4' ], {
+      opacity: [0]
+    }); 
+    //initText1 = 
+    //initImg1 = 
   }
   function setUpWN2() {
+    initText2 = anime({
+      targets: ['.whats-new-text2'],
+      opacity: [0, 1],
+      duration: duration,
+      delay: 0,
+      autoplay: false,
+      easing: easing,
+    });
+    initText3 = anime({
+      targets: ['.whats-new-text3'],
+      opacity: [0, 1],
+      duration: duration,
+      delay: 0,
+      autoplay: false,
+      easing: easing,
+    });
     initImg2 = anime({
       targets: ['#whats-new-img2'],
       opacity: [0, 1],
-      duration: 10000,
+      translateX: [50, 1],
+      duration: duration,
       delay: 0,
-      autoplay: false
+      autoplay: false,
+      easing: easing,
     });
   }
   function setUpWN3() {
     initImg3 = anime({
       targets: ['#whats-new-img3'],
       opacity: [0, 1],
-      duration: 10000,
+      translateY: [100, 1],
+      duration: duration,
       delay: 0,
-      autoplay: false
+      autoplay: false,
+      easing: easing,
     });
   }
   function setUpWN4() {
+    initText4 = anime({
+      targets: ['.whats-new-text4'],
+      opacity: [0, 1],
+      duration: duration,
+      delay: 0,
+      autoplay: false,
+      easing: easing,
+    });
     initImg4 = anime({
       targets: ['#whats-new-img4'],
       opacity: [0, 1],
-      duration: 10000,
-      delay: 0,
-      autoplay: false
+      translateY: [100, 1],
+      duration: duration,
+      delay: 400,
+      autoplay: false,
+      easing: easing
     });
 
   }
   function whatsNewAnimate() {
-    initImg1.play();
+    //initText1.play();
+   // initImg1.play();
   }
   function whatsNewAnimate2() {
+    initText2.play();
+    initText3.play();
     initImg2.play();
   }
   function whatsNewAnimate3() {
     initImg3.play();
   }
   function whatsNewAnimate4() {
+    initText4.play();
+  }
+  function whatsNewAnimate5() {
     initImg4.play();
   }
   
@@ -955,10 +1041,11 @@ function getPageOffset(url) {
     whatsNewImage = $('#whats-new-img1').offset().top;
     whatsNewImage2 = $('#whats-new-img2').offset().top;
     whatsNewImage3 = $('#whats-new-img3').offset().top;
+    whatsNewText4 = $('.whats-new-text4').offset().top;
     whatsNewImage4 = $('#whats-new-img4').offset().top;
     windowHeight = $( window ).height();
-    console.log('whatsNewImage1 offset = ' + whatsNewImage);
-    console.log('whatsNewImage2 offset = ' + whatsNewImage2);
+    //console.log('whatsNewImage1 offset = ' + whatsNewImage);
+    console.log('whatsNewText4 offset = ' + whatsNewText4);
     // console.log('growthGraphic offset = ' + growthGraphic);
     // console.log('trendGraphic offset = ' + trendGraphic);
     // console.log('windowHeight = ' + windowHeight);
@@ -968,34 +1055,41 @@ function getPageOffset(url) {
     // console.log('scroll = ' + Scroll);
 
     if (Scroll >= whatsNewImage && !whatsNewImage1Animated ) {
-      console.log('trigger whatsNewImage');
+      //console.log('trigger whatsNewImage');
       $("#whats-new-img1").addClass("move");
       whatsNewAnimate();
       whatsNewImage1Animated = true;
     }
     if (Scroll >= whatsNewImage2 && !whatsNewImage2Animated ) {
-      console.log('trigger whatsNewImage2');
+      //console.log('trigger whatsNewImage2');
       $("#whats-new-img2").addClass("move");
       whatsNewAnimate2();
       whatsNewImage2Animated = true;
     }
    if (Scroll >= whatsNewImage3  && !whatsNewImage3Animated) {
-      console.log('trigger whatsNewImage3');
+      //console.log('trigger whatsNewImage3');
       $("#whats-new-img3").addClass("move");
       whatsNewAnimate3();
       whatsNewImage3Animated = true;
     } 
-    if (Scroll >= whatsNewImage4 && !whatsNewImage4Animated) {
-      console.log('trigger whatsNewImage4');
-      $("#whats-new-img4").addClass("move");
+    if (Scroll >= whatsNewText4 && !whatsNewText4Animated) {
+      //console.log('trigger whatsNewImage4');
+      $(".whats-new-text4").addClass("move");
       whatsNewAnimate4();
-      whatsNewImage4Animated = true;
+      whatsNewText4Animated = true;
+    }
+    if (Scroll >= whatsNewImage4 && !whatsNewImage4Animated) {
+      //console.log('trigger whatsNewImage4');
+      $("#whats-new-img4").addClass("move");
+      whatsNewAnimate5();
+      whatsNewImage5Animated = true;
     }
 
   }
   
     if ($('body.type-whats-new').length >= 1) {
-      console.log('setting up whats new animations');
+      //console.log('setting up whats new animations');
+      HeroFadein();
       setWhatsNewPositions();
         $(window).resize(function() {
         setWhatsNewPositions();
@@ -1003,7 +1097,7 @@ function getPageOffset(url) {
       setWhatsNewPositions();
       // Set up svg animations (one-time)
       if (!prefersReducedMotion) {
-       console.log('Reduced motion not enabled.');
+       //console.log('Reduced motion not enabled.');
        setUpWN1();
        setUpWN2();
        setUpWN3();
@@ -1015,9 +1109,9 @@ function getPageOffset(url) {
         userScrolled = true;
       });
        var svgScrollInt = setInterval(function() {
-        if (whatsNewImage1Animated && whatsNewImage2Animated && whatsNewImage3Animated && whatsNewImage4Animated) {
+        if (whatsNewImage1Animated && whatsNewImage2Animated && whatsNewImage3Animated && whatsNewText4Animated && whatsNewImage5Animated) {
           // Remove listener and interval
-          console.log('removing listener and interval');
+          //console.log('removing listener and interval');
           $(window).off("scroll", svgScrollEvt);
           clearInterval(svgScrollInt);
         } else {

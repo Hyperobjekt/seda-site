@@ -2,6 +2,12 @@
     #banner {
         display: none;
     }
+    #hero {
+        svg {
+            will-change: opacity;
+            opacity: 0;
+        }
+    }
     .container-xxl {
         max-width: 1440px; 
         margin: 0 auto;
@@ -45,6 +51,12 @@
             text-decoration: underline;
             color: #627799;
         }
+        }
+        img {
+            will-change: transform;
+        }
+        .whats-new-text1, .whats-new-text2, .whats-new-text3, .whats-new-text4, #hero svg, #hero h2, #hero p {
+            will-change: opacity;
         }
         img.left-shadow {
             box-shadow: -2px 4px 9px 0px rgba(0, 0, 0, 0.05);

@@ -44,6 +44,11 @@ xAxis['setAxis'] = function() {
 const axisBlue = '#547892';
 
 const axisVals = {yaxis: [-.005, .015], xaxis: [-.015, .015]}
+axisVals.mapRange = Math.abs(axisVals.yaxis[0]) > Math.abs(axisVals.yaxis[1]) ? [axisVals.yaxis[0], -axisVals.yaxis[0]] : [-axisVals.yaxis[1], axisVals.yaxis[1]]
+// calculate scale of legend and set height
+jQ('.axis__legend').css('height', `calc(100% / ${
+  (axisVals.yaxis[1] - axisVals.yaxis[0]) / (axisVals.mapRange[1] - axisVals.mapRange[0])
+})`);
 
 const axisMarkline = {
   type: 'scatter',
@@ -177,8 +182,8 @@ var state1 = function(scatterplot) {
     },
     visualMap: [{
       show: false,
-      min: -.015,
-      max: 0.015,
+      min: axisVals.mapRange[0],
+      max: axisVals.mapRange[1],
       range: [axisVals.yaxis[0], axisVals.yaxis[1]],
       left: '96%',
       bottom: '12%',
@@ -258,11 +263,6 @@ var state1 = function(scatterplot) {
       },
     ]
   }
-
-  // calculate 
-  jQ('.axis__legend').css('height', `calc(100% / ${
-    (baseOverrides.visualMap[0].range[1] - baseOverrides.visualMap[0].range[0]) / (baseOverrides.visualMap[0].max - baseOverrides.visualMap[0].min)
-  })`);
 
   return {
     endpoint: '/data/',

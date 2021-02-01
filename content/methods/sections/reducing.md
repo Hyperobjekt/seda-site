@@ -6,7 +6,7 @@ private: true
 
 We use hierarchical linear models to produce estimates of average test scores, learning rates, and trends in average test scores. The intuition behind these models is described in this section. 
 <br><br>
-We have measures of the average test scores in up to 48 grade-year cells in each tested subject for each school, district, or county. The scores are adjusted so that a value of 3 corresponds to the average achievement of 3rd graders nationally, a value of 4 corresponds to the average achievement of 4th graders nationally, and so on. For each subject, these can be represented in a table like this:
+We have measures of the average test scores in up to 60 grade-year cells in each tested subject for each school, district, county, commuting zone, metropolitan area, or state. The scores are adjusted so that a value of 3 corresponds to the average achievement of 3rd graders nationally, a value of 4 corresponds to the average achievement of 4th graders nationally, and so on. For each subject, these can be represented in a table like this:
 <br><br>
 <h5 class="big-superhead">Hypothetical Average Test Scores (Grade-level Equivalents), By Grade and Year</h5>
 
@@ -40,6 +40,12 @@ We have measures of the average test scores in up to 48 grade-year cells in each
       <th>
         2016
       </th>
+      <th>
+        2017
+      </th>
+      <th>
+        2018
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -71,6 +77,12 @@ We have measures of the average test scores in up to 48 grade-year cells in each
       <td>
         9.2
       </td>
+      <td>
+        9.3
+      </td>
+      <td>
+        9.4
+      </td>
     </tr>
     <tr>
       <th>
@@ -99,6 +111,12 @@ We have measures of the average test scores in up to 48 grade-year cells in each
       </td>
       <td>
         8.1
+      </td>
+      <td>
+        8.2
+      </td>
+      <td>
+        8.3
       </td>
     </tr>
     <tr>
@@ -129,6 +147,12 @@ We have measures of the average test scores in up to 48 grade-year cells in each
       <td>
         7.0
       </td>
+      <td>
+        7.1
+      </td>
+      <td>
+        7.2
+      </td>
     </tr>
     <tr>
       <th>
@@ -157,6 +181,12 @@ We have measures of the average test scores in up to 48 grade-year cells in each
       </td>
       <td>
         5.9
+      </td>
+      <td>
+        6.0
+      </td>
+      <td>
+        6.1
       </td>
     </tr>
     <tr>
@@ -187,6 +217,12 @@ We have measures of the average test scores in up to 48 grade-year cells in each
       <td>
         4.8
       </td>
+      <td>
+        4.9
+      </td>
+      <td>
+        5.0
+      </td>
     </tr>
     <tr>
       <th>
@@ -216,11 +252,17 @@ We have measures of the average test scores in up to 48 grade-year cells in each
       <td>
         3.7
       </td>
+      <td>
+        3.8
+      </td>
+      <td>
+        3.9
+      </td>
     </tr>
   </tbody>
 </table>
 
-In this hypothetical school district, students in 3rd grade in 2009 earned an average score of 3 in this subject, indicating that students scored at a 3rd-grade level, on average (equal to the national average for 3rd graders). Students in 8th grade in 2016 scored at a Grade 9.2 level, on average (1.2 grade levels above the national average for 8th graders).
+In this hypothetical school district, students in 3rd grade in 2009 earned an average score of 3 in this subject, indicating that students scored at a 3rd-grade level, on average (equal to the national average for 3rd graders). Students in 8th grade in 2018 scored at a Grade 9.4 level, on average (1.4 grade levels above the national average for 8th graders).
 <br><br>
 From this table, we can compute the average test score, the average learning rate, and the average test score trend for the district. 
 <br><br>
@@ -260,6 +302,12 @@ To compute the average test score across grades and years, we first use the info
       <th>
         2016
       </th>
+      <th>
+        2017
+      </th>
+      <th>
+        2018
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -291,6 +339,12 @@ To compute the average test score across grades and years, we first use the info
       <td>
         1.2
       </td>
+      <td>
+        1.3
+      </td>
+      <td>
+        1.4
+      </td>
     </tr>
     <tr>
       <th>
@@ -319,6 +373,12 @@ To compute the average test score across grades and years, we first use the info
       </td>
       <td>
         1.1
+      </td>
+      <td>
+        1.2
+      </td>
+      <td>
+        1.3
       </td>
     </tr>
     <tr>
@@ -349,6 +409,12 @@ To compute the average test score across grades and years, we first use the info
       <td>
         1.0
       </td>
+      <td>
+        1.1
+      </td>
+      <td>
+        1.2
+      </td>
     </tr>
     <tr>
       <th>
@@ -377,6 +443,12 @@ To compute the average test score across grades and years, we first use the info
       </td>
       <td>
         0.9
+      </td>
+      <td>
+        1.0
+      </td>
+      <td>
+        1.1
       </td>
     </tr>
     <tr>
@@ -407,6 +479,12 @@ To compute the average test score across grades and years, we first use the info
       <td>
         0.8
       </td>
+      <td>
+        0.9
+      </td>
+      <td>
+        1.0
+      </td>
     </tr>
     <tr>
       <th>
@@ -436,13 +514,19 @@ To compute the average test score across grades and years, we first use the info
       <td>
         0.7
       </td>
+      <td>
+        0.8
+      </td>
+      <td>
+        0.9
+      </td>
     </tr>
   </tbody>
 </table>
 
-In this representation, students in Grade 3 in 2009 have a score of 0, meaning their test scores are equal to the national average for 3rd graders. Students in Grade 8 in 2016 have a score of 1.2, meaning their scores are 1.2 grade levels above the national average for 8th graders.
+In this representation, students in Grade 3 in 2009 have a score of 0, meaning their test scores are equal to the national average for 3rd graders. Students in Grade 8 in 2018 have a score of 1.4, meaning their scores are 1.4 grade levels above the national average for 8th graders.
 
-We then compute the average of these values. In this example, the average difference (the average of the values in the table) is 0.6, meaning that the average grade 3–8 student in the district scores 0.6 grade levels above the national average.
+We then compute the average of these values. In this example, the average difference (the average of the values in the table) is 0.7, meaning that the average grade 3–8 student in the district scores 0.7 grade levels above the national average.
 <br><br>
 <h5>Computing the average learning rate</h5> 
 To compute the average learning rate, we compare students’ average scores in one grade and year to those in the next grade and year (see below). In other words, we look at grade-to-grade improvements in performance within each cohort.
@@ -479,6 +563,12 @@ To compute the average learning rate, we compare students’ average scores in o
       <th>
         2016
       </th>
+      <th>
+        2017
+      </th>
+      <th>
+        2018
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -510,6 +600,12 @@ To compute the average learning rate, we compare students’ average scores in o
       <td>
         9.2
       </td>
+      <td>
+        9.3
+      </td>
+      <td>
+        9.4
+      </td>
     </tr>
     <tr>
       <th>
@@ -538,6 +634,12 @@ To compute the average learning rate, we compare students’ average scores in o
       </td>
       <td>
         8.1
+      </td>
+      <td>
+        8.2
+      </td>
+      <td>
+        8.3
       </td>
     </tr>
     <tr>
@@ -568,6 +670,12 @@ To compute the average learning rate, we compare students’ average scores in o
       <td>
         7.0
       </td>
+      <td>
+        7.1
+      </td>
+      <td>
+        7.2
+      </td>
     </tr>
     <tr>
       <th>
@@ -596,6 +704,12 @@ To compute the average learning rate, we compare students’ average scores in o
       </td>
       <td>
         5.9
+      </td>
+      <td>
+        6.0
+      </td>
+      <td>
+        6.1
       </td>
     </tr>
     <tr>
@@ -626,6 +740,12 @@ To compute the average learning rate, we compare students’ average scores in o
       <td>
         4.8
       </td>
+      <td>
+        4.9
+      </td>
+      <td>
+        5.0
+      </td>
     </tr>
     <tr>
       <th>
@@ -654,6 +774,12 @@ To compute the average learning rate, we compare students’ average scores in o
       </td>
       <td>
         3.7
+      </td>
+      <td>
+        3.8
+      </td>
+      <td>
+        3.9
       </td>
     </tr>
   </tbody>
@@ -695,6 +821,12 @@ To compute the average test score trend, we compare students’ average scores i
       <th>
         2016
       </th>
+      <th>
+        2017
+      </th>
+      <th>
+        2018
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -726,6 +858,12 @@ To compute the average test score trend, we compare students’ average scores i
       <td>
         9.2
       </td>
+      <td>
+        9.3
+      </td>
+      <td>
+        9.4
+      </td>
     </tr>
     <tr>
       <th>
@@ -754,6 +892,12 @@ To compute the average test score trend, we compare students’ average scores i
       </td>
       <td>
         8.1
+      </td>
+      <td>
+        8.2
+      </td>
+      <td>
+        8.3
       </td>
     </tr>
     <tr>
@@ -784,6 +928,12 @@ To compute the average test score trend, we compare students’ average scores i
       <td>
         7.0
       </td>
+      <td>
+        7.1
+      </td>
+      <td>
+        7.2
+      </td>
     </tr>
     <tr>
       <th>
@@ -812,6 +962,12 @@ To compute the average test score trend, we compare students’ average scores i
       </td>
       <td>
         5.9
+      </td>
+      <td>
+        6.0
+      </td>
+      <td>
+        6.1
       </td>
     </tr>
     <tr>
@@ -842,6 +998,12 @@ To compute the average test score trend, we compare students’ average scores i
       <td>
         4.8
       </td>
+      <td>
+        4.9
+      </td>
+      <td>
+        5.0
+      </td>
     </tr>
     <tr>
       <th>
@@ -870,6 +1032,12 @@ To compute the average test score trend, we compare students’ average scores i
       </td>
       <td>
         3.7
+      </td>
+      <td>
+        3.8
+      </td>
+      <td>
+        3.9
       </td>
     </tr>
   </tbody>

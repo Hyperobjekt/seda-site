@@ -891,10 +891,6 @@ function getPageOffset(url) {
   var whatsNewImage3Animated = false;
   var whatsNewImage4Animated = false;
   var whatsNewText4Animated =  false;
-  //var setUpAnime3 = null;
-  //var whatsNewAnimate = null;
-  var initText1 = null;
-  var initImg1 = null;
   var initText2 = null;
   var initImg2 = null;
   var initText3 = null;
@@ -903,7 +899,6 @@ function getPageOffset(url) {
   var initImg4 = null;
   var duration = 900;
   var easing = 'easeInOutSine';
-  //var translate = '[50, 1]',
 
   function HeroFadein() {
     anime({
@@ -911,7 +906,6 @@ function getPageOffset(url) {
       opacity: [0, 1],
       duration: duration,
       delay: 0,
-      //autoplay: false,
       easing: easing,
     });
     anime({
@@ -919,7 +913,6 @@ function getPageOffset(url) {
       opacity: [0, 1],
       duration: duration,
       delay: 0,
-      //autoplay: false,
       easing: easing,
     });
     anime({
@@ -927,7 +920,6 @@ function getPageOffset(url) {
       opacity: [0, 1],
       duration: duration,
       delay: 0,
-      //autoplay: false,
       easing: easing,
     });
     anime({
@@ -935,7 +927,6 @@ function getPageOffset(url) {
       opacity: [0, 1],
       duration: duration,
       delay: 1200,
-      //autoplay: false,
       easing: easing,
     });
     anime({
@@ -944,7 +935,6 @@ function getPageOffset(url) {
       translateX: [-50, 1],
       duration: duration,
       delay: 1200,
-      // autoplay: false,
       easing: easing,
     });
   };
@@ -953,8 +943,6 @@ function getPageOffset(url) {
       anime.set(['.whats-new-text2', '#whats-new-img2', '.whats-new-text3', '#whats-new-img3', '#whats-new-img4' ], {
       opacity: [0]
     }); 
-    //initText1 = 
-    //initImg1 = 
   }
   function setUpWN2() {
     initText2 = anime({
@@ -1014,10 +1002,6 @@ function getPageOffset(url) {
     });
 
   }
-  function whatsNewAnimate() {
-    //initText1.play();
-   // initImg1.play();
-  }
   function whatsNewAnimate2() {
     initText2.play();
     initText3.play();
@@ -1051,12 +1035,6 @@ function getPageOffset(url) {
     var Scroll = $(window).scrollTop() + windowHeight - 50;
     // console.log('scroll = ' + Scroll);
 
-    if (Scroll >= whatsNewImage && !whatsNewImage1Animated ) {
-      //console.log('trigger whatsNewImage');
-      $("#whats-new-img1").addClass("move");
-      whatsNewAnimate();
-      whatsNewImage1Animated = true;
-    }
     if (Scroll >= whatsNewImage2 && !whatsNewImage2Animated ) {
       //console.log('trigger whatsNewImage2');
       $("#whats-new-img2").addClass("move");
@@ -1109,7 +1087,7 @@ function getPageOffset(url) {
         userScrolled = true;
       });
        var svgScrollInt = setInterval(function() {
-        if (whatsNewImage1Animated && whatsNewImage2Animated && whatsNewImage3Animated && whatsNewText4Animated && whatsNewImage5Animated) {
+        if (whatsNewImage2Animated && whatsNewImage3Animated && whatsNewText4Animated && whatsNewImage5Animated) {
           // Remove listener and interval
           //console.log('removing listener and interval');
           $(window).off("scroll", svgScrollEvt);

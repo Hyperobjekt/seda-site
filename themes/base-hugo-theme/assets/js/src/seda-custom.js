@@ -103,6 +103,8 @@
       $paper.toggleClass('abstract-visible');
     }
 
+    // Homepage hero animation
+
     anime.set(['#mainland', '.plotpoints', 'body.home .hero-child h2.hero-animate',
     'body.home .hero-child p.hero-animate', 'body.home .hero-child button.hero-animate'], {
       opacity: [0]
@@ -181,6 +183,8 @@
       duration: 800,
       delay: 5200,
     });
+
+    
 
     // Variables for anime
 
@@ -879,5 +883,152 @@ function getPageOffset(url) {
         }
       }, 50);
     }
+
+  // What's New page animation
+
+  var whatsNewImage1Animated = false;
+  var whatsNewImage2Animated = false;
+  var whatsNewImage3Animated = false;
+  var whatsNewImage4Animated = false;
+  //var setUpAnime3 = null;
+  //var whatsNewAnimate = null;
+  var initImg1 = null;
+  var initImg2 = null;
+  var initImg3 = null;
+  var initImg4 = null;
+
+  function setUpWN1() {
+      anime.set(['#whats-new-img1', '#whats-new-img2', '#whats-new-img3', '#whats-new-img4' ], {
+      opacity: [0]
+    }); 
+    initImg1 = anime({
+      targets: ['#whats-new-img1'],
+      opacity: [0, 1],
+      duration: 10000,
+      delay: 0,
+      autoplay: false
+    });
+  }
+  function setUpWN2() {
+    initImg2 = anime({
+      targets: ['#whats-new-img2'],
+      opacity: [0, 1],
+      duration: 10000,
+      delay: 0,
+      autoplay: false
+    });
+  }
+  function setUpWN3() {
+    initImg3 = anime({
+      targets: ['#whats-new-img3'],
+      opacity: [0, 1],
+      duration: 10000,
+      delay: 0,
+      autoplay: false
+    });
+  }
+  function setUpWN4() {
+    initImg4 = anime({
+      targets: ['#whats-new-img4'],
+      opacity: [0, 1],
+      duration: 10000,
+      delay: 0,
+      autoplay: false
+    });
+
+  }
+  function whatsNewAnimate() {
+    initImg1.play();
+  }
+  function whatsNewAnimate2() {
+    initImg2.play();
+  }
+  function whatsNewAnimate3() {
+    initImg3.play();
+  }
+  function whatsNewAnimate4() {
+    initImg4.play();
+  }
+  
+  function setWhatsNewPositions() {
+    // console.log('setElPositions()');
+    whatsNewImage = $('#whats-new-img1').offset().top;
+    whatsNewImage2 = $('#whats-new-img2').offset().top;
+    whatsNewImage3 = $('#whats-new-img3').offset().top;
+    whatsNewImage4 = $('#whats-new-img4').offset().top;
+    windowHeight = $( window ).height();
+    console.log('whatsNewImage1 offset = ' + whatsNewImage);
+    console.log('whatsNewImage2 offset = ' + whatsNewImage2);
+    // console.log('growthGraphic offset = ' + growthGraphic);
+    // console.log('trendGraphic offset = ' + trendGraphic);
+    // console.log('windowHeight = ' + windowHeight);
+  }
+  function checkWhatsNewAnimations() {
+    var Scroll = $(window).scrollTop() + windowHeight - 50;
+    // console.log('scroll = ' + Scroll);
+
+    if (Scroll >= whatsNewImage && !whatsNewImage1Animated ) {
+      console.log('trigger whatsNewImage');
+      $("#whats-new-img1").addClass("move");
+      whatsNewAnimate();
+      whatsNewImage1Animated = true;
+    }
+    if (Scroll >= whatsNewImage2 && !whatsNewImage2Animated ) {
+      console.log('trigger whatsNewImage2');
+      $("#whats-new-img2").addClass("move");
+      whatsNewAnimate2();
+      whatsNewImage2Animated = true;
+    }
+   if (Scroll >= whatsNewImage3  && !whatsNewImage3Animated) {
+      console.log('trigger whatsNewImage3');
+      $("#whats-new-img3").addClass("move");
+      whatsNewAnimate3();
+      whatsNewImage3Animated = true;
+    } 
+    if (Scroll >= whatsNewImage4 && !whatsNewImage4Animated) {
+      console.log('trigger whatsNewImage4');
+      $("#whats-new-img4").addClass("move");
+      whatsNewAnimate4();
+      whatsNewImage4Animated = true;
+    }
+
+  }
+  
+    if ($('body.type-whats-new').length >= 1) {
+      console.log('setting up whats new animations');
+      setWhatsNewPositions();
+        $(window).resize(function() {
+        setWhatsNewPositions();
+      })
+      setWhatsNewPositions();
+      // Set up svg animations (one-time)
+      if (!prefersReducedMotion) {
+       console.log('Reduced motion not enabled.');
+       setUpWN1();
+       setUpWN2();
+       setUpWN3();
+       setUpWN4();
+      } 
+      // Scroll listener vars and interval
+      var userScrolled = false;
+      var svgScrollEvt = $(window).scroll(function() {
+        userScrolled = true;
+      });
+       var svgScrollInt = setInterval(function() {
+        if (whatsNewImage1Animated && whatsNewImage2Animated && whatsNewImage3Animated && whatsNewImage4Animated) {
+          // Remove listener and interval
+          console.log('removing listener and interval');
+          $(window).off("scroll", svgScrollEvt);
+          clearInterval(svgScrollInt);
+        } else {
+          if (userScrolled && !prefersReducedMotion) {
+            checkWhatsNewAnimations();
+            userScrolled = false;
+          }
+        }
+      },  50); 
+    } 
+
+
   });
 })(jQuery);

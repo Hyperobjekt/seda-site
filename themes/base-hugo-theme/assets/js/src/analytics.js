@@ -23,9 +23,7 @@ console.log('analytics file loaded');
     $('.gta-event-CTAClick').on('click touchstart', function (e) {
       console.log('.gta-event-CTAClick');
       // console.log(e)
-      // e.preventDefault();
       const $target = $(e.currentTarget).attr('href');
-      // const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
       const $targetPrompt = $(e.currentTarget).attr('aria-label') ?
         $(e.currentTarget).attr('aria-label') :
         $(e.currentTarget).find('span').html();
@@ -34,9 +32,6 @@ console.log('analytics file loaded');
         'event' : 'CTAClick',
         'CTADestination': encodeURI($target),
         'CTAPrompt': $targetPrompt,
-        // 'eventCallback' : () => {
-        //     analytics.navigate($target, $targetBlank);
-        // }
       }
       analytics.push(_obj);
     });
@@ -45,8 +40,8 @@ console.log('analytics file loaded');
     $('.gta-event-bioExpanded').on('click touchstart', function (e) {
       // console.log('.gta-event-bioExpanded');
       const $target = $(e.currentTarget);
-      // console.log($target);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'bioExpanded'
       }
       analytics.push(_obj);
@@ -56,6 +51,7 @@ console.log('analytics file loaded');
     $('.gta-event-eMailSignupAttempt').on('click touchstart', function (e) {
       // console.log('.gta-event-eMailSignupAttempt');
       const _obj = {
+        'transport': 'beacon',
         'event' : 'eMailSignupAttempt'
       }
       analytics.push(_obj);
@@ -64,15 +60,11 @@ console.log('analytics file loaded');
     // Event: postSelected
     $('.gta-event-postSelected').on('click touchstart', function (e) {
       console.log('.gta-event-postSelected');
-      // e.preventDefault();
       const $target = $(e.currentTarget).attr('href');
       const _obj = {
         'transport': 'beacon',
         'event' : 'postSelected',
         'discoverySelection': encodeURI($target),
-        // 'eventCallback' : function() {
-        //     window.location.href = $target;
-        // }
       }
       analytics.push(_obj);
     });
@@ -89,11 +81,10 @@ console.log('analytics file loaded');
       } else {
         $paperCategory = $('.row.subnav.large-tab-nav').find('#researchTabs li a.active').text();
       }
-      // console.log('$paperCategory: ' + $paperCategory);
       let $paperName = null;
       $paperName = $(e.currentTarget).closest('.research-paper').find('.info h5').text();
-      // console.log($paperName);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'showAbstractandVersion',
         'paperCategory': $paperCategory ? $paperCategory : 'Unavailable',
         'paperName': $paperName ? $paperName : 'Unavailable'
@@ -107,8 +98,8 @@ console.log('analytics file loaded');
       // console.log('.gta-event-categorySelected');
       const $target = $(e.currentTarget);
       const $paperCategory = $target.text();
-      // console.log($paperCategory);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'categorySelected',
         'paperCategory': $paperCategory ? $paperCategory : 'Unavailable'
       }
@@ -119,14 +110,12 @@ console.log('analytics file loaded');
     // Reports: paperVersion, paperName
     $('.gta-event-paperDownloadbyVersion').on('click touchstart', function (e) {
       // console.log('.gta-event-paperDownloadbyVersion');
-      // e.preventDefault();
       const $target = $(e.currentTarget);
       let $paperName = null;
       $paperName = $(e.currentTarget).closest('.research-paper').find('.info h5').text();
-      // console.log($paperName);
       const $paperVersion = $target.attr('data-date');
-      // console.log($paperVersion);
       const _obj = {
+        'transport': 'beacon',
         'event': 'paperDownloadbyVersion',
         'paperVersion': $paperVersion,
         'paperName': $paperName
@@ -142,6 +131,7 @@ console.log('analytics file loaded');
       const $paperName = $target.closest('.research-paper').find('.info h5').text();
       const $paperVersion = $target.attr('data-date');
       const _obj = {
+        'transport': 'beacon',
         'event': 'paperDownloadLatest',
         'paperVersion': $paperVersion,
         'paperName': $paperName
@@ -160,6 +150,7 @@ console.log('analytics file loaded');
       const $newsArticlePublication = $titleNode.attr('data-outlet');
       const $targetBlank = ($(e.currentTarget).attr('target') === '_blank');
       const _obj = {
+        'transport': 'beacon',
         'event': 'articleSelected',
         'newsArticleName': $newsArticleName,
         'newsArticlePublication': $newsArticlePublication,
@@ -176,8 +167,8 @@ console.log('analytics file loaded');
       // console.log('.gta-event-faqTopicExpanded');
       const $target = $(e.currentTarget);
       const $topic = $(e.currentTarget).find('h5').text();
-      // console.log('$topic is ', $topic);
       const _obj = {
+        'transport': 'beacon',
         'event' : 'faqTopicExpanded',
         'faqTopExpansion': $topic
       }
@@ -195,8 +186,9 @@ console.log('analytics file loaded');
       // console.groupEnd();
       // If the data is from a discoveries page, then send.
       if (callbackData.documentLocation.indexOf('discoveries') > -1) {
-        console.log('Discoveries page. Pushing to GA.');
+        // console.log('Discoveries page. Pushing to GA.');
         const _obj = {
+          'transport': 'beacon',
           'event': 'discoveryScrollDepthSave',
           'discoveryScrollDepth': callbackData.scrollPercent,
           'discoveryScrollDepthLocation': callbackData.documentLocation
@@ -237,6 +229,7 @@ console.log('analytics file loaded');
           .replace('-', '.') :
         'Not available';
       const _obj = {
+        'transport': 'beacon',
         'event' : 'dataDownloaded',
         'dataFile': $href,
         'dataHeading': $heading,
@@ -249,7 +242,6 @@ console.log('analytics file loaded');
     // Reports: navType, navItem
     $('.gta-event-navClick').on('click touchstart', function(e) {
       // console.log('.gta-event-navClick');
-      // e.preventDefault();
       const $target = $(e.currentTarget);
       const $href = $target.attr('href');
       // const $targetBlank = ($target.attr('target') === '_blank');
@@ -267,17 +259,11 @@ console.log('analytics file loaded');
       if ($navItem.length <= 0) {
         $navItem = $target.find('span, h1')[0].text().trim();
       }
-      // console.log($navType);
-      // console.log($navItem);
       const _obj = {
         'transport': 'beacon',
         'event' : 'navClick',
         'navType': $navType,
         'navItem': $navItem,
-        // 'eventCallback' : function() {
-        //   // console.log('request successful');
-        //   analytics.navigate($href, $targetBlank);
-        // }
       }
       analytics.push(_obj);
     });

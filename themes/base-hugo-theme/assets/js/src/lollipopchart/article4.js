@@ -69,7 +69,7 @@ const getDataAndRender = async () => {
             },
             tooltip: {
                 formatter: (params) => 
-                `${plotData[params[0].dataIndex].district}<br />
+                `${plotData[params[0].dataIndex].district}, ${plotData[params[0].dataIndex].state}<br />
                 <small>SES Inequality: ${plotData[params[0].dataIndex].ses}<br />
                 Gap in 2009: ${plotData[params[0].dataIndex].ohNineGap}</br>
                 Gap in 2018: ${roundToNearest(parseFloat(plotData[params[0].dataIndex].ohNineGap) + parseFloat(plotData[params[0].dataIndex].nineYrGapChg), 2)}</br>

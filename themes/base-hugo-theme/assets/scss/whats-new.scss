@@ -2,6 +2,12 @@
     #banner {
         display: none;
     }
+    #hero {
+        svg {
+            will-change: opacity;
+            opacity: 0;
+        }
+    }
     .container-xxl {
         max-width: 1440px; 
         margin: 0 auto;

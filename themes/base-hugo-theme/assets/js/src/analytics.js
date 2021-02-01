@@ -21,8 +21,7 @@ console.log('analytics file loaded');
 
     // Event: CTAClick
     $('.gta-event-CTAClick').on('click touchstart', function (e) {
-      console.log('.gta-event-CTAClick');
-      // console.log(e)
+      // console.log('.gta-event-CTAClick');
       const $target = $(e.currentTarget).attr('href');
       const $targetPrompt = $(e.currentTarget).attr('aria-label') ?
         $(e.currentTarget).attr('aria-label') :
@@ -59,7 +58,7 @@ console.log('analytics file loaded');
 
     // Event: postSelected
     $('.gta-event-postSelected').on('click touchstart', function (e) {
-      console.log('.gta-event-postSelected');
+      // console.log('.gta-event-postSelected');
       const $target = $(e.currentTarget).attr('href');
       const _obj = {
         'transport': 'beacon',

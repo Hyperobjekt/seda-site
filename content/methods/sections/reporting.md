@@ -8,7 +8,7 @@ private: true
 We do not report average performance, learning, and/or trend estimates if:
 
 - Fewer than 95% of students in the school, district or county were tested. 
-- More than 40% of students in the school, district or county took alternative assessments.
-- If the estimates are too imprecise to be informative.
+- More than 40% of students in the school, district, county, commuting zone, or metropolitan statistical area took alternative assessments.
+- Fewer than 20% of students are represented in the estimate.
 
 For more details, see Step 10 of the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">technical documentation</a>.

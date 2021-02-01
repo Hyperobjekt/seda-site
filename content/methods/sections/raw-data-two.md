@@ -14,8 +14,7 @@ private: true
 
 </tr></thead>
 <tbody><tr>
-<td>NCES School ID</td>
-<td>State FIPS Code</td>
+<td>SEDA School ID</td>
 <td>Subgroup</td>
 <td>Subject</td>
 <td>Grade</td>
@@ -26,10 +25,9 @@ private: true
 <td>Proficiency Level 4</td>
 </tr>
 <tr>
-<td>1</td>
-<td>A</td>
+<td>11111122222</td>
 <td>All students</td>
-<td>ELA</td>
+<td>RLA</td>
 <td>3</td>
 <td>2009</td>
 <td>10</td>
@@ -38,10 +36,9 @@ private: true
 <td>50</td>
 </tr>
 <tr>
-<td>2</td>
-<td>A</td>
+<td>777777755555</td>
 <td>All students</td>
-<td>ELA</td>
+<td>RLA</td>
 <td>3</td>
 <td>2009</td>
 <td>5</td>

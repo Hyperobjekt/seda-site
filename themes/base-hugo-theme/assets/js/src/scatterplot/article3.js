@@ -43,7 +43,9 @@ xAxis['setAxis'] = function() {
 
 const axisBlue = '#547892';
 
-const initialMarkline = {
+const axisVals = {yaxis: [-.005, .015], xaxis: [-.015, .015]}
+
+const axisMarkline = {
   type: 'scatter',
   zlevel: 1,
   animation: false,
@@ -62,7 +64,7 @@ const initialMarkline = {
       data: [
           [
             {
-              coord: [-.015, 0],
+              coord: [axisVals.xaxis[0], 0],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(5, 41, 101, 100%)',
@@ -70,13 +72,13 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [.015, 0], symbol: 'none' },
+            { coord: [axisVals.xaxis[1], 0], symbol: 'none' },
           ],
           //horizontal label (necessary to add label at beginning of markline)
           [
             {
               name: 'no change',
-              coord: [-.015, 0],
+              coord: [axisVals.xaxis[0], 0],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(0,0,0,0)',
@@ -84,12 +86,12 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [-.006, 0], symbol: 'none' },
+            { coord: [axisVals.xaxis[0] + .007, 0], symbol: 'none' },
           ],
           //vertical markline
           [
             {
-              coord: [0, -.003],
+              coord: [0, axisVals.yaxis[0]],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(5, 41, 101, 100%)',
@@ -97,7 +99,7 @@ const initialMarkline = {
                 width: 1,
               },
             },
-            { coord: [0, .015], symbol: 'none' },
+            { coord: [0, axisVals.xaxis[1]], symbol: 'none' },
           ],
           //vertical label (necessary to add label at beginning of markline)
           [
@@ -175,8 +177,9 @@ var state1 = function(scatterplot) {
     },
     visualMap: [{
       show: false,
-      min: -.003,
+      min: -.015,
       max: 0.015,
+      range: [axisVals.yaxis[0], axisVals.yaxis[1]],
       left: '96%',
       bottom: '12%',
       itemHeight: '280px',
@@ -186,8 +189,8 @@ var state1 = function(scatterplot) {
       },
     }],
     yAxis: {
-      min: -0.003,
-      max:.015,
+      min: axisVals.yaxis[0],
+      max: axisVals.xaxis[1],
       position: 'left',
       nameTextStyle: {
         fontFamily: 'MaisonNeue-Medium',
@@ -209,8 +212,8 @@ var state1 = function(scatterplot) {
       zlevel: 103,
     },
     xAxis: {
-      min: -0.015,
-      max: 0.015,
+      min: axisVals.xaxis[0],
+      max: axisVals.xaxis[1],
       splitLine:{
         show: false,
       },
@@ -231,7 +234,7 @@ var state1 = function(scatterplot) {
       }
     },
     series: [
-      initialMarkline,
+      axisMarkline,
       {
         id: 'base',
         itemStyle: {
@@ -255,6 +258,11 @@ var state1 = function(scatterplot) {
       },
     ]
   }
+
+  // calculate 
+  jQ('.axis__legend').css('height', `calc(100% / ${
+    (baseOverrides.visualMap[0].range[1] - baseOverrides.visualMap[0].range[0]) / (baseOverrides.visualMap[0].max - baseOverrides.visualMap[0].min)
+  })`);
 
   return {
     endpoint: '/data/',

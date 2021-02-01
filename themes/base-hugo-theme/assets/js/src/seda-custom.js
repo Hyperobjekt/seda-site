@@ -906,9 +906,6 @@ function getPageOffset(url) {
   //var translate = '[50, 1]',
 
   function HeroFadein() {
-    anime.set(['#hero svg', '#hero h2', '#hero p', '.whats-new-text1', '#whats-new-img1'], {
-      opacity: [0]
-    });
     anime({
       targets: ['#hero svg'],
       opacity: [0, 1],
@@ -1089,6 +1086,9 @@ function getPageOffset(url) {
   
     if ($('body.type-whats-new').length >= 1) {
       //console.log('setting up whats new animations');
+      anime.set(['#hero svg', '#hero h2', '#hero p', '.whats-new-text1', '#whats-new-img1'], {
+        opacity: [0]
+      });
       HeroFadein();
       setWhatsNewPositions();
         $(window).resize(function() {

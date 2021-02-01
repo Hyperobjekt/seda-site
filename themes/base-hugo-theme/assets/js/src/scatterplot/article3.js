@@ -58,7 +58,7 @@ const axisMarkline = {
           fontWeight: '500',
           fontSize: 11.52,
           padding: 4,
-          color: 'rgba(84, 120, 146, 60%)',
+          color: 'rgba(84, 120, 146, 80%)',
       },
       //horizontal markline
       data: [
@@ -105,7 +105,7 @@ const axisMarkline = {
           [
             {
               name: 'no change',
-              coord: [0, 0],
+              coord: [0, -0.0008],
               symbol: 'none',
               lineStyle: {
                 color: 'rgba(0,0,0,0)',

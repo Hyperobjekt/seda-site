@@ -184,7 +184,7 @@
       delay: 5200,
     });
 
-    
+
 
     // Variables for anime
 
@@ -942,7 +942,7 @@ function getPageOffset(url) {
   function setUpWN1() {
       anime.set(['.whats-new-text2', '#whats-new-img2', '.whats-new-text3', '#whats-new-img3', '#whats-new-img4' ], {
       opacity: [0]
-    }); 
+    });
   }
   function setUpWN2() {
     initText2 = anime({
@@ -1016,7 +1016,7 @@ function getPageOffset(url) {
   function whatsNewAnimate5() {
     initImg4.play();
   }
-  
+
   function setWhatsNewPositions() {
     // console.log('setElPositions()');
     whatsNewImage = $('#whats-new-img1').offset().top;
@@ -1026,7 +1026,7 @@ function getPageOffset(url) {
     whatsNewImage4 = $('#whats-new-img4').offset().top;
     windowHeight = $( window ).height();
     //console.log('whatsNewImage1 offset = ' + whatsNewImage);
-    console.log('whatsNewText4 offset = ' + whatsNewText4);
+    // console.log('whatsNewText4 offset = ' + whatsNewText4);
     // console.log('growthGraphic offset = ' + growthGraphic);
     // console.log('trendGraphic offset = ' + trendGraphic);
     // console.log('windowHeight = ' + windowHeight);
@@ -1046,7 +1046,7 @@ function getPageOffset(url) {
       $("#whats-new-img3").addClass("move");
       whatsNewAnimate3();
       whatsNewImage3Animated = true;
-    } 
+    }
     if (Scroll >= whatsNewText4 && !whatsNewText4Animated) {
       //console.log('trigger whatsNewImage4');
       $(".whats-new-text4").addClass("move");
@@ -1061,7 +1061,7 @@ function getPageOffset(url) {
     }
 
   }
-  
+
     if ($('body.type-whats-new').length >= 1) {
       //console.log('setting up whats new animations');
       anime.set(['#hero svg', '#hero h2', '#hero p', '.whats-new-text1', '#whats-new-img1'], {
@@ -1080,7 +1080,7 @@ function getPageOffset(url) {
        setUpWN2();
        setUpWN3();
        setUpWN4();
-      } 
+      }
       // Scroll listener vars and interval
       var userScrolled = false;
       var svgScrollEvt = $(window).scroll(function() {
@@ -1098,8 +1098,8 @@ function getPageOffset(url) {
             userScrolled = false;
           }
         }
-      },  50); 
-    } 
+      },  50);
+    }
 
 
   });

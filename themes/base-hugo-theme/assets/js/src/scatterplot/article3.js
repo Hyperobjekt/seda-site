@@ -173,7 +173,7 @@ var state1 = function(scatterplot) {
     grid :{
         top: 15,
         left: 42,
-        bottom: 0,
+        bottom: 1,
     },
     visualMap: [{
       show: false,

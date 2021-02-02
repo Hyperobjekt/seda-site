@@ -13,7 +13,7 @@ From the data provided, we use data for:
 - All 50 state and DC
 - School years 2008-09 through 2017-18
 - Grades 3-8
-- Math and Rnglish Language Arts (RLA)
+- Math and Reading Language Arts (RLA)
 - Various subgroups of students: all students, racial/ethnic subgroups, gender subgroups, economic subgroups, etc.
 
 For details on missing data, see the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank" rel="noopener noreferrer">SEDA Technical Documentation</a>.

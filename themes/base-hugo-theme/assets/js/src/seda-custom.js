@@ -886,10 +886,10 @@ function getPageOffset(url) {
 
   // What's New page animation
 
-  var whatsNewImage1Animated = false;
   var whatsNewImage2Animated = false;
   var whatsNewImage3Animated = false;
   var whatsNewImage4Animated = false;
+  var whatsNewImage5Animated = false;
   var whatsNewText4Animated =  false;
   var initText2 = null;
   var initImg2 = null;

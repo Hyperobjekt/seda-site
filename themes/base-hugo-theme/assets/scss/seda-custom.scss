@@ -4012,12 +4012,24 @@ form#getTheData {
   }
 }
 
-.navbar-brand .badge {
-  top: 50%; 
-  right: -30px; 
-  transform: 
-  translate(50%, -60%);
-  cursor: default;
+.navbar {
+  .badge {
+    color: #fff;
+    border: 1px solid #fff !important;
+  }
+  &.sticky-top {
+    .badge {
+      color: #032664;
+      border: 1px solid #032664 !important;
+    }
+  }
+  .navbar-brand .badge {
+    top: 50%; 
+    right: -30px; 
+    transform: 
+    translate(50%, -60%);
+    cursor: default;
+  }
 }
 
 // @import 'article1';

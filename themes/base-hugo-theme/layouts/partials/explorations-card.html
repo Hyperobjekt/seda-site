@@ -8,7 +8,7 @@
     {{ end */}}
     <div class="card-body">
         <a class="gta-event-postSelected" href="{{ .RelPermalink }}"><h3 class="card-title text-center text-md-left">{{ .Params.displaytitle }}</h3></a>
-        <hr>
+        <hr> 
         <author class="card-subtitle text-center text-md-left">by {{ .Params.author }}</author>
         <div class="contents card-text">{{ .Content | truncate 300 | plainify }}</div>
         <div class="button-wrap d-flex justify-content-center d-md-block">   

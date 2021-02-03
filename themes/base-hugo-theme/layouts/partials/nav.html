@@ -8,7 +8,7 @@
 <nav class="navbar navbar-expand-md navbar-light">
     <!-- bg-white class on .navbar element makes bg white -->
     <div class="col-xs-12 col-xl-10 offset-xl-1 p-xl-0 flex-parent">
-        <a class="navbar-brand position-relative gta-event-navClick" aria-level="1" aria-label="{{ .Page.Title }} at {{ .Site.Title }}" href="{{ "/" | absURL }}">
+        <a class="navbar-brand position-relative gta-event-navClick" aria-level="1" aria-label="{{ .Page.Title }} at {{ .Site.Title }}" href="{{ "/" | relURL }}">
             <h1 class="sr-only">{{ .Page.Title }} at {{ .Site.Title }}</h1>
             <span class="badge position-absolute translate-middle p-1 d-none d-md-block">4.0</span>
         </a>

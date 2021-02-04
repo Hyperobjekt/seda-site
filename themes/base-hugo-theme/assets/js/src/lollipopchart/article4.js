@@ -143,6 +143,7 @@ const getDataAndRender = async () => {
                 data: districts
             },
             series: [
+                //negative values, bar and scatter elements
                 {
                     name: 'Test1',
                     type: 'bar',
@@ -158,7 +159,21 @@ const getDataAndRender = async () => {
                     },
                     barWidth: 4,
                     data: nineYrGapNeg,
-                    cursor: 'default'
+                    cursor: 'default',
+                    markPoint: {
+                        symbol: 'circle',
+                        symbolSize: 1,
+                        data: [
+                            {
+                                coord: [-.4, 0],
+                                value: '③',
+                                label:{
+                                    fontSize: 15,
+                                    color: '#F46800'
+                                },
+                            },
+                        ]
+                    },
                 },
                 {
                     type: 'scatter',
@@ -169,8 +184,9 @@ const getDataAndRender = async () => {
                     data: nineYrGapNeg,
                     symbolSize: 6,
                     zlevel: 102,
-                    silent: true
+                    silent: true,
                 },
+                // positive values, bar and scatter elements
                 {
                     name: 'Test1',
                     type: 'bar',
@@ -186,7 +202,28 @@ const getDataAndRender = async () => {
                     },
                     barWidth: 4,
                     data: nineYrGapPos,
-                    cursor: 'default'
+                    cursor: 'default',
+                    markPoint: {
+                        symbolSize: 1,
+                        data: [
+                            {
+                                coord: [.75, 24],
+                                value: '①',
+                                label:{
+                                    fontSize: 15,
+                                    color: '#F46800'
+                                },
+                            },
+                            {
+                                coord: [1.25, 23],
+                                value: '②',
+                                label:{
+                                    fontSize: 15,
+                                    color: '#8C1AF4'
+                                },
+                            },
+                        ]
+                    },
                 },
                 {
                     type: 'scatter',
@@ -197,9 +234,9 @@ const getDataAndRender = async () => {
                     data: nineYrGapPos,
                     symbolSize: 6,
                     zlevel: 102,
-                    silent: true
+                    silent: true,
                 },
-                
+                //zeroes
                 {
                     type: 'scatter',
                     itemStyle:{

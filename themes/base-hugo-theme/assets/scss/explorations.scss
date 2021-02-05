@@ -626,14 +626,13 @@ body.kind-page.type-discoveries {
   }
   .axis--y4 {
     margin-top: 8px;
-    height: calc(100% - 27px);
     display: flex;
     flex-direction: column;
+    height: calc(100% - 28px);
     @include media-breakpoint-up(md) {
       margin-top: 0px;
       top: 9px;
       left: 100px;
-      height: calc(100% - 28px);
       position: absolute;
       display: block;
     }

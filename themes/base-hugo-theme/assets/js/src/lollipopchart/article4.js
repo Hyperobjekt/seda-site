@@ -50,7 +50,7 @@ function roundToNearest(num, numOfDecPlaces) {
 
 const getDataAndRender = async () => {
     d3.csv("/data/discovery2Data.csv").then(function(data) {
-        const plotData = data.map(el => {
+        const plotData = data.reverse().map(el => {
             return {id: el['Id'], district: el['District'], ses:el['SES Inequality (SD Units)'], nineYrGapChg: el['9-year Change in Gap'], percentGapChg: el['Percentage Change in Gap (2009-2018)'], yrGapClose: el['Year Gap Will Close Given Current Trend'], yrGapDbl: el['Year Gap Will Double Given Current Trend'], state: el['State'], ohNineGap: el['Estimated 2009 Gap']};
         })
         const zeroes = []
@@ -160,20 +160,6 @@ const getDataAndRender = async () => {
                     barWidth: 4,
                     data: nineYrGapNeg,
                     cursor: 'default',
-                    markPoint: {
-                        symbol: 'circle',
-                        symbolSize: 1,
-                        data: [
-                            {
-                                coord: [-.4, 0],
-                                value: '③',
-                                label:{
-                                    fontSize: 15,
-                                    color: '#F46800'
-                                },
-                            },
-                        ]
-                    },
                 },
                 {
                     type: 'scatter',
@@ -203,27 +189,6 @@ const getDataAndRender = async () => {
                     barWidth: 4,
                     data: nineYrGapPos,
                     cursor: 'default',
-                    markPoint: {
-                        symbolSize: 1,
-                        data: [
-                            {
-                                coord: [.75, 24],
-                                value: '①',
-                                label:{
-                                    fontSize: 15,
-                                    color: '#F46800'
-                                },
-                            },
-                            {
-                                coord: [1.25, 23],
-                                value: '②',
-                                label:{
-                                    fontSize: 15,
-                                    color: '#8C1AF4'
-                                },
-                            },
-                        ]
-                    },
                 },
                 {
                     type: 'scatter',
@@ -246,7 +211,39 @@ const getDataAndRender = async () => {
                     symbolSize: 6,
                     data: zeroes,
                     zlevel: 101,
-                    silent: true
+                    silent: true,
+                    markPoint: {
+                        symbolSize: 1,
+                        label:{
+                            fontSize: 12,
+                        },
+                        data: [
+                            {
+                                coord: [nineYrGapPos[0], 0],
+                                value: '①',
+                                label:{
+                                    color: '#F46800',
+                                    offset: [13, 0]
+                                },
+                            },
+                            {
+                                coord: [nineYrGapPos[1], 1],
+                                value: '②',
+                                label:{
+                                    color: '#8C1AF4',
+                                    offset: [13, 0]
+                                },
+                            },
+                            {
+                                coord: [nineYrGapNeg[39], 39],
+                                value: '③',
+                                label:{
+                                    color: '#B2002A',
+                                    offset: [-13, 0]
+                                },
+                            }
+                        ]
+                    },
                 }
             ]
         };

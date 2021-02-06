@@ -215,31 +215,31 @@ const getDataAndRender = async () => {
                     markPoint: {
                         symbolSize: 1,
                         label:{
-                            fontSize: 12,
+                            fontSize: 24,
                         },
                         data: [
                             {
                                 coord: [nineYrGapPos[0], 0],
-                                value: '①',
+                                value: '➊',
                                 label:{
                                     color: '#F46800',
-                                    offset: [13, 0]
+                                    offset: [16, 0]
                                 },
                             },
                             {
                                 coord: [nineYrGapPos[1], 1],
-                                value: '②',
+                                value: '➋',
                                 label:{
                                     color: '#8C1AF4',
-                                    offset: [13, 0]
+                                    offset: [16, 0]
                                 },
                             },
                             {
                                 coord: [nineYrGapNeg[39], 39],
-                                value: '③',
+                                value: '➌',
                                 label:{
                                     color: '#B2002A',
-                                    offset: [-13, 0]
+                                    offset: [-16, 0]
                                 },
                             }
                         ]

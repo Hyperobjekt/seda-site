@@ -190,4 +190,6 @@ In the upper left are districts like Chicago, where educational opportunities ar
 
 If we want to improve educational outcomes, we will need to change how—and where and when—we provide educational opportunities throughout children’s lives. Some people assume that we simply need to improve schools. Others argue that the schools are fine, but that we need to provide more learning opportunities in early childhood—in children’s homes and child-care centers and preschool programs. The data show that there may be no one best strategy. Rather we need targeted strategies—targeted to specific age groups in specific places—to allow all our children to reach their full potential, regardless of where they grow up.
 
+_Published September 2019 with SEDA 3.0 data._
+
 {{% /state-wrapper %}}

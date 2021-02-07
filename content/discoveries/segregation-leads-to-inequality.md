@@ -2,7 +2,7 @@
 title: "Increasing School Segregation Widens White-Black Achievement Gaps" # for the body class -- can't use a ?
 displaytitle: "Increasing School Segregation Widens White-Black Achievement Gaps" # for what shows on the page
 subtitle: "Trend Data Corroborates Existing Evidence Showing That Segregation Leads to Unequal Learning"
-author: "Sean F. Reardon"
+author: "Kaylee T. Matheny, Marissa E. Thompson, Carrie Townley Flores, & sean f. reardon"
 date: "2020-01-21"
 description:
 hero: "/images/heroes/school-segregation-hero.svg"

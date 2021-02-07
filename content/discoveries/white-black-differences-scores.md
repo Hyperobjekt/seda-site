@@ -144,5 +144,6 @@ Berkeley, CA: id# 604740 -->
 
 <br><br class="d-sm-none d-md-block">Moreover, among the several thousand school districts in the US with more than a handful of Black students, there is no moderately or highly segregated district with a small achievement gap. It is possible to have a large achievement gap in the absence of segregation (as in Berkeley, CA and Evanston, IL), but segregation appears to be tightly linked to inequality in educational opportunity. If it is possible to provide equal educational opportunity under conditions of segregation, no community in the U.S. has discovered the way. Racial segregation, which has limited the opportunities of Black children and families for generations, continues to limit them today.
 
+_Published September 2019 with SEDA 3.0 data._
 
 {{% /state-wrapper %}}

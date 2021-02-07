@@ -1,0 +1,16 @@
+categories: ["other-papers"] # uses-seda, technical, related
+authors: ["Chin, M. J., Quinn, D. M., Dhaliwal, T. K., & Lovison, V. S."]
+title: "Bias in the Air: A Nationwide Exploration of Teachers' Implicit Racial Attitudes, Aggregate Bias, and Student Outcomes"
+image: "/images/papers/bias-in-the-air.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "2020"
+    order: 0
+    link: "https://scholar.harvard.edu/files/dmq/files/chin-quinn-dhaliwal-lovison-bias-in-the-air-er-2020.pdf" 
+abstract: |
+  Theory suggests that teachers’ implicit racial attitudes affect their students, but large-scale evidence on U.S. teachers’ implicit biases and their correlates is lacking. Using nationwide data from Project Implicit, we found that teachers’ implicit White/Black biases (as measured by the implicit association test) vary by teacher gender and race. Teachers’ adjusted bias levels are lower in counties with larger shares of Black students. In the aggregate, counties in which teachers hold higher levels of implicit and explicit racial bias have larger adjusted White/Black test score inequalities and White/Black suspension disparities.
+
+
+
+
+
+

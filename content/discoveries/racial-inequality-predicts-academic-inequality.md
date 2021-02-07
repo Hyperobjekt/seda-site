@@ -2,7 +2,7 @@
 title: "Racial Socioeconomic Inequality Predicts Growing Racial Academic Inequality"
 displaytitle: "Racial Socioeconomic Inequality Predicts Growing Racial Academic Inequality"
 subtitle: ""
-author: "Sean F. Reardon"
+author: "Kaylee T. Matheny, Marissa E. Thompson, Carrie Townley Flores, & sean f. reardon"
 date: "2020-01-01"
 hero: "/images/heroes/ses-inequality-hero.svg"
 image: "/images/articles/ses-inequality.png"

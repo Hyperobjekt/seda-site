@@ -51,19 +51,28 @@ body.kind-page.type-discoveries.increasing-school-segregation-widens-white-black
   }
 }
 
-body.kind-page.type-discoveries.racial-socioeconomic-inequality-predicts-growing-racial-academic-inequality .hero .hero-child {
-  background-size: 80%;
-  background-position: center 95%;
+body.kind-page.type-discoveries.racial-socioeconomic-inequality-predicts-growing-racial-academic-inequality .hero {
+
+  height: 440px;
   @include media-breakpoint-up(md) {
-    background-size: 65%;
-    background-position: 40% 40%;
+    height: 408px;
   }
-  @include media-breakpoint-up(xl) {
-    background-size: 66%;
-    background-position: 63% 40%;
+  @include media-breakpoint-up(lg) {
+    height: 432px;
+  }
+  .hero-child {
+    background-size: 80%;
+    background-position: center 95%;
+    @include media-breakpoint-up(md) {
+      background-size: 65%;
+      background-position: 40% 40%;
+    }
+    @include media-breakpoint-up(xl) {
+      background-size: 66%;
+      background-position: 63% 40%;
+    }
   }
 }
-
 
 // General hero styles
 

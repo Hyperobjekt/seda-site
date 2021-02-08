@@ -41,7 +41,7 @@
   {{ if .Site.Data.social.twitter_via }}
     <meta name="twitter:site" content="{{ strings.TrimPrefix "@" .Site.Data.social.twitter_via }}" />
   {{ end }}
-  <meta name="twitter:title" content="The Educational Opportunity Project at Stanford | {{ .Title }}" />
+  <meta name="twitter:title" content="{{ .Title }} | The Educational Opportunity Project at Stanford" />
   <meta name="twitter:description" content="{{ $.Scratch.Get "socialDescription" }}" />
   <meta name="twitter:image" content="https://edopportunity.org{{ $.Scratch.Get "socialImage" }}" />
   <style>

@@ -6,6 +6,7 @@ author: "Kaylee T. Matheny, Marissa E. Thompson, Carrie Townley Flores, & sean f
 date: "2020-01-01"
 hero: "/images/heroes/ses-inequality-hero.svg"
 image: "/images/articles/ses-inequality.png"
+social_image: "/images/social/increasing-inequality-social.png"
 scatterplotID: "article4" # used to name the JS file with the necessary states and prop attributes
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.

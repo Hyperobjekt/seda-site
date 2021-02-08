@@ -29,16 +29,25 @@ body.kind-page.type-discoveries.affluent-schools-are-not-always-the-best-schools
   }
 }
 
-body.kind-page.type-discoveries.increasing-school-segregation-widens-white-black-achievement-gaps .hero .hero-child {
-  background-size: 80%;
-  background-position: center 95%;
+body.kind-page.type-discoveries.increasing-school-segregation-widens-white-black-achievement-gaps .hero {
+  height: 476px;
   @include media-breakpoint-up(md) {
-    background-size: 78%;
-    background-position: 95% 30%;
+    height: 430px;
   }
-  @include media-breakpoint-up(xl) {
-    background-size: 70%;
-    background-position: 95% center;
+  @include media-breakpoint-up(lg) {
+    height: 432px;
+  }
+  .hero-child {
+    background-size: 80%;
+    background-position: center 95%;
+    @include media-breakpoint-up(md) {
+      background-size: 78%;
+      background-position: 95% 30%;
+    }
+    @include media-breakpoint-up(xl) {
+      background-size: 70%;
+      background-position: 95% center;
+    }
   }
 }
 

@@ -21,4 +21,4 @@ We calculate the average test score gap using SEDA, which includes standardized 
 
 The districts with the highest increases in segregation had a 0.10 grade-level increase in achievement gaps over nine years. The districts with the highest decreases in segregation had a 0.13 grade-level decrease in achievement gaps over nine years.
 
-Learn more about these findings in our working paper “Uneven Progress: Recent Trends in Academic Performance Among U.S. School Districts” <a href='/research'>here</a>
+Learn more about these findings in our working paper <a href='/research'>“Uneven Progress: Recent Trends in Academic Performance Among U.S. School Districts”</a>.

@@ -15,7 +15,7 @@ aliases:
   - "/posts/racial-inequality-predicts-academic-inequality/"
 ---
 
-<span class="drop-cap">S</span>ocioeconomic inequalities exacerbate academic inequalities, so when socioeconomic inequality is higher, academic achievement gaps also tend to grow. 
+<span class="drop-cap">S</span>ocioeconomic inequalities exacerbate academic inequalities, so when socioeconomic inequality is higher, academic achievement gaps also tend to grow.
 
 For example, consider socioeconomic inequality for Black and White families in the same school district. In nearly all U.S. communities, White families are more affluent than Black families. In some places, such as Chicago (shown in the chart as <span class="colorcircle color-orange">➊</span>) and Dallas <span class="colorcircle color-purple">➋</span>, these socioeconomic inequalities are high, while in others, such as Hawaii <span class="colorcircle color-burntred">➌</span>, they are low.
 
@@ -23,4 +23,4 @@ Among the 40 school districts with the highest student enrollment, there is a lo
 
 These SES differences predict changes in children’s academic achievement disparities over time. In Dallas <span class="colorcircle color-purple">➋</span>, where socioeconomic inequality is high, the academic achievement gap has increased by more than a grade-level in one decade. At this rate, the 2009 White-Black achievement gap will double by the year 2027. In Hawaii <span class="colorcircle color-burntred">➌</span>, on the other hand, where socioeconomic inequality is relatively low, the academic achievement gap has decreased by over one-third of a grade-level. Even at this promising rate, the gap in Hawaii  would take until 2050 to close.
 
-Learn more about these findings in our working paper “Uneven Progress: Recent Trends in Academic Performance Among U.S. School Districts” <a href='/research'>here</a>
+Learn more about these findings in our working paper <a href='/research'>“Uneven Progress: Recent Trends in Academic Performance Among U.S. School Districts”</a>.

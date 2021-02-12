@@ -1,21 +1,17 @@
 categories: ["other-papers"] # uses-seda, technical, related
-authors: ["David M. Houston", "Jeffrey R. Henig"]
-title: "The Effects of Student Growth Data on School District Choice: Evidence from a Survey Experiment"
-image: "/images/papers/d-houston.jpg" # will be cropped to center square & rounded
+authors: ["Allison Atteberry, Kendra Bischoff, Ann Owens"]
+title: "Identifying Progress Toward Ethnoracial Achievement Equity across U.S. School Districts: A New Approach"
+image: "/images/papers/identifying-progress.jpg" # will be cropped to center square & rounded
 versions:
-  - date: "2019-10"
+  - date: "09/2020"
     order: 0
-    link: "https://www.edworkingpapers.com/ai19-87" 
+    link: "https://d33wubrfki0l68.cloudfront.net/d91523bb-2174-4489-8e71-ddf32b02c93f/Atteberry_Bischoff_Owens_2021_prepub.pdf" 
 abstract: |
-  We conduct an online survey experiment in which participants are asked to imagine that they are 
-  parents moving to a new metropolitan area. They then choose between the five largest school 
-  districts in that area. All participants receive demographic data for each district. In addition, 
-  some participants are randomly assigned to receive average achievement and/or average growth 
-  data for each district. While there are strong relationships between student demographics and 
-  student achievement, the links between student demographics and student growth are much weaker. 
-  We find that, on average, the provision of growth data causes participants to choose less 
-  white and less affluent districts. Moreover, the provision of both achievement and growth data 
-  causes participants to choose less white and less affluent districts than the provision of achievement data alone.
+  We draw on novel district-level test score data to describe novel approaches for measuring ethnoracial achievement gaps and assessing trends toward achievement equity from 2009 to 2016. Using SEDA data, we estimate gap trends for each grade over time in each district. We measure trends in both within-district gaps—comparing Black or Hispanic to White students in the same district—and national gaps—comparing a district’s Black or Hispanic students to White students nationally. Within-district ethnoracial gaps shrunk in one-third to two-thirds of districts, depending on subject and ethnoracial dyad. Across subjects and ethnoracial dyads, national gaps shrunk in more than half of districts, indicating that non-White students gained on White students nationally, but not in their own districts. Our findings add complexity to the achievement gap literature by (1) estimating gaps at the district level; (2) noting considerable variation in the magnitude of gap shrinkage across districts; (3) pointing to the importance of comparison group and imperfect correspondence of within-district and national gap trends in districts; and (4) identifying variation in gap trends across grades and subjects.
+
+
+
+
 
 
 

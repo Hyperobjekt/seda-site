@@ -1,22 +1,16 @@
 categories: ["other-papers"] # uses-seda, technical, related
-authors: ["Francis A. Pearman", "F. Chris Curran", "Benjamin Fisher", "Joseph Gardella"]
-title: "Are Achievement Gaps Related to Discipline Gaps? Evidence From National Data"
-image: "/images/papers/achievement-discipline-gaps.jpg" # will be cropped to center square & rounded
+authors: ["Chin, M. J., Quinn, D. M., Dhaliwal, T. K., & Lovison, V. S."]
+title: "Bias in the Air: A Nationwide Exploration of Teachers' Implicit Racial Attitudes, Aggregate Bias, and Student Outcomes"
+image: "/images/papers/bias-in-the-air.jpg" # will be cropped to center square & rounded
 versions:
-  - date: "2019-10"
+  - date: "2020"
     order: 0
-    link: "https://journals.sagepub.com/doi/full/10.1177/2332858419875440" 
+    link: "https://scholar.harvard.edu/files/dmq/files/chin-quinn-dhaliwal-lovison-bias-in-the-air-er-2020.pdf" 
 abstract: |
-  There is growing interest in the relation between the racial achievement gap and the racial discipline gap. 
-  However, few studies have examined this relation at the national level. This study combines data from the Stanford 
-  Education Data Archive and the Civil Rights Data Collection and employs a district fixed effects analysis to examine 
-  whether and the extent to which racial discipline gaps are related to racial achievement gaps in Grades 3 through 8 
-  in districts across the United States. In bivariate models, we find evidence that districts with larger racial 
-  discipline gaps have larger racial achievement gaps (and vice versa). Though other district-level differences 
-  account for the positive association between the Hispanic-White discipline gap and the Hispanic-White achievement 
-  gap, we find robust evidence that the positive association between the Black-White discipline gap and the Black-White 
-  achievement gap persists after controlling for a multitude of confounding factors. We also find evidence that the 
-  mechanisms connecting achievement to disciplinary outcomes are more salient for Black than White students.
+  Theory suggests that teachers’ implicit racial attitudes affect their students, but large-scale evidence on U.S. teachers’ implicit biases and their correlates is lacking. Using nationwide data from Project Implicit, we found that teachers’ implicit White/Black biases (as measured by the implicit association test) vary by teacher gender and race. Teachers’ adjusted bias levels are lower in counties with larger shares of Black students. In the aggregate, counties in which teachers hold higher levels of implicit and explicit racial bias have larger adjusted White/Black test score inequalities and White/Black suspension disparities.
+
+
+
 
 
 

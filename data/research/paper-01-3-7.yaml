@@ -1,0 +1,22 @@
+categories: ["other-papers"] # uses-seda, technical, related
+authors: ["David M. Houston", "Jeffrey R. Henig"]
+title: "The Effects of Student Growth Data on School District Choice: Evidence from a Survey Experiment"
+image: "/images/papers/d-houston.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "2019-10"
+    order: 0
+    link: "https://www.edworkingpapers.com/ai19-87" 
+abstract: |
+  We conduct an online survey experiment in which participants are asked to imagine that they are 
+  parents moving to a new metropolitan area. They then choose between the five largest school 
+  districts in that area. All participants receive demographic data for each district. In addition, 
+  some participants are randomly assigned to receive average achievement and/or average growth 
+  data for each district. While there are strong relationships between student demographics and 
+  student achievement, the links between student demographics and student growth are much weaker. 
+  We find that, on average, the provision of growth data causes participants to choose less 
+  white and less affluent districts. Moreover, the provision of both achievement and growth data 
+  causes participants to choose less white and less affluent districts than the provision of achievement data alone.
+
+
+
+

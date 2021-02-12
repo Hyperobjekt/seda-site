@@ -1,31 +1,17 @@
 categories: ["other-papers"] # uses-seda, technical, related
-authors: ["Gerard Torrats-Espinosa"]
-title: "Crime and Inequality in Academic Achievement Across School Districts in the United States"
-image: "/images/papers/crime-inequality.jpg" # will be cropped to center square & rounded
+authors: ["Elizabeth Iris Rivera Rodas"]
+title: "The Reversal of Mount Laurel’s Regional Contribution Agreements and the Impact on White-Black Academic Achievement Gaps Across New Jersey: 2008–2014"
+image: "/images/papers/mount-laurel-regional-contribution.jpg" # will be cropped to center square & rounded
 versions:
-  - date: "2020-01"
+  - date: "2020-07"
     order: 0
-    link: "https://link.springer.com/article/10.1007/s13524-019-00850-x" 
-  - date: "2018-09"
-    order: 1
-    link: "/papers/torrats-espinosa-seda-crime.pdf"
-  - date: "2019-07"
-    order: 2
-    link: "/papers/torrats-espinosa-seda-crime_0.pdf"
+    link: "https://link.springer.com/epdf/10.1007/s41996-020-00059-w?sharing_token=mIqcJUQZwhC6tUQE5gnpUve4RwlQNchNByi7wbcMAY7lOV1kKUrVcNrHWEHs8MXcVR_R2AYFlBYcJDtaEGulizFgO0JB5RsRUD95IObmMRtyqbjhNREBaJP21ADvkIcA_GVOGO-J1Mq9SAWb1p2UkUE7_QkJkqS3v4HAWycDgNo%3D" 
 abstract: |
-  This study investigates the effect of violent crime on school district-level achievement in English Language Arts (ELA) and Mathematics. The research design exploits geographic variation in achievement and crime across 337 school districts and temporal variation across
-  seven birth cohorts of children born between 1996 and 2002. To generate causal estimates of
-  the effect of crime on achievement, the identification strategy leverages exogenous shocks to
-  crime rates arising from the availability of federal funds to hire police officers in the local
-  police departments where the school districts operate. Results show that birth cohorts who
-  entered the school system when violent crime was lower score higher in ELA by the end of
-  eighth grade, relative to birth cohorts attending schools in the same district but who entered
-  the school system when crime rates were substantially higher. A 10 percent decline in violent
-  crime raises eighth-grade ELA achievement in the district by .04 standard deviations. Analyses
-  by race/ethnicity and gender indicate that black children, Hispanic children, and boys
-  experienced the largest gains in ELA achievement as violent crime dropped. The effects on
-  Mathematics achievement are smaller and imprecisely estimated. These findings extend our
-  understanding of the geography of educational opportunity in the United States and reinforce
-  the idea that understanding inequalities in academic achievement requires evidence on what
-  happens inside schools as well as what happens outside of schools.
+  Regional Contribution Agreements (RCAs) under New Jersey’s Fair Housing Act allowed municipalities to transfer up to half of their affordable housing obligations to a neighboring town. This paper uses the reversal of RCAs in 2008 as a natural experiment to investigate the impact that increasing affordable housing has on the white-black achievement gap in New Jersey. Using data from the US American Community Survey, the Stanford Education Data Archives and New Jersey’s Department of Community Affairs, structural equation models were specified and fitted to these data. The results suggest that there are differences in changes in the number of affordable housing units by former RCA sending status, and this study sheds some light on the relationship between affordable housing and white-black academic achievement gaps for former RCA-receiving districts. This study adds to the literature by showing that there is a positive relationship between affordable housing unit changes and changes in the white-black academic achievement gaps through changes in school district demographics in districts that were affordable housing–rich.
+
+
+
+
+
+
 

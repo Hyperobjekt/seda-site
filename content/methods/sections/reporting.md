@@ -11,4 +11,4 @@ We do not report average performance, learning, and/or trend estimates if:
 - More than 40% of students in the school, district, county, commuting zone, or metropolitan statistical area took alternative assessments.
 - Fewer than 20% of students are represented in the estimate.
 
-For more details, see Step 10 of the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">technical documentation</a>.
+For more details, see Step 10 of the <a href="https://stacks.stanford.edu/file/druid:db586ns4974/seda_documentation_4.0.pdf" target="_blank">technical documentation</a>.

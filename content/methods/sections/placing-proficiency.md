@@ -64,4 +64,4 @@ This yields a new “linked” Threshold 1 of 170. The table below shows all thr
 
 We repeat this step for every state in every subject, grade, and year. The end result is a set of thresholds for every state, subject, grade, and year that are all on the same scale, the NAEP scale. 
 <br><br>
-For more information, see Step 3 of the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">Technical Documentation</a> and Reardon, Kalogrides & Ho (2019).
+For more information, see Step 3 of the <a href="https://stacks.stanford.edu/file/druid:db586ns4974/seda_documentation_4.0.pdf" target="_blank">Technical Documentation</a> and Reardon, Kalogrides & Ho (2019).

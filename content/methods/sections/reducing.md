@@ -1045,4 +1045,4 @@ To compute the average test score trend, we compare students’ average scores i
 
 For example, we compare the average score in Grade 3 in 2009 (3.0) to the average score in Grade 3 in 2010 (3.1). The difference of 0.1 indicates that students’ test scores are 0.1 grade levels higher in 3rd grade in 2010 than they were in 3rd grade in 2009. We compute this difference for each horizontal pair of cells in the table, and then take their average. In this example, the average test score trend is 0.1 grade levels per year. 
 
-For technical details, see Step 9 of the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">technical documentation</a>.
+For technical details, see Step 9 of the <a href="https://stacks.stanford.edu/file/druid:db586ns4974/seda_documentation_4.0.pdf" target="_blank">technical documentation</a>.

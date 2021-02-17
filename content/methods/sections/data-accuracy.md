@@ -4,7 +4,7 @@ private: true
 ---
 <h3>Data accuracy</h3>
 
-We have taken a number of steps to ensure the accuracy of the data reported here. The statistical and psychometric methods underlying the data we report are summarized here and published in peer-reviewed journals and in the <a href="/papers/SEDA_documentation_v30_DRAFT09212019.pdf" target="_blank">technical documentation</a>. 
+We have taken a number of steps to ensure the accuracy of the data reported here. The statistical and psychometric methods underlying the data we report are summarized here and published in peer-reviewed journals and in the <a href="https://stacks.stanford.edu/file/druid:db586ns4974/seda_documentation_4.0.pdf" target="_blank">technical documentation</a>. 
 
 First, we conduct a number of statistical analyses to ensure that our methods of converting the raw data into measures of average test scores are accurate. For example, in a small subset of school districts, students take the NAEP test in addition to their state-specific tests. Since the NAEP test is the same across districts, we can use these districts’ NAEP scores to determine the accuracy of our method of converting the state test scores to a common scale. When we do this, we find that our measures are accurate, and generally yield the same conclusions about relative average test scores as we would get if all students took the NAEP test. For more information on these analyses, see <a href="/papers/wp16-09-v201904.pdf" target="_blank">Validation methods for aggregate-level test scale linking: A case study mapping school district test score distributions to a common scale” paper</a>.  
 

@@ -1,0 +1,24 @@
+categories: ["other-papers"] # uses-seda, technical, related
+authors: ["Katharine Bradbury"]
+title: "Racial and Socioeconomic Test-Score Gaps in New England Metropolitan Areas: State School Aid and Poverty Segregation"
+image: "/images/papers/racial-socioeconomic-test-score-gaps-new-england.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "02/2021"
+    order: 0
+    link: "https://assets.documentcloud.org/documents/20490078/rr_21-2_v6.pdf" 
+abstract: |
+  Test-score data show that both low-income and racial-minority children score lower, on average, on states’ elementary-school accountability tests compared with higher-income children or white children. While different levels of scholastic achievement depend on a host of influences, such test-score gaps point toward unequal educational opportunity as a potentially important contributor. This report explores the relationship between racial and socioeconomic test-score gaps in New England metropolitan areas and two factors associated with unequal opportunity in education: state equalizing school-aid formulas and geographic segregation of low-income students. The underlying methods do not allow a strict causal interpretation; however, both aspects are strongly related to test-score gaps, with poverty segregation between school districts especially important in New England.
+  
+  
+  The report first explores the degree to which state school aid is progressive, that is, distributed disproportionately to districts with high fractions of students living in poverty; more progressive distributions are associated with smaller test-score gaps in high-poverty metropolitan areas. All U.S. states distribute some state revenue to support local school districts, but the extent to which such aid is focused on districts with greater concentrations of poverty varies considerably. The relationships estimated in the empirical analysis suggest that New England metro areas with high average district poverty in states with more progressive aid distributions, such as Springfield, Massachusetts, should see somewhat smaller racial and socioeconomic test-score gaps than metro areas with lower district poverty in states with less progressive school aid, such as Burlington, Vermont; that predicted difference in white-Black test-score gaps amounts to about one-quarter of the actual difference between Springfield’s gap and Burlington’s gap.
+
+  
+  The second factor explored is poverty segregation; test-score gaps are larger in metropolitan areas where, compared with white children or higher-income children, minority children or lowincome children go to school with, or are in school districts with, more students from low-income families. Partly because school districts (and cities and towns) are relatively small geographically in New England, poverty segregation in the region’s metropolitan areas is most pronounced between districts, not between schools within school districts. The sizes of the estimated relationships suggest that metro areas with the highest between-district poverty segregation, such as BridgeportStamford-Norwalk, Connecticut, should have markedly larger test-score gaps than metro areas with moderate poverty segregation between districts, such as Manchester-Nashua, New Hampshire; those predicted differences amount to 60 percent to 90 percent of the actual test-score gap differences between the Bridgeport and Manchester metro areas.
+
+
+
+
+
+
+
+

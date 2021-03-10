@@ -1,0 +1,15 @@
+categories: ["other-papers"] # uses-seda, technical, related
+authors: ["N. Gillani, E. Chu, D. Beeferman, R. Eynon, D. Roy"]
+title: "Parents’ Online School Reviews Reflect Several Racial and Socioeconomic Disparities in K–12 Education"
+image: "/images/papers/parents-online-school-reviews.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "01/2021"
+    order: 0
+    link: "https://d33wubrfki0l68.cloudfront.net/193a2d84-48ed-46e8-8eb9-7a1952de600f/2332858421992344.pdf" 
+abstract: |
+  Parents often select schools by relying on subjective assessments of quality made by other parents, which are increasingly becoming available through written reviews on school ratings websites. To identify relationships between review content and school quality, we apply recent advances in natural language processing to nearly half a million parent reviews posted for more than 50,000 publicly funded U.S. K–12 schools on a popular ratings website. We find: (1) schools in urban areas and those serving affluent families are more likely to receive reviews, (2) review language correlates with standardized test scores—which generally track race and family income—but not school effectiveness, measured by how much students improve in their test scores over time, and (3) the linguistics of reviews reveal several racial and income-based disparities in K–12 education. These findings suggest that parents who reference school reviews may be accessing, and making decisions based on, biased perspectives that reinforce achievement gaps.
+
+
+
+
+

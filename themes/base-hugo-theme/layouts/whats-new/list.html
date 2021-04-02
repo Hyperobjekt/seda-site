@@ -9,10 +9,71 @@
     </div>
   </div>
 </div>
+
+<div class="row subnav d-md-none small-tab-nav">
+
+  <div class="dropdown">
+      <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Category:
+      </button>
+      <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+      <ul class="anchor-links dropdown-menu">
+
+              <li class="nav-item">
+                  <a href="#version4" aria-controls="home">Version 4.0</a>
+              </li>
+              <li class="nav-item active">
+                  <a href="#version4-1" aria-controls="profile">Version 4.1</a>
+              </li>
+              <li class="nav-item active">
+                <a>Version 4.2 (Coming Soon)</a>
+            </li>
+      </ul>
+      <!--</div>-->
+  </div>
+
+</div>
+
+<div class="row subnav large-tab-nav d-sm-none d-md-block">
+  <ul class="nav nav-tabs col-lg-9 col-xl-8 mx-auto d-sm-none d-md-flex" role="tablist">
+
+    <li class="nav-item ">
+      <a href="#version-4" aria-controls="home">Version 4.0</a>
+    </li>
+    <li class="nav-item ">
+      <a href="#version-4-1" aria-controls="profile">Version 4.1</a>
+    </li>
+    <li class="nav-item ">
+      <a>Version 4.2 (Coming Soon)</a>
+    </li>
+  </ul>
+</div>    
+
+
 <div id="page-content">
-  <div class="py-5 py-md-10 px-4 px-md-0 bg-accent">
+  <div class="py-5 py-md-10 px-4 px-md-0" id="version-4-1">
     <div class="container-xxl">
-      <h3 class="whats-new-text1 mb-3 offet-0 offset-md-1" style="opacity: 0">New features in the data</h3>
+      <h3 class="whats-new-text1 mb-3 offet-0 offset-md-1" style="opacity: 0">What's new in 4.1?</h3>
+      <div class="d-flex flex-column-reverse flex-md-row align-items-start" >
+        <div id="" class="whats-new-text1 col col-md-5 px-0 pr-md-7 pr-lg-14 offset-md-1">
+          <p>SEDA 4.1 Features:</p>
+          <ul class="pl-2">
+            <li>More data for Native American students.</li>
+            <li>Estimates for Bureau of Indian Education (BIE) schools.</li>
+            <li>A new data discovery about BIE schools and Native American students.</li>
+            <li>*Coming soon in the summer of 2021: Data for the 2018-2019 school year and Math scores for Puerto Rico.</li>
+          </ul>
+          <div class="w-100 all-explorations mt-5 d-flex justify-content-center justify-content-md-start">
+            <a class="btn btn-custom2 py-2 px-4 gta-event-CTAClick" href="{{ "/get-the-data/" | absURL }}" aria-label="Get the data">GET THE DATA</a>
+          </div>
+        </div>
+        <!-- <img alt="Graphic showing overview of data tables in version 4.1" id="whats-new-img1" style="opacity: 0" class="col col-md-5 px-0 mb-4 mb-md-0 whats-new-animate" src="/images/data-table4.jpg" /> -->
+      </div>
+    </div>
+  </div>
+  <div class="py-5 py-md-10 px-4 px-md-0 bg-accent" id="version-4">
+    <div class="container-xxl">
+      <h3 class="whats-new-text1 mb-3 offet-0 offset-md-1" style="opacity: 0">SEDA 4.0 Features</h3>
       <div class="d-flex flex-column-reverse flex-md-row align-items-start" >
         <div id="" class="whats-new-text1 col col-md-5 px-0 pr-md-7 pr-lg-14 offset-md-1">
           <p>Version 4.0 of SEDA is updated with better estimates and cleaner data. New features allow you to access:</p>
@@ -20,11 +81,10 @@
             <li>Data for 2016-2017 and 2017-2018 school years.</li>
             <li>New crosswalk with stable school, district, and county IDs.</li>
             <li>Insights and learning: see our <a  href="/discoveries/">latest discoveries.</a></li>
-            <li>Coming soon in 4.1: 2018-2019 data, Data for Native American students; Estimates for <a href="https://www.bie.edu">Bureau of Indian Education (BIE) schools</a>; and Math scores for Puerto Rico.</li>
           </ul>
-          <div class="w-100 all-explorations mt-5 d-flex justify-content-center justify-content-md-start">
+          <!-- <div class="w-100 all-explorations mt-5 d-flex justify-content-center justify-content-md-start">
             <a class="btn btn-custom2 py-2 px-4 gta-event-CTAClick" href="{{ "/get-the-data/" | absURL }}" aria-label="Get the data">GET THE DATA</a>
-          </div>
+          </div> -->
         </div>
         <img alt="Graphic showing overview of data tables in version 4.0" id="whats-new-img1" style="opacity: 0" class="col col-md-5 px-0 mb-4 mb-md-0 whats-new-animate" src="/images/data-table4.jpg" />
       </div>

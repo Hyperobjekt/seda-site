@@ -1,0 +1,24 @@
+categories: ["other-papers"] # uses-seda, technical, related
+authors: ["Lorraine Blatt, Elizabeth Votruba-Drzal"]
+title: "District-Level School Choice and Racial/Ethnic Test Score Gaps"
+image: "/images/papers/district-level-school-choice.jpg" # will be cropped to center square & rounded
+versions:
+  - date: "04/2021"
+    order: 0
+    link: "https://journals.sagepub.com/doi/full/10.3102/0002831221999405" 
+abstract: |
+  The rapid expansion of school choice is restructuring public education in the United States. This study examines associations between charter and magnet
+  school enrollment, White-Black and White-Hispanic segregation, and test
+  score gaps at the district level from 2009 to 2015 in third to eighth grade using
+  the Stanford Education Data Archive and the U.S. Department of Education’s
+  Common Core of Data. Robust findings indicate that higher charter school
+  enrollment is associated with larger White-Black test score gaps and this effect
+  is mediated by White-Black segregation. There is also evidence that magnet
+  school enrollment is associated with White-Hispanic test score gaps. Overall,
+  this study suggests that the expansion of school choice may have negative
+  implications for structural education equity.
+
+
+
+
+

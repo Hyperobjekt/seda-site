@@ -9,6 +9,8 @@ image: "/images/articles/ses-inequality.png"
 social_image: "/images/social/increasing-inequality-social.png"
 description: Socioeconomic inequalities exacerbate academic inequalities, so when socioeconomic inequality is higher, academic achievement gaps also tend to grow.
 scatterplotID: "article4" # used to name the JS file with the necessary states and prop attributes
+scripts:
+  - scatterplot
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
 aliases:

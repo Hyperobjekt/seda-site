@@ -9,6 +9,8 @@ hero: "/images/heroes/school-segregation-hero.svg"
 image: "/images/articles/increasing-segregation-sm.png"
 social_image: "/images/social/increasing-school-segregation-social.png"
 scatterplotID: "article3" # used to name the JS file with the necessary states and prop attributes
+scripts:
+  - scatterplot
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
 aliases:

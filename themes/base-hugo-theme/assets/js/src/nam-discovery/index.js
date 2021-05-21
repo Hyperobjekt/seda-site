@@ -81,9 +81,10 @@ Seda.NamDiscovery = (function (Seda) {
       data: data.map((d) => ({
         name: d[NAME_INDEX],
         state: d[STATE_INDEX],
+        fullname: `${d[NAME_INDEX]}, ${d[STATE_INDEX]}`,
         id: d[FIPS_INDEX],
       })),
-      getValue: "name",
+      getValue: "fullname",
       list: {
         match: {
           enabled: true,
@@ -281,7 +282,12 @@ Seda.NamDiscovery = (function (Seda) {
             borderWidth: 2,
             opacity: 1,
           },
-          // silent: true,
+        },
+        {
+          type: "scatter",
+          data: [],
+          symbolSize: 1,
+          silent: true,
           markLine: {
             label: { show: false },
             symbol: "none",

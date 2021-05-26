@@ -16,9 +16,7 @@
   <div class="col-xs-10 col-md-4 col-lg-5 col-xl-4 offset-xl-1 copy-well">
     {{ .Content | markdownify }}
   </div>
-  {{ if (isset .Params "scatterplotID" ) }}
-    {{ partial "plot-column.html" . }}
-  {{ end }}
+  {{ partial "plot-column.html" . }}
 </div>
 {{ partial "scroll-for-more.html" . }}
 

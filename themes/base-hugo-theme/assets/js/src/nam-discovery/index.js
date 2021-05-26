@@ -113,10 +113,10 @@ Seda.NamDiscovery = (function (Seda) {
   }
 
   function getSeries(data) {
-    const topLeft = data.filter((d) => d[0] < 0 && d[1] > 1);
-    const topRight = data.filter((d) => d[0] > 0 && d[1] > 1);
-    const bottomRight = data.filter((d) => d[0] > 0 && d[1] < 1);
-    const bottomLeft = data.filter((d) => d[0] < 0 && d[1] < 1);
+    const topLeft = data.filter((d) => d[0] < 3 && d[1] > 1);
+    const topRight = data.filter((d) => d[0] > 3 && d[1] > 1);
+    const bottomRight = data.filter((d) => d[0] > 3 && d[1] < 1);
+    const bottomLeft = data.filter((d) => d[0] < 3 && d[1] < 1);
     return [
       {
         name: "Above Average Scores, \nAbove Average Learning",
@@ -197,11 +197,11 @@ Seda.NamDiscovery = (function (Seda) {
       tooltip: {
         formatter: (props) => {
           const formatNum = d3.format(".1f");
-          const achievement = formatNum(Math.abs(props.data[AVG_INDEX]));
-          const diff = props.data[AVG_INDEX] > 0 ? "above" : "below";
+          const achievement = formatNum(Math.abs(props.data[AVG_INDEX] - 3));
+          const diff = props.data[AVG_INDEX] > 3 ? "above" : "below";
           const learning = formatNum(props.data[GRD_INDEX]);
           return `<div style="max-width: 192px;">
-                <strong style="display:block; margin-bottom: 0.5em">${props.data[NAME_INDEX]}, ${props.data[STATE_INDEX]}</strong>
+                <strong style="display:block;white-space: normal; line-height: 1.1; margin-bottom: 0.5em">${props.data[NAME_INDEX]}, ${props.data[STATE_INDEX]}</strong>
                 <span style="display: block; white-space: normal; font-size: 12px; line-height: 16px">Average achievement in grade 3 is
                 <strong>${achievement} grade levels ${diff} average</strong>.  <br /><br />
                 Students gain <strong>${learning} grade-levels</strong> annually.</span>
@@ -227,9 +227,9 @@ Seda.NamDiscovery = (function (Seda) {
         },
         axisLabel: {
           formatter: (value, index) => {
-            if (value === 0) return "Average";
-            if (value < 0) return `${value} Below`;
-            if (value > 0) return `${value} Above`;
+            if (value === 3) return "Average";
+            if (value < 3) return `${value - 3} Below`;
+            if (value > 3) return `${value - 3} Above`;
           },
         },
       },
@@ -296,7 +296,7 @@ Seda.NamDiscovery = (function (Seda) {
             },
 
             data: [
-              { name: "average", xAxis: 0, symbol: "none" },
+              { name: "average", xAxis: 3, symbol: "none" },
               { name: "average", yAxis: 1, symbol: "none" },
             ],
           },

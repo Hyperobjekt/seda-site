@@ -48,8 +48,8 @@ Seda.NamDiscovery = (function (Seda) {
     "stateabb",
   ];
   const DATA_LABELS = {
-    avg_eb_nam: "Average Achievement in 3rd Grade (Grade Levels)",
-    grd_eb_nam: "Number of Grade-Levels Gained Annually",
+    avg_eb_nam: "Native American Students’ Average Test Scores in 3rd Grade",
+    grd_eb_nam: "Native American Students’ Learning Rates",
     mn_asmts_nam: "Subgroup Size",
     sedacounty: "County Fips",
     sedacountyname: "County Name",
@@ -188,10 +188,10 @@ Seda.NamDiscovery = (function (Seda) {
     // specify chart configuration item and data
     var option = {
       title: {
-        text: "Learning vs. Average 3rd Grade Achievement for Native Students by County",
+        text: "Learning Rates and Average 3rd Grade Test Scores of Native American Students in U.S. Counties",
       },
       grid: {
-        left: 56,
+        left: 100,
         right: 240,
       },
       tooltip: {
@@ -204,7 +204,7 @@ Seda.NamDiscovery = (function (Seda) {
                 <strong style="display:block;white-space: normal; line-height: 1.1; margin-bottom: 0.5em">${props.data[NAME_INDEX]}, ${props.data[STATE_INDEX]}</strong>
                 <span style="display: block; white-space: normal; font-size: 12px; line-height: 16px">Average achievement in grade 3 is
                 <strong>${achievement} grade levels ${diff} average</strong>.  <br /><br />
-                Students gain <strong>${learning} grade-levels</strong> annually.</span>
+                Students gain <strong>${learning} grade levels</strong> annually.</span>
               </div>`;
         },
       },
@@ -228,15 +228,15 @@ Seda.NamDiscovery = (function (Seda) {
         axisLabel: {
           formatter: (value, index) => {
             if (value === 3) return "Average";
-            if (value < 3) return `${value - 3} Below`;
-            if (value > 3) return `${value - 3} Above`;
+            if (value < 3) return `${Math.abs(value - 3)} Below`;
+            if (value > 3) return `${Math.abs(value - 3)} Above`;
           },
         },
       },
       yAxis: {
         name: Y_LABEL,
         nameLocation: "center",
-        nameGap: 40,
+        nameGap: 80,
         min: 0.6,
         max: 1.6,
         axisLine: {
@@ -244,6 +244,13 @@ Seda.NamDiscovery = (function (Seda) {
         },
         axisTick: {
           show: false,
+        },
+        axisLabel: {
+          formatter: (value, index) => {
+            if (value === 1) return "Average";
+            if (value < 1) return `${Math.round((1 - value) * 100)}% less`;
+            if (value > 1) return `${Math.round((value - 1) * 100)}% more`;
+          },
         },
       },
       series: [

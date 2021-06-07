@@ -201,6 +201,11 @@ Seda.NamDiscovery = (function (Seda) {
         right: 240,
       },
       tooltip: {
+        className: 'nam-tooltip',
+        backgroundColor: 'rgba(4, 20, 60, 0.9)',
+        textStyle: {
+          color: "#ffffff"
+        },
         formatter: (props) => {
           const formatNum = d3.format(".1f");
           const achievement = formatNum(Math.abs(props.data[AVG_INDEX] - 3));

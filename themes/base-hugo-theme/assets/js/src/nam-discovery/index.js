@@ -189,6 +189,12 @@ Seda.NamDiscovery = (function (Seda) {
     var option = {
       title: {
         text: "Learning Rates and Average 3rd Grade Test Scores of Native American Students in U.S. Counties",
+        textStyle: {
+          width: 450,
+          overflow: 'break'
+        },
+        textAlign: 'center',
+        left: "50%"
       },
       grid: {
         left: 100,

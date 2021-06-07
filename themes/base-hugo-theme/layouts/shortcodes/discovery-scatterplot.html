@@ -1,12 +1,12 @@
 <style>
   .visual {
     position: relative;
-    height: 600px;
+    height: 700px;
   }
   .visual__search {
     position: absolute;
     right: 0;
-    top: 267px;
+    top: 130px;
     width: 212px;
   }
   .visual__search input {
@@ -23,8 +23,8 @@
 <div class="visual visual--nam">
   <div id="echart" style="width: 100%; height: 100%"></div>
   <div class="visual__search">
-    <label>Find a county:</label>
-    <input id="namAutocomplete" type="text" name="search" />
+    <label class="visually-hidden">Find a county:</label>
+    <input id="namAutocomplete" type="text" name="search" placeholder="Find a county" />
     <ul
       id="namSelected"
       style="list-style: none; margin: 16px 0; padding: 0"

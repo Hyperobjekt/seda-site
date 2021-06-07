@@ -119,22 +119,22 @@ Seda.NamDiscovery = (function (Seda) {
     const bottomLeft = data.filter((d) => d[0] < 3 && d[1] < 1);
     return [
       {
-        name: "Above Average Scores, \nAbove Average Learning",
+        name: "Above Average Scores, Above Average Learning",
         color: COLORS[1],
         data: topRight,
       },
       {
-        name: "Above Average Scores, \nBelow Average Learning",
+        name: "Above Average Scores, Below Average Learning",
         color: COLORS[2],
         data: bottomRight,
       },
       {
-        name: "Below Average Scores, \nAbove Average Learning",
+        name: "Below Average Scores, Above Average Learning",
         color: COLORS[0],
         data: topLeft,
       },
       {
-        name: "Below Average Scores, \nBelow Average Learning",
+        name: "Below Average Scores, Below Average Learning",
         color: COLORS[3],
         data: bottomLeft,
       },
@@ -198,6 +198,7 @@ Seda.NamDiscovery = (function (Seda) {
       },
       grid: {
         left: 100,
+        top: 150,
         right: 240,
       },
       tooltip: {
@@ -220,13 +221,14 @@ Seda.NamDiscovery = (function (Seda) {
         },
       },
       legend: {
-        orient: "vertical",
-        right: 48,
+        orient: "horizontal",
+        width: 800,
+        left: 95,
         top: 64,
         show: true,
         itemGap: 16,
         textStyle: {
-          lineHeight: 16,
+          lineHeight: 36,
         },
       },
       xAxis: {

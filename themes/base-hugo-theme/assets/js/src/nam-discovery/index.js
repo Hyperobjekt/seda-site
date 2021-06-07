@@ -339,6 +339,10 @@ Seda.NamDiscovery = (function (Seda) {
         window.addEventListener("resize", function () {
           chart.resize();
         });
+
+        chart.on("click", function(params){
+          addSelectedItem({id: params.data[3]})
+        })
       });
   }
 

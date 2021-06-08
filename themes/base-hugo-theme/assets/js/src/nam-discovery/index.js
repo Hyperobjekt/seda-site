@@ -119,22 +119,22 @@ Seda.NamDiscovery = (function (Seda) {
     const bottomLeft = data.filter((d) => d[0] < 3 && d[1] < 1);
     return [
       {
-        name: "Above Average Scores, Above Average Learning",
+        name: window.innerWidth > 1150 ? "Above Average Scores, Above Average Learning" : "Above Average Scores, \nAbove Average Learning",
         color: COLORS[1],
         data: topRight,
       },
       {
-        name: "Above Average Scores, Below Average Learning",
+        name: window.innerWidth > 1150 ? "Above Average Scores, Below Average Learning" : "Above Average Scores, \nBelow Average Learning",
         color: COLORS[2],
         data: bottomRight,
       },
       {
-        name: "Below Average Scores, Above Average Learning",
+        name: window.innerWidth > 1150 ? "Below Average Scores, Above Average Learning" : "Below Average Scores, \nAbove Average Learning",
         color: COLORS[0],
         data: topLeft,
       },
       {
-        name: "Below Average Scores, Below Average Learning",
+        name: window.innerWidth > 1150 ? "Below Average Scores, Below Average Learning" : "Below Average Scores, \nBelow Average Learning",
         color: COLORS[3],
         data: bottomLeft,
       },
@@ -142,36 +142,91 @@ Seda.NamDiscovery = (function (Seda) {
   }
 
   function createListItem(location, index) {
-    const marker = $("<span />").css({
+    console.log(location, index)
+    const marker = $("<span />", {
+      text: index + 1
+    }).css({
       display: "inline-block",
-      width: "16px",
-      height: "16px",
-      borderRadius: "16px",
-      backgroundColor: SELECTED_COLORS[index % SELECTED_COLORS.length],
+      textAlign: "center",
+      padding: "1px 0 0 0",
+      fontWeight: "bold",
+      color: SELECTED_COLORS[index % SELECTED_COLORS.length],
+      width: "20px",
+      height: "20px",
+      borderRadius: "50%",
+      border: `2px solid ${SELECTED_COLORS[index % SELECTED_COLORS.length]}`,
       margin: "0 8px 0 0",
+      position: "absolute",
+      top: "10px",
+      left: "0px"
     });
     const label = $("<span />", {
       text: `${location[NAME_INDEX]}, ${location[STATE_INDEX]}`,
+    }).css({
+      minWidth: "70%"
     });
     const button = $("<button/>", {
-      text: "❌",
+      text: "",
       click: () => removeSelectedItem({ id: location[FIPS_INDEX] }),
     }).css({
       border: "none",
       background: "none",
+      backgroundImage: "url(/images/remove-county.svg)",
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'contain',
+      width: "12px",
+      height: "12px",
       padding: "0",
       margin: "0 0 0 auto",
+      position: "relative",
+      top: "10px"
     });
+
+    const avgVal = $("<span />", {
+      text: `${location[AVG_INDEX].toFixed(2)}`,
+    }).css({
+      fontWeight: "bold",
+      padding: "0 0 0 6px",
+    });
+
+    const avgP = $("<p />", {
+      text: `Avg Scores`,
+    }).css({
+      padding: "5px 15px 0px 0px",
+      margin: "0"
+    }).append(avgVal);
+
+    const grdVal = $("<span />", {
+      text: `${location[GRD_INDEX].toFixed(2)}`,
+    }).css({
+      fontWeight: "bold",
+      padding: "0 0 0 6px",
+    });
+
+    const grdP = $("<p />", {
+      text: `Learning Rate`,
+    }).css({
+      padding: "5px 0 0 0",
+      margin: "0"
+    }).append(grdVal);
+
+
     return $("<li />")
       .css({
         margin: "16px 0",
+        color: "#5D5D5D",
         display: "flex",
+        flexWrap: "wrap",
         alignItems: "center",
         lineHeight: 1,
+        position: "relative",
+        padding: "0 0 0 28px"
       })
       .append(marker)
       .append(label)
-      .append(button);
+      .append(button)
+      .append(avgP)
+      .append(grdP);
   }
 
   function render() {
@@ -191,15 +246,16 @@ Seda.NamDiscovery = (function (Seda) {
         text: "Learning Rates and Average 3rd Grade Test Scores of Native American Students in U.S. Counties",
         textStyle: {
           width: 450,
-          overflow: 'break'
+          overflow: 'break',
+          lineHeight: 27
         },
         textAlign: 'center',
         left: "50%"
       },
       grid: {
         left: 100,
-        top: 150,
-        right: 240,
+        top: window.innerWidth > 1150 ? 180 : 210,
+        right: window.innerWidth > 1150 ? 375 : 200,
       },
       tooltip: {
         className: 'nam-tooltip',
@@ -213,22 +269,22 @@ Seda.NamDiscovery = (function (Seda) {
           const diff = props.data[AVG_INDEX] > 3 ? "above" : "below";
           const learning = formatNum(props.data[GRD_INDEX]);
           return `<div style="max-width: 192px;">
-                <strong style="display:block;white-space: normal; line-height: 1.1; margin-bottom: 0.5em">${props.data[NAME_INDEX]}, ${props.data[STATE_INDEX]}</strong>
-                <span style="display: block; white-space: normal; font-size: 12px; line-height: 16px">Average achievement in grade 3 is
-                <strong>${achievement} grade levels ${diff} average</strong>.  <br /><br />
-                Students gain <strong>${learning} grade levels</strong> annually.</span>
-              </div>`;
+                    <strong style="display:block;white-space: normal; line-height: 1.1; margin-bottom: 0.5em">${props.data[NAME_INDEX]}, ${props.data[STATE_INDEX]}</strong>
+                    <span style="display: block; white-space: normal; font-size: 12px; line-height: 16px">Average achievement in grade 3 is
+                    <strong>${achievement} grade levels ${diff} average</strong>.  <br /><br />
+                    Students gain <strong>${learning} grade levels</strong> annually.</span>
+                  </div>`;
         },
       },
       legend: {
         orient: "horizontal",
-        width: 800,
+        width: window.innerWidth > 1150 ? 800 : 400,
         left: 95,
-        top: 64,
+        top: 90,
         show: true,
         itemGap: 16,
         textStyle: {
-          lineHeight: 36,
+          lineHeight: window.innerWidth > 1150 ? 36 : 20,
         },
       },
       xAxis: {
@@ -343,6 +399,7 @@ Seda.NamDiscovery = (function (Seda) {
         });
 
         chart.on("click", function(params){
+          console.log(params)
           addSelectedItem({id: params.data[3]})
         })
       });

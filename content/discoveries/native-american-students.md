@@ -32,4 +32,11 @@ To learn more:
 - Check out Propublica’s article on BIE Schools, Article Title
 - Forthcoming: EOP Report on Native American Student’s Educational Opportunity in U.S. School Districts
 
+<br />
+
+*Published June 2021 with SEDA 4.1 data.*
+
+Suggested Citation:<br />
+Reardon, S. F., Fahle, E. (2021). *Learning Rates and Average 3rd Grade Test Scores of Native American Students in U.S. Counties.* [Data Discovery by The Educational Opportunity Project]. [https://edopportunity.org/discoveries/native-american-students/](https://edopportunity.org/discoveries/native-american-students/)
+
 </div>

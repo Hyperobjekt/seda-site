@@ -48,7 +48,7 @@ Seda.NamDiscovery = (function (Seda) {
     "stateabb",
   ];
   const DATA_LABELS = {
-    avg_eb_nam: "Native American Students’ Average Test Scores in 3rd Grade",
+    avg_eb_nam: window.innerWidth > 767 ? "Native American Students’ Average Test Scores in 3rd Grade" : "Native American Students’ Average\nTest Scores in 3rd Grade",
     grd_eb_nam: "Native American Students’ Learning Rates",
     mn_asmts_nam: "Subgroup Size",
     sedacounty: "County Fips",
@@ -157,13 +157,14 @@ Seda.NamDiscovery = (function (Seda) {
       border: `2px solid ${SELECTED_COLORS[index % SELECTED_COLORS.length]}`,
       margin: "0 8px 0 0",
       position: "absolute",
-      top: "10px",
+      top: "50%",
+      transform: "translateY(-50%)",
       left: "0px"
     });
     const label = $("<span />", {
       text: `${location[NAME_INDEX]}, ${location[STATE_INDEX]}`,
     }).css({
-      minWidth: "70%"
+      minWidth: "100%"
     });
     const button = $("<button/>", {
       text: "",
@@ -178,8 +179,10 @@ Seda.NamDiscovery = (function (Seda) {
       height: "12px",
       padding: "0",
       margin: "0 0 0 auto",
-      position: "relative",
-      top: "10px"
+      position: "absolute",
+      top: "50%",
+      right: "0",
+      transform: "translateY(-50%)",
     });
 
     const avgVal = $("<span />", {
@@ -245,17 +248,19 @@ Seda.NamDiscovery = (function (Seda) {
       title: {
         text: "Learning Rates and Average 3rd Grade Test Scores of Native American Students in U.S. Counties",
         textStyle: {
-          width: 450,
+          width: window.innerWidth > 767 ? 450 : 330,
           overflow: 'break',
-          lineHeight: 27
+          fontSize: window.innerWidth > 767 ? 18 : 13,
+          lineHeight: window.innerWidth > 767 ? 27 : 20
         },
-        textAlign: 'center',
-        left: "50%"
+        textAlign: window.innerWidth > 767 ? 'center' : 'left',
+        left: window.innerWidth > 767 ? "50%" : 0
       },
       grid: {
-        left: 100,
-        top: window.innerWidth > 1150 ? 180 : 210,
-        right: window.innerWidth > 1150 ? 375 : 200,
+        left: window.innerWidth > 767 ? 100 : 47,
+        top: window.innerWidth > 1150 ? 180 : 175,
+        right: window.innerWidth > 1150 ? 375 : window.innerWidth > 767 ? 200 : 1,
+        bottom: window.innerWidth > 767 ? 50 : 100
       },
       tooltip: {
         className: 'nam-tooltip',
@@ -279,8 +284,8 @@ Seda.NamDiscovery = (function (Seda) {
       legend: {
         orient: "horizontal",
         width: window.innerWidth > 1150 ? 800 : 400,
-        left: 95,
-        top: 90,
+        left: window.innerWidth > 767 ? 95 : 0,
+        top: window.innerWidth > 767 ? 90 : 60,
         show: true,
         itemGap: 16,
         textStyle: {
@@ -290,7 +295,11 @@ Seda.NamDiscovery = (function (Seda) {
       xAxis: {
         name: X_LABEL,
         nameLocation: "center",
-        nameGap: 32,
+        nameGap: window.innerWidth > 767 ? 32 : 55,
+        nameTextStyle: {
+          lineHeight: 18,
+          align: "center"
+        },
         axisLine: {
           show: false,
         },
@@ -300,12 +309,13 @@ Seda.NamDiscovery = (function (Seda) {
             if (value < 3) return `${Math.abs(value - 3)} Below`;
             if (value > 3) return `${Math.abs(value - 3)} Above`;
           },
+          rotate: window.innerWidth > 767 ? 0 : 45
         },
       },
       yAxis: {
         name: Y_LABEL,
         nameLocation: "center",
-        nameGap: 80,
+        nameGap: window.innerWidth > 767 ? 80 : 35,
         min: 0.6,
         max: 1.6,
         axisLine: {
@@ -316,7 +326,8 @@ Seda.NamDiscovery = (function (Seda) {
         },
         axisLabel: {
           formatter: (value, index) => {
-            if (value === 1) return "Average";
+            if (window.innerWidth < 768) return value
+            if (value === 1) return 'Average';
             if (value < 1) return `${Math.round((1 - value) * 100)}% less`;
             if (value > 1) return `${Math.round((value - 1) * 100)}% more`;
           },
@@ -402,6 +413,14 @@ Seda.NamDiscovery = (function (Seda) {
           console.log(params)
           addSelectedItem({id: params.data[3]})
         })
+
+        if(window.innerWidth < 768) {
+          $('.navbar').addClass("nam")
+          $('.navbar').append($(".visual__search"))
+          $('.visual__search-controls > button, .visual__search-drawer > button').on('click', () => {
+            $('.visual__search-drawer').toggleClass('closed')
+          })
+        }
       });
   }
 

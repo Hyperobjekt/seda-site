@@ -1,54 +1,19 @@
-<style>
-  .visual {
-    position: relative;
-    height: 700px;
-  }
-  .visual__search {
-    position: absolute;
-    right: 0;
-    top: 95px;
-    width: 317px;
-  }
-  @media screen and (max-width: 1150px) {
-    .visual__search {
-      width: 180px;
-      top: 110px;
-    }
-  }
-  .visual__search input {
-    width: 100%;
-    height: 50px;
-    background-image: url(/images/magnify-thin.svg);
-    background-repeat: no-repeat;
-    background-size: 18px 18px;
-    background-position: right 14px top 50%;
-    box-shadow: none !important;
-    border: 1px solid #C4C4C4 !important;
-    border-radius: 4px !important;
-    margin: 0 0 15px;
-  }
-  @media screen and (max-width: 1150px) {
-    .visual__search input {
-      margin: 0 0 33px;
-    }
-  }
-
-  .visual .easy-autocomplete-container ul li div {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-</style>
-
 <div class="visual visual--nam">
   <div id="echart" style="width: 100%; height: 100%"></div>
   <div class="visual__search">
-    <label class="visually-hidden">Find a county:</label>
-    <input id="namAutocomplete" type="text" name="search" placeholder="Find a county" />
-    <ul
+    <div class="visual__search-controls">
+      <button aria-label="view selected counties">Selected Counties</button>
+      <label class="visually-hidden">Find a county:</label>
+      <input id="namAutocomplete" type="text" name="search" placeholder="Find a county" />
+    </div>
+    <div class="visual__search-drawer closed">
+      <button aria-label="view chart">Back to chart</button>
+      <ul
       id="namSelected"
       style="list-style: none; margin: 16px 0; padding: 0"
-    ></ul>
+    >
+    </ul>
+    </div>
   </div>
 </div>
 

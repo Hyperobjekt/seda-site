@@ -976,7 +976,7 @@ function getPageOffset(url) {
     initImg2 = anime({
       targets: ['#whats-new-img2'],
       opacity: [0, 1],
-      translateX: [1, 50],
+      translateX: [-50, 1],
       duration: duration,
       delay: 0,
       autoplay: false,

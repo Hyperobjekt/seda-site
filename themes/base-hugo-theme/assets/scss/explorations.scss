@@ -326,8 +326,12 @@ body.kind-page.type-discoveries {
   }
   .drop-cap {
     font-size: 5.2rem;
+    color: $seda-dark;
     @include media-breakpoint-up(lg) {
       font-size: 4.7rem;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 5.8rem;
     }
     font-family: 'MaisonNeue-Bold', 'Lato', 'Helvetica Neue', Arial, sans-serif, -apple-system;
     line-height: .8;
@@ -391,6 +395,13 @@ body.kind-page.type-discoveries {
      .copy-well {
       font-size: $sm-p-size;
       line-height: 1.5;
+      &.center-layout {
+        max-width: 540px; 
+        margin: auto;
+        @include media-breakpoint-up(xl) {
+            max-width: 640px;
+        }
+      }
       &:first-child {
         margin-top: 0;
       }
@@ -401,40 +412,40 @@ body.kind-page.type-discoveries {
       ul,
       li {
         font-family: $maisonneue-book;
-        // color: $white;
+        color: $seda-dark;
         font-size: $sm-p-size;
         line-height: 1.5;
-        margin-top: 3.2rem;
         &:first-child {  
           margin-top: 0;
-      }
-
+        }
         @include media-breakpoint-up(sm) {
           font-size: $sm-p-size;
           line-height: 1.5;
         }
-
         @include media-breakpoint-up(md) {
           // width: 80%;
           margin-left: auto;
           margin-right: auto;
-          font-size: 1.6rem;
+          font-size: $sm-p-size;
           line-height: 1.5;
-          margin-top: 3.2rem;
         }
 
         @include media-breakpoint-up(lg) {
-          font-size: 1.5rem;
-          line-height: 2.2rem;
-          margin-top: 3.2rem;
+          font-size: $sm-p-size;
+          line-height: 1.5;
         }
-
         @include media-breakpoint-up(xl) {
-          font-size: 1.5rem;
-          line-height: 2.2rem;
-          margin-top: 3.2rem;
+          font-size: 1.7rem;
+          line-height: 1.6;
         }
-
+      }
+      p,
+      ul
+      {
+        margin-top: 3.2rem;
+      }
+      li {
+        margin-top: 0.8rem;
       }
     }
   }

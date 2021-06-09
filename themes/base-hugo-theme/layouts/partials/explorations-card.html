@@ -10,7 +10,11 @@
         <a class="gta-event-postSelected" href="{{ .RelPermalink }}"><h3 class="card-title text-center text-md-left">{{ .Params.displaytitle }}</h3></a>
         <hr> 
         <author class="card-subtitle text-center text-md-left">by {{ .Params.author }}</author>
-        <div class="contents card-text">{{ .Content | truncate 300 | plainify }}</div>
+        {{ if .Params.index_description }}
+            <div class="contents card-text">{{ .Params.index_description | truncate 300 | plainify }}</div>
+        {{ else }}
+            <div class="contents card-text">{{ .Content | truncate 300 | plainify }}</div>
+        {{ end }}   
         <div class="button-wrap d-flex justify-content-center d-md-block">   
             <a class="btn btn-custom gta-event-postSelected" href="{{ .RelPermalink }}" tabindex="0">READ MORE</a>
         </div>     

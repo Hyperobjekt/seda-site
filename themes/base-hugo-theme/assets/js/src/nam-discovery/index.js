@@ -246,7 +246,7 @@ Seda.NamDiscovery = (function (Seda) {
     // specify chart configuration item and data
     var option = {
       title: {
-        text: "Learning Rates and Average 3rd Grade Test Scores of Native American Students in U.S. Counties",
+        text: "Learning Rates and Average Third Grade Test Scores of Native American Students, by County",
         textStyle: {
           width: window.innerWidth > 767 ? 450 : 330,
           overflow: 'break',

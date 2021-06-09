@@ -3,7 +3,7 @@ title: "Learning vs Average Achievement for Native Students by County"
 displaytitle: "Learning vs. Average Achievement for Native Students by County"
 author: "Erin Fahle & sean f. reardon"
 date: "2021-05-20"
-description: Trend Data Corroborates Existing Evidence Showing That Segregation Leads to Unequal Learning
+description: Data from the Educational Opportunity Project provide an unprecedented view of the patterns of educational opportunity for Native American students.
 hero: "/images/heroes/na-discovery-hero.svg"
 image: "/images/articles/na-discovery-thumb.png"
 social_image: "/images/social/na-students-discovery-social.png"

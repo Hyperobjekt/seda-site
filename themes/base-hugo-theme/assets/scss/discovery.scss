@@ -1,0 +1,156 @@
+.visual {
+    position: relative;
+    height: 700px;
+}
+
+.visual__search {
+    position: absolute;
+    right: 0;
+    top: 95px;
+    width: 317px;
+}
+@media screen and (max-width: 1150px) {
+    .visual__search {
+      width: 180px;
+      top: 110px;
+    }
+}
+.visual__search-drawer > button {
+    display: none;
+}
+@media screen and (max-width: 767px) {
+    .visual__search {
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0 !important;
+        display: none;
+
+        &-drawer {
+            position: fixed;
+            border-top: 1px solid #e5e5e5;
+            top: 94px;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            margin: 0 !important;
+            background-color: white;
+            padding: 24px !important;
+            transform: translateX(0);
+            transition: transform 0.4s ease-out;
+
+            &.closed {
+                transform: translateX(100%);
+            }
+
+            button {
+                display: block;
+                background-color: white;
+                border: 0;
+                background-image: url(/images/back-to-chart.svg);
+                background-repeat: no-repeat;
+                background-size: 6px 10px;
+                background-position: 0 35%;
+                font-family: $sharpgrotesk-med-15;
+                text-transform: uppercase;
+                font-size: 14px;
+                color: #737373;
+                padding: 0 15px;
+                margin: 0 0 30px;
+            }
+        }
+
+        > ul {
+            
+        }
+    }
+
+    .sticky-top .visual__search{
+        display: block;
+    }
+}
+.visual__search-controls {
+    display: flex;
+
+    > div {
+        width: 100% !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .visual__search-controls {
+        width: 100%;
+        height: 44px;
+        border-top: 1px solid #e5e5e5;
+    }
+}
+.visual__search-controls button {
+    display: none;
+    color: $seda-navy;
+    padding: 0px 12px;
+    background-color: white;
+    font-family: $sharpgrotesk-med-15;
+    height: 44px;
+    min-width: 115px;
+    border: 0;
+    border-right: 1px solid #e5e5e5;
+    text-transform: uppercase;
+
+    &:hover {
+        color: #0071DB;
+    }
+}
+@media screen and (max-width: 767px) {
+    .visual__search-controls button {
+        display: block;
+    }
+}
+.visual__search-controls input {
+    width: 100%;
+    height: 50px;
+    background-image: url(/images/magnify-thin.svg);
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: right 14px top 50%;
+    box-shadow: none !important;
+    border: 1px solid #C4C4C4 !important;
+    border-radius: 4px !important;
+    margin: 0 0 15px;
+}
+@media screen and (max-width: 1150px) {
+    .visual__search-controls input {
+        margin: 0 0 33px;
+        font-size: 16px !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .visual__search-controls .easy-autocomplete {
+        width: 100% !important;
+    }
+    .visual__search-controls input {
+        margin: 0;
+        height: 44px;
+        border: 0 !important;
+        background-size: 10px;
+    }
+}
+.visual__canvas {
+    margin: 0 0 5rem;
+    min-width: calc(100vw - 120px); 
+    position: relative; 
+    left: 50%; 
+    transform: translateX(-50%);
+}
+@media screen and (max-width: 767px) {
+    .visual__canvas {
+         margin: 0 0 5rem;
+        min-width: 100vw;
+        min-width: calc(100vw - 30px); 
+    }
+}
+
+.visual__search-controls .easy-autocomplete-container ul li div {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

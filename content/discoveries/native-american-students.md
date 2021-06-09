@@ -34,7 +34,8 @@ To learn more:
 
 - Check out _ProPublica’s_ article on BIE Schools, <a href="https://www.propublica.org/article/the-bureau-of-indian-information-hasnt-told-the-public-how-its-schools-are-performing" target="_blank" rel="noopener noreferrer">The Bureau of Indian Education hasn't told the public how its schools are performing</a>
 - _Forthcoming:_ EOP Report on Native American Student’s Educational Opportunity in U.S. School Districts
-
+<br /><br />
+<hr>
 <br />
 
 Suggested Citation:

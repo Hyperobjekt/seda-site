@@ -251,7 +251,10 @@ Seda.NamDiscovery = (function (Seda) {
           width: window.innerWidth > 767 ? 450 : 330,
           overflow: 'break',
           fontSize: window.innerWidth > 767 ? 18 : 13,
-          lineHeight: window.innerWidth > 767 ? 27 : 20
+          lineHeight: window.innerWidth > 767 ? 27 : 20,
+          fontWeight: '500',
+          color: '#031232',
+          fontFamily: 'SharpGrotesk-Medium20'
         },
         textAlign: window.innerWidth > 767 ? 'center' : 'left',
         left: window.innerWidth > 767 ? "50%" : 0

@@ -136,10 +136,11 @@
 }
 .visual__canvas {
     margin: 0 0 5rem;
-    min-width: calc(100vw - 120px); 
+    width: calc(100vw - 120px); 
     position: relative; 
     left: 50%; 
     transform: translateX(-50%);
+    max-width: 1320px;
 }
 @media screen and (max-width: 767px) {
     .visual__canvas {

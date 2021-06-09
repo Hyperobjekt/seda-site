@@ -1,0 +1,24 @@
+<div class="visual visual--nam">
+  <div id="echart" style="width: 100%; height: 100%"></div>
+  <div class="visual__search">
+    <div class="visual__search-controls">
+      <button aria-label="view selected counties">Selected Counties</button>
+      <label class="visually-hidden">Find a county:</label>
+      <input id="namAutocomplete" type="text" name="search" placeholder="Find a county" />
+    </div>
+    <div class="visual__search-drawer closed">
+      <button aria-label="view chart">Back to chart</button>
+      <ul
+      id="namSelected"
+      style="list-style: none; margin: 16px 0; padding: 0"
+    >
+    </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.addEventListener("load", function () {
+    Seda.NamDiscovery.init();
+  });
+</script>

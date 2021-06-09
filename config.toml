@@ -99,7 +99,7 @@ anchor = "smart"
 
 [[menu.main]]
     identifier = "whats-new"
-    name = "What's New in 4.0"
+    name = "What's New in 4.1"
     url = "/whats-new/"
     weight = 9
 

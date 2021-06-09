@@ -12,6 +12,7 @@ install:
 script:
   - if [ "$TRAVIS_BRANCH" = "production" ]; then export HUGO_BASEURL=https://edopportunity.org/ && cp src/robots.production.txt themes/base-hugo-theme/static/robots.txt; fi
   - if [ "$TRAVIS_BRANCH" = "staging" ]; then export HUGO_BASEURL=https://staging.edopportunity.org/ && cp src/robots.staging.txt themes/base-hugo-theme/static/robots.txt; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then export HUGO_BASEURL=https://dev.edopportunity.org/ && cp src/robots.staging.txt themes/base-hugo-theme/static/robots.txt; fi
   - npm install
   - npm list # checking npm packages
   - hugo version # prints the Hugo version, just in case.
@@ -22,6 +23,20 @@ before_deploy:
   - export PATH=$PATH:$HOME/.local/bin
 
 deploy:
+  - skip_cleanup: true
+    provider: s3
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket: dev.edopportunity.org
+    region: us-east-1
+    acl: public_read
+    local_dir: public
+    on:
+      branch: master
+  - provider: script
+    script: aws cloudfront create-invalidation --distribution-id=$CLOUDFRONT_ID_DEV --paths="/*"
+    on:
+      branch: master
   - skip_cleanup: true
     provider: s3
     access_key_id: $AWS_ACCESS_KEY_ID

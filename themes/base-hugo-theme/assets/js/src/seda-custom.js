@@ -885,13 +885,14 @@ function getPageOffset(url) {
     }
 
   // What's New page animation
-
+  var whatsNewImageAnimated = false;
   var whatsNewImage2Animated = false;
   var whatsNewImage3Animated = false;
   var whatsNewImage4Animated = false;
   var whatsNewImage5Animated = false;
   var whatsNewText4Animated =  false;
   var initText2 = null;
+  var initImg1 = null;
   var initImg2 = null;
   var initText3 = null;
   var initText4 = null;
@@ -930,7 +931,7 @@ function getPageOffset(url) {
       easing: easing,
     });
     anime({
-      targets: ['#whats-new-img1'],
+      targets: ['#whats-new-img0'],
       opacity: [0, 1],
       translateX: [-50, 1],
       duration: duration,
@@ -940,8 +941,19 @@ function getPageOffset(url) {
   };
 
   function setUpWN1() {
-      anime.set(['.whats-new-text2', '#whats-new-img2', '.whats-new-text3', '#whats-new-img3', '#whats-new-img4' ], {
+      anime.set(['#whats-new-img1','.whats-new-text2', '#whats-new-img2', '.whats-new-text3', '#whats-new-img3', '#whats-new-img4' ], {
       opacity: [0]
+    });
+  }
+  function setUpWNimg1() {
+    initImg1 = anime({
+      targets: ['#whats-new-img1'],
+      opacity: [0, 1],
+      translateX: [50, 1],
+      duration: duration,
+      delay: 0,
+      autoplay: false,
+      easing: easing,
     });
   }
   function setUpWN2() {
@@ -964,7 +976,7 @@ function getPageOffset(url) {
     initImg2 = anime({
       targets: ['#whats-new-img2'],
       opacity: [0, 1],
-      translateX: [50, 1],
+      translateX: [1, 50],
       duration: duration,
       delay: 0,
       autoplay: false,
@@ -1002,6 +1014,9 @@ function getPageOffset(url) {
     });
 
   }
+  function whatsNewAnimate1() {
+    initImg1.play();
+  }
   function whatsNewAnimate2() {
     initText2.play();
     initText3.play();
@@ -1034,7 +1049,12 @@ function getPageOffset(url) {
   function checkWhatsNewAnimations() {
     var Scroll = $(window).scrollTop() + windowHeight - 50;
     // console.log('scroll = ' + Scroll);
-
+    if (Scroll >= whatsNewImage && !whatsNewImageAnimated ) {
+      //console.log('trigger whatsNewImage2');
+      $("#whats-new-img1").addClass("move");
+      whatsNewAnimate1();
+      whatsNewImageAnimated = true;
+    }
     if (Scroll >= whatsNewImage2 && !whatsNewImage2Animated ) {
       //console.log('trigger whatsNewImage2');
       $("#whats-new-img2").addClass("move");
@@ -1077,6 +1097,7 @@ function getPageOffset(url) {
       if (!prefersReducedMotion) {
        //console.log('Reduced motion not enabled.');
        setUpWN1();
+       setUpWNimg1();
        setUpWN2();
        setUpWN3();
        setUpWN4();

@@ -16,3 +16,7 @@ Estimates for special education schools are included in the school-level data fi
 We do not use or report test scores from virtual schools.
 
 In most states, students in private schools do not take the annual state accountability tests that we use to build SEDA. Therefore, no test scores from private schools are included in the raw or public data. 
+
+Schools in Puerto Rico are included in the SEDA 4.0 and 4.1 data. Specifically, we include estimates based on math tests taken by students in Puerto Rico public schools in the years 2010-11 through 2017-18. 
+
+Schools run by the Bureau of Indian Education (BIE) are included in the SEDA 4.1 data. Specifically, we include estimates based on reading and math tests taken by students in BIE schools in the years 2008-09 through 2011-12, and in 2015-16 and 2016-17. The BIE did not report test score data for other years to EDFacts. 

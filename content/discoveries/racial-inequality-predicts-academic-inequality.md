@@ -9,6 +9,8 @@ image: "/images/articles/ses-inequality.png"
 social_image: "/images/social/increasing-inequality-social.png"
 description: Socioeconomic inequalities exacerbate academic inequalities, so when socioeconomic inequality is higher, academic achievement gaps also tend to grow.
 scatterplotID: "article4" # used to name the JS file with the necessary states and prop attributes
+scripts:
+  - scatterplot
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
 aliases:
@@ -24,3 +26,10 @@ Among the 40 school districts with the highest student enrollment, there is a lo
 These SES differences predict changes in children’s academic achievement disparities over time. In Dallas <span class="colorcircle color-purple">➋</span>, where socioeconomic inequality is high, the academic achievement gap has increased by more than a grade-level in one decade. At this rate, the 2009 White-Black achievement gap will double by the year 2027. In Hawaii <span class="colorcircle color-burntred">➌</span>, on the other hand, where socioeconomic inequality is relatively low, the academic achievement gap has decreased by over one-third of a grade-level. Even at this promising rate, the gap in Hawaii  would take until 2050 to close.
 
 Learn more about these findings in our working paper <a href='/research'>“Uneven Progress: Recent Trends in Academic Performance Among U.S. School Districts”</a>.
+
+<hr>
+
+_Published February 2021 with SEDA 4.0 data._
+
+Suggested Citation: 
+Matheny, K. T., Thompson, M. E., Townley Flores, C., & Reardon, S. F. (2021). _Racial socioeconomic inequality predicts growing racial academic inequality_ [Data Discovery by The Educational Opportunity Project]. https://edopportunity.org/discoveries/racial-inequality-predicts-academic-inequality/

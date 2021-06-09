@@ -74,6 +74,21 @@ body.kind-page.type-discoveries.racial-socioeconomic-inequality-predicts-growing
   }
 }
 
+body.kind-page.type-discoveries.learning-vs-average-achievement-for-native-students-by-county .hero {
+  .hero-child {
+    background-size: 136%;
+    background-position: center 100%;
+    @include media-breakpoint-up(md) {
+      background-size: 100%;
+      background-position: bottom center;
+    }
+    @include media-breakpoint-up(xl) {
+      background-size: 100%;
+      background-position: bottom center;
+    }
+  }
+}
+
 // General hero styles
 
 

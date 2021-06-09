@@ -14,8 +14,8 @@ scripts:
 statustype: discovery
 ---
 
-<!-- TODO: style this page, inline style is placeholder -->
-<div style="max-width: 540px; margin: auto;">
+
+
 
 <div class="visual__canvas">
   {{< discovery-scatterplot >}}
@@ -41,4 +41,4 @@ To learn more:
 Suggested Citation:
 Fahle, E., Reardon, S. F. (2021). _Learning rates and average 3rd Grade test scores of Native American students, by county._ [Data Discovery by The Educational Opportunity Project]. https://edopportunity.org/discoveries/native-american-students/
 
-</div>
+

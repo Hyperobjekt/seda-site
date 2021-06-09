@@ -192,4 +192,10 @@ If we want to improve educational outcomes, we will need to change how—and whe
 
 _Published September 2019 with SEDA 3.0 data._
 
+<hr>
+
+Suggested Citation: 
+Reardon, S. F. (2019). _Affluent schools are not always the best schools_ [Data Discovery by The Educational Opportunity Project]. https://edopportunity.org/discoveries/affluent-schools-are-not-always-best/ 
+
+
 {{% /state-wrapper %}}

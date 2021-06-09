@@ -22,3 +22,11 @@ We calculate the average test score gap using SEDA, which includes standardized 
 The districts with the highest increases in segregation had a 0.10 grade-level increase in achievement gaps over nine years. The districts with the highest decreases in segregation had a 0.13 grade-level decrease in achievement gaps over nine years.
 
 Learn more about these findings in our working paper <a href='/research'>“Uneven Progress: Recent Trends in Academic Performance Among U.S. School Districts”</a>.
+
+<hr>
+
+_Published February 2021 with SEDA 4.0 data._
+
+Suggested Citation: 
+Matheny, K. T., Thompson, M. E., Townley Flores, C., & Reardon, S. F. (2021). _Increasing school segregation widens White-Black achievement gaps_ [Data Discovery by The Educational Opportunity Project]. https://edopportunity.org/discoveries/segregation-leads-to-inequality/ 
+

@@ -15,4 +15,4 @@ There are several reasons that SEDA may not contain data for a school, district,
 - Students took different, incomparable tests within the same subject, grade, and year. This is something our methodology cannot adjust for.
 - We identified data errors that would result in inaccurate estimates.
 
-For more details, please see our <a href="https://stacks.stanford.edu/file/druid:db586ns4974/seda_documentation_4.0.pdf" target="_blank" rel="noopener noreferrer">technical documentation</a>.
+For more details, please see our <a href="https://stacks.stanford.edu/file/druid:db586ns4974/seda_documentation_4.1.pdf" target="_blank" rel="noopener noreferrer">technical documentation</a>.

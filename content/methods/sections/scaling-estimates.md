@@ -32,7 +32,7 @@ To convert our estimates from the NAEP scale into grade levels, we have to first
 <td>280.4</td>
 <td>280.9</td>
 <td>279.9</td>
-<td>281.3</td>
+<td>281.0</td>
 </tr>
 <tr>
 <td rowspan="2">Reading</td>
@@ -41,7 +41,7 @@ To convert our estimates from the NAEP scale into grade levels, we have to first
 <td>217.8</td>
 <td>219.1</td>
 <td>220.0</td>
-<td>218.0</td>
+<td>218.5</td>
 </tr>
 <tr>
 
@@ -50,7 +50,7 @@ To convert our estimates from the NAEP scale into grade levels, we have to first
 <td>263.0</td>
 <td>264.0</td>
 <td>260.6</td>
-<td>263.9</td>
+<td>263.1</td>
 </tr>
 </tbody></table>
 

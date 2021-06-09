@@ -7,7 +7,7 @@ private: true
 
 We use hierarchical linear models to produce estimates of average test scores, learning rates, and trends in average test scores. The intuition behind these models is described in this section.
 <br><br>
-We have measures of the average test scores in up to 60 grade-year cells in each tested subject for each school, district, county, commuting zone, metropolitan area, or state. The scores are adjusted so that a value of 3 corresponds to the average achievement of 3rd graders nationally, a value of 4 corresponds to the average achievement of 4th graders nationally, and so on. For each subject, these can be represented in a table like this:
+We have measures of the average test scores in up to 60 grade-year cells in each tested subject for each school, district, county, metropolitan statistical area, commuting zone, or state. The scores are adjusted so that a value of 3 corresponds to the average achievement of 3rd graders nationally, a value of 4 corresponds to the average achievement of 4th graders nationally, and so on. For each subject, these can be represented in a table like this:
 <br><br>
 
 <h5 class="big-superhead">Hypothetical Average Test Scores (Grade-level Equivalents), By Grade and Year</h5>
@@ -1051,4 +1051,4 @@ To compute the average test score trend, we compare students’ average scores i
 
 For example, we compare the average score in Grade 3 in 2009 (3.0) to the average score in Grade 3 in 2010 (3.1). The difference of 0.1 indicates that students’ test scores are 0.1 grade levels higher in 3rd grade in 2010 than they were in 3rd grade in 2009. We compute this difference for each horizontal pair of cells in the table, and then take their average. In this example, the average test score trend is 0.1 grade levels per year.
 
-For technical details, see Step 9 of the <a href="https://stacks.stanford.edu/file/druid:db586ns4974/seda_documentation_4.0.pdf" target="_blank" rel="noopener noreferrer">technical documentation</a>.
+For technical details, see Step 9 of the <a href="https://stacks.stanford.edu/file/druid:db586ns4974/seda_documentation_4.1.pdf" target="_blank" rel="noopener noreferrer">technical documentation</a>.

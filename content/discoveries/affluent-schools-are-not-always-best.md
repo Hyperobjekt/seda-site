@@ -9,6 +9,8 @@ image: "/images/articles/affluent-schools-sm.png"
 scatterplotID: "article2" # used to name the JS file with the necessary states and prop attributes
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
+scripts:
+  - scatterplot
 aliases:
   - "/posts/affluent-schools-are-not-always-best/"
 ---
@@ -191,5 +193,11 @@ In the upper left are districts like Chicago, where educational opportunities ar
 If we want to improve educational outcomes, we will need to change how—and where and when—we provide educational opportunities throughout children’s lives. Some people assume that we simply need to improve schools. Others argue that the schools are fine, but that we need to provide more learning opportunities in early childhood—in children’s homes and child-care centers and preschool programs. The data show that there may be no one best strategy. Rather we need targeted strategies—targeted to specific age groups in specific places—to allow all our children to reach their full potential, regardless of where they grow up.
 
 _Published September 2019 with SEDA 3.0 data._
+
+<hr>
+
+Suggested Citation: 
+Reardon, S. F. (2019). _Affluent schools are not always the best schools_ [Data Discovery by The Educational Opportunity Project]. https://edopportunity.org/discoveries/affluent-schools-are-not-always-best/ 
+
 
 {{% /state-wrapper %}}

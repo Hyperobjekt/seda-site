@@ -9,6 +9,8 @@ hero: "/images/heroes/gaps-discovery-hero.svg"
 image: "/images/articles/scores-gap.png"
 social_image: "/images/social/race-differences-student-scores-social.png"
 scatterplotID: "article1" # used to name the JS file with the necessary states and prop attributes
+scripts:
+  - scatterplot
 statustype: discovery
 status: (3-10-19) Hero image and content / scatterplot areas are for placement only. Add breadcrumb nav to all 3rd-level pages.
 aliases:
@@ -144,6 +146,11 @@ Berkeley, CA: id# 604740 -->
 
 <br><br class="d-sm-none d-md-block">Moreover, among the several thousand school districts in the US with more than a handful of Black students, there is no moderately or highly segregated district with a small achievement gap. It is possible to have a large achievement gap in the absence of segregation (as in Berkeley, CA and Evanston, IL), but segregation appears to be tightly linked to inequality in educational opportunity. If it is possible to provide equal educational opportunity under conditions of segregation, no community in the U.S. has discovered the way. Racial segregation, which has limited the opportunities of Black children and families for generations, continues to limit them today.
 
+<hr>
+
 _Published September 2019 with SEDA 3.0 data._
+
+Suggested Citation: 
+Reardon, S. F. (2019). _What explains White-Black differences in average test scores?_ [Data Discovery by The Educational Opportunity Project]. https://edopportunity.org/discoveries/white-black-differences-scores/
 
 {{% /state-wrapper %}}

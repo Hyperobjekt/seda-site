@@ -16,7 +16,6 @@ statustype: discovery
 
 
 
-
 <div class="visual__canvas">
   {{< discovery-scatterplot >}}
 </div>

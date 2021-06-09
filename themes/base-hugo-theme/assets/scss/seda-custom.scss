@@ -344,7 +344,7 @@ tr:nth-child(odd) {
 
 // Header
 
-body.type-help-faq, body.research {
+body.type-help-faq, body.research, body.type-whats-new {
   nav.sticky-top {
     box-shadow: none;
     border-bottom: 1px solid $seda-lightblue;
@@ -927,6 +927,9 @@ img {
     list-style: none;
     margin-bottom: 0;
     justify-content: space-between;
+    &.whats-new-subnav {
+      justify-content: space-evenly;
+    }
     // border-bottom: 2px solid #E9EAED;
     height: 100%;
     li {

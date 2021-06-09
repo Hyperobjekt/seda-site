@@ -13,7 +13,7 @@ Seda.NamDiscovery = (function (Seda) {
   const COLORS = {
     0: "#abd9e9", // top left
     1: "#2fb57f", // top right
-    2: "#ddd", // bottom right
+    2: "#c5e8b5", // bottom right
     3: "#174b80", // bottom left
     NA: "#f00",
   };

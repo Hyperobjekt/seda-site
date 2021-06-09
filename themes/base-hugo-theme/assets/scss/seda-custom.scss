@@ -767,7 +767,7 @@ img {
       margin-bottom: 2.4rem;
     }
   }
-  p a {
+  p a, .type-discoveries ul li a {
     color: #5a7095; // #5b75a0; // #637ba4; // #7086AB;
   }
   .base-style {
@@ -3991,7 +3991,10 @@ form#getTheData {
     font-size: 16px;
     color: rgb(39,53,66); 
     font-family: 'SharpGrotesk-Medium20', 'Lato', 'Helvetica Neue', sans-serif;
-  
+    
+    @include media-breakpoint-only(sm) {
+     // max-width: 84%;
+    }
     @include media-breakpoint-down(md) {
       font-size: 11px;
     }

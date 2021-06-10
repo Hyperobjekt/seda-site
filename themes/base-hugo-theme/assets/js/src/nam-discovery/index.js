@@ -90,6 +90,7 @@ Seda.NamDiscovery = (function (Seda) {
           enabled: true,
         },
         onClickEvent: handleSelectLocation,
+        onKeyEnterEvent: handleSelectLocation
       },
     };
     $("#namAutocomplete").easyAutocomplete(options);
@@ -233,9 +234,10 @@ Seda.NamDiscovery = (function (Seda) {
   }
 
   function render() {
-    const selectedData = chartData.filter((d) =>
-      selectedLocations.find((loc) => loc.id === d[FIPS_INDEX])
-    );
+    // const selectedData = chartData.filter((d) =>
+    //   selectedLocations.find((loc) => loc.id === d[FIPS_INDEX])
+    // );
+    const selectedData = selectedLocations.map((loc) => chartData.find(d => d[FIPS_INDEX] === loc.id))
 
     const selectedContainer = $("#namSelected");
     selectedContainer.empty();
@@ -413,7 +415,6 @@ Seda.NamDiscovery = (function (Seda) {
         });
 
         chart.on("click", function(params){
-          console.log(params)
           addSelectedItem({id: params.data[3]})
         })
 

@@ -14,7 +14,8 @@ Seda.NamDiscovery = (function (Seda) {
     0: "#abd9e9", // top left
     1: "#c5e8b5", // top right
     2: "#2fb57f", // bottom right
-    3: "#174b80", // bottom left
+   // 3: "#3274b8", // bottom left
+    3: "#4584c5", // bottom left
     NA: "#f00",
   };
   // const SELECTED_COLORS = [

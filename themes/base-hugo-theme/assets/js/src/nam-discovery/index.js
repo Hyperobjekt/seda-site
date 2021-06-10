@@ -17,13 +17,24 @@ Seda.NamDiscovery = (function (Seda) {
     3: "#174b80", // bottom left
     NA: "#f00",
   };
+  // const SELECTED_COLORS = [
+  //   "#ff4040",
+  //   "#e19608",
+  //   "#96e108",
+  //   "#40ff40",
+  //   "#08e196",
+  //   "#0896e1",
+  //   "#4040ff",
+  //   "#9608e1",
+  //   "#e10896",
+  // ];
   const SELECTED_COLORS = [
-    "#ff4040",
-    "#e19608",
-    "#96e108",
-    "#40ff40",
-    "#08e196",
-    "#0896e1",
+    "#F46800",
+    "#8C1AF4",
+    "#B2002A",
+    "#F84EBF",
+    "#3F00B3",
+    "#FF0C0C",
     "#4040ff",
     "#9608e1",
     "#e10896",
@@ -234,9 +245,6 @@ Seda.NamDiscovery = (function (Seda) {
   }
 
   function render() {
-    // const selectedData = chartData.filter((d) =>
-    //   selectedLocations.find((loc) => loc.id === d[FIPS_INDEX])
-    // );
     const selectedData = selectedLocations.map((loc) => chartData.find(d => d[FIPS_INDEX] === loc.id))
 
     const selectedContainer = $("#namSelected");
@@ -352,29 +360,27 @@ Seda.NamDiscovery = (function (Seda) {
             borderWidth: 0.75,
           },
         })),
-        {
+        ...selectedData.map((d, i) => ({
           type: "scatter",
-          data: selectedData,
+          data: [d],
+          label: {
+            show: true,
+            formatter: () => i + 1,
+            color: SELECTED_COLORS[i],
+            textBorderColor: "#ffffff",
+            textBorderWidth: 3,
+            fontSize: 13
+          },
           symbolSize: function (data) {
             return sizeScale(data[SIZE_INDEX]);
           },
           itemStyle: {
-            color: ({ seriesIndex, dataIndex }) => {
-              console.log(
-                dataIndex,
-                SELECTED_COLORS[dataIndex % SELECTED_COLORS.length]
-              );
-              return fadeColor(
-                SELECTED_COLORS[dataIndex % SELECTED_COLORS.length],
-                0.6
-              );
-            },
-
-            borderColor: `#fff`,
+            color: fadeColor(getSeries(chartData).find(s => s.data.includes(d)).color, 0.8),
+            borderColor: SELECTED_COLORS[i],
             borderWidth: 2,
             opacity: 1,
           },
-        },
+        })),
         {
           type: "scatter",
           data: [],

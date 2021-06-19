@@ -1139,12 +1139,8 @@ body.home {
       -webkit-transform: translateZ(0) scale(1.0, 1.0);
       transform: translateZ(0);
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        // display: block;
-        // margin-left: auto;
-        // margin-right: auto;
         width: 100%;
         max-width: 100%;
-        // margin-top: 14rem;
         height: auto;
       }
       // font-smoothing: antialiased !important;
@@ -1159,7 +1155,7 @@ body.home {
           opacity: 1;
         }
         @include media-breakpoint-up(md) {
-            opacity: 0;
+           opacity: 0;
         }
         &.opaque {
           opacity: 1;
@@ -1328,7 +1324,7 @@ body.home {
 
         }
         h2.hero-animate {
-          opacity: 0;
+          //opacity: 0;
         }
         p {
           font-family: $maisonneue-book;

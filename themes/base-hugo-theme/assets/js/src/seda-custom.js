@@ -164,7 +164,7 @@
             translateY: [10, 0], 
             easing: 'easeInOutSine',
             duration: 1000,
-            delay: 2400,
+            delay: 2600,
           });
         }
         if (localStorage.getItem("animateHero")) { // Animation has run on a prior visit, don't run it again

@@ -1138,6 +1138,7 @@ body.home {
       -webkit-backface-visibility: hidden;
       -webkit-transform: translateZ(0) scale(1.0, 1.0);
       transform: translateZ(0);
+      opacity: 0;
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         width: 100%;
         max-width: 100%;

@@ -108,6 +108,9 @@
     'body.home .hero-child p.hero-animate', 'body.home .hero-child button.hero-animate'], {
       opacity: [0]
     });    
+    anime.set(['body.home .hero-child'], {
+      opacity: 0
+    });
     function heroAnimate() {
       if (localStorage.getItem("animateHero") === null) {
         anime.set(['body.home .hero-child'], {

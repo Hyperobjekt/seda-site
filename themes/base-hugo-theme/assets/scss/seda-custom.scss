@@ -1324,7 +1324,7 @@ body.home {
 
         }
         h2.hero-animate {
-          opacity: 0;
+          opacity: 0; // Necessary to prevent FOUC
         }
         p {
           font-family: $maisonneue-book;
@@ -1337,7 +1337,7 @@ body.home {
           animation-delay: 3.8s;
           z-index: 2;
           &.hero-animate {
-            opacity: 0;
+            opacity: 0; // Necessary to prevent FOUC
           }
           @keyframes fade-in3 {
             0% {

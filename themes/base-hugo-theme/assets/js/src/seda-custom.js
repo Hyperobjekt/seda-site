@@ -110,6 +110,9 @@
     });    
     function heroAnimate() {
       if (localStorage.getItem("animateHero") === null) {
+        anime.set(['body.home .hero-child'], {
+          opacity: 1
+        });
         localStorage.setItem("animateHero", true); // Only run animation on 1st page load
           anime({
             targets: ['g#ses-metric', 'g#grades', 'g#hp-x-line'],
@@ -168,7 +171,7 @@
           });
         }
         if (localStorage.getItem("animateHero")) { // Animation has run on a prior visit, don't run it again
-          anime.set(['body.home .hero-child h2.hero-animate',
+          anime.set(['body.home .hero-child', 'body.home .hero-child h2.hero-animate', 
           'body.home .hero-child p.hero-animate', 'body.home .hero-child button.hero-animate'], {
             opacity: [1]
           });

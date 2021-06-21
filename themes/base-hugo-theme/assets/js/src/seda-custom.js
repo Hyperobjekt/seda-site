@@ -108,10 +108,8 @@
     'body.home .hero-child p.hero-animate', 'body.home .hero-child button.hero-animate'], {
       opacity: [0]
     });    
-    anime.set(['body.home .hero-child'], {
-      opacity: 0
-    });
     function heroAnimate() {
+    //  $("body.home .hero .hero-child").css('display', 'flex');
       if (localStorage.getItem("animateHero") === null) {
         anime.set(['body.home .hero-child'], {
           opacity: 1
@@ -172,8 +170,8 @@
             duration: 1000,
             delay: 2600,
           });
-        }
-        if (localStorage.getItem("animateHero")) { // Animation has run on a prior visit, don't run it again
+       }
+       else  { // Animation has run on a prior visit, don't run it again
           anime.set(['body.home .hero-child', 'body.home .hero-child h2.hero-animate', 
           'body.home .hero-child p.hero-animate', 'body.home .hero-child button.hero-animate'], {
             opacity: [1]
@@ -187,7 +185,7 @@
           anime.set(['g#ses-metric', 'g#grades', 'g#hp-x-line'], {
             opacity: .3
           })
-        }
+        } 
       };
       heroAnimate();
 

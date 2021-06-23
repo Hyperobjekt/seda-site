@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  branch: development # Branch to update (optional; defaults to master)
 
 publish_mode: editorial_workflow
 
@@ -9,7 +9,7 @@ public_folder: "/uploads" # The src attribute for uploaded media will begin with
 
 collections:
   #HOMEPAGE
-  - label: News Items 
+  - label: News Items
     name: newsitems
     identifier_field: headline
     folder: "data/news/"
@@ -18,9 +18,13 @@ collections:
     extension: "yaml"
     create: true
     fields:
-      - {label: "Headline", name: "headline", widget: string,}
-      - {label: Outlet, name: outlet, widget: string,}
-      - {label: Date, name: date, widget: string, hint: 'format: YYYY-MM-DD'}
-      - {label: Link, name: link, widget: string}
-      - {label: Excerpt, name: excerpt, widget: markdown, buttons: ['bold', 'italic']}
-     
+      - { label: "Headline", name: "headline", widget: string }
+      - { label: Outlet, name: outlet, widget: string }
+      - { label: Date, name: date, widget: string, hint: "format: YYYY-MM-DD" }
+      - { label: Link, name: link, widget: string }
+      - {
+          label: Excerpt,
+          name: excerpt,
+          widget: markdown,
+          buttons: ["bold", "italic"],
+        }

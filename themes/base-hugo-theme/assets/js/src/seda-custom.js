@@ -109,7 +109,7 @@
       opacity: [0]
     });    
     function heroAnimate() {
-     // if (localStorage.getItem("animateHero") === null) {
+      if (localStorage.getItem("animateHero") === null) {
         anime.set(['body.home .hero-child'], {
           opacity: 1
         });
@@ -169,8 +169,11 @@
             duration: 1000,
             delay: 2600,
           });
-       // }
-      /* else  { // Animation has run on a prior visit, don't run it again
+        }
+       else  { // Animation has run on a prior visit, don't run it again
+          anime.set(['body.home .hero-child'], {
+            opacity: [0]
+          });
           anime.set(['body.home .hero-child', 'body.home .hero-child h2.hero-animate', 
           'body.home .hero-child p.hero-animate', 'body.home .hero-child button.hero-animate'], {
             opacity: [1]
@@ -184,7 +187,23 @@
           anime.set(['g#ses-metric', 'g#grades', 'g#hp-x-line'], {
             opacity: .3
           })
-        } */
+          anime({ // Overlay text
+            targets: ['body.home .hero-child',],
+            opacity: [0, 1],
+           // translateY: [-10, 0], 
+            easing: 'easeInOutSine',
+            duration: 500,
+            delay: 0,
+          });
+          anime({ // Overlay text
+            targets: ['body.home .hero-child h2.hero-animate', 'body.home .hero-child p.hero-animate','body.home .hero-child button.hero-animate',],
+            opacity: [0, 1],
+            translateY: [8, 0], 
+            easing: 'easeInOutSine',
+            duration: 800,
+            delay: 0,
+          });
+        } 
       };
       heroAnimate();
 

@@ -104,86 +104,108 @@
     }
 
     // Homepage hero animation
-
     anime.set(['#mainland', '.plotpoints', 'body.home .hero-child h2.hero-animate',
     'body.home .hero-child p.hero-animate', 'body.home .hero-child button.hero-animate'], {
       opacity: [0]
-    });
-    /* anime.set(['g#grades text', 'g#ses-metric text', '#grades path#axis-line-2', '#hp-x-line path#map-x'], {
-      opacity: [0]
-    }); */
-    anime({
-      targets: ['g#ses-metric', 'g#grades', 'g#hp-x-line'],
-      opacity: [0, .3],
-      duration: 1,
-      delay: 1
-    });
-    anime({ // Scatterplot points
-      targets: ['.plotpoints'],
-      opacity: [0, .25],
-      easing: 'easeOutCubic',
-      delay: anime.stagger(24, {start: 300}) // increase delay for each element.
-    });
-    anime({ // Map
-      targets: ['#mainland'],
-      keyframes: [
-        {opacity: 0.8, delay: 1400, duration: 1000},
-        {opacity: 0.6, delay: 2400, duration: 800},
-      ],
-      easing: 'easeInSine',
-    });
-    anime({ // Y Axis
-      targets: ['#grades path#axis-line-2'],
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: 'easeInOutSine',
-      duration: 1400,
-    });
-    anime({ // X Axis
-      targets: ['#hp-x-line path#map-x'],
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: 'easeInOutSine',
-      duration: 1400,
+    });    
+    function heroAnimate() {
+      if (localStorage.getItem("animateHero") === null) {
+        anime.set(['body.home .hero-child'], {
+          opacity: 1
+        });
+        localStorage.setItem("animateHero", true); // Only run animation on 1st page load
+          anime({
+            targets: ['g#ses-metric', 'g#grades', 'g#hp-x-line'],
+            opacity: [0, .3],
+            duration: 1,
+            delay: 1
+          });
+          anime({ // Scatterplot points
+            targets: ['.plotpoints'],
+            opacity: [0, .25],
+            easing: 'easeOutCubic',
+            delay: anime.stagger(24, {start: 300}) // increase delay for each element.
+          });
+          anime({ // Map
+            targets: ['#mainland'],
+            keyframes: [
+              {opacity: 0.8, delay: 1400, duration: 1000},
+              {opacity: 0.6, delay: 1600, duration: 800},
+            ],
+            easing: 'easeInSine',
+          });
+          anime({ // Y Axis
+            targets: ['#grades path#axis-line-2'],
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 1400,
+          });
+          anime({ // X Axis
+            targets: ['#hp-x-line path#map-x'],
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 1400,
 
-    });
-    anime({ // Grades
-      targets: 'g#grades text',
-      transform: ['translate(0 400)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
-      easing: 'easeInOutSine',
-      duration: 1400,
+          });
+          anime({ // Grades
+            targets: 'g#grades text',
+            transform: ['translate(0 400)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
+            easing: 'easeInOutSine',
+            duration: 1400,
 
-    });
-    anime({ // Numbers
-      targets: 'g#ses-metric text',
-      transform: ['translate(-500 0)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
-      easing: 'easeInOutSine',
-      duration: 1400,
-    });
+          });
+          anime({ // Numbers
+            targets: 'g#ses-metric text',
+            transform: ['translate(-500 0)', 'translate(0 0 )'], // have to do it in this format to get it to work on webkit
+            easing: 'easeInOutSine',
+            duration: 1400,
+          });
 
-    anime({ // Headline text
-      targets: 'body.home .hero-child h2.hero-animate',
-      opacity: [0, 1],
-      easing: 'easeInOutSine',
-      duration: 1000,
-      delay: 3000,
-    });
-
-    anime({ // Body text
-      targets: 'body.home .hero-child p.hero-animate',
-      opacity: [0, 1],
-      easing: 'easeInOutSine',
-      duration: 800,
-      delay: 4000,
-    });
-
-    anime({ // Button
-      targets: 'body.home .hero-child button.hero-animate',
-      opacity: [0, 1],
-      transform: ['translate(100 0)', 'translate(0 0 )'],
-      easing: 'easeInOutSine',
-      duration: 800,
-      delay: 5200,
-    });
-
+          anime({ // Overlay text
+            targets: ['body.home .hero-child h2.hero-animate', 'body.home .hero-child p.hero-animate','body.home .hero-child button.hero-animate',],
+            opacity: [0, 1],
+            translateY: [10, 0], 
+            easing: 'easeInOutSine',
+            duration: 1000,
+            delay: 2600,
+          });
+        }
+       else  { // Animation has run on a prior visit, don't run it again
+          anime.set(['body.home .hero-child'], {
+            opacity: [0]
+          });
+          anime.set(['body.home .hero-child', 'body.home .hero-child h2.hero-animate', 
+          'body.home .hero-child p.hero-animate', 'body.home .hero-child button.hero-animate'], {
+            opacity: [1]
+          });
+          anime.set(['#mainland'], {
+            opacity: 0.6
+          } )
+          anime.set(['.plotpoints'], {
+            opacity: 0.25
+          })
+          anime.set(['g#ses-metric', 'g#grades', 'g#hp-x-line'], {
+            opacity: .3
+          })
+          anime({ // Overlay text
+            targets: ['body.home .hero-child',],
+            opacity: [0, 1],
+           // translateY: [-10, 0], 
+            easing: 'easeInOutSine',
+            duration: 500,
+            delay: 0,
+          });
+          anime({ // Overlay text
+            targets: ['body.home .hero-child h2.hero-animate', 'body.home .hero-child p.hero-animate','body.home .hero-child button.hero-animate',],
+            opacity: [0, 1],
+            translateY: [8, 0], 
+            easing: 'easeInOutSine',
+            duration: 800,
+            delay: 0,
+          });
+        } 
+      };
+      heroAnimate();
 
 
     // Variables for anime

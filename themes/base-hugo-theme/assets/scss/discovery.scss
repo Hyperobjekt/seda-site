@@ -1,13 +1,15 @@
 .visual {
     position: relative;
-    height: 700px;
+    height: 600px;
 }
 
 .visual__search {
     position: absolute;
     right: 0;
-    top: 180px;
-    width: 317px;
+    top: 90px;
+    background: #F6FBFF;
+    padding: 31px;
+    width: 360px;
     ul li, ul li p  {
         font-size: 1.5rem  !important;
     }
@@ -15,8 +17,8 @@
 
 @media screen and (max-width: 1150px) {
     .visual__search {
-      width: 180px;
-      top: 110px;
+      width: 270px;
+      padding: 15px;
     }
 }
 .visual__search-drawer > button {
@@ -143,7 +145,7 @@
     position: relative; 
     left: 50%; 
     transform: translateX(-50%);
-    max-width: 1320px;
+    max-width: 1190px;
 }
 @media screen and (max-width: 767px) {
     .visual__canvas {

@@ -259,8 +259,8 @@ Seda.NamDiscovery = (function (Seda) {
       $("#namSelected").append($("<p />", {
         text: "Search or click bubbles in the chart to highlight counties. Your selections will appear here.",
       }).css({
-        fontSize: 12,
-        color: "rgba(0,0,0,0.44)",
+        fontSize: 14,
+        color: "rgba(0,0,0,0.6)",
       }));
     }
 
@@ -278,7 +278,7 @@ Seda.NamDiscovery = (function (Seda) {
           fontFamily: 'SharpGrotesk-Medium20'
         },
         textAlign: window.innerWidth > 1024 ? 'center' : 'left',
-        left: window.innerWidth > 1024 ? "35%" : window.innerWidth > 767 ? "11%" : 0
+        left: window.innerWidth > 1024 ? "35%" : window.innerWidth > 767 ? "center" : 0
       },
       grid: {
         left: window.innerWidth > 1023 ? 100 : 47,
@@ -308,7 +308,7 @@ Seda.NamDiscovery = (function (Seda) {
       legend: {
         orient: "horizontal",
         width: window.innerWidth > 767 ? 800 : 500,
-        left: window.innerWidth > 1023 ? 90 : window.innerWidth > 767 ? 40 : 0,
+        left: window.innerWidth > 1024 ? 110 : window.innerWidth > 767 ? 'center' : 0,
         bottom: 0,
         show: true,
         itemGap: 16,

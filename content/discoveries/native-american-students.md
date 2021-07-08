@@ -13,7 +13,7 @@ scripts:
   - echarts
 statustype: discovery
 ---
-<span class="drop-cap">D</span>ata from the Educational Opportunity Project provide an unprecedented view of the patterns of educational opportunity for Native American students. For each county and school district in the U.S., the data provide a measure of Native students’ average academic performance in third grade and a measure of average learning rates from third to eighth grade. Average third grade scores reflect educational opportunities students have from birth through grade three; average learning rates reflect educational opportunities provided by schools in late elementary and middle school. The figure above presents these measures for the 462 U.S. counties with sufficient numbers of Native American students to compute them reliably. Two patterns stand out.
+<span class="drop-cap">D</span>ata from the Educational Opportunity Project provide an unprecedented view of the patterns of educational opportunity for Native American students. For each county and school district in the U.S., the data provide a measure of Native students’ average academic performance in third grade and a measure of average learning rates from third to eighth grade. Average third grade scores reflect educational opportunities students have from birth through grade three; average learning rates reflect educational opportunities provided by schools in late elementary and middle school. The figure below presents these measures for the 462 U.S. counties with sufficient numbers of Native American students to compute them reliably. Two patterns stand out.
 <br/>
 <br/>
 

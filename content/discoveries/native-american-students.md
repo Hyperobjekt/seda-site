@@ -13,14 +13,14 @@ scripts:
   - echarts
 statustype: discovery
 ---
-
-
+<span class="drop-cap">D</span>ata from the Educational Opportunity Project provide an unprecedented view of the patterns of educational opportunity for Native American students. For each county and school district in the U.S., the data provide a measure of Native students’ average academic performance in third grade and a measure of average learning rates from third to eighth grade. Average third grade scores reflect educational opportunities students have from birth through grade three; average learning rates reflect educational opportunities provided by schools in late elementary and middle school. The figure above presents these measures for the 462 U.S. counties with sufficient numbers of Native American students to compute them reliably. Two patterns stand out.
+<br/>
+<br/>
 
 <div class="visual__canvas">
   {{< discovery-scatterplot >}}
 </div>
 
-<span class="drop-cap">D</span>ata from the Educational Opportunity Project provide an unprecedented view of the patterns of educational opportunity for Native American students. For each county and school district in the U.S., the data provide a measure of Native students’ average academic performance in third grade and a measure of average learning rates from third to eighth grade. Average third grade scores reflect educational opportunities students have from birth through grade three; average learning rates reflect educational opportunities provided by schools in late elementary and middle school. The figure above presents these measures for the 462 U.S. counties with sufficient numbers of Native American students to compute them reliably. Two patterns stand out.
 
 First, the test score data from these counties show that Native American students’ performance on state assessments at the end of third grade varies widely across the U.S. In less than a quarter of the counties (103 of 462 counties, shown in green) do Native American students perform near or above the national average, suggesting that they experience adequate educational opportunities from birth through third grade. However, these 103 counties serve relatively few Native American students (shown by the small size of the dots on the graph) and collectively serve only a small fraction of Native American students in the U.S. The majority of the U.S. Native American student population, living in the other 359 counties (shown in blue), have average third grade test scores significantly below the national average. In other words, most Native American students are living in counties where, on average, they enter school having received fewer educational opportunities than the typical U.S. student. 
 
@@ -32,7 +32,7 @@ Data of this sort, detailing local patterns of educational opportunity for Nativ
 To learn more:
 
 - Check out _ProPublica’s_ article on BIE Schools, <a href="https://www.propublica.org/article/the-bureau-of-indian-information-hasnt-told-the-public-how-its-schools-are-performing" target="_blank" rel="noopener noreferrer">The Bureau of Indian Education hasn't told the public how its schools are performing</a>
-- _Forthcoming:_ EOP Report on Native American Student’s Educational Opportunity in U.S. School Districts
+- Forthcoming: EOP Report on Native American Student’s Educational Opportunity in U.S. School Districts
 <br /><br />
 <hr>
 <br />

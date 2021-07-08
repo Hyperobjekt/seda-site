@@ -268,13 +268,13 @@ Seda.NamDiscovery = (function (Seda) {
           fontFamily: 'SharpGrotesk-Medium20'
         },
         textAlign: window.innerWidth > 767 ? 'center' : 'left',
-        left: window.innerWidth > 767 ? "50%" : 0
+        left: window.innerWidth > 767 ? "35%" : 0
       },
       grid: {
         left: window.innerWidth > 767 ? 100 : 47,
-        top: window.innerWidth > 1150 ? 180 : 175,
-        right: window.innerWidth > 1150 ? 375 : window.innerWidth > 767 ? 200 : 1,
-        bottom: window.innerWidth > 767 ? 50 : 100
+        top: window.innerWidth > 1150 ? 90 : 90,
+        right: window.innerWidth > 1150 ? 400 : window.innerWidth > 767 ? 285 : 1,
+        bottom: window.innerWidth > 1150 ? 140 : window.innerWidth > 767 ? 170 : 200
       },
       tooltip: {
         className: 'nam-tooltip',
@@ -297,9 +297,9 @@ Seda.NamDiscovery = (function (Seda) {
       },
       legend: {
         orient: "horizontal",
-        width: window.innerWidth > 1150 ? 800 : 400,
-        left: window.innerWidth > 767 ? 95 : 0,
-        top: window.innerWidth > 767 ? 90 : 60,
+        width: window.innerWidth > 1150 ? 800 : 500,
+        left: window.innerWidth > 767 ? 120 : 0,
+        bottom: window.innerWidth > 767 ? 0 : 0,
         show: true,
         itemGap: 16,
         textStyle: {
@@ -312,6 +312,7 @@ Seda.NamDiscovery = (function (Seda) {
         nameGap: window.innerWidth > 767 ? 32 : 55,
         nameTextStyle: {
           lineHeight: 18,
+          fontSize: 13,
           align: "center"
         },
         axisLine: {
@@ -330,6 +331,9 @@ Seda.NamDiscovery = (function (Seda) {
         name: Y_LABEL,
         nameLocation: "center",
         nameGap: window.innerWidth > 767 ? 80 : 35,
+        nameTextStyle: {
+          fontSize: 13
+        },
         min: 0.6,
         max: 1.6,
         axisLine: {

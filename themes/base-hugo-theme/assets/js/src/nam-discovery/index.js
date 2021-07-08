@@ -132,22 +132,22 @@ Seda.NamDiscovery = (function (Seda) {
     const bottomLeft = data.filter((d) => d[0] < 3 && d[1] < 1);
     return [
       {
-        name: window.innerWidth > 1150 ? "Above Average Scores, Above Average Learning" : "Above Average Scores, \nAbove Average Learning",
+        name: window.innerWidth > 767 ? "Above Average Scores, Above Average Learning" : "Above Average Scores, \nAbove Average Learning",
         color: COLORS[1],
         data: topRight,
       },
       {
-        name: window.innerWidth > 1150 ? "Above Average Scores, Below Average Learning" : "Above Average Scores, \nBelow Average Learning",
+        name: window.innerWidth > 767 ? "Above Average Scores, Below Average Learning" : "Above Average Scores, \nBelow Average Learning",
         color: COLORS[2],
         data: bottomRight,
       },
       {
-        name: window.innerWidth > 1150 ? "Below Average Scores, Above Average Learning" : "Below Average Scores, \nAbove Average Learning",
+        name: window.innerWidth > 767 ? "Below Average Scores, Above Average Learning" : "Below Average Scores, \nAbove Average Learning",
         color: COLORS[0],
         data: topLeft,
       },
       {
-        name: window.innerWidth > 1150 ? "Below Average Scores, Below Average Learning" : "Below Average Scores, \nBelow Average Learning",
+        name: window.innerWidth > 767 ? "Below Average Scores, Below Average Learning" : "Below Average Scores, \nBelow Average Learning",
         color: COLORS[3],
         data: bottomLeft,
       },
@@ -194,7 +194,7 @@ Seda.NamDiscovery = (function (Seda) {
       margin: "0 0 0 auto",
       position: "absolute",
       top: "50%",
-      right: "0",
+      right: "1px",
       transform: "translateY(-50%)",
     });
 
@@ -254,6 +254,16 @@ Seda.NamDiscovery = (function (Seda) {
       selectedContainer.append(createListItem(loc, i));
     });
 
+    // if there are no selected locations, append a helpful message
+    if(selectedData.length === 0) {
+      $("#namSelected").append($("<p />", {
+        text: "Search or click bubbles in the chart to highlight counties. Your selections will appear here.",
+      }).css({
+        fontSize: 14,
+        color: "rgba(0,0,0,0.6)",
+      }));
+    }
+
     // specify chart configuration item and data
     var option = {
       title: {
@@ -267,14 +277,14 @@ Seda.NamDiscovery = (function (Seda) {
           color: '#031232',
           fontFamily: 'SharpGrotesk-Medium20'
         },
-        textAlign: window.innerWidth > 767 ? 'center' : 'left',
-        left: window.innerWidth > 767 ? "35%" : 0
+        textAlign: window.innerWidth > 1024 ? 'center' : 'left',
+        left: window.innerWidth > 1024 ? "35%" : window.innerWidth > 767 ? "center" : 0
       },
       grid: {
-        left: window.innerWidth > 767 ? 100 : 47,
-        top: window.innerWidth > 1150 ? 90 : 90,
-        right: window.innerWidth > 1150 ? 400 : window.innerWidth > 767 ? 285 : 1,
-        bottom: window.innerWidth > 1150 ? 140 : window.innerWidth > 767 ? 170 : 200
+        left: window.innerWidth > 1023 ? 100 : 47,
+        top: 90,
+        right: window.innerWidth > 1150 ? 400 : window.innerWidth > 1023 ? 285 : 1,
+        bottom: window.innerWidth > 767 ? 140 : 200
       },
       tooltip: {
         className: 'nam-tooltip',
@@ -297,9 +307,9 @@ Seda.NamDiscovery = (function (Seda) {
       },
       legend: {
         orient: "horizontal",
-        width: window.innerWidth > 1150 ? 800 : 500,
-        left: window.innerWidth > 767 ? 120 : 0,
-        bottom: window.innerWidth > 767 ? 0 : 0,
+        width: window.innerWidth > 767 ? 800 : 500,
+        left: window.innerWidth > 1024 ? 110 : window.innerWidth > 767 ? 'center' : 0,
+        bottom: 0,
         show: true,
         itemGap: 16,
         textStyle: {
@@ -309,7 +319,7 @@ Seda.NamDiscovery = (function (Seda) {
       xAxis: {
         name: X_LABEL,
         nameLocation: "center",
-        nameGap: window.innerWidth > 767 ? 32 : 55,
+        nameGap: window.innerWidth > 1023 ? 32 : 55,
         nameTextStyle: {
           lineHeight: 18,
           fontSize: 13,
@@ -324,13 +334,13 @@ Seda.NamDiscovery = (function (Seda) {
             if (value < 3) return `${Math.abs(value - 3)} Below`;
             if (value > 3) return `${Math.abs(value - 3)} Above`;
           },
-          rotate: window.innerWidth > 767 ? 0 : 45
+          rotate: window.innerWidth > 1023 ? 0 : 45
         },
       },
       yAxis: {
         name: Y_LABEL,
         nameLocation: "center",
-        nameGap: window.innerWidth > 767 ? 80 : 35,
+        nameGap: window.innerWidth > 1023 ? 80 : 35,
         nameTextStyle: {
           fontSize: 13
         },
@@ -344,7 +354,7 @@ Seda.NamDiscovery = (function (Seda) {
         },
         axisLabel: {
           formatter: (value, index) => {
-            if (window.innerWidth < 768) return value
+            if (window.innerWidth < 1024) return value
             if (value === 1) return 'Average';
             if (value < 1) return `${Math.round((1 - value) * 100)}% less`;
             if (value > 1) return `${Math.round((value - 1) * 100)}% more`;
@@ -421,6 +431,7 @@ Seda.NamDiscovery = (function (Seda) {
         // based on prepared DOM, initialize echarts instance
         chart = echarts.init(document.getElementById("echart"));
         render();
+
         window.addEventListener("resize", function () {
           chart.resize();
         });
@@ -429,7 +440,7 @@ Seda.NamDiscovery = (function (Seda) {
           addSelectedItem({id: params.data[3]})
         })
 
-        if(window.innerWidth < 768) {
+        if(window.innerWidth < 1024) {
           $('.navbar').addClass("nam")
           $('.navbar').append($(".visual__search"))
           $('.visual__search-controls > button, .visual__search-drawer > button').on('click', () => {

@@ -8,10 +8,17 @@
     right: 0;
     top: 90px;
     background: #F6FBFF;
-    padding: 31px;
+    padding: 24px;
     width: 360px;
+    border-radius: 4px;
+    @include media-breakpoint-up(md) {
+        min-height: 343px;
+    }
+    @include media-breakpoint-up(xl) {
+        min-height: 373px;
+    }
     ul li, ul li p  {
-        font-size: 1.5rem  !important;
+        font-size: 1.4rem  !important;
     }
 }
 

@@ -328,7 +328,7 @@ body.kind-page.type-discoveries {
     font-size: 5.2rem;
     color: $seda-dark;
     @include media-breakpoint-up(lg) {
-      font-size: 4.7rem;
+      font-size: 5rem;
     }
     @include media-breakpoint-up(xl) {
       font-size: 5.8rem;
@@ -396,10 +396,10 @@ body.kind-page.type-discoveries {
       font-size: $sm-p-size;
       line-height: 1.5;
       &.center-layout {
-        max-width: 540px; 
+        max-width: 600px; 
         margin: auto;
         @include media-breakpoint-up(xl) {
-            max-width: 640px;
+            max-width: 660px;
         }
       }
       &:first-child {

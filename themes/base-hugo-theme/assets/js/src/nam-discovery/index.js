@@ -268,7 +268,7 @@ Seda.NamDiscovery = (function (Seda) {
           fontFamily: 'SharpGrotesk-Medium20'
         },
         textAlign: window.innerWidth > 767 ? 'center' : 'left',
-        left: window.innerWidth > 767 ? "37%" : 0
+        left: window.innerWidth > 767 ? "35%" : 0
       },
       grid: {
         left: window.innerWidth > 767 ? 100 : 47,
@@ -298,7 +298,7 @@ Seda.NamDiscovery = (function (Seda) {
       legend: {
         orient: "horizontal",
         width: window.innerWidth > 1150 ? 800 : 500,
-        left: window.innerWidth > 767 ? 95 : 0,
+        left: window.innerWidth > 767 ? 120 : 0,
         bottom: window.innerWidth > 767 ? 0 : 0,
         show: true,
         itemGap: 16,

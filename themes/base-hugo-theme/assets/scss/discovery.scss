@@ -11,11 +11,13 @@
     padding: 24px;
     width: 360px;
     border-radius: 4px;
-    @include media-breakpoint-up(md) {
-        min-height: 343px;
-    }
-    @include media-breakpoint-up(xl) {
-        min-height: 373px;
+    // @include media-breakpoint-up(md) {
+    //     height: 343px;
+        
+    // }
+    @include media-breakpoint-up(lg) {
+        height: 373px;
+        overflow-y: scroll;
     }
     ul li, ul li p  {
         font-size: 1.4rem  !important;
@@ -31,7 +33,7 @@
 .visual__search-drawer > button {
     display: none;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
     .visual__search {
         width: 100%;
         position: relative;
@@ -89,7 +91,7 @@
         width: 100% !important;
     }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
     .visual__search-controls {
         width: 100%;
         height: 44px;
@@ -100,6 +102,7 @@
     display: none;
     color: $seda-navy;
     padding: 0px 12px;
+    font-size: 12px;
     background-color: white;
     font-family: $sharpgrotesk-med-15;
     height: 44px;
@@ -112,7 +115,7 @@
         color: #0071DB;
     }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
     .visual__search-controls button {
         display: block;
     }
@@ -131,11 +134,11 @@
 }
 @media screen and (max-width: 1150px) {
     .visual__search-controls input {
-        margin: 0 0 33px;
+        margin: 0 0 10px;
         font-size: 16px !important;
     }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
     .visual__search-controls .easy-autocomplete {
         width: 100% !important;
     }
@@ -154,7 +157,7 @@
     transform: translateX(-50%);
     max-width: 1190px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
     .visual__canvas {
          margin: 0 0 5rem;
         min-width: 100vw;
